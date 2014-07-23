@@ -91,3 +91,11 @@ Tempate.home.rendered = ->
   $("<meta>", { name: "description", content: "Page description for My New Meteor App" }).appendTo "head"
 
 ```
+
+
+## Useful links
+
+http://docs.meteor.com/
+http://coffeescript.org/
+http://js2coffee.org/
+https://github.com/EventedMind/iron-router
