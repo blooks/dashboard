@@ -10,8 +10,7 @@
       "handlebars-server": {
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
         "branch": "master"
-      },
-      "minimongoid": {}
+      }
     },
     "packages": {
       "iron-router": {
@@ -28,11 +27,6 @@
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
         "branch": "master",
         "commit": "ce65fa1f63b94383e4e6168cdcec1b9e1d527668"
-      },
-      "minimongoid": {
-        "git": "https://github.com/Exygy/minimongoid.git",
-        "tag": "v0.8.8",
-        "commit": "cf8d0bec44934d617544965977f270f2a8cdca02"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
