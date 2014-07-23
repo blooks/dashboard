@@ -8,6 +8,6 @@
     "handlebars-server": {
       "git": "https://github.com/EventedMind/meteor-handlebars-server.git"
     },
-    "minimongoid": {}
+    "autoform": {}
   }
 }
