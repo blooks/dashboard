@@ -11,6 +11,7 @@
       "git": "https://github.com/EventedMind/meteor-handlebars-server.git"
     },
     "autoform": {},
-    "just-i18n": {}
+    "just-i18n": {},
+    "collection-behaviours": {}
   }
 }
