@@ -8,6 +8,7 @@
     "handlebars-server": {
       "git": "https://github.com/EventedMind/meteor-handlebars-server.git"
     },
-    "autoform": {}
+    "autoform": {},
+    "just-i18n": {}
   }
 }
