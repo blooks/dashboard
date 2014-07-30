@@ -1,6 +1,8 @@
 {
   "packages": {
-    "iron-router": {},
+    "iron-router": {
+      "version": "0.7.0"
+    },
     "accounts-entry": {
       "git": "https://github.com/Differential/accounts-entry.git",
       "branch": "master"
@@ -8,6 +10,8 @@
     "handlebars-server": {
       "git": "https://github.com/EventedMind/meteor-handlebars-server.git"
     },
-    "autoform": {}
+    "autoform": {},
+    "just-i18n": {},
+    "collection-behaviours": {}
   }
 }

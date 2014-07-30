@@ -16,3 +16,5 @@ handlebars-server
 blaze-layout
 autoform
 collection2
+collection-behaviours
+just-i18n
