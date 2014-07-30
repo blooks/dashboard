@@ -5,6 +5,10 @@ Router.map ->
   @route 'dashboard',
     path: '/dashboard'
 
+  @route 'transactions',
+    path: '/transactions'
+  #js this.route('transactions', {path: '/transactions'});
+
   @route 'notFound',
     path: '*'
     where: 'server'

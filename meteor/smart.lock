@@ -15,7 +15,8 @@
       },
       "autoform": {},
       "just-i18n": {},
-      "collection-behaviours": {}
+      "collection-behaviours": {},
+      "bootstrap3-less": {}
     },
     "packages": {
       "iron-router": {
@@ -47,6 +48,11 @@
         "git": "https://github.com/Sewdn/meteor-collection-behaviours.git",
         "tag": "v0.1.4",
         "commit": "9140c72983a19fabe099abd2c400b95d6a0997ba"
+      },
+      "bootstrap3-less": {
+        "git": "https://github.com/simison/bootstrap3-less",
+        "tag": "v0.2.1",
+        "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

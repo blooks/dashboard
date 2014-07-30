@@ -12,6 +12,7 @@
     },
     "autoform": {},
     "just-i18n": {},
-    "collection-behaviours": {}
+    "collection-behaviours": {},
+    "bootstrap3-less": {}
   }
 }
