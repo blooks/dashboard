@@ -22,25 +22,3 @@
 , {
 
 }
-]
-
-0,2013-04-01 07:30:02,0.00000000,105.50,0.00,0.00
-2,2013-04-10 09:14:29,1.00000000,-100.00,100.00,0.50
-2,2013-04-12 11:44:15,-1.00000000,1000.00,1000.00,5.00
-1,2013-04-15 20:38:36,0.00000000,-1000.00,0.00,0.00
-
-  date:
-    type: Date
-  source:
-    type: String
-  importId:
-    type: String
-  importLineId:
-    type: String
-
-Transactions.attachSchema Schemas.Transaction
-
-# Add the created / updated fields
-Transactions.timestampable()
-# Use soft delete
-Transactions.softRemovable()
