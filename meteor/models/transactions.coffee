@@ -40,3 +40,13 @@ Transactions.attachSchema Schemas.Transaction
 Transactions.timestampable()
 # Use soft delete
 Transactions.softRemovable()
+
+Transactions.allow
+  insert: (userId, item) ->
+    if not userId?
+      throw new Meteor.Error 400, "You need to log in to insert."
+    _.extend item, userId: userId
+  update: (userId, doc, filedNames, modifier) ->
+    if userId isnt doc.userId
+      throw new Meteor.Error 400, "You can only edit your entries."
+    true
