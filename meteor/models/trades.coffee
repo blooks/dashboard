@@ -35,3 +35,8 @@ Schemas.Trade = new SimpleSchema
     type: String
 
 Trades.attachSchema Schemas.Trade
+
+# Add the created / updated fields
+Trades.timestampable()
+# Use soft delete
+Trades.softRemovable()
