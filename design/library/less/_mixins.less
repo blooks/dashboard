@@ -1,0 +1,33 @@
+/* Colors */
+@whyte: #fff;
+@dark: #111;
+@darkgrey: #666; 
+@darkblue: #15363B;
+@lightgrey: #ececec;
+@grey: #ccc;
+@light: #F6F7E7;
+
+@popone: #992255; 
+@zbone: #C8603E;
+@poptwo: #FF358B; 
+@warning: #C8603E;
+
+@serif: Georgia, Garamond, "Times New Roman", Times, serif;
+@sansserif: 'Source Sans Pro', 'Open Sans', Helvetica, Arial, sans-serif;
+@bodysans: 'Ubuntu','Trebuchet MS', Helvetica, sans-serif;
+
+@gwborder: 1px solid @whyte;
+
+@hspacing: 50px;
+
+/* Vidaloka */
+
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}

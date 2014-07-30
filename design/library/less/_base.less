@@ -1,0 +1,302 @@
+/* Base css, mobile-first */
+
+html,
+body {
+  height: 100%;
+  /* don't add padding or margin. */
+  padding: 0;
+}
+
+html	{
+	font-size: 62.5%;
+	/* for REM font sizing */
+}
+
+body	{
+	background-color: @whyte;
+	font-size: 12px;
+	font-size: 1.2rem;
+	color: @darkgrey;
+}
+
+/* Global Page Sections
+------------------------------ */
+
+/* Nav 
+-------------------- */
+.navbar-default {
+	border-bottom: 1px solid @darkgrey;
+
+	.navbar-toggle {
+		border-radius: 0;
+	}
+	
+	.navbar-nav {
+
+		li {
+			a {
+				color: @darkgrey;
+				&:hover {
+						color: lighten(@zbone, 10%);
+				}
+			}
+		}
+		
+		.active  {
+			a, a:hover {			
+				background: none;
+				color: @zbone;
+			}
+		}		
+	}
+} 
+
+/* Main Zones
+-------------------- */
+body#content {
+
+
+}
+
+#content {
+	margin-top: 70px;
+}
+
+
+/* Footer 
+-------------------- */
+footer {
+	padding: 50px 0;
+	font-size: 12px; font-size: 1.2rem;	
+}
+
+.footer-links {
+  	float: none;	
+	
+	.menu {
+	   display: table;
+	   letter-spacing: 3px;
+	   margin: 0 auto;
+	   padding-left: 0;
+
+	   li {
+	   		min-width: 70px;
+	   		border-right: 1px solid @grey;
+	   		text-align: center;
+		   	padding: 1px 10px;	   		
+
+	   		&:first-child {
+	   			margin-left: 0;
+	   		}
+	   		&:last-child {
+	   			margin-right: 0;
+	   			border-right: none;	
+	   		}
+
+	   		a {
+	   			color: @darkgrey;
+	   		}
+	   }
+	}
+}
+
+
+/* Page Specific
+---------------- */
+
+/* Home page banner */
+.image-bg-fluid-height {
+	background: url('../../img/zb-clean-banner.jpg') no-repeat center center scroll;
+	padding: 100px 0;
+}
+
+.image-bg-fluid-height {
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.banner-text {
+	text-align: left;
+	h1 {
+		text-align: left;
+	}
+}
+
+/* Home page zones */
+.front-feature-zone {
+	margin: 30px 0;
+	clear: both;
+
+	.front-feature-item {
+		text-align: center;
+		margin-bottom: 50px;
+
+		p {
+			text-align: center;
+			/*
+			text-align: justify;
+			text-justify: newspaper
+			*/
+		}
+	}
+
+}
+
+.team-zone {	
+	background-color: @darkblue;
+	max-width: 100%;
+	padding: 50px 0;
+
+
+	h3 {
+		text-align: center;
+	}
+}
+
+.call-to-action-zone {
+	text-align: center;
+	padding: 50px 0;
+
+	h3 {
+		font-size: 36px; font-size: 3.6rem;
+	}
+
+	a.read-more {
+		margin-top: 40px;
+		color: @darkblue;
+		border: 1px solid @darkblue;
+	}
+
+	.cta {
+		margin-bottom: 50px;
+	}
+
+	.social {
+		a {
+			color: @darkblue;
+
+			i {
+				border: 1px solid @darkblue;
+				padding: 30px;
+				font-size: 55px;
+				width: 120px;
+				height: 120px;
+				margin: 30px 30px;
+
+			}
+		}		
+	}
+
+}
+
+
+
+/* Graphics
+---------------- */
+.navbar-brand {
+	padding-top: 10px;
+
+	.logo {
+		height: 30px;
+	}
+}
+
+.btn.more	{
+	border: 1px solid @dark;
+	color: @dark;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px; font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	padding: 5px 10px;
+
+	&:hover, &:focus	{
+	border-color: @popone;
+	color: @popone;		
+	}
+}
+
+#main img {
+	max-width: 100%;
+	height: auto;
+}
+
+a.read-more {
+	border: 1px solid @dark;
+	display: inline-block;
+	font-family: @sansserif;
+	font-size: 16px; font-size: 1.6rem;
+	letter-spacing: 7px;
+	padding: 8px 19px;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;	
+
+	&:hover {
+		border: 1px solid @popone;
+
+	}
+
+}
+
+/* Contact form styling
+------------------------ */
+.wpcf7 {
+	input[type=submit] {
+		padding: 10px 30px;
+		background: none;
+		text-transform: uppercase;
+		border: 1px solid @dark;
+		letter-spacing: 3px;
+		font-size: 18px;
+		font-size: 1.8rem;
+
+		&:hover {
+			color: lighten(@dark, 50%);
+			border: 1px solid lighten(@dark, 50%);
+		}
+	}
+
+	.wpcf7-form-control {
+		padding: 10px;
+		border: 1px solid @dark;
+		outline: none;
+			background: none;
+
+		&:focus {
+			border: 1px solid lighten(@dark, 50%);	
+		}
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+}
+
+div.wpcf7-mail-sent-ok,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-spam-blocked,
+div.wpcf7-validation-errors
+ {
+	border: 1px solid @lightgrey;
+	color: lighten(@dark, 50%);
+	font-size: 21px; font-size: 2.1rem;
+	font-style: italic;
+	padding: 10px 30px;
+	
+}
+
+span.wpcf7-not-valid-tip {
+	color: @poptwo;
+	font-size: 1em;
+	display: block;
+}
+
+.wpcf7-not-valid-tip {
+	color: @dark;
+	font-style: italic;
+}

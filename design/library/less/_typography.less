@@ -1,0 +1,131 @@
+/* Typograhy
+----------------- */
+body {
+	font-family: @bodysans;
+}
+
+h1,h2,h3,h4,
+.h2,.h3,.h4 	{						
+	color: @darkgrey;
+	font-family: @sansserif;
+	font-weight: 300;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+h1, .h2	{
+	font-size: 50px; 
+	font-size: 5rem;
+	text-align: center;
+
+		&.single-title {
+			margin: 5px;
+		}
+
+		&.single-recommend-title {
+			margin: 5px auto;
+		}	
+}
+
+h2 {
+	font-size: 36px; font-size: 3.6rem;
+	&.menu-headline {
+		text-align: center;
+		border-bottom: 1px solid @grey;	
+	}
+
+	&.rec-name-title	{
+		font-size: 14px;		
+		font-size: 1.4rem;
+		padding: 4px; margin: 0;
+		overflow: hidden;
+		text-transform: none;
+		letter-spacing: 0;
+
+		a {
+			&:hover {
+				color: @popone;
+			}
+		}
+	}
+}
+
+.person-recommendations h2 {
+	text-align: center;
+	margin-bottom: 20px; padding-bottom: 20px;
+	border-bottom: 1px solid @grey;
+}
+
+.rec-grid h2 {
+	border-bottom: none;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.listing-item {
+	text-align: center;
+}
+
+h3 {
+	margin-top: 0;	
+	
+	&.sidebar-header {
+		margin: 10px;
+		text-align: center;
+		border-top: 1px solid @grey;
+		border-bottom: 1px double @grey;
+		color:  darken(@grey, 30%) ;
+	}
+}
+
+.navbar-default 
+	{
+	.navbar-nav {
+	font-family: @sansserif;
+	text-transform: uppercase;
+	font-size: 15px; font-size: 1.5rem;
+	color: @darkblue;
+	letter-spacing: 7px;
+	}	
+
+	a.navbar-brand {
+		color: @whyte;
+		font-family: @sansserif;
+		font-weight: 400;
+		font-size: 22px; font-size: 2.2rem;
+			&:hover {
+				color: @popone;
+			}	
+	}
+}
+
+a {
+	color: @dark;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: @popone;
+		text-decoration: none;
+	}
+}
+
+#main p a {
+	text-decoration: underline;
+	&:hover,
+	&:focus {
+		color: @popone;
+		text-decoration: underline;
+	}	
+}
+
+footer {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: @sansserif;
+	
+	.footer-links {
+		text-align: center;
+		letter-spacing: 6px;
+	}
+}
