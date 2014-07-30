@@ -13,6 +13,7 @@
     "autoform": {},
     "just-i18n": {},
     "collection-behaviours": {},
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "jquery-csv": {}
   }
 }

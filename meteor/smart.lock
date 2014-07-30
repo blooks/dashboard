@@ -16,7 +16,8 @@
       "autoform": {},
       "just-i18n": {},
       "collection-behaviours": {},
-      "bootstrap3-less": {}
+      "bootstrap3-less": {},
+      "jquery-csv": {}
     },
     "packages": {
       "iron-router": {
@@ -53,6 +54,11 @@
         "git": "https://github.com/simison/bootstrap3-less",
         "tag": "v0.2.1",
         "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
+      },
+      "jquery-csv": {
+        "git": "https://github.com/donskifarrell/meteor-jquery-csv.git",
+        "tag": "v0.7.1",
+        "commit": "7a7d868dd85da5d64dc4a174a3e5d5e2bbf90c03"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
