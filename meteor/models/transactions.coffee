@@ -1,5 +1,5 @@
 # Create the meteor collection
-Trades = new Meteor.Collection('trades')
+Transactions = new Meteor.Collection('transactions')
 
 Schemas = {}
 
@@ -10,7 +10,7 @@ Schemas.Amount = new SimpleSchema
   currency:
     type: String
 
-Schemas.Trade = new SimpleSchema
+Schemas.Transaction = new SimpleSchema
   _id:
     type: String
     regEx: SimpleSchema.RegEx.Id
@@ -34,9 +34,9 @@ Schemas.Trade = new SimpleSchema
   importLineId:
     type: String
 
-Trades.attachSchema Schemas.Trade
+Transactions.attachSchema Schemas.Transaction
 
 # Add the created / updated fields
-Trades.timestampable()
+Transactions.timestampable()
 # Use soft delete
-Trades.softRemovable()
+Transactions.softRemovable()
