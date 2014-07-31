@@ -2,6 +2,9 @@
 table {
     font-size: 13px;
     font-size: 1.3rem;
+    &.table-bordered {
+    border: none;
+}
   thead {
     tr {
         th {
@@ -11,18 +14,31 @@ table {
                
                 &.supa-header {
                  text-align: center;
+                 color: @whyte;
+                 
+                     &.inflow {
+                        background-color: @positive;
+                     }
+
+                     &.outflow {
+                        background-color: @negative;
+                     }                
                 }
+
+                &.no-border {
+                            border: none;                              
+                            }             
             }
         }      
    }
   
   td {
     &.inflow {
-        background-color: lighten(@positive, 70%);
+        color: @positive;
       }
 
       &.outflow {
-        background-color: lighten(@negative, 30%);
+        color: @negative;
       }  
   }
 }
@@ -30,15 +46,6 @@ table {
 .table-zb-hover>tbody>tr:hover>td, 
 .table-zb-hover>tbody>tr:hover>th {
     background: url(../../img/table-hover.png) repeat transparent;
-
-    &.inflow {
-        background-color: lighten(@positive, 70%);
-      }
-
-      &.outflow {
-        background-color: lighten(@negative, 30%);
-   }  
-
 }
 
 

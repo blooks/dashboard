@@ -32,8 +32,8 @@
     <img src="img/zb-logo.png" />
   </div>
   </header>
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+
     <h2>Transactions</h2>
 
     <div class="add-trns-zone">
@@ -45,23 +45,23 @@
     <div class="add-trns-zone">
       <h2>Add Single Transaction</h2>
       <form action="#" class="" id="#" method="post">
-        <table class="table table-condensed table-responsive">
+        <table class="table table-bordered">
           <thead>
             <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2" class="supa-header">Inflow</th>
-              <th colspan="2" class="supa-header">Outflow</th>
-              <th colspan="2">&nbsp;</th>
+              <th colspan="2" class="no-border">&nbsp;</th>
+              <th colspan="2" class="supa-header inflow">Inflow</th>
+              <th colspan="2" class="supa-header outflow">Outflow</th>
+              <th colspan="2" class="no-border">&nbsp;</th>
            </tr>            
 
             <tr>
-              <th>Date <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Source <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th class="inflow">Amount bought <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th class="inflow">Currency <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th class="outflow">Amount sold <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th class="outflow">Currency <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Volume <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Date <a href="#" data-toggle="tooltip" data-placement="top" title="Input date must be in format: dd/mm/yyyy"><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Source <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th class="inflow">Amount bought <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th class="inflow">Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th class="outflow">Amount sold <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th class="outflow">Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Volume <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
               <th>&nbsp;</th>
            </tr>
           </thead>
@@ -78,25 +78,24 @@
         </table>
       </form>
     </div>
-  </div> <!-- /.row -->
-  <div class="row">
-      <table class="table table-condensed table-zb-hover table-responsive">
+
+    <table class="table table-bordered table-zb-hover">
           <thead>
             <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2" class="supa-header">Inflow</th>
-              <th colspan="2" class="supa-header">Outflow</th>
-              <th colspan="2">&nbsp;</th>
+              <th colspan="2" class="no-border">&nbsp;</th>
+              <th colspan="2" class="supa-header inflow">Inflow</th>
+              <th colspan="2" class="supa-header outflow">Outflow</th>
+              <th colspan="2" class="no-border">&nbsp;</th>
            </tr>            
 
             <tr>
-              <th>Date <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Source <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Value bought <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Currency <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Value sold <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Currency <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
-              <th>Volume <a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Date <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Source <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Amount bought <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Amount sold <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+              <th>Volume <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
               <th></th>
            </tr>
           </thead>
@@ -133,7 +132,6 @@
           </tr>                    
         </tbody>
       </table>
-     </div>
 
       <div class="pull-right">
         <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
@@ -145,6 +143,8 @@
     <p>copyright 2014</p> 
   </footer>
 
-
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
 
 </body>
