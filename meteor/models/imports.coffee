@@ -33,6 +33,8 @@ Schemas.Import = new SimpleSchema
 
 # Add the created / updated fields
 Imports.timestampable()
+# Ensure every document is owned by a user
+Imports.owned()
 
 # Define what's allowed
 Imports.allow
