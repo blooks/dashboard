@@ -47,7 +47,7 @@ Transactions.timed()
 # Use soft delete
 Transactions.softRemovable()
 # Ensure every document is owned by a user
-Imports.owned()
+Transactions.owned()
 
 Transactions.allow
   insert: (userId, item) ->

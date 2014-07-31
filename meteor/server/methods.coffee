@@ -1,9 +1,10 @@
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
+  errors = []
   for line in lineObjs
     # Instantiate an empty transaction
     txn = {}
-    txn.date = new Date(line.date)
+    txn.date = new Date(line.date) #40
     txn.importId = importId
     txn.importLineId = line._id
     txn.source = 'bitstamp'
@@ -26,7 +27,10 @@ insertBitstampTransactions = (importId, lineObjs) ->
       try
         txnId = Transactions.insert txn
       catch e
+        errors.push e
         console.log e
+  # If no errors, return true, otherwise, false
+  errors.length isnt 0
 
 # Parse the bitstamp CSV text
 parseBitstamp = (csvLines) ->
@@ -54,12 +58,11 @@ parseBitstamp = (csvLines) ->
       format: 'bitstamp_csv_1'
       lines: lineObjs
   catch e
-    console.log 'insert failed'
+    console.log 'Inserting the import failed:'
     console.log e
-    false
-  finally
-    # Create the transactions from lineObjs
-    insertBitstampTransactions(importId, lineObjs)
+    return false # If the insert failed, return false and stop here
+  # Create the transactions from lineObjs
+  insertBitstampTransactions(importId, lineObjs)
 
 # Async parse CSV function
 asyncParseCSV = (csvText, callback) ->
@@ -80,7 +83,7 @@ Meteor.methods
     try
       csvLines = syncParseCSV(fileData)
     catch e
-      console.log 'Exception thrown'
+      console.log 'Parsing of the uploaded CSV data failed:'
       console.log e
-    finally
-      parseBitstamp(csvLines)
+      return false # If the parse failed, return false and stop here
+    parseBitstamp(csvLines)
