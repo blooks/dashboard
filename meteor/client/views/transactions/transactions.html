@@ -2,12 +2,7 @@
 <div class="container">
     <div class="row">
     <h2>Transactions</h2>
-
-    <div class="add-trns-zone">
-      <!-- Show only if there's no transactions (also show empty transaction table below!) -->
-      <h3>No transactions...</h3>
-      <p>Please add some transactions to get started. Either import or add manually below.</p>
-    </div>
+    {{#if transactions}}
 
     <div class="add-trns-zone">
       <h2>Add Single Transaction</h2>
@@ -45,6 +40,14 @@
         </table>
       </form>
     </div>
+
+    {{else}}
+    <div class="add-trns-zone">
+      <h3>No transactions...</h3>
+      <p>Please add some transactions to get started. Either import or add manually below.</p>
+    </div>
+    {{/if}}
+
   </div> <!-- /.row -->
   <div class="row">
       <table class="table table-condensed table-hover table-responsive">
