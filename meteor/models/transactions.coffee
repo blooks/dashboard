@@ -17,6 +17,7 @@ Schemas.Transaction = new SimpleSchema
   # Owner
   userId:
     type: String
+    regEx: SimpleSchema.RegEx.Id
   # Trade info
   in:
     type: Schemas.Amount
