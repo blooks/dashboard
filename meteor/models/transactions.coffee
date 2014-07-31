@@ -1,5 +1,5 @@
 # Create the meteor collection
-Transactions = new Meteor.Collection('transactions')
+@Transactions = new Meteor.Collection('transactions')
 
 Schemas = {}
 
@@ -34,6 +34,7 @@ Schemas.Transaction = new SimpleSchema
   importLineId:
     type: String
 
+# Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
 
 # Add the created / updated fields
