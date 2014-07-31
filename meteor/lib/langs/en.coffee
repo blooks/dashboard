@@ -3,6 +3,13 @@ i18n.showMissing(true)
 
 # Let's try to separate strings by views, as much as possible.
 i18n.map 'en_GB',
+
+  # Template wide strings
+  template:
+    headings:
+      dashboard: 'Dashboard'
+      transactions: 'Transactions'
+      upload: 'Upload'
   
   # Transactions
   transactions:
