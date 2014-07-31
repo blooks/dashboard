@@ -16,6 +16,10 @@ Schemas.Import = new SimpleSchema
   _id:
     type: String
     regEx: SimpleSchema.RegEx.Id
+  # Owner
+  userId:
+    type: String
+    regEx: SimpleSchema.RegEx.Id
   source:
     type: String
   format:
