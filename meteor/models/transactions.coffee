@@ -40,7 +40,7 @@ Schemas.Transaction = new SimpleSchema
 Transactions.attachSchema Schemas.Transaction
 
 # Add the created / updated fields
-Transactions.timestampable()
+Transactions.timed()
 # Use soft delete
 Transactions.softRemovable()
 # Ensure every document is owned by a user
