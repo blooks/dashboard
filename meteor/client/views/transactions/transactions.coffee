@@ -1,2 +1,2 @@
 Template.transactions.transactions = ->
-	Transactions.find().fetch()
+  Transactions.find().fetch()
