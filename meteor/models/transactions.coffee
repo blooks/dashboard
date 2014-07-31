@@ -38,6 +38,12 @@ Schemas.Transaction = new SimpleSchema
   importLineId:
     type: String
     optional: true
+  removed:
+    type: Boolean
+    optional: true
+  removedAt:
+    type: Number # Timestamp
+    optional: true
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
