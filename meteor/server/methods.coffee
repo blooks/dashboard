@@ -1,28 +1,26 @@
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
   for line in lineObjs
-    console.log 'doing line'
-    console.log line
     # Instantiate an empty transaction
     txn = {}
     txn.date = new Date(line.date)
     txn.importId = importId
     txn.importLineId = line._id
     txn.source = 'bitstamp'
-    if line.type is '1' # trade
+    if line.type is '2' # trade
       if line.btc_amount.substr(0,1) is '-' # trade is a sale of bitcoin for USD
         txn.in =
-          amount: btc_amount
+          amount: line.btc_amount.substr(1) # Trim off the initial -
           currency: 'BTC'
         txn.out =
-          amount: usd_amount
+          amount: line.usd_amount
           currency: 'USD'
-      else # trade is a buy of bitcoin with USD
+      else if line.usd_amount.substr(0,1) is '-' # trade is a buy of bitcoin with USD
         txn.in =
-          amount: usd_amount
+          amount: line.usd_amount.substr(1) # Trime off the initial -
           currency: 'USD'
         txn.out =
-          amount: btc_amount
+          amount: line.btc_amount
           currency: 'BTC'
       # For now, only insert if it's a trade
       try
