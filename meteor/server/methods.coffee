@@ -4,7 +4,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
   for line in lineObjs
     # Instantiate an empty transaction
     txn = {}
-    txn.date = new Date(line.date)
+    txn.date = new Date(line.date) #40
     txn.importId = importId
     txn.importLineId = line._id
     txn.source = 'bitstamp'
