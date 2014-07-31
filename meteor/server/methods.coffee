@@ -30,7 +30,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         errors.push e
         console.log e
   # If no errors, return true, otherwise, false
-  errors.length isnt 0
+  errors.length is 0
 
 # Parse the bitstamp CSV text
 parseBitstamp = (csvLines) ->
