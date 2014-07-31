@@ -6,5 +6,9 @@ i18n.map 'en_GB',
   
   # Transactions
   transactions:
+    headings:
+      transactions: 'Transactions'
+      addSingle: 'Add Single Transaction'
     buttons:
       newTransaction: 'Add Transaction'
+      calculateTax: 'Calculate Tax'

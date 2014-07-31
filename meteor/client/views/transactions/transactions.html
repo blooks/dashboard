@@ -1,7 +1,7 @@
 <template name="transactions">
 <div class="container">
     <div class="row">
-    <h2>Transactions</h2>
+    <h2>{{i18n 'transactions.headings.transactions'}}</h2>
     {{#if transactions}}
 
       <div class="add-trns-zone">
@@ -55,7 +55,7 @@
      </div>
 
       <div class="pull-right">
-        <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
+        <a href="#" class="btn btn-primary btn-lg">{{i18n 'transactions.buttons.calculateTax'}}</a>
       </div>     
 
   </div> <!-- /container -->
