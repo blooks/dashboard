@@ -11,6 +11,21 @@ Schemas.Line = new SimpleSchema
   id:
     type: String
     optional: true
+  type:
+    type: String
+    optional: true
+  date:
+    type: String
+    optional: true
+  btc_amount:
+    type: String
+    optional: true
+  usd_amount:
+    type: String
+    optional: true
+  fee:
+    type: String
+    optional: true
 
 Schemas.Import = new SimpleSchema
   # Disable these for now pending #35
