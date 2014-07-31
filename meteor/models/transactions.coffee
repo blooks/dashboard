@@ -26,6 +26,7 @@ Schemas.Transaction = new SimpleSchema
     type: Schemas.Amount
   base:
     type: Schemas.Amount
+    optional: true
   # Metadata
   date:
     type: Date
