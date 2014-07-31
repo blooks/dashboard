@@ -30,20 +30,82 @@
   <header>
   <div class="container">
     <img src="img/zb-logo.png" />
+       
+      <ul class="nav nav-pills nav-justified" role="navigation">
+        <li><a href="index.html">Login</a></li>
+        <li><a href="trades.html" class="active">Transactions</a></li>
+        <li><a href="#">Tax</a></li>
+      </ul>
   </div>
   </header>
-  <div class="container-fluid">
+  <div class="container">
 
-    <h2>Transactions</h2>
+    <h1 class="process-title">Transactions Overview</h1>
+    <div class="sub-menu-zone pull-right">
+      <!-- Button trigger modal -->
+      <a href="#" data-toggle="modal" data-target="#helpModal">
+        <span class="glyphicon glyphicon-hand-right"></span> Help
+      </a>
 
-    <div class="add-trns-zone">
-      <!-- Show only if there's no transactions (also show empty transaction table below!) -->
-      <h3>No transactions...</h3>
-      <p>Please add some transactions to get started. Either import or add manually below.</p>
+      <!-- Modal -->
+      <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">How to do your taxes</h4>
+            </div>
+            <div class="modal-body">
+              <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
+              </p>
+              <p>
+              Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
+              </p>
+              <p>
+              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
+              </p>
+              <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
+              </p>
+              <p>
+              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
+              </p>
+              <hr />
+              <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
+              </p>
+              <p>
+              Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
+              </p>
+              <p>
+              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
+              </p>
+              <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
+              </p>
+              <p>
+              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
+              </p>              
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
+  </div> <!-- /.container -->
+  <div class="container-fluid">
+    <div class="row">  
+      <div class="col-sm-6 col-sm-offset-3">
+        <!-- Show only if there's no transactions (also show empty transaction table below!) -->
+        <div class="empty-msg">
+          <h3>No transactions...</h3>
+          <p>Please add some transactions to get started. Either import or add manually below.</p>
+        </div>
+      </div>
+    </div>
     <div class="add-trns-zone">
-      <h2>Add Single Transaction</h2>
+      <h2>Add Transaction Manually <i class="fa fa-angle-down"></i></h2>
       <form action="#" class="" id="#" method="post">
         <table class="table table-bordered">
           <thead>
@@ -78,8 +140,9 @@
         </table>
       </form>
     </div>
-
-    <table class="table table-bordered table-zb-hover">
+    
+    <h2>Transactions</h2>
+    <table class="table table-bordered table-zb-hover" >
           <thead>
             <tr>
               <th colspan="2" class="no-border">&nbsp;</th>
@@ -133,7 +196,8 @@
         </tbody>
       </table>
 
-      <div class="pull-right">
+      <div class="call-to-action-zone text-center">
+        <i class="fa fa-angle-down"></i>
         <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
       </div>     
 

@@ -2,9 +2,11 @@
 table {
     font-size: 13px;
     font-size: 1.3rem;
+    
     &.table-bordered {
-    border: none;
-}
+        border: none;
+    }
+
   thead {
     tr {
         th {
@@ -41,6 +43,24 @@ table {
         color: @negative;
       }  
   }
+
+  a {
+        .glyphicon {
+        color: @darkgrey;
+            &:hover {
+                color: @darkblue;
+            }
+        }
+
+    }
+
+    .tooltip.top .tooltip-inner {
+        background-color:@darkblue;
+    }
+    
+    .tooltip.top .tooltip-arrow {
+        border-top-color: @darkblue;
+    }
 }
 
 .table-zb-hover>tbody>tr:hover>td, 
