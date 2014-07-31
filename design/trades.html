@@ -35,139 +35,109 @@
   <div class="container">
     <div class="row">
     <h2>Transactions</h2>
+
+    <div class="add-trns-zone">
+      <!-- Show only if there's no transactions (also show empty transaction table below!) -->
+      <h3>No transactions...</h3>
+      <p>Please add some transactions to get started. Either import or add manually below.</p>
+    </div>
+
     <div class="add-trns-zone">
       <h2>Add Single Transaction</h2>
-      <!-- Inbound coins not interesting? -->
       <form action="#" class="" id="#" method="post">
-        <table class="table table-bordered table-responsive">
+        <table class="table table-condensed table-hover table-responsive">
           <thead>
-          <th><span>Date</span></th>
-          <th><span>Exchange</span></th>
-          <th><span>Note</span></th>
-          <th><span>CryptoCoin Amount</span></th>
-          <th><span>Fiat Value</span></th>
-          <th><span>Type</span></th>
-          <th></th>
+            <tr>
+              <th colspan="2">&nbsp;</th>
+              <th colspan="2">Inflow</th>
+              <th colspan="2">Outflow</th>
+              <th colspan="2">&nbsp;</th>
+           </tr>            
+
+            <tr>
+              <th>Date</th>
+              <th>Source</th>
+              <th>Value bought</th>
+              <th>Currency</th>
+              <th>Value sold</th>
+              <th>Currency sold</th>
+              <th>Volume</th>
+              <th></th>
+           </tr>
           </thead>
           <tbody>
-          <td><input as="date" class="form-control" id="#" name="" type="text" /></td>
-          <td><input class="form-control" id="#" name="" type="text" /></td>
-          <td><input class="form-control" id="#" name="" type="text" /></td>
-          <td><input class="form-control" id="#" name="" type="text" /></td>
-          <td><input class="form-control" id="#" name="" type="text" /></td>
-          <td>
-            <select id="tax_type" name="tax_type" class="btn">
-              <option value="0"> - Type - </option>
-              <option value="1">Transfer</option>
-              <option value="2">Sale</option>
-              <option value="3">Gift</option>
-              <option value="4">Transfer</option>
-              <option value="5">Donation</option>
-            </select>
-          </td>
-          <td> <input class="btn btn-default" name="commit" type="submit" value="Add" /></td>
+            <td><input as="date" class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><input class="form-control" id="#" name="" type="text" /></td>
+            <td><a href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
           </tbody>
         </table>
       </form>
-      <div class="pull-right">
-      <a href="#" class="btn btn-primary">Calculate</a>
-      </div>
     </div>
-  </div>
-  <div class="row">    
-    <div class="add-trns-zone">
-      <h3>No transactions...</h3>
-  <p>Please add some transactions to get started. Either import or add manually below.</p>
-    </div>
-  </div>
+  </div> <!-- /.row -->
   <div class="row">
       <table class="table table-condensed table-hover table-responsive">
-        <thead>
-          <tr>  
-            <th>Date</th>
-            <th>Sent to</th>
-            <th>Note</th>
-            <th>Amount</th>
-            <th>CryptoCoin</th>
-            <th>Fiat value</th>
-            <th>Type </th>
-            <th>&nbsp;</th>
-          </tr>
-        </thead>
+          <thead>
+            <tr>
+              <th colspan="2">&nbsp;</th>
+              <th colspan="2">Inflow</th>
+              <th colspan="2">Outflow</th>
+              <th colspan="2">&nbsp;</th>
+           </tr>            
+
+            <tr>
+              <th>Date</th>
+              <th>Source</th>
+              <th>Value bought</th>
+              <th>Currency</th>
+              <th>Value sold</th>
+              <th>Currency</th>
+              <th>Volume</th>
+              <th></th>
+           </tr>
+          </thead>
         <tbody>
           <tr>
             <td>01/12/2013</td>
-            <td>1QJcTDCQwbPGGnwBMwhpzkLMgXiW6fpqkr</td>
-            <td>Coffee</td>
-            <td>0.0039</td>
-            <td>BTC</td>
-            <td>2.30</td>
-            <td>
-              <div class="btn-group">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                  Type
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                   <li>Sale</li>
-                   <li>Gift</li>
-                   <li>Transfer</li>
-                   <li>Donation</li>                
-                </ul>
-              </div>
-            </td>
+            <td>Bitstamp</td>
+            <td>1 BTC</td>
+            <td>Bitcoin</td>
+            <td>100$</td>
+            <td>USD</td>
+            <td>120 €</td>
             <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
-
-
           </tr>
           <tr>
             <td>01/12/2013</td>
-            <td>1QJcTDCQwbPGGnwBMwhpzkLMgXiW6fpqkr</td>
-            <td>Coffee</td>
-            <td>0.0039</td>
-            <td>BTC</td>
-            <td>2.30</td>
-            <td>                 
-              <select id="tax_type" name="tax_type" class="btn">
-                <option value="0"> - Type - </option>
-                <option value="1">Transfer</option>
-                <option value="2">Sale</option>
-                <option value="3">Gift</option>
-                <option value="4">Transfer</option>
-                <option value="5">Donation</option>
-              </select>
-            </td>
-
+            <td>Bitstamp</td>
+            <td>1 BTC</td>
+            <td>Bitcoin</td>
+            <td>100$</td>
+            <td>USD</td>
+            <td>120 €</td>
             <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
-
-
           </tr>
           <tr>
             <td>01/12/2013</td>
-            <td>1QJcTDCQwbPGGnwBMwhpzkLMgXiW6fpqkr</td>
-            <td>Coffee</td>
-            <td>0.0039</td>
-            <td>BTC</td>
-            <td>2.30</td>
-            <td>
-              <div class="btn-group">
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                  Type
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                   <li>Sale</li>
-                   <li>Gift</li>
-                   <li>Transfer</li>
-                   <li>Donation</li>                
-                </ul>
-              </div>
-            </td>
+            <td>Bitstamp</td>
+            <td>1 BTC</td>
+            <td>Bitcoin</td>
+            <td>100$</td>
+            <td>USD</td>
+            <td>120 €</td>
             <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
           </tr>                    
         </tbody>
       </table>
      </div>
+
+      <div class="pull-right">
+        <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
+      </div>     
 
   </div> <!-- /container -->
 
