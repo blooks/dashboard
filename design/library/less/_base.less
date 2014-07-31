@@ -1,5 +1,8 @@
-/* Base css, mobile-first */
+/* Variables.less files that are changed:
 
+
+
+/* Base css, mobile-first */
 html,
 body {
   height: 100%;
@@ -22,42 +25,10 @@ body	{
 /* Global Page Sections
 ------------------------------ */
 
-/* Nav 
--------------------- */
-.navbar-default {
-	border-bottom: 1px solid @darkgrey;
 
-	.navbar-toggle {
-		border-radius: 0;
-	}
-	
-	.navbar-nav {
-
-		li {
-			a {
-				color: @darkgrey;
-				&:hover {
-						color: lighten(@zbone, 10%);
-				}
-			}
-		}
-		
-		.active  {
-			a, a:hover {			
-				background: none;
-				color: @zbone;
-			}
-		}		
-	}
-} 
 
 /* Main Zones
 -------------------- */
-body#content {
-
-
-}
-
 #content {
 	margin-top: 70px;
 }
@@ -70,92 +41,8 @@ footer {
 	font-size: 12px; font-size: 1.2rem;	
 }
 
-.footer-links {
-  	float: none;	
-	
-	.menu {
-	   display: table;
-	   letter-spacing: 3px;
-	   margin: 0 auto;
-	   padding-left: 0;
-
-	   li {
-	   		min-width: 70px;
-	   		border-right: 1px solid @grey;
-	   		text-align: center;
-		   	padding: 1px 10px;	   		
-
-	   		&:first-child {
-	   			margin-left: 0;
-	   		}
-	   		&:last-child {
-	   			margin-right: 0;
-	   			border-right: none;	
-	   		}
-
-	   		a {
-	   			color: @darkgrey;
-	   		}
-	   }
-	}
-}
-
-
 /* Page Specific
 ---------------- */
-
-/* Home page banner */
-.image-bg-fluid-height {
-	background: url('../../img/zb-clean-banner.jpg') no-repeat center center scroll;
-	padding: 100px 0;
-}
-
-.image-bg-fluid-height {
-    text-align: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-.banner-text {
-	text-align: left;
-	h1 {
-		text-align: left;
-	}
-}
-
-/* Home page zones */
-.front-feature-zone {
-	margin: 30px 0;
-	clear: both;
-
-	.front-feature-item {
-		text-align: center;
-		margin-bottom: 50px;
-
-		p {
-			text-align: center;
-			/*
-			text-align: justify;
-			text-justify: newspaper
-			*/
-		}
-	}
-
-}
-
-.team-zone {	
-	background-color: @darkblue;
-	max-width: 100%;
-	padding: 50px 0;
-
-
-	h3 {
-		text-align: center;
-	}
-}
-
 .call-to-action-zone {
 	text-align: center;
 	padding: 50px 0;
@@ -188,6 +75,28 @@ footer {
 
 			}
 		}		
+	}
+
+}
+
+/* Form styling
+---------------- */
+.text-form {
+	input {
+
+		&.spacy {
+			padding: 25px 30px; margin-bottom: 20px; 
+			background: none;
+			border: 1px solid @lightgrey;
+			letter-spacing: 3px;
+			font-size: 16px;font-size: 1.6rem;
+		}
+
+		&:hover {
+			color: lighten(@dark, 50%);
+			border: 1px solid lighten(@dark, 50%);
+		}
+
 	}
 
 }
