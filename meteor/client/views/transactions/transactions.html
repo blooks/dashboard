@@ -6,6 +6,20 @@
 
       <div class="add-trns-zone">
         <h2>Add Single Transaction</h2>
+
+        {{!--
+          quickForm renders an entire form, in this case an insert form.
+          It could be replaced with a {{> autoForm}} and {{> afQuickField}} tags
+          instead which would achieve the same result, but allow for greater
+          customisation.
+        --}}
+        {{> quickForm
+          collection='Transactions'
+          id='insertTransactionForm'
+          type='insert'
+        }}
+
+{{!--
         <form action="#" class="" id="#" method="post">
           <table class="table table-condensed table-hover table-responsive">
             <thead>
@@ -38,6 +52,7 @@
             </tbody>
           </table>
         </form>
+--}}
       </div>
 
     {{else}}
