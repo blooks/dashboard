@@ -1,17 +1,33 @@
 <template name="newTransaction">
   <h2>Add Single Transaction</h2>
 
-  {{!--
-    quickForm renders an entire form, in this case an insert form.
-    It could be replaced with a {{> autoForm}} and {{> afQuickField}} tags
-    instead which would achieve the same result, but allow for greater
-    customisation.
-  --}}
-  {{> quickForm
+  {{#autoForm
     collection='Transactions'
     id='insertTransactionForm'
     type='insert'
   }}
+    <div class="col-xs-4">
+      {{>afQuickField name='in'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='out'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='base'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='date'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='source'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='note'}}
+    </div>
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary btn-lg">Add Transaction</button>
+    </div>
+  {{/autoForm}}
 
 {{!--
   <form action="#" class="" id="#" method="post">
