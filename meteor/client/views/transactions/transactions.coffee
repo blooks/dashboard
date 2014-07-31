@@ -1,1 +1,2 @@
-Templates.transactions.transactions
+Template.transactions.transactions = ->
+	Transactions.find().fetch()
