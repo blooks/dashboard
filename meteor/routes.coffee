@@ -9,6 +9,9 @@ Router.map ->
     path: '/transactions'
   #js this.route('transactions', {path: '/transactions'});
 
+  @route 'upload',
+    path: '/upload'
+
   @route 'notFound',
     path: '*'
     where: 'server'

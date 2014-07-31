@@ -14,7 +14,8 @@
       "autoform": {},
       "just-i18n": {},
       "collection-behaviours": {},
-      "bootstrap3-less": {}
+      "bootstrap3-less": {},
+      "node-csv-npm": {}
     },
     "packages": {
       "iron-router": {
@@ -51,6 +52,11 @@
         "git": "https://github.com/simison/bootstrap3-less",
         "tag": "v0.2.1",
         "commit": "dc94a51ed00d7de6d6f2b6d65107a876d849ad61"
+      },
+      "node-csv-npm": {
+        "git": "https://github.com/Dsyko/meteor-node-csv.git",
+        "tag": "v0.3.6",
+        "commit": "01be0e3e834a4f033121cb3fcc92c2697741170d"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
