@@ -20,7 +20,7 @@ suite('Transactions', function() {
           "amount": "100"
           , "currency": "USD"
         }
-        , "date" : new Date("2013-04-10T09:14:29+01")
+        , "date" : new Date("2013-04-10T09:14:29+0100")
         , "source" : "bitstamp"
         , "importId" : "1"
         , "importLineId" : "1"
