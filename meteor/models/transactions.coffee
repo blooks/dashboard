@@ -11,13 +11,14 @@ Schemas.Amount = new SimpleSchema
     type: String
 
 Schemas.Transaction = new SimpleSchema
-  _id:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
-  # Owner
-  userId:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
+  # Disable these for now pending #35
+  #_id:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
+  ## Owner
+  #userId:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
   # Trade info
   in:
     type: Schemas.Amount
@@ -42,6 +43,8 @@ Transactions.attachSchema Schemas.Transaction
 Transactions.timestampable()
 # Use soft delete
 Transactions.softRemovable()
+# Ensure every document is owned by a user
+Imports.owned()
 
 Transactions.allow
   insert: (userId, item) ->

@@ -13,13 +13,14 @@ Schemas.Line = new SimpleSchema
     optional: true
 
 Schemas.Import = new SimpleSchema
-  _id:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
+  # Disable these for now pending #35
+  #_id:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
   # Owner
-  userId:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
+  #userId:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
   source:
     type: String
   format:
@@ -29,7 +30,7 @@ Schemas.Import = new SimpleSchema
     minCount: 1
 
 # Attach the schema to the collection
-#Imports.attachSchema(Schemas.Import)
+Imports.attachSchema(Schemas.Import)
 
 # Add the created / updated fields
 Imports.timestampable()
