@@ -4,5 +4,6 @@ Template.upload.events
     file = event.currentTarget.files[0]
     reader = new FileReader()
     reader.onload = (fileLoadEvent) ->
-       Meteor.call('uploadCSV', file, reader.result)
+      Meteor.call 'uploadCSV', file, reader.result, (err, response) ->
+        @$('#file-upload').text('done')
     reader.readAsBinaryString(file)
