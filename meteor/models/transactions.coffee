@@ -11,12 +11,14 @@ Schemas.Amount = new SimpleSchema
     type: String
 
 Schemas.Transaction = new SimpleSchema
-  _id:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
-  # Owner
-  userId:
-    type: String
+  # Disable these for now pending #35
+  #_id:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
+  ## Owner
+  #userId:
+  #  type: String
+  #  regEx: SimpleSchema.RegEx.Id
   # Trade info
   in:
     type: Schemas.Amount
@@ -24,6 +26,7 @@ Schemas.Transaction = new SimpleSchema
     type: Schemas.Amount
   base:
     type: Schemas.Amount
+    optional: true
   # Metadata
   date:
     type: Date
@@ -38,6 +41,18 @@ Schemas.Transaction = new SimpleSchema
 Transactions.attachSchema Schemas.Transaction
 
 # Add the created / updated fields
-Transactions.timestampable()
+Transactions.timed()
 # Use soft delete
 Transactions.softRemovable()
+# Ensure every document is owned by a user
+Imports.owned()
+
+Transactions.allow
+  insert: (userId, item) ->
+    if not userId?
+      throw new Meteor.Error 400, "You need to log in to insert."
+    _.extend item, userId: userId
+  update: (userId, doc, filedNames, modifier) ->
+    if userId isnt doc.userId
+      throw new Meteor.Error 400, "You can only edit your entries."
+    true
