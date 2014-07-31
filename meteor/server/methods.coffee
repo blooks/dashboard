@@ -1,5 +1,6 @@
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
+  errors = []
   for line in lineObjs
     # Instantiate an empty transaction
     txn = {}
@@ -26,7 +27,10 @@ insertBitstampTransactions = (importId, lineObjs) ->
       try
         txnId = Transactions.insert txn
       catch e
+        errors.push e
         console.log e
+  # If no errors, return true, otherwise, false
+  errors.length isnt 0
 
 # Parse the bitstamp CSV text
 parseBitstamp = (csvLines) ->
