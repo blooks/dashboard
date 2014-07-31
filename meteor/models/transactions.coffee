@@ -38,6 +38,12 @@ Schemas.Transaction = new SimpleSchema
   importLineId:
     type: String
     optional: true
+  removed:
+    type: Boolean
+    optional: true
+  removedAt:
+    type: Number # Timestamp
+    optional: true
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
@@ -56,5 +62,10 @@ Transactions.allow
     _.extend item, userId: userId
   update: (userId, doc, filedNames, modifier) ->
     if userId isnt doc.userId
-      throw new Meteor.Error 400, "You can only edit your entries."
+      throw new Meteor.Error 400, "You can only edit your own entries."
+    true
+  remove: (userId, doc) ->
+    if doc.userId isnt userId
+      throw new Meteor.Error 400, "You can only delete your own entries."
+    console.log 'allowing the remove in Transactions.allow'
     true
