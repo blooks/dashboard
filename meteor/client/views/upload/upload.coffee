@@ -1,3 +1,4 @@
+# Inspired by https://coderwall.com/p/7tpa8w
 Template.upload.events
   'change .file-upload-input': (event, template) ->
     file = event.currentTarget.files[0]
