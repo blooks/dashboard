@@ -34,8 +34,10 @@ Schemas.Transaction = new SimpleSchema
     type: String
   importId:
     type: String
+    optional: true
   importLineId:
     type: String
+    optional: true
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
