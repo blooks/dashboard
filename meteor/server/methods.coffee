@@ -18,12 +18,10 @@ parseBitstamp = (csvLines) ->
     lineObj._id = Random.id()
     lineObjs.push(lineObj)
   # Insert the import into the imports collection
-  console.log 'about to insert'
-  rslt = Imports.insert
+  Imports.insert
     source: 'bitstamp_upload_csv'
     format: 'bitstamp_csv_1'
     lines: lineObjs
-  console.log rslt
 
 # Async parse CSV function
 asyncParseCSV = (csvText, callback) ->
