@@ -1,4 +1,36 @@
-# Bitstamp parser
+# Take the output from parseBitstamp and create transactions
+insertBitstampTransactions = (importId, lineObjs) ->
+  for line in lineObjs
+    console.log 'doing line'
+    console.log line
+    # Instantiate an empty transaction
+    txn = {}
+    txn.date = new Date(line.date)
+    txn.importId = importId
+    txn.importLineId = line._id
+    txn.source = 'bitstamp'
+    if line.type is '1' # trade
+      if line.btc_amount.substr(0,1) is '-' # trade is a sale of bitcoin for USD
+        txn.in =
+          amount: btc_amount
+          currency: 'BTC'
+        txn.out =
+          amount: usd_amount
+          currency: 'USD'
+      else # trade is a buy of bitcoin with USD
+        txn.in =
+          amount: usd_amount
+          currency: 'USD'
+        txn.out =
+          amount: btc_amount
+          currency: 'BTC'
+      # For now, only insert if it's a trade
+      try
+        txnId = Transactions.insert txn
+      catch e
+        console.log e
+
+# Parse the bitstamp CSV text
 parseBitstamp = (csvLines) ->
   # Define the CSV format
   fields = [
@@ -19,7 +51,7 @@ parseBitstamp = (csvLines) ->
     lineObjs.push(lineObj)
   # Insert the import into the imports collection
   try
-    Imports.insert
+    importId = Imports.insert
       source: 'bitstamp_upload_csv'
       format: 'bitstamp_csv_1'
       lines: lineObjs
@@ -28,7 +60,8 @@ parseBitstamp = (csvLines) ->
     console.log e
     false
   finally
-    true
+    # Create the transactions from lineObjs
+    insertBitstampTransactions(importId, lineObjs)
 
 # Async parse CSV function
 asyncParseCSV = (csvText, callback) ->
