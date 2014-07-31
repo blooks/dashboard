@@ -13,7 +13,6 @@ accounts-ui
 accounts-entry
 accounts-password
 handlebars-server
-blaze-layout
 autoform
 collection2
 collection-behaviours

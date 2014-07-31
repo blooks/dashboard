@@ -1,8 +1,6 @@
 {
   "packages": {
-    "iron-router": {
-      "version": "0.7.0"
-    },
+    "iron-router": {},
     "accounts-entry": {
       "git": "https://github.com/Differential/accounts-entry.git",
       "branch": "master"
