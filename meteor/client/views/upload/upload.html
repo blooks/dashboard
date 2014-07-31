@@ -1,15 +1,8 @@
 <template name="upload">
   {{!-- Inspired by https://coderwall.com/p/7tpa8w --}}
   <div class="container">
-    <div class="fileupload fileupload-new" data-provides="fileupload">
-      <span class="btn btn-file">
-         <span class="fileupload-new">New</span>
-         <span class="fileupload-exists">Exists</span>
-         <input name="csv" class="file-upload-input" method="uploadCSV" type="file"/>
-      </span>
-      <span class="fileupload-preview">
-      </span>
-      <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-   </div>
+    <div id="file-upload">
+      <input name="csv" class="file-upload-input" method="uploadCSV" type="file"/>
+    </div>
   </div>
 </template>
