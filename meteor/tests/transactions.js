@@ -6,7 +6,7 @@ suite('Transactions', function() {
     server.eval(function() {
       Transactions.insert(
       {
-        "_id": "1"
+        "_id": Random.id()
         ,  "userId": "1"
         ,  "in" : {
           "amount": "1"
@@ -20,7 +20,7 @@ suite('Transactions', function() {
           "amount": "100"
           , "currency": "USD"
         }
-        , "date" : "2013-04-10T09:14:29+01"
+        , "date" : new Date("2013-04-10T09:14:29+01")
         , "source" : "bitstamp"
         , "importId" : "1"
         , "importLineId" : "1"
