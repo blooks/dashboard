@@ -55,7 +55,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
           errors.push e
           console.log e       
     if line.type is '1'
-      if line.btc_amount is '0.00000000' #Fiat withdrawel (in Euros for the time being)
+      if line.btc_amount is '0.00000000' #Fiat withdrawal (in Euros for the time being)
         txn.out =
           amount: line.usd_amount.substr(1)
           currency: 'USD'
