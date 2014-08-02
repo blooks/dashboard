@@ -38,6 +38,10 @@ insertBitstampTransactions = (importId, lineObjs) ->
       catch e
         errors.push e
         console.log e
+    if line.type is '0'
+      if line.btc_amount is '0.00000000'
+        
+
   # If no errors, return true, otherwise, false
   errors.length is 0
 
