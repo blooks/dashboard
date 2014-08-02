@@ -39,7 +39,21 @@ insertBitstampTransactions = (importId, lineObjs) ->
         errors.push e
         console.log e
     if line.type is '0'
-      if line.btc_amount is '0.00000000'
+      if line.btc_amount is '0.00000000' #Fiat deposit (in Euros for the time being)
+        txn.in =
+          amount: line.usd_amount
+          currency: 'USD'
+        txn.out =
+          amount: Math.round(txn.in.amount * getExchangeRate('DE', 'USD', 'EUR', txn.date)*100)/100.toFixed 2 
+          currency: 'EUR'
+        txn.base = 
+          amount: Math.round(txn.in.amount * getExchangeRate('DE', 'USD', 'EUR', txn.date)*100)/100.toFixed 2 
+          currency: 'EUR'
+        try
+          txnId = Transactions.insert txn
+        catch e
+          errors.push e
+          console.log e         
 
 
   # If no errors, return true, otherwise, false
