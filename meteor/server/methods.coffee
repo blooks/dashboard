@@ -23,6 +23,15 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
+      # Experiments! TBR!
+      temp_amount = undefined
+      if txn.in.currency is "USD"
+        temp_amount = txn.in.amount
+      else
+        temp_amount = txn.out.amount
+      txn.base =
+        amount: temp_amount / getExchangeRate('DE', 'USD', 'EUR', txn.date)
+        currency: 'EUR'
       # For now, only insert if it's a trade
       try
         txnId = Transactions.insert txn
