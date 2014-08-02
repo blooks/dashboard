@@ -32,6 +32,9 @@ Schemas.Transaction = new SimpleSchema
     type: Date
   source:
     type: String
+  note:
+    type: String
+    optional: true
   importId:
     type: String
     optional: true

@@ -23,13 +23,13 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
-      # Experiments! TBR!
       temp_amount = undefined
       if txn.in.currency is 'USD'
         temp_amount = txn.in.amount
       else
         temp_amount = txn.out.amount
       txn.base =
+        #Hardcoded base currency! To be improved
         amount: Math.round(temp_amount * getExchangeRate('DE', 'USD', 'EUR', txn.date)*100)/100.toFixed 2 
         currency: 'EUR'
       # For now, only insert if it's a trade
@@ -40,7 +40,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         console.log e
     if line.type is '0'
       if line.btc_amount is '0.00000000'
-        
+
 
   # If no errors, return true, otherwise, false
   errors.length is 0
