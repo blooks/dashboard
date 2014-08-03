@@ -9,6 +9,7 @@ Schemas.Amount = new SimpleSchema
     type: String # Store amounts as string to avoid rounding issues
   currency:
     type: String
+    allowedValues: ['EUR', 'USD', 'BTC']
 
 Schemas.Transaction = new SimpleSchema
   # Disable these for now pending #35
