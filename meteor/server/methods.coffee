@@ -43,6 +43,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.usd_amount
           currency: 'USD'
+        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
       else if line.usd_amount.substr(0,1) is '-' # trade is a buy of bitcoin with USD
         txn.in =
           amount: line.usd_amount.substr(1) # Trime off the initial -
@@ -50,6 +51,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
+        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
     #
     # Bitstamp deposits
     #
@@ -64,6 +66,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
           amount: line.usd_amount
           currency: 'USD'
         txn.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
       #else # Transfer in of BTC
       #  addUnexplainedIncomingBtc(line.btc_amount)
     #
@@ -79,6 +82,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.usd_amount.substr(1)
           currency: 'USD'
+        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
       #else # Withdrawal of BTC
       #  addUnexplainedOutgoingBtc(line.btc_amount)
     # If we have trade data, create a transaction
