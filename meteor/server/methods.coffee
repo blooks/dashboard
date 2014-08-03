@@ -1,3 +1,27 @@
+# Calculate base currency from an amount / currency pair
+calculateBaseAmount = (amt, date = new Date()) ->
+  try
+    # Quick sanity test
+    check amt,
+      amount: String
+      currency: String
+    check(date, Date)
+    # We only have USD rates for now
+    if amt.currency isnt 'USD'
+      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...')
+    #to = Meteor.user.profile.baseCurrency
+    to = 'EUR'
+    #rate = getExchangeRate(amount.currency, to, date)
+    rate = 0.74
+    # Coffeescript magically makes this an object and returns it
+    base =
+      amount: accounting.toFixed(amt.amount * rate, 2)
+      currency: to
+    return base
+  catch e
+    console.log e
+  
+
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
   errors = []
@@ -39,9 +63,9 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.in =
           amount: line.usd_amount
           currency: 'USD'
-        txn.out =
-          amount: '666' # Calculate this
-          currency: 'EUR'
+        txn.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+          #amount: '666'
+          #currency: 'EUR'
       #else # Transfer in of BTC
       #  addUnexplainedIncomingBtc(line.btc_amount)
     #
@@ -53,11 +77,11 @@ insertBitstampTransactions = (importId, lineObjs) ->
     #
     else if line.type is '1' # Withdrawal, USD converted to EUR
       if line.btc_amount is '0.00000000' # Withdrawal
-        txn.in =
-          amount: '666'
-          currency: 'EUR'
+        txn.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+          #amount: '666'
+          #currency: 'EUR'
         txn.out =
-          amount: line.usd_amount
+          amount: line.usd_amount.substr(1)
           currency: 'USD'
       #else # Withdrawal of BTC
       #  addUnexplainedOutgoingBtc(line.btc_amount)
