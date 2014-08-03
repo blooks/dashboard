@@ -64,8 +64,6 @@ insertBitstampTransactions = (importId, lineObjs) ->
           amount: line.usd_amount
           currency: 'USD'
         txn.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
-          #amount: '666'
-          #currency: 'EUR'
       #else # Transfer in of BTC
       #  addUnexplainedIncomingBtc(line.btc_amount)
     #
@@ -78,8 +76,6 @@ insertBitstampTransactions = (importId, lineObjs) ->
     else if line.type is '1' # Withdrawal, USD converted to EUR
       if line.btc_amount is '0.00000000' # Withdrawal
         txn.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
-          #amount: '666'
-          #currency: 'EUR'
         txn.out =
           amount: line.usd_amount.substr(1)
           currency: 'USD'
