@@ -1,3 +1,21 @@
+# Show sign-in page by default, whitelist pages you want to keep open
+mustBeSignedIn = (pause) ->
+  unless Meteor.user() or Meteor.loggingIn()
+    Router.go "entrySignIn"
+    pause()
+  return
+
+# Require users to be signed in for all pages except these
+Router.onBeforeAction mustBeSignedIn,
+  except: [
+    'entrySignIn'
+    'entrySignUp'
+    'entrySignOut'
+    'entryForgotPassword'
+    'contact'
+    'about'
+  ]
+
 Router.map ->
   @route 'home',
     path: '/'

@@ -9,7 +9,6 @@ insecure
 iron-router
 coffeescript
 less
-accounts-ui
 accounts-entry
 accounts-password
 handlebars-server
@@ -19,3 +18,4 @@ collection-behaviours
 bootstrap3-less
 just-i18n
 node-csv-npm
+accounts-ui-bootstrap-3

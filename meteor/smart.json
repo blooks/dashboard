@@ -12,6 +12,7 @@
     "just-i18n": {},
     "collection-behaviours": {},
     "bootstrap3-less": {},
-    "node-csv-npm": {}
+    "node-csv-npm": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }

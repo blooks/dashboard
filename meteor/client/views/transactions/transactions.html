@@ -1,92 +1,62 @@
 <template name="transactions">
-<div class="container">
+  <div class="container">
     <div class="row">
-    <h2>Transactions</h2>
+      <h2>{{i18n 'transactions.headings.transactions'}}</h2>
+    </div> 
+      <div class="row">
 
-    <div class="add-trns-zone">
-      <!-- Show only if there's no transactions (also show empty transaction table below!) -->
-      <h3>No transactions...</h3>
-      <p>Please add some transactions to get started. Either import or add manually below.</p>
-    </div>
+        <div class="add-trns-zone">
+          {{> newTransaction}}
+        </div>
 
-    <div class="add-trns-zone">
-      <h2>Add Single Transaction</h2>
-      <form action="#" class="" id="#" method="post">
+      {{#if transactions}}
         <table class="table table-condensed table-hover table-responsive">
-          <thead>
-            <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2">Inflow</th>
-              <th colspan="2">Outflow</th>
-              <th colspan="2">&nbsp;</th>
-           </tr>            
-
-            <tr>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Value bought</th>
-              <th>Currency</th>
-              <th>Value sold</th>
-              <th>Currency sold</th>
-              <th>Volume</th>
-              <th></th>
-           </tr>
-          </thead>
+            <thead>
+              <tr>
+                <th colspan="2">&nbsp;</th>
+                <th colspan="2">{{i18n 'transactions.headings.table.inflow'}}</th>
+                <th colspan="2">{{i18n 'transactions.headings.table.outflow'}}</th>
+                <th colspan="2">&nbsp;</th>
+             </tr>            
+  
+              <tr>
+                <th>{{i18n 'transactions.headings.table.date'}}</th>
+                <th>{{i18n 'transactions.headings.table.source'}}</th>
+                <th>{{i18n 'transactions.headings.table.inAmount'}}</th>
+                <th>{{i18n 'transactions.headings.table.inCurrency'}}</th>
+                <th>{{i18n 'transactions.headings.table.outAmount'}}</th>
+                <th>{{i18n 'transactions.headings.table.outCurrency'}}</th>
+                <th>{{i18n 'transactions.headings.table.volume'}}</th>
+                <th></th>
+             </tr>
+            </thead>
           <tbody>
-            <td><input as="date" class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><a href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
+                  {{#each transactions}}
+            <tr>
+              <td>{{date}}</td>
+              <td>{{source}}</td>
+              <td>{{in.amount}} {{in.currency}}</td>
+              <td>{{in.currency}}</td>
+              <td>{{out.amount}} {{out.currency}}</td>
+              <td>{{out.currency}}</td>
+              <td>{{base.amount}} {{base.currency}}</td>
+              <td><a href="#" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a></td> 
+            </tr>
+             {{/each}}           
           </tbody>
         </table>
-      </form>
-    </div>
-  </div> <!-- /.row -->
-  <div class="row">
-      <table class="table table-condensed table-hover table-responsive">
-          <thead>
-            <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2">Inflow</th>
-              <th colspan="2">Outflow</th>
-              <th colspan="2">&nbsp;</th>
-           </tr>            
+  
+        <div class="pull-right">
+          <a href="#" class="btn btn-primary btn-lg">{{i18n 'transactions.buttons.calculateTax'}}</a>
+        </div>
 
-            <tr>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Value bought</th>
-              <th>Currency</th>
-              <th>Value sold</th>
-              <th>Currency</th>
-              <th>Volume</th>
-              <th></th>
-           </tr>
-          </thead>
-        <tbody>
-        	{{#each transactions}}
-          <tr>
-            <td>{{date}}</td>
-            <td>{{source}}</td>
-            <td>{{in.amount}} {{in.currency}}</td>
-            <td>{{in.currency}}</td>
-            <td>{{out.amount}} {{out.currency}}</td>
-            <td>{{out.currency}}</td>
-            <td>{{base.amount}} {{base.currency}}</td>
-            <td><a href="#" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a></td> 
-          </tr>
-           {{/each}}           
-        </tbody>
-      </table>
-     </div>
+      {{else}}
+        <div class="add-trns-zone">
+          <h3>{{i18n 'transactions.headings.noTransactions'}}</h3>
+          <p>{{i18n 'transactions.text.noTransactions'}}</p>
+        </div>
+      {{/if}}
 
-      <div class="pull-right">
-        <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
-      </div>     
-
+    </div> <!-- /row -->
   </div> <!-- /container -->
 </template>
