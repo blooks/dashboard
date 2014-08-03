@@ -13,6 +13,7 @@
     "collection-behaviours": {},
     "bootstrap3-less": {},
     "node-csv-npm": {},
-    "accounts-ui-bootstrap-3": {}
+    "accounts-ui-bootstrap-3": {},
+    "accounting": {}
   }
 }

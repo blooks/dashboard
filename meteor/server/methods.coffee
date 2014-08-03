@@ -1,3 +1,25 @@
+# Calculate base currency from an amount / currency pair
+calculateBaseAmount = (amt, date = new Date()) ->
+  try
+    # Quick sanity test
+    check amt,
+      amount: String
+      currency: String
+    check(date, Date)
+    # We only have USD rates for now
+    if amt.currency isnt 'USD'
+      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...')
+    #to = Meteor.user.profile.baseCurrency
+    to = 'EUR'
+    #rate = getExchangeRate(amount.currency, to, date)
+    rate = 0.74
+    # Coffeescript magically makes this an object and returns it
+    amount: accounting.toFixed(amt.amount * rate, 2)
+    currency: to
+  # Do we want to catch these? Maybe meteor handles them if they bubble up? #61
+  catch e
+    console.log e
+
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
   errors = []
@@ -8,6 +30,9 @@ insertBitstampTransactions = (importId, lineObjs) ->
     txn.importId = importId
     txn.importLineId = line._id
     txn.source = 'bitstamp'
+    #
+    # Trades
+    #
     if line.type is '2' # trade
       if line.btc_amount.substr(0,1) is '-' # trade is a sale of bitcoin for USD
         txn.in =
@@ -16,6 +41,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.usd_amount
           currency: 'USD'
+        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
       else if line.usd_amount.substr(0,1) is '-' # trade is a buy of bitcoin with USD
         txn.in =
           amount: line.usd_amount.substr(1) # Trime off the initial -
@@ -23,7 +49,42 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
-      # For now, only insert if it's a trade
+        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+    #
+    # Bitstamp deposits
+    #
+    # Deposits of USD are the purchase of USD with EUR. Therefore, they need to
+    # be included in tax calculations.
+    # Deposits of BTC are simply the transfer of BTC, and need to be accounted
+    # for elsewhere. Those transactions, are therefore, ignore. #
+    #
+    else if line.type is '0' # Deposit
+      if line.btc_amount is '0.00000000' # Transfer in of USD
+        txn.in =
+          amount: line.usd_amount
+          currency: 'USD'
+        txn.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+      #else # Transfer in of BTC
+      #  addUnexplainedIncomingBtc(line.btc_amount)
+    #
+    # Bitstamp withdrawals
+    #
+    # When a user withdraws USD from their bitstamp account, they're effectively
+    # buying EUR with the USD held in their bitstamp account.
+    # Withdrawals of BTC are simply the transfer of BTC, and can be ignored.
+    #
+    else if line.type is '1' # Withdrawal, USD converted to EUR
+      if line.btc_amount is '0.00000000' # Withdrawal
+        txn.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+        txn.out =
+          amount: line.usd_amount.substr(1)
+          currency: 'USD'
+        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+      #else # Withdrawal of BTC
+      #  addUnexplainedOutgoingBtc(line.btc_amount)
+    # If we have trade data, create a transaction
+    if txn.in?.currency? and txn.out?.currency?
       try
         txnId = Transactions.insert txn
       catch e

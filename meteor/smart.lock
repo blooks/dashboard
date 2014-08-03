@@ -16,7 +16,8 @@
       "collection-behaviours": {},
       "bootstrap3-less": {},
       "node-csv-npm": {},
-      "accounts-ui-bootstrap-3": {}
+      "accounts-ui-bootstrap-3": {},
+      "accounting": {}
     },
     "packages": {
       "iron-router": {
@@ -64,6 +65,11 @@
         "tag": "v0.3.3",
         "commit": "2e50b605d8d5ed68e48c4529a65f13552d8af3f9"
       },
+      "accounting": {
+        "git": "https://github.com/IainShigeoka/meteor-accounting.git",
+        "tag": "v0.3.2.3",
+        "commit": "330cf532e6ac7282cf85ef3b83a54c1a25f5bdae"
+      },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
         "tag": "v0.2.0",
@@ -86,8 +92,8 @@
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.3",
-        "commit": "cb470de2cfeebeccbf76d4cc0a39ad4afc76d553"
+        "tag": "v0.4.4",
+        "commit": "c70deb36e10f63238b884529eea1e38cf0789903"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
