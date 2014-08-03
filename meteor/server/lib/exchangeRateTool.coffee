@@ -6,7 +6,7 @@
   else
     jurisdiction = 'de' # This needs to be improved. We should require the user to have a jurisdiction and set the default there if it is missing.
   year = date.getFullYear()
-  month = date.getMonth()
+  month = date.getMonth()+1
   if from is 'EUR' and to is 'USD'
     exchangeRates[jurisdiction]['USD'][year][month]
   else
