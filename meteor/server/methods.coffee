@@ -14,13 +14,11 @@ calculateBaseAmount = (amt, date = new Date()) ->
     #rate = getExchangeRate(amount.currency, to, date)
     rate = 0.74
     # Coffeescript magically makes this an object and returns it
-    base =
-      amount: accounting.toFixed(amt.amount * rate, 2)
-      currency: to
-    return base
+    amount: accounting.toFixed(amt.amount * rate, 2)
+    currency: to
+  # Do we want to catch these? Maybe meteor handles them if they bubble up? #61
   catch e
     console.log e
-  
 
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (importId, lineObjs) ->
