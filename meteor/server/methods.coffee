@@ -8,6 +8,9 @@ insertBitstampTransactions = (importId, lineObjs) ->
     txn.importId = importId
     txn.importLineId = line._id
     txn.source = 'bitstamp'
+    #
+    # Trades
+    #
     if line.type is '2' # trade
       if line.btc_amount.substr(0,1) is '-' # trade is a sale of bitcoin for USD
         txn.in =
@@ -23,7 +26,43 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
-      # For now, only insert if it's a trade
+    #
+    # Bitstamp deposits
+    #
+    # Deposits of USD are the purchase of USD with EUR. Therefore, they need to
+    # be included in tax calculations.
+    # Deposits of BTC are simply the transfer of BTC, and need to be accounted
+    # for elsewhere. Those transactions, are therefore, ignore. #
+    #
+    else if line.type is '0' # Deposit
+      if line.btc_amount is '0.00000000' # Transfer in of USD
+        txn.in =
+          amount: line.usd_amount
+          currency: 'USD'
+        txn.out =
+          amount: '666' # Calculate this
+          currency: 'EUR'
+      #else # Transfer in of BTC
+      #  addUnexplainedIncomingBtc(line.btc_amount)
+    #
+    # Bitstamp withdrawals
+    #
+    # When a user withdraws USD from their bitstamp account, they're effectively
+    # buying EUR with the USD held in their bitstamp account.
+    # Withdrawals of BTC are simply the transfer of BTC, and can be ignored.
+    #
+    else if line.type is '1' # Withdrawal, USD converted to EUR
+      if line.btc_amount is '0.00000000' # Withdrawal
+        txn.in =
+          amount: '666'
+          currency: 'EUR'
+        txn.out =
+          amount: line.usd_amount
+          currency: 'USD'
+      #else # Withdrawal of BTC
+      #  addUnexplainedOutgoingBtc(line.btc_amount)
+    # If we have trade data, create a transaction
+    if txn.in?.currency? and txn.out?.currency?
       try
         txnId = Transactions.insert txn
       catch e
