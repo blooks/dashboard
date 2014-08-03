@@ -23,6 +23,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
         txn.out =
           amount: line.btc_amount
           currency: 'BTC'
+          
       temp_amount = undefined
       if txn.in.currency is 'USD'
         temp_amount = txn.in.amount
