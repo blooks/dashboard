@@ -97,7 +97,7 @@ insertBitstampTransactions = (importId, lineObjs) ->
 parseBitstamp = (csvLines) ->
   # Define the CSV format
   fields = [
-    'type' # 0 = deposit, 1 = withdrawal, 2 = trade, 3/4 = ripple
+    'type' # 0 = deposit (SEPA or Ripple!), 1 = withdrawal (SEPA or Ripple!), 2 = trade
     'date'
     'btc_amount'
     'usd_amount'
