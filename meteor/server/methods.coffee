@@ -11,8 +11,7 @@ calculateBaseAmount = (amt, date = new Date()) ->
       throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...')
     #to = Meteor.user.profile.baseCurrency
     to = 'EUR'
-    #rate = getExchangeRate(amount.currency, to, date)
-    rate = 0.74
+    rate = getExchangeRate(amount.currency, to, date)
     # Coffeescript magically makes this an object and returns it
     amount: accounting.toFixed(amt.amount * rate, 2)
     currency: to
