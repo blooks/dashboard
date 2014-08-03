@@ -16,6 +16,11 @@ i18n.showMissing(true)
 # Note: Meteor.settings is initialised on meteor startup, see:
 # http://docs.meteor.com/#meteor_settings
 
+# Ensure Meteor.settings always exists on the client. It won't exist if meteor
+# was started without a --settings parameter.
+if Meteor.isClient and not Meteor.settings?
+  Meteor.settings = {}
+
 # Note: Meteor.settings.public only exists if is was declared in the settings
 # json file when meteor was started. Thus, we test and initialise.
 Meteor.settings.public = {} unless Meteor.settings.public?
