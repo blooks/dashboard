@@ -9,6 +9,7 @@ Schemas.Amount = new SimpleSchema
     type: String # Store amounts as string to avoid rounding issues
   currency:
     type: String
+    allowedValues: Meteor.settings.public.coyno.allowedCurrencies
 
 Schemas.Transaction = new SimpleSchema
   # Disable these for now pending #35
@@ -26,7 +27,6 @@ Schemas.Transaction = new SimpleSchema
     type: Schemas.Amount
   base:
     type: Schemas.Amount
-    optional: true
   # Metadata
   date:
     type: Date
