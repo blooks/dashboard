@@ -1,6 +1,3 @@
-# Show placeholders if no string exists
-i18n.showMissing(true) 
-
 # Let's try to separate strings by views, as much as possible.
 i18n.map 'de_DE',
 
