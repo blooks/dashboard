@@ -1,19 +1,14 @@
 {
   "packages": {
     "iron-router": {},
-    "accounts-entry": {
-      "git": "https://github.com/Differential/accounts-entry.git",
-      "branch": "master"
-    },
-    "handlebars-server": {
-      "git": "https://github.com/EventedMind/meteor-handlebars-server.git"
-    },
-    "autoform": {},
-    "just-i18n": {},
-    "collection-behaviours": {},
-    "bootstrap3-less": {},
-    "node-csv-npm": {},
-    "accounts-ui-bootstrap-3": {},
-    "accounting": {}
+    "accounts-entry": "0.8.0",
+    "handlebars-server": "1.2.0",
+    "autoform":  "0.16.1",
+    "just-i18n": "0.3.0",
+    "collection-behaviours": "0.1.4",
+    "bootstrap3-less": "0.2.1",
+    "node-csv-npm": "0.3.6",
+    "accounts-ui-bootstrap-3": "0.3.3",
+    "accounting": "0.3.2.3"
   }
 }
