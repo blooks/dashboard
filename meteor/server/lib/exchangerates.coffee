@@ -1,5 +1,5 @@
 @exchangeRates = 
-DE:
+de:
   USD:
     2012:
       1: 1.2905
