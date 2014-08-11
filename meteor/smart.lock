@@ -4,20 +4,32 @@
     "basePackages": {
       "iron-router": {},
       "accounts-entry": {
-        "git": "https://github.com/Differential/accounts-entry.git",
-        "branch": "master"
+        "version": "0.8.0"
       },
       "handlebars-server": {
-        "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
-        "branch": "master"
+        "version": "1.2.0"
       },
-      "autoform": {},
-      "just-i18n": {},
-      "collection-behaviours": {},
-      "bootstrap3-less": {},
-      "node-csv-npm": {},
-      "accounts-ui-bootstrap-3": {},
-      "accounting": {}
+      "autoform": {
+        "version": "0.16.1"
+      },
+      "just-i18n": {
+        "version": "0.3.0"
+      },
+      "collection-behaviours": {
+        "version": "0.1.4"
+      },
+      "bootstrap3-less": {
+        "version": "0.2.1"
+      },
+      "node-csv-npm": {
+        "version": "0.3.6"
+      },
+      "accounts-ui-bootstrap-3": {
+        "version": "0.3.3"
+      },
+      "accounting": {
+        "version": "0.3.2.3"
+      }
     },
     "packages": {
       "iron-router": {
@@ -27,13 +39,13 @@
       },
       "accounts-entry": {
         "git": "https://github.com/Differential/accounts-entry.git",
-        "branch": "master",
-        "commit": "653c92e0b31c1f8cfe5378749807826c31cc7b06"
+        "tag": "v0.8.0",
+        "commit": "cf7f7d0ecc285824bc2748e305f5d693df99b4ae"
       },
       "handlebars-server": {
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
-        "branch": "master",
-        "commit": "ce65fa1f63b94383e4e6168cdcec1b9e1d527668"
+        "tag": "v1.2.0",
+        "commit": "1b72c4e9d82af66293e50be4516c487d15d97464"
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
@@ -92,8 +104,8 @@
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.4",
-        "commit": "c70deb36e10f63238b884529eea1e38cf0789903"
+        "tag": "v0.4.5",
+        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
