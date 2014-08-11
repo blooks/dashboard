@@ -1,6 +1,6 @@
 
 @getExchangeRate = (from, to, date = new Date()) ->
-  jurisdiction = 'undefined'
+  jurisdiction = undefined
   if Meteor.user?.profile?.jurisdiction?
     jurisdiction = Meteor.user.profile.jurisdiction
   else
