@@ -30,6 +30,9 @@ Router.map ->
   @route 'upload',
     path: '/upload'
 
+  @route 'user_settings',
+    path: '/user_settings'
+
   @route 'notFound',
     path: '*'
     where: 'server'

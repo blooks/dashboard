@@ -21,35 +21,33 @@ calculateBaseAmount = (amt, date = new Date()) ->
     console.log e
 
 # Take the output from parseBitstamp and create transactions
-insertBitstampTransactions = (importId, lineObjs) ->
+insertBitstampTransactions = (lineObjs) ->
   errors = []
   for line in lineObjs
     # Instantiate an empty transaction
-    txn = {}
-    txn.date = new Date(line.date) #40
-    txn.importId = importId
-    txn.importLineId = line._id
-    txn.source = 'bitstamp'
+    transaction = {}
+    transaction.date = new Date(line.date) #40
+    transaction.source = 'Bitstamp'
     #
     # Trades
     #
     if line.type is '2' # trade
       if line.btc_amount.substr(0,1) is '-' # trade is a sale of bitcoin for USD
-        txn.in =
+        transaction.in =
           amount: line.btc_amount.substr(1) # Trim off the initial -
           currency: 'BTC'
-        txn.out =
+        transaction.out =
           amount: line.usd_amount
           currency: 'USD'
-        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+        transaction.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
       else if line.usd_amount.substr(0,1) is '-' # trade is a buy of bitcoin with USD
-        txn.in =
+        transaction.in =
           amount: line.usd_amount.substr(1) # Trime off the initial -
           currency: 'USD'
-        txn.out =
+        transaction.out =
           amount: line.btc_amount
           currency: 'BTC'
-        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+        transaction.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
     #
     # Bitstamp deposits
     #
@@ -60,11 +58,11 @@ insertBitstampTransactions = (importId, lineObjs) ->
     #
     else if line.type is '0' # Deposit
       if line.btc_amount is '0.00000000' # Transfer in of USD
-        txn.in =
+        transaction.in =
           amount: line.usd_amount
           currency: 'USD'
-        txn.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
-        txn.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, txn.date)
+        transaction.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
+        transaction.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
       #else # Transfer in of BTC
       #  addUnexplainedIncomingBtc(line.btc_amount)
     #
@@ -76,17 +74,17 @@ insertBitstampTransactions = (importId, lineObjs) ->
     #
     else if line.type is '1' # Withdrawal, USD converted to EUR
       if line.btc_amount is '0.00000000' # Withdrawal
-        txn.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
-        txn.out =
+        transaction.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
+        transaction.out =
           amount: line.usd_amount.substr(1)
           currency: 'USD'
-        txn.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, txn.date)
+        transaction.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
       #else # Withdrawal of BTC
       #  addUnexplainedOutgoingBtc(line.btc_amount)
     # If we have trade data, create a transaction
-    if txn.in?.currency? and txn.out?.currency?
+    if transaction.in?.currency? and transaction.out?.currency?
       try
-        txnId = Transactions.insert txn
+        transactionId = Transactions.insert transaction
       catch e
         errors.push e
         console.log e
@@ -110,20 +108,10 @@ parseBitstamp = (csvLines) ->
     lineObj = {}
     for field, i in line
       lineObj[fields[i]] = field
-    lineObj._id = Random.id()
+    #lineObj._id = Random.id()
     lineObjs.push(lineObj)
-  # Insert the import into the imports collection
-  try
-    importId = Imports.insert
-      source: 'bitstamp_upload_csv'
-      format: 'bitstamp_csv_1'
-      lines: lineObjs
-  catch e
-    console.log 'Inserting the import failed:'
-    console.log e
-    return false # If the insert failed, return false and stop here
   # Create the transactions from lineObjs
-  insertBitstampTransactions(importId, lineObjs)
+  insertBitstampTransactions(lineObjs)
 
 # Async parse CSV function
 asyncParseCSV = (csvText, callback) ->
