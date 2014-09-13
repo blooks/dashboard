@@ -8,11 +8,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Coyno Steuer">
-  <meta name="author" content="Coyno Team">
+  <meta name="author" content="Coyno">
   <link rel="icon" href="favicon.ico">
   <title>Coyno</title>
   <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
   <link href="library/css/bootstrap.min.css" rel="stylesheet">
   <link href="library/css/screen.css" rel="stylesheet">
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,125 +26,209 @@
   <script src="library/js/bootstrap.min.js"></script> 
 </head>
 <body>  
-
-  <header>
-  <div class="container">
-    <img src="img/zb-logo.png" />
-  </div>
-  </header>
-  <div class="container">
-    <div class="row">
-    <h2>Transactions</h2>
-
-    <div class="add-trns-zone">
-      <!-- Show only if there's no transactions (also show empty transaction table below!) -->
-      <h3>No transactions...</h3>
-      <p>Please add some transactions to get started. Either import or add manually below.</p>
+  
+  <!-- .navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" title="Coyno - BTC Bookkeeping" href="#">
+            <svg width="123" height="30">
+              <image xlink:href="img/coyno-logo.svg" src="img/coyno-logo.png" width="123" height="30" />
+            </svg>
+          </a>           
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="trades.html" class="active">Transactions</a></li>
+            <li><a href="import.html">Import</a></li>
+            <li><a href="tax.html">Tax</a></li>
+           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container -->
     </div>
+  
+  <div class="container">
+    <div id="content">
+      <h1 class="process-title"><b>Transactions</b> Overview</h1>
+      <div class="sub-menu-zone pull-right">
+        <!-- Button trigger modal -->
+        <a href="#" data-toggle="modal" data-target="#helpModal">
+          <span class="glyphicon glyphicon-hand-right"></span> Help
+        </a>
 
-    <div class="add-trns-zone">
-      <h2>Add Single Transaction</h2>
-      <form action="#" class="" id="#" method="post">
-        <table class="table table-condensed table-hover table-responsive">
-          <thead>
-            <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2">Inflow</th>
-              <th colspan="2">Outflow</th>
-              <th colspan="2">&nbsp;</th>
-           </tr>            
+        <!-- Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">How to do your taxes</h4>
+              </div>
+              <div class="modal-body">
+                <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
+                </p>
+                <p>
+                Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
+                </p>
+                <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
+                </p>
+                <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
+                </p>
+                <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
+                </p>
+                <hr />
+                <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
+                </p>
+                <p>
+                Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
+                </p>
+                <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
+                </p>
+                <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
+                </p>
+                <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
+                </p>              
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div><!-- /modal -->
 
-            <tr>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Value bought</th>
-              <th>Currency</th>
-              <th>Value sold</th>
-              <th>Currency sold</th>
-              <th>Volume</th>
-              <th></th>
-           </tr>
-          </thead>
+      </div>
+    </div> <!-- /.container -->
+    <div class="container-fluid">
+      <div class="row">  
+        <div class="col-sm-6 col-sm-offset-3">
+          <!-- Show only if there's no transactions (also show empty transaction table below!) -->
+          <div class="empty-msg">
+            <h3>No transactions...</h3>
+            <p>Please add some transactions to get started. Either import or add manually below.</p>
+          </div>
+        </div>
+      </div>
+      <div class="add-trns-zone">
+        <h2>Add Transaction Manually <i class="fa fa-angle-down"></i></h2>
+        <form action="#" class="" id="#" method="post">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th colspan="2" class="no-border">&nbsp;</th>
+                <th colspan="2" class="supa-header inflow">Inflow</th>
+                <th colspan="2" class="supa-header outflow">Outflow</th>
+                <th colspan="2" class="no-border">&nbsp;</th>
+             </tr>            
+
+              <tr>
+                <th>Date <a href="#" data-toggle="tooltip" data-placement="top" title="Input date must be in format: dd/mm/yyyy"><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Source <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th class="inflow">Amount bought <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th class="inflow">Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th class="outflow">Amount sold <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th class="outflow">Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Volume <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>&nbsp;</th>
+             </tr>
+            </thead>
+            <tbody>
+              <td><input as="date" class="form-control" id="#" name="" type="text" /></td>
+              <td><input class="form-control" id="#" name="" type="text" /></td>
+              <td class="inflow"><input class="form-control" id="#" name="" type="text" /></td>
+              <td class="inflow"><input class="form-control" id="#" name="" type="text" /></td>
+              <td class="outflow"><input class="form-control" id="#" name="" type="text" /></td>
+              <td class="outflow"><input class="form-control" id="#" name="" type="text" /></td>
+              <td><input class="form-control" id="#" name="" type="text" /></td>
+              <td><a href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      
+      <h2>Transactions</h2>
+      <table class="table table-bordered table-zb-hover" >
+            <thead>
+              <tr>
+                <th colspan="2" class="no-border">&nbsp;</th>
+                <th colspan="2" class="supa-header inflow">Inflow</th>
+                <th colspan="2" class="supa-header outflow">Outflow</th>
+                <th colspan="2" class="no-border">&nbsp;</th>
+             </tr>            
+
+              <tr>
+                <th>Date <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Source <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Amount bought <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Amount sold <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Currency <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th>Volume <a href="#" data-toggle="tooltip" data-placement="top" title="Lorem Ipsum sid dolor etc."><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                <th></th>
+             </tr>
+            </thead>
           <tbody>
-            <td><input as="date" class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><input class="form-control" id="#" name="" type="text" /></td>
-            <td><a href="#"><span class="glyphicon glyphicon-plus"></span></a></td>
+            <tr>
+              <td>01/12/2013</td>
+              <td>Bitstamp</td>
+              <td class="inflow">1 BTC</td>
+              <td class="inflow">Bitcoin</td>
+              <td class="outflow">100$</td>
+              <td class="outflow">USD</td>
+              <td>120 €</td>
+              <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
+            </tr>
+            <tr>
+              <td>01/12/2013</td>
+              <td>Bitstamp</td>
+              <td class="inflow">1 BTC</td>
+              <td class="inflow">Bitcoin</td>
+              <td class="outflow">100$</td>
+              <td class="outflow">USD</td>
+              <td>120 €</td>
+              <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
+            </tr>
+            <tr>
+              <td>01/12/2013</td>
+              <td>Bitstamp</td>
+              <td class="inflow">1 BTC</td>
+              <td class="inflow">Bitcoin</td>
+              <td class="outflow">100$</td>
+              <td class="outflow">USD</td>
+              <td>120 €</td>
+              <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
+            </tr>                    
           </tbody>
         </table>
-      </form>
-    </div>
-  </div> <!-- /.row -->
-  <div class="row">
-      <table class="table table-condensed table-hover table-responsive">
-          <thead>
-            <tr>
-              <th colspan="2">&nbsp;</th>
-              <th colspan="2">Inflow</th>
-              <th colspan="2">Outflow</th>
-              <th colspan="2">&nbsp;</th>
-           </tr>            
 
-            <tr>
-              <th>Date</th>
-              <th>Source</th>
-              <th>Value bought</th>
-              <th>Currency</th>
-              <th>Value sold</th>
-              <th>Currency</th>
-              <th>Volume</th>
-              <th></th>
-           </tr>
-          </thead>
-        <tbody>
-          <tr>
-            <td>01/12/2013</td>
-            <td>Bitstamp</td>
-            <td>1 BTC</td>
-            <td>Bitcoin</td>
-            <td>100$</td>
-            <td>USD</td>
-            <td>120 €</td>
-            <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
-          </tr>
-          <tr>
-            <td>01/12/2013</td>
-            <td>Bitstamp</td>
-            <td>1 BTC</td>
-            <td>Bitcoin</td>
-            <td>100$</td>
-            <td>USD</td>
-            <td>120 €</td>
-            <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
-          </tr>
-          <tr>
-            <td>01/12/2013</td>
-            <td>Bitstamp</td>
-            <td>1 BTC</td>
-            <td>Bitcoin</td>
-            <td>100$</td>
-            <td>USD</td>
-            <td>120 €</td>
-            <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td> 
-          </tr>                    
-        </tbody>
-      </table>
-     </div>
-
-      <div class="pull-right">
-        <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
-      </div>     
-
+        <div class="call-to-action-zone text-center">
+          <i class="fa fa-angle-down"></i>
+          <a href="#" class="btn btn-primary btn-lg">Calculate Tax</a>
+        </div>     
+      </div> <!-- /content -->
   </div> <!-- /container -->
 
   <footer>
     <p>copyright 2014</p> 
   </footer>
 
-
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
 
 </body>

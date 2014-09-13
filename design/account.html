@@ -43,12 +43,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="trades.html">Transactions</a></li>
+            <li><a href="trades.html" class="active">Transactions</a></li>
             <li><a href="import.html">Import</a></li>
             <li><a href="tax.html">Tax</a></li>
            </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html" class="active">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="registration.html">Register</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
@@ -61,24 +61,39 @@
     <div id="content">    
       <div class="col-sm-8 col-sm-offset-2">
         <form class="text-form form-signin" role="form">
-          <h2>Please sign in</h2>
-          <input type="email" class="form-control spacy" placeholder="Email address" required="" autofocus="" autocomplete="off">
-          <input type="password" class="form-control spacy" placeholder="Password" required="" autocomplete="off">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me">Remember me
-            </label>
-          </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-        <p>Forgotten password or username?</p>
-        <p>Register an account</p>
+          <h2>Account <span class="thicken">settings</span></h2>
+          <h3>Contact <span class="thicken">Details</span></h3>
+          <input type="email" class="form-control spacy" placeholder="Change email address" required="" autofocus="" autocomplete="off">      
+          <h3>Change <span class="thicken">Password</span></h3>        
+          <input type="password" class="form-control spacy" placeholder="Old password" required="" autocomplete="off">
+          <input type="password" class="form-control spacy" placeholder="New password" required="" autocomplete="off">
+          <input type="password" class="form-control spacy" placeholder="Confirm new password" required="" autocomplete="off">
+
+          <h3>Two-factor <span class="thicken">Authentication</span></h3>
+          <p>Set up</p>
+
+          <h3><span class="thicken">Billing</span> Address</h3>
+          <input type="text" class="form-control spacy" placeholder="Street" required="" autofocus="" autocomplete="off">      
+          <input type="text" class="form-control spacy" placeholder="House number" required="" autocomplete="off">
+          <input type="text" class="form-control spacy" placeholder="City" required="" autocomplete="off">
+          <input type="text" class="form-control spacy" placeholder="Postcode" required="" autocomplete="off">
+          <input type="text" class="form-control spacy" placeholder="Country" required="" autocomplete="off">
+
+          <h3>Connect <span class="thicken">API</span> from exchange</h3>
+          <p>Kraken</p>
+          <p>Bitstamp</p>
+
+
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+        </form>        
        </div>
     </div> <!-- /content -->
   </div> <!-- /container -->
 
   <footer>
     <p>copyright 2014</p> 
+    <p>Invite friends to Coyno</p>
   </footer>
 
 

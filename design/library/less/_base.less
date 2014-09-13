@@ -30,7 +30,7 @@ body	{
 /* Main Zones
 -------------------- */
 #content {
-	margin-top: 70px;
+	margin-top: 90px;
 }
 
 
@@ -79,6 +79,35 @@ footer {
 
 }
 
+.empty-msg {
+  border: 1px solid @grey;
+  padding: 20px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.tax-screen {
+
+	.cost-basis-box {
+		border: 1px solid @lightgrey;
+		text-align: center;
+
+		h4 {
+			font-weight: 700;
+			font-size: 26px;
+			font-size: 2.6rem;
+			margin-bottom: 0;
+		}
+
+		p.sub-title {
+			border-top: 1px dotted @lightgrey;
+			border-bottom: 1px dotted @lightgrey;
+			margin-top: 0;
+		}
+	}
+
+}
+
 /* Form styling
 ---------------- */
 .text-form {
@@ -113,19 +142,19 @@ footer {
 	}
 }
 
-.btn.more	{
-	border: 1px solid @dark;
-	color: @dark;
+.btn	{
+	border: 1px solid @darkblue;
+	color: @darkblue;
+  background: none;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	font-size: 20px; font-size: 2rem;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	padding: 5px 10px;
 
 	&:hover, &:focus	{
-	border-color: @popone;
-	color: @popone;		
+	color: @whyte;		
+  background: @darkblue;  
 	}
 }
 
@@ -149,63 +178,13 @@ a.read-more {
 		border: 1px solid @popone;
 
 	}
-
 }
 
-/* Contact form styling
------------------------- */
-.wpcf7 {
-	input[type=submit] {
-		padding: 10px 30px;
-		background: none;
-		text-transform: uppercase;
-		border: 1px solid @dark;
-		letter-spacing: 3px;
-		font-size: 18px;
-		font-size: 1.8rem;
-
-		&:hover {
-			color: lighten(@dark, 50%);
-			border: 1px solid lighten(@dark, 50%);
-		}
-	}
-
-	.wpcf7-form-control {
-		padding: 10px;
-		border: 1px solid @dark;
-		outline: none;
-			background: none;
-
-		&:focus {
-			border: 1px solid lighten(@dark, 50%);	
-		}
-	}
-
-	p {
-		margin-bottom: 20px;
-	}
-}
-
-div.wpcf7-mail-sent-ok,
-div.wpcf7-mail-sent-ng,
-div.wpcf7-spam-blocked,
-div.wpcf7-validation-errors
- {
-	border: 1px solid @lightgrey;
-	color: lighten(@dark, 50%);
-	font-size: 21px; font-size: 2.1rem;
-	font-style: italic;
-	padding: 10px 30px;
-	
-}
-
-span.wpcf7-not-valid-tip {
-	color: @poptwo;
-	font-size: 1em;
-	display: block;
-}
-
-.wpcf7-not-valid-tip {
-	color: @dark;
-	font-style: italic;
+ul.nav-pills {
+  li {
+    border: 1px solid @lightgrey;
+    margin: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 }

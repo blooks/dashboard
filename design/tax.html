@@ -8,7 +8,7 @@
   <meta name="description" content="Coyno Steuer">
   <meta name="author" content="Coyno">
   <link rel="icon" href="favicon.ico">
-  <title>Coyno</title>
+  <title>Coyno | Tax Report</title>
   <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
   <link href="library/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
   <script src="library/js/jquery-1.11.1.min.js"></script> 
   <script src="library/js/bootstrap.min.js"></script> 
 </head>
-<body>  
+<body class="tax-screen">  
   
   <!-- .navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -43,12 +43,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="trades.html">Transactions</a></li>
+            <li><a href="trades.html" class="active">Transactions</a></li>
             <li><a href="import.html">Import</a></li>
             <li><a href="tax.html">Tax</a></li>
            </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html" class="active">Login</a></li>
+            <li><a href="index.html">Login</a></li>
             <li><a href="registration.html">Register</a></li>
             <li><a href="account.html">Account</a></li>
           </ul>
@@ -59,20 +59,28 @@
 
   <div class="container">
     <div id="content">    
-      <div class="col-sm-8 col-sm-offset-2">
-        <form class="text-form form-signin" role="form">
-          <h2>Please sign in</h2>
-          <input type="email" class="form-control spacy" placeholder="Email address" required="" autofocus="" autocomplete="off">
-          <input type="password" class="form-control spacy" placeholder="Password" required="" autocomplete="off">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me">Remember me
-            </label>
-          </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-        <p>Forgotten password or username?</p>
-        <p>Register an account</p>
+      <div class="col-sm-10 col-sm-offset-1">
+        <h2>Choose <span class="thicken">Cost Basis</span> Method</h2>
+        <div class="col-sm-3 cost-basis-box">
+          <h4>FIFO</h4>
+          <p class="sub-title">First In, First Out</p>
+          <span class="tax-amount">€399.54</span>
+        </div>
+        <div class="col-sm-3 cost-basis-box">
+          <h4>LIFO</h4>
+          <p class="sub-title">Last In, First Out</p>
+          <span class="tax-amount">€399.54</span>
+        </div>
+        <div class="col-sm-3 cost-basis-box">
+          <h4>Avg Cost</h4>
+          <p class="sub-title">Lorem Ipsum</p>
+          <span class="tax-amount">€399.54</span>
+        </div>
+        <div class="col-sm-3 cost-basis-box">
+          <h4>FIFO</h4>
+          <p class="sub-title">First In, First Out</p>
+          <span class="tax-amount">€399.54</span>
+        </div>                       
        </div>
     </div> <!-- /content -->
   </div> <!-- /container -->

@@ -18,13 +18,11 @@ h1, .h2	{
 	font-size: 5rem;
 	text-align: center;
 
-		&.single-title {
-			margin: 5px;
+		&.process-title {
+			margin: 10px 0;
+      background-color: @darkblue;
+      color: @whyte;
 		}
-
-		&.single-recommend-title {
-			margin: 5px auto;
-		}	
 }
 
 h2 {
@@ -50,55 +48,6 @@ h2 {
 	}
 }
 
-.person-recommendations h2 {
-	text-align: center;
-	margin-bottom: 20px; padding-bottom: 20px;
-	border-bottom: 1px solid @grey;
-}
-
-.rec-grid h2 {
-	border-bottom: none;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-}
-
-.listing-item {
-	text-align: center;
-}
-
-h3 {
-	margin-top: 0;	
-	
-	&.sidebar-header {
-		margin: 10px;
-		text-align: center;
-		border-top: 1px solid @grey;
-		border-bottom: 1px double @grey;
-		color:  darken(@grey, 30%) ;
-	}
-}
-
-.navbar-default 
-	{
-	.navbar-nav {
-	font-family: @sansserif;
-	text-transform: uppercase;
-	font-size: 15px; font-size: 1.5rem;
-	color: @darkblue;
-	letter-spacing: 7px;
-	}	
-
-	a.navbar-brand {
-		color: @whyte;
-		font-family: @sansserif;
-		font-weight: 400;
-		font-size: 22px; font-size: 2.2rem;
-			&:hover {
-				color: @popone;
-			}	
-	}
-}
-
 a {
 	color: @dark;
 	text-decoration: none;
@@ -119,9 +68,21 @@ a {
 	}	
 }
 
+.thicken {
+	font-weight: 700;
+}
+
 footer {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: @sansserif;
 	letter-spacing: 6px;
+}
+
+/* Misc */
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: @sansserif;
 }
