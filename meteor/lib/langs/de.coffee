@@ -7,6 +7,7 @@ i18n.map 'de_DE',
       dashboard: 'Dashboard'
       transactions: 'Transaktionen'
       upload: 'Upload'
+      settings: 'Einstellungen'
   
   # Transactions
   transactions:
