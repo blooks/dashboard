@@ -12,14 +12,14 @@ Schemas.Amount = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
 
 Schemas.Transaction = new SimpleSchema
-  # Disable these for now pending #35
+  ## Right now @Levin does not see any need for transactoin IDs
   #_id:
   #  type: String
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
-  #userId:
-  #  type: String
-  #  regEx: SimpleSchema.RegEx.Id
+  userId:
+    type: String
+    regEx: SimpleSchema.RegEx.Id
   # Trade info
   in:
     type: Schemas.Amount

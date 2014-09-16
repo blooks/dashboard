@@ -28,6 +28,7 @@ insertBitstampTransactions = (lineObjs) ->
     transaction = {}
     transaction.date = new Date(line.date) #40
     transaction.source = 'Bitstamp'
+    transaction.userId = Meteor.userId()
     #
     # Trades
     #
@@ -136,3 +137,4 @@ Meteor.methods
       console.log e
       return false # If the parse failed, return false and stop here
     parseBitstamp(csvLines)
+  'fetchNewTransactions' : () ->
