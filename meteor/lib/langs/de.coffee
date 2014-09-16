@@ -28,5 +28,6 @@ i18n.map 'de_DE',
     buttons:
       newTransaction: 'Transaktion hinzufügen'
       calculateTax: 'Steuerlast berechnen'
+      deleteAll: 'Alle Transaktionen löschen'
     text:
       noTransactions: 'Bitte fügen Sie Transaktionen hinzu um. Sie können entweder ein CSV-File importieren oder unten eine Transaktion manuell hinzufügen.'

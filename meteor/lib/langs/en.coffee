@@ -28,5 +28,6 @@ i18n.map 'en_GB',
     buttons:
       newTransaction: 'Add Transaction'
       calculateTax: 'Calculate Tax'
+      deleteAll: 'Delete All Transactions'
     text:
       noTransactions: 'Please add some transactions to get started. Either import or add manually below.'
