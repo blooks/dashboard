@@ -35,9 +35,6 @@ Schemas.Transaction = new SimpleSchema
   note:
     type: String
     optional: true
-  hidden:
-    type: Boolean
-    defaultValue: false
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
@@ -61,5 +58,4 @@ Transactions.allow
   remove: (userId, doc) ->
     if doc.userId isnt userId
       throw new Meteor.Error 400, "You can only delete your own entries."
-    console.log 'allowing the remove in Transactions.allow'
     true
