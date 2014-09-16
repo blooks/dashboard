@@ -1,0 +1,1 @@
+var Bitstamp = require('bitstamp');
