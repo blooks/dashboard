@@ -1,7 +1,7 @@
 // on the client
 Template.transactions.helpers({
   transactions: function(){
-    return Transactions.find().fetch();
+    return Transactions.find({},{sort: ['date','asc']}).fetch();
   }
 });
 Template.transactions.events({
@@ -17,7 +17,7 @@ Template.transactions.events({
   },
   'click .update-transactions' : function(event, template) {
     Meteor.call('getBitstampData');
-    return result;
+    return true;
   },
   'click .delete-transaction': function(event, template) {
     return Transactions.remove({
