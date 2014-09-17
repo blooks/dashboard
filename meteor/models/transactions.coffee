@@ -12,9 +12,10 @@ Schemas.Amount = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
 
 Schemas.Transaction = new SimpleSchema
-  ## Right now @Levin does not see any need for transactoin IDs
-  #_id:
-  #  type: String
+
+  foreignId:
+    type: String
+    unique : true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:
@@ -41,8 +42,7 @@ Transactions.attachSchema Schemas.Transaction
 
 # Add the created / updated fields
 Transactions.timed()
-# Use soft delete
-Transactions.softRemovable()
+
 # Ensure every document is owned by a user
 Transactions.owned()
 

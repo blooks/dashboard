@@ -4,7 +4,7 @@ Template.user_settings.events({'submit' : function(event) {
 	Meteor.users.update({_id:Meteor.user()._id}, {$set:{"profile.bitstampUserId":$('#bitstampUserId').val()}});
 	Meteor.users.update({_id:Meteor.user()._id}, {$set:{"profile.bitstampAPIKey":$('#bitstampAPIKey').val()}});
 	Meteor.users.update({_id:Meteor.user()._id}, {$set:{"profile.bitstampSecret":$('#bitstampSecret').val()}});
-    return false;
+  return false;
 }});
 
 
