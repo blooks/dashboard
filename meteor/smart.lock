@@ -29,7 +29,8 @@
       },
       "accounting": {
         "version": "0.3.2.3"
-      }
+      },
+      "collection-helpers": {}
     },
     "packages": {
       "iron-router": {
@@ -82,6 +83,11 @@
         "tag": "v0.3.2.3",
         "commit": "330cf532e6ac7282cf85ef3b83a54c1a25f5bdae"
       },
+      "collection-helpers": {
+        "git": "https://github.com/dburles/meteor-collection-helpers.git",
+        "tag": "v0.3.1",
+        "commit": "eff6c859cd91eae324f6c99ab755992d0f271d91"
+      },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
         "tag": "v0.2.0",
@@ -99,18 +105,18 @@
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
-        "tag": "v0.6.0",
-        "commit": "418ec496612fb2afc853e342f0d2269b6674a2fe"
+        "tag": "v1.0.2",
+        "commit": "21a4ce06ae29bff2fb1203c44ea24e61f1c3edba"
       },
       "collection2": {
         "git": "https://github.com/aldeed/meteor-collection2.git",
-        "tag": "v0.4.5",
-        "commit": "336903730249197b3358dac31b1bd5ed64fecc50"
+        "tag": "v0.4.6",
+        "commit": "80554182486be0d8e74f7ed02194a5649d712e27"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+        "tag": "v2.8.1",
+        "commit": "722ea63783d594341023836b7d418ab2567dab8c"
       },
       "collection-hooks": {
         "git": "https://github.com/matb33/meteor-collection-hooks.git",

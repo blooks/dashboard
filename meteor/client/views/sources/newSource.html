@@ -1,0 +1,19 @@
+<template name="newSource">
+  <h2>{{i18n 'accounts.headings.addSingle'}}</h2>
+
+  {{#autoForm
+    collection='Sources'
+    id='insertSourceForm'
+    type='insert'
+  }}
+    <div class="col-xs-4">
+      {{>afQuickField name='name'}}
+    </div>
+    <div class="col-xs-4">
+      {{>afQuickField name='note'}}
+    </div>
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary btn-lg">{{i18n 'sources.buttons.newSource'}}</button>
+    </div>
+  {{/autoForm}}
+</template>
