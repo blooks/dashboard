@@ -15,6 +15,10 @@ Template.transactions.events({
     });
     return result;
   },
+  'click .update-transactions' : function(event, template) {
+    Meteor.call('getBitstampData');
+    return result;
+  },
   'click .delete-transaction': function(event, template) {
     return Transactions.remove({
       _id: this._id

@@ -8,6 +8,10 @@
         <div class="add-trns-zone">
           {{> newTransaction}}
         </div>
+                <div class="pull-right">
+          <a href="#" class="update-transactions btn btn-primary btn-lg">{{i18n 'transactions.buttons.updateTransactions'}}</a>
+          <a href="#" class="delete-transactions btn btn-primary btn-lg">{{i18n 'transactions.buttons.deleteAll'}}</a>
+        </div>
 
       {{#if transactions}}
         <table class="table table-condensed table-hover table-responsive">
@@ -45,10 +49,6 @@
              {{/each}}           
           </tbody>
         </table>
-  
-        <div class="pull-right">
-          <a href="#" class="delete-transactions btn btn-primary btn-lg">{{i18n 'transactions.buttons.deleteAll'}}</a>
-        </div>
 
       {{else}}
         <div class="add-trns-zone">

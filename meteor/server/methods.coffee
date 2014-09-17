@@ -1,24 +1,4 @@
-# Calculate base currency from an amount / currency pair
-calculateBaseAmount = (amt, date = new Date()) ->
-  try
-    # Quick sanity test
-    check amt,
-      amount: String
-      currency: String
-    check(date, Date)
-    # We only have USD rates for now
-    if amt.currency isnt 'USD'
-      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...')
-    #to = Meteor.user.profile.baseCurrency
-    to = 'EUR'
-    rate = getExchangeRate(amt.currency, to, date)
-    #rate = 0.74
-    # Coffeescript magically makes this an object and returns it
-    amount: accounting.toFixed(amt.amount * rate, 2)
-    currency: to
-  # Do we want to catch these? Maybe meteor handles them if they bubble up? #61
-  catch e
-    console.log e
+
 
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (lineObjs) ->
