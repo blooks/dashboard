@@ -1,9 +1,9 @@
-<template name="newSource">
-  <h2>{{i18n 'accounts.headings.addSingle'}}</h2>
+<template name="newNode">
+  <h2>{{i18n 'nodes.headings.addSingle'}}</h2>
 
   {{#autoForm
-    collection='Sources'
-    id='insertSourceForm'
+    collection='Nodes'
+    id='insertNodeForm'
     type='insert'
   }}
     <div class="col-xs-4">
@@ -13,7 +13,7 @@
       {{>afQuickField name='note'}}
     </div>
     <div class="pull-right">
-      <button type="submit" class="btn btn-primary btn-lg">{{i18n 'sources.buttons.newSource'}}</button>
+      <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.newNode'}}</button>
     </div>
   {{/autoForm}}
 </template>

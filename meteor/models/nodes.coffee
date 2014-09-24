@@ -1,9 +1,9 @@
 # Create the meteor collection
-@Sources = new Meteor.Collection('sources')
+@Nodes = new Meteor.Collection('nodes')
 
 Schemas = {}
 
-Schemas.Sources = new SimpleSchema
+Schemas.Nodes = new SimpleSchema
 
   name:
     type: String
@@ -13,26 +13,26 @@ Schemas.Sources = new SimpleSchema
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
-  # Sources info
+  # Nodes info
   note:
     type: String
     optional: true
 
 # Attach the schema to the collection
-Sources.attachSchema Schemas.Sources
+Nodes.attachSchema Schemas.Nodes
 
 # Add the created / updated fields
-Sources.timed()
+Nodes.timed()
 
 # Ensure every document is owned by a user
-Sources.owned()
+Nodes.owned()
 
-Sources.helpers balance: ->
+Nodes.helpers balance: ->
   45
-  #Sources.findOne @_id
+  #Nodes.findOne @_id
   #Transactions.find(userId: @userId).length
 
-Sources.allow
+Nodes.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."

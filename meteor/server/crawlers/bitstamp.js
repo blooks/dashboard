@@ -158,7 +158,7 @@ var bitstampJSONtoDB = function(bitstampData) {
     Meteor.methods({
       getBitstampData: function () {
         var bitstamp = new Bitstamp;
-        var profile = Meteor.user().profile;
+        var profile = Meteor  .user().profile;
         var key = profile.bitstampAPIKey;
         var secret = profile.bitstampSecret;
         var client_id = profile.bitstampUserId;
