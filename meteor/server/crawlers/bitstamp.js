@@ -1,4 +1,4 @@
-var Bitstamp = Meteor.require('bitstamp');
+var Bitstamp = Meteor.npmRequire('bitstamp');
 
 //Patching Bitstamp NPM Module ; TBR
 Bitstamp.prototype.user_transactions = function(limit, callback) {
