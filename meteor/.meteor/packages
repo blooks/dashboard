@@ -7,12 +7,9 @@ standard-app-packages
 coffeescript
 less
 accounts-password
-aldeed:autoform
 aldeed:collection2
 sewdn:collection-behaviours
-mrt:just-i18n
 dsyko:node-csv-npm
-ian:accounts-ui-bootstrap-3
 lepozepo:accounting
 meteorhacks:npm
 iron:router
@@ -20,6 +17,11 @@ joshowens:accounts-entry
 mquandalle:jade
 cmather:handlebars-server
 
-npm-container
+aldeed:autoform
 nemo64:bootstrap
+mrt:just-i18n
+
+
+npm-container
+mrt:accounts-ui-bootstrap-3
 
