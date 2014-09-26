@@ -10,7 +10,6 @@ accounts-password
 aldeed:collection2
 sewdn:collection-behaviours
 dsyko:node-csv-npm
-ian:accounts-ui-bootstrap-3
 lepozepo:accounting
 meteorhacks:npm
 iron:router
@@ -18,8 +17,11 @@ joshowens:accounts-entry
 mquandalle:jade
 cmather:handlebars-server
 
-npm-container
-nemo64:bootstrap
 aldeed:autoform
+nemo64:bootstrap
 mrt:just-i18n
+
+
+npm-container
+mrt:accounts-ui-bootstrap-3
 
