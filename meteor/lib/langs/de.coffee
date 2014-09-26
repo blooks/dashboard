@@ -32,3 +32,4 @@ i18n.map 'de_DE',
       deleteAll: 'Alle Transaktionen löschen'
     text:
       noTransactions: 'Bitte fügen Sie Transaktionen hinzu um. Sie können entweder ein CSV-File importieren oder unten eine Transaktion manuell hinzufügen.'
+    help: 'Fügen Sie jetzt Transaktionen hinzu.'

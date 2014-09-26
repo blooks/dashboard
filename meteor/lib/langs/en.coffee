@@ -33,3 +33,4 @@ i18n.map 'en_GB',
       updateTransactions: 'Update Transactions'
     text:
       noTransactions: 'Please add some transactions to get started. Either import or add manually below.'
+    help: 'Put in the transactions please.'

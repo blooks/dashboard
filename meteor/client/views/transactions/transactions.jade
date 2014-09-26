@@ -4,54 +4,19 @@ template(name="transactions")
       h1.process-title {{i18n 'transactions.headings.transactions'}}
       .sub-menu-zone.pull-right
         //- Button trigger modal 
-        a(href="#", data-toggle="modal",data-target="#helpModal")
+        a(href="#", data-toggle="modal",data-target="#txHelpModal")
           span.glyphicon.glyphicon-hand-right 
           span {{i18n 'template.headings.help'}} 
-      <!-- Modal @LEVIN: PLEASE FIX -->
-        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">How to do your taxes</h4>
-              </div>
-              <div class="modal-body">
-                <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
-                </p>
-                <p>
-                Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
-                </p>
-                <p>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
-                </p>
-                <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
-                </p>
-                <p>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
-                </p>
-                <hr />
-                <p>Suspendisse non nisl sit amet velit hendrerit rutrum. Nulla porta dolor. Praesent egestas tristique nibh. Sed cursus turpis vitae tortor.
-                </p>
-                <p>
-                Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Praesent ac massa at ligula laoreet iaculis. Morbi nec metus. Nunc interdum lacus sit amet orci.
-                </p>
-                <p>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sit amet est. Pellentesque dapibus hendrerit tortor. In turpis.
-                </p>
-                <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse non nisl sit amet velit hendrerit rutrum. Duis vel nibh at velit scelerisque suscipit. Phasellus accumsan cursus velit.
-                </p>
-                <p>
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus dolor. Etiam vitae tortor. In hac habitasse platea dictumst.
-                </p>              
-              </div>
-              <div class="modal-footer">
-              </div>
-            </div>
-          </div>
-        </div><!-- /modal -->
-
+        .modal.fade(id="txHelpModal", tabindex="-1", role="dialog", aria-labelledby="transactionHelpModal", aria-hidden="true")            
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type="button",data-dismiss="modal")
+                  span(aria-hidden="false") &times;
+                  span.sr-only Close
+                h4.modal-title(id="transactionHelpModal") How to do your taxes
+              .modal-body {{i18n 'transactions.help'}}
+              .modal-footer
       .row
         .add-trns-zone
           +newTransaction
