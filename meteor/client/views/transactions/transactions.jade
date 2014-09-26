@@ -4,9 +4,19 @@ template(name="transactions")
       h1.process-title {{i18n 'transactions.headings.transactions'}}
       .sub-menu-zone.pull-right
         //- Button trigger modal 
-        a(href="#", data-toggle="modal",data-target="#helpModal")
+        a(href="#", data-toggle="modal",data-target="#txHelpModal")
           span.glyphicon.glyphicon-hand-right 
           span {{i18n 'template.headings.help'}} 
+        .modal.fade(id="txHelpModal", tabindex="-1", role="dialog", aria-labelledby="transactionHelpModal", aria-hidden="true")            
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type="button",data-dismiss="modal")
+                  span(aria-hidden="false") &times;
+                  span.sr-only Close
+                h4.modal-title(id="transactionHelpModal") How to do your taxes
+              .modal-body {{i18n 'transactions.help'}}
+              .modal-footer
       .row
         .add-trns-zone
           +newTransaction
