@@ -33,3 +33,11 @@ i18n.map 'de_DE',
     text:
       noTransactions: 'Bitte fügen Sie Transaktionen hinzu um. Sie können entweder ein CSV-File importieren oder unten eine Transaktion manuell hinzufügen.'
     help: 'Fügen Sie jetzt Transaktionen hinzu.'
+    tooltip:
+      date: 'DEUTSCH Input date must be in format: dd/mm/yyyy'
+      source: 'DEUTSCH Lorem Ipsum Tooltip Text'
+      inAmount: 'DEUTSCH Lorem Ipsum Tooltip Text'
+      inCurrency: 'DEUTSCH Lorem Ipsum Tooltip Text'
+      outAmount: 'DEUTSCH Lorem Ipsum Tooltip Text'
+      outCurrency: 'DEUTSCH Lorem Ipsum Tooltip Text'
+      volume: 'DEUTSCH Lorem Ipsum Tooltip Text'  

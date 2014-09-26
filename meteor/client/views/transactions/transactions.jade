@@ -26,21 +26,35 @@ template(name="transactions")
   
   .container-fluid
     if transactions
-      table.table.table-condensed.table-hover.table-responsive
+      table.table.table-bordered.table-zb-hover
         thead
             tr
-              th(colspan="2") &nbsp;
-              th(colspan="2") {{i18n 'transactions.headings.table.inflow'}}
-              th(colspan="2") {{i18n 'transactions.headings.table.outflow'}}
-              th(colspan="2") &nbsp;             
+              th(colspan="2").no-border &nbsp;
+              th(colspan="2").supa-header.inflow {{i18n 'transactions.headings.table.inflow'}}
+              th(colspan="2").supa-header.outflow {{i18n 'transactions.headings.table.outflow'}}
+              th(colspan="2").no-border &nbsp;             
             tr
-              th {{i18n 'transactions.headings.table.date'}}
+              th {{i18n 'transactions.headings.table.date'}} 
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.date'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.source'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.source'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.inAmount'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.inAmount'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.inCurrency'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.inCurrency'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.outAmount'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.outAmount'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.outCurrency'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.outCurrency'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.volume'}}
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.volume'}} ")
+                  span.glyphicon.glyphicon-info-sign
               th              
         tbody
           each transactions
