@@ -8,6 +8,7 @@ i18n.map 'de_DE',
       transactions: 'Transaktionen'
       upload: 'Upload'
       settings: 'Einstellungen'
+      help: 'Hilfe'
   
   # Transactions
   transactions:

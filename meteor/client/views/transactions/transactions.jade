@@ -1,0 +1,53 @@
+template(name="transactions")
+  .container
+    .row
+      h1.process-title {{i18n 'transactions.headings.transactions'}}
+      .sub-menu-zone.pull-right
+        //- Button trigger modal 
+        a(href="#", data-toggle="modal",data-target="#helpModal")
+          span.glyphicon.glyphicon-hand-right 
+          span {{i18n 'template.headings.help'}} 
+      .row
+        .add-trns-zone
+          +newTransaction
+        .pull-right
+          a.update-transactions.btn.btn-primary.btn-lg(href="#") {{i18n 'transactions.buttons.updateTransactions'}}
+          a.delete-transactions.btn.btn-primary.btn-lg(href="#") {{i18n 'transactions.buttons.deleteAll'}}
+  
+  .container-fluid
+    if transactions
+      table.table.table-condensed.table-hover.table-responsive
+        thead
+            tr
+              th(colspan="2") &nbsp;
+              th(colspan="2") {{i18n 'transactions.headings.table.inflow'}}
+              th(colspan="2") {{i18n 'transactions.headings.table.outflow'}}
+              th(colspan="2") &nbsp;             
+            tr
+              th {{i18n 'transactions.headings.table.date'}}
+              th {{i18n 'transactions.headings.table.source'}}
+              th {{i18n 'transactions.headings.table.inAmount'}}
+              th {{i18n 'transactions.headings.table.inCurrency'}}
+              th {{i18n 'transactions.headings.table.outAmount'}}
+              th {{i18n 'transactions.headings.table.outCurrency'}}
+              th {{i18n 'transactions.headings.table.volume'}}
+              th              
+        tbody
+          each transactions
+            tr
+              td {{date}}
+              td {{source}}
+              td {{in.amount}} {{in.currency}}
+              td {{in.currency}}
+              td {{out.amount}} {{out.currency}}
+              td {{out.currency}}
+              td {{base.amount}} {{base.currency}}
+              td 
+                a.delete-transaction(href="#")
+                  span.glyphicon.glyphicon-trash
+    else
+      .row
+        .col-sm-6.col-sm-offset-3 
+          .add-trns-zone
+            h3 {{i18n 'transactions.headings.noTransactions'}}
+            p {{i18n 'transactions.text.noTransactions'}}
