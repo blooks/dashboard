@@ -1,0 +1,88 @@
+/* Typograhy
+----------------- */
+body {
+	font-family: @bodysans;
+}
+
+h1,h2,h3,h4,
+.h2,.h3,.h4 	{						
+	color: @darkgrey;
+	font-family: @sansserif;
+	font-weight: 300;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+h1, .h2	{
+	font-size: 50px; 
+	font-size: 5rem;
+	text-align: center;
+
+		&.process-title {
+			margin: 10px 0;
+      background-color: @darkblue;
+      color: @whyte;
+		}
+}
+
+h2 {
+	font-size: 36px; font-size: 3.6rem;
+	&.menu-headline {
+		text-align: center;
+		border-bottom: 1px solid @grey;	
+	}
+
+	&.rec-name-title	{
+		font-size: 14px;		
+		font-size: 1.4rem;
+		padding: 4px; margin: 0;
+		overflow: hidden;
+		text-transform: none;
+		letter-spacing: 0;
+
+		a {
+			&:hover {
+				color: @popone;
+			}
+		}
+	}
+}
+
+a {
+	color: @dark;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: @popone;
+		text-decoration: none;
+	}
+}
+
+#main p a {
+	text-decoration: underline;
+	&:hover,
+	&:focus {
+		color: @popone;
+		text-decoration: underline;
+	}	
+}
+
+.thicken {
+	font-weight: 700;
+}
+
+footer {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: @sansserif;
+	letter-spacing: 6px;
+}
+
+/* Misc */
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-family: @sansserif;
+}

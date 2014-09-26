@@ -39,7 +39,7 @@
   
   "affix":                true,
   "alert":                true,
-  "button":               false,
+  "button":               true,
   "collapse":             true,
   "scrollspy":            true,
   "tab":                  true,
