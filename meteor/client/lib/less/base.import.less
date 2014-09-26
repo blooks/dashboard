@@ -1,0 +1,190 @@
+/* Variables.less files that are changed:
+
+
+
+/* Base css, mobile-first */
+html,
+body {
+  height: 100%;
+  /* don't add padding or margin. */
+  padding: 0;
+}
+
+html	{
+	font-size: 62.5%;
+	/* for REM font sizing */
+}
+
+body	{
+	background-color: @whyte;
+	font-size: 12px;
+	font-size: 1.2rem;
+	color: @darkgrey;
+}
+
+/* Global Page Sections
+------------------------------ */
+
+
+
+/* Main Zones
+-------------------- */
+#content {
+	margin-top: 90px;
+}
+
+
+/* Footer 
+-------------------- */
+footer {
+	padding: 50px 0;
+	font-size: 12px; font-size: 1.2rem;	
+}
+
+/* Page Specific
+---------------- */
+.call-to-action-zone {
+	text-align: center;
+	padding: 50px 0;
+
+	h3 {
+		font-size: 36px; font-size: 3.6rem;
+	}
+
+	a.read-more {
+		margin-top: 40px;
+		color: @darkblue;
+		border: 1px solid @darkblue;
+	}
+
+	.cta {
+		margin-bottom: 50px;
+	}
+
+	.social {
+		a {
+			color: @darkblue;
+
+			i {
+				border: 1px solid @darkblue;
+				padding: 30px;
+				font-size: 55px;
+				width: 120px;
+				height: 120px;
+				margin: 30px 30px;
+
+			}
+		}		
+	}
+
+}
+
+.empty-msg {
+  border: 1px solid @grey;
+  padding: 20px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.tax-screen {
+
+	.cost-basis-box {
+		border: 1px solid @lightgrey;
+		text-align: center;
+
+		h4 {
+			font-weight: 700;
+			font-size: 26px;
+			font-size: 2.6rem;
+			margin-bottom: 0;
+		}
+
+		p.sub-title {
+			border-top: 1px dotted @lightgrey;
+			border-bottom: 1px dotted @lightgrey;
+			margin-top: 0;
+		}
+	}
+
+}
+
+/* Form styling
+---------------- */
+.text-form {
+	input {
+
+		&.spacy {
+			padding: 25px 30px; margin-bottom: 20px; 
+			background: none;
+			border: 1px solid @lightgrey;
+			letter-spacing: 3px;
+			font-size: 16px;font-size: 1.6rem;
+		}
+
+		&:hover {
+			color: lighten(@dark, 50%);
+			border: 1px solid lighten(@dark, 50%);
+		}
+
+	}
+
+}
+
+
+
+/* Graphics
+---------------- */
+.navbar-brand {
+	padding-top: 10px;
+
+	.logo {
+		height: 30px;
+	}
+}
+
+.btn	{
+	border: 1px solid @darkblue;
+	color: @darkblue;
+  background: none;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px; font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+
+	&:hover, &:focus	{
+	color: @whyte;		
+  background: @darkblue;  
+	}
+}
+
+#main img {
+	max-width: 100%;
+	height: auto;
+}
+
+a.read-more {
+	border: 1px solid @dark;
+	display: inline-block;
+	font-family: @sansserif;
+	font-size: 16px; font-size: 1.6rem;
+	letter-spacing: 7px;
+	padding: 8px 19px;
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;	
+
+	&:hover {
+		border: 1px solid @popone;
+
+	}
+}
+
+ul.nav-pills {
+  li {
+    border: 1px solid @lightgrey;
+    margin: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
