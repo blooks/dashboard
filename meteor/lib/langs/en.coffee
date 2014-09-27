@@ -8,6 +8,7 @@ i18n.map 'en_GB',
       transactions: 'Transactions'
       upload: 'Upload'
       settings: 'Settings'
+      help: 'Help'
   
   # Transactions
   transactions:
@@ -32,3 +33,12 @@ i18n.map 'en_GB',
       updateTransactions: 'Update Transactions'
     text:
       noTransactions: 'Please add some transactions to get started. Either import or add manually below.'
+    help: 'Put in the transactions please.'
+    tooltip:
+      date: 'Input date must be in format: dd/mm/yyyy'
+      source: 'Lorem Ipsum Tooltip Text'
+      inAmount: 'Lorem Ipsum Tooltip Text'
+      inCurrency: 'Lorem Ipsum Tooltip Text'
+      outAmount: 'Lorem Ipsum Tooltip Text'
+      outCurrency: 'Lorem Ipsum Tooltip Text'
+      volume: 'Lorem Ipsum Tooltip Text'
