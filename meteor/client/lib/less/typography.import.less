@@ -1,14 +1,14 @@
 /* Typograhy
 ----------------- */
 body {
-	font-family: @bodysans;
+	font-family: @font-family-body-sans;
 }
 
 h1,h2,h3,h4,
 .h2,.h3,.h4 	{						
-	color: @darkgrey;
-	font-family: @sansserif;
-	font-weight: 300;
+	color: @gray-dark;
+	font-family: @font-family-sans-serif;
+	font-weight: 400;
 	letter-spacing: 4px;
 	text-transform: uppercase;
 }
@@ -20,8 +20,8 @@ h1, .h2	{
 
 		&.process-title {
 			margin: 10px 0;
-      background-color: @darkblue;
-      color: @whyte;
+			background-color: @darkblue;
+			color: @whyte;
 		}
 }
 
@@ -29,7 +29,7 @@ h2 {
 	font-size: 36px; font-size: 3.6rem;
 	&.menu-headline {
 		text-align: center;
-		border-bottom: 1px solid @grey;	
+		border-bottom: 1px solid @gray;	
 	}
 
 	&.rec-name-title	{
@@ -42,19 +42,19 @@ h2 {
 
 		a {
 			&:hover {
-				color: @popone;
+				color: @brand-primary;
 			}
 		}
 	}
 }
 
 a {
-	color: @dark;
+	color: @gray-dark;
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		color: @popone;
+		color: @brand-primary;
 		text-decoration: none;
 	}
 }
@@ -63,7 +63,7 @@ a {
 	text-decoration: underline;
 	&:hover,
 	&:focus {
-		color: @popone;
+		color: @brand-primary;
 		text-decoration: underline;
 	}	
 }
@@ -75,7 +75,7 @@ a {
 footer {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: @sansserif;
+	font-family: @font-family-sans-serif;
 	letter-spacing: 6px;
 }
 
@@ -84,5 +84,5 @@ footer {
 .btn {
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-family: @sansserif;
+  font-family: @font-family-sans-serif;
 }
