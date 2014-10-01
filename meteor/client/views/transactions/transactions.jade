@@ -18,18 +18,19 @@ template(name="transactions")
               .modal-body {{i18n 'transactions.help'}}
               .modal-footer
     .row
-      .add-trns-zone
-        +newTransaction         
+      //-
+        .add-trns-zone
+          +newTransaction         
 
   .container-fluid.table-zone
     .row
       .table-control-buttons
         a.update-transactions.btn(href="#") 
           span.glyphicon.glyphicon-repeat 
-          {{i18n 'transactions.buttons.updateTransactions'}}
+          | {{i18n 'transactions.buttons.updateTransactions'}}
         a.delete-transactions.btn(href="#") 
           span.glyphicon.glyphicon-trash 
-          {{i18n 'transactions.buttons.deleteAll'}} 
+          | {{i18n 'transactions.buttons.deleteAll'}} 
    
     if transactions
       table.table.table-bordered.table-zb-hover
