@@ -21,10 +21,10 @@ template(name="transactions")
         .add-trns-zone
           +newTransaction
         .pull-right
-          a.update-transactions.btn.btn-primary.btn-lg(href="#") {{i18n 'transactions.buttons.updateTransactions'}}
-          a.delete-transactions.btn.btn-primary.btn-lg(href="#") {{i18n 'transactions.buttons.deleteAll'}}
+          a.update-transactions.btn(href="#") {{i18n 'transactions.buttons.updateTransactions'}}
+          a.delete-transactions.btn(href="#") {{i18n 'transactions.buttons.deleteAll'}}
   
-  .container-fluid
+  .container-fluid.table-zone
     if transactions
       table.table.table-bordered.table-zb-hover
         thead
@@ -55,7 +55,7 @@ template(name="transactions")
               th {{i18n 'transactions.headings.table.volume'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.volume'}} ")
                   span.glyphicon.glyphicon-info-sign
-              th              
+              th.no-border              
         tbody
           each transactions
             tr
