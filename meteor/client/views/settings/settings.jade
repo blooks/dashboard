@@ -1,11 +1,11 @@
 template(name="user_settings")
-  div(class="container")
-    div(class="col-sm-8 col-sm-offset-2")
+  .container
+    .col-sm-8.col-sm-offset-2
       form(class="form-bitstamp-api-keys", role="form")
-        h2(class="form-signin-heading") Bitstamp API Keys
+        h2.form-signin-heading Bitstamp API Keys
         p User ID: #{bitstampUserId}
         p API Key: #{bitstampAPIKey}
-          input(type="text", class="form-control formitem", id="bitstampUserId", placeholder="User ID", value="#{bitstampUserId}")
-          input(type="text", class="form-control formitem", id="bitstampAPIKey", placeholder="API Key", value="#{bitstampAPIKey}")
-          input(type="text", class="form-control formitem", id="bitstampSecret", placeholder="Secret", value="#{bitstampSecret}")
-          button(class="btn btn-lg btn-primary btn-block" type="submit") Save
+        input(type="text", class="form-control formitem", id="bitstampUserId", placeholder="User ID", value="#{bitstampUserId}")
+        input(type="text", class="form-control formitem", id="bitstampAPIKey", placeholder="API Key", value="#{bitstampAPIKey}")
+        input(type="text", class="form-control formitem", id="bitstampSecret", placeholder="Secret", value="#{bitstampSecret}")
+        button(class="btn btn-lg btn-primary btn-block" type="submit") Save

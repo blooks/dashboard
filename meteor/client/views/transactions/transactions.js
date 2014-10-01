@@ -25,3 +25,8 @@ Template.transactions.events({
     });
   }
 });
+
+// Call tooltip functionality. To be fixed.
+Template.transactions.rendered = function() {
+  $('a[data-toggle="tooltip"]').tooltip() //initialize all tooltips in this template
+};
