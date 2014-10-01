@@ -40,27 +40,33 @@ calculateBaseAmount = function(amt, date) {
 };
 var bitstampTradeToTransaction = function(trade) {
   var currencydetails = {}
-   if (trade.btc.substr(0,1) === '-' ) {// trade is a sale of bitcoin for USD
-          currencydetails.in = {
+  var dollar_amount = 0;
+   if (trade.btc < 0 ) {// trade is a sale of BTC for USD
+          currencydetails.out = {
           amount: trade.btc.substr(1), // Trim off the initial -
           currency: 'BTC'
         }
-        currencydetails.out = {
-          amount: trade.usd,
+        dollar_amount = parseFloat(trade.usd) - parseFloat(trade.fee);
+        currencydetails.in = {
+          amount: dollar_amount.toString(),
           currency: 'USD'
         }
-        currencydetails.base = calculateBaseAmount({amount: trade.usd, currency: 'USD'}, trade.datetime);
-      } else {
-        currencydetails.in = {
-          amount: trade.usd.substr(1), // Trim off the initial -
+        currencydetails.base = calculateBaseAmount({
+          amount: dollar_amount.toString(),
+          currency: 'USD'
+        }, trade.datetime);
+      } else {//trade is a sale of USD for BTC
+        dollar_amount = parseFloat(trade.usd.substr(1)) + parseFloat(trade.fee);
+        currencydetails.out = {
+          amount: dollar_amount.toString(), // Trim off the initial -
           currency: 'USD'
         };
-        currencydetails.out = {
+        currencydetails.in = {
           amount: trade.btc,
           currency: 'BTC'
         };
         currencydetails.base = calculateBaseAmount({
-          amount: trade.usd.substr(1),
+          amount: dollar_amount.toString(),
           currency: 'USD'
         }, trade.datetime);
       }
@@ -69,7 +75,25 @@ var bitstampTradeToTransaction = function(trade) {
 
 var bitstampDepositToTransaction = function(deposit) {
   var currencydetails = {};
-  if (deposit.btc === '0.00000000') {
+  if (deposit.usd > 0) {//Dollar deposit
+            currencydetails["in"] = {
+              amount: deposit.usd,
+              currency: 'USD'
+            };
+            currencydetails.out = calculateBaseAmount({
+              amount: deposit.usd,
+              currency: 'USD'
+            }, deposit.datetime);
+            currencydetails.base = calculateBaseAmount({
+              amount: deposit.usd,
+              currency: 'USD'
+            }, deposit.datetime);
+          }
+    return currencydetails;
+}
+var bitstampRippleDepositToTransaction = function(deposit) {
+  var currencydetails = {};
+  if (deposit.usd > 0) {//Dollar deposit
             currencydetails["in"] = {
               amount: deposit.usd,
               currency: 'USD'
@@ -88,7 +112,27 @@ var bitstampDepositToTransaction = function(deposit) {
 
 var bitstampWithdrawalToTransaction = function(withdrawal) {
   var currencydetails = {};
-  if (withdrawal.btc === '0.00000000') {//Dollar withdrawel
+  if (withdrawal.usd < 0) {//Dollar withdrawel
+            currencydetails.in = calculateBaseAmount({
+              amount: withdrawal.usd.substr(1),
+              currency: 'USD'
+            }, withdrawal.datetime);
+            currencydetails.out = {
+              amount: withdrawal.usd.substr(1),
+              currency: 'USD'
+            };
+            currencydetails.base = calculateBaseAmount({
+              amount: withdrawal.usd.substr(1),
+              currency: 'USD'
+            }, withdrawal.datetime);
+          } else {//Bitcoin withdrawal
+            return {};
+          }
+  return currencydetails;
+}
+var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
+  var currencydetails = {};
+  if (withdrawal.usd < 0) {//Dollar withdrawel
             currencydetails.in = calculateBaseAmount({
               amount: withdrawal.usd.substr(1),
               currency: 'USD'
@@ -122,6 +166,12 @@ var convertBitstampTx = function(bitstampTx) {
         currencydetails = bitstampDepositToTransaction(bitstampTx);
         } else if (bitstampTx.type === 1) {//withdrawal
           currencydetails = bitstampWithdrawalToTransaction(bitstampTx);
+          } else if (bitstampTx.type === 3) {//ripple withdrawel
+            currencydetails = bitstampRippleWithdrawalToTransaction(bitstampTx);
+          } else if (bitstampTx.type === 4) {//ripple deposit
+                currencydetails = bitstampRippleDepositToTransaction(bitstampTx);
+          } else {
+            console.log("FEHLER! BITSTAMP LIEFERT TOTALE SCHEISSE")
           }
 
   //Hack as we ignore bitcoin withdrawals atm.
@@ -158,7 +208,7 @@ var bitstampJSONtoDB = function(bitstampData) {
     Meteor.methods({
       getBitstampData: function () {
         var bitstamp = new Bitstamp;
-        var profile = Meteor  .user().profile;
+        var profile = Meteor.user().profile;
         var key = profile.bitstampAPIKey;
         var secret = profile.bitstampSecret;
         var client_id = profile.bitstampUserId;

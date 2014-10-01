@@ -13,8 +13,6 @@ Schemas.exchangeCredentials = new SimpleSchema
 
 Schemas.Exchanges = new SimpleSchema
 
-  name:
-    type: String
     #unique : true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
@@ -40,11 +38,6 @@ Exchanges.timed()
 
 # Ensure every document is owned by a user
 Exchanges.owned()
-
-Exchanges.helpers balance: ->
-  45
-  #Exchanges.findOne @_id
-  #Transactions.find(userId: @userId).length
 
 Exchanges.allow
   insert: (userId, item) ->

@@ -26,11 +26,6 @@ BankAccounts.timed()
 # Ensure every document is owned by a user
 BankAccounts.owned()
 
-BankAccounts.helpers balance: ->
-  45
-  #BankAccounts.findOne @_id
-  #Transactions.find(userId: @userId).length
-
 BankAccounts.allow
   insert: (userId, item) ->
     if not userId?

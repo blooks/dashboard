@@ -27,8 +27,7 @@ BitcoinWallets.timed()
 BitcoinWallets.owned()
 
 BitcoinWallets.helpers balance: ->
-  45
-  #BitcoinWallets.findOne @_id
+  0
   #Transactions.find(userId: @userId).length
 
 BitcoinWallets.allow
