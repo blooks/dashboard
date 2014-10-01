@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "bitstamp": {
+      "version": "0.1.8",
+      "dependencies": {
+        "underscore": {
+          "version": "1.4.4"
+        }
+      }
+    }
+  }
+}

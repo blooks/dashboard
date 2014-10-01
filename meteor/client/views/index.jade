@@ -1,0 +1,16 @@
+head
+  meta(name="viewport",content="width=device-width, initial-scale=1.0")
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible",content="IE=edge")
+  meta(name="description",content="Coyno Steuer")
+  meta(name="author",content="Coyno Team")
+  link(rel="icon",href="favicon.ico")
+  title Coyno
+
+template(name="layout")
+
+  <!-- Add Less than IE9 warning here -->
+
+  +yield(region="header")
+  +yield
+  +yield(region="footer")

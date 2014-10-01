@@ -100,7 +100,7 @@ asyncParseCSV = (csvText, callback) ->
     callback(null, parsedData)
     return
 # Wrap the async in a sync wrapper for meteor friendliness
-syncParseCSV = Meteor._wrapAsync(asyncParseCSV)
+syncParseCSV = Meteor.wrapAsync(asyncParseCSV)
 
 # Define our methods
 Meteor.methods
