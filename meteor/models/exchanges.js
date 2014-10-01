@@ -1,14 +1,20 @@
 Exchanges.helpers({
-  balance: function() {
-  var transactions = Transactions.find().fetch();
-  var balance = 0.0;
-  for (i=0; i < transactions.length; ++i) {
-    if (transactions[i].in.currency == "USD") {
-      balance+=parseFloat(transactions[i].in.amount);
-    } else if (transactions[i].out.currency == "USD") {
-      balance-=parseFloat(transactions[i].out.amount);
-    }
-  }
-  return balance
+  balances: function() {
+    var result = []
+    currencies = ['USD','BTC'];
+    var exchange = this.exchange;
+    var transactions = Transactions.find({source: exchange}).fetch();
+    currencies.forEach(function(currency) {
+    var balance = 0.0;
+    transactions.forEach(function(transaction) {
+      if (transaction.in.currency == currency) {
+        balance+=parseFloat(transaction.in.amount);
+      } else if (transaction.out.currency == currency) {
+        balance-=parseFloat(transaction.out.amount);
+      }
+    });
+      result.push({currency: currency, balance: balance});
+  });
+  return result;
 }
 });

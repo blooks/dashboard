@@ -33,6 +33,7 @@ Schemas.Transaction = new SimpleSchema
     type: Date
   source:
     type: String
+    allowedValues: Meteor.settings.public.coyno.supportedExchanges
   note:
     type: String
     optional: true

@@ -88,6 +88,19 @@ var bitstampDepositToTransaction = function(deposit) {
               amount: deposit.usd,
               currency: 'USD'
             }, deposit.datetime);
+          } else {//bitcoin deposit
+            currencydetails.in = {
+              amount: deposit.btc,
+              currency: 'BTC'
+            };
+            currencydetails.out = {
+              amount: 0,
+              currency: 'USD'
+            };
+            currencydetails.base = {
+              amount: 0,
+              currency: 'EUR'
+            };
           }
     return currencydetails;
 }
@@ -106,6 +119,19 @@ var bitstampRippleDepositToTransaction = function(deposit) {
               amount: deposit.usd,
               currency: 'USD'
             }, deposit.datetime);
+          } else {//bitcoin deposit
+            currencydetails.in = {
+              amount: deposit.btc,
+              currency: 'BTC'
+            };
+            currencydetails.out = {
+              amount: 0,
+              currency: 'USD'
+            };
+            currencydetails.base = {
+              amount: 0,
+              currency: 'EUR'
+            };
           }
     return currencydetails;
 }
@@ -125,8 +151,19 @@ var bitstampWithdrawalToTransaction = function(withdrawal) {
               amount: withdrawal.usd.substr(1),
               currency: 'USD'
             }, withdrawal.datetime);
-          } else {//Bitcoin withdrawal
-            return {};
+          } else {//bitcoin withdrawel
+            currencydetails.out = {
+              amount: withdrawal.btc.substr(1),
+              currency: 'BTC'
+            };
+            currencydetails.in = {
+              amount: 0,
+              currency: 'USD'
+            };
+            currencydetails.base = {
+              amount: 0,
+              currency: 'EUR'
+            };
           }
   return currencydetails;
 }
@@ -145,8 +182,19 @@ var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
               amount: withdrawal.usd.substr(1),
               currency: 'USD'
             }, withdrawal.datetime);
-          } else {//Bitcoin withdrawal
-            return {};
+          } else {//bitcoin withdrawal
+            currencydetails.out = {
+              amount: withdrawal.btc.substr(1),
+              currency: 'BTC'
+            };
+            currencydetails.in = {
+              amount: 0,
+              currency: 'USD'
+            };
+            currencydetails.base = {
+              amount: 0,
+              currency: 'EUR'
+            };
           }
   return currencydetails;
 }

@@ -8,7 +8,8 @@ template(name="nodes")
     .container
       ul
         each exchanges
-          li {{label}}: {{balance}}
+          each balances
+            li Balance in {{currency}}: {{balance}}
   if bitcoinwallets
     .container
       ul
