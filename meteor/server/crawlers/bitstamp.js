@@ -255,14 +255,18 @@ var bitstampJSONtoDB = function(bitstampData) {
 
     Meteor.methods({
       getBitstampData: function () {
-        var bitstamp = new Bitstamp;
-        var profile = Meteor.user().profile;
-        var key = profile.bitstampAPIKey;
-        var secret = profile.bitstampSecret;
-        var client_id = profile.bitstampUserId;
+        var bitstampAccounts = Exchanges.find({exchange: "Bitstamp"}).fetch();
+        if (bitstampAccounts) {
+                  var bitstamp = new Bitstamp;
+        bitstampAccounts.forEach(function(account) {
+        var key = account.credentials.APIKey;
+        var secret = account.credentials.secret;
+        var client_id = account.credentials.UserId;
         var privateBitstamp = new Bitstamp(key, secret, client_id);
         var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
         var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
         bitstampJSONtoDB(jsonData);
+      });
       }
+    }
     });

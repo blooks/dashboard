@@ -1,7 +1,7 @@
-var Kraken = Meteor.npmRequire('kraken-api');
+var KrakenClient = Meteor.npmRequire('kraken-api');
 
 
-
+/**
 var calculateBaseAmount;
 
 calculateBaseAmount = function(amt, date) {
@@ -142,23 +142,25 @@ var krakenJSONtoDB = function(krakenData) {
                errors.push(e);
         }
     }
-  }
+
         return errors.length === 0;
     };
-
-    Meteor.methods({
-      getKrakenData: function () {
-        var kraken = new Kraken;
-        var krakenAccounts = Exchanges.find({exchange: kraken}).fetch();
+  }
+  **/
+  Meteor.methods({
+    getKrakenData: function () {
+      var krakenAccounts = Exchanges.find({exchange: "Kraken"}).fetch();
         if (krakenAccounts) {//only do if a Kraken account has been added
           krakenAccounts.forEach(function(account) {
-          var key = account.credentials.APIkey;
-          var secret = account.credentials.secret;
-        var privateKraken = new Kraken(key, secret, client_id);
-        var wrappedPrivateKraken = Async.wrap(privateKraken, ['user_transactions']);
-        var jsonData = wrappedPrivateKraken.user_transactions(100000);
-        krakenJSONtoDB(jsonData);}
-        );
-      }
+            var key = account.credentials.APIKey;
+            var secret = account.credentials.secret;
+            var kraken = new KrakenClient(key, secret);
+            var asyncApiCall = kraken.api;      
+            var syncApiCall = Async.wrap(asyncApiCall);
+            var jsonData = syncApiCall('Ledgers', {});
+            console.log(jsonData.result)
+            ;}
+            );
+        }
       }
     });

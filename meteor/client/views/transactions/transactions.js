@@ -17,6 +17,7 @@ Template.transactions.events({
   },
   'click .update-transactions' : function(event, template) {
     Meteor.call('getBitstampData');
+    Meteor.call('getKrakenData');
     return true;
   },
   'click .delete-transaction': function(event, template) {
