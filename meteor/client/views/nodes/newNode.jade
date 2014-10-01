@@ -1,0 +1,12 @@
+template(name="newNode")
+  h2 {{i18n 'nodes.headings.addSingle'}}
+  +autoForm collection="Nodes" id="insertNodeForm" type="insert"
+    .row-xs-4
+      +afQuickField name='type' options='allowed'
+    .row-xs-4
+      +afQuickField(name='name')
+    .row-xs-4
+      +afQuickField(name='note')
+    if afFieldValueIs name='type' value='Exchange'
+      +afQuickField name='exchange' options='allowed'
+    button(type="submit", class="btn btn-primary btn-lg") {{i18n 'nodes.buttons.newNode'}}

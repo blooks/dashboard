@@ -9,6 +9,7 @@ i18n.map 'en_GB',
       upload: 'Upload'
       settings: 'Settings'
       help: 'Help'
+      accounts: 'Accounts'
   
   # Transactions
   transactions:
@@ -42,3 +43,10 @@ i18n.map 'en_GB',
       outAmount: 'Lorem Ipsum Tooltip Text'
       outCurrency: 'Lorem Ipsum Tooltip Text'
       volume: 'Lorem Ipsum Tooltip Text'
+  # Nodes
+  nodes:
+    headings:
+      nodes: "Accounts"
+      addSingle: "New Account"
+    buttons:
+      newNode: "New Node"

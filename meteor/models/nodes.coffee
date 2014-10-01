@@ -17,6 +17,13 @@ Schemas.Nodes = new SimpleSchema
   note:
     type: String
     optional: true
+  type:
+    type: String
+    allowedValues: Meteor.settings.public.coyno.allowedNodeTypes
+  exchange:
+    type: String
+    allowedValues: Meteor.settings.public.coyno.supportedExchanges
+
 
 # Attach the schema to the collection
 Nodes.attachSchema Schemas.Nodes

@@ -1,0 +1,11 @@
+template(name="nodes")
+  .container
+    .row
+      h2 {{i18n 'nodes.headings.nodes'}}
+    .add-nodes-zone
+      +newNode
+  if nodes
+    .container
+      ul
+        each nodes
+          li {{name}}: {{balance}} {{currency}}
