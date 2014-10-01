@@ -1,45 +1,37 @@
 # Create the meteor collection
-@Nodes = new Meteor.Collection('nodes')
+@BitcoinWallets = new Meteor.Collection('bitcoinwallets')
 
 Schemas = {}
 
-Schemas.Nodes = new SimpleSchema
+Schemas.BitcoinWallets = new SimpleSchema
 
-  name:
-    type: String
-    #unique : true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
-  # Nodes info
-  note:
+  # BitcoinWallets info
+  label:
     type: String
+  addresses:
+    type: [String]
     optional: true
-  type:
-    type: String
-    allowedValues: Meteor.settings.public.coyno.allowedNodeTypes
-  exchange:
-    type: String
-    allowedValues: Meteor.settings.public.coyno.supportedExchanges
-
 
 # Attach the schema to the collection
-Nodes.attachSchema Schemas.Nodes
+BitcoinWallets.attachSchema Schemas.BitcoinWallets
 
 # Add the created / updated fields
-Nodes.timed()
+BitcoinWallets.timed()
 
 # Ensure every document is owned by a user
-Nodes.owned()
+BitcoinWallets.owned()
 
-Nodes.helpers balance: ->
+BitcoinWallets.helpers balance: ->
   45
-  #Nodes.findOne @_id
+  #BitcoinWallets.findOne @_id
   #Transactions.find(userId: @userId).length
 
-Nodes.allow
+BitcoinWallets.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."

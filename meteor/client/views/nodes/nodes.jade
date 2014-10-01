@@ -4,8 +4,18 @@ template(name="nodes")
       h2 {{i18n 'nodes.headings.nodes'}}
     .add-nodes-zone
       +newNode
-  if nodes
+  if exchanges
     .container
       ul
-        each nodes
-          li {{name}}: {{balance}} {{currency}}
+        each exchanges
+          li {{label}}: {{balance}}
+  if bitcoinwallets
+    .container
+      ul
+        each bitcoinwallets
+          li {{label}}: {{balance}}
+  if bankaccounts
+    .container
+      ul
+        each bankaccounts
+          li {{label}}: {{balance}}

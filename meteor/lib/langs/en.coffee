@@ -49,4 +49,4 @@ i18n.map 'en_GB',
       nodes: "Accounts"
       addSingle: "New Account"
     buttons:
-      newNode: "New Node"
+      save: "Save"

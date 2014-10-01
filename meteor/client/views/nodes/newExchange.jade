@@ -1,0 +1,10 @@
+template(name="newExchange")
+  h2 New Exchange
+  +autoForm collection="Exchanges" id="insertExchangeForm" type="insert"
+    .row-xs-4
+      +afQuickField name='label'
+    .row-xs-4
+      +afQuickField name='exchange' options='allowed'
+    .row-xs-4
+      +afQuickField(name='credentials')
+    button(type="submit", class="btn btn-primary btn-lg") {{i18n 'nodes.buttons.save'}}
