@@ -13,6 +13,11 @@ Schemas.BankAccounts = new SimpleSchema
   # BankAccounts info
   label:
     type: String
+    optional: true
+  bank:
+    type: String
+    allowedValues: Meteor.settings.public.coyno.allowedBanks
+    defaultValue: 'BankAccount'
   currency:
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies

@@ -4,5 +4,7 @@ template(name="newBankAccount")
     .row-xs-4
       +afQuickField name='label'
     .row-xs-4
+      +afQuickField name='bank' options='allowed'
+    .row-xs-4
       +afQuickField name='currency' options='allowed'
     button(type="submit", class="btn btn-primary btn-lg") {{i18n 'nodes.buttons.save'}}

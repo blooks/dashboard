@@ -1,10 +1,9 @@
-Exchanges.helpers({
-  balances: function() {
-    var result = []
-    currencies = Meteor.settings.public.coyno.allowedCurrencies;
-    var exchange = this.exchange;
-    var transactionsin = Transactions.find({"in.node": exchange}).fetch();
-    var transactionsout = Transactions.find({"out.node": exchange}).fetch();
+BitcoinWallets.helpers({
+  balance: function() {
+  currencies = ['BTC'];
+    var bitcoinwallet = this.device;
+    var transactionsin = Transactions.find({"in.node": bitcoinwallet}).fetch();
+    var transactionsout = Transactions.find({"out.node": bitcoinwallet}).fetch();
     currencies.forEach(function(currency) {
       var balance = 0.0;
       transactionsin.forEach(function(transaction) {
@@ -17,8 +16,8 @@ Exchanges.helpers({
         balance-=parseFloat(transaction.out.amount);
       }
       });
-      result.push({currency: currency, balance: balance});
+      result = balance;
     });
-  return result;
+    return result;
 }
 });

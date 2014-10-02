@@ -13,6 +13,11 @@ Schemas.BitcoinWallets = new SimpleSchema
   # BitcoinWallets info
   label:
     type: String
+    optional: true
+  device:
+    type: String
+    allowedValues: Meteor.settings.public.coyno.supportedBitcoinDevices
+    defaultValue: 'BitcoinWallet'
   addresses:
     type: [String]
     optional: true
@@ -25,9 +30,6 @@ BitcoinWallets.timed()
 
 # Ensure every document is owned by a user
 BitcoinWallets.owned()
-
-BitcoinWallets.helpers balance: ->
-  0
   #Transactions.find(userId: @userId).length
 
 BitcoinWallets.allow
