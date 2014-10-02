@@ -2,6 +2,7 @@
 ----------------- */
 body {
 	font-family: @font-family-body-sans;
+	color: @gray-dark;
 }
 
 h1,h2,h3,h4,
@@ -15,36 +16,23 @@ h1,h2,h3,h4,
 
 h1, .h2	{
 	font-size: 50px; 
-	font-size: 5rem;
+	font-size: 4.167rem;
 	text-align: center;
 
 		&.process-title {
-			margin: 10px 0;
-			background-color: @darkblue;
-			color: @whyte;
+			margin: 5px 0;
+			margin: 0.4rem 0;
+			color: @darkblue;			
+			// color: @whyte;
 		}
 }
 
 h2 {
-	font-size: 36px; font-size: 3.6rem;
+	font-size: 36px; font-size: 3rem;
+	
 	&.menu-headline {
 		text-align: center;
 		border-bottom: 1px solid @gray;	
-	}
-
-	&.rec-name-title	{
-		font-size: 14px;		
-		font-size: 1.4rem;
-		padding: 4px; margin: 0;
-		overflow: hidden;
-		text-transform: none;
-		letter-spacing: 0;
-
-		a {
-			&:hover {
-				color: @brand-primary;
-			}
-		}
 	}
 }
 
@@ -61,6 +49,7 @@ a {
 
 #main p a {
 	text-decoration: underline;
+	
 	&:hover,
 	&:focus {
 		color: @brand-primary;
@@ -82,7 +71,8 @@ footer {
 /* Misc */
 
 .btn {
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-family: @font-family-sans-serif;
+  	text-transform: uppercase;
+  	letter-spacing: 3px;
+  	font-family: @font-family-sans-serif;
+	font-weight: 700;
 }
