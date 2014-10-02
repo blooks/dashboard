@@ -29,35 +29,33 @@ calculateBaseAmount = function(amt, date) {
     return console.log(e);
   }
 };
+**/
+
+var krakenAssettoCoynoAsset = function (krakenAsset) {
+  if (krakenAsset === "ZEUR") return "EUR";
+  if (krakenAsset === "XXBT") return "BTC";
+  return "Unkown";
+}
 var krakenTradeToTransaction = function(trade) {
   var currencydetails = {}
-   if (trade.btc.substr(0,1) === '-' ) {// trade is a sale of bitcoin for USD
-          currencydetails.in = {
-          amount: trade.btc.substr(1), // Trim off the initial -
-          currency: 'BTC'
+  var krakenIn = trade[0];
+  var krakenOut = trade[1];
+  //We assume Kraken always gives the inflow first, outflow second
+  if (krakenIn.amount < 0) {
+    throw new Meteor.Error('400', 'Kraken not giving buy as first part of the trade!');
+  }
+  currencydetails.in = {
+          amount: krakenIn.amount, // Trim off the initial -
+          currency: krakenAssettoCoynoAsset(krakenIn.asset)
         }
         currencydetails.out = {
-          amount: trade.usd,
-          currency: 'USD'
+          amount: krakenOut.amount.substr(1),
+          currency: krakenAssettoCoynoAsset(krakenOut.asset)
         }
-        currencydetails.base = calculateBaseAmount({amount: trade.usd, currency: 'USD'}, trade.datetime);
-      } else {
-        currencydetails.in = {
-          amount: trade.usd.substr(1), // Trim off the initial -
-          currency: 'USD'
-        };
-        currencydetails.out = {
-          amount: trade.btc,
-          currency: 'BTC'
-        };
-        currencydetails.base = calculateBaseAmount({
-          amount: trade.usd.substr(1),
-          currency: 'USD'
-        }, trade.datetime);
-      }
-  return currencydetails;
-};
-
+        currencydetails.base = {amount: 0, currency: 'EUR'};
+        return currencydetails;
+      };
+/**
 var krakenDepositToTransaction = function(deposit) {
   var currencydetails = {};
   if (deposit.btc === '0.00000000') {
@@ -76,7 +74,9 @@ var krakenDepositToTransaction = function(deposit) {
           }
     return currencydetails;
 }
-
+      if (krakenData[i].refid !== krakenTx.refid) {
+      throw new Meteor.Error('400', 'Kraken not giving both sides of the trade!');
+    }
 var krakenWithdrawalToTransaction = function(withdrawal) {
   var currencydetails = {};
   if (withdrawal.btc === '0.00000000') {//Dollar withdrawel
@@ -97,59 +97,55 @@ var krakenWithdrawalToTransaction = function(withdrawal) {
           }
   return currencydetails;
 }
-//Accepting ONLY API Style JSON objects.
-var convertKrakenTx = function(krakenTx) {
-  var transaction = {};
-  //Fixing date format
-  krakenTx.datetime = new Date(krakenTx.datetime);
-  transaction.date = krakenTx.datetime;
-  transaction.source = 'Kraken';
-  transaction.userId = Meteor.userId();
-  transaction.foreignId = Meteor.userId() + 'Kraken' + krakenTx.id;
-  var currencydetails = {};
-   if (krakenTx.type === 2) {//trade 
-      currencydetails = krakenTradeToTransaction(krakenTx);
-      } else if (krakenTx.type === 0) {//deposit
-        currencydetails = krakenDepositToTransaction(krakenTx);
-        } else if (krakenTx.type === 1) {//withdrawal
-          currencydetails = krakenWithdrawalToTransaction(krakenTx);
-          }
 
-  //Hack as we ignore bitcoin withdrawals atm.
-  if (Object.keys(currencydetails).length == 0) {
-    return {};
-  }
-
-  transaction.in = currencydetails.in;
-  transaction.out = currencydetails.out;
-  transaction.base = currencydetails.base; 
-  return transaction;
-}
-
-
+**/
 
 var krakenJSONtoDB = function(krakenData) { 
   var errors = [];
   for (i = 0; i < krakenData.length; ++i) {
     var krakenTx = krakenData[i];
-    var transaction = convertKrakenTx(krakenTx);
-    //Hack because we ignore Bitcoin withdrawals atm
-    if (Object.keys(transaction).length > 0) {
-      try {
-          transactionId = Transactions.insert(transaction);
-              } catch (_error) {
-            e = _error;
-               errors.push(e);
-        }
+    var transaction = {};
+    transaction.date = new Date(krakenTx.time*1000);//Milliseconds
+    transaction.source = 'Kraken';
+    transaction.userId = Meteor.userId();
+    transaction.foreignId = Meteor.userId() + 'Kraken' + krakenTx.refid;
+    var currencydetails = {};
+    var transactionValid = false;
+    if (krakenTx.type === 'trade') {//trade consists of two json objects
+      ++i;
+      if (krakenData[i].refid !== krakenTx.refid) {
+        throw new Meteor.Error('400', 'Kraken not giving both sides of the trade!');
+      }
+      var krakenTrade = [krakenTx , krakenData[i]];
+      currencydetails = krakenTradeToTransaction(krakenTrade);
+      transactionValid = true;
     }
+      /** else if (krakenTx.type === 'deposit') {//deposit
+        currencydetails = krakenDepositToTransaction(krakenTx);
+        } else if (krakenTx.type === 'withdrawal') {//withdrawal
+          currencydetails = krakenWithdrawalToTransaction(krakenTx);
+          } else {
+            console.log("WARNING: Kraken returning unrecognized transactions!")
+          }**/
+      if (transactionValid) {
+          transaction.in = currencydetails.in;
+          transaction.out = currencydetails.out;
+          transaction.base = currencydetails.base; 
+          try {
+            transactionId = Transactions.insert(transaction);
+          } catch (_error) {
+            e = _error;
+            errors.push(e);
+          }
+        }
+      }
 
         return errors.length === 0;
-    };
-  }
-  **/
-  Meteor.methods({
-    getKrakenData: function () {
-      var krakenAccounts = Exchanges.find({exchange: "Kraken"}).fetch();
+      };
+
+Meteor.methods({
+  getKrakenData: function () {
+    var krakenAccounts = Exchanges.find({exchange: "Kraken"}).fetch();
         if (krakenAccounts) {//only do if a Kraken account has been added
           krakenAccounts.forEach(function(account) {
             var key = account.credentials.APIKey;
@@ -157,10 +153,30 @@ var krakenJSONtoDB = function(krakenData) {
             var kraken = new KrakenClient(key, secret);
             var asyncApiCall = kraken.api;      
             var syncApiCall = Async.wrap(asyncApiCall);
-            var jsonData = syncApiCall('Ledgers', {});
-            console.log(jsonData.result)
-            ;}
-            );
+            var unixStartStamp = new Date(0).getTime();
+            var apiDataPackage = syncApiCall('Ledgers', {});
+            //turn JSON Object to array
+            var numberOfKrakenTrades = apiDataPackage.result.count;
+            var krakenData = []
+            var ledgerIdOfLastEntry = "";
+            while (krakenData.length < numberOfKrakenTrades) {//making sure we get ALL the transactions from Kraken
+            for (var entry in apiDataPackage.result.ledger) {
+              var newKrakenTransaction = apiDataPackage.result.ledger[entry];
+              if (entry !== ledgerIdOfLastEntry) {
+              krakenData.push(newKrakenTransaction);
+            } 
+              ledgerIdOfLastEntry = entry;
+            }
+            apiDataPackage = syncApiCall('Ledgers', {end: ledgerIdOfLastEntry});
+          }
+          if (krakenData.length != numberOfKrakenTrades) {
+            console.log("Warning: Not all or even more Trades extracted than reported by Kraken!");
+            console.log("Number of extracted trades: " + krakenData.length);
+            console.log("Number of Kraken Trades: " + numberOfKrakenTrades);
+          }
+          krakenJSONtoDB(krakenData);
+          }
+          );
         }
       }
     });

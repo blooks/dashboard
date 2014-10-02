@@ -1,7 +1,7 @@
 Exchanges.helpers({
   balances: function() {
     var result = []
-    currencies = ['USD','BTC'];
+    currencies = ['USD','BTC', 'EUR'];
     var exchange = this.exchange;
     var transactions = Transactions.find({source: exchange}).fetch();
     currencies.forEach(function(currency) {

@@ -221,12 +221,6 @@ var convertBitstampTx = function(bitstampTx) {
           } else {
             console.log("FEHLER! BITSTAMP LIEFERT TOTALE SCHEISSE")
           }
-
-  //Hack as we ignore bitcoin withdrawals atm.
-  if (Object.keys(currencydetails).length == 0) {
-    return {};
-  }
-
   transaction.in = currencydetails.in;
   transaction.out = currencydetails.out;
   transaction.base = currencydetails.base; 
@@ -240,15 +234,12 @@ var bitstampJSONtoDB = function(bitstampData) {
   for (i = 0; i < bitstampData.length; ++i) {
     var bitstampTx = bitstampData[i];
     var transaction = convertBitstampTx(bitstampTx);
-    //Hack because we ignore Bitcoin withdrawals atm
-    if (Object.keys(transaction).length > 0) {
       try {
           transactionId = Transactions.insert(transaction);
               } catch (_error) {
             e = _error;
                errors.push(e);
         }
-    }
   }
         return errors.length === 0;
     };
@@ -257,11 +248,11 @@ var bitstampJSONtoDB = function(bitstampData) {
       getBitstampData: function () {
         var bitstampAccounts = Exchanges.find({exchange: "Bitstamp"}).fetch();
         if (bitstampAccounts) {
-                  var bitstamp = new Bitstamp;
+        var bitstamp = new Bitstamp;
         bitstampAccounts.forEach(function(account) {
         var key = account.credentials.APIKey;
         var secret = account.credentials.secret;
-        var client_id = account.credentials.UserId;
+        var client_id = account.credentials.userName;
         var privateBitstamp = new Bitstamp(key, secret, client_id);
         var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
         var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
