@@ -1,8 +1,7 @@
 template(name="newBankAccount")
-  h2 New Bank Account
-  +autoForm collection="BankAccounts" id="insertBankAccountForm" type="insert"
-    .row-xs-4
+  .row
+    h2 New Bank Account
+    +autoForm collection="BankAccounts" id="insertBankAccountForm" type="insert"
       +afQuickField name='label'
-    .row-xs-4
       +afQuickField name='currency' options='allowed'
-    button(type="submit", class="btn btn-primary btn-lg") {{i18n 'nodes.buttons.save'}}
+    button(type="submit", class="btn btn-primary btn-lg pull-right") {{i18n 'nodes.buttons.save'}}

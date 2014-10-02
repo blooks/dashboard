@@ -1,6 +1,6 @@
 template(name="newBitcoinWallet")
-  h2 New Bitcoin Wallet
-  +autoForm collection="BitcoinWallets" id="insertBitcoinWalletForm" type="insert"
-    .row-xs-4
+  .row
+    h2 New Bitcoin Wallet
+    +autoForm collection="BitcoinWallets" id="insertBitcoinWalletForm" type="insert"
       +afQuickField name='label'
-    button(type="submit", class="btn btn-primary btn-lg") {{i18n 'nodes.buttons.save'}}
+    button(type="submit", class="btn btn-primary btn-lg pull-right") {{i18n 'nodes.buttons.save'}}

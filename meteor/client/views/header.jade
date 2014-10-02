@@ -27,8 +27,10 @@ template(name="header")
             a(href="{{pathFor 'upload'}}") 
               span.glyphicon.glyphicon-circle-arrow-up
               | {{i18n 'template.headings.upload'}}
-          li
-            a(href="{{pathFor 'nodes'}}") {{i18n 'template.headings.accounts'}}
+          li 
+            a(href="{{pathFor 'nodes'}}") 
+              span.glyphicon.glyphicon-asterisk
+              | {{i18n 'template.headings.accounts'}}
           li
             a(href="{{pathFor 'user_settings'}}")
               span.glyphicon.glyphicon-cog
