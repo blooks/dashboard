@@ -2,6 +2,7 @@ template(name="transactions")
   .container
     .row
       h1.process-title {{i18n 'transactions.headings.transactions'}}
+      hr.sub-stopper
       .sub-menu-zone.pull-right
         //- Button trigger modal 
         a(href="#", data-toggle="modal",data-target="#txHelpModal")
@@ -47,16 +48,16 @@ template(name="transactions")
               th {{i18n 'transactions.headings.table.source'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.source'}} ")
                   span.glyphicon.glyphicon-info-sign
-              th {{i18n 'transactions.headings.table.inAmount'}}
+              th.positive {{i18n 'transactions.headings.table.inAmount'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.inAmount'}} ")
                   span.glyphicon.glyphicon-info-sign
-              th {{i18n 'transactions.headings.table.inCurrency'}}
+              th.positive {{i18n 'transactions.headings.table.inCurrency'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.inCurrency'}} ")
                   span.glyphicon.glyphicon-info-sign
-              th {{i18n 'transactions.headings.table.outAmount'}}
+              th.negative {{i18n 'transactions.headings.table.outAmount'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.outAmount'}} ")
                   span.glyphicon.glyphicon-info-sign
-              th {{i18n 'transactions.headings.table.outCurrency'}}
+              th.negative {{i18n 'transactions.headings.table.outCurrency'}}
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transactions.tooltip.outCurrency'}} ")
                   span.glyphicon.glyphicon-info-sign
               th {{i18n 'transactions.headings.table.volume'}}
@@ -68,10 +69,10 @@ template(name="transactions")
             tr
               td {{date}}
               td {{source}}
-              td {{in.amount}} {{in.currency}}
-              td {{in.currency}}
-              td {{out.amount}} {{out.currency}}
-              td {{out.currency}}
+              td.positive {{in.amount}} {{in.currency}}
+              td.positive {{in.currency}}
+              td.negative {{out.amount}} {{out.currency}}
+              td.negative {{out.currency}}
               td {{base.amount}} {{base.currency}}
               td 
                 a.delete-transaction(href="#")
