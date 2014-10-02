@@ -15,21 +15,17 @@ html	{}
 body	{
 	background-color: @whyte;
 	font-size: 12px;
-	font-size: 1.2rem;
-	color: @gray-dark;
+	font-size: 1rem;
 }
 
 /* Global Page Sections
 ------------------------------ */
-
-
 
 /* Main Zones
 -------------------- */
 #content {
 	margin-top: 90px;
 	margin-top: 7.5rem;
-
 }
 
 
@@ -38,49 +34,11 @@ body	{
 footer {
 	padding: 50px 0;
 	padding: 4.167rem 0;
-	font-size: 12px; font-size: 1rem;	
+	font-size: 11px; font-size: 0.9167rem;
 }
 
 /* View Specific
 ---------------- */
-.call-to-action-zone {
-	text-align: center;
-	padding: 4.167rem 0;
-
-	h3 {
-		font-size: 36px; font-size: 3rem;
-	}
-
-	a.read-more {
-		margin-top: 40px;
-		margin-top: 3.333rem;
-		color: @darkblue;
-		border: 1px solid @darkblue;
-	}
-
-	.cta {
-		margin-bottom: 50px;
-		margin-bottom: 4.167rem;
-	}
-
-	.social {
-		a {
-			color: @darkblue;
-
-			i {
-				border: 1px solid @darkblue;
-				padding: 30px;
-				font-size: 55px;
-				width: 120px;
-				height: 120px;
-				margin: 30px 30px;
-
-			}
-		}		
-	}
-
-}
-
 .empty-msg {
   border: 1px solid @gray;
   padding: 20px;
@@ -113,14 +71,17 @@ footer {
 /* Form styling
 ---------------- */
 .text-form {
+	
 	input {
-
 		&.spacy {
-			padding: 25px 30px; margin-bottom: 20px; 
+			padding: 24px 30px; 
+			padding: 2rem 2.5rem; 
+			margin-bottom: 20px; 
+			margin-bottom: 1.667rem; 
 			background: none;
 			border: 1px solid @gray-light;
 			letter-spacing: 3px;
-			font-size: 16px;font-size: 1.6rem;
+			font-size: 16px;font-size: 1.333rem;
 		}
 
 		&:hover {
@@ -145,6 +106,10 @@ footer {
 	padding: 1.667rem;
 	text-align: right;
 	background-color: @gray-lighter;
+
+	.btn {
+		border: none;		
+		}
 	}
 
 }
@@ -154,25 +119,27 @@ footer {
 ---------------- */
 .navbar-brand {
 	padding-top: 10px;
+	padding-top: 0.8333rem;
 
 	.logo {
-		height: 30px;
+		height: 30px;		
 	}
 }
 
 .btn	{
-	border: 1px solid @darkblue;
-	color: @darkblue;
+	border: 1px solid @brand-primary;
+	color: @brand-primary;
   	background: none;
-	font-family: @font-family-sans-serif;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 5px;
-
+    -webkit-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -o-transition: background 0.2s linear;
+    transition: background 0.2s linear;
+	
 	&:hover, &:focus	{
 		color: @whyte;		
-	  	background: @darkblue;
-	  	border: 1px solid @darkblue;
+	  	background: @brand-primary;
+	  	border: 1px solid @brand-primary;
 	}
 }
 
@@ -185,9 +152,9 @@ a.read-more {
 	border: 1px solid @gray-dark;
 	display: inline-block;
 	font-family: @font-family-sans-serif;
-	font-size: 16px; font-size: 1.6rem;
+	font-size: 16px; font-size: 1.333rem;
 	letter-spacing: 7px;
-	padding: 8px 19px;
+	padding: 0.6667rem 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
 	vertical-align: middle;	
@@ -205,4 +172,12 @@ ul.nav-pills {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
+
+hr.sub-stopper {
+	width: 3rem;
+	height: 1rem;
+	text-align: center;
+	color: @darkblue;
+	background-color: @darkblue;
 }
