@@ -38,7 +38,7 @@ Transactions.helpers({
     base_amount = calculateBaseAmount(foreign_amount, foreign_currency, this.date);
     var result = {
       currency : base_currency,
-      amount: base_amount
+      amount: Math.round(base_amount)
     };
     return result;
 }
