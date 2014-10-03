@@ -67,7 +67,7 @@ template(name="transactions")
         tbody
           each transactions
             tr
-              td {{date}}
+              td {{prettyDate date}}
               td {{source}}
               td.positive {{in.amount}} {{in.currency}}
               td.positive {{in.currency}}
