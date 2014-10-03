@@ -25,3 +25,5 @@ mrt:just-i18n
 npm-container
 mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
+raix:handlebar-helpers
+
