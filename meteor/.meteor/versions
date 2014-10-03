@@ -58,7 +58,7 @@ mquandalle:jade@0.2.8
 mrt:accounts-t9n@0.0.13
 mrt:accounts-ui-bootstrap-3@0.3.3
 mrt:just-i18n@0.3.0
-mrt:moment@2.6.0
+mrt:moment@2.8.1
 mrt:underscore-string-latest@2.3.3
 nemo64:bootstrap-data@3.2.0-rc2
 nemo64:bootstrap@3.2.3

@@ -1,2 +1,2 @@
 Template.registerHelper 'prettyDate', (date)->
-	moment(date).format('YYYY MM DD');
+	moment(date).format('dddd MMMM Do YYYY[:] hh:mm:ss');
