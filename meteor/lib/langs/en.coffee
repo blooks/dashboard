@@ -6,12 +6,13 @@ i18n.map 'en_GB',
     headings:
       dashboard: 'Dashboard'
       trades: 'Trades'
+      transfers: 'Transfers'
       upload: 'Upload'
       settings: 'Settings'
       help: 'Help'
       accounts: 'Accounts'
   
-  # Transactions
+  # Trades
   trades:
     headings:
       table:
@@ -41,6 +42,30 @@ i18n.map 'en_GB',
       outAmount: 'Lorem Ipsum Tooltip Text'
       outCurrency: 'Lorem Ipsum Tooltip Text'
       volume: 'Lorem Ipsum Tooltip Text'
+  transfers:
+    headings:
+      table:
+        inflow: 'Inflow'
+        outflow: 'Outflow'
+        date: 'Date'
+        amount: 'Amount'
+        currency: 'Currency'
+        source: 'From'
+        target: 'To'
+      transfers: 'Transfers'
+      noTransfers: 'No transfers...'
+    text:
+      noTransfers: 'Please add some transactions to get started. Either import or add manually below.'
+    help: 'Put in the transactions please.'
+    tooltip:
+      date: 'Input date must be in format: dd/mm/yyyy'
+      source: 'Lorem Ipsum Tooltip Text'
+      inAmount: 'Lorem Ipsum Tooltip Text'
+      inCurrency: 'Lorem Ipsum Tooltip Text'
+      outAmount: 'Lorem Ipsum Tooltip Text'
+      outCurrency: 'Lorem Ipsum Tooltip Text'
+      volume: 'Lorem Ipsum Tooltip Text'
+
   # Nodes
   nodes:
     headings:
