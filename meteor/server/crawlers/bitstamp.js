@@ -20,7 +20,7 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
   }
   try {
     check(date, Date);
-    if (foreigncurrency !== 'USD') {
+    if (foreigncurrency !== 'USD' && foreigncurrency !== 'EUR') {
       throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...');
     }
     to = 'EUR';

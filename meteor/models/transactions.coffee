@@ -29,9 +29,6 @@ Schemas.Transaction = new SimpleSchema
     type: Schemas.Amount
   out:
     type: Schemas.Amount
-  base:
-    type: Schemas.Amount
-    optional: true
   # Metadata
   date:
     type: Date
@@ -40,6 +37,10 @@ Schemas.Transaction = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.supportedExchanges
   note:
     type: String
+    optional: true
+  isTrade:
+    type: Boolean
+    defaultValue: true
     optional: true
 
 # Attach the schema to the collection
