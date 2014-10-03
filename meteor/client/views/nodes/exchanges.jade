@@ -1,0 +1,8 @@
+template(name="currencyExchanges")
+  if exchanges
+    each exchanges
+      .exchange-item
+        | {{exchange}}
+        each balances
+          li Balance in {{currency}}: {{balance}} 
+  +newExchange

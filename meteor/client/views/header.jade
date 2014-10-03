@@ -16,13 +16,22 @@ template(name="header")
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
           li
-            a(href="{{pathFor 'dashboard'}}") {{i18n 'template.headings.dashboard'}}
+            a(href="{{pathFor 'dashboard'}}")
+              span.glyphicon.glyphicon-dashboard
+              | {{i18n 'template.headings.dashboard'}}
           li
-            a(href="{{pathFor 'transactions'}}") {{i18n 'template.headings.transactions'}}
+            a(href="{{pathFor 'transactions'}}") 
+              span.glyphicon.glyphicon-list-alt
+              | {{i18n 'template.headings.transactions'}}
           li
-            a(href="{{pathFor 'upload'}}") {{i18n 'template.headings.upload'}}
+            a(href="{{pathFor 'upload'}}") 
+              span.glyphicon.glyphicon-circle-arrow-up
+              | {{i18n 'template.headings.upload'}}
           li
-            a(href="{{pathFor 'user_settings'}}") {{i18n 'template.headings.settings'}}
-
+            a(href="{{pathFor 'nodes'}}") {{i18n 'template.headings.accounts'}}
+          li
+            a(href="{{pathFor 'user_settings'}}")
+              span.glyphicon.glyphicon-cog
+              | {{i18n 'template.headings.settings'}}            
         ul.nav.navbar-nav.navbar-right
           +loginButtons

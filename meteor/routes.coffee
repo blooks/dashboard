@@ -33,6 +33,9 @@ Router.map ->
   @route 'user_settings',
     path: '/user_settings'
 
+  @route 'nodes',
+    path: '/nodes'
+
   @route 'notFound',
     path: '*'
     where: 'server'

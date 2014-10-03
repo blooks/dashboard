@@ -1,0 +1,5 @@
+template(name="bankAccounts")
+  if bankaccounts
+    each bankaccounts
+      .bankaccount-item {{label}} with Balance: {{balance}} {{currency}}
+  +newBankAccount

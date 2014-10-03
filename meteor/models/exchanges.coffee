@@ -1,58 +1,45 @@
 # Create the meteor collection
-@Transactions = new Meteor.Collection('transactions')
+@Exchanges = new Meteor.Collection('exchanges')
 
 Schemas = {}
 
-# Create the schema(s)
-Schemas.Amount = new SimpleSchema
-  amount:
-    type: String # Store amounts as string to avoid rounding issues
-  currency:
+Schemas.exchangeCredentials = new SimpleSchema
+  userName:
     type: String
-    allowedValues: Meteor.settings.public.coyno.allowedCurrencies
-  node:
+  APIKey:
     type: String
-    optional: true;
+  secret:
+    type: String
 
-Schemas.Transaction = new SimpleSchema
+Schemas.Exchanges = new SimpleSchema
 
-  foreignId:
-    type: String
-    unique : true
+    #unique : true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
-  # Trade info
-  in:
-    type: Schemas.Amount
-  out:
-    type: Schemas.Amount
-  # Metadata
-  date:
-    type: Date
-  source:
+  # Exchanges info
+  label:
+    type: String
+    optional: true
+  exchange:
     type: String
     allowedValues: Meteor.settings.public.coyno.supportedExchanges
-  note:
-    type: String
-    optional: true
-  isTrade:
-    type: Boolean
-    defaultValue: true
-    optional: true
+  credentials:
+    type: Schemas.exchangeCredentials
+
 
 # Attach the schema to the collection
-Transactions.attachSchema Schemas.Transaction
+Exchanges.attachSchema Schemas.Exchanges
 
 # Add the created / updated fields
-Transactions.timed()
+Exchanges.timed()
 
 # Ensure every document is owned by a user
-Transactions.owned()
+Exchanges.owned()
 
-Transactions.allow
+Exchanges.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."
