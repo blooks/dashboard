@@ -20,9 +20,13 @@ template(name="header")
               i.fa.fa-dashboard
               | {{i18n 'template.headings.dashboard'}}
           li
-            a(href="{{pathFor 'transactions'}}") 
-              i.fa.fa-arrow-up
-              | {{i18n 'template.headings.transactions'}}
+            a(href="{{pathFor 'trades'}}") 
+              i.fa.fa-refresh
+              | {{i18n 'template.headings.trades'}}
+          li
+            a(href="{{pathFor 'transfers'}}") 
+              i.fa.fa-exchange
+              | {{i18n 'template.headings.transfers'}}              
           li
             a(href="{{pathFor 'upload'}}") 
               i.fa.fa-arrow-up

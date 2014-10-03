@@ -16,7 +16,9 @@ var krakenTradeToTransaction = function(trade) {
     krakenIn = trade[1];
     krakenOut = trade[0];
   }
+
     in_amount = krakenIn.amount-krakenIn.fee;
+
   currencydetails.in = {
           amount: in_amount, // Trim off the initial -
           currency: krakenAssettoCoynoAsset(krakenIn.asset),
@@ -28,14 +30,6 @@ var krakenTradeToTransaction = function(trade) {
           currency: krakenAssettoCoynoAsset(krakenOut.asset),
           node: 'Kraken'
         }
-        var baseAmount = in_amount;
-        if (krakenOut.asset == base_currency) {
-          baseAmount = out_amount;
-        }
-        currencydetails.base = {
-          amount: baseAmount, 
-          currency: base_currency
-        };
         return currencydetails;
       };
 
@@ -56,10 +50,6 @@ var krakenDepositToTransaction = function(deposit) {
               amount: deposit.amount,
               currency: currency,
               node: second_node
-            };
-            currencydetails.base = {
-              amount: 0,
-              currency: base_currency
             };
     return currencydetails;
   };
@@ -83,10 +73,6 @@ var krakenWithdrawalToTransaction = function(withdrawal) {
               amount: -1*withdrawal.amount,
               currency: currency,
               node: second_node
-            };
-            currencydetails.base = {
-              amount: 0,
-              currency: base_currency
             };
     return currencydetails;
   };
@@ -127,7 +113,6 @@ var krakenJSONtoDB = function(krakenData) {
       } 
       transaction.in = currencydetails.in;
       transaction.out = currencydetails.out;
-      transaction.base = currencydetails.base; 
       try {
         transactionId = Transactions.insert(transaction);
       } catch (e) {
