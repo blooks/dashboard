@@ -90,22 +90,15 @@ var krakenWithdrawalToTransaction = function(withdrawal) {
             };
     return currencydetails;
   };
-var preconditionKraken = function (amount, krakenAsset) {
-  var asset = krakenAssettoCoynoAsset(krakenAsset);
-  if (asset == 'USD' || asset == 'EUR') return parseInt(Math.round(parseFloat(amount)*100));
-  if (asset == 'BTC') return parseInt(Math.round(parseFloat(amount)*100000000));
-  console.log('Kraken Asset not recognized!');
-  return 0;
-}
+
 var krakenJSONtoDB = function(krakenData) { 
   var krakenDataLength = krakenData.length;
 
   //preconditioning. Kraken gives us ugly floatsies! Shoo floatsies!
   krakenData.forEach(function(transaction) {
-  transaction.amount = preconditionKraken(transaction.amount, transaction.asset);
-  transaction.fee = preconditionKraken(transaction.fee, transaction.asset)
-});
-
+    transaction.amount = parseInt(Math.round(parseFloat(transaction.amount)*100000000));
+    transaction.fee = parseInt(Math.round(parseFloat(transaction.fee)*100000000));
+  });
 
 
   var errors = [];
@@ -139,12 +132,12 @@ var krakenJSONtoDB = function(krakenData) {
         transactionId = Transactions.insert(transaction);
       } catch (e) {
         errors.push(e);
-        console.log(e);
+          //console.log(e);
       }
     }
     catch (e) {
       console.log('Some threw an error!');
-      console.log(e);
+      //console.log(e);
     }
   }
   return errors.length === 0;
