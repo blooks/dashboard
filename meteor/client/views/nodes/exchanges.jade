@@ -9,7 +9,7 @@ template(name="currencyExchanges")
             h3 {{exchange}}
             ul.no-bullets
               each balances
-                li Balance in {{currency}}: {{balance}}
+                li Balance in {{currency}}: {{saneNumber balance currency}}
             .controls
               a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
                 span.glyphicon.glyphicon-trash
