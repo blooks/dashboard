@@ -1,8 +1,22 @@
 template(name="currencyExchanges")
-  if exchanges
-    each exchanges
-      .exchange-item
-        | {{exchange}}
-        each balances
-          li Balance in {{currency}}: {{balance}} 
+  .row.exhanges-zone
+    h2 Added Exchanges
+    if exchanges
+      each exchanges
+        .col-md-4
+          .item
+            img(src="img/external-logos/Bitstamp_Logo_2013bw.png")
+            h3 {{exchange}}
+            ul.no-bullets
+              each balances
+                li Balance in {{currency}}: {{balance}}
+            .controls
+              a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
+                span.glyphicon.glyphicon-trash
+    .col-md-4
+      .add-item-box
+        a(href="#") 
+          span.glyphicon.glyphicon-plus 
+          br 
+          | {{i18n 'nodes.exchanges.addNewExchange'}}
   +newExchange

@@ -50,3 +50,6 @@ i18n.map 'en_GB',
       addSingle: "New Account"
     buttons:
       save: "Save"
+    exchanges:
+      addNewExchange: "Add exchange"
+      deleteExchange: "Delete exchange"
