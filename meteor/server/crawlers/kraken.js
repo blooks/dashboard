@@ -150,7 +150,6 @@ var krakenJSONtoDB = function(krakenData) {
       } 
       transaction.in = currencydetails.in;
       transaction.out = currencydetails.out;
-      transaction.base = currencydetails.base; 
       try {
         transactionId = Transactions.insert(transaction);
       } catch (e) {
