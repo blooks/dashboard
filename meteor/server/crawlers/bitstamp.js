@@ -25,7 +25,7 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
     }
     to = 'EUR';
     rate = getExchangeRate(foreigncurrency, to, date);
-    return accounting.toFixed(amount * rate, 2);
+    return accounting.toFixed(amount * rate, 0);
     } catch (_error) {
     e = _error;
     return console.log(e);
@@ -35,22 +35,22 @@ var bitstampTradeToTransaction = function(trade) {
   var currencydetails = {}
   var dollar_amount = 0;
    if (trade.btc < 0 ) {// trade is a sale of BTC for USD
-      var bitcoin_amount = trade.btc.substr(1);
+      var bitcoin_amount = -1*trade.btc;
           currencydetails.out = {
           amount: bitcoin_amount, // Trim off the initial -
           currency: 'BTC',
           node: 'Bitstamp'
         }
-        dollar_amount = parseFloat(trade.usd) - parseFloat(trade.fee);
+        dollar_amount = trade.usd - trade.fee;
         currencydetails.in = {
-          amount: dollar_amount.toString(),
+          amount: dollar_amount,
           currency: 'USD',
           node: 'Bitstamp'
         }
       } else {//trade is a sale of USD for BTC
-        dollar_amount = parseFloat(trade.usd.substr(1)) + parseFloat(trade.fee);
+        dollar_amount = -1*trade.usd + trade.fee;
         currencydetails.out = {
-          amount: dollar_amount.toString(),
+          amount: dollar_amount,
           currency: 'USD',
           node: 'Bitstamp'
         };
@@ -125,7 +125,7 @@ var bitstampWithdrawalToTransaction = function(withdrawal) {
   var currencydetails = {};
   var base_currency = 'EUR';
   if (withdrawal.usd < 0) {//Dollar withdrawel
-    var dollar_amount = withdrawal.usd.substr(1);
+    var dollar_amount = -1 * withdrawal.usd;
     var base_amount = calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
             currencydetails.out = {
               amount: dollar_amount,
@@ -138,7 +138,7 @@ var bitstampWithdrawalToTransaction = function(withdrawal) {
               node: 'BankAccount'
             };
           } else {//bitcoin withdrawel
-            bitcoin_amount = withdrawal.btc.substr(1),
+            bitcoin_amount = -1 * withdrawal.btc,
             currencydetails.out = {
               amount: bitcoin_amount,
               currency: 'BTC',
@@ -156,7 +156,7 @@ var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
   var currencydetails = {};
   var base_currency = 'EUR';
   if (withdrawal.usd < 0) {//Dollar withdrawel
-      var dollar_amount = withdrawal.usd.substr(1);
+      var dollar_amount = -1*withdrawal.usd;
             currencydetails.in = {
               amount: dollar_amount,
               currency: 'USD',
@@ -168,7 +168,7 @@ var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
               node: 'Bitstamp'
             };
           } else {//bitcoin withdrawal
-            var bitcoin_amount = withdrawal.btc.substr(1);
+            var bitcoin_amount = -1*withdrawal.btc;
             currencydetails.out = {
               amount: bitcoin_amount,
               currency: 'BTC',
@@ -191,6 +191,12 @@ var convertBitstampTx = function(bitstampTx) {
   transaction.source = 'Bitstamp';
   transaction.userId = Meteor.userId();
   transaction.foreignId = Meteor.userId() + 'Bitstamp' + bitstampTx.id;
+  //preconditioning
+
+  bitstampTx.usd = parseInt(parseFloat(bitstampTx.usd)*100)
+  bitstampTx.btc = parseInt(parseFloat(bitstampTx.btc)*100000000)
+  bitstampTx.fee = parseInt(parseFloat(bitstampTx.fee)*100)
+
   var currencydetails = {};
    if (bitstampTx.type === 2) {//trade 
       currencydetails = bitstampTradeToTransaction(bitstampTx);
@@ -222,6 +228,8 @@ var bitstampJSONtoDB = function(bitstampData) {
               } catch (_error) {
             e = _error;
                errors.push(e);
+               console.log(e);
+               //console.log(transaction);
         }
   }
         return errors.length === 0;
