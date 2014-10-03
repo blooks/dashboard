@@ -191,11 +191,11 @@ var convertBitstampTx = function(bitstampTx) {
   transaction.source = 'Bitstamp';
   transaction.userId = Meteor.userId();
   transaction.foreignId = Meteor.userId() + 'Bitstamp' + bitstampTx.id;
-  //preconditioning
-
-  bitstampTx.usd = parseInt(parseFloat(bitstampTx.usd)*100)
-  bitstampTx.btc = parseInt(parseFloat(bitstampTx.btc)*100000000)
-  bitstampTx.fee = parseInt(parseFloat(bitstampTx.fee)*100)
+  
+  //preconditioning. Bitstamp gives float-style-strings for amounts
+  bitstampTx.usd = parseInt(Math.round(parseFloat(bitstampTx.usd)*100));
+  bitstampTx.btc = parseInt(Math.round(parseFloat(bitstampTx.btc)*100000000));
+  bitstampTx.fee = parseInt(Math.round(parseFloat(bitstampTx.fee)*100));
 
   var currencydetails = {};
    if (bitstampTx.type === 2) {//trade 
@@ -228,7 +228,7 @@ var bitstampJSONtoDB = function(bitstampData) {
               } catch (_error) {
             e = _error;
                errors.push(e);
-               console.log(e);
+               //console.log(e);
                //console.log(transaction);
         }
   }
