@@ -44,10 +44,3 @@ Transactions.helpers({
 }
 }
 );
-Transactions.transform = function(transaction) {
-    if (transaction.in.currency === transaction.out.currency) {
-      transaction.isTrade = false;
-    }
-    transaction.isTrade = true;
-    return transaction;
-  };
