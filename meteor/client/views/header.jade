@@ -30,10 +30,6 @@ template(name="header")
           li 
             a(href="{{pathFor 'nodes'}}") 
               span.glyphicon.glyphicon-asterisk
-              | {{i18n 'template.headings.accounts'}}
-          li
-            a(href="{{pathFor 'user_settings'}}")
-              span.glyphicon.glyphicon-cog
-              | {{i18n 'template.headings.settings'}}            
+              | {{i18n 'template.headings.accounts'}}           
         ul.nav.navbar-nav.navbar-right
           +loginButtons
