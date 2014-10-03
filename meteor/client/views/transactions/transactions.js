@@ -1,7 +1,7 @@
 // on the client
 Template.transactions.helpers({
   transactions: function(){
-    return Transactions.find({},{sort: ['date','asc']}).fetch();
+    return Transactions.find({isTrade: true},{sort: ['date','asc']}).fetch();
   }
 });
 Template.transactions.events({
