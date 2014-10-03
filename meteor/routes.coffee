@@ -25,13 +25,14 @@ Router.map ->
 
   @route 'transactions',
     path: '/transactions'
+    waitOn: ->
+      [
+        Meteor.subscribe 'transactions'
+      ]
   #js this.route('transactions', {path: '/transactions'});
 
   @route 'upload',
     path: '/upload'
-
-  @route 'user_settings',
-    path: '/user_settings'
 
   @route 'nodes',
     path: '/nodes'

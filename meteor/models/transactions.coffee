@@ -40,8 +40,15 @@ Schemas.Transaction = new SimpleSchema
     optional: true
   isTrade:
     type: Boolean
-    defaultValue: true
-    optional: true
+    autoValue: ->
+      if @isInsert
+        inField = @field("in")
+        outField = @field("out")
+        if inField.value.currency == outField.value.currency
+          false
+        else
+          true
+          
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction
