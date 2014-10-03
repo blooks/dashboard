@@ -1,0 +1,20 @@
+template(name="newTransaction")
+  h2 {{i18n 'transactions.headings.addSingle'}} 
+    span.glyphicon.glyphicon.glyphicon-plus
+  +autoForm collection='Transactions' id='insertTransactionForm' type='insert'
+    .col-md-4
+      +afQuickField name='in'
+    .col-md-4
+      +afQuickField name='out'
+    .col-md-4
+      +afQuickField name='base'
+    .col-md-4
+      +afQuickField name='date'
+    .col-md-4
+      +afQuickField name='source'
+    .col-md-4
+      +afQuickField name='note'
+    .pull-right
+      a.btn.add-transaction(type="submit") 
+        span.glyphicon.glyphicon-plus
+        | {{i18n 'transactions.buttons.newTransaction'}}
