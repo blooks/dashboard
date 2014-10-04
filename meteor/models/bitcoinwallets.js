@@ -1,22 +1,10 @@
 BitcoinWallets.helpers({
   balance: function() {
-  currencies = ['BTC'];
-    var bitcoinwallet = this.device;
-    var transactionsin = Transactions.find({"in.node": bitcoinwallet}).fetch();
-    var transactionsout = Transactions.find({"out.node": bitcoinwallet}).fetch();
-    currencies.forEach(function(currency) {
-      var balance = 0.0;
-      transactionsin.forEach(function(transaction) {
-      if (transaction.in.currency == currency) {
-        balance+=parseFloat(transaction.in.amount);
-      }
-      });
-      transactionsout.forEach(function(transaction) {
-      if (transaction.out.currency == currency) {
-        balance-=parseFloat(transaction.out.amount);
-      }
-      });
-      result = balance;
+    var result = 0;
+    BitcoinAddresses.find({"walletId": this._id}).fetch().forEach(
+      function(address)
+    {
+      result += address.balance;
     });
     return result;
 },

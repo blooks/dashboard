@@ -1,0 +1,9 @@
+template(name="bitcoinWallets")
+  if bitcoinwallets
+    each bitcoinwallets
+      .bitcoinwallet-item Wallet with Label: {{label}} and balance: {{saneNumber balance 'BTC'}}
+      +bitcoinWalletAddresses this
+      .controls
+        a.delete-bitcoin-wallet(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.bitcoinwallets.deleteWallet'}} ")
+          span.glyphicon.glyphicon-trash
+  +newBitcoinWallet
