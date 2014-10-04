@@ -24,3 +24,9 @@ BitcoinWallets.helpers({
     return BitcoinAddresses.find({"walletId": this._id}).fetch();
   }
 });
+BitcoinWallets.before.remove(function (userId, doc) {
+  var addresses = BitcoinAddresses.find({"walletId": doc._id});
+  addresses.forEach(function(address) {
+    BitcoinAddresses.remove({"_id": address._id});
+  });
+});

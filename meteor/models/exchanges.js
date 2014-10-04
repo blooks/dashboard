@@ -22,3 +22,17 @@ Exchanges.helpers({
   return result;
 }
 });
+/** 
+Exchanges.before.remove(function (userId, doc) {
+  var transactions = Transactions.find({"source": doc._id});
+  transactions.forEach(function(address) {
+    Transactions.remove({"_id": address._id});
+  });
+});
+Exchanges.after.insert(function (userId, doc) {
+  if (doc.exchange === "Bitstamp") {
+  Meteor.call('getBitstampData'); }
+  else if (doc.exchange === "Kraken") {
+  Meteor.call('getKrakenData');
+  }
+});**/
