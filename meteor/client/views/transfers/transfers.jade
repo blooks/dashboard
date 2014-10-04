@@ -54,7 +54,7 @@ template(name="transfers")
             tr
               td {{prettyDate date}}
               td {{out.node}}
-              td.positive {{out.amount}}
+              td.positive {{saneNumber out.amount out.currency}}
               td.positive {{out.currency}}
               td.negative {{in.node}} 
               td

@@ -6,7 +6,7 @@ Schemas = {}
 # Create the schema(s)
 Schemas.Amount = new SimpleSchema
   amount:
-    type: String # Store amounts as string to avoid rounding issues
+    type: Number # Store amounts as string to avoid rounding issues
   currency:
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
