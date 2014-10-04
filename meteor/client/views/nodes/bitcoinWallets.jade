@@ -1,5 +1,6 @@
 template(name="bitcoinWallets")
   if bitcoinwallets
     each bitcoinwallets
-      .bitcoinwallet-item {{label}} with Balance: {{balance}} BTC
+      .bitcoinwallet-item Wallet with Label: {{label}}
+      +bitcoinWalletAddresses this
   +newBitcoinWallet

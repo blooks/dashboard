@@ -1,0 +1,8 @@
+template(name="addBitcoinAddress")
+  .row
+    h2 New Bitcoin Address
+    +autoForm collection="BitcoinAddresses" id="insertBitcoinAddressForm" type="insert"
+      +afQuickField name='label'
+      +afQuickField name='address'
+      +afQuickField name='walletId' value=this._id
+      button(type="submit", class="btn btn-primary btn-lg pull-right") {{i18n 'nodes.buttons.save'}}

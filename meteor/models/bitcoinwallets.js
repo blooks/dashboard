@@ -19,5 +19,8 @@ BitcoinWallets.helpers({
       result = balance;
     });
     return result;
-}
+},
+  addresses: function() {
+    return BitcoinAddresses.find({"walletId": this._id}).fetch();
+  }
 });
