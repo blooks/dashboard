@@ -2,7 +2,7 @@ template(name="newExchange")
   .row
     h2 New Exchange
     +autoForm collection="Exchanges" id="insertExchangeForm" type="insert"
-      +afQuickField name='label'
+      +afQuickField name='exchangeLabel'
       +afQuickField name='exchange' options='allowed'
       +afQuickField(name='credentials')
       button(type="submit", class="btn btn-primary btn-lg pull-right") {{i18n 'nodes.buttons.save'}}

@@ -16,6 +16,8 @@ Router.onBeforeAction mustBeSignedIn,
     'about'
   ]
 
+Router.onBeforeAction 'loading'
+
 Router.map ->
   @route 'home',
     path: '/'
@@ -27,13 +29,14 @@ Router.map ->
     path: '/trades'
     waitOn: ->
       [
-        Meteor.subscribe 'transactions'
+        Meteor.subscribe 'trades'
+        Meteor.subscribe 'exchanges'
       ]
   @route 'transfers',
     path: '/transfers'
     waitOn: ->
       [
-        Meteor.subscribe 'transactions'
+        Meteor.subscribe 'transfers'
       ]
 
   @route 'upload',

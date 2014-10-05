@@ -4,8 +4,8 @@ Exchanges.helpers({
     /**
     currencies = Meteor.settings.public.coyno.allowedCurrencies;
     var exchange = this.exchange;
-    var transactionsin = Transactions.find({"in.node": exchange}).fetch();
-    var transactionsout = Transactions.find({"out.node": exchange}).fetch();
+    var transactionsin = Trades.find({"in.node": exchange}).fetch();
+    var transactionsout = Trades.find({"out.node": exchange}).fetch();
     currencies.forEach(function(currency) {
       var balance = 0.0;
       transactionsin.forEach(function(transaction) {
@@ -30,20 +30,13 @@ Exchanges.helpers({
 });
 if (Meteor.isServer) {
 Exchanges.before.remove(function (userId, doc) {
-  /**
-  var transactions = Transactions.find({"source": doc._id});
-  transactions.forEach(function(address) {
-    Transactions.remove({"_id": address._id});
+  var transactions = Trades.find({"venueId": doc._id});
+  transactions.forEach(function(transaction) {
+    Trades.remove({"_id": transaction._id});
   });
-  **/
 });
 Exchanges.after.insert(function (userId, doc) {
-  /**
   if (doc.exchange === "Bitstamp") {
-  Meteor.call('getBitstampData', doc); }
-  else if (doc.exchange === "Kraken") {
-  Meteor.call('getKrakenData', doc);
-  }
-  **/
+    Meteor.call('getBitstampData', doc); }
 });
 }

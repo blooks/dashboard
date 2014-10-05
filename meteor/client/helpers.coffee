@@ -6,9 +6,3 @@ Template.registerHelper 'saneNumber', (internalNumber, currency)->
 		(internalNumber/100000000).toFixed(8)
 	else
 		(internalNumber/100000000).toFixed(2);	
-	
-Template.registerHelper 'saneAmount', () ->
-	if this.in.currency is 'BTC'
-		(this.in.amount/100000000).toFixed(8)
-	else
-		(this.in.amount/100000000).toFixed(2);

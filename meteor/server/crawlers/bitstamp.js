@@ -1,19 +1,16 @@
 var Bitstamp = Meteor.npmRequire('bitstamp');
 
-//Patching Bitstamp NPM Module ; TBR
-Bitstamp.prototype.user_trades = function(limit, callback) {
+//Patching Bitstamp NPM Module ; TBR 
+
+Bitstamp.prototype.user_transactions = function(limit, callback) {
   if(!callback) {
     callback = limit;
     limit = undefined;
   }
-  this._post('user_trades', callback, {limit: limit});
+  this._post('user_transactions', callback, {limit: limit});
 }
 
-
-
-var calculateBaseAmount;
-
-calculateBaseAmount = function(amount, foreigncurrency, date) {
+var calculateBaseAmount = function(amount, foreigncurrency, date) {
   var e, rate, to;
   if (date == null) {
     date = new Date();
@@ -177,16 +174,17 @@ var convertBitstampTx = function(bitstampTx) {
 
   var currencydetails = {};
    if (bitstampTx.type === 2) {//trade 
-      currencydetails = bitstampTradeToTransaction(bitstampTx);
-      } else if (bitstampTx.type === 0) {//deposit
-        currencydetails = bitstampDepositToTransaction(bitstampTx);
+      currencydetails = bitstampTradeToTrade(bitstampTx);
+      } /** else if (bitstampTx.type === 0) {//deposit
+        currencydetails = bitstampDepositToTrade(bitstampTx);
         } else if (bitstampTx.type === 1) {//withdrawal
-          currencydetails = bitstampWithdrawalToTransaction(bitstampTx);
-          } /** else if (bitstampTx.type === 3) {//ripple withdrawel
+          currencydetails = bitstampWithdrawalToTrade(bitstampTx);
+          }  else if (bitstampTx.type === 3) {//ripple withdrawel
             currencydetails = bitstampRippleWithdrawalToTransaction(bitstampTx);
           } else if (bitstampTx.type === 4) {//ripple deposit
                 currencydetails = bitstampRippleDepositToTransaction(bitstampTx);
           } **/ else {
+            return {};
             console.log("FEHLER! BITSTAMP LIEFERT TOTALE SCHEISSE")
           }
   trade.buy = currencydetails.buy;
@@ -201,32 +199,31 @@ var bitstampJSONtoDB = function(bitstampData, exchange) {
   for (i = 0; i < bitstampData.length; ++i) {
     var bitstampTx = bitstampData[i];
     var trade = convertBitstampTx(bitstampTx);
-    trade.venueId = exchange._id;
-      try {
-          tradeId = Transactions.insert(trade);
+    if (Object.keys(trade).length > 0) {
+      trade.venueId = exchange._id;
+        try {
+          tradeId = Trades.insert(trade);
               } catch (_error) {
             e = _error;
                errors.push(e);
                console.log(e);
                console.log(trade);
         }
-  }
-        return errors.length === 0;
-    };
-
-    Meteor.methods({
-      getBitstampData: function (exchange) {
-        console.log(exchange);
-        var key = exchange.credentials.APIKey;
-        var secret = exchange.credentials.secret;
-        var client_id = exchange.credentials.userName;
-        var privateBitstamp = new Bitstamp(key, secret, client_id);
-        console.log(key);
-        console.log(secret);
-        console.log(client_id);
-        var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_trades']);
-        var jsonData = wrappedPrivateBitstamp.user_trades(100000);
-        console.log(jsonData);
-        //bitstampJSONtoDB(jsonData, exchange);
       }
-    });
+    }
+    return errors.length === 0;
+};
+
+
+
+Meteor.methods({
+  getBitstampData: function (exchange) {
+    var key = exchange.credentials.APIKey;
+    var secret = exchange.credentials.secret;
+    var client_id = exchange.credentials.userName;
+    var privateBitstamp = new Bitstamp(key, secret, client_id);
+    var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
+    var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
+    bitstampJSONtoDB(jsonData, exchange);
+  }
+});

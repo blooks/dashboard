@@ -12,7 +12,7 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
     }
     base_currency = 'EUR';
     rate = getExchangeRate(foreigncurrency, base_currency, date);
-    return accounting.toFixed(amount * rate, 2);
+    return amount * rate;
     } catch (_error) {
     e = _error;
     return console.log(e);
@@ -20,7 +20,7 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
 };
 
 var currencyKnown = function (currency) {
-  if (Meteor.settings.public.allowedCurrencies.indexOf(currency) > -1) return true;
+  if (Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1) return true;
   return false;
 }
 
@@ -46,7 +46,8 @@ Trades.helpers({
     };
     return result;
   },
-  source: function() {
-    return Exchanges.findOne({"_id": this.venueId}).label;
+  venue: function() {
+    var exchange = Exchanges.findOne({"_id": this.venueId});
+    return exchange.exchangeLabel;
   }
 });
