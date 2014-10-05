@@ -53,3 +53,7 @@ i18n.map 'en_GB',
     exchanges:
       addNewExchange: "Add exchange"
       deleteExchange: "Delete exchange"
+    wallets:
+      add: "Add wallet"
+      remove: "remove wallet"
+      update: "update wallets"

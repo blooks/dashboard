@@ -1,5 +1,32 @@
 template(name="bitcoinWallets")
   if bitcoinwallets
+      .btn.btn-primary#updatePublicAddress Update Balances
     each bitcoinwallets
-      .bitcoinwallet-item {{label}} with Balance: {{balance}} BTC
+        .bitcoinwallet-item {{label}} with Balance: {{balance}} BTC
+        each addresses
+            div Address: #{address} Balance: {{convertToBitcoin balance}}
+
+        .btn.btn-primary#addPublicAddress Add Public Address
+        +removeBitcoinWalletModal
+
+
+
+
+        if $.Session.equals 'showAddWalletAddress' _id
+            input.input-lg#bitcoinWalletAddressInput
+            .btn.btn-primary#saveBitcoinWalletAddress Save
   +newBitcoinWallet
+
+template(name="removeBitcoinWalletModal")
+    a.btn.btn-danger(data-toggle='modal', href='#delete-wallet') {{i18n 'nodes.wallets.remove'}}
+    #delete-wallet.modal.fade
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h4.modal-title Are you sure?
+                .modal-body
+                    | Are you sure you want to delete the wallet #{label}
+                .modal-footer
+                    button.btn.btn-default(type='button', data-dismiss='modal') cancel @
+                    button#deleteWalletButton.btn.btn-danger(type='button') Remove
