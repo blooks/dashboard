@@ -1,20 +1,22 @@
 # Create the meteor collection
-@Transactions = new Meteor.Collection('transactions')
+## A Transfer is a transaction that moves one kind of a currency between
+## two different accounts
+@Transfers = new Meteor.Collection('transfers')
 
 Schemas = {}
 
 # Create the schema(s)
-Schemas.Amount = new SimpleSchema
+Schemas.VolumeFragment = new SimpleSchema
   amount:
-    type: Number # Store amounts as string to avoid rounding issues
-  currency:
+    type: Number # Store amounts as Ints to avoid rounding issues
+  nodeId:
     type: String
-    allowedValues: Meteor.settings.public.coyno.allowedCurrencies
-  node:
+    regEx: SimpleSchema.RegEx.Id
+    optional: true
+  nodeLabel:
     type: String
-    optional: true;
 
-Schemas.Transaction = new SimpleSchema
+Schemas.Transfer = new SimpleSchema
 
   foreignId:
     type: String
@@ -25,10 +27,10 @@ Schemas.Transaction = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Id
   # Trade info
-  in:
-    type: Schemas.Amount
-  out:
-    type: Schemas.Amount
+  inputs:
+    type: [Schemas.VolumeFragment]
+  outputs:
+    type: [Schemas.VolumeFragment]
   # Metadata
   date:
     type: Date
@@ -38,28 +40,18 @@ Schemas.Transaction = new SimpleSchema
   note:
     type: String
     optional: true
-  isTrade:
-    type: Boolean
-    autoValue: ->
-      if @isInsert
-        inField = @field("in")
-        outField = @field("out")
-        if inField.value.currency == outField.value.currency
-          false
-        else
-          true
           
 
 # Attach the schema to the collection
-Transactions.attachSchema Schemas.Transaction
+Transfers.attachSchema Schemas.Transfer
 
 # Add the created / updated fields
-Transactions.timed()
+Transfers.timed()
 
 # Ensure every document is owned by a user
-Transactions.owned()
+Transfers.owned()
 
-Transactions.allow
+Transfers.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."

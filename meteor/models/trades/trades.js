@@ -19,23 +19,27 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
     }
 };
 
+var currencyKnown = function (currency) {
+  if (Meteor.settings.public.allowedCurrencies.indexOf(currency) > -1) return true;
+  return false;
+}
 
-Transactions.helpers({
+Trades.helpers({
   base: function() {
     var base_currency = 'EUR';
-    var foreign_currency = this.in.currency;
-    var foreign_amount = this.in.amount;
-    if (foreign_currency === 'BTC') {
-      foreign_currency = this.out.currency;
-      foreign_amount = this.out.amount;
+    var knownCurrency = this.buy.currency;
+    var knownCurrencyAmount = this.buy.amount - this.buy.fee;
+    //We need to come back on this. What exactly happens with 
+    //the fees? Are they increasing the buy price?
+    //What about double fees (left and right?)
+    if (!currencyKnown(knownCurrency)) {
+      knownCurrency = this.sell.currency;
+      knownCurrencyAmount = this.sell.amount + this.sell.fee;
     }
-    if (foreign_currency === 'BTC') {//Bitcoin only transactions not yet supported.
-      return {
-        currency : base_currency,
-        amount: 0
-      };
+    if(!currencyKnown(knownCurrency)) {
+      console.log("Warning: Getting Base of Trade. Both currencies not known!");
     }
-    base_amount = calculateBaseAmount(foreign_amount, foreign_currency, this.date);
+    base_amount = calculateBaseAmount(knownCurrencyAmount, knownCurrency, this.date);
     var result = {
       currency : base_currency,
       amount: Math.round(base_amount)
@@ -44,10 +48,3 @@ Transactions.helpers({
 }
 }
 );
-Transactions.transform = function(transaction) {
-    if (transaction.in.currency === transaction.out.currency) {
-      transaction.isTrade = false;
-    }
-    transaction.isTrade = true;
-    return transaction;
-  };
