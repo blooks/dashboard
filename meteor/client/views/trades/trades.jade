@@ -56,7 +56,7 @@ template(name="trades")
             tr
               td {{prettyDate date}}
               td {{source}}
-              td.positive {{saneNumber in.amount in.currency}} {{in.currency}}
+              td.positive {{saneAmount}} {{in.currency}}
               td.positive {{in.currency}}
               td.negative {{saneNumber out.amount out.currency}} {{out.currency}}
               td.negative {{out.currency}}
