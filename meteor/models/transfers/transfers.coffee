@@ -13,8 +13,17 @@ Schemas.VolumeFragment = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Id
     optional: true
-  nodeLabel:
+
+Schemas.TransferDetails = new SimpleSchema
+  inputs:
+    type: [Schemas.VolumeFragment]
+  outputs:
+    type: [Schemas.VolumeFragment]
+  currency:
     type: String
+    allowedValues: Meteor.settings.public.coyno.allowedCurrencies
+
+
 
 Schemas.Transfer = new SimpleSchema
 
@@ -26,17 +35,15 @@ Schemas.Transfer = new SimpleSchema
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
-  # Trade info
-  inputs:
-    type: [Schemas.VolumeFragment]
-  outputs:
-    type: [Schemas.VolumeFragment]
+  # Transfer info
+  details:
+    type: Schemas.TransferDetails
   # Metadata
   date:
     type: Date
-  source:
+  sourceId:
     type: String
-    allowedValues: Meteor.settings.public.coyno.supportedExchanges
+    regEx: SimpleSchema.RegEx.Id
   note:
     type: String
     optional: true

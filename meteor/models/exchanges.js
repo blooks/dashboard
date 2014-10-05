@@ -1,26 +1,29 @@
 Exchanges.helpers({
   balances: function() {
-    var result = [{currency: 'EUR', balance: 0}];
-    /**
+    var result = [];
     currencies = Meteor.settings.public.coyno.allowedCurrencies;
-    var exchange = this.exchange;
-    var transactionsin = Trades.find({"in.node": exchange}).fetch();
-    var transactionsout = Trades.find({"out.node": exchange}).fetch();
-    currencies.forEach(function(currency) {
+    var exchangeId = this._id;
+    var trades = Trades.find({"venueId": exchangeId}).fetch();
+    //Performance issue!
+    var transfers = Transfers.find().fetch();
+    currencies.forEach(function (currency) {
       var balance = 0.0;
-      transactionsin.forEach(function(transaction) {
-      if (transaction.in.currency == currency) {
-        balance+=parseFloat(transaction.in.amount);
-      }
+      trades.forEach(function (trade) {
+        if (trade.buy.currency == currency) {
+          balance+=(trade.buy.amount - trade.buy.fee);
+        }
+        if (trade.sell.currency == currency) {
+          balance-=(trade.sell.amount + trade.sell.fee);
+        }
       });
-      transactionsout.forEach(function(transaction) {
-      if (transaction.out.currency == currency) {
-        balance-=parseFloat(transaction.out.amount);
-      }
+      transfers.forEach(function (transfer) {
+        if (transfer.details.currency == currency) {
+          balance+=transfer.amountIncomingToNode(exchangeId);
+          balance-=transfer.amountOutgoingFromNode(exchangeId);
+        }
       });
       result.push({currency: currency, balance: balance});
     });
-    */
     return result;
   },
   update: function() {

@@ -4,15 +4,20 @@ Template.currencyExchanges.helpers({
   }
   });
 Template.currencyExchanges.events({
-  'click .delete-trades' : function(event, template) {
-    var myTransactions = Trades.find().fetch();
-    var result = true;
-    myTransactions.forEach(function(entry) {
+  'click .delete-transactions' : function(event, template) {
+    var trades = Trades.find().fetch();
+    trades.forEach(function(entry) {
       result = Trades.remove({
         _id: entry._id
       });
     });
-    return result;
+    var transfers = Transfers.find().fetch();
+    transfers.forEach(function(entry) {
+      result = Transfers.remove({
+        _id: entry._id
+      });
+    });
+    return true;
   },
   'click .update-trades' : function(event, template) {
     Meteor.call('getBitstampData');
