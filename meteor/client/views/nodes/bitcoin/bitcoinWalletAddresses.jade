@@ -3,5 +3,5 @@ template(name="bitcoinWalletAddresses")
     p Addresses in this Wallet
     if addresses
       each addresses  
-        p Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
+        p(padding="5px") Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
   +addBitcoinAddress this

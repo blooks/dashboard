@@ -10,7 +10,7 @@ Schemas.Amount = new SimpleSchema
   currency:
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
-  node:
+  nodes:
     type: String
     optional: true;
 
