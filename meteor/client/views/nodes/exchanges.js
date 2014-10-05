@@ -5,10 +5,10 @@ Template.currencyExchanges.helpers({
   });
 Template.currencyExchanges.events({
   'click .delete-trades' : function(event, template) {
-    var myTransactions = Transactions.find().fetch();
+    var myTransactions = Trades.find().fetch();
     var result = true;
     myTransactions.forEach(function(entry) {
-      result = Transactions.remove({
+      result = Trades.remove({
         _id: entry._id
       });
     });
@@ -18,5 +18,13 @@ Template.currencyExchanges.events({
     Meteor.call('getBitstampData');
     Meteor.call('getKrakenData');
     return true;
+  },
+  'click .delete-exchange':  function(event, template) {
+    return Exchanges.remove({
+      _id: this._id
+    });
+  },
+  'click .update-exchange': function(event, template) {
+    return this.update();
   }
 });

@@ -45,6 +45,8 @@ Trades.helpers({
       amount: Math.round(base_amount)
     };
     return result;
-}
-}
-);
+  },
+  source: function() {
+    return Exchanges.findOne({"_id": this.venueId}).label;
+  }
+});

@@ -11,8 +11,10 @@ template(name="currencyExchanges")
               each balances
                 li Balance in {{currency}}: {{saneNumber balance currency}}
             .controls
-              a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
+              a.delete-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
                 span.glyphicon.glyphicon-trash
+              a.update-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.update'}} ")
+                span.glyphicon.glyphicon-refresh
     .col-md-4
       .add-item-box
         a(href="#") 

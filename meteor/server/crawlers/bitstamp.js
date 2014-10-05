@@ -1,12 +1,12 @@
 var Bitstamp = Meteor.npmRequire('bitstamp');
 
 //Patching Bitstamp NPM Module ; TBR
-Bitstamp.prototype.user_transactions = function(limit, callback) {
+Bitstamp.prototype.user_trades = function(limit, callback) {
   if(!callback) {
     callback = limit;
     limit = undefined;
   }
-  this._post('user_transactions', callback, {limit: limit});
+  this._post('user_trades', callback, {limit: limit});
 }
 
 
@@ -31,127 +31,106 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
     return console.log(e);
     }
 };
-var bitstampTradeToTransaction = function(trade) {
+var bitstampTradeToTrade = function(trade) {
   var currencydetails = {}
   var dollar_amount = 0;
    if (trade.btc < 0 ) {// trade is a sale of BTC for USD
-      var bitcoin_amount = -1*trade.btc;
-          currencydetails.out = {
-          amount: bitcoin_amount, // Trim off the initial -
+          currencydetails.sell = {
+          amount: Math.abs(trade.btc),
           currency: 'BTC',
-          node: 'Bitstamp'
+          fee: 0
         }
-        dollar_amount = trade.usd - trade.fee;
-        currencydetails.in = {
-          amount: dollar_amount,
+        currencydetails.buy = {
+          amount: trade.usd,
           currency: 'USD',
-          node: 'Bitstamp'
+          fee: trade.fee
         }
       } else {//trade is a sale of USD for BTC
-        dollar_amount = -1*trade.usd + trade.fee;
-        currencydetails.out = {
-          amount: dollar_amount,
+        currencydetails.sell = {
+          amount: Math.abs(trade.usd),
           currency: 'USD',
-          node: 'Bitstamp'
+          fee: trade.fee
         };
-        currencydetails.in = {
+        currencydetails.buy = {
           amount: trade.btc,
           currency: 'BTC',
-          node: 'Bitstamp'
+          fee: 0
         };
       }
   return currencydetails;
 };
 
-var bitstampDepositToTransaction = function(deposit) {
+var bitstampDepositToTrade = function(deposit) {
   var currencydetails = {};
+  var base_currency = 'EUR';
   if (deposit.usd > 0) {//Dollar deposit
-    var dollar_amount = deposit.usd;
-            currencydetails.in = {
-              amount: dollar_amount,
+            currencydetails.buy = {
+              amount: deposit.usd,
               currency: 'USD',
-              node: 'Bitstamp'
+              fee: deposit.fee
             };
-            base_amount = calculateBaseAmount(dollar_amount, 'USD', deposit.datetime)
-        currencydetails.out = {
+            base_amount = calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
+          currencydetails.sell = {
           amount: base_amount,
-          currency: 'EUR',
-          node: 'BankAccount'
+          currency: base_currency,
+          fee: 0
         };
-          } else {//bitcoin deposit
-            currencydetails.in = {
-              amount: deposit.btc,
-              currency: 'BTC',
-              node: 'Bitstamp'
-            };
-            currencydetails.out = {
-              amount: deposit.btc,
-              currency: 'BTC',
-              node: 'BitcoinWallet'
-            };
           }
+          //A bitcoin deposit on bitstamp is for free and within Bitcoin
+          //so it counts as a transfer.
     return currencydetails;
 }
-var bitstampRippleDepositToTransaction = function(deposit) {
+/**
+var bitstampRippleDepositToTransfer = function(deposit) {
   var currencydetails = {};
   var base_currency ='EUR';
   if (deposit.usd > 0) {//Dollar deposit
             currencydetails.in = {
               amount: deposit.usd,
               currency: 'USD', 
-              node: 'Bitstamp'
+              fee: 0.5
             };
             currencydetails.out = {
               amount: deposit.usd,
               currency: 'USD', 
-              node: 'Ripple'
+              fee: 'Ripple'
             }
           } else {//bitcoin deposit
             currencydetails.in = {
               amount: deposit.btc,
               currency: 'BTC',
-              node: 'Bitstamp'
+              fee: 0.5
             };
             currencydetails.out = {
               amount: deposit.btc,
               currency: 'BTC',
-              node: 'Ripple'
+              fee: 'Ripple'
             };
           }
     return currencydetails;
 }
-
-var bitstampWithdrawalToTransaction = function(withdrawal) {
+**/
+var bitstampWithdrawalToTrade = function(withdrawal) {
   var currencydetails = {};
   var base_currency = 'EUR';
-  if (withdrawal.usd < 0) {//Dollar withdrawel
-    var dollar_amount = -1 * withdrawal.usd;
+  if (withdrawal.usd < 0) {//Dollar withdrawal
+    var dollar_amount = Math.abs(withdrawal.usd);
     var base_amount = calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
-            currencydetails.out = {
+            currencydetails.sell = {
               amount: dollar_amount,
               currency: 'USD',
-              node: 'Bitstamp'
+              fee: 0
             }
-            currencydetails.in = {
+            currencydetails.buy = {
               amount: base_amount,
               currency: base_currency,
-              node: 'BankAccount'
-            };
-          } else {//bitcoin withdrawel
-            bitcoin_amount = -1 * withdrawal.btc,
-            currencydetails.out = {
-              amount: bitcoin_amount,
-              currency: 'BTC',
-              node: 'Bitstamp'
-            };
-            currencydetails.in = {
-              amount: bitcoin_amount,
-              currency: 'BTC',
-              node: 'BitcoinWallet'
+              fee: 0
             };
           }
+      //Bitcoin Withdrawal is a transfer
   return currencydetails;
 }
+/**
 var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
   var currencydetails = {};
   var base_currency = 'EUR';
@@ -160,37 +139,36 @@ var bitstampRippleWithdrawalToTransaction = function(withdrawal) {
             currencydetails.in = {
               amount: dollar_amount,
               currency: 'USD',
-              node: 'Ripple'
+              fee: 'Ripple'
             };
             currencydetails.out = {
               amount: dollar_amount,
               currency: 'USD',
-              node: 'Bitstamp'
+              fee: 0.5
             };
           } else {//bitcoin withdrawal
             var bitcoin_amount = -1*withdrawal.btc;
             currencydetails.out = {
               amount: bitcoin_amount,
               currency: 'BTC',
-              node: 'Bitstamp'
+              fee: 0.5
             };
             currencydetails.in = {
               amount: bitcoin_amount,
               currency: 'BTC',
-              node: 'Ripple'
+              fee: 'Ripple'
             };
           }
   return currencydetails;
-}
+}**/
 //Accepting ONLY API Style JSON objects.
 var convertBitstampTx = function(bitstampTx) {
-  var transaction = {};
+  var trade = {};
   //Fixing date format
   bitstampTx.datetime = new Date(bitstampTx.datetime);
-  transaction.date = bitstampTx.datetime;
-  transaction.source = 'Bitstamp';
-  transaction.userId = Meteor.userId();
-  transaction.foreignId = Meteor.userId() + 'Bitstamp' + bitstampTx.id;
+  trade.date = bitstampTx.datetime;
+  trade.userId = Meteor.userId();
+  trade.foreignId = Meteor.userId() + 'Bitstamp' + bitstampTx.id;
   
   //preconditioning. Bitstamp gives float-style-strings for amounts
   bitstampTx.usd = parseInt(Math.round(parseFloat(bitstampTx.usd)*100000000));
@@ -204,51 +182,51 @@ var convertBitstampTx = function(bitstampTx) {
         currencydetails = bitstampDepositToTransaction(bitstampTx);
         } else if (bitstampTx.type === 1) {//withdrawal
           currencydetails = bitstampWithdrawalToTransaction(bitstampTx);
-          } else if (bitstampTx.type === 3) {//ripple withdrawel
+          } /** else if (bitstampTx.type === 3) {//ripple withdrawel
             currencydetails = bitstampRippleWithdrawalToTransaction(bitstampTx);
           } else if (bitstampTx.type === 4) {//ripple deposit
                 currencydetails = bitstampRippleDepositToTransaction(bitstampTx);
-          } else {
+          } **/ else {
             console.log("FEHLER! BITSTAMP LIEFERT TOTALE SCHEISSE")
           }
-  transaction.in = currencydetails.in;
-  transaction.out = currencydetails.out;
-  return transaction;
+  trade.buy = currencydetails.buy;
+  trade.sell = currencydetails.sell;
+  return trade;
 }
 
 
 
-var bitstampJSONtoDB = function(bitstampData) { 
+var bitstampJSONtoDB = function(bitstampData, exchange) { 
   var errors = [];
   for (i = 0; i < bitstampData.length; ++i) {
     var bitstampTx = bitstampData[i];
-    var transaction = convertBitstampTx(bitstampTx);
+    var trade = convertBitstampTx(bitstampTx);
+    trade.venueId = exchange._id;
       try {
-          transactionId = Transactions.insert(transaction);
+          tradeId = Transactions.insert(trade);
               } catch (_error) {
             e = _error;
                errors.push(e);
-               //console.log(e);
-               //console.log(transaction);
+               console.log(e);
+               console.log(trade);
         }
   }
         return errors.length === 0;
     };
 
     Meteor.methods({
-      getBitstampData: function () {
-        var bitstampAccounts = Exchanges.find({exchange: "Bitstamp"}).fetch();
-        if (bitstampAccounts) {
-        var bitstamp = new Bitstamp;
-        bitstampAccounts.forEach(function(account) {
-        var key = account.credentials.APIKey;
-        var secret = account.credentials.secret;
-        var client_id = account.credentials.userName;
+      getBitstampData: function (exchange) {
+        console.log(exchange);
+        var key = exchange.credentials.APIKey;
+        var secret = exchange.credentials.secret;
+        var client_id = exchange.credentials.userName;
         var privateBitstamp = new Bitstamp(key, secret, client_id);
-        var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
-        var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
-        bitstampJSONtoDB(jsonData);
-      });
+        console.log(key);
+        console.log(secret);
+        console.log(client_id);
+        var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_trades']);
+        var jsonData = wrappedPrivateBitstamp.user_trades(100000);
+        console.log(jsonData);
+        //bitstampJSONtoDB(jsonData, exchange);
       }
-    }
     });
