@@ -1,36 +1,6 @@
 var KrakenClient = Meteor.npmRequire('kraken-api');
 
 
-/**
-var calculateBaseAmount;
-
-calculateBaseAmount = function(amt, date) {
-  var e, rate, to;
-  if (date == null) {
-    date = new Date();
-  }
-  try {
-    check(amt, {
-      amount: String,
-      currency: String
-    });
-    check(date, Date);
-    if (amt.currency !== 'USD') {
-      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...');
-    }
-    to = 'EUR';
-    rate = getExchangeRate(amt.currency, to, date);
-    return {
-      amount: accounting.toFixed(amt.amount * rate, 2),
-      currency: to
-    };
-  } catch (_error) {
-    e = _error;
-    return console.log(e);
-  }
-};
-**/ 
-
 var krakenAssettoCoynoAsset = function (krakenAsset) {
   if (krakenAsset === "ZEUR") return "EUR";
   if (krakenAsset === "XXBT") return "BTC";
@@ -46,26 +16,20 @@ var krakenTradeToTransaction = function(trade) {
     krakenIn = trade[1];
     krakenOut = trade[0];
   }
-    in_amount = parseFloat(krakenIn.amount)-parseFloat(krakenIn.fee);
+
+    in_amount = krakenIn.amount-krakenIn.fee;
+
   currencydetails.in = {
           amount: in_amount, // Trim off the initial -
           currency: krakenAssettoCoynoAsset(krakenIn.asset),
           node: 'Kraken'
         }
-    out_amount = parseFloat(krakenOut.amount.substr(1))+parseFloat(krakenOut.fee);
+    out_amount = -1*krakenOut.amount+krakenOut.fee;
         currencydetails.out = {
           amount: out_amount,
           currency: krakenAssettoCoynoAsset(krakenOut.asset),
           node: 'Kraken'
         }
-        var baseAmount = in_amount;
-        if (krakenOut.asset == base_currency) {
-          baseAmount = out_amount;
-        }
-        currencydetails.base = {
-          amount: baseAmount, 
-          currency: base_currency
-        };
         return currencydetails;
       };
 
@@ -87,10 +51,6 @@ var krakenDepositToTransaction = function(deposit) {
               currency: currency,
               node: second_node
             };
-            currencydetails.base = {
-              amount: 0,
-              currency: base_currency
-            };
     return currencydetails;
   };
 
@@ -99,7 +59,7 @@ var krakenWithdrawalToTransaction = function(withdrawal) {
   var base_currency = 'EUR';
   var currency = krakenAssettoCoynoAsset(withdrawal.asset);
   //Hacky workaround to consider fees
-  withdrawal_amount = parseFloat(withdrawal.amount.substr(1))+parseFloat(withdrawal.fee);
+  withdrawal_amount = -1*withdrawal.amount+withdrawal.fee;
   currencydetails.out = {
               amount: withdrawal_amount,
               currency: currency,
@@ -110,19 +70,22 @@ var krakenWithdrawalToTransaction = function(withdrawal) {
     second_node = 'BitcoinWallet';
   }
             currencydetails.in = {
-              amount: withdrawal.amount.substr(1),
+              amount: -1*withdrawal.amount,
               currency: currency,
               node: second_node
-            };
-            currencydetails.base = {
-              amount: 0,
-              currency: base_currency
             };
     return currencydetails;
   };
 
 var krakenJSONtoDB = function(krakenData) { 
   var krakenDataLength = krakenData.length;
+
+  //preconditioning. Kraken gives us ugly floatsies! Shoo floatsies!
+  krakenData.forEach(function(transaction) {
+    transaction.amount = parseInt(Math.round(parseFloat(transaction.amount)*100000000));
+    transaction.fee = parseInt(Math.round(parseFloat(transaction.fee)*100000000));
+  });
+
 
   var errors = [];
   for (i = 0; i < krakenDataLength; ++i) {
@@ -150,17 +113,16 @@ var krakenJSONtoDB = function(krakenData) {
       } 
       transaction.in = currencydetails.in;
       transaction.out = currencydetails.out;
-      transaction.base = currencydetails.base; 
       try {
         transactionId = Transactions.insert(transaction);
       } catch (e) {
         errors.push(e);
-        console.log(e);
+          //console.log(e);
       }
     }
     catch (e) {
       console.log('Some threw an error!');
-      console.log(e);
+      //console.log(e);
     }
   }
   return errors.length === 0;

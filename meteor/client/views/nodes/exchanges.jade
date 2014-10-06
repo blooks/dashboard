@@ -13,7 +13,7 @@ template(name="currencyExchanges")
             h3 {{exchange}}
             ul.no-bullets
               each balances
-                li Balance in {{currency}}: {{balance}}
+                li Balance in {{currency}}: {{saneNumber balance currency}}
             .controls
               a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
                 span.glyphicon.glyphicon-trash
@@ -23,4 +23,12 @@ template(name="currencyExchanges")
           span.glyphicon.glyphicon-plus 
           br 
           | {{i18n 'nodes.exchanges.addNewExchange'}}
+  .row
+    .table-control-buttons
+      a.update-trades.btn(href="#") 
+        span.glyphicon.glyphicon-repeat 
+        | {{i18n 'nodes.buttons.updateTransactions'}}
+      a.delete-trades.btn(href="#") 
+        span.glyphicon.glyphicon-trash 
+        | {{i18n 'nodes.buttons.deleteAll'}} 
   +newExchange

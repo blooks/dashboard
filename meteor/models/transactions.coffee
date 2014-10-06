@@ -6,7 +6,7 @@ Schemas = {}
 # Create the schema(s)
 Schemas.Amount = new SimpleSchema
   amount:
-    type: String # Store amounts as string to avoid rounding issues
+    type: Number # Store amounts as string to avoid rounding issues
   currency:
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
@@ -40,8 +40,15 @@ Schemas.Transaction = new SimpleSchema
     optional: true
   isTrade:
     type: Boolean
-    defaultValue: true
-    optional: true
+    autoValue: ->
+      if @isInsert
+        inField = @field("in")
+        outField = @field("out")
+        if inField.value.currency == outField.value.currency
+          false
+        else
+          true
+          
 
 # Attach the schema to the collection
 Transactions.attachSchema Schemas.Transaction

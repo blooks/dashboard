@@ -17,19 +17,23 @@ template(name="header")
         ul.nav.navbar-nav
           li
             a(href="{{pathFor 'dashboard'}}")
-              span.glyphicon.glyphicon-dashboard
+              i.fa.fa-dashboard
               | {{i18n 'template.headings.dashboard'}}
           li
-            a(href="{{pathFor 'transactions'}}") 
-              span.glyphicon.glyphicon-list-alt
-              | {{i18n 'template.headings.transactions'}}
+            a(href="{{pathFor 'trades'}}") 
+              i.fa.fa-refresh
+              | {{i18n 'template.headings.trades'}}
+          li
+            a(href="{{pathFor 'transfers'}}") 
+              i.fa.fa-exchange
+              | {{i18n 'template.headings.transfers'}}              
           li
             a(href="{{pathFor 'upload'}}") 
-              span.glyphicon.glyphicon-circle-arrow-up
+              i.fa.fa-arrow-up
               | {{i18n 'template.headings.upload'}}
           li 
             a(href="{{pathFor 'nodes'}}") 
-              span.glyphicon.glyphicon-asterisk
+              i.fa.fa-bell
               | {{i18n 'template.headings.accounts'}}           
         ul.nav.navbar-nav.navbar-right
           +loginButtons
