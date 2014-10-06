@@ -9,14 +9,14 @@ template(name="currencyExchanges")
             .center-div
               .cirlce-bg-logo
                 img.vertical-align(src="img/external-logos/Bitstamp_Logo_2013bw.png")
-              p.superscript Exchange:
-              h3 {{exchange}}
-              ul.no-bullets
-                each balances
-                  li Balance in {{currency}}: {{balance}}
-              .controls
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
-                  span.glyphicon.glyphicon-trash
+            p.superscript Exchange:
+            h3 {{exchange}}
+            ul.no-bullets
+              each balances
+                li Balance in {{currency}}: {{balance}}
+            .controls
+              a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
+                span.glyphicon.glyphicon-trash
     .col-md-4
       .add-item-box
         a(href="#") 
