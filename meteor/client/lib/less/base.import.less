@@ -34,20 +34,42 @@ footer {
 ------------------------------- */
 .exhanges-zone {
 
-		[class*="col-"] {
-      		margin-bottom: 30px;
-		}	
+	[class*="col-"] {
+  		margin-bottom: 30px;
+	}
+
+	.added-exchanges-zone {
+		margin: 2rem 0;
+	}
 
 	.item {
 		background-color: @gray-lighter;
 		// border: 1px solid @gray-lighter;
-		padding: 1rem;	
+		padding: 25px 1rem 1rem 1rem;
 
-		img {
-			width: 40px;
-			margin: 0 auto;
-			text-align: center;
+		.cirlce-bg-logo {
+			width: 60px;
+			height: 60px;
+		   -moz-border-radius: 50%; 
+		    -webkit-border-radius: 50%; 
+		    border-radius: 50%;			
+		    background-color: @whyte;
+			position: absolute;
+			display: block;
+			left: 50%;
+			bottom: -30px; 
+			  
+			img {
+				width: 40px;
+				height: 40px;
+				margin: 0 auto;
+				text-align: center;
+				display: block;
+				vertical-align: center;
+			}
 		}
+
+
 
 		h3	{
 			font-size: 16px;
