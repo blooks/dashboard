@@ -76,5 +76,7 @@ i18n.map 'en_GB',
       updateTransactions: 'Update Transactions'
       deleteAll: 'Delete All Transactions'
     exchanges:
+      exchangeLabelTitle: "Exchange label"
       addNewExchange: "Add exchange"
+      addedExchange: "Added exchanges"
       deleteExchange: "Delete exchange"

@@ -1,7 +1,8 @@
 template(name="bitcoinWalletAddresses")
-  .row
-    p Addresses in this Wallet
+  .row.wallet-adresses
+    h3 Addresses in Wallet {{label}}
     if addresses
-      each addresses  
-        p(padding="5px") Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
+      ul
+        each addresses  
+          li Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
   +addBitcoinAddress this

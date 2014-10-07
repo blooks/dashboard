@@ -4,21 +4,7 @@ template(name="currencyExchanges")
     .added-exchanges-zone
     if exchanges
       each exchanges
-        .col-md-4
-          .item
-            .center-div
-              .cirlce-bg-logo
-                img.vertical-align(src="img/external-logos/Bitstamp_Logo_2013bw.png")
-            p.superscript Exchange:
-            h3 {{exchangeLabel}}
-            ul.no-bullets
-              each balances
-                li Balance in {{currency}}: {{saneNumber balance currency}}
-            .controls
-              a.delete-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
-                span.glyphicon.glyphicon-trash
-              a.update-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.update'}} ")
-                span.glyphicon.glyphicon-refresh
+        +exchangeDetails this
     .col-md-4
       .add-item-box
         a(href="#") 

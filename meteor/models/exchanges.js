@@ -29,7 +29,17 @@ Exchanges.helpers({
   update: function() {
     if (this.exchange === "Bitstamp") {
     Meteor.call('getBitstampData', this); }
+  },
+  logoUrl: function() {
+    if (this.exchange === "Bitstamp") {
+         return "img/external-logos/Bitstamp_logo.png";
+    }
+    if (this.exchange === "Kraken") {
+         return "img/external-logos/Kraken-logo.png";
+    }
+    return "img/exchange-icon-default-handshake.png";
   }
+
 });
 if (Meteor.isServer) {
 Exchanges.before.remove(function (userId, doc) {
