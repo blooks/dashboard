@@ -1,5 +1,7 @@
 # Create the meteor collection
-@Transactions = new Meteor.Collection('transactions')
+## A Trade is a transaction that exchanges one currency for another
+## on one venue (like exchange, p2p trading etc.)
+@Trades = new Meteor.Collection('trades')
 
 Schemas = {}
 
@@ -10,11 +12,10 @@ Schemas.Amount = new SimpleSchema
   currency:
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
-  node:
-    type: String
-    optional: true;
+  fee:
+    type: Number # Fee in this currency (some exchanges charge fees left and right)
 
-Schemas.Transaction = new SimpleSchema
+Schemas.Trade = new SimpleSchema
 
   foreignId:
     type: String
@@ -25,41 +26,31 @@ Schemas.Transaction = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Id
   # Trade info
-  in:
+  buy:
     type: Schemas.Amount
-  out:
+  sell:
     type: Schemas.Amount
   # Metadata
   date:
     type: Date
-  source:
+  venueId:
     type: String
-    allowedValues: Meteor.settings.public.coyno.supportedExchanges
+    regEx: SimpleSchema.RegEx.Id
   note:
     type: String
     optional: true
-  isTrade:
-    type: Boolean
-    autoValue: ->
-      if @isInsert
-        inField = @field("in")
-        outField = @field("out")
-        if inField.value.currency == outField.value.currency
-          false
-        else
-          true
           
 
 # Attach the schema to the collection
-Transactions.attachSchema Schemas.Transaction
+Trades.attachSchema Schemas.Trade
 
 # Add the created / updated fields
-Transactions.timed()
+Trades.timed()
 
 # Ensure every document is owned by a user
-Transactions.owned()
+Trades.owned()
 
-Transactions.allow
+Trades.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."

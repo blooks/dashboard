@@ -20,9 +20,8 @@ Schemas.Exchanges = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Id
   # Exchanges info
-  label:
+  exchangeLabel:
     type: String
-    optional: true
   exchange:
     type: String
     allowedValues: Meteor.settings.public.coyno.supportedExchanges

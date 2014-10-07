@@ -1,44 +1,39 @@
 # Create the meteor collection
-@Transfers = new Meteor.Collection('transfers')
+@BitcoinAddresses = new Meteor.Collection('bitcoinaddresses')
 
 Schemas = {}
 
-Schemas.Transfer = new SimpleSchema
+Schemas.BitcoinAddresses = new SimpleSchema
 
-  foreignId:
-    type: String
-    unique : true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
-  # Transfer info
-  from:
+  # BitcoinAddresses info
+  walletId:
     type: String
-  to:
-    type: String
-  flow:
-    type: Schemas.Amount
-  # Metadata
-  date:
-    type: Date
-  source:
-    type: String
-  note:
+    regEx: SimpleSchema.RegEx.Id
+  label:
     type: String
     optional: true
+  address:
+    type: String
+  balance:
+    type: Number
+    defaultValue: 0
 
 # Attach the schema to the collection
-Transfers.attachSchema Schemas.Transfer
+BitcoinAddresses.attachSchema Schemas.BitcoinAddresses
 
 # Add the created / updated fields
-Transfers.timed()
+BitcoinAddresses.timed()
 
 # Ensure every document is owned by a user
-Transfers.owned()
+BitcoinAddresses.owned()
+  #Transactions.find(userId: @userId).length
 
-Transfers.allow
+BitcoinAddresses.allow
   insert: (userId, item) ->
     if not userId?
       throw new Meteor.Error 400, "You need to log in to insert."

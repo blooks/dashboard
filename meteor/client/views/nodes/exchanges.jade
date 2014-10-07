@@ -10,13 +10,15 @@ template(name="currencyExchanges")
               .cirlce-bg-logo
                 img.vertical-align(src="img/external-logos/Bitstamp_Logo_2013bw.png")
             p.superscript Exchange:
-            h3 {{exchange}}
+            h3 {{exchangeLabel}}
             ul.no-bullets
               each balances
                 li Balance in {{currency}}: {{saneNumber balance currency}}
             .controls
-              a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
+              a.delete-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.deleteExchange'}} ")
                 span.glyphicon.glyphicon-trash
+              a.update-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.exchanges.update'}} ")
+                span.glyphicon.glyphicon-refresh
     .col-md-4
       .add-item-box
         a(href="#") 
@@ -25,10 +27,10 @@ template(name="currencyExchanges")
           | {{i18n 'nodes.exchanges.addNewExchange'}}
   .row
     .table-control-buttons
-      a.update-trades.btn(href="#") 
+      a.update-transactions.btn(href="#") 
         span.glyphicon.glyphicon-repeat 
         | {{i18n 'nodes.buttons.updateTransactions'}}
-      a.delete-trades.btn(href="#") 
+      a.delete-transactions.btn(href="#") 
         span.glyphicon.glyphicon-trash 
         | {{i18n 'nodes.buttons.deleteAll'}} 
   +newExchange

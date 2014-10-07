@@ -53,10 +53,14 @@ template(name="transfers")
           each transfers
             tr
               td {{prettyDate date}}
-              td {{out.node}}
-              td.positive {{saneNumber out.amount out.currency}}
-              td.positive {{out.currency}}
-              td.negative {{in.node}} 
+              td {{from}}
+              td.positive 
+                ul
+                  each details.outputs
+                    //- BTC needs to be pulled from details. How to do in current context?
+                    li {{saneNumber amount 'BTC'}}
+              td.positive {{details.currency}}
+              td.negative {{to}} 
               td
                 a.delete-transaction(href="#")
                   span.glyphicon.glyphicon-trash
