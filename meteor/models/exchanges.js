@@ -29,6 +29,9 @@ Exchanges.helpers({
   update: function() {
     if (this.exchange === "Bitstamp") {
     Meteor.call('getBitstampData', this); }
+    if (this.exchange === "Kraken") {
+    Meteor.call('getKrakenData', this);
+    }
   },
   logoUrl: function() {
     if (this.exchange === "Bitstamp") {
@@ -50,6 +53,10 @@ Exchanges.before.remove(function (userId, doc) {
 });
 Exchanges.after.insert(function (userId, doc) {
   if (doc.exchange === "Bitstamp") {
-    Meteor.call('getBitstampData', doc); }
+    Meteor.call('getBitstampData', doc); 
+  }
+ // if (doc.exchange === 'Kraken') {
+ //   Meteor.call('getKrakenData', doc);
+ //}
 });
 }

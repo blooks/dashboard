@@ -56,9 +56,9 @@ template(name="trades")
             tr
               td {{prettyDate date}}
               td {{venue}}
-              td.positive {{saneNumber buy.amount buy.currency}} {{buy.currency}}
+              td.positive {{saneNumber inflow.amount inflow.currency}} {{buy.currency}}
               td.positive {{buy.currency}}
-              td.negative {{saneNumber sell.amount sell.currency}} {{sell.currency}}
+              td.negative {{saneNumber outflow.amount outflow.currency}} {{sell.currency}}
               td.negative {{sell.currency}}
               td {{saneNumber base.amount base.currency}} {{base.currency}}
               td 
