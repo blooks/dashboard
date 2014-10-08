@@ -1,8 +1,28 @@
 template(name="bitcoinWalletAddresses")
-  .row.wallet-adresses
-    h3 Addresses in Wallet {{label}}
+  .wallet-adresses
     if addresses
-      ul
-        each addresses  
-          li Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
+      h4 
+        i.fa.fa-qrcode
+        | Addresses in this wallet
+      table.table.table-bordered.table-zb-hover
+        thead
+            tr
+              th Label
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
+                  span.glyphicon.glyphicon-info-sign
+              th Address
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
+                  span.glyphicon.glyphicon-info-sign
+              th Balance
+                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
+                  span.glyphicon.glyphicon-info-sign                    
+        tbody
+          each addresses
+            tr
+              td {{label}}
+              td {{address}}
+              td {{saneNumber balance 'BTC'}} BTC
+              td 
+                a.delete-transaction(href="#")
+                  span.glyphicon.glyphicon-trash
   +addBitcoinAddress this
