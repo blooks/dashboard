@@ -7,14 +7,14 @@ template(name="bitcoinWallets")
         .row
         if bitcoinwallets
           each bitcoinwallets
-            .col-md-6
+            .col-md-12
                .details-item 
                  .center-div
                    .cirlce-bg-logo
                      img.vertical-align(src="img/wallet-icon-default.png")
                  p.superscript {{i18n 'nodes.wallets.walletLabelTitle'}}
                  h3 {{label}}          
-                 h4.balance-statement Total Wallet Balance: {{saneNumber balance 'BTC'}}
+                 .balance-statement.spacy Total Wallet Balance: {{saneNumber balance 'BTC'}} BTC
                  +bitcoinWalletAddresses this
                  .controls
                    a.delete-bitcoin-wallet(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.bitcoinwallets.deleteWallet'}} ")
