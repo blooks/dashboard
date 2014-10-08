@@ -1,4 +1,5 @@
 {
   "bitstamp": "0.1.8",
-  "kraken-api": "0.1.5"
+  "kraken-api": "0.1.5",
+  "chain-node": "0.0.17"
 }

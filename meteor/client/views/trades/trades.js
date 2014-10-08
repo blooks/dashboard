@@ -1,13 +1,16 @@
 // on the client
 Template.trades.helpers({
   trades: function(){
-    return Transactions.find({isTrade: true},{sort: ['date','asc']}).fetch();
+    return Trades.find({},{sort: ['date','asc']}).fetch();
   }
 });
 Template.trades.events({
   'click .delete-trade': function(event, template) {
-    return Transactions.remove({
+    /** Deactivated for the time being.
+    return Trades.remove({
       _id: this._id
     });
+    **/
+    return true;
   }
 });

@@ -55,11 +55,11 @@ template(name="trades")
           each trades
             tr
               td {{prettyDate date}}
-              td {{source}}
-              td.positive {{saneNumber in.amount in.currency}} {{in.currency}}
-              td.positive {{in.currency}}
-              td.negative {{saneNumber out.amount out.currency}} {{out.currency}}
-              td.negative {{out.currency}}
+              td {{venue}}
+              td.positive {{saneNumber buy.amount buy.currency}} {{buy.currency}}
+              td.positive {{buy.currency}}
+              td.negative {{saneNumber sell.amount sell.currency}} {{sell.currency}}
+              td.negative {{sell.currency}}
               td {{saneNumber base.amount base.currency}} {{base.currency}}
               td 
                 a.delete-transaction(href="#")

@@ -1,0 +1,8 @@
+template(name="bitcoinWalletAddresses")
+  .row.wallet-adresses
+    h3 Addresses in Wallet {{label}}
+    if addresses
+      ul
+        each addresses  
+          li Label: {{label}} Address: {{address}} Balance: {{saneNumber balance 'BTC'}}
+  +addBitcoinAddress this
