@@ -1,4 +1,3 @@
-
 template(name="header")
   nav(class="navbar navbar-default" role="navigation")
     .container
@@ -17,7 +16,7 @@ template(name="header")
         ul.nav.navbar-nav
           li
             a(href="{{pathFor 'dashboard'}}")
-              i.fa.fa-dashboard
+              i.fa.fa-area-chart
               | {{i18n 'template.headings.dashboard'}}
           li
             a(href="{{pathFor 'trades'}}") 
@@ -29,11 +28,12 @@ template(name="header")
               | {{i18n 'template.headings.transfers'}}              
           li
             a(href="{{pathFor 'upload'}}") 
-              i.fa.fa-arrow-up
+              i.fa.fa-upload
               | {{i18n 'template.headings.upload'}}
           li 
             a(href="{{pathFor 'nodes'}}") 
               i.fa.fa-bell
-              | {{i18n 'template.headings.accounts'}}           
+              | {{i18n 'template.headings.accounts'}}  
+
         ul.nav.navbar-nav.navbar-right
           +loginButtons

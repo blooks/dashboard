@@ -1,5 +1,6 @@
 BankAccounts.helpers({
   balance: function() {
+  /** DIRTY WORKAROUND
   currencies = [this.currency];
     var bank = this.bank;
     var transactionsin = Transactions.find({"in.node": bank}).fetch();
@@ -18,6 +19,7 @@ BankAccounts.helpers({
       });
       result = balance;
     });
-    return result;
+    return result; **/
+    return 0;
 }
 });
