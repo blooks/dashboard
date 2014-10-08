@@ -1,9 +1,22 @@
 template(name="bitcoinWallets")
-  if bitcoinwallets
-    each bitcoinwallets
-      .bitcoinwallet-item Wallet with Label: {{label}} and balance: {{saneNumber balance 'BTC'}}
-      +bitcoinWalletAddresses this
-      .controls
-        a.delete-bitcoin-wallet(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.bitcoinwallets.deleteWallet'}} ")
-          span.glyphicon.glyphicon-trash
+  .wallets-zone.zone
+    h2 
+      i.fa.fa-book 
+      | Added Wallets
+    .added-wallets.zone  
+        .row
+        if bitcoinwallets
+          each bitcoinwallets
+            .col-md-6
+               .details-item 
+                 .center-div
+                   .cirlce-bg-logo
+                     img.vertical-align(src="img/wallet-icon-default.png")
+                 p.superscript {{i18n 'nodes.wallets.walletLabelTitle'}}
+                 h3 {{label}}          
+                 h4.balance-statement Total Wallet Balance: {{saneNumber balance 'BTC'}}
+                 +bitcoinWalletAddresses this
+                 .controls
+                   a.delete-bitcoin-wallet(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'nodes.bitcoinwallets.deleteWallet'}} ")
+                     span.glyphicon.glyphicon-trash
   +newBitcoinWallet
