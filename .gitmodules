@@ -1,0 +1,3 @@
+[submodule "meteor/packages/accounts-entry"]
+	path = meteor/packages/accounts-entry
+	url = git@github.com:coyno/accounts-entry.git
