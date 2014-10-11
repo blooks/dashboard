@@ -30,11 +30,11 @@ Schemas.User = new SimpleSchema(
     optional: true
     blackbox: true
 
-  dummyNodes:
-    type: [Schemas.DummyNodes]
-    autoValue: ->
-      if this.isInsert
-        [{network:'Bitcoin',name:'Dummy Bitcoin Wallet'},{network:'Exchange',name:"Dummy Exchange"},{network:'BankAccount',name:'Dummy Bank Account'}]
+#  dummyNodes:
+#    type: [Schemas.DummyNodes]
+#    autoValue: ->
+#      if this.isInsert
+#        [{network:'Bitcoin',name:'Dummy Bitcoin Wallet'},{network:'Exchange',name:"Dummy Exchange"},{network:'BankAccount',name:'Dummy Bank Account'}]
 
 
 
