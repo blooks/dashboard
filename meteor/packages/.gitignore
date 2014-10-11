@@ -1,5 +1,4 @@
 /iron-router
-/accounts-entry
 /handlebars-server
 /headers
 /just-i18n
@@ -7,7 +6,6 @@
 /blaze-layout
 /minimongoid
 /underscore-string-latest
-/simple-form
 /autoform
 /simple-schema
 /collection2

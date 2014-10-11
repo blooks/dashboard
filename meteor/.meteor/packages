@@ -13,7 +13,6 @@ dsyko:node-csv-npm
 lepozepo:accounting
 meteorhacks:npm
 iron:router
-joshowens:accounts-entry
 mquandalle:jade
 cmather:handlebars-server
 
@@ -27,4 +26,6 @@ mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
+accounts-entry
+simple-form
 
