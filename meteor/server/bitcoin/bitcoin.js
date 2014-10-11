@@ -6,13 +6,6 @@ Meteor.methods({
 		chain.apiKeySecret = '9b846d2e90118a901b9666bef6f78a2e';
 		syncChain = Async.wrap(chain, ['getAddress','getAddressTransactions']);
     var transactions = syncChain.getAddressTransactions(bitcoinAddress.address);
-    console.log(transactions);
-    transactions.forEach(function(transaction)
-      {
-      console.log(transaction.inputs);
-      console.log(transaction.outputs);
-      }
-    );
     transactions.forEach(function (transaction) {
       var foreignId = Meteor.userId()+transaction.hash;
       var transfer = Transfers.findOne({"foreignId": foreignId});
@@ -22,19 +15,23 @@ Meteor.methods({
             if (input.note === bitcoinAddress.address) {
               input.nodeId = bitcoinAddress._id;
             }
-          }
+          });
         var outputs = transfer.details.outputs;
         outputs.forEach(function (output) {
             if (output.note === bitcoinAddress.address) {
               output.nodeId = bitcoinAddress._id;
             }
-          }
-        Transfers.update({"_id": tranfser._id},{$set {"details.outputs": outputs, "details.inputs": inputs}});
+          });
+        Transfers.update({"_id": transfer._id},{$set : {"details.outputs": outputs, "details.inputs": inputs}});
       } else {//User has never added an address related to this transaction before
         transfer = {};
         transfer.foreignId = foreignId;
         transfer.date = Date(transaction.time*1000);
-        transfer.sourceId = true;
+        transfer.sourceId = bitcoinAddress.walletId;
+        transaction.inputs.forEach(function(input) {
+          console.log(input);
+        });
+        transfer.details = {};
     }
     });
   }
