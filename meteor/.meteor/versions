@@ -1,4 +1,5 @@
 accounts-base@1.1.1
+accounts-entry@0.9.0
 accounts-password@1.0.2
 aldeed:autoform@3.1.0
 aldeed:collection2@2.1.0
@@ -35,8 +36,6 @@ iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1
 iron:router@0.9.4
-joshowens:accounts-entry@0.9.0
-joshowens:simple-form@0.1.8
 jquery@1.0.0
 json@1.0.0
 lepozepo:accounting@1.0.0
@@ -55,7 +54,6 @@ mobile-status-bar@1.0.0
 mongo-livedata@1.0.5
 mongo@1.0.6
 mquandalle:jade@0.2.8
-mrt:accounts-t9n@0.0.13
 mrt:accounts-ui-bootstrap-3@0.3.3
 mrt:just-i18n@0.3.0
 mrt:moment@2.6.0
@@ -76,6 +74,8 @@ service-configuration@1.0.1
 session@1.0.2
 sewdn:collection-behaviours@0.1.5
 sha@1.0.0
+simple-form@0.0.0
+softwarerero:accounts-t9n@0.0.17
 spacebars-compiler@1.0.2
 spacebars@1.0.2
 srp@1.0.0
