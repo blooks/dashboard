@@ -1,5 +1,23 @@
 Schemas = {}
 
+Schemas.DummyNodes = new SimpleSchema(
+
+  network:
+    type: String
+    allowedValues: [
+      "Bitcoin"
+      "Exchange"
+      "BankAccount"
+    ]
+  nodeId:
+    type: String
+    optional: true
+  name:
+    type:String
+
+)
+
+
 
 Schemas.User = new SimpleSchema(
 
@@ -24,17 +42,34 @@ Schemas.User = new SimpleSchema(
   profile:
     type: Schemas.profile
     label: 'Profile'
+    optional:true
 
   services:
     type: Object
     optional: true
     blackbox: true
 
-#  dummyNodes:
-#    type: [Schemas.DummyNodes]
-#    autoValue: ->
-#      if this.isInsert
-#        [{network:'Bitcoin',name:'Dummy Bitcoin Wallet'},{network:'Exchange',name:"Dummy Exchange"},{network:'BankAccount',name:'Dummy Bank Account'}]
+  dummyNodes:
+    type:[Schemas.DummyNodes]
+    label:'DummyNodes'
+
+
+#  'dummyNodes.$.network':
+#    type: String
+#    allowedValues: [
+#      "Bitcoin"
+#      "Exchange"
+#      "BankAccount"
+#    ]
+#
+#  'dummyNodes.$.nodeId':
+#    type: String
+#    optional: true
+#
+#  'dummyNodes.$.name':
+#    type:String
+
+
 
 
 
@@ -44,22 +79,7 @@ Schemas.User = new SimpleSchema(
 
 Meteor.users.attachSchema Schemas.User
 
-Schemas.DummyNodes = new SimpleSchema(
 
-  network:
-    type: String
-    allowedValues: [
-      "Bitcoin"
-      "Exchange"
-      "BankAccount"
-    ]
-  nodeId:
-    type: String
-    optional: true
-  name:
-    type:String
-
-)
 
 
 
