@@ -60,7 +60,7 @@ template(name="transfers")
               td
                 ul
                   each details.inputs
-                    li {{labelForNodeId nodeId}}              
+                    li {{labelForVolumeFragment this}}              
               td.positive 
                 ul
                   each details.inputs
@@ -73,7 +73,7 @@ template(name="transfers")
               td
                 ul
                   each details.outputs
-                    li {{labelForNodeId nodeId}}
+                    li {{labelForVolumeFragment this}}
               td
                 a.delete-transaction(href="#")
                   span.glyphicon.glyphicon-trash

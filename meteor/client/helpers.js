@@ -1,7 +1,11 @@
-Template.registerHelper('labelForNodeId', function(nodeId) {
-    var temp = Exchanges.findOne({"_id": nodeId});
+Template.registerHelper('labelForVolumeFragment', function(volumeFragment) {
+    var temp = Exchanges.findOne({"_id": volumeFragment.nodeId});
     if (temp) {
       return temp.exchangeLabel;
     }
-    return "Unkown";
+    temp = BitcoinAddresses.findOne({"_id": volumeFragment.nodeId});
+    if (temp) {
+      return BitcoinWallets.findOne({"_id": temp.walletId}).label;
+    }
+    return volumeFragment.note;
 }); 
