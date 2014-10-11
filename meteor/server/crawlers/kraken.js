@@ -60,7 +60,7 @@ var krakenDepositToTransfer = function(deposit, exchange) {
   try {
     transactionId = Transfers.insert(transfer);
   } catch (e) {
-    console.log(e);
+    //console.log(e);
   }
 };
 
@@ -94,7 +94,7 @@ var krakenWithdrawalToTransfer = function(withdrawal, exchange) {
     try {
     transferId = Transfers.insert(transfer);
   } catch (e) {
-    console.log(e);
+    //console.log(e);
   }
 };
 
@@ -111,7 +111,7 @@ var krakenTradeToTrade = function(firstPart, secondPart, exchange) {
   try {
     tradeId  = Trades.insert(trade);
   } catch (e) {
-    console.log(e);
+    //console.log(e);
   }
 }
 
@@ -146,7 +146,7 @@ var krakenJSONtoDB = function(krakenData, exchange) {
     }
     catch (e) {
       console.log('Some threw an error!');
-      console.log(e);
+      //console.log(e);
     }
   }
   return errors.length === 0;
@@ -181,7 +181,6 @@ Meteor.methods({
       console.log("Number of extracted trades: " + krakenData.length);
       console.log("Number of Kraken Trades: " + numberOfKrakenTrades);
     }
-    console.log(krakenData);
     krakenJSONtoDB(krakenData, exchange);
   }
 });
