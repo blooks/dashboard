@@ -39,9 +39,6 @@ Router.map ->
         Meteor.subscribe 'transfers'
       ]
 
-  @route 'upload',
-    path: '/upload'
-
   @route 'nodes',
     path: '/nodes'
 
