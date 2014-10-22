@@ -5,25 +5,32 @@ Accounts.onCreateUser(function(options, user) {
     label: 'Dummy Bitcoin Wallet',
     device: 'BitcoinWallet'
   };
-  var dummyBankAccount = {
-    userId: user._id,
-    label: 'Dummy Bank Account',
-    currency: 'EUR'
-  };
   var dummyBitcoinWalletId
   try  {
      dummyBitcoinWalletId = BitcoinWallets.insert(dummyBitcoinWallet);
     } catch (error) {
       console.log(error);
     }
+  var dummyBankAccount = {
+    userId: user._id,
+    label: 'Dummy Bank Account',
+    currency: 'EUR'
+  };
+  var dummyBankAccountId;
+  try  {
+     dummyBankAccountId = BankAccounts.insert(dummyBankAccount);
+    } catch (error) {
+      console.log(error);
+    }
+
   user.dummyNodes = [
     {
-      network: 'Bitcoin',
-      name: 'Dummy Bitcoin Wallet'
+      type: 'Bitcoin',
+      nodeId: dummyBitcoinWalletId
     },
     {
-      network: 'BankAccount',
-      name: 'Dummy Bank Account'
+      type: 'BankAccount',
+      nodeId: dummyBankAccountId
     }
   ];
   return user;
