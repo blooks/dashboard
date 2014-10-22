@@ -2,19 +2,14 @@ Schemas = {}
 
 Schemas.DummyNodes = new SimpleSchema(
 
-  network:
+  type:
     type: String
     allowedValues: [
       "Bitcoin"
-      "Exchange"
       "BankAccount"
     ]
   nodeId:
     type: String
-    optional: true
-  name:
-    type:String
-
 )
 
 

@@ -2,15 +2,29 @@
 
 body {}
 
-/* HEADER & NAV
+/* SIDEBAR NAV
 ------------------------- */
-
-.navbar {
-	.container {
-		width: 100%;
-	}
+#wrapper {
+	padding-left: 70px;
+	transition: all .4s ease 0s;
 }
 
+#sidebar-wrapper {
+    left: 70px;
+}
+
+#wrapper.nav-toggled {
+    padding-left: 150px;
+}
+
+#wrapper.nav-toggled #sidebar-wrapper {
+    left: 150px;
+    width: 150px;
+    transition: all .4s ease 0s;
+}
+
+/* HEADER
+------------------------- */
 .social-icons {
 	display: block;
 	font-size: 18px; font-size: 1.5rem;
@@ -30,29 +44,5 @@ h1	{
 	font-size: 36px;
 	font-size: 3rem;
 	margin-top: 0;	
-}
-
-
-/* Sidebar
-------------------------- */
-
-
-#wrapper {
-	padding-left: 70px;
-	transition: all .4s ease 0s;
-}
-
-#sidebar-wrapper {
-    left: 70px;
-}
-
-#wrapper.nav-toggled {
-    padding-left: 150px;
-}
-
-#wrapper.nav-toggled #sidebar-wrapper {
-    left: 150px;
-    width: 150px;
-    transition: all .4s ease 0s;
 }
 } // END OF @sm-screen
