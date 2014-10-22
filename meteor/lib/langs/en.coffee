@@ -11,6 +11,10 @@ i18n.map 'en_GB',
       settings: 'Settings'
       help: 'Help'
       accounts: 'Accounts'
+      label: 'Label'
+    buttons:
+      save: 'Save'
+      add: 'Add'
   
   # Trades
   trades:
@@ -80,3 +84,5 @@ i18n.map 'en_GB',
       addNewExchange: "Add exchange"
       addedExchange: "Added exchanges"
       deleteExchange: "Delete exchange"
+    wallets:
+      walletLabelTitle: 'Wallet label'
