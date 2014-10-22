@@ -16,6 +16,133 @@ body	{
 	font-size: 1rem;
 }
 
+
+/* SIDEBAR NAV */
+
+/* .row {
+    margin-left:0px;
+    margin-right:0px;
+} */
+
+#wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+
+#sidebar-wrapper {
+    margin-left: -150px;
+    left: 70px;
+    width: 150px;
+    background: @gray-lighter;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 150px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#page-wrapper {
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+}
+
+#wrapper.nav-toggled {
+    padding-left: 150px;
+}
+#wrapper.nav-toggled #sidebar-wrapper {
+    left: 150px;
+}
+
+#page-wrapper {
+  width: 100%;
+}
+
+#sidebar-menu li a, 
+.sidebar-nav li a {
+    color: @gray-dark;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 150px;
+    background: @gray-light;
+    border-top: 1px solid @gray-lighter;
+    border-bottom: 1px solid @gray;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+
+  a {
+	color: @gray-dark;
+	display: block;
+	text-decoration: none;
+
+  &:hover {
+	color: @gray-dark;
+	background: @brand-primary;
+	text-decoration: none;
+	} 	
+  }
+}
+
+.sidebar-nav li a {
+
+}
+
+.sidebar-nav li a:nav-toggled,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: @gray-darker;
+  background: none;
+}
+
+#main-icon {
+	float:right;
+	padding-right: 65px;
+	padding-top:20px;
+}
+
+.nav-icon {}
+
+/*
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+} */
+
 /* Global view sections
 ------------------------------ */
 
@@ -295,3 +422,4 @@ hr.sub-stopper {
 	display: block;
 	padding-top: 10px;
 }
+

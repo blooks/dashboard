@@ -8,7 +8,8 @@ head
   title Coyno
 
 template(name="layout")
-    
-  +yield(region="header")
-  +yield
-  +yield(region="footer")
+  #wrapper.nav-toggled    
+    +yield(region="header")
+    #page-wrapper
+      +yield
+      +yield(region="footer")
