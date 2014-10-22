@@ -22,6 +22,18 @@ body	{
 /* Main zone
 -------------------- */
 
+
+/* Detail Items styling
+----------------------- */
+.details-item {
+		background-color: @gray-lighter;
+		border: 1px solid @gray-light;
+		border-top: 4px solid @gray-light;
+		border-bottom: 8px solid @gray-light;
+		padding: 1rem;
+}
+
+
 /* Footer 
 -------------------- */
 footer {
@@ -32,7 +44,8 @@ footer {
 
 /* View Specific
 ------------------------------- */
-.exhanges-zone {
+.exhanges-zone,
+.wallets-zone {
 
 	[class*="col-"] {
   		margin-bottom: 30px;
@@ -42,11 +55,7 @@ footer {
 		margin: 2rem 0;
 	}
 
-	.item {
-		background-color: @gray-lighter;
-		border: 1px solid @gray-light;
-		border-top: 4px solid @gray-light;
-		border-bottom: 8px solid @gray-light;
+	.details-item {
 		margin: 20px 0;
 		padding: 40px 1rem 1rem 1rem;
 
@@ -120,12 +129,26 @@ footer {
 	}
 }
 
+.wallets-zone {
+	
+	.balance-statement {
+		width: 30%;
+		margin: 1rem auto;
+		text-align: center;
+		text-transform: none;
+		border: 2px solid @whyte;		
+	}
 
-.empty-msg {
-  border: 1px solid @gray;
-  padding: 20px;
-  margin: 40px 0;
-  text-align: center;
+	.wallet-adresses {
+	}
+
+	.add-address-zone {
+		clear: both;
+	}
+
+	.controls {
+		padding-top: 10px;
+	}
 }
 
 .tax-screen {
@@ -265,4 +288,10 @@ hr.sub-stopper {
 	text-align: center;
 	color: @darkblue;
 	background-color: @darkblue;
+}
+
+.controls {
+	clear: both;
+	display: block;
+	padding-top: 10px;
 }
