@@ -7,12 +7,21 @@ table {
        // border: none;
     }
 
+    &.table-transactions {
+    //  border: none; 
+    }
+
   thead {
     tr {
+
+                    &.no-border {
+                          border: none;                              
+                          } 
         th {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: @font-family-sans-serif;
+            border-bottom: 1px;
                
                 &.supa-header {
                  text-align: center;
@@ -26,10 +35,7 @@ table {
                         background-color: @negative;
                      }                
                 }
-
-                &.no-border {
-                            border: none;                              
-                            }             
+  
             }
         }      
    }
