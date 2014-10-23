@@ -145,6 +145,6 @@ Meteor.startup(function () {
 
   if (Meteor.isServer) {
     if (!BtcToFiat.findOne() || process.env.COYNO_REFRESH_RATES)
-      populateBtcToFiat();
+      Coynverter.repopulateBtcToFiat();
   }
 });
