@@ -53,34 +53,34 @@ template(name="transfers")
                             span.glyphicon.glyphicon-info-sign
                         th.no-border              
                   tbody
-              each transfers
-                tr
-                  td {{prettyDate date}}
-                  td.positive {{details.currency}}
-                  td
-                    ul
-                      each details.inputs
-                        li {{labelForVolumeFragment this}}              
-                  td.positive 
-                    ul
-                      each details.inputs
-                        //- BTC needs to be pulled from details. How to do in current context?
-                        li {{saneNumber amount 'BTC'}}
-                  td.negative
-                    ul
-                      each details.outputs
-                        li {{saneNumber amount 'BTC'}}
-                  td
-                    ul
-                      each details.outputs
-                        li {{labelForVolumeFragment this}}
-                  td
-                    a.delete-transaction(href="#")
-                      span.glyphicon.glyphicon-trash
-              else
-                .row
-                  .col-sm-6.col-sm-offset-3 
-                    .add-trns-zone
-                      h3 {{i18n 'transfers.headings.noTransactions'}}
-                      p {{i18n 'transfers.text.noTransactions'}}
+                  each transfers
+                    tr
+                      td {{prettyDate date}}
+                      td.positive {{details.currency}}
+                      td
+                        ul
+                          each details.inputs
+                            li {{labelForVolumeFragment this}}              
+                      td.positive 
+                        ul
+                          each details.inputs
+                            //- BTC needs to be pulled from details. How to do in current context?
+                            li {{saneNumber amount 'BTC'}}
+                      td.negative
+                        ul
+                          each details.outputs
+                            li {{saneNumber amount 'BTC'}}
+                      td
+                        ul
+                          each details.outputs
+                            li {{labelForVolumeFragment this}}
+                      td
+                        a.delete-transaction(href="#")
+                          span.glyphicon.glyphicon-trash
+                  else
+                    .row
+                      .col-sm-6.col-sm-offset-3 
+                        .add-trns-zone
+                          h3 {{i18n 'transfers.headings.noTransactions'}}
+                          p {{i18n 'transfers.text.noTransactions'}}
 
