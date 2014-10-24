@@ -29,6 +29,9 @@ Exchanges.helpers({
   update: function() {
     if (this.exchange === "Bitstamp") {
     Meteor.call('getBitstampData', this); }
+    if (this.exchange === "Kraken") {
+    Meteor.call('getKrakenData', this);
+    }
   },
   logoUrl: function() {
     if (this.exchange === "Bitstamp") {
@@ -43,13 +46,22 @@ Exchanges.helpers({
 });
 if (Meteor.isServer) {
 Exchanges.before.remove(function (userId, doc) {
-  var transactions = Trades.find({"venueId": doc._id});
-  transactions.forEach(function(transaction) {
-    Trades.remove({"_id": transaction._id});
+  var trades = Trades.find({"venueId": doc._id});
+  trades.forEach(function(trade) {
+    Trades.remove({"_id": trade._id});
+  });
+  //@Levin: Important! Fix this! Bitcoin Balance Wrong!
+  var transfers = Transfers.find({"venueId": doc._id});
+  transfers.forEach(function(transfer) {
+    Transfers.remove({"_id": transfer._id});
   });
 });
 Exchanges.after.insert(function (userId, doc) {
   if (doc.exchange === "Bitstamp") {
-    Meteor.call('getBitstampData', doc); }
+    Meteor.call('getBitstampData', doc); 
+  }
+ // if (doc.exchange === 'Kraken') {
+ //   Meteor.call('getKrakenData', doc);
+ //}
 });
 }

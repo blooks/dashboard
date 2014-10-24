@@ -1,4 +1,4 @@
-var KrakenClient = Meteor.npmRequire('kraken-api');
+var Kraken = Meteor.npmRequire('kraken-api');
 
 
 var krakenAssettoCoynoAsset = function (krakenAsset) {
@@ -6,78 +6,117 @@ var krakenAssettoCoynoAsset = function (krakenAsset) {
   if (krakenAsset === "XXBT") return "BTC";
   return "Unkown";
 };
-var krakenTradeToTransaction = function(trade) {
-  var currencydetails = {}
+var krakenTradeToTradeDetails = function(tradepart1, tradepart2, exchange) {
+  var tradedetails = {}
   var base_currency = 'EUR'
-  var krakenIn = trade[0];
-  var krakenOut = trade[1];
+  var krakenBuy = tradepart1;
+  var krakenSell = tradepart2;
   //We assume Kraken always gives the inflow first, outflow second
-  if (krakenIn.amount < 0) {
-    krakenIn = trade[1];
-    krakenOut = trade[0];
+  if (krakenBuy.amount < 0) {
+    krakenBuy = tradepart2;
+    krakenSell = tradepart1;
   }
+  tradedetails.buy = {
+    amount: krakenBuy.amount, // Trim off the initial -
+    currency: krakenAssettoCoynoAsset(krakenBuy.asset),
+    fee: krakenBuy.fee
+  }
+  abs_sell_amount = Math.abs(krakenSell.amount);
+  tradedetails.sell = {
+    amount: abs_sell_amount,
+    currency: krakenAssettoCoynoAsset(krakenSell.asset),
+    fee: krakenSell.fee
+  }
+  return tradedetails;
+};
 
-    in_amount = krakenIn.amount-krakenIn.fee;
-
-  currencydetails.in = {
-          amount: in_amount, // Trim off the initial -
-          currency: krakenAssettoCoynoAsset(krakenIn.asset),
-          node: 'Kraken'
-        }
-    out_amount = -1*krakenOut.amount+krakenOut.fee;
-        currencydetails.out = {
-          amount: out_amount,
-          currency: krakenAssettoCoynoAsset(krakenOut.asset),
-          node: 'Kraken'
-        }
-        return currencydetails;
-      };
-
-var krakenDepositToTransaction = function(deposit) {
-  var currencydetails = {};
+var krakenDepositToTransfer = function(deposit, exchange) {
+  var transfer = {};
+  transfer.date = new Date(deposit.time*1000);//Milliseconds
+  transfer.sourceId = exchange._id;
+  transfer.userId = Meteor.userId();
+  transfer.foreignId = Meteor.userId() + exchange._id + deposit.refid;
   var base_currency = 'EUR';
   var currency = krakenAssettoCoynoAsset(deposit.asset);
-  currencydetails.in = {
-              amount: deposit.amount,
-              currency: currency,
-              node: 'Kraken'
-              };
-  var second_node = 'BankAccount';
-  if (currency === 'BTC') {
-    second_node = 'BitcoinWallet';
-  }
-            currencydetails.out = {
-              amount: deposit.amount,
-              currency: currency,
-              node: second_node
-            };
-    return currencydetails;
+  var transferdetails = {
+    inputs : [],
+    outputs : [],
+    currency : currency
   };
+  transferdetails.inputs.push({
+    amount: deposit.amount
+  });
+  if (deposit.fee > 0) {
+    transferdetails.outputs.push({
+      amount: deposit.fee,
+      nodeId: exchange._id
+    });
+  }
+  transferdetails.outputs.push({
+    amount: deposit.amount,
+    nodeId: exchange._id
+  })
+  transfer.details = transferdetails;
+  try {
+    transactionId = Transfers.insert(transfer);
+  } catch (e) {
+    //console.log(e);
+  }
+};
 
-var krakenWithdrawalToTransaction = function(withdrawal) {
-  var currencydetails = {};
+var krakenWithdrawalToTransfer = function(withdrawal, exchange) {
+  var transfer = {};
+  transfer.date = new Date(withdrawal.time*1000);//Milliseconds
+  transfer.sourceId = exchange._id;
+  transfer.userId = Meteor.userId();
+  transfer.foreignId = Meteor.userId() + exchange._id + withdrawal.refid;
   var base_currency = 'EUR';
   var currency = krakenAssettoCoynoAsset(withdrawal.asset);
-  //Hacky workaround to consider fees
-  withdrawal_amount = -1*withdrawal.amount+withdrawal.fee;
-  currencydetails.out = {
-              amount: withdrawal_amount,
-              currency: currency,
-              node: 'Kraken'
-              };
-  var second_node = 'BankAccount';
-  if (currency === 'BTC') {
-    second_node = 'BitcoinWallet';
-  }
-            currencydetails.in = {
-              amount: -1*withdrawal.amount,
-              currency: currency,
-              node: second_node
-            };
-    return currencydetails;
+  var transferdetails = {
+    inputs : [],
+    outputs : [],
+    currency : currency
   };
+  abs_withdrawal_amount = Math.abs(withdrawal.amount);
+  transferdetails.inputs.push({
+    amount: abs_withdrawal_amount+withdrawal.fee,
+    nodeId: exchange._id
+  });
+  if (withdrawal.fee > 0) {
+    transferdetails.outputs.push({
+      amount: withdrawal.fee
+    });
+  }
+  transferdetails.outputs.push({
+    amount: abs_withdrawal_amount,
+  })
+  transfer.details = transferdetails;
+    try {
+    transferId = Transfers.insert(transfer);
+  } catch (e) {
+    //console.log(e);
+  }
+};
 
-var krakenJSONtoDB = function(krakenData) { 
+var krakenTradeToTrade = function(firstPart, secondPart, exchange) {
+  var trade = {};
+  trade.date = new Date(firstPart.time*1000);//Milliseconds
+  trade.source = 'Kraken';
+  trade.userId = Meteor.userId();
+  trade.foreignId = Meteor.userId() + exchange._id + firstPart.refid;
+  trade.venueId = exchange._id;
+  var tradeDetails = krakenTradeToTradeDetails(firstPart, secondPart, exchange);
+  trade.buy = tradeDetails.buy;
+  trade.sell = tradeDetails.sell;
+  try {
+    tradeId  = Trades.insert(trade);
+  } catch (e) {
+    //console.log(e);
+  }
+}
+
+
+var krakenJSONtoDB = function(krakenData, exchange) { 
   var krakenDataLength = krakenData.length;
 
   //preconditioning. Kraken gives us ugly floatsies! Shoo floatsies!
@@ -91,34 +130,19 @@ var krakenJSONtoDB = function(krakenData) {
   for (i = 0; i < krakenDataLength; ++i) {
     try {
       var krakenTx = krakenData[i];
-      var transaction = {};
-      transaction.date = new Date(krakenTx.time*1000);//Milliseconds
-      transaction.source = 'Kraken';
-      transaction.userId = Meteor.userId();
-      transaction.foreignId = Meteor.userId() + 'Kraken' + krakenTx.refid;
-      var currencydetails = {};
       if (krakenTx.type === 'trade') {//trade consists of two json objects
         ++i;
         if (krakenData[i].refid !== krakenTx.refid) {
           console.log('Kraken not giving both sides of the trade!');
         }
-        var krakenTrade = [krakenTx , krakenData[i]];
-        currencydetails = krakenTradeToTransaction(krakenTrade);
+        krakenTradeToTrade(krakenTx, krakenData[i], exchange);
       } else if (krakenTx.type === 'deposit') {//deposit
-        currencydetails = krakenDepositToTransaction(krakenTx);
+        krakenDepositToTransfer(krakenTx, exchange);
       } else if (krakenTx.type === 'withdrawal') {//withdrawal
-        currencydetails = krakenWithdrawalToTransaction(krakenTx);
+        krakenWithdrawalToTransfer(krakenTx, exchange);
       } else {
         console.log("WARNING: Kraken returning unrecognized transactions!");
-      } 
-      transaction.in = currencydetails.in;
-      transaction.out = currencydetails.out;
-      try {
-        transactionId = Transactions.insert(transaction);
-      } catch (e) {
-        errors.push(e);
-          //console.log(e);
-      }
+      };
     }
     catch (e) {
       console.log('Some threw an error!');
@@ -129,40 +153,34 @@ var krakenJSONtoDB = function(krakenData) {
 };
 
 Meteor.methods({
-  getKrakenData: function () {
-    var krakenAccounts = Exchanges.find({exchange: "Kraken"}).fetch();
-    for (var i = 0; i < krakenAccounts.length; ++i) {
-      var account = krakenAccounts[i];
-      var key = account.credentials.APIKey;
-      var secret = account.credentials.secret;
-      var kraken = new KrakenClient(key, secret);
-      var asyncApiCall = kraken.api;      
-      var syncApiCall = Async.wrap(asyncApiCall);
-      var unixStartStamp = new Date(0).getTime();
-      var apiDataPackage = syncApiCall('Ledgers', {});
-      //turn JSON Object to array
-      var numberOfKrakenTrades = apiDataPackage.result.count;
-      var krakenData = []
-      var ledgerIdOfLastEntry = "";
-      var security_loop_counter = 0;
-      while (krakenData.length < numberOfKrakenTrades && security_loop_counter < 10) {//making sure we get ALL the transactions from Kraken
-        for (var entry in apiDataPackage.result.ledger) {
-          var newKrakenTransaction = apiDataPackage.result.ledger[entry];
-          if (entry !== ledgerIdOfLastEntry) {
-          krakenData.push(newKrakenTransaction);
+  getKrakenData: function (exchange) {
+    var key = exchange.credentials.APIKey;
+    var secret = exchange.credentials.secret;syncKrakenClient
+    var krakenClient = new Kraken(key, secret);
+    var syncKrakenClient = Async.wrap(krakenClient, ['api']);
+    var unixStartStamp = new Date(0).getTime();
+    var apiDataPackage = syncKrakenClient.api('Ledgers', {});
+    //turn JSON Object to array
+    var numberOfKrakenTrades = apiDataPackage.result.count;
+    var krakenData = []
+    var ledgerIdOfLastEntry = "";
+    var security_loop_counter = 0;
+    while (krakenData.length < numberOfKrakenTrades && security_loop_counter < 10) {//making sure we get ALL the transactions from Kraken
+      for (var entry in apiDataPackage.result.ledger) {
+        var newKrakenTransaction = apiDataPackage.result.ledger[entry];
+        if (entry !== ledgerIdOfLastEntry) {
+        krakenData.push(newKrakenTransaction);
         } 
         ledgerIdOfLastEntry = entry;
-        }
-        apiDataPackage = syncApiCall('Ledgers', {end: ledgerIdOfLastEntry});
-        ++security_loop_counter;
       }
-      if (krakenData.length != numberOfKrakenTrades) {
-        console.log("Warning: Not all or even more Trades extracted than reported by Kraken!");
-        console.log("Number of extracted trades: " + krakenData.length);
-        console.log("Number of Kraken Trades: " + numberOfKrakenTrades);
-      }
-      //console.log(krakenData);
-      krakenJSONtoDB(krakenData);
+      apiDataPackage = syncKrakenClient.api('Ledgers', {end: ledgerIdOfLastEntry});
+      ++security_loop_counter;
     }
+    if (krakenData.length != numberOfKrakenTrades) {
+      console.log("Warning: Not all or even more Trades extracted than reported by Kraken!");
+      console.log("Number of extracted trades: " + krakenData.length);
+      console.log("Number of Kraken Trades: " + numberOfKrakenTrades);
+    }
+    krakenJSONtoDB(krakenData, exchange);
   }
 });

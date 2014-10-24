@@ -6,11 +6,8 @@ Template.trades.helpers({
 });
 Template.trades.events({
   'click .delete-trade': function(event, template) {
-    /** Deactivated for the time being.
     return Trades.remove({
       _id: this._id
     });
-    **/
-    return true;
   }
 });
