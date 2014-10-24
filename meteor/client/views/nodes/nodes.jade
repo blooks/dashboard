@@ -1,7 +1,9 @@
 template(name="nodes")
-  .container
+  .page-content.inset
     .row
-      h1.process-title {{i18n 'nodes.headings.nodes'}}
-    +currencyExchanges
-    +bitcoinWallets
-    +bankAccounts
+      .col-md-12
+        h1.process-title {{i18n 'nodes.headings.nodes'}}
+        .col-md-10.col-md-offset-1
+          +currencyExchanges
+          +bitcoinWallets
+          +bankAccounts
