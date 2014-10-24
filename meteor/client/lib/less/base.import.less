@@ -11,12 +11,23 @@ body {
 html	{}
 
 body	{
-	background-color: @whyte;
+	background-color: @gray-lightest;
 	font-size: 12px;
 	font-size: 1rem;
 }
 
-/* SIDEBAR NAV */
+.desktop-zone {
+	border: 1px solid @gray-medium-light;
+	padding: 36px 30px;
+	padding: 3rem 2.5rem;
+	background-color: @whyte;
+
+	&.no-border-top {
+		border-top: none;
+	}
+}
+
+/* Sidebar nav */
 #wrapper {
     padding-left: 70px;
     transition: all .4s ease 0s;
@@ -95,13 +106,13 @@ body	{
 	color: @gray-dark;
 	background: darken(@gray-lighter,3%);
 	text-decoration: none;
-	} 	
-  }
-}
+	} 
 
-.sidebar-nav li a:nav-toggled,
-.sidebar-nav li a:focus {
-  text-decoration: none;
+	&:nav-toggled,
+	&:focus {
+  		text-decoration: none;		
+	}
+  }
 }
 
 .nav-icon {
@@ -109,6 +120,18 @@ body	{
 	padding-right: 20px;
 	color: @brand-primary;
 }
+
+/* Sub menu nav */
+.sub-nav-zone {
+	text-align: center;
+	.tile {
+		margin-bottom: .5rem;
+		&:hover {
+			background-color: lighten(@brand-primary, 10%);
+		}
+	}
+}
+
 
 /* Global view sections
 ------------------------------ */
@@ -138,6 +161,8 @@ footer {
 
 /* View Specific
 ------------------------------- */
+.nodes {}
+
 .exhanges-zone,
 .wallets-zone {
 
@@ -390,3 +415,21 @@ hr.sub-stopper {
 	padding-top: 10px;
 }
 
+.tile {
+    padding: 4px 6px;
+    vertical-align: middle;
+    background-color: @brand-primary;
+    border: 1px transparent solid;
+    color: @whyte;
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    font-size: 1.2rem;
+    line-height: 16px;
+    line-height: 1.4rem;
+    height: 120px;
+    width: 120px;
+    height: 10rem;
+    width: 10rem;    
+    text-align: center;
+  }

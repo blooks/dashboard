@@ -1,9 +1,54 @@
 template(name="nodes")
-  .page-content.inset
+  .page-content.inset.nodes
     .row
-      .col-md-12
+      .col-sm-12
         h1.process-title {{i18n 'nodes.headings.nodes'}}
-        .col-md-10.col-md-offset-1
-          +currencyExchanges
-          +bitcoinWallets
-          +bankAccounts
+        hr.sub-stopper
+        .col-sm-10.col-sm-offset-1
+          .row.sub-nav-zone            
+              ul.nav.nav-tabs
+                li.active
+                  a(href="#")
+                    i.fa.fa-bar-chart
+                    | Overview
+                li
+                  a(href="#")
+                    i.fa.fa-bitcoin
+                    | Exchanges  
+                li
+                  a(href="#")
+                    i.fa.fa-bookmark-o
+                    | Wallets
+                li
+                  a(href="#")
+                    i.fa.fa-credit-card
+                    | Bank Accounts
+          .row.desktop-zone.no-border-top
+            +currencyExchanges
+            +bitcoinWallets
+            +bankAccounts 
+              //-
+
+                button.tile.sub-nav-item.exhanges 
+                  i.fa.fa-bar-chart
+                  br 
+                  | Overview
+             
+                button.tile.sub-nav-item.exhanges 
+                  i.fa.fa-bitcoin
+                  br 
+                  | Exchanges        
+             
+                button.tile.sub-nav-item.wallet 
+                  i.fa.fa-bookmark-o
+                  br 
+                  | Wallets
+             
+                button.tile.sub-nav-item.bank 
+                  i.fa.fa-credit-card
+                  br 
+                  | Bank Accounts
+            //-
+              {{>Template.dynamic template="currencyExchanges"}}
+              +UI.dynamic(template="tabContent")
+       

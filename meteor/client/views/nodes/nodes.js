@@ -1,5 +1,15 @@
 // on the client
+/** Template.nodes.helpers({
+    'tabContent': function(){
+        return TemplateVar.get('currencyExchanges');
+    }
+})
 
-
-
-// on the client
+Template.nodes.events({
+    'click button.exchanges-link': function() {
+        if(TemplateVar.get('tabContent'))
+        	TemplateVar.set('tabContent', false);
+        else
+        	TemplateVar.set('tabContent', true);
+    }
+}); **/
