@@ -1,13 +1,9 @@
 template(name="trades")
-  .container
+  .page-content.inset
     .row
-      h1.process-title {{i18n 'trades.headings.trades'}}
-      hr.sub-stopper
-      .sub-menu-zone.pull-right
-        //- Button trigger modal 
-        a(href="#", data-toggle="modal",data-target="#txHelpModal")
-          span.glyphicon.glyphicon-hand-right 
-          span {{i18n 'template.headings.help'}} 
+      .col-md-12
+        h1.process-title {{i18n 'trades.headings.trades'}}
+        hr.sub-stopper
         .modal.fade(id="txHelpModal", tabindex="-1", role="dialog", aria-labelledby="transactionHelpModal", aria-hidden="true")            
           .modal-dialog
             .modal-content
@@ -18,55 +14,60 @@ template(name="trades")
                 h4.modal-title(id="transactionHelpModal") How to do your taxes
               .modal-body {{i18n 'trades.help'}}
               .modal-footer
-    .row
-  .container-fluid.table-zone
-    if trades
-      table.table.table-bordered.table-zb-hover
-        thead
-            tr
-              th(colspan="2").no-border &nbsp;
-              th(colspan="2").supa-header.inflow {{i18n 'trades.headings.table.inflow'}}
-              th(colspan="2").supa-header.outflow {{i18n 'trades.headings.table.outflow'}}
-              th(colspan="2").no-border &nbsp;             
-            tr
-              th {{i18n 'trades.headings.table.date'}} 
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th {{i18n 'trades.headings.table.source'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.source'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.positive {{i18n 'trades.headings.table.inAmount'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inAmount'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.positive {{i18n 'trades.headings.table.inCurrency'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inCurrency'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.negative {{i18n 'trades.headings.table.outAmount'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outAmount'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.negative {{i18n 'trades.headings.table.outCurrency'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outCurrency'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th {{i18n 'trades.headings.table.volume'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.volume'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.no-border              
-        tbody
-          each trades
-            tr
-              td {{prettyDate date}}
-              td {{venue}}
-              td.positive {{saneNumber inflow.amount inflow.currency}} {{buy.currency}}
-              td.positive {{buy.currency}}
-              td.negative {{saneNumber outflow.amount outflow.currency}} {{sell.currency}}
-              td.negative {{sell.currency}}
-              td {{saneNumber base.amount base.currency}} {{base.currency}}
-              td 
-                a.delete-transaction(href="#")
-                  span.glyphicon.glyphicon-trash
-    else
-      .row
-        .col-sm-6.col-sm-offset-3 
-          .add-trns-zone
-            h3 {{i18n 'trades.headings.noTransactions'}}
-            p {{i18n 'trades.text.noTransactions'}}
+        .col-md-10.col-md-offset-1
+          .sub-menu-zone.pull-right
+            //- Button trigger modal 
+            a(href="#", data-toggle="modal",data-target="#txHelpModal")
+              span.glyphicon.glyphicon-hand-right 
+              span {{i18n 'template.headings.help'}}           
+          .table-zone
+            if trades
+              table.table.table-transactions.table-zb-hover
+                thead
+                    tr
+                      th(colspan="2").no-border &nbsp;
+                      th(colspan="2").supa-header.inflow {{i18n 'trades.headings.table.inflow'}}
+                      th(colspan="2").supa-header.outflow {{i18n 'trades.headings.table.outflow'}}
+                      th(colspan="2").no-border &nbsp;             
+                    tr
+                      th {{i18n 'trades.headings.table.date'}} 
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'trades.headings.table.source'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.source'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.positive {{i18n 'trades.headings.table.inAmount'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.positive {{i18n 'trades.headings.table.inCurrency'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inCurrency'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.negative {{i18n 'trades.headings.table.outAmount'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.negative {{i18n 'trades.headings.table.outCurrency'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outCurrency'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'trades.headings.table.volume'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.volume'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.no-border              
+                tbody
+                  each trades
+                    tr
+                      td {{prettyDate date}}
+                      td {{venue}}
+                      td.positive {{saneNumber inflow.amount inflow.currency}} {{buy.currency}}
+                      td.positive {{buy.currency}}
+                      td.negative {{saneNumber outflow.amount outflow.currency}} {{sell.currency}}
+                      td.negative {{sell.currency}}
+                      td {{saneNumber base.amount base.currency}} {{base.currency}}
+                      td 
+                        a.delete-transaction(href="#")
+                          span.glyphicon.glyphicon-trash
+            else
+              .row
+                .col-sm-6.col-sm-offset-3 
+                  .add-trns-zone
+                    h3 {{i18n 'trades.headings.noTransactions'}}
+                    p {{i18n 'trades.text.noTransactions'}}

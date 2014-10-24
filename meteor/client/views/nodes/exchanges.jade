@@ -1,16 +1,17 @@
 template(name="currencyExchanges")
-  .row.exhanges-zone
+  .row.exhanges-zone.zone
     h2 Added Exchanges
-    .added-exchanges-zone
+    .added-exchanges.zone
     if exchanges
       each exchanges
         +exchangeDetails this
     .col-md-4
       .add-item-box
-        a(href="#") 
-          span.glyphicon.glyphicon-plus 
-          br 
-          | {{i18n 'nodes.exchanges.addNewExchange'}}
+        .vertical-align
+          a(href="#") 
+            i.fa.fa-plus
+            br 
+            | {{i18n 'nodes.exchanges.addNewExchange'}}
   .row
     .table-control-buttons
       a.update-transactions.btn(href="#") 

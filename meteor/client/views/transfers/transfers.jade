@@ -1,13 +1,9 @@
 template(name="transfers")
-  .container
+  .page-content.inset
     .row
-      h1.process-title {{i18n 'transfers.headings.transfers'}}
-      hr.sub-stopper
-      .sub-menu-zone.pull-right
-        //- Button trigger modal 
-        a(href="#", data-toggle="modal",data-target="#txHelpModal")
-          span.glyphicon.glyphicon-hand-right 
-          span {{i18n 'template.headings.help'}} 
+      .col-md-12
+        h1.process-title {{i18n 'transfers.headings.transfers'}}
+        hr.sub-stopper
         .modal.fade(id="txHelpModal", tabindex="-1", role="dialog", aria-labelledby="transactionHelpModal", aria-hidden="true")            
           .modal-dialog
             .modal-content
@@ -18,68 +14,70 @@ template(name="transfers")
                 h4.modal-title(id="transactionHelpModal") How to do your taxes
               .modal-body {{i18n 'transfers.help'}}
               .modal-footer
-    .row
-      //-
-        .add-trns-zone
-          +newTransaction         
-
-  .container-fluid.table-zone
-    if transfers
-      table.table.table-bordered.table-zb-hover
-        thead
-            tr
-              th(colspan="2").no-border &nbsp;
-              th(colspan="2").supa-header.inflow {{i18n 'transfers.headings.table.inflow'}}
-              th(colspan="2").supa-header.outflow {{i18n 'transfers.headings.table.outflow'}}
-              th(colspan="2").no-border &nbsp;             
-            tr
-              th {{i18n 'transfers.headings.table.date'}} 
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.date'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.positive {{i18n 'transfers.headings.table.currency'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inCurrency'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th {{i18n 'transfers.headings.table.source'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.source'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.positive {{i18n 'transfers.headings.table.amount'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inAmount'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.negative {{i18n 'transfers.headings.table.target'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.negative {{i18n 'transfers.headings.table.target'}}
-                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
-                  span.glyphicon.glyphicon-info-sign
-              th.no-border              
-        tbody
-          each transfers
-            tr
-              td {{prettyDate date}}
-              td.positive {{details.currency}}
-              td
-                ul
-                  each details.inputs
-                    li {{labelForNodeId nodeId}}              
-              td.positive 
-                ul
-                  each details.inputs
-                    //- BTC needs to be pulled from details. How to do in current context?
-                    li {{saneNumber amount 'BTC'}}
-              td.negative
-                ul
-                  each details.outputs
-                    li {{saneNumber amount 'BTC'}}
-              td
-                ul
-                  each details.outputs
-                    li {{labelForNodeId nodeId}}
-              td
-                a.delete-transaction(href="#")
-                  span.glyphicon.glyphicon-trash
-    else
-      .row
-        .col-sm-6.col-sm-offset-3 
-          .add-trns-zone
-            h3 {{i18n 'transfers.headings.noTransactions'}}
-            p {{i18n 'transfers.text.noTransactions'}}
+        //- .row
+          //-
+            .add-trns-zone
+              +newTransaction         
+        .col-md-10.col-md-offset-1
+          .sub-menu-zone.pull-right
+            //- Button trigger modal 
+            a(href="#", data-toggle="modal",data-target="#txHelpModal")
+              span.glyphicon.glyphicon-hand-right 
+              span {{i18n 'template.headings.help'}} 
+          .table-zone
+            if transfers
+              table.table.table-bordered.table-zb-hover
+                thead
+                    tr
+                      th(colspan="2").no-border &nbsp;
+                      th(colspan="2").supa-header.inflow {{i18n 'transfers.headings.table.inflow'}}
+                      th(colspan="2").supa-header.outflow {{i18n 'transfers.headings.table.outflow'}}
+                      th(colspan="2").no-border &nbsp;             
+                    tr
+                      th {{i18n 'transfers.headings.table.date'}} 
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.date'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'transfers.headings.table.source'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.source'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.positive {{i18n 'transfers.headings.table.amount'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.positive {{i18n 'transfers.headings.table.currency'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inCurrency'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.negative {{i18n 'transfers.headings.table.target'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.no-border              
+                tbody
+            each transfers
+              tr
+                td {{prettyDate date}}
+                td.positive {{details.currency}}
+                td
+                  ul
+                    each details.inputs
+                      li {{labelForVolumeFragment this}}              
+                td.positive 
+                  ul
+                    each details.inputs
+                      //- BTC needs to be pulled from details. How to do in current context?
+                      li {{saneNumber amount 'BTC'}}
+                td.negative
+                  ul
+                    each details.outputs
+                      li {{saneNumber amount 'BTC'}}
+                td
+                  ul
+                    each details.outputs
+                      li {{labelForVolumeFragment this}}
+                td
+                  a.delete-transaction(href="#")
+                    span.glyphicon.glyphicon-trash
+            else
+              .row
+                .col-sm-6.col-sm-offset-3 
+                  .add-trns-zone
+                    h3 {{i18n 'transfers.headings.noTransactions'}}
+                    p {{i18n 'transfers.text.noTransactions'}}

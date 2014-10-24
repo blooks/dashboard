@@ -1,10 +1,4 @@
 Transfers.helpers({
-	from: function() {
-		return 'Bitstamp';
-	},
-	to: function() {
-		return 'Kraken';
-	},
 	amountIncomingToNode: function(nodeId) {
 		var result = 0;
 		this.details.outputs.forEach(function (output) {
