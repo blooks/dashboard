@@ -49,5 +49,17 @@ Trades.helpers({
   venue: function() {
     var exchange = Exchanges.findOne({"_id": this.venueId});
     return exchange.exchangeLabel;
+  },
+  inflow: function() {
+    return {
+      amount: this.buy.amount - this.buy.fee,
+      currency: this.buy.currency
+    }
+  },
+  outflow: function() {
+    return {
+      amount: this.sell.amount + this.sell.fee,
+      currency: this.sell.currency
+    }
   }
 });
