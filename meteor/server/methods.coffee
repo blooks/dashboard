@@ -1,5 +1,3 @@
-
-
 # Take the output from parseBitstamp and create transactions
 insertBitstampTransactions = (lineObjs) ->
   errors = []
@@ -20,7 +18,7 @@ insertBitstampTransactions = (lineObjs) ->
         transaction.out =
           amount: line.usd_amount
           currency: 'USD'
-        transaction.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
+        transaction.base = Coynverter.calculateBaseAmount(line.usd_amount, 'USD', transaction.date)
       else if line.usd_amount.substr(0,1) is '-' # trade is a buy of bitcoin with USD
         transaction.in =
           amount: line.usd_amount.substr(1) # Trime off the initial -
@@ -28,7 +26,7 @@ insertBitstampTransactions = (lineObjs) ->
         transaction.out =
           amount: line.btc_amount
           currency: 'BTC'
-        transaction.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
+        transaction.base = Coynverter.calculateBaseAmount(line.usd_amount.substr(1), 'USD', transaction.date)
     #
     # Bitstamp deposits
     #
@@ -42,8 +40,8 @@ insertBitstampTransactions = (lineObjs) ->
         transaction.in =
           amount: line.usd_amount
           currency: 'USD'
-        transaction.out = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
-        transaction.base = calculateBaseAmount({amount: line.usd_amount, currency: 'USD'}, transaction.date)
+        transaction.out = Coynverter.calculateBaseAmount(line.usd_amount, 'USD', transaction.date)
+        transaction.base = Coynverter.calculateBaseAmount(line.usd_amount, 'USD', transaction.date)
       #else # Transfer in of BTC
       #  addUnexplainedIncomingBtc(line.btc_amount)
     #
@@ -55,11 +53,11 @@ insertBitstampTransactions = (lineObjs) ->
     #
     else if line.type is '1' # Withdrawal, USD converted to EUR
       if line.btc_amount is '0.00000000' # Withdrawal
-        transaction.in = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
+        transaction.in = Coynverter.calculateBaseAmount(line.usd_amount.substr(1), 'USD', transaction.date)
         transaction.out =
           amount: line.usd_amount.substr(1)
           currency: 'USD'
-        transaction.base = calculateBaseAmount({amount: line.usd_amount.substr(1), currency: 'USD'}, transaction.date)
+        transaction.base = Coynverter.calculateBaseAmount(line.usd_amount.substr(1), 'USD', transaction.date)
       #else # Withdrawal of BTC
       #  addUnexplainedOutgoingBtc(line.btc_amount)
     # If we have trade data, create a transaction

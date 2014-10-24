@@ -8,40 +8,21 @@ Bitstamp.prototype.user_transactions = function(limit, callback) {
     limit = undefined;
   }
   this._post('user_transactions', callback, {limit: limit});
-}
-
-var calculateBaseAmount = function(amount, foreigncurrency, date) {
-  var e, rate, to;
-  if (date == null) {
-    date = new Date();
-  }
-  try {
-    check(date, Date);
-    if (foreigncurrency !== 'USD' && foreigncurrency !== 'EUR') {
-      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now...');
-    }
-    to = 'EUR';
-    rate = getExchangeRate(foreigncurrency, to, date);
-    return accounting.toFixed(amount * rate, 0);
-    } catch (_error) {
-    e = _error;
-    return console.log(e);
-    }
 };
+
 var bitstampTradeToTrade = function(trade) {
-  var currencydetails = {}
-  var dollar_amount = 0;
+  var currencydetails = {};
    if (trade.btc < 0 ) {// trade is a sale of BTC for USD
-          currencydetails.sell = {
+        currencydetails.sell = {
           amount: Math.abs(trade.btc),
           currency: 'BTC',
           fee: 0
-        }
+        };
         currencydetails.buy = {
           amount: trade.usd,
           currency: 'USD',
           fee: trade.fee
-        }
+        };
       } else {//trade is a sale of USD for BTC
         currencydetails.sell = {
           amount: Math.abs(trade.usd),
@@ -66,7 +47,7 @@ var bitstampDepositToTrade = function(deposit) {
       currency: 'USD',
       fee: deposit.fee
     };
-    base_amount = calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
+    base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
     currencydetails.sell = {
       amount: base_amount,
       currency: base_currency,
@@ -84,7 +65,6 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
     inputs: [],
     outputs: []
   };
-  var base_currency = 'EUR';
   if (deposit.btc > 0) {//Bitcoin deposit
     transferdetails.inputs.push({
       amount: deposit.btc
@@ -95,7 +75,7 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
     });
     transferdetails.currency = 'BTC'
   } else {//Dollar deposit
-    base_amount = calculateBaseAmount(deposit.usd, 'USD', deposit.datetime) 
+    base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime);
     transferdetails.inputs.push({
       amount: base_amount
     });
@@ -106,7 +86,7 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
     transferdetails.currency = 'EUR'
   }
   return transferdetails;
-}
+};
 
 
 var bitstampRippleDepositToTrade = function(deposit) {
@@ -118,7 +98,7 @@ var bitstampRippleDepositToTrade = function(deposit) {
       currency: 'USD', 
       fee: 0
     };
-    base_amount = calculateBaseAmount(deposit.usd, 'USD', deposit.datetime) 
+    base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime);
     currencydetails.sell = {
       amount: base_amount,
       currency: base_currency, 
@@ -138,19 +118,19 @@ var bitstampRippleDepositToTrade = function(deposit) {
     };
   }
   return currencydetails;
-}
+};
 
 var bitstampWithdrawalToTrade = function(withdrawal) {
   var currencydetails = {};
   var base_currency = 'EUR';
   if (withdrawal.usd < 0) {//Dollar withdrawal
     var dollar_amount = Math.abs(withdrawal.usd);
-    var base_amount = calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
+    var base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
     currencydetails.sell = {
       amount: dollar_amount,
       currency: 'USD',
       fee: 0
-    }
+    };
     currencydetails.buy = {
       amount: base_amount,
       currency: base_currency,
@@ -180,7 +160,7 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     transferdetails.currency = 'BTC'
   } else {//Dollar withdrawal
     var dollar_amount = Math.abs(withdrawal.usd);
-    var base_amount = calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
+    var base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
     transferdetails.inputs.push({
       amount: base_amount,
       nodeId: exchange._id
@@ -192,7 +172,7 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
   }
   //Bitcoin Withdrawal is a transfer
   return transferdetails;
-}
+};
 
 var bitstampRippleWithdrawalToTrade = function(withdrawal) {
   var currencydetails = {};
@@ -204,7 +184,7 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
       currency: 'USD', 
       fee: 0  
     };
-    base_amount = calculateBaseAmount(withdrawal.usd, 'USD', withdrawal.datetime) 
+    base_amount = Coynverter.calculateBaseAmount(withdrawal.usd, 'USD', withdrawal.datetime);
     currencydetails.buy = {
       amount: base_amount,
       currency: base_currency, 
@@ -225,7 +205,7 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
     };
   }
   return currencydetails;
-}
+};
 
 var addBitstampTxToTransfers = function(bitstampTx, exchange) {
   
@@ -269,7 +249,7 @@ var addBitstampTxToTransfers = function(bitstampTx, exchange) {
     //console.log(transfer);
   }
   return errors.length === 0;
-}
+};
 
 //Accepting ONLY API Style JSON objects.
 var addBitstampTxToTrades = function(bitstampTx, exchange) {
@@ -317,7 +297,7 @@ var addBitstampTxToTrades = function(bitstampTx, exchange) {
     //console.log(trade);
   }
   return errors.length === 0;
-}
+};
 
 
 
