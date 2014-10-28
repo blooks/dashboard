@@ -16,6 +16,9 @@ Router.onBeforeAction mustBeSignedIn,
     'about'
   ]
 
+Router.configure
+  notFoundTemplate: 'notFound'
+
 Router.onBeforeAction 'loading'
 
 Router.map ->
@@ -40,11 +43,6 @@ Router.map ->
       ]
 
   @route 'nodes',
-    path: '/nodes'
-
-  @route 'notFound',
-    path: '*'
-    where: 'server'
-    action: ->
-      @response.statusCode = 404
-      @response.end Handlebars.templates['404']()
+    path: '/nodes/:type'
+    data:
+      type:  @type
