@@ -42,7 +42,8 @@ Router.map ->
         Meteor.subscribe 'transfers'
       ]
 
-  @route 'nodes',
+  @route '/nodes/:type',
     path: '/nodes/:type'
-    data:
-      type:  @type
+    template: 'nodes'
+    data: ->
+      type:  @params.type
