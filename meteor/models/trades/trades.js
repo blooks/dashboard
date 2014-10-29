@@ -1,28 +1,6 @@
-var calculateBaseAmount;
-
-calculateBaseAmount = function(amount, foreigncurrency, date) {
-  var e, rate, base_currency;
-  if (date == null) {
-    date = new Date();
-  }
-  try {
-    check(date, Date);
-    if (foreigncurrency !== 'USD' && foreigncurrency !== 'EUR') {
-      throw new Meteor.Error('400', 'Sorry, can only convert from USD right now. ' + foreigncurrency + ' not yet supported.');
-    }
-    base_currency = 'EUR';
-    rate = getExchangeRate(foreigncurrency, base_currency, date);
-    return amount * rate;
-    } catch (_error) {
-    e = _error;
-    return console.log(e);
-    }
-};
-
 var currencyKnown = function (currency) {
-  if (Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1) return true;
-  return false;
-}
+  return Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1;
+};
 
 Trades.helpers({
   base: function() {
@@ -39,7 +17,7 @@ Trades.helpers({
     if(!currencyKnown(knownCurrency)) {
       console.log("Warning: Getting Base of Trade. Both currencies not known!");
     }
-    base_amount = calculateBaseAmount(knownCurrencyAmount, knownCurrency, this.date);
+    base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, this.date);
     var result = {
       currency : base_currency,
       amount: Math.round(base_amount)
