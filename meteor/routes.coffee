@@ -42,6 +42,9 @@ Router.map ->
         Meteor.subscribe 'transfers'
       ]
 
+  @route 'nodes',
+    path: '/nodes'
+
   @route '/nodes/:type',
     path: '/nodes/:type'
     template: 'nodes'
