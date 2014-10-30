@@ -1,18 +1,19 @@
 // on the client
 Template.nodes.helpers({
-    showNodesOverview: function () {
-        return this.type == "nodesOverview";
-    },
+        showNodesOverview: function () {
+            return this.type == "nodesOverview";
+        },
 
-    showCurrencyExchanges: function () {
-        return this.type == "currencyExchanges";
-    },
+        showCurrencyExchanges: function () {
+            return this.type == "currencyExchanges";
+        },
 
-    showBankAccounts: function () {
-        return this.type == "bankAccounts";
-    },
+        showBankAccounts: function () {
+            return this.type == "bankAccounts";
+        },
 
-    showBitcoinWallets: function () {
-        return this.type == "bitcoinWallets";
+        showBitcoinWallets: function () {
+            return this.type == "bitcoinWallets";
+        }
     }
 );

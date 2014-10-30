@@ -1,5 +1,4 @@
 var calculateBaseAmount;
-
 calculateBaseAmount = function(amount, foreigncurrency, date) {
   var e, rate, base_currency;
   if (date == null) {
@@ -19,33 +18,7 @@ calculateBaseAmount = function(amount, foreigncurrency, date) {
     }
 };
 
-var currencyKnown = function (currency) {
-  if (Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1) return true;
-  return false;
-}
-
 Trades.helpers({
-  base: function() {
-    var base_currency = 'EUR';
-    var knownCurrency = this.buy.currency;
-    var knownCurrencyAmount = this.buy.amount - this.buy.fee;
-    //We need to come back on this. What exactly happens with 
-    //the fees? Are they increasing the buy price?
-    //What about double fees (left and right?)
-    if (!currencyKnown(knownCurrency)) {
-      knownCurrency = this.sell.currency;
-      knownCurrencyAmount = this.sell.amount + this.sell.fee;
-    }
-    if(!currencyKnown(knownCurrency)) {
-      console.log("Warning: Getting Base of Trade. Both currencies not known!");
-    }
-    base_amount = calculateBaseAmount(knownCurrencyAmount, knownCurrency, this.date);
-    var result = {
-      currency : base_currency,
-      amount: Math.round(base_amount)
-    };
-    return result;
-  },
   venue: function() {
     var exchange = Exchanges.findOne({"_id": this.venueId});
     return exchange.exchangeLabel;
@@ -63,3 +36,25 @@ Trades.helpers({
     }
   }
 });
+if (Meteor.isServer) {
+  var currencyKnown = function (currency) {
+    return (Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1);
+  };
+  Trades.after.insert(function(userId, doc) {
+    var base_currency = 'EUR';
+    var knownCurrency = this.buy.currency;
+    var knownCurrencyAmount = this.buy.amount - this.buy.fee;
+    //We need to come back on this. What exactly happens with
+    //the fees? Are they increasing the buy price?
+    //What about double fees (left and right?)
+    if (!currencyKnown(knownCurrency)) {
+      knownCurrency = this.sell.currency;
+      knownCurrencyAmount = this.sell.amount + this.sell.fee;
+    }
+    if(!currencyKnown(knownCurrency)) {
+      console.log("Warning: Getting Base of Trade. Both currencies not known!");
+    }
+    var base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, this.date);
+    Trades.update({"_id": doc._id},{$set : {"baseAmount": base_amount}})
+  });
+};
