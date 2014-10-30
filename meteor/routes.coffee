@@ -45,3 +45,10 @@ Router.map ->
 
   @route 'nodes',
     path: '/nodes'
+
+
+  @route '/nodes/:type',
+    path: '/nodes/:type'
+    template: 'nodes'
+    data: ->
+      type:  @params.type
