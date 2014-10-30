@@ -14,5 +14,5 @@ Template.nodes.helpers({
 
     showBitcoinWallets: function () {
         return this.type == "bitcoinWallets";
-    }
+    }<
 );
