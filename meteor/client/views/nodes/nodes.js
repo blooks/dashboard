@@ -1,15 +1,18 @@
 // on the client
-/** Template.nodes.helpers({
-    'tabContent': function(){
-        return TemplateVar.get('currencyExchanges');
-    }
-})
+Template.nodes.helpers({
+    showNodesOverview: function () {
+        return this.type == "nodesOverview";
+    },
 
-Template.nodes.events({
-    'click button.exchanges-link': function() {
-        if(TemplateVar.get('tabContent'))
-        	TemplateVar.set('tabContent', false);
-        else
-        	TemplateVar.set('tabContent', true);
+    showCurrencyExchanges: function () {
+        return this.type == "currencyExchanges";
+    },
+
+    showBankAccounts: function () {
+        return this.type == "bankAccounts";
+    },
+
+    showBitcoinWallets: function () {
+        return this.type == "bitcoinWallets";
     }
-}); **/
+);
