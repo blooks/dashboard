@@ -44,7 +44,7 @@ Coynverter = (function() {
      */
     var btcToFiat = function(currency) {
       var rateRecord;
-      rateRecord = BtcToFiat.findOne({date: date});
+      rateRecord = BtcToFiat.findOne({date: {$gt: date}});
       return (rateRecord && rateRecord[currency]) ? Number(rateRecord[currency]) : null;
     };
 
@@ -91,6 +91,7 @@ Coynverter = (function() {
     check( date = date || new Date(), Date );
     from = from || 'USD';
     rate = exchangeRate(from, baseCurrency, date);
+    rate = rate.toFixed(0);
     return rate ? amount * rate : null;
   };
 

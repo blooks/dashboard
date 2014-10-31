@@ -1,19 +1,5 @@
 Schemas = {}
 
-Schemas.DummyNodes = new SimpleSchema(
-
-  type:
-    type: String
-    allowedValues: [
-      "Bitcoin"
-      "BankAccount"
-    ]
-  nodeId:
-    type: String
-)
-
-
-
 Schemas.User = new SimpleSchema(
 
 
@@ -44,27 +30,9 @@ Schemas.User = new SimpleSchema(
     optional: true
     blackbox: true
 
-  dummyNodes:
-    type:[Schemas.DummyNodes]
+  dummyNodeIds:
+    type: {}
     label:'DummyNodes'
-
-
-#  'dummyNodes.$.network':
-#    type: String
-#    allowedValues: [
-#      "Bitcoin"
-#      "Exchange"
-#      "BankAccount"
-#    ]
-#
-#  'dummyNodes.$.nodeId':
-#    type: String
-#    optional: true
-#
-#  'dummyNodes.$.name':
-#    type:String
-
-
 
 
 
