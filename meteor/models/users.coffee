@@ -33,7 +33,6 @@ Schemas.User = new SimpleSchema(
   dummyNodeIds:
     type: Object
     label:'DummyNodeIds'
-    optional: true
     defaultValue: {'Bitcoin': '0'}
 )
 
