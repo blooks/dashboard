@@ -168,8 +168,6 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     transferdetails.currency = 'BTC'
   } else {//Dollar withdrawal
 
-    var dummyBank = Banks.find({"_id": Meteor.user().dummyNodeIds('Bank')});
-
     var dollar_amount = Math.abs(withdrawal.usd);
     var base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);
     transferdetails.inputs.push({

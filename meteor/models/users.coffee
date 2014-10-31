@@ -31,9 +31,8 @@ Schemas.User = new SimpleSchema(
     blackbox: true
 
   dummyNodeIds:
-    type: {}
-    label:'DummyNodes'
-
+    type: Object
+    label:'DummyNodeIds'
 
 
 )
