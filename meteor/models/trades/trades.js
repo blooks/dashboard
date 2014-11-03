@@ -35,6 +35,6 @@ if (Meteor.isServer) {
       console.log("Warning: Getting Base of Trade. Both currencies not known!");
     }
     var base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, doc.date).toFixed(0);
-    Trades.update({"_id": doc._id},{$set : {"baseAmount": base_amount}})
+    Trades.update({"_id": doc._id},{$set : {"baseAmount": base_amount}});
   });
 };

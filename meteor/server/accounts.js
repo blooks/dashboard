@@ -33,10 +33,13 @@ Accounts.onCreateUser(function(options, user) {
   } catch (error) {
     console.log(error);
   }
-  user.dummyNodeIds = {
-    'Bitcoin': dummyBitcoinWalletId,
-    'BankAccount': dummyBankAccountId,
-    'Ripple': dummyRippleAccountId
+  user.profile =
+  {
+    'dummyNodeIds' : {
+      'Bitcoin': dummyBitcoinWalletId,
+      'Bank': dummyBankAccountId,
+      'Ripple': dummyRippleAccountId
+    }
   };
   return user;
 });

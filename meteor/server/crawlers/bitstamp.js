@@ -11,19 +11,19 @@ Bitstamp.prototype.user_transactions = function(limit, callback) {
 }
 
 var bitstampTradeToTrade = function(trade) {
-  var currencydetails = {}
+  var currencydetails = {};
   var dollar_amount = 0;
    if (trade.btc < 0 ) {// trade is a sale of BTC for USD
           currencydetails.sell = {
           amount: Math.abs(trade.btc),
           currency: 'BTC',
           fee: 0
-        }
+        };
         currencydetails.buy = {
           amount: trade.usd,
           currency: 'USD',
           fee: trade.fee
-        }
+        };
       } else {//trade is a sale of USD for BTC
         currencydetails.sell = {
           amount: Math.abs(trade.usd),
@@ -35,7 +35,7 @@ var bitstampTradeToTrade = function(trade) {
           currency: 'BTC',
           fee: 0
         };
-      }
+      };
   return currencydetails;
 };
 
@@ -70,7 +70,7 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
   if (deposit.btc > 0) {//Bitcoin deposit
     transferdetails.inputs.push({
       amount: deposit.btc,
-      nodeId: Meteor.user().dummyNodeIds['Bitcoin']
+      nodeId: Meteor.user().profile.dummyNodeIds['Bitcoin']
     });
     transferdetails.outputs.push({
       amount: deposit.btc,
@@ -82,7 +82,7 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
     var base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
     transferdetails.inputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Bank']
+      nodeId: Meteor.user().profile.dummyNodeIds['Bank']
     });
     transferdetails.outputs.push({
       amount: base_amount,
@@ -100,13 +100,13 @@ var bitstampRippleDepositToTrade = function(deposit) {
   if (deposit.usd > 0) {//Dollar deposit
     currencydetails.buy = {
       amount: deposit.usd,
-      currency: 'USD', 
+      currency: 'USD',
       fee: 0
     };
     base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime);
     currencydetails.sell = {
       amount: base_amount,
-      currency: base_currency, 
+      currency: base_currency,
       fee: 0
     }
   } else {//bitcoin deposit
@@ -163,7 +163,7 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.outputs.push({
       amount: bitcoin_amount,
-      noodeId: Meteor.user().dummyNodeIds['Bitcoin']
+      nodeId: Meteor.user().profile.dummyNodeIds['Bitcoin']
     });
     transferdetails.currency = 'BTC'
   } else {//Dollar withdrawal
@@ -176,7 +176,7 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.outputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Bank']
+      nodeId: Meteor.user().profile.dummyNodeIds['Bank']
     });
     transferdetails.currency = base_currency;
   }
@@ -198,7 +198,7 @@ var bitstampRippleWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.outputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Ripple']
+      nodeId: Meteor.user().profile.dummyNodeIds['Ripple']
     });
     transferdetails.currency = 'EUR'
   } else {//Dollar withdrawal
@@ -210,7 +210,7 @@ var bitstampRippleWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.outputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Ripple']
+      nodeId: Meteor.user().profile.dummyNodeIds['Ripple']
     });
     transferdetails.currency = base_currency;
   }
@@ -231,7 +231,7 @@ var bitstampRippleDepositToTransfer = function(deposit, exchange) {
     });
     transferdetails.inputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Ripple']
+      nodeId: Meteor.user().profile.dummyNodeIds['Ripple']
     });
     transferdetails.currency = 'EUR'
   } else {//Dollar deposit
@@ -242,7 +242,7 @@ var bitstampRippleDepositToTransfer = function(deposit, exchange) {
     });
     transferdetails.inputs.push({
       amount: base_amount,
-      nodeId: Meteor.user().dummyNodeIds['Ripple']
+      nodeId: Meteor.user().profile.dummyNodeIds['Ripple']
     });
     transferdetails.currency = base_currency;
   }
