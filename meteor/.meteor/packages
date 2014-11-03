@@ -26,8 +26,8 @@ mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
-simple-form
 frozeman:animation-helper
 frozeman:template-var
-accounts-entry
+joshowens:simple-form
+joshowens:accounts-entry
 
