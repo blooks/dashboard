@@ -15,7 +15,7 @@ meteorhacks:npm
 iron:router
 mquandalle:jade
 cmather:handlebars-server
-coynverter
+
 aldeed:autoform
 nemo64:bootstrap
 mrt:just-i18n
@@ -26,8 +26,8 @@ mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
-simple-form
 frozeman:animation-helper
 frozeman:template-var
-accounts-entry
+joshowens:simple-form
+joshowens:accounts-entry
 
