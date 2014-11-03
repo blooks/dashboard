@@ -1,5 +1,23 @@
 template(name="bankAccounts")
-  if bankaccounts
-    each bankaccounts
-      .bankaccount-item {{label}} with Balance: {{balance}} {{currency}}
+  .bank-zone 
+    h3.label-title    
+      i.fa.fa-credit-card
+      | Bank Accounts
+    .row    
+        if bankaccounts
+          each bankaccounts
+            .col-md-4
+              .details-item
+                .center-div
+                  .cirlce-bg-logo
+                    img.vertical-align(src="/img/wallet-icon-default.png")
+                p.superscript Bank Account
+                h3 {{label}}
+                ul.no-bullets
+                  each balances
+                    li Balance in {{currency}}: {{balance}}
+                .controls
+                  a.delete-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" Delete ")
+                    span.glyphicon.glyphicon-trash
+          
   +newBankAccount

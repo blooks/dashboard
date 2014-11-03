@@ -1,23 +1,27 @@
 template(name="currencyExchanges")
-  .row.exhanges-zone.zone
-    h2 Added Exchanges
-    .added-exchanges.zone
-    if exchanges
-      each exchanges
-        +exchangeDetails this
-    .col-md-4
-      .add-item-box
-        .vertical-align
-          a(href="#") 
-            i.fa.fa-plus
-            br 
-            | {{i18n 'nodes.exchanges.addNewExchange'}}
-  .row
-    .table-control-buttons
-      a.update-transactions.btn(href="#") 
-        span.glyphicon.glyphicon-repeat 
-        | {{i18n 'nodes.buttons.updateTransactions'}}
-      a.delete-transactions.btn(href="#") 
-        span.glyphicon.glyphicon-trash 
-        | {{i18n 'nodes.buttons.deleteAll'}} 
+  .exhanges-zone
+    h3.label-title    
+      i.fa.fa-bitcoin
+      | Exchanges
+    .row    
+      .added-exchanges
+        if exchanges
+          each exchanges
+            +exchangeDetails this
+          .col-md-4
+            .add-item-box
+              .vertical-align
+                a(href="#") 
+                  i.fa.fa-plus
+                  br 
+                  | {{i18n 'nodes.exchanges.addNewExchange'}}
+    .row
+      .col-md-12
+        .table-control-buttons
+          a.update-transactions.btn(href="#") 
+            span.glyphicon.glyphicon-repeat 
+            | {{i18n 'nodes.buttons.updateTransactions'}}
+          a.delete-transactions.btn(href="#") 
+            span.glyphicon.glyphicon-trash 
+            | {{i18n 'nodes.buttons.deleteAll'}} 
   +newExchange
