@@ -1,3 +1,0 @@
-[submodule "meteor/packages/simple-form"]
-	path = meteor/packages/simple-form
-	url = git@github.com:coyno/simple-form.git
