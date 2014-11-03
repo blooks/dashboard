@@ -30,6 +30,9 @@ Schemas.Trade = new SimpleSchema
     type: Schemas.Amount
   sell:
     type: Schemas.Amount
+  baseAmount:
+    type: Number
+    defaultValue: 0
   # Metadata
   date:
     type: Date
