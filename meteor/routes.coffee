@@ -6,11 +6,6 @@ mustBeSignedIn = () ->
     @next()
   return
 
-Router.configure
-  loadingTemplate: 'loading'
-  notFoundTemplate: 'notFound',
-
-
 # Require users to be signed in for all pages except these
 Router.onBeforeAction mustBeSignedIn,
   except: [
