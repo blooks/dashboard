@@ -7,5 +7,13 @@ Template.registerHelper('labelForVolumeFragment', function(volumeFragment) {
     if (temp) {
       return BitcoinWallets.findOne({"_id": temp.walletId}).label;
     }
-    return volumeFragment.note;
+    temp = BitcoinWallets.findOne({"_id": volumeFragment.nodeId});
+    if (temp) {
+        return temp.label;
+    }
+    temp = BankAccounts.findOne({"_id": volumeFragment.nodeId});
+    if (temp) {
+        return temp.label
+    }
+    return "Unknown";
 }); 

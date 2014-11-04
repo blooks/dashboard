@@ -15,7 +15,7 @@ template(name="bankAccounts")
                 h3 {{label}}
                 ul.no-bullets
                   each balances
-                    li Balance in {{currency}}: {{balance}}
+                    li Balance in {{currency}}: {{saneNumber balance 'EUR'}}
                 .controls
                   a.delete-exchange(href="#", data-toggle="tooltip",data-placement="top",title=" Delete ")
                     span.glyphicon.glyphicon-trash

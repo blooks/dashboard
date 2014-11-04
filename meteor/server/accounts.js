@@ -5,7 +5,7 @@ Accounts.onCreateUser(function(options, user) {
     label: 'Dummy Bitcoin Wallet',
     device: 'BitcoinWallet'
   };
-  var dummyBitcoinWalletId
+  var dummyBitcoinWalletId;
   try  {
      dummyBitcoinWalletId = BitcoinWallets.insert(dummyBitcoinWallet);
     } catch (error) {
@@ -22,16 +22,24 @@ Accounts.onCreateUser(function(options, user) {
     } catch (error) {
       console.log(error);
     }
-
-  user.dummyNodes = [
-    {
-      type: 'Bitcoin',
-      nodeId: dummyBitcoinWalletId
-    },
-    {
-      type: 'BankAccount',
-      nodeId: dummyBankAccountId
+  var rippleBankAccount = {
+    userId: user._id,
+    label: 'Ripple Wallet',
+    currency: 'EUR'
+  };
+  var dummyRippleAccountId;
+  try {
+    dummyRippleAccountId = BankAccounts.insert(rippleBankAccount);
+  } catch (error) {
+    console.log(error);
+  }
+  user.profile =
+  {
+    'dummyNodeIds' : {
+      'Bitcoin': dummyBitcoinWalletId,
+      'Bank': dummyBankAccountId,
+      'Ripple': dummyRippleAccountId
     }
-  ];
+  };
   return user;
 });
