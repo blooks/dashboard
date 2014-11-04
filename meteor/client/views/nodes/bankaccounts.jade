@@ -1,5 +1,5 @@
 template(name="bankAccounts")
   if bankaccounts
     each bankaccounts
-      .bankaccount-item {{label}} with Balance: {{balance}} {{currency}}
+      .bankaccount-item {{label}} with Balance: {{saneNumber balance 'EUR'}} EUR
   +newBankAccount

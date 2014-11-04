@@ -1,25 +1,25 @@
 BankAccounts.helpers({
   balance: function() {
-  /** DIRTY WORKAROUND
-  currencies = [this.currency];
-    var bank = this.bank;
-    var transactionsin = Transactions.find({"in.node": bank}).fetch();
-    var transactionsout = Transactions.find({"out.node": bank}).fetch();
-    currencies.forEach(function(currency) {
-      var balance = 0.0;
-      transactionsin.forEach(function(transaction) {
-      if (transaction.in.currency == currency) {
-        balance+=parseFloat(transaction.in.amount);
-      }
+    var nodeId = this._id;
+    var transfers = Transfers.find(
+        { $or : [
+          { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
+          { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+            ]
+        }).fetch();
+    var balance = 0.0;
+    transfers.forEach(function(transfer) {
+      transfer.details.inputs.forEach(function(input) {
+        if (input.nodeId == nodeId) {
+          balance -= input.amount;
+        }
       });
-      transactionsout.forEach(function(transaction) {
-      if (transaction.out.currency == currency) {
-        balance-=parseFloat(transaction.out.amount);
-      }
+      transfer.details.outputs.forEach(function(output) {
+        if (output.nodeId == nodeId) {
+          balance += output.amount;
+        }
       });
-      result = balance;
     });
-    return result; **/
-    return 0;
-}
+    return balance;
+  }
 });
