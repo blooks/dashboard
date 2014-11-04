@@ -35,12 +35,12 @@ Exchanges.helpers({
   },
   logoUrl: function() {
     if (this.exchange === "Bitstamp") {
-         return "img/external-logos/Bitstamp_logo.png";
+         return "/img/external-logos/Bitstamp_logo.png";
     }
     if (this.exchange === "Kraken") {
-         return "img/external-logos/Kraken-logo.png";
+         return "/img/external-logos/Kraken-logo.png";
     }
-    return "img/exchange-icon-default-handshake.png";
+    return "/img/exchange-icon-default-handshake.png";
   }
 
 });

@@ -164,7 +164,8 @@ footer {
 .nodes {}
 
 .exhanges-zone,
-.wallets-zone {
+.wallets-zone,
+.bank-zone {
 
 	[class*="col-"] {
   		margin-bottom: 30px;
@@ -175,13 +176,14 @@ footer {
 	}
 
 	.details-item {
-		margin: 20px 0;
+		margin: 20px 0 30px 0;
 		padding: 40px 1rem 1rem 1rem;
+		position: relative;
 
 		.center-div {
 			width: 60px;
 			height: 60px;
-			top: -10px; 	
+			top: -30px; 	
 		}
 
 		.cirlce-bg-logo {
@@ -300,7 +302,6 @@ input {
 	letter-spacing: 1px;
 
 	&:hover {
-		color: @gray-light;
 		border: 1px solid @gray-light;
 	}
 }
