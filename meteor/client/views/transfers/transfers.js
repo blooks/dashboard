@@ -5,11 +5,9 @@ Template.transfers.helpers({
   }
 });
 Template.transfers.events({
-  'click .delete-trade': function(event, template) {
-  	/**
-    return Transfers.remove({
+  'click .delete-transfer': function(event, template) {
+  	return Transfers.remove({
       _id: this._id
     });
-	**/
   }
 });
