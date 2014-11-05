@@ -5,35 +5,6 @@ template(name="nodes")
         h1.process-title {{i18n 'nodes.headings.nodes'}}
         hr.sub-stopper
         .col-sm-10.col-sm-offset-1
-          .row.sub-nav-zone
-            ul.nav.nav-tabs
-              li
-                a(href="/nodes/nodesOverview")
-                  i.fa.fa-bar-chart
-                  | Overview
-              li
-                a(href="/nodes/currencyExchanges")
-                  i.fa.fa-bitcoin
-                  | Exchanges
-              li
-                a(href="/nodes/bitcoinWallets")
-                  i.fa.fa-bookmark-o
-                  | Wallets
-              li
-                a(href="/nodes/bankAccounts")
-                  i.fa.fa-credit-card
-                  | Bank Accounts
+          +dynamicNodeMenu
           .row.desktop-zone.no-border-top
-
-            if showNodesOverview
-              +nodesOverview
-            if showCurrencyExchanges
-              +currencyExchanges
-            if showBankAccounts
-              +bankAccounts
-            if showBitcoinWallets
-              +bitcoinWallets
-
-            //-
-              {{>Template.dynamic template="currencyExchanges"}}
-              +UI.dynamic(template="tabContent")
+            +dynamicNodeBody    

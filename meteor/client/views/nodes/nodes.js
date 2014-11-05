@@ -1,19 +1,9 @@
 // on the client
-Template.nodes.helpers({
-        showNodesOverview: function () {
-            return this.type == "nodesOverview";
-        },
-
-        showCurrencyExchanges: function () {
-            return this.type == "currencyExchanges";
-        },
-
-        showBankAccounts: function () {
-            return this.type == "bankAccounts";
-        },
-
-        showBitcoinWallets: function () {
-            return this.type == "bitcoinWallets";
+Template.dynamicNodeMenu.helpers({
+    isActive : function(currentNodeView) {
+        if (this.type == currentNodeView) {
+            return "active";
         }
+        return "";
     }
-);
+});
