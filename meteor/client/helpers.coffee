@@ -1,5 +1,8 @@
 Template.registerHelper 'prettyDate', (date)->
-  moment(date).format('dddd MMMM Do YYYY[:] hh:mm:ss');
+  moment(date).format('DD/MM/YYYY hh:mm');
+
+Template.registerHelper 'prettyDateLong', (date)->
+  moment(date).format('dddd DD/MM/YYYY hh:mm:ss');
 
 Template.registerHelper 'saneNumber', (internalNumber, currency)->
 	if currency is 'BTC'

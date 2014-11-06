@@ -50,7 +50,7 @@ Exchanges.before.remove(function (userId, doc) {
   trades.forEach(function(trade) {
     Trades.remove({"_id": trade._id});
   });
-  //@Levin: Important! Fix this! Bitcoin Balance Wrong!
+  //TODO: @Levin: Important! Fix this! Bitcoin Balance Wrong!
   var transfers = Transfers.find({"venueId": doc._id});
   transfers.forEach(function(transfer) {
     Transfers.remove({"_id": transfer._id});
