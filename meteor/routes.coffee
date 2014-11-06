@@ -39,8 +39,9 @@ Router.map ->
       ]
 
   @route 'nodes',
-    path: '/nodes'
-
+    path: '/nodes/nodesOverview'
+    data: ->
+      type:  'nodesOverview'
 
   @route '/nodes/:type',
     path: '/nodes/:type'

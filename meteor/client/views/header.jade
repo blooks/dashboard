@@ -28,5 +28,7 @@ template(name="header")
           | {{i18n 'template.headings.accounts'}}
           span.nav-icon          
             i.fa.fa-bell
-  ul.login
-   +loginButtons
+  .login-dropdown
+    i.fa.fa-user
+    ul.login
+     +loginButtons
