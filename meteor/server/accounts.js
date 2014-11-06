@@ -25,7 +25,7 @@ Accounts.onCreateUser(function(options, user) {
   var rippleBankAccount = {
     userId: user._id,
     label: 'Ripple Wallet',
-    currency: 'EUR'
+    currency: 'XRP'
   };
   var dummyRippleAccountId;
   try {
@@ -36,9 +36,9 @@ Accounts.onCreateUser(function(options, user) {
   user.profile =
   {
     'dummyNodeIds' : {
-      'Bitcoin': dummyBitcoinWalletId,
-      'Bank': dummyBankAccountId,
-      'Ripple': dummyRippleAccountId
+      'BTC': dummyBitcoinWalletId,
+      'EUR': dummyBankAccountId,
+      'XRP': dummyRippleAccountId
     }
   };
   return user;
