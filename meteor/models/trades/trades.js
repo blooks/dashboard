@@ -17,21 +17,21 @@ Trades.helpers({
   }
 });
 if (Meteor.isServer) {
-  var currencyKnown = function (currency) {
+  var currencyHasValue = function (currency) {
     return (Meteor.settings.public.coyno.valuedCurrencies.indexOf(currency) > -1);
   };
   Trades.after.insert(function(userId, doc) {
     var base_currency = 'EUR';
-    var knownCurrency = doc.buy.currency;
-    var knownCurrencyAmount = doc.buy.amount - doc.buy.fee;
+    var valuedCurrency = doc.buy.currency;
+    var valuedCurrencyAmount = doc.buy.amount - doc.buy.fee;
     //We need to come back on doc. What exactly happens with
     //the fees? Are they increasing the buy price?
     //What about double fees (left and right?)
-    if (doc.sell.currency == 'EUR' || knownCurrency == 'Altcoin') {
-      knownCurrency = doc.sell.currency;
-      knownCurrencyAmount = doc.sell.amount + doc.sell.fee;
+    if (doc.sell.currency == base_currency || (!currencyHasValue(valuedCurrency))) {
+      valuedCurrency = doc.sell.currency;
+      valuedCurrencyAmount = doc.sell.amount + doc.sell.fee;
     }
-    var base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, doc.date);
+    var base_amount = Coynverter.calculateBaseAmount(valuedCurrencyAmount, valuedCurrency, doc.date);
     Trades.update({"_id": doc._id},{$set : {"baseAmount": base_amount}});
   });
 }

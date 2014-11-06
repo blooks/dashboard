@@ -56,7 +56,8 @@ var krakenJSONtoDB = function(krakenData, exchange) {
       currency : currency
     };
     transferdetails.inputs.push({
-      amount: deposit.amount
+      amount: deposit.amount,
+      nodeId: Meteor.user().profile.dummyNodeIds[currency]
     });
     if (deposit.fee > 0) {
       transferdetails.outputs.push({
@@ -99,7 +100,8 @@ var krakenJSONtoDB = function(krakenData, exchange) {
       });
     }
     transferdetails.outputs.push({
-      amount: abs_withdrawal_amount
+      amount: abs_withdrawal_amount,
+      nodeId: Meteor.user().profile.dummyNodeIds[currency]
     });
     transfer.details = transferdetails;
     try {
