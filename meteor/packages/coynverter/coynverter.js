@@ -20,45 +20,45 @@ Coynverter = (function() {
     /**
      * @returns {String} User's jurisdiction (the 2-letter id). Default: 'de'
      */
-    var userJurisdiction = function() {
+    var userJurisdiction = function () {
       var _ref, _ref1;
-      return ((_ref = Meteor.user) != null ? (_ref1 = _ref.profile) != null ? _ref1.jurisdiction : void 0 : void 0) != null  ?
-        Meteor.user.profile.jurisdiction :
-        'de';
+      return ((_ref = Meteor.user) != null ? (_ref1 = _ref.profile) != null ? _ref1.jurisdiction : void 0 : void 0) != null ?
+          Meteor.user.profile.jurisdiction :
+          'de';
     };
 
     /**
      * @returns {Number} The EUR to USD conversion rate
      */
-    var eurToUsd = function() {
+    var eurToUsd = function () {
       var jurisdiction, year = date.getFullYear(), month = date.getMonth() + 1;
       jurisdiction = userJurisdiction();
       return (exchangeRates[jurisdiction] && exchangeRates[jurisdiction]['USD'] &&
-        exchangeRates[jurisdiction]['USD'][year] && exchangeRates[jurisdiction]['USD'][year][month]) ?
-        exchangeRates[jurisdiction]['USD'][year][month] :
-        null;
+      exchangeRates[jurisdiction]['USD'][year] && exchangeRates[jurisdiction]['USD'][year][month]) ?
+          exchangeRates[jurisdiction]['USD'][year][month] :
+          null;
     };
 
     /**
      * @returns {Number} The EUR to USD conversion rate or its inverse
      */
-    var btcToFiat = function(currency) {
-      var rateRecord;
+    var btcToFiat = function (currency) {
       var startDate = date;
-      var endDate = new Date(date.getTime() + 24000 *3600);
-      rateRecord = BtcToFiat.findOne({date: {$gte : startDate, $lt: endDate }});
+      var endDate = new Date(date.getTime() + 24000 * 3600);
+      var rateRecord = BtcToFiat.findOne({date: {$gte: startDate, $lt: endDate}});
       return (rateRecord && rateRecord[currency]) ? Number(rateRecord[currency]) : null;
     };
 
     // validate and dispatch the exchange request:
     date = date || new Date();
     var acceptedCurrencies = ['USD', 'EUR', 'BTC'];
-    if (acceptedCurrencies.indexOf(from)<0 || acceptedCurrencies.indexOf(to)<0)
-      throw new Error('400', 'Sorry, can\'t use currency \'' + from + '\'.');
-    if (from === to)
-      return 1;
+    if (acceptedCurrencies.indexOf(from) < 0 || acceptedCurrencies.indexOf(to) < 0) {
+        throw new Error('400', 'Sorry, can\'t use currency \'' + from + '\'.');
+    }
 
     switch (from) {
+      case to:
+            return 1;
       case 'BTC':
         return to === 'USD' ? btcToFiat('USD') : btcToFiat('EUR');
       case 'EUR':
@@ -93,7 +93,10 @@ Coynverter = (function() {
     check( date = date || new Date(), Date );
     from = from || 'USD';
     rate = exchangeRate(from, baseCurrency, date);
-    var result = amount * rate;
+    if (!rate) {
+      console.log("Coynverter returning null!");
+      console.log("Converting from:" + from);
+    }
     return rate ? parseInt(amount * rate) : null;
   };
 
@@ -131,8 +134,8 @@ Coynverter = (function() {
    */
   var repopulateBtcToFiat = function() {
     BtcToFiat.remove({});
-    importCurrency('USD', 'insert');
-    importCurrency('EUR', 'update');
+    importCurrency('EUR', 'insert');
+    importCurrency('USD', 'update');
   };
 
 

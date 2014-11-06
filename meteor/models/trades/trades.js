@@ -27,14 +27,11 @@ if (Meteor.isServer) {
     //We need to come back on doc. What exactly happens with
     //the fees? Are they increasing the buy price?
     //What about double fees (left and right?)
-    if (!currencyKnown(knownCurrency)) {
+    if (doc.sell.currency == 'EUR' || knownCurrency == 'Altcoin') {
       knownCurrency = doc.sell.currency;
       knownCurrencyAmount = doc.sell.amount + doc.sell.fee;
     }
-    if(!currencyKnown(knownCurrency)) {
-      console.log("Warning: Getting Base of Trade. Both currencies not known!");
-    }
-    var base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, doc.date).toFixed(0);
+    var base_amount = Coynverter.calculateBaseAmount(knownCurrencyAmount, knownCurrency, doc.date);
     Trades.update({"_id": doc._id},{$set : {"baseAmount": base_amount}});
   });
-};
+}
