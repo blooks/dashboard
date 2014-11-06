@@ -1,18 +1,36 @@
 /* Tables */
 table {
-    font-size: 12px;
-    font-size: 1rem;
-    
+  font-size: 12px;
+  font-size: 1rem;
+
     &.table-bordered {
-        border: none;
+       // border: none;
+    }
+
+    &.table-transactions {
+    //  border: none; 
+    }
+
+    &.auto-width {
+      width: auto;
     }
 
   thead {
+    
     tr {
+    padding: 8px 15px;
+    padding: .75rem 1.25rem;
+
+      &.no-border {
+            border: none;
+            border-bottom: 2px;
+            } 
+            
         th {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: @font-family-sans-serif;
+            border-bottom: 1px;
                
                 &.supa-header {
                  text-align: center;
@@ -26,46 +44,58 @@ table {
                         background-color: @negative;
                      }                
                 }
-
-                &.no-border {
-                            border: none;                              
-                            }             
+  
             }
         }      
    }
-  
-  td {
-    &.inflow {
-        color: @positive;
-      }
 
-      &.outflow {
-        color: @negative;
-      }  
-  }
+  tbody {
+    tr {
+      td {
+          padding: 8px 12px;
+          padding: .75rem 1rem;
 
-  a {
-        .glyphicon {
-        color: @gray-dark;
-            &:hover {
-                color: @darkblue;
+          &.inflow {
+              color: @positive;
             }
+
+            &.outflow {
+              color: @negative;
+            }  
+          
+          /* All ul in tables */
+          ul.table-list {
+            padding: 0; margin: 0;
+            list-style-type: none;  
+          }
         }
 
-    }
+        a {
+              .glyphicon {
+              color: @gray-dark;
+                  &:hover {
+                      color: @brand-primary;
+                  }
+              }
 
-    .tooltip.top .tooltip-inner {
-        background-color:@darkblue;
-    }
-    
-    .tooltip.top .tooltip-arrow {
-        border-top-color: @darkblue;
+          }
+
+          .tooltip.top .tooltip-inner {
+              background-color:@darkblue;
+          }
+          
+          .tooltip.top .tooltip-arrow {
+              border-top-color: @darkblue;
+          }
+      }
     }
 }
 
 .table-zb-hover>tbody>tr:hover>td, 
 .table-zb-hover>tbody>tr:hover>th {
-    background: url(img/table-hover.png) repeat transparent;
+    // background: url(img/table-hover.png) repeat transparent;
+    // border-bottom-color: @brand-primary;
+    border-bottom: 1px solid @brand-primary;
 }
 
 

@@ -1,6 +1,8 @@
 template(name="newExchange")
-  .row
-    h2 New Exchange
+  .zone
+    h3.label-title    
+      i.fa.fa-plus
+      | New Exchange
     +autoForm collection="Exchanges" id="insertExchangeForm" type="insert"
       +afQuickField name='exchangeLabel'
       +afQuickField name='exchange' options='allowed'

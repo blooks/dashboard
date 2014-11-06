@@ -25,20 +25,29 @@ Schemas.Trade = new SimpleSchema
   userId:
     type: String
     regEx: SimpleSchema.RegEx.Id
+
+  # Metadata
+  date:
+    type: Date
+  note:
+    type: String
+    optional: true
+
+  #Venue of the trade
+  venueId:
+    type: String
+    regEx: SimpleSchema.RegEx.Id
+
   # Trade info
   buy:
     type: Schemas.Amount
   sell:
     type: Schemas.Amount
-  # Metadata
-  date:
-    type: Date
-  venueId:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
-  note:
-    type: String
-    optional: true
+
+  baseAmount:
+    type: Number
+    defaultValue: 0
+
           
 
 # Attach the schema to the collection

@@ -35,20 +35,25 @@ Exchanges.helpers({
   },
   logoUrl: function() {
     if (this.exchange === "Bitstamp") {
-         return "img/external-logos/Bitstamp_logo.png";
+         return "/img/external-logos/Bitstamp_logo.png";
     }
     if (this.exchange === "Kraken") {
-         return "img/external-logos/Kraken-logo.png";
+         return "/img/external-logos/Kraken-logo.png";
     }
-    return "img/exchange-icon-default-handshake.png";
+    return "/img/exchange-icon-default-handshake.png";
   }
 
 });
 if (Meteor.isServer) {
 Exchanges.before.remove(function (userId, doc) {
-  var transactions = Trades.find({"venueId": doc._id});
-  transactions.forEach(function(transaction) {
-    Trades.remove({"_id": transaction._id});
+  var trades = Trades.find({"venueId": doc._id});
+  trades.forEach(function(trade) {
+    Trades.remove({"_id": trade._id});
+  });
+  //TODO: @Levin: Important! Fix this! Bitcoin Balance Wrong!
+  var transfers = Transfers.find({"venueId": doc._id});
+  transfers.forEach(function(transfer) {
+    Transfers.remove({"_id": transfer._id});
   });
 });
 Exchanges.after.insert(function (userId, doc) {

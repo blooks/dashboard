@@ -1,6 +1,8 @@
 template(name="newBankAccount")
-  .row
-    h2 New Bank Account
+  .zone
+     h3.label-title    
+      i.fa.fa-plus
+      | New Bank Account
     +autoForm collection="BankAccounts" id="insertBankAccountForm" type="insert"
       +afQuickField name='label'
       +afQuickField name='bank' options='allowed'

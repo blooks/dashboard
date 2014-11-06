@@ -1,6 +1,9 @@
 template(name="newBitcoinWallet")
-  .row
-    h2 New Bitcoin Wallet
+  .zone
+    h3.label-title    
+      i.fa.fa-plus
+      i.fa.fa-book 
+      | New Bitcoin Wallet
     +autoForm collection="BitcoinWallets" id="insertBitcoinWalletForm" type="insert"
       +afQuickField name='label'
       +afQuickField name='device' options='allowed'

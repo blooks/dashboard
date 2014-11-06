@@ -18,6 +18,14 @@
   filter: ~"alpha(opacity=@{opperc})";
 }
 
+.empty-msg {
+  border: 1px solid @gray;
+  padding: 20px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+
 .spacy {
 	padding: 24px 12px; 
 	padding: 2rem 1.5rem; 
@@ -29,6 +37,8 @@ ul.no-bullets {
 	list-style-type: none;
 	padding-left: 0;
 }
+
+/* Centering styles and techniques */
 
 .vertical-align {
   position: relative;
@@ -44,6 +54,12 @@ ul.no-bullets {
 	left: 50%;
 }
 
+.centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Standard user feedback styles */
 .positive {
 	color: @positive;
 }
@@ -51,3 +67,23 @@ ul.no-bullets {
 .negative {
 	color: @negative;
 }
+
+/* Default zone margins */
+.zone {
+	margin-top: 36px; 
+	margin-top: 3rem; 	
+	margin-bottom: 36px; 
+	margin-bottom: 3rem; 
+}
+
+.cubic-bezier {
+  -webkit-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+   -moz-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+     -o-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+        transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+   -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+     -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); 
+        transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); /* custom */
+}   

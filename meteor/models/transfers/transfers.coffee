@@ -13,6 +13,9 @@ Schemas.VolumeFragment = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Id
     optional: true
+  note:
+    type: String
+    optional: true
 
 Schemas.TransferDetails = new SimpleSchema
   inputs:

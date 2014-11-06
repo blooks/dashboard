@@ -13,18 +13,21 @@ dsyko:node-csv-npm
 lepozepo:accounting
 meteorhacks:npm
 iron:router
-joshowens:accounts-entry
 mquandalle:jade
 cmather:handlebars-server
 
 aldeed:autoform
 nemo64:bootstrap
 mrt:just-i18n
-
+coynverter
 
 npm-container
 mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
+frozeman:animation-helper
+frozeman:template-var
+joshowens:simple-form
+joshowens:accounts-entry
 
