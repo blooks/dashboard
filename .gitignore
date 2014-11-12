@@ -3,4 +3,3 @@
 *.sublime-workspace
 dump
 .idea
-meteor/packages/npm-container/
