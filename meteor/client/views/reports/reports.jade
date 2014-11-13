@@ -1,0 +1,94 @@
+template(name="reports")
+  .page-content.inset
+    .row
+      .col-md-12
+        h1.process-title {{i18n 'reports.headings.reports'}}
+        hr.sub-stopper
+        .modal.fade(id="txHelpModal", tabindex="-1", role="dialog", aria-labelledby="transactionHelpModal", aria-hidden="true")            
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type="button",data-dismiss="modal")
+                  span(aria-hidden="false") &times;
+                  span.sr-only Close
+                h4.modal-title(id="transactionHelpModal") How to do your taxes
+              .modal-body {{i18n 'reports.help'}}
+              .modal-footer
+
+          //- .row
+            //-
+              .add-trns-zone
+                +newTransaction         
+        .col-md-10.col-md-offset-1         
+          .row.desktop-zone
+            .sub-menu-zone.pull-right
+                //- Button trigger modal 
+                a(href="#", data-toggle="modal",data-target="#txHelpModal")
+                  span.glyphicon.glyphicon-hand-right 
+                  span {{i18n 'template.headings.help'}}
+            .table-zone
+              if reports
+                table.table.table-transactions.table-zb-hover.auto-width.centered
+                  thead
+                    tr
+                      th {{i18n 'reports.headings.table.buy_date'}} 
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.date'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'reports.headings.table.bought'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inCurrency'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.positive {{i18n 'reports.headings.table.sold'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.source'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'reports.headings.table.sell_date'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'reports.headings.table.sold_for'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th {{i18n 'reports.headings.table.coyno_id'}}
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
+                      th.no-border
+                  tbody
+                   each reports
+                      tr
+                        td {{prettyDate satisfy.date}}
+                        td {{saneNumber satisfy.buy.amount}} {{satisfy.buy.currency}}
+                        td
+                          ul.table-list
+                            each satisfyWith
+                              if partial
+                                  li {{saneNumber fraction}} of {{saneNumber trade.sell.amount}} BTC
+                              else
+                                  li {{saneNumber sell.amount}} BTC
+                        td
+                          ul.table-list
+                            each satisfyWith
+                              if partial
+                                  li {{prettyDate trade.date}}
+                              else
+                                  li {{prettyDate date}}
+                        td
+                          ul.table-list
+                            each satisfyWith
+                              if partial
+                                  li {{saneNumber partial_amount}} {{trade.buy.currency}}
+                              else
+                                  li {{saneNumber buy.amount}} {{buy.currency}}
+                        td
+                          ul.table-list
+                            each satisfyWith
+                              //- BTC needs to be pulled from details. How to do in current context?
+                              if partial
+                                  li <i>{{trade._id}}</i>
+                              else
+                                  li <i>{{_id}}</i>
+                        
+              else
+                .row
+                  .col-sm-6.col-sm-offset-3 
+                    .add-trns-zone
+                      h3 {{i18n 'reports.headings.empty'}}
+                      p {{i18n 'reports.text.empty'}}
+
