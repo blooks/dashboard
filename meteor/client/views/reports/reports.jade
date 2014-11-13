@@ -31,19 +31,19 @@ template(name="reports")
                 table.table.table-transactions.table-zb-hover.auto-width.centered
                   thead
                     tr
-                      th {{i18n 'reports.headings.table.buy_date'}} 
+                      th {{i18n 'reports.headings.table.sell_date'}} 
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.date'}} ")
                           span.glyphicon.glyphicon-info-sign
-                      th {{i18n 'reports.headings.table.bought'}}
+                      th {{i18n 'reports.headings.table.sold'}}
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inCurrency'}} ")
                           span.glyphicon.glyphicon-info-sign
-                      th.positive {{i18n 'reports.headings.table.sold'}}
+                      th.positive {{i18n 'reports.headings.table.bought'}}
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.source'}} ")
                           span.glyphicon.glyphicon-info-sign
-                      th {{i18n 'reports.headings.table.sell_date'}}
+                      th {{i18n 'reports.headings.table.buy_date'}}
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inAmount'}} ")
                           span.glyphicon.glyphicon-info-sign
-                      th {{i18n 'reports.headings.table.sold_for'}}
+                      th {{i18n 'reports.headings.table.bought'}}
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'reports.tooltip.inAmount'}} ")
                           span.glyphicon.glyphicon-info-sign
                       th {{i18n 'reports.headings.table.coyno_id'}}
@@ -54,14 +54,14 @@ template(name="reports")
                    each reports
                       tr
                         td {{prettyDate satisfy.date}}
-                        td {{saneNumber satisfy.buy.amount}} {{satisfy.buy.currency}}
+                        td {{saneNumber satisfy.sell.amount}} {{satisfy.sell.currency}}
                         td
                           ul.table-list
                             each satisfyWith
                               if partial
-                                  li {{saneNumber fraction}} of {{saneNumber trade.sell.amount}} BTC
+                                  li {{saneNumber fraction}} of {{saneNumber trade.buy.amount}} BTC
                               else
-                                  li {{saneNumber sell.amount}} BTC
+                                  li {{saneNumber buy.amount}}
                         td
                           ul.table-list
                             each satisfyWith
@@ -73,9 +73,9 @@ template(name="reports")
                           ul.table-list
                             each satisfyWith
                               if partial
-                                  li {{saneNumber partial_amount}} {{trade.buy.currency}}
+                                  li {{saneNumber partial_amount}} {{trade.sell.currency}}
                               else
-                                  li {{saneNumber buy.amount}} {{buy.currency}}
+                                  li {{saneNumber sell.amount}} {{sell.currency}}
                         td
                           ul.table-list
                             each satisfyWith

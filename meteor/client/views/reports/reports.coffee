@@ -1,27 +1,27 @@
 
 trades2balances = (trades) ->
 
-  buying_bitcoin_cursor = -1
   selling_bitcoin_cursor = -1
+  buying_bitcoin_cursor = -1
 
   balances = []
 
   carryover = null
 
-  while (buying_bitcoin_cursor < trades.length) and (selling_bitcoin_cursor < trades.length)
+  while (selling_bitcoin_cursor < trades.length) and (buying_bitcoin_cursor < trades.length)
 
     balance = satisfyWith:[]
     balance.satisfy = _.find trades, (trade, index, all) ->
-      if (index > buying_bitcoin_cursor) and (all[index].buy.currency == "BTC")
-        buying_bitcoin_cursor = index
+      if (index > selling_bitcoin_cursor) and (all[index].sell.currency == "BTC")
+        selling_bitcoin_cursor = index
         return true
 
     if not balance.satisfy?
       # return early
-      buying_bitcoin_cursor = trades.length
+      selling_bitcoin_cursor = trades.length
       continue
 
-    amountNeedsSatisfaction = balance.satisfy.buy.amount
+    amountNeedsSatisfaction = balance.satisfy.sell.amount
 
     while amountNeedsSatisfaction > 0
 
@@ -31,15 +31,15 @@ trades2balances = (trades) ->
         carryover = null
       else
         satisfyWith = _.find trades, (trade, index, all) ->
-          if (index > selling_bitcoin_cursor) and (all[index].sell.currency == "BTC")
-            selling_bitcoin_cursor = index
+          if (index > buying_bitcoin_cursor) and (all[index].buy.currency == "BTC")
+            buying_bitcoin_cursor = index
             return true
 
-        if not satisfyWith?.sell?.amount?
-          console.warn("Didn't find BTC sell for", balance.satisfy, "don't know where these bitcoins came from!")
+        if not satisfyWith?.buy?.amount?
+          console.warn("Didn't find BTC buy for", balance.satisfy, "don't know where these bitcoins came from!")
           return balances
 
-        satisfyThisAmount = satisfyWith.sell.amount
+        satisfyThisAmount = satisfyWith.buy.amount
 
       amountNeedsSatisfaction -= satisfyThisAmount
 
@@ -62,7 +62,7 @@ trades2balances = (trades) ->
         if amountNeedsSatisfaction < 0
           satisfyWith.fraction += amountNeedsSatisfaction
 
-        satisfyWith.partial_amount = (satisfyWith.fraction / satisfyWith.trade.sell.amount) * satisfyWith.trade.buy.amount
+        satisfyWith.partial_amount = (satisfyWith.fraction / satisfyWith.trade.buy.amount) * satisfyWith.trade.sell.amount
 
       balance.satisfyWith.push satisfyWith
 
@@ -79,78 +79,78 @@ trades2balances = (trades) ->
 
 SATOSHIS = 10000000
 
-buy = (btc) ->
-  buy:
+sell = (btc) ->
+  sell:
     currency: "BTC"
     amount: btc*SATOSHIS
-  sell:
+  buy:
     currency: "EUR"
     amount: 5
 
-sell = (btc) ->
-  buy:
+buy = (btc) ->
+  sell:
     currency: "EUR"
     amount: 100
-  sell:
+  buy:
     currency: "BTC"
     amount: btc*SATOSHIS
 
 # TESTS
 
-buy1BitcoinSell1Bitcoin = trades2balances [
-  buy(1), sell(1),
+sell1Bitcoinbuy1Bitcoin = trades2balances [
+  sell(1), buy(1),
 ]
-console.assert buy1BitcoinSell1Bitcoin.length == 1
+console.assert sell1Bitcoinbuy1Bitcoin.length == 1
 
-buy1BitcoinSell1BitcoinTwice = trades2balances [
-  buy(1), sell(1), buy(1), sell(1),
+sell1Bitcoinbuy1BitcoinTwice = trades2balances [
+  sell(1), buy(1), sell(1), buy(1),
 ]
-console.assert buy1BitcoinSell1BitcoinTwice.length == 2
+console.assert sell1Bitcoinbuy1BitcoinTwice.length == 2
 
 # overlapping
-buy1bitcoinSellTwoHalfBitcoins = trades2balances [
-  buy(3),
-  sell(1),
-  sell(1),
-  buy(3),
-  sell(1),
-  sell(1),
-  sell(1),
-  sell(1),
+sell1bitcoinbuyTwoHalfBitcoins = trades2balances [
+  sell(3),
+  buy(1),
+  buy(1),
+  sell(3),
+  buy(1),
+  buy(1),
+  buy(1),
+  buy(1),
 ]
-console.assert buy1bitcoinSellTwoHalfBitcoins.length == 2
+console.assert sell1bitcoinbuyTwoHalfBitcoins.length == 2
 
 overlapping_trades = trades2balances [
-  buy(3),
-  buy(2),
-  sell(2),
   sell(3),
+  sell(2),
+  buy(2),
+  buy(3),
 ]
 
 console.assert overlapping_trades.length == 2
 
-console.assert overlapping_trades[0].satisfy.buy.amount == 3*SATOSHIS
+console.assert overlapping_trades[0].satisfy.sell.amount == 3*SATOSHIS
 console.assert overlapping_trades[0].satisfyWith.length == 2
-console.assert overlapping_trades[0].satisfyWith[0].sell.amount == 2*SATOSHIS
+console.assert overlapping_trades[0].satisfyWith[0].buy.amount == 2*SATOSHIS
 
 console.assert overlapping_trades[0].satisfyWith[1].fraction == 1*SATOSHIS
-console.assert overlapping_trades[0].satisfyWith[1].trade.sell.amount == 3*SATOSHIS
+console.assert overlapping_trades[0].satisfyWith[1].trade.buy.amount == 3*SATOSHIS
 
-console.assert overlapping_trades[1].satisfy.buy.amount == 2*SATOSHIS
+console.assert overlapping_trades[1].satisfy.sell.amount == 2*SATOSHIS
 console.assert overlapping_trades[1].satisfyWith.length == 1
 console.assert overlapping_trades[1].satisfyWith[0].fraction == 2*SATOSHIS
-console.assert overlapping_trades[1].satisfyWith[0].trade.sell.amount == 3*SATOSHIS
+console.assert overlapping_trades[1].satisfyWith[0].trade.buy.amount == 3*SATOSHIS
 
 
 multi_carryover = trades2balances [
-  buy(10),
-  sell(3),
-  sell(2),
-  sell(1),
+  sell(10),
+  buy(3),
+  buy(2),
   buy(1),
-  sell(6),
+  sell(1),
+  buy(6),
 ]
-console.assert multi_carryover.length == 2
+console.assert multi_carryover.length == 3
 
 # TEMPLATE HELPERS
 
