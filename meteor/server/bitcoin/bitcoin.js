@@ -10,7 +10,7 @@ Meteor.methods({
       //TODO: Is this secure? I don't think so!
     var userId = bitcoinAddress.userId;
 
-    var transactions = syncChain.getAddressTransactions(bitcoinAddress.address);
+    var transactions = syncChain.getAddressTransactions(bitcoinAddress.address, {'limit': 500});
 
 
     transactions.forEach(function (transaction) {
