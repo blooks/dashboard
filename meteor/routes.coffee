@@ -31,6 +31,14 @@ Router.map ->
         Meteor.subscribe 'trades'
         Meteor.subscribe 'exchanges'
       ]
+
+  @route 'reports',
+    path: '/reports'
+    waitOn: ->
+      [
+        Meteor.subscribe 'trades'
+      ]
+
   @route 'transfers',
     path: '/transfers'
     waitOn: ->

@@ -12,6 +12,7 @@ i18n.map 'en_GB',
       help: 'Help'
       accounts: 'Accounts'
       label: 'Label'
+      reports: 'Reports'
     buttons:
       save: 'Save'
       add: 'Add'
@@ -46,6 +47,30 @@ i18n.map 'en_GB',
       outAmount: 'Lorem Ipsum Tooltip Text'
       outCurrency: 'Lorem Ipsum Tooltip Text'
       volume: 'Lorem Ipsum Tooltip Text'
+
+  reports:
+    headings:
+      table:
+        buy_date: 'Buy date'
+        bought: 'Bought'
+        sell_date: 'Sell date'
+        sold: 'Sold'
+        sold_for: 'Sold for'
+        coyno_id: 'Coyno Id'
+      reports: 'Reports'
+      empty: 'No reports...'
+    text:
+      empty: 'Please add some transactions to get started. Either import or add manually below.'
+    help: 'Put in the transactions please.'
+    tooltip:
+      date: 'Input date must be in format: dd/mm/yyyy'
+      source: 'Lorem Ipsum Tooltip Text'
+      inAmount: 'Lorem Ipsum Tooltip Text'
+      inCurrency: 'Lorem Ipsum Tooltip Text'
+      outAmount: 'Lorem Ipsum Tooltip Text'
+      outCurrency: 'Lorem Ipsum Tooltip Text'
+      volume: 'Lorem Ipsum Tooltip Text'
+
   transfers:
     headings:
       table:
@@ -59,7 +84,7 @@ i18n.map 'en_GB',
       transfers: 'Transfers'
       noTransfers: 'No transfers...'
     text:
-      noTransfers: 'Please add some transactions to get started. Either import or add manually below.'
+      noTransfers: 'Please add some transactions to start generating reports.'
     help: 'Put in the transactions please.'
     tooltip:
       date: 'Input date must be in format: dd/mm/yyyy'

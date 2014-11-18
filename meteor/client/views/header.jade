@@ -28,6 +28,11 @@ template(name="header")
           | {{i18n 'template.headings.accounts'}}
           span.nav-icon          
             i.fa.fa-bell
+      li 
+        a(href="{{pathFor 'reports'}}") 
+          | {{i18n 'template.headings.reports'}}
+          span.nav-icon          
+            i.fa.fa-file
   .login-dropdown
     i.fa.fa-user
     ul.login
