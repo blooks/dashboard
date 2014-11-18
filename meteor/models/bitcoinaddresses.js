@@ -1,3 +1,16 @@
+BitcoinAddresses.helpers( {
+        update: function() {
+          var transactions = Meteor.call('updateBitcoinTransactionsForAddress', this);
+          var balance = 0;
+          try {
+            balance = computeBalance(transactions, this.address); }
+          catch (error) {
+            console.log(error);
+          }
+          BitcoinAddresses.update({"_id": this._id},{$set : {"balance": balance}})
+        }
+      }
+  );
 
 if (Meteor.isServer) {
 var computeBalance = function(transactions, address) {
@@ -24,15 +37,9 @@ var computeBalance = function(transactions, address) {
     });
   });
   return result;
-}
+};
 BitcoinAddresses.after.insert(function (userId, doc) {
-	var transactions = Meteor.call('updateBitcoinTransactionsForAddress', doc);
-  var balance = 0 
-  try {
-    balance = computeBalance(transactions, doc.address); }
-    catch (error) {
-      console.log(error);
-    }
-  BitcoinAddresses.update({"_id": doc._id},{$set : {"balance": balance}})
+  var address = BitcoinAddresses.findOne({'_id': doc._id});
+  address.update();
 });
 }

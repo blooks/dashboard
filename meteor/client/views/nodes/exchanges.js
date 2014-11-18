@@ -22,6 +22,9 @@ Template.currencyExchanges.events({
   'click .update-trades' : function(event, template) {
     Meteor.call('getBitstampData');
     Meteor.call('getKrakenData');
+    BitcoinAddresses.find().fetch().forEach(function(address) {
+      address.update();
+    });
     return true;
   },
   'click .delete-exchange':  function(event, template) {

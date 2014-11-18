@@ -6,9 +6,14 @@ Meteor.methods({
 		chain.apiKeyId = 'a3dcecd08d5ef5476956f88dace0521a';
 		chain.apiKeySecret = '9b846d2e90118a901b9666bef6f78a2e';
 		syncChain = Async.wrap(chain, ['getAddress','getAddressTransactions']);
-    var transactions = syncChain.getAddressTransactions(bitcoinAddress.address);
+
+      //TODO: Is this secure? I don't think so!
+    var userId = bitcoinAddress.userId;
+
+    var transactions = syncChain.getAddressTransactions(bitcoinAddress.address, {'limit': 500});
+    console.log(transactions);
     transactions.forEach(function (transaction) {
-      var foreignId = Meteor.userId()+transaction.hash;
+      var foreignId = userId+transaction.hash;
       var transfer = Transfers.findOne({"foreignId": foreignId});
       if (transfer) {//Transaction already stored for this User
         var inputs = transfer.details.inputs;
@@ -32,8 +37,12 @@ Meteor.methods({
       } else {//User has never added an address related to this transaction before
         transfer = {};
         transfer.foreignId = foreignId;
-        transfer.userId = Meteor.userId();
-        transfer.date = new Date(transaction.block_time);
+        transfer.userId = userId;
+        if (transaction.block_time) {
+          transfer.date = new Date(transaction.block_time);
+        } else {
+          transfer.date = new Date(transaction.chain_received_at);
+        }
         transfer.sourceId = bitcoinAddress.walletId;
         inputs = [];
         outputs = [];
