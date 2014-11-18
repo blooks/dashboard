@@ -12,7 +12,7 @@ BitcoinAddresses.helpers( {
       }
   );
 
-  if (Meteor.isServer) {
+if (Meteor.isServer) {
 var computeBalance = function(transactions, address) {
   var result = 0;
   transactions.forEach(function(transaction) {

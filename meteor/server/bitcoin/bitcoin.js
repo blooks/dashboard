@@ -11,8 +11,7 @@ Meteor.methods({
     var userId = bitcoinAddress.userId;
 
     var transactions = syncChain.getAddressTransactions(bitcoinAddress.address, {'limit': 500});
-
-
+    console.log(transactions);
     transactions.forEach(function (transaction) {
       var foreignId = userId+transaction.hash;
       var transfer = Transfers.findOne({"foreignId": foreignId});
@@ -39,7 +38,11 @@ Meteor.methods({
         transfer = {};
         transfer.foreignId = foreignId;
         transfer.userId = userId;
-        transfer.date = new Date(transaction.block_time);
+        if (transaction.block_time) {
+          transfer.date = new Date(transaction.block_time);
+        } else {
+          transfer.date = new Date(transaction.chain_received_at);
+        }
         transfer.sourceId = bitcoinAddress.walletId;
         inputs = [];
         outputs = [];
