@@ -1,14 +1,20 @@
 BitcoinAddresses.helpers( {
         update: function() {
-          var transactions = Meteor.call('updateBitcoinTransactionsForAddress', this);
-          var balance = 0;
-          try {
-            balance = computeBalance(transactions, this.address); }
-          catch (error) {
-            console.log(error);
-          }
+          Meteor.call('updateBitcoinTransactionsForAddress', this);
+          var transactions = this.transactions();
+          var balance = computeBalance(transactions, this.address);
           BitcoinAddresses.update({"_id": this._id},{$set : {"balance": balance}})
-        }
+        },
+        transactions : function() {
+        var nodeId = this._id;
+        var transfers = Transfers.find(
+            { $or : [
+              { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
+              { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+            ]
+            }).fetch();
+        return transfers;
+      }
       }
   );
 

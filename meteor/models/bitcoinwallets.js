@@ -37,3 +37,9 @@ BitcoinWallets.before.remove(function (userId, doc) {
     BitcoinAddresses.remove({"_id": address._id});
   });
 });
+if (Meteor.isServer) {
+  BitcoinWallets.after.insert(function (userId, doc) {
+        Meteor.call('updateTx4Wallet', doc);
+      }
+  )
+}

@@ -3,5 +3,6 @@
   "kraken-api": "0.1.5",
   "chain-node": "0.0.17",
   "ws": "0.4.32",
-  "fibers": "1.0.2"
+  "fibers": "1.0.2",
+  "bitcore": "0.1.40"
 }
