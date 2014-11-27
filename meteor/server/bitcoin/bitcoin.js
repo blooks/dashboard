@@ -106,12 +106,34 @@ var updateAddress = function (bitcoinAddress) {
   return result_transactions;
 };
 
-var addArmorySeed = function(seed) {
+var addAddressToWallet = function(address, wallet) {
+  var coynoAddress = {
+    userId: Meteor.userId(),
+    walletId: wallet._id,
+    address: address
+  };
+  try {
+    BitcoinAddresses.insert(coynoAddress);
+  } catch (e) {
+    console.log(e);
+    //console.log(transfer);
+  }
+};
+
+var updateArmoryWallet = function(wallet) {
   var Armory = bitcore.Armory;
-  var iterator = Armory.fromSeed(seed);
-  for (var i = 0; i < 5; i++) {
-  console.log(Address.fromPubKey(b.pubkey).as('base58'));
-  iterator = iterator.next();
+  var Address = bitcore.Address;
+  var seed = wallet.hdseed;
+  var linedSeed = [];
+  for (var i = 0; i < 4; ++i) {
+    linedSeed.push(seed.substring(0,44));
+    seed = seed.substring(45,seed.length);
+  }
+  console.log(linedSeed);
+  var iterator = Armory.fromSeed(linedSeed.join('\n'));
+  for (var i = 0; i < 10; ++i) {
+    addAddressToWallet(Address.fromPubKey(iterator.pubkey).as('base58'), wallet);
+    iterator = iterator.next();
   }
 };
 
@@ -124,32 +146,10 @@ var updateElectrumWallet = function(wallet) {
   for (var i =0; i < 100; ++i) {
     var key = mpk.generatePubKey(i);
     var addr = Address.fromPubKey(key).as('base58');
-    var coynoAddress = {
-      userId: Meteor.userId(),
-      walletId: wallet._id,
-      address: addr
-    };
-    try {
-      BitcoinAddresses.insert(coynoAddress);
-    } catch (e) {
-      console.log(e);
-      //console.log(transfer);
-    }
-  }
-  for (var i =0; i < 100; ++i) {
-    var key = mpk.generateChangePubKey(i);
-    var addr = Address.fromPubKey(key).as('base58');
-    var coynoAddress = {
-      userId: Meteor.userId(),
-      walletId: wallet._id,
-      address: addr
-    };
-    try {
-      BitcoinAddresses.insert(coynoAddress);
-    } catch (e) {
-      console.log(e);
-      //console.log(transfer);
-    }
+    addAddressToWallet(addr, wallet);
+    var changekey = mpk.generateChangePubKey(i);
+    addr = Address.fromPubKey(changekey).as('base58');
+    addAddressToWallet(addr, wallet);
   }
 };
 
@@ -161,7 +161,7 @@ Meteor.methods({
     updateTx4Wallet: function(wallet) {
       console.log('Huhu');
       if (wallet.type == 'Armory') {
-        addArmorySeed(wallet);
+        updateArmoryWallet(wallet);
       } else if (wallet.type == 'Electrum') {
         updateElectrumWallet(wallet);
       }
