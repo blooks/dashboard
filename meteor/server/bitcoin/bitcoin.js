@@ -106,12 +106,45 @@ var updateAddress = function (bitcoinAddress) {
   return result_transactions;
 };
 
-var addArmorySeed = function(seed) {
+var addAddressToWallet = function(address, wallet) {
+  var coynoAddress = {
+    userId: Meteor.userId(),
+    walletId: wallet._id,
+    address: address
+  };
+  try {
+    BitcoinAddresses.insert(coynoAddress);
+  } catch (e) {
+    console.log(e);
+    //console.log(transfer);
+  }
+};
+
+var updateBIP32Wallet = function(wallet) {
+  var HierarchicalKey = bitcore.HierarchicalKey;
+  var Address = bitcore.Address;
+  var knownMasterPublicKey = wallet.hdseed;
+  var hkey = new HierarchicalKey(knownMasterPublicKey);
+  for (var i = 0; i < 40; ++i) {
+    addAddressToWallet(Address.fromPubKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString(), wallet);
+    addAddressToWallet(Address.fromPubKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString(), wallet);
+  }
+};
+
+var updateArmoryWallet = function(wallet) {
   var Armory = bitcore.Armory;
-  var iterator = Armory.fromSeed(seed);
-  for (var i = 0; i < 5; i++) {
-  console.log(Address.fromPubKey(b.pubkey).as('base58'));
-  iterator = iterator.next();
+  var Address = bitcore.Address;
+  var seed = wallet.hdseed;
+  var linedSeed = [];
+  for (var i = 0; i < 4; ++i) {
+    linedSeed.push(seed.substring(0,44));
+    seed = seed.substring(45,seed.length);
+  }
+  console.log(linedSeed);
+  var iterator = Armory.fromSeed(linedSeed.join('\n'));
+  for (var i = 0; i < 10; ++i) {
+    addAddressToWallet(Address.fromPubKey(iterator.pubkey).as('base58'), wallet);
+    iterator = iterator.next();
   }
 };
 
@@ -124,32 +157,10 @@ var updateElectrumWallet = function(wallet) {
   for (var i =0; i < 100; ++i) {
     var key = mpk.generatePubKey(i);
     var addr = Address.fromPubKey(key).as('base58');
-    var coynoAddress = {
-      userId: Meteor.userId(),
-      walletId: wallet._id,
-      address: addr
-    };
-    try {
-      BitcoinAddresses.insert(coynoAddress);
-    } catch (e) {
-      console.log(e);
-      //console.log(transfer);
-    }
-  }
-  for (var i =0; i < 100; ++i) {
-    var key = mpk.generateChangePubKey(i);
-    var addr = Address.fromPubKey(key).as('base58');
-    var coynoAddress = {
-      userId: Meteor.userId(),
-      walletId: wallet._id,
-      address: addr
-    };
-    try {
-      BitcoinAddresses.insert(coynoAddress);
-    } catch (e) {
-      console.log(e);
-      //console.log(transfer);
-    }
+    addAddressToWallet(addr, wallet);
+    var changekey = mpk.generateChangePubKey(i);
+    addr = Address.fromPubKey(changekey).as('base58');
+    addAddressToWallet(addr, wallet);
   }
 };
 
@@ -159,11 +170,17 @@ Meteor.methods({
       updateAddress(bitcoinAddress);
   },
     updateTx4Wallet: function(wallet) {
-      console.log('Huhu');
-      if (wallet.type == 'Armory') {
-        addArmorySeed(wallet);
-      } else if (wallet.type == 'Electrum') {
-        updateElectrumWallet(wallet);
+
+      switch (wallet.type) {
+        case 'Armory':
+        updateArmoryWallet(wallet);
+              break;
+        case 'Electrum':
+          updateElectrumWallet(wallet);
+              break;
+        case 'Bitcoin Wallet (Android)' :
+          updateBIP32Wallet(wallet);
+              break;
       }
     }
 });
