@@ -4,7 +4,7 @@
       {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
         {{> afQuickField name='label' }}
         {{> afQuickField name='type' options='allowed' }}
-        {{#unless afFieldValueIs name='type' value='Bitcoin Wallet (Android)'}}
+        {{#unless afFieldValueIs name='type' value='Single Addresses'}}
           {{> afQuickField name='hdseed'}}
         {{/unless}}
         <button type="submit" class="btn btn-primary btn-lg pull-right">{{i18n 'nodes.buttons.save'}}</button>

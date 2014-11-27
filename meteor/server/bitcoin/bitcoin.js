@@ -120,6 +120,17 @@ var addAddressToWallet = function(address, wallet) {
   }
 };
 
+var updateBIP32Wallet = function(wallet) {
+  var HierarchicalKey = bitcore.HierarchicalKey;
+  var Address = bitcore.Address;
+  var knownMasterPublicKey = wallet.hdseed;
+  var hkey = new HierarchicalKey(knownMasterPublicKey);
+  for (var i = 0; i < 40; ++i) {
+    addAddressToWallet(Address.fromPubKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString(), wallet);
+    addAddressToWallet(Address.fromPubKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString(), wallet);
+  }
+};
+
 var updateArmoryWallet = function(wallet) {
   var Armory = bitcore.Armory;
   var Address = bitcore.Address;
@@ -159,11 +170,17 @@ Meteor.methods({
       updateAddress(bitcoinAddress);
   },
     updateTx4Wallet: function(wallet) {
-      console.log('Huhu');
-      if (wallet.type == 'Armory') {
+
+      switch (wallet.type) {
+        case 'Armory':
         updateArmoryWallet(wallet);
-      } else if (wallet.type == 'Electrum') {
-        updateElectrumWallet(wallet);
+              break;
+        case 'Electrum':
+          updateElectrumWallet(wallet);
+              break;
+        case 'Bitcoin Wallet (Android)' :
+          updateBIP32Wallet(wallet);
+              break;
       }
     }
 });
