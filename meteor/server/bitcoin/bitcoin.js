@@ -1,6 +1,99 @@
 var chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
 
+var chainTxToCoynoTx = function(chainTx) {
+  var result = {};
+  result.foreignId = Meteor.userId() + chainTx.hash;
+  if (chainTx.block_time) {
+    result.date = new Date(chainTx.block_time);
+  } else {
+    result.date = new Date(chainTx.chain_received_at);
+  }
+  var inputs = [];
+  var outputs = [];
+  if (! chainTx.inputs) {
+    console.log('INPUTS DO NOT EXIST!');
+  }
+  chainTx.inputs.forEach(function (input) {
+    inputs.push({
+      amount: input.value,
+      note: input.addresses[0]
+    });
+  });
+  if (! chainTx.outputs) {
+    console.log('OUTPUTS DO NOT EXIST!');
+  }
+  chainTx.outputs.forEach(function (output) {
+    outputs.push({
+      amount: output.value,
+      note: output.addresses[0]
+    });
+  });
+  result.details = {
+    inputs: inputs,
+    outputs: outputs,
+    currency: 'BTC'
+  };
+  return result;
+};
+
+var addCoynoData = function(transfer, wallet) {
+  transfer.userId = Meteor.userId();
+  transfer.sourceId = wallet._id;
+  return transfer;
+};
+var connectToInternalNode = function(inoutput) {
+  if (! inoutput.nodeId) {
+    var internalAddress = BitcoinAddresses.findOne({$and : [{'userId': Meteor.userId()},{'address': inoutput.note}]});
+    if (internalAddress) {
+      inoutput.nodeId = internalAddress._id;
+    }
+  }
+  return inoutput;
+};
+
+var addTransaction = function (transaction) {
+  var transfer = Transfers.findOne({"foreignId": transaction.foreignId});
+  var newTransfer = false;
+  if (! transfer) {//Transaction already stored for this User
+    transfer = transaction;
+    newTransfer = true;
+  }
+  var inputs = transfer.details.inputs;
+  if (! inputs) {
+    console.log('INTERNAL INPUTS DO NOT EXIST!');
+  }
+  var newInputs = [];
+  inputs.forEach(function (input) {
+        newInputs.push(connectToInternalNode(input));
+      }
+  );
+  inputs = newInputs;
+  var outputs = transfer.details.outputs;
+  if (! outputs) {
+    console.log('INTERNAL OUTPUTS DO NOT EXIST!');
+  }
+  var newOutputs = [];
+  outputs.forEach(function (output) {
+    newOutputs.push(connectToInternalNode(output));
+  });
+  outputs = newOutputs;
+  if (newTransfer) {
+    try {
+      Transfers.insert(transfer);
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    try {
+    Transfers.update({"_id": transfer._id}, {$set: {"details.outputs": outputs, "details.inputs": inputs}});
+  } catch (error) {
+      console.log(error);
+  }
+  }
+};
+
+/*
 var updateAddress = function (bitcoinAddress) {
   var result_transactions = [];
   chain.apiKeyId = 'a3dcecd08d5ef5476956f88dace0521a';
@@ -12,112 +105,37 @@ var updateAddress = function (bitcoinAddress) {
 
   var transactions = syncChain.getAddressTransactions(bitcoinAddress.address, {'limit': 500});
   console.log(transactions);
-  if (transactions) {
-    transactions.forEach(function (transaction) {
-      var foreignId = userId + transaction.hash;
-      var transfer = Transfers.findOne({"foreignId": foreignId});
-      if (transfer) {//Transaction already stored for this User
-        var inputs = transfer.details.inputs;
-        if (! inputs) {
-          console.log('INTERNAL INPUTS DO NOT EXIST!');
-        }
-        inputs.forEach(function (input) {
-          if (input.note === bitcoinAddress.address) {
-            input.nodeId = bitcoinAddress._id;
-          }
-        });
-        var outputs = transfer.details.outputs;
-        if (! outputs) {
-          console.log('INTERNAL OUTPUTS DO NOT EXIST!');
-        }
-        outputs.forEach(function (output) {
-          if (output.note === bitcoinAddress.address) {
-            output.nodeId = bitcoinAddress._id;
-          }
-        });
-        try {
-          Transfers.update({"_id": transfer._id}, {$set: {"details.outputs": outputs, "details.inputs": inputs}});
-          result_transactions.push(Transfers.findOne({"_id": transfer._id}));
-        } catch (error) {
-          console.log(error);
-        }
-      } else {//User has never added an address related to this transaction before
-        transfer = {};
-        transfer.foreignId = foreignId;
-        transfer.userId = userId;
-        if (transaction.block_time) {
-          transfer.date = new Date(transaction.block_time);
-        } else {
-          transfer.date = new Date(transaction.chain_received_at);
-        }
-        transfer.sourceId = bitcoinAddress.walletId;
-        inputs = [];
-        outputs = [];
-        if (! transaction.inputs) {
-          console.log('INPUTS DO NOT EXIST!');
-        }
-        transaction.inputs.forEach(function (input) {
-          if (input.addresses[0] == bitcoinAddress.address) {
-            inputs.push({
-                  amount: input.value,
-                  nodeId: bitcoinAddress._id,
-                  note: input.addresses[0]
-                }
-            );
-          } else {
-            inputs.push({
-              amount: input.value,
-              note: input.addresses[0]
-            })
-          }
-        });
-        if (! transaction.outputs) {
-          console.log('OUTPUTS DO NOT EXIST!');
-        }
-        transaction.outputs.forEach(function (output) {
-          if (output.addresses[0] == bitcoinAddress.address) {
-            outputs.push({
-                  amount: output.value,
-                  nodeId: bitcoinAddress._id,
-                  note: output.addresses[0]
-                }
-            );
-          } else {
-            outputs.push({
-              amount: output.value,
-              note: output.addresses[0]
-            })
-          }
-        });
-        transfer.details = {
-          inputs: inputs,
-          outputs: outputs,
-          currency: 'BTC'
-        };
-        try {
-          var transferId = Transfers.insert(transfer);
-          result_transactions.push(Transfers.findOne({"_id": transferId}));
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    });
-  }
+  transactions.forEach(addTransaction(transaction));
   return result_transactions;
 };
+*/
+var addAddressesToWallet = function(addresses, wallet) {
+  addresses.forEach(function(address) {
+    var coynoAddress = {
+      userId: Meteor.userId(),
+      walletId: wallet._id,
+      address: address
+    };
+    try {
+      BitcoinAddresses.insert(coynoAddress);
+    } catch (e) {
+      console.log(e);
+      //console.log(transfer);
+    }
+  });
+
+  chain.apiKeyId = 'a3dcecd08d5ef5476956f88dace0521a';
+  chain.apiKeySecret = '9b846d2e90118a901b9666bef6f78a2e';
+  var syncChain = Async.wrap(chain, ['getAddress','getAddressesTransactions']);
+  var chainTxs = syncChain.getAddressesTransactions(addresses);
+  chainTxs.forEach(function(chainTx) {
+      addTransaction(addCoynoData(chainTxToCoynoTx(chainTx),wallet));
+  });
+};
+
 
 var addAddressToWallet = function(address, wallet) {
-  var coynoAddress = {
-    userId: Meteor.userId(),
-    walletId: wallet._id,
-    address: address
-  };
-  try {
-    BitcoinAddresses.insert(coynoAddress);
-  } catch (e) {
-    console.log(e);
-    //console.log(transfer);
-  }
+  addAddressesToWallet([address],wallet);
 };
 
 var updateBIP32Wallet = function(wallet) {
@@ -148,39 +166,48 @@ var updateArmoryWallet = function(wallet) {
   }
 };
 
+var updateBalances = function (wallet) {
+  BitcoinAddresses.find({$and : [{'userId': Meteor.userId()},{'walletId': wallet._id}]}).forEach(function(address){
+    address.update();
+  });
+};
+
+
 var updateElectrumWallet = function(wallet) {
 
   var Address = bitcore.Address;
   var Electrum = bitcore.Electrum;
   var mpk = new Electrum(wallet.hdseed);
-
+  var addresses = [];
   for (var i =0; i < 100; ++i) {
     var key = mpk.generatePubKey(i);
     var addr = Address.fromPubKey(key).as('base58');
-    addAddressToWallet(addr, wallet);
+    addresses.push(addr);
     var changekey = mpk.generateChangePubKey(i);
-    addr = Address.fromPubKey(changekey).as('base58');
-    addAddressToWallet(addr, wallet);
+    var changeAddr = Address.fromPubKey(changekey).as('base58');
+    addresses.push(changeAddr);
   }
+  addAddressesToWallet(addresses,wallet);
+  updateBalances(wallet);
 };
 
 
 Meteor.methods({
-	updateBitcoinTransactionsForAddress: function (bitcoinAddress) {
-      updateAddress(bitcoinAddress);
+  updateBitcoinTransactionsForAddress: function (bitcoinAddress) {
+    updateAddress(bitcoinAddress);
   },
-    updateTx4Wallet: function(wallet) {
+  updateTx4Wallet: function(wallet) {
 
-      switch (wallet.type) {
-        case 'Armory':
+    switch (wallet.type) {
+      case 'Armory':
         updateArmoryWallet(wallet);
-              break;
-        case 'Electrum':
-          updateElectrumWallet(wallet);
-              break;
-        case 'Bitcoin Wallet (Android)' :
-          updateBIP32Wallet(wallet);
-              break;
-      }
+        break;
+      case 'Electrum':
+        updateElectrumWallet(wallet);
+        break;
+      case 'Bitcoin Wallet (Android)' :
+        updateBIP32Wallet(wallet);
+        break;
     }
+  }
 });

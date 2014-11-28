@@ -1,20 +1,19 @@
 BitcoinAddresses.helpers( {
         update: function() {
-          Meteor.call('updateBitcoinTransactionsForAddress', this);
           var transactions = this.transactions();
+            console.log(transactions.length);
           var balance = computeBalance(transactions, this.address);
           BitcoinAddresses.update({"_id": this._id},{$set : {"balance": balance}})
         },
         transactions : function() {
-        var nodeId = this._id;
-        var transfers = Transfers.find(
+            var nodeId = this._id;
+            return (Transfers.find(
             { $or : [
               { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
               { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
             ]
-            }).fetch();
-        return transfers;
-      }
+            }).fetch());
+        }
       }
   );
 
@@ -44,8 +43,10 @@ var computeBalance = function(transactions, address) {
   });
   return result;
 };
+    /* Removed to enable bulk processing.
 BitcoinAddresses.after.insert(function (userId, doc) {
   var address = BitcoinAddresses.findOne({'_id': doc._id});
   address.update();
 });
+*/
 }

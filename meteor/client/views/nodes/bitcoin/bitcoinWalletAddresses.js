@@ -3,6 +3,6 @@ Template.bitcoinWalletAddresses.helpers({
 	return this.addresses();
   },
   showAddress: function(address) {
-    return true; //(address.balance > 0);
+    return (address.balance > 0);
   }
 });

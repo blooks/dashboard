@@ -386,7 +386,7 @@ var addBitstampTxToTrades = function(bitstampTx, exchange) {
     //console.log(trade);
   }
   return errors.length === 0;
-}
+};
 
 
 
