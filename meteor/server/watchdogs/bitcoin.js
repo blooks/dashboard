@@ -21,7 +21,9 @@ if (Meteor.isServer) {
                             if (knownAddresses) {
                                 knownAddresses.forEach(function (address) {
                                     {
-                                        address.update();
+                                        console.log('Received transaction for a user!');
+                                        var wallet = BitcoinWallets.findOne({_id: address.walletId});
+                                        Meteor.call('updateTx4Wallet', wallet);
                                     }
                                 });
                             }

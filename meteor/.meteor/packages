@@ -33,3 +33,8 @@ meteorhacks:npm
 
 
 npm-container
+mike:mocha
+sanjo:jasmine
+velocity:html-reporter
+meteorhacks:kadira
+
