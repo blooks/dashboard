@@ -326,9 +326,6 @@
         }
       }
     },
-    "fibers": {
-      "version": "1.0.2"
-    },
     "insight-api-client": {
       "version": "0.0.2",
       "dependencies": {
@@ -569,23 +566,6 @@
               }
             }
           }
-        }
-      }
-    },
-    "ws": {
-      "version": "0.4.32",
-      "dependencies": {
-        "commander": {
-          "version": "2.1.0"
-        },
-        "nan": {
-          "version": "1.0.0"
-        },
-        "tinycolor": {
-          "version": "0.0.1"
-        },
-        "options": {
-          "version": "0.0.6"
         }
       }
     }

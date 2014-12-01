@@ -1,7 +1,7 @@
 Exchanges.helpers({
   balances: function() {
     var result = [];
-    currencies = Meteor.settings.public.coyno.allowedCurrencies;
+    var currencies = Meteor.settings.public.coyno.allowedCurrencies;
     var exchangeId = this._id;
     var trades = Trades.find({"venueId": exchangeId}).fetch();
     //Performance issue!

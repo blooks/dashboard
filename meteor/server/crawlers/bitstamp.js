@@ -1,15 +1,5 @@
 var Bitstamp = Meteor.npmRequire('bitstamp');
 
-//Patching Bitstamp NPM Module ; TBR 
-
-Bitstamp.prototype.user_transactions = function(limit, callback) {
-  if(!callback) {
-    callback = limit;
-    limit = undefined;
-  }
-  this._post('user_transactions', callback, {limit: limit});
-}
-
 var bitstampTradeToTrade = function(trade) {
   var currencydetails = {};
   var dollar_amount = 0;
@@ -35,7 +25,7 @@ var bitstampTradeToTrade = function(trade) {
           currency: 'BTC',
           fee: 0
         };
-      };
+   }
   return currencydetails;
 };
 
@@ -48,7 +38,7 @@ var bitstampDepositToTrade = function(deposit) {
       currency: 'USD',
       fee: deposit.fee
     };
-    base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
+    var base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime);;
     currencydetails.sell = {
       amount: base_amount,
       currency: base_currency,
@@ -59,7 +49,7 @@ var bitstampDepositToTrade = function(deposit) {
     console.log("Warning: You want to make a Bitstamp bitcoin deposit a trade. Simon says No!");
   }
   return currencydetails;
-}
+};;
 
 var bitstampDepositToTransfer = function(deposit, exchange) {
   var transferdetails = {
@@ -79,7 +69,7 @@ var bitstampDepositToTransfer = function(deposit, exchange) {
     transferdetails.currency = 'BTC'
   } else {//Dollar deposit
 
-    var base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime)
+    var base_amount = Coynverter.calculateBaseAmount(deposit.usd, 'USD', deposit.datetime);;
     transferdetails.inputs.push({
       amount: base_amount,
       nodeId: Meteor.user().profile.dummyNodeIds['EUR']
@@ -135,7 +125,7 @@ var bitstampWithdrawalToTrade = function(withdrawal) {
       amount: dollar_amount,
       currency: 'USD',
       fee: 0
-    }
+    };;
     currencydetails.buy = {
       amount: base_amount,
       currency: base_currency,
@@ -256,20 +246,20 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
   var currencydetails = {};
   var base_currency ='EUR';
   if (withdrawal.usd < 0) {//Dollar withdrawal
-    dollar_amount = Math.abs(withdrawal.usd);
+    var dollar_amount = Math.abs(withdrawal.usd);
     currencydetails.sell = {
       amount: dollar_amount,
       currency: 'USD', 
       fee: 0
     };
-    base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime)
+    base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);;
     currencydetails.buy = {
       amount: base_amount,
       currency: base_currency, 
       fee: 0
     }
   } else {//bitcoin withdrawal
-    bitcoin_amount = Math.abs(withdrawal.btc);
+    var bitcoin_amount = Math.abs(withdrawal.btc);
     currencydetails.sell = {
       amount: bitcoin_amount,
       currency: 'BTC',
@@ -283,7 +273,7 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
     };
   }
   return currencydetails;
-}
+};
 
 var addBitstampTxToTransfers = function(bitstampTx, exchange) {
   
@@ -378,9 +368,9 @@ var addBitstampTxToTrades = function(bitstampTx, exchange) {
   trade.sell = currencydetails.sell;
   trade.venueId = exchange._id;
   try {
-    tradeId = Trades.insert(trade);
+    var tradeId = Trades.insert(trade);
   } catch (_error) {
-    e = _error;
+    var e = _error;
     errors.push(e);
     console.log(e);
     //console.log(trade);
@@ -392,7 +382,7 @@ var addBitstampTxToTrades = function(bitstampTx, exchange) {
 
 var bitstampJSONtoDB = function(bitstampData, exchange) { 
 
-  for (i = 0; i < bitstampData.length; ++i) {
+  for (var i = 0; i < bitstampData.length; ++i) {
     var bitstampTx = bitstampData[i];
 
     //Fixing date format

@@ -150,7 +150,7 @@ Coynverter = (function() {
 
 // Create the BtcToUsd collection if not existing or recreate it if enforced by the environment variable COYNO_REFRESH_RATES.
 Meteor.startup(function () {
-  BtcToFiat = BtcToFiat || new Mongo.Collection('BtcToFiat');
+  var BtcToFiat = BtcToFiat || new Mongo.Collection('BtcToFiat');
 
   if (Meteor.isServer) {
     if (!BtcToFiat.findOne() || process.env.COYNO_REFRESH_RATES)
