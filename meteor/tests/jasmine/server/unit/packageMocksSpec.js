@@ -27638,9 +27638,9 @@ var packageMetadata = {
     }
   },
   "session": {}
-}
-var globalContext = (typeof global !== 'undefined') ? global : window
-var originalContext = []
+};
+var globalContext = (typeof global !== 'undefined') ? global : window;
+var originalContext = [];
 
 /*
 originalContext = [
@@ -27665,19 +27665,19 @@ function _restoreOriginal(original) {
 }
 
 function restoreOriginals() {
-  originalContext.forEach(_restoreOriginal)
+  originalContext.forEach(_restoreOriginal);
   originalContext = []
 }
 
 function loadMocks() {
   for (var packageName in packageMetadata) {
     for (var packageExportName in packageMetadata[packageName]) {
-      _saveOriginal(globalContext, packageExportName)
-      var packageExport = packageMetadata[packageName][packageExportName]
+      _saveOriginal(globalContext, packageExportName);
+      var packageExport = packageMetadata[packageName][packageExportName];
       globalContext[packageExportName] = ComponentMocker.generateFromMetadata(packageExport)
     }
   }
 }
 
-beforeEach(loadMocks)
-afterEach(restoreOriginals)
+beforeEach(loadMocks);
+afterEach(restoreOriginals);

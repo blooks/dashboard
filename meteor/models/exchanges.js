@@ -1,7 +1,7 @@
 Exchanges.helpers({
   balances: function() {
     var result = [];
-    currencies = Meteor.settings.public.coyno.allowedCurrencies;
+    var currencies = Meteor.settings.public.coyno.allowedCurrencies;
     var exchangeId = this._id;
     var trades = Trades.find({"venueId": exchangeId}).fetch();
     //Performance issue!
@@ -60,8 +60,5 @@ Exchanges.after.insert(function (userId, doc) {
   if (doc.exchange === "Bitstamp") {
     Meteor.call('getBitstampData', doc); 
   }
- // if (doc.exchange === 'Kraken') {
- //   Meteor.call('getKrakenData', doc);
- //}
 });
 }

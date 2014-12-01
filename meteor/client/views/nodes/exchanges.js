@@ -7,13 +7,13 @@ Template.currencyExchanges.events({
   'click .delete-transactions' : function(event, template) {
     var trades = Trades.find().fetch();
     trades.forEach(function(entry) {
-      result = Trades.remove({
+      var result = Trades.remove({
         _id: entry._id
       });
     });
     var transfers = Transfers.find().fetch();
     transfers.forEach(function(entry) {
-      result = Transfers.remove({
+      var result = Transfers.remove({
         _id: entry._id
       });
     });
