@@ -7166,7 +7166,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "5de108cc2ed059767da12207dd129032f1822f04"
+                  "value": "eb04639ee019c77f0c1676e7dbc8f55714a40b25"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7181,7 +7181,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "199e42d9c3f08a6fa27a197bde285282106bcb7f"
+                  "value": "09be83330561b605a9b119cf32f35c52f780ff6d"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7242,103 +7242,67 @@ var packageMetadata = {
               "type": "function",
               "refID": 29,
               "members": {
-                "/home/levin/coding/coyno/meteor/tests": {
+                "/home/levin/coding/coynows/meteor/tests": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/collection-mocks.js": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/collection-mocks.js": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/blockchaindata": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/blockchaindata": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/package-stubs.js": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/package-stubs.js": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/packageMocksSpec.js": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/packageMocksSpec.js": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample/spec": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample/src": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample/spec": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample/src": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/blockchaindata/simplefunctions.js": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/blockchaindata/simplefunctions.js": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample/spec": {
                   "type": "function"
                 },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec/PlayerSpec.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec/SpecMatchers.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src/Player.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src/Song.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec/PlayerSpec.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec/SpecMatchers.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src/Player.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src/Song.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src/Player.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src/Song.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec/PlayerSpec.js": {
-                  "type": "function"
-                },
-                "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec/SpecMatchers.js": {
+                "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample/src": {
                   "type": "function"
                 }
               }
@@ -7517,7 +7481,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/underscore.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/underscore.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7534,7 +7498,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/underscore.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/underscore.js.map"
                 }
               }
             },
@@ -7543,7 +7507,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteor.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteor.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7560,7 +7524,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteor.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteor.js.map"
                 }
               }
             },
@@ -7569,7 +7533,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/standard-app-packages.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/standard-app-packages.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7586,7 +7550,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/standard-app-packages.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/standard-app-packages.js.map"
                 }
               }
             },
@@ -7595,7 +7559,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/coffeescript.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/coffeescript.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7612,7 +7576,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/coffeescript.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/coffeescript.js.map"
                 }
               }
             },
@@ -7621,7 +7585,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/less.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/less.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7638,7 +7602,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/less.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/less.js.map"
                 }
               }
             },
@@ -7647,7 +7611,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/random.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/random.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7664,7 +7628,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/random.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/random.js.map"
                 }
               }
             },
@@ -7673,7 +7637,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/localstorage.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/localstorage.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7690,7 +7654,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/localstorage.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/localstorage.js.map"
                 }
               }
             },
@@ -7699,7 +7663,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/tracker.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/tracker.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7716,7 +7680,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/tracker.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/tracker.js.map"
                 }
               }
             },
@@ -7725,7 +7689,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/json.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/json.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7742,7 +7706,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/json.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/json.js.map"
                 }
               }
             },
@@ -7751,7 +7715,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/base64.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/base64.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7768,7 +7732,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/base64.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/base64.js.map"
                 }
               }
             },
@@ -7777,7 +7741,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ejson.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ejson.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7794,7 +7758,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ejson.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ejson.js.map"
                 }
               }
             },
@@ -7803,7 +7767,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/check.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/check.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7820,7 +7784,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/check.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/check.js.map"
                 }
               }
             },
@@ -7829,7 +7793,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/logging.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/logging.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7846,7 +7810,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/logging.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/logging.js.map"
                 }
               }
             },
@@ -7855,7 +7819,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/retry.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/retry.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7872,7 +7836,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/retry.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/retry.js.map"
                 }
               }
             },
@@ -7881,7 +7845,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reload.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reload.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7898,7 +7862,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reload.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reload.js.map"
                 }
               }
             },
@@ -7907,7 +7871,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/id-map.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/id-map.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7924,7 +7888,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/id-map.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/id-map.js.map"
                 }
               }
             },
@@ -7933,7 +7897,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ordered-dict.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ordered-dict.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7950,7 +7914,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ordered-dict.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ordered-dict.js.map"
                 }
               }
             },
@@ -7959,7 +7923,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/geojson-utils.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/geojson-utils.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -7976,7 +7940,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/geojson-utils.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/geojson-utils.js.map"
                 }
               }
             },
@@ -7985,7 +7949,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/minimongo.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/minimongo.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8002,7 +7966,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/minimongo.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/minimongo.js.map"
                 }
               }
             },
@@ -8011,7 +7975,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ddp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ddp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8028,7 +7992,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ddp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ddp.js.map"
                 }
               }
             },
@@ -8037,7 +8001,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/follower-livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/follower-livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8054,7 +8018,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/follower-livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/follower-livedata.js.map"
                 }
               }
             },
@@ -8063,7 +8027,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/application-configuration.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/application-configuration.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8080,7 +8044,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/application-configuration.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/application-configuration.js.map"
                 }
               }
             },
@@ -8089,7 +8053,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mongo.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mongo.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8106,7 +8070,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mongo.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mongo.js.map"
                 }
               }
             },
@@ -8115,7 +8079,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/jquery.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/jquery.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8132,7 +8096,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/jquery.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/jquery.js.map"
                 }
               }
             },
@@ -8141,7 +8105,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/deps.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/deps.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8158,7 +8122,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/deps.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/deps.js.map"
                 }
               }
             },
@@ -8167,7 +8131,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/htmljs.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/htmljs.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8184,7 +8148,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/htmljs.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/htmljs.js.map"
                 }
               }
             },
@@ -8193,7 +8157,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/observe-sequence.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/observe-sequence.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8210,7 +8174,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/observe-sequence.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/observe-sequence.js.map"
                 }
               }
             },
@@ -8219,7 +8183,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reactive-var.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reactive-var.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8236,7 +8200,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reactive-var.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reactive-var.js.map"
                 }
               }
             },
@@ -8245,7 +8209,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/blaze.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/blaze.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8262,7 +8226,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/blaze.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/blaze.js.map"
                 }
               }
             },
@@ -8271,7 +8235,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/accounts-base.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/accounts-base.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8288,7 +8252,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/accounts-base.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/accounts-base.js.map"
                 }
               }
             },
@@ -8297,7 +8261,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sha.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sha.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8314,7 +8278,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sha.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sha.js.map"
                 }
               }
             },
@@ -8323,7 +8287,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/srp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/srp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8340,7 +8304,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/srp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/srp.js.map"
                 }
               }
             },
@@ -8349,7 +8313,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/accounts-password.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/accounts-password.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8366,7 +8330,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/accounts-password.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/accounts-password.js.map"
                 }
               }
             },
@@ -8375,7 +8339,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_simple-schema.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_simple-schema.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8392,7 +8356,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_simple-schema.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_simple-schema.js.map"
                 }
               }
             },
@@ -8401,7 +8365,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mongo-livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mongo-livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8418,7 +8382,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mongo-livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mongo-livedata.js.map"
                 }
               }
             },
@@ -8427,7 +8391,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_collection2.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_collection2.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8444,7 +8408,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_collection2.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_collection2.js.map"
                 }
               }
             },
@@ -8453,7 +8417,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/matb33_collection-hooks.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/matb33_collection-hooks.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8470,7 +8434,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/matb33_collection-hooks.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/matb33_collection-hooks.js.map"
                 }
               }
             },
@@ -8479,7 +8443,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sewdn_collection-behaviours.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sewdn_collection-behaviours.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8496,7 +8460,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sewdn_collection-behaviours.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sewdn_collection-behaviours.js.map"
                 }
               }
             },
@@ -8505,7 +8469,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/dsyko_node-csv-npm.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/dsyko_node-csv-npm.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8522,7 +8486,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/dsyko_node-csv-npm.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/dsyko_node-csv-npm.js.map"
                 }
               }
             },
@@ -8531,7 +8495,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/lepozepo_accounting.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/lepozepo_accounting.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8548,7 +8512,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/lepozepo_accounting.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/lepozepo_accounting.js.map"
                 }
               }
             },
@@ -8557,7 +8521,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ui.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ui.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8574,7 +8538,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/ui.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/ui.js.map"
                 }
               }
             },
@@ -8583,7 +8547,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/templating.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/templating.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8600,7 +8564,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/templating.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/templating.js.map"
                 }
               }
             },
@@ -8609,7 +8573,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_core.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_core.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8626,7 +8590,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_core.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_core.js.map"
                 }
               }
             },
@@ -8635,7 +8599,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_dynamic-template.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_dynamic-template.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8652,7 +8616,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_dynamic-template.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_dynamic-template.js.map"
                 }
               }
             },
@@ -8661,7 +8625,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_layout.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_layout.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8678,7 +8642,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_layout.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_layout.js.map"
                 }
               }
             },
@@ -8687,7 +8651,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_url.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_url.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8704,7 +8668,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_url.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_url.js.map"
                 }
               }
             },
@@ -8713,7 +8677,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_middleware-stack.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_middleware-stack.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8730,7 +8694,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_middleware-stack.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_middleware-stack.js.map"
                 }
               }
             },
@@ -8739,7 +8703,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_location.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_location.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8756,7 +8720,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_location.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_location.js.map"
                 }
               }
             },
@@ -8765,7 +8729,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reactive-dict.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reactive-dict.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8782,7 +8746,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/reactive-dict.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/reactive-dict.js.map"
                 }
               }
             },
@@ -8791,7 +8755,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_controller.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_controller.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8808,7 +8772,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_controller.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_controller.js.map"
                 }
               }
             },
@@ -8817,7 +8781,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_router.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_router.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8834,7 +8798,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/iron_router.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/iron_router.js.map"
                 }
               }
             },
@@ -8843,7 +8807,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mquandalle_jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mquandalle_jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8860,7 +8824,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mquandalle_jade.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mquandalle_jade.js.map"
                 }
               }
             },
@@ -8869,7 +8833,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/cmather_handlebars-server.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/cmather_handlebars-server.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8886,7 +8850,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/cmather_handlebars-server.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/cmather_handlebars-server.js.map"
                 }
               }
             },
@@ -8895,7 +8859,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8912,7 +8876,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/livedata.js.map"
                 }
               }
             },
@@ -8921,7 +8885,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_moment.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_moment.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8938,7 +8902,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_moment.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_moment.js.map"
                 }
               }
             },
@@ -8947,7 +8911,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_autoform.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_autoform.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8964,7 +8928,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_autoform.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/aldeed_autoform.js.map"
                 }
               }
             },
@@ -8973,7 +8937,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -8990,7 +8954,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data.js.map"
                 }
               }
             },
@@ -8999,7 +8963,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9016,7 +8980,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap.js.map"
                 }
               }
             },
@@ -9025,7 +8989,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_just-i18n.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_just-i18n.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9042,7 +9006,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_just-i18n.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_just-i18n.js.map"
                 }
               }
             },
@@ -9051,7 +9015,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/coynverter.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/coynverter.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9068,7 +9032,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/coynverter.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/coynverter.js.map"
                 }
               }
             },
@@ -9077,7 +9041,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/session.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/session.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9094,7 +9058,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/session.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/session.js.map"
                 }
               }
             },
@@ -9103,7 +9067,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/handlebars.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/handlebars.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9120,7 +9084,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/handlebars.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/handlebars.js.map"
                 }
               }
             },
@@ -9129,7 +9093,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/stylus.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/stylus.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9146,7 +9110,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/stylus.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/stylus.js.map"
                 }
               }
             },
@@ -9155,7 +9119,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_accounts-ui-bootstrap-3.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_accounts-ui-bootstrap-3.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9172,7 +9136,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_accounts-ui-bootstrap-3.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_accounts-ui-bootstrap-3.js.map"
                 }
               }
             },
@@ -9181,7 +9145,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/dburles_collection-helpers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/dburles_collection-helpers.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9198,7 +9162,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/dburles_collection-helpers.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/dburles_collection-helpers.js.map"
                 }
               }
             },
@@ -9207,7 +9171,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9224,7 +9188,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4.js.map"
                 }
               }
             },
@@ -9233,7 +9197,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_animation-helper.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_animation-helper.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9250,7 +9214,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_animation-helper.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_animation-helper.js.map"
                 }
               }
             },
@@ -9259,7 +9223,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_template-var.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_template-var.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9276,7 +9240,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_template-var.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/frozeman_template-var.js.map"
                 }
               }
             },
@@ -9285,7 +9249,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/schnie_uploader.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/schnie_uploader.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9302,7 +9266,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/schnie_uploader.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/schnie_uploader.js.map"
                 }
               }
             },
@@ -9311,7 +9275,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_underscore-string-latest.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_underscore-string-latest.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9328,7 +9292,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mrt_underscore-string-latest.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mrt_underscore-string-latest.js.map"
                 }
               }
             },
@@ -9337,7 +9301,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_simple-form.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_simple-form.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9354,7 +9318,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_simple-form.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_simple-form.js.map"
                 }
               }
             },
@@ -9363,7 +9327,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/softwarerero_accounts-t9n.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/softwarerero_accounts-t9n.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9380,7 +9344,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/softwarerero_accounts-t9n.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/softwarerero_accounts-t9n.js.map"
                 }
               }
             },
@@ -9389,7 +9353,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/service-configuration.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/service-configuration.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9406,7 +9370,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/service-configuration.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/service-configuration.js.map"
                 }
               }
             },
@@ -9415,7 +9379,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_accounts-entry.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_accounts-entry.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9432,7 +9396,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_accounts-entry.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/joshowens_accounts-entry.js.map"
                 }
               }
             },
@@ -9441,7 +9405,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_npm.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_npm.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9458,7 +9422,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_npm.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_npm.js.map"
                 }
               }
             },
@@ -9467,7 +9431,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/npm-container.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/npm-container.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9484,7 +9448,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/npm-container.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/npm-container.js.map"
                 }
               }
             },
@@ -9493,7 +9457,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/url.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/url.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9510,7 +9474,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/url.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/url.js.map"
                 }
               }
             },
@@ -9519,7 +9483,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/http.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/http.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9536,7 +9500,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/http.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/http.js.map"
                 }
               }
             },
@@ -9545,7 +9509,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_core.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_core.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9562,7 +9526,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_core.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_core.js.map"
                 }
               }
             },
@@ -9571,7 +9535,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/amplify.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/amplify.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9588,7 +9552,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/amplify.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/amplify.js.map"
                 }
               }
             },
@@ -9597,7 +9561,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9614,7 +9578,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter.js.map"
                 }
               }
             },
@@ -9623,7 +9587,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_shim.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_shim.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9640,7 +9604,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_shim.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_shim.js.map"
                 }
               }
             },
@@ -9649,7 +9613,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mike_mocha.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mike_mocha.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9666,7 +9630,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/mike_mocha.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/mike_mocha.js.map"
                 }
               }
             },
@@ -9675,7 +9639,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sanjo_jasmine.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sanjo_jasmine.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9692,7 +9656,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/sanjo_jasmine.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/sanjo_jasmine.js.map"
                 }
               }
             },
@@ -9701,7 +9665,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira-binary-deps.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira-binary-deps.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9718,7 +9682,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira-binary-deps.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira-binary-deps.js.map"
                 }
               }
             },
@@ -9727,7 +9691,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_meteorx.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_meteorx.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9744,7 +9708,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_meteorx.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_meteorx.js.map"
                 }
               }
             },
@@ -9753,7 +9717,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9770,7 +9734,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_kadira.js.map"
                 }
               }
             },
@@ -9779,7 +9743,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/autoupdate.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/autoupdate.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9796,7 +9760,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/autoupdate.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/autoupdate.js.map"
                 }
               }
             },
@@ -9805,7 +9769,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteor-platform.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteor-platform.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9822,7 +9786,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteor-platform.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteor-platform.js.map"
                 }
               }
             },
@@ -9831,7 +9795,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_async.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_async.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9848,7 +9812,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_async.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/meteorhacks_async.js.map"
                 }
               }
             },
@@ -9857,7 +9821,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/webapp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/webapp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9874,7 +9838,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/webapp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/webapp.js.map"
                 }
               }
             },
@@ -9883,7 +9847,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/spacebars.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/spacebars.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9900,7 +9864,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/spacebars.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/spacebars.js.map"
                 }
               }
             },
@@ -9909,7 +9873,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/launch-screen.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/launch-screen.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -9926,7 +9890,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/launch-screen.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/launch-screen.js.map"
                 }
               }
             },
@@ -9935,7 +9899,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/global-imports.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/global-imports.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -9951,7 +9915,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -9967,7 +9931,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -9983,7 +9947,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/dashboard/dashboard.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/dashboard/dashboard.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -9999,7 +9963,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10015,7 +9979,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/login/login.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/login/login.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10031,7 +9995,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bankaccounts.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bankaccounts.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10047,7 +10011,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoinwallets.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoinwallets.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10063,7 +10027,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.dynamicNodeMenu.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.dynamicNodeMenu.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10079,7 +10043,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.dynamicNodeViews.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.dynamicNodeViews.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10095,7 +10059,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchangeDetails.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchangeDetails.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10111,7 +10075,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchanges.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchanges.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10127,7 +10091,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/newBankAccount.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/newBankAccount.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10143,7 +10107,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.newBitcoinWallet.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/template.newBitcoinWallet.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10159,7 +10123,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/newExchange.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/newExchange.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10175,7 +10139,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/nodes.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/nodes.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10191,7 +10155,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/overview.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/overview.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10207,7 +10171,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/newTransaction.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/newTransaction.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10223,7 +10187,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10239,7 +10203,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10255,7 +10219,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/footer.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/footer.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10271,7 +10235,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/header.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/header.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10287,7 +10251,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/index.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/index.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10303,7 +10267,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/loading.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/loading.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10319,7 +10283,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/notFound.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/notFound.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10335,7 +10299,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/transition.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/transition.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10351,7 +10315,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/collapse.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/collapse.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10367,7 +10331,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/dropdown.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/dropdown.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10383,7 +10347,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/modal.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/modal.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10399,7 +10363,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/tooltip.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/tooltip.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10415,7 +10379,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/popover.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/popover.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10431,7 +10395,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/carousel.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/carousel.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10447,7 +10411,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/affix.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/affix.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10463,7 +10427,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/alert.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/alert.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10479,7 +10443,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/button.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/button.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10495,7 +10459,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/scrollspy.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/scrollspy.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10511,7 +10475,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/tab.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/bootstrap/js/tab.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10527,7 +10491,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/lib/jquery/table-fixed-header.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/lib/jquery/table-fixed-header.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10543,7 +10507,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/de.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/de.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10560,7 +10524,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/de.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/de.coffee.js.map"
                 }
               }
             },
@@ -10569,7 +10533,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/en.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/en.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10586,7 +10550,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/en.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/langs/en.coffee.js.map"
                 }
               }
             },
@@ -10595,7 +10559,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangeRateTool.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangeRateTool.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10612,7 +10576,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangeRateTool.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangeRateTool.coffee.js.map"
                 }
               }
             },
@@ -10621,7 +10585,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangerates.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangerates.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10638,7 +10602,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangerates.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/lib/exchangerates.coffee.js.map"
                 }
               }
             },
@@ -10647,7 +10611,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10664,7 +10628,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.coffee.js.map"
                 }
               }
             },
@@ -10673,7 +10637,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/collection-behaviours.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10689,7 +10653,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/config.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/config.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10706,7 +10670,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/lib/config.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/lib/config.coffee.js.map"
                 }
               }
             },
@@ -10715,7 +10679,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/addBitcoinAddress.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/addBitcoinAddress.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10731,7 +10695,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10747,7 +10711,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10764,7 +10728,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.coffee.js.map"
                 }
               }
             },
@@ -10773,7 +10737,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/home/home.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10789,7 +10753,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bankaccounts.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bankaccounts.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10805,7 +10769,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoinwallets.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/bitcoinwallets.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10821,7 +10785,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchanges.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/exchanges.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10837,7 +10801,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/nodes.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/nodes/nodes.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10853,7 +10817,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10870,7 +10834,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.coffee.js.map"
                 }
               }
             },
@@ -10879,7 +10843,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/trades/trades.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10895,7 +10859,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10912,7 +10876,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.coffee.js.map"
                 }
               }
             },
@@ -10921,7 +10885,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/transfers/transfers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10937,7 +10901,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/router/config.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/router/config.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10954,7 +10918,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/router/config.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/router/config.coffee.js.map"
                 }
               }
             },
@@ -10963,7 +10927,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/views/header.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/views/header.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -10979,7 +10943,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -10996,7 +10960,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.coffee.js.map"
                 }
               }
             },
@@ -11005,7 +10969,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/trades/trades.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11021,7 +10985,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11038,7 +11002,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.coffee.js.map"
                 }
               }
             },
@@ -11047,7 +11011,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/transfers/transfers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11063,7 +11027,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11080,7 +11044,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.coffee.js.map"
                 }
               }
             },
@@ -11089,7 +11053,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/helpers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11105,7 +11069,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/client/subscriptions.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/client/subscriptions.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11121,7 +11085,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11138,7 +11102,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.coffee.js.map"
                 }
               }
             },
@@ -11147,7 +11111,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bankaccounts.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11163,7 +11127,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11180,7 +11144,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.coffee.js.map"
                 }
               }
             },
@@ -11189,7 +11153,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinaddresses.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11205,7 +11169,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11222,7 +11186,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.coffee.js.map"
                 }
               }
             },
@@ -11231,7 +11195,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/bitcoinwallets.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11247,7 +11211,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11264,7 +11228,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.coffee.js.map"
                 }
               }
             },
@@ -11273,7 +11237,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/models/exchanges.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11289,7 +11253,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/routes.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/routes.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11306,7 +11270,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/routes.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/routes.coffee.js.map"
                 }
               }
             },
@@ -11315,7 +11279,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11332,7 +11296,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map"
                 }
               }
             },
@@ -11341,7 +11305,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11357,7 +11321,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11373,7 +11337,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11389,7 +11353,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11405,7 +11369,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11421,7 +11385,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11437,7 +11401,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11453,7 +11417,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11469,7 +11433,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11485,7 +11449,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/velocity_logo.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/velocity_logo.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11501,7 +11465,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/velocity_cog.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/velocity_cog.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11517,7 +11481,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/icon-time.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/packages/velocity_html-reporter/lib/icon-time.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11533,7 +11497,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/.gitignore"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/.gitignore"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11549,7 +11513,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/favicon.ico"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/favicon.ico"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11565,7 +11529,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/fonts/FontAwesome.otf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/fonts/FontAwesome.otf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11581,7 +11545,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11597,7 +11561,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11613,7 +11577,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11629,7 +11593,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/fonts/fontawesome-webfont.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11645,7 +11609,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/coyno-logo.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/coyno-logo.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11661,7 +11625,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/exchange-icon-default.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/exchange-icon-default.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11677,7 +11641,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/exchange-icon-default2.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/exchange-icon-default2.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11693,7 +11657,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/graph.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/graph.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11709,7 +11673,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/table-hover.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/table-hover.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11725,7 +11689,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/wallet-icon-default.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/wallet-icon-default.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11741,7 +11705,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/external-logos/Bitstamp_logo.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/external-logos/Bitstamp_logo.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11757,7 +11721,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.browser/app/img/external-logos/Kraken-logo.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.browser/app/img/external-logos/Kraken-logo.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -11773,7 +11737,7 @@ var packageMetadata = {
               "members": {
                 "content": {
                   "type": "constant",
-                  "value": "{\"manifest\":[{\"path\":\"packages/underscore.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/underscore.js?0a80a8623e1b40b5df5a05582f288ddd586eaa18\",\"sourceMap\":\"packages/underscore.js.map\",\"sourceMapUrl\":\"/packages/0a80a8623e1b40b5df5a05582f288ddd586eaa18.map\",\"size\":150686,\"hash\":\"0a80a8623e1b40b5df5a05582f288ddd586eaa18\"},{\"path\":\"packages/meteor.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor.js?61916b1060b33931a21f104fbffb67c2f3d493c5\",\"sourceMap\":\"packages/meteor.js.map\",\"sourceMapUrl\":\"/packages/61916b1060b33931a21f104fbffb67c2f3d493c5.map\",\"size\":108989,\"hash\":\"61916b1060b33931a21f104fbffb67c2f3d493c5\"},{\"path\":\"packages/standard-app-packages.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/standard-app-packages.js?be7072e6abfda638502b63fa0f809c85c8c2b8ed\",\"sourceMap\":\"packages/standard-app-packages.js.map\",\"sourceMapUrl\":\"/packages/be7072e6abfda638502b63fa0f809c85c8c2b8ed.map\",\"size\":1306,\"hash\":\"be7072e6abfda638502b63fa0f809c85c8c2b8ed\"},{\"path\":\"packages/coffeescript.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coffeescript.js?969f68786bbc68e6cad299e74922a53af3d1404b\",\"sourceMap\":\"packages/coffeescript.js.map\",\"sourceMapUrl\":\"/packages/969f68786bbc68e6cad299e74922a53af3d1404b.map\",\"size\":1294,\"hash\":\"969f68786bbc68e6cad299e74922a53af3d1404b\"},{\"path\":\"packages/less.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/less.js?7d1bf981a25a449d6270558bcfc983313c40cd26\",\"sourceMap\":\"packages/less.js.map\",\"sourceMapUrl\":\"/packages/7d1bf981a25a449d6270558bcfc983313c40cd26.map\",\"size\":1286,\"hash\":\"7d1bf981a25a449d6270558bcfc983313c40cd26\"},{\"path\":\"packages/random.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/random.js?fe7b46080c91ce482acf6fc326afbc5b176f0502\",\"sourceMap\":\"packages/random.js.map\",\"sourceMapUrl\":\"/packages/fe7b46080c91ce482acf6fc326afbc5b176f0502.map\",\"size\":24099,\"hash\":\"fe7b46080c91ce482acf6fc326afbc5b176f0502\"},{\"path\":\"packages/localstorage.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/localstorage.js?9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\",\"sourceMap\":\"packages/localstorage.js.map\",\"sourceMapUrl\":\"/packages/9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c.map\",\"size\":7092,\"hash\":\"9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\"},{\"path\":\"packages/tracker.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/tracker.js?192a05cc46b867dadbe8bf90dd961f6f8fd1574f\",\"sourceMap\":\"packages/tracker.js.map\",\"sourceMapUrl\":\"/packages/192a05cc46b867dadbe8bf90dd961f6f8fd1574f.map\",\"size\":66854,\"hash\":\"192a05cc46b867dadbe8bf90dd961f6f8fd1574f\"},{\"path\":\"packages/json.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/json.js?e22856eae714c681199eabc5c0710b904b125554\",\"sourceMap\":\"packages/json.js.map\",\"sourceMapUrl\":\"/packages/e22856eae714c681199eabc5c0710b904b125554.map\",\"size\":58343,\"hash\":\"e22856eae714c681199eabc5c0710b904b125554\"},{\"path\":\"packages/base64.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/base64.js?1a63019243b73298e2964e6d4680f25bca657726\",\"sourceMap\":\"packages/base64.js.map\",\"sourceMapUrl\":\"/packages/1a63019243b73298e2964e6d4680f25bca657726.map\",\"size\":15685,\"hash\":\"1a63019243b73298e2964e6d4680f25bca657726\"},{\"path\":\"packages/ejson.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ejson.js?71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\",\"sourceMap\":\"packages/ejson.js.map\",\"sourceMapUrl\":\"/packages/71047b64b5196348bdbe5fd5eea9ac97a5a9eb14.map\",\"size\":81471,\"hash\":\"71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\"},{\"path\":\"packages/check.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/check.js?803a2be518a0c6c3949e45cf65c4ad627a3d603a\",\"sourceMap\":\"packages/check.js.map\",\"sourceMapUrl\":\"/packages/803a2be518a0c6c3949e45cf65c4ad627a3d603a.map\",\"size\":35207,\"hash\":\"803a2be518a0c6c3949e45cf65c4ad627a3d603a\"},{\"path\":\"packages/logging.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/logging.js?07e201b648f16be8435a4f666156995eeda0c750\",\"sourceMap\":\"packages/logging.js.map\",\"sourceMapUrl\":\"/packages/07e201b648f16be8435a4f666156995eeda0c750.map\",\"size\":27996,\"hash\":\"07e201b648f16be8435a4f666156995eeda0c750\"},{\"path\":\"packages/retry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/retry.js?1f1dd2c35d300110fdaba51ce4473583bc3bf031\",\"sourceMap\":\"packages/retry.js.map\",\"sourceMapUrl\":\"/packages/1f1dd2c35d300110fdaba51ce4473583bc3bf031.map\",\"size\":7245,\"hash\":\"1f1dd2c35d300110fdaba51ce4473583bc3bf031\"},{\"path\":\"packages/reload.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reload.js?da8974b7231dd8c0caccb5f322dcf97329d486d1\",\"sourceMap\":\"packages/reload.js.map\",\"sourceMapUrl\":\"/packages/da8974b7231dd8c0caccb5f322dcf97329d486d1.map\",\"size\":25926,\"hash\":\"da8974b7231dd8c0caccb5f322dcf97329d486d1\"},{\"path\":\"packages/id-map.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/id-map.js?9ea6eaae8d74693ce2505a858d9a5e60cf191298\",\"sourceMap\":\"packages/id-map.js.map\",\"sourceMapUrl\":\"/packages/9ea6eaae8d74693ce2505a858d9a5e60cf191298.map\",\"size\":8584,\"hash\":\"9ea6eaae8d74693ce2505a858d9a5e60cf191298\"},{\"path\":\"packages/ordered-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ordered-dict.js?bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\",\"sourceMap\":\"packages/ordered-dict.js.map\",\"sourceMapUrl\":\"/packages/bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37.map\",\"size\":20395,\"hash\":\"bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\"},{\"path\":\"packages/geojson-utils.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/geojson-utils.js?81b79d5cf96d00b4b7a28987debcffb665c17526\",\"sourceMap\":\"packages/geojson-utils.js.map\",\"sourceMapUrl\":\"/packages/81b79d5cf96d00b4b7a28987debcffb665c17526.map\",\"size\":48339,\"hash\":\"81b79d5cf96d00b4b7a28987debcffb665c17526\"},{\"path\":\"packages/minimongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/minimongo.js?9adf0102ce60b3df01914155826e1661f636e91d\",\"sourceMap\":\"packages/minimongo.js.map\",\"sourceMapUrl\":\"/packages/9adf0102ce60b3df01914155826e1661f636e91d.map\",\"size\":455764,\"hash\":\"9adf0102ce60b3df01914155826e1661f636e91d\"},{\"path\":\"packages/ddp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ddp.js?1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\",\"sourceMap\":\"packages/ddp.js.map\",\"sourceMapUrl\":\"/packages/1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2.map\",\"size\":616556,\"hash\":\"1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\"},{\"path\":\"packages/follower-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/follower-livedata.js?74156c6baa89da861fc4ddb58ef158eac71e58e0\",\"sourceMap\":\"packages/follower-livedata.js.map\",\"sourceMapUrl\":\"/packages/74156c6baa89da861fc4ddb58ef158eac71e58e0.map\",\"size\":1490,\"hash\":\"74156c6baa89da861fc4ddb58ef158eac71e58e0\"},{\"path\":\"packages/application-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/application-configuration.js?dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\",\"sourceMap\":\"packages/application-configuration.js.map\",\"sourceMapUrl\":\"/packages/dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f.map\",\"size\":1485,\"hash\":\"dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\"},{\"path\":\"packages/mongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo.js?9bc2c5a8b2796fab86b51660ca643e5a49a30c84\",\"sourceMap\":\"packages/mongo.js.map\",\"sourceMapUrl\":\"/packages/9bc2c5a8b2796fab86b51660ca643e5a49a30c84.map\",\"size\":146178,\"hash\":\"9bc2c5a8b2796fab86b51660ca643e5a49a30c84\"},{\"path\":\"packages/jquery.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/jquery.js?265926494aaa3929cd2e30da265211c5929f37a4\",\"sourceMap\":\"packages/jquery.js.map\",\"sourceMapUrl\":\"/packages/265926494aaa3929cd2e30da265211c5929f37a4.map\",\"size\":1295407,\"hash\":\"265926494aaa3929cd2e30da265211c5929f37a4\"},{\"path\":\"packages/deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/deps.js?504589e1e9585dec8f9f6094e5a87b22de3783a1\",\"sourceMap\":\"packages/deps.js.map\",\"sourceMapUrl\":\"/packages/504589e1e9585dec8f9f6094e5a87b22de3783a1.map\",\"size\":1442,\"hash\":\"504589e1e9585dec8f9f6094e5a87b22de3783a1\"},{\"path\":\"packages/htmljs.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/htmljs.js?539b5fc23cf5e63bc8e324543a1026b138316a8c\",\"sourceMap\":\"packages/htmljs.js.map\",\"sourceMapUrl\":\"/packages/539b5fc23cf5e63bc8e324543a1026b138316a8c.map\",\"size\":110444,\"hash\":\"539b5fc23cf5e63bc8e324543a1026b138316a8c\"},{\"path\":\"packages/observe-sequence.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/observe-sequence.js?2fd807ea171ead273b9e6458607cb226012d9240\",\"sourceMap\":\"packages/observe-sequence.js.map\",\"sourceMapUrl\":\"/packages/2fd807ea171ead273b9e6458607cb226012d9240.map\",\"size\":30271,\"hash\":\"2fd807ea171ead273b9e6458607cb226012d9240\"},{\"path\":\"packages/reactive-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-var.js?20335b7b37165980ddd9f23943b2e5b00aae1cc2\",\"sourceMap\":\"packages/reactive-var.js.map\",\"sourceMapUrl\":\"/packages/20335b7b37165980ddd9f23943b2e5b00aae1cc2.map\",\"size\":13963,\"hash\":\"20335b7b37165980ddd9f23943b2e5b00aae1cc2\"},{\"path\":\"packages/blaze.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/blaze.js?77c0809654ee3a10dcd5a4f961fb1437e7957d33\",\"sourceMap\":\"packages/blaze.js.map\",\"sourceMapUrl\":\"/packages/77c0809654ee3a10dcd5a4f961fb1437e7957d33.map\",\"size\":385864,\"hash\":\"77c0809654ee3a10dcd5a4f961fb1437e7957d33\"},{\"path\":\"packages/accounts-base.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-base.js?6ed32803c332f93f65e36a195f42e58a62ed028d\",\"sourceMap\":\"packages/accounts-base.js.map\",\"sourceMapUrl\":\"/packages/6ed32803c332f93f65e36a195f42e58a62ed028d.map\",\"size\":108969,\"hash\":\"6ed32803c332f93f65e36a195f42e58a62ed028d\"},{\"path\":\"packages/sha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sha.js?65ef52f7221944768bfc2049d6b7e163c8ae2615\",\"sourceMap\":\"packages/sha.js.map\",\"sourceMapUrl\":\"/packages/65ef52f7221944768bfc2049d6b7e163c8ae2615.map\",\"size\":19584,\"hash\":\"65ef52f7221944768bfc2049d6b7e163c8ae2615\"},{\"path\":\"packages/srp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/srp.js?e2e28156e8c912d504a3586351c8a1119f664cfd\",\"sourceMap\":\"packages/srp.js.map\",\"sourceMapUrl\":\"/packages/e2e28156e8c912d504a3586351c8a1119f664cfd.map\",\"size\":173470,\"hash\":\"e2e28156e8c912d504a3586351c8a1119f664cfd\"},{\"path\":\"packages/accounts-password.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-password.js?6c517b689e15ab07dd443895b7ed801683dda159\",\"sourceMap\":\"packages/accounts-password.js.map\",\"sourceMapUrl\":\"/packages/6c517b689e15ab07dd443895b7ed801683dda159.map\",\"size\":33053,\"hash\":\"6c517b689e15ab07dd443895b7ed801683dda159\"},{\"path\":\"packages/aldeed_simple-schema.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_simple-schema.js?f9f115ce8032ac525bc2dde8cca4ab5937f22441\",\"sourceMap\":\"packages/aldeed_simple-schema.js.map\",\"sourceMapUrl\":\"/packages/f9f115ce8032ac525bc2dde8cca4ab5937f22441.map\",\"size\":472789,\"hash\":\"f9f115ce8032ac525bc2dde8cca4ab5937f22441\"},{\"path\":\"packages/mongo-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo-livedata.js?e6ebca489f38b73788b494509a4f83d87fdbf6c0\",\"sourceMap\":\"packages/mongo-livedata.js.map\",\"sourceMapUrl\":\"/packages/e6ebca489f38b73788b494509a4f83d87fdbf6c0.map\",\"size\":1299,\"hash\":\"e6ebca489f38b73788b494509a4f83d87fdbf6c0\"},{\"path\":\"packages/aldeed_collection2.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_collection2.js?525ba7d2b38809f4b3de1e552fabb647d8fc56ae\",\"sourceMap\":\"packages/aldeed_collection2.js.map\",\"sourceMapUrl\":\"/packages/525ba7d2b38809f4b3de1e552fabb647d8fc56ae.map\",\"size\":69751,\"hash\":\"525ba7d2b38809f4b3de1e552fabb647d8fc56ae\"},{\"path\":\"packages/matb33_collection-hooks.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/matb33_collection-hooks.js?abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\",\"sourceMap\":\"packages/matb33_collection-hooks.js.map\",\"sourceMapUrl\":\"/packages/abfb68ba8623e56062a2b978bd0b4a1827b8e1c6.map\",\"size\":72184,\"hash\":\"abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\"},{\"path\":\"packages/sewdn_collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sewdn_collection-behaviours.js?139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\",\"sourceMap\":\"packages/sewdn_collection-behaviours.js.map\",\"sourceMapUrl\":\"/packages/139fdbdf5bd43d975e2c4d39d5a18962e0dcc028.map\",\"size\":25546,\"hash\":\"139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\"},{\"path\":\"packages/dsyko_node-csv-npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dsyko_node-csv-npm.js?dd174f021d8a59fe74f62712fd862c28da24e627\",\"sourceMap\":\"packages/dsyko_node-csv-npm.js.map\",\"sourceMapUrl\":\"/packages/dd174f021d8a59fe74f62712fd862c28da24e627.map\",\"size\":1303,\"hash\":\"dd174f021d8a59fe74f62712fd862c28da24e627\"},{\"path\":\"packages/lepozepo_accounting.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/lepozepo_accounting.js?42604caee2e288664538035c00bc428b24993f06\",\"sourceMap\":\"packages/lepozepo_accounting.js.map\",\"sourceMapUrl\":\"/packages/42604caee2e288664538035c00bc428b24993f06.map\",\"size\":48023,\"hash\":\"42604caee2e288664538035c00bc428b24993f06\"},{\"path\":\"packages/ui.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ui.js?5a663333fd30f8fd913f110e0ef779e84f67c4b8\",\"sourceMap\":\"packages/ui.js.map\",\"sourceMapUrl\":\"/packages/5a663333fd30f8fd913f110e0ef779e84f67c4b8.map\",\"size\":1529,\"hash\":\"5a663333fd30f8fd913f110e0ef779e84f67c4b8\"},{\"path\":\"packages/templating.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/templating.js?599ba307216da826d8b335332ebcc9a497a369a0\",\"sourceMap\":\"packages/templating.js.map\",\"sourceMapUrl\":\"/packages/599ba307216da826d8b335332ebcc9a497a369a0.map\",\"size\":11910,\"hash\":\"599ba307216da826d8b335332ebcc9a497a369a0\"},{\"path\":\"packages/iron_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_core.js?d966a1f70c94792fd94c8a155bdbef9bec5e0047\",\"sourceMap\":\"packages/iron_core.js.map\",\"sourceMapUrl\":\"/packages/d966a1f70c94792fd94c8a155bdbef9bec5e0047.map\",\"size\":32915,\"hash\":\"d966a1f70c94792fd94c8a155bdbef9bec5e0047\"},{\"path\":\"packages/iron_dynamic-template.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_dynamic-template.js?4d8240a576804301368600b388b97065770c2964\",\"sourceMap\":\"packages/iron_dynamic-template.js.map\",\"sourceMapUrl\":\"/packages/4d8240a576804301368600b388b97065770c2964.map\",\"size\":85060,\"hash\":\"4d8240a576804301368600b388b97065770c2964\"},{\"path\":\"packages/iron_layout.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_layout.js?4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\",\"sourceMap\":\"packages/iron_layout.js.map\",\"sourceMapUrl\":\"/packages/4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062.map\",\"size\":62058,\"hash\":\"4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\"},{\"path\":\"packages/iron_url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_url.js?271d2b23f8542769347738353a73f77c63859e8e\",\"sourceMap\":\"packages/iron_url.js.map\",\"sourceMapUrl\":\"/packages/271d2b23f8542769347738353a73f77c63859e8e.map\",\"size\":65852,\"hash\":\"271d2b23f8542769347738353a73f77c63859e8e\"},{\"path\":\"packages/iron_middleware-stack.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_middleware-stack.js?bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\",\"sourceMap\":\"packages/iron_middleware-stack.js.map\",\"sourceMapUrl\":\"/packages/bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c.map\",\"size\":45589,\"hash\":\"bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\"},{\"path\":\"packages/iron_location.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_location.js?0434907da386df80b0a769a8c4decc5374a3fdb6\",\"sourceMap\":\"packages/iron_location.js.map\",\"sourceMapUrl\":\"/packages/0434907da386df80b0a769a8c4decc5374a3fdb6.map\",\"size\":51357,\"hash\":\"0434907da386df80b0a769a8c4decc5374a3fdb6\"},{\"path\":\"packages/reactive-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-dict.js?6b25309b1f0dcf775b44984324878d6f8ad1abc2\",\"sourceMap\":\"packages/reactive-dict.js.map\",\"sourceMapUrl\":\"/packages/6b25309b1f0dcf775b44984324878d6f8ad1abc2.map\",\"size\":19802,\"hash\":\"6b25309b1f0dcf775b44984324878d6f8ad1abc2\"},{\"path\":\"packages/iron_controller.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_controller.js?c4a074a0f421ce052a59282e7eae64f7049061cb\",\"sourceMap\":\"packages/iron_controller.js.map\",\"sourceMapUrl\":\"/packages/c4a074a0f421ce052a59282e7eae64f7049061cb.map\",\"size\":41091,\"hash\":\"c4a074a0f421ce052a59282e7eae64f7049061cb\"},{\"path\":\"packages/iron_router.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_router.js?c45f7b94d616b48432e190827a3ca76d48e51e9d\",\"sourceMap\":\"packages/iron_router.js.map\",\"sourceMapUrl\":\"/packages/c45f7b94d616b48432e190827a3ca76d48e51e9d.map\",\"size\":213337,\"hash\":\"c45f7b94d616b48432e190827a3ca76d48e51e9d\"},{\"path\":\"packages/mquandalle_jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mquandalle_jade.js?4ef76f2755f391c688ce8f0925fe8c8eee38b45b\",\"sourceMap\":\"packages/mquandalle_jade.js.map\",\"sourceMapUrl\":\"/packages/4ef76f2755f391c688ce8f0925fe8c8eee38b45b.map\",\"size\":1300,\"hash\":\"4ef76f2755f391c688ce8f0925fe8c8eee38b45b\"},{\"path\":\"packages/cmather_handlebars-server.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/cmather_handlebars-server.js?c6447646a77dd2f090e33422fff58fbec1bbd4f6\",\"sourceMap\":\"packages/cmather_handlebars-server.js.map\",\"sourceMapUrl\":\"/packages/c6447646a77dd2f090e33422fff58fbec1bbd4f6.map\",\"size\":1310,\"hash\":\"c6447646a77dd2f090e33422fff58fbec1bbd4f6\"},{\"path\":\"packages/livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/livedata.js?718526445deb4d9baacb6d92c551adea1d36c1e1\",\"sourceMap\":\"packages/livedata.js.map\",\"sourceMapUrl\":\"/packages/718526445deb4d9baacb6d92c551adea1d36c1e1.map\",\"size\":1413,\"hash\":\"718526445deb4d9baacb6d92c551adea1d36c1e1\"},{\"path\":\"packages/mrt_moment.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_moment.js?d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\",\"sourceMap\":\"packages/mrt_moment.js.map\",\"sourceMapUrl\":\"/packages/d7e4a40c3c8d0a0bbca78591d0b5385f3271212c.map\",\"size\":359656,\"hash\":\"d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\"},{\"path\":\"packages/aldeed_autoform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_autoform.js?fc95d300f7b6799e218f18c0f53d0525f033a36b\",\"sourceMap\":\"packages/aldeed_autoform.js.map\",\"sourceMapUrl\":\"/packages/fc95d300f7b6799e218f18c0f53d0525f033a36b.map\",\"size\":946753,\"hash\":\"fc95d300f7b6799e218f18c0f53d0525f033a36b\"},{\"path\":\"packages/nemo64_bootstrap-data.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap-data.js?5668c42202b40f6c6ea45d87def47b9c6ced760c\",\"sourceMap\":\"packages/nemo64_bootstrap-data.js.map\",\"sourceMapUrl\":\"/packages/5668c42202b40f6c6ea45d87def47b9c6ced760c.map\",\"size\":1388,\"hash\":\"5668c42202b40f6c6ea45d87def47b9c6ced760c\"},{\"path\":\"packages/nemo64_bootstrap.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap.js?ec67e21097838440b595b9cec9f3aca5493efadb\",\"sourceMap\":\"packages/nemo64_bootstrap.js.map\",\"sourceMapUrl\":\"/packages/ec67e21097838440b595b9cec9f3aca5493efadb.map\",\"size\":1431,\"hash\":\"ec67e21097838440b595b9cec9f3aca5493efadb\"},{\"path\":\"packages/mrt_just-i18n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_just-i18n.js?00ef34010e8078ed4af7d04538cb972aa3c401b2\",\"sourceMap\":\"packages/mrt_just-i18n.js.map\",\"sourceMapUrl\":\"/packages/00ef34010e8078ed4af7d04538cb972aa3c401b2.map\",\"size\":11114,\"hash\":\"00ef34010e8078ed4af7d04538cb972aa3c401b2\"},{\"path\":\"packages/coynverter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coynverter.js?0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\",\"sourceMap\":\"packages/coynverter.js.map\",\"sourceMapUrl\":\"/packages/0b9021728ffb7f3419b11d8d72b79e6c95d9ae21.map\",\"size\":23066,\"hash\":\"0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\"},{\"path\":\"packages/session.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/session.js?e436deefadc999c21b6fd16e8e1ecce55c3c3a55\",\"sourceMap\":\"packages/session.js.map\",\"sourceMapUrl\":\"/packages/e436deefadc999c21b6fd16e8e1ecce55c3c3a55.map\",\"size\":6497,\"hash\":\"e436deefadc999c21b6fd16e8e1ecce55c3c3a55\"},{\"path\":\"packages/handlebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/handlebars.js?038145b6256cd6a69c11650ed6bf12b093920095\",\"sourceMap\":\"packages/handlebars.js.map\",\"sourceMapUrl\":\"/packages/038145b6256cd6a69c11650ed6bf12b093920095.map\",\"size\":1292,\"hash\":\"038145b6256cd6a69c11650ed6bf12b093920095\"},{\"path\":\"packages/stylus.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/stylus.js?48b7e3e0953c004a73211d7489462e73ed11be2c\",\"sourceMap\":\"packages/stylus.js.map\",\"sourceMapUrl\":\"/packages/48b7e3e0953c004a73211d7489462e73ed11be2c.map\",\"size\":1288,\"hash\":\"48b7e3e0953c004a73211d7489462e73ed11be2c\"},{\"path\":\"packages/mrt_accounts-ui-bootstrap-3.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_accounts-ui-bootstrap-3.js?fe856a7bc2293ae4b81c6969339c1fd98f095c19\",\"sourceMap\":\"packages/mrt_accounts-ui-bootstrap-3.js.map\",\"sourceMapUrl\":\"/packages/fe856a7bc2293ae4b81c6969339c1fd98f095c19.map\",\"size\":232647,\"hash\":\"fe856a7bc2293ae4b81c6969339c1fd98f095c19\"},{\"path\":\"packages/dburles_collection-helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dburles_collection-helpers.js?10b8845e36a7fe0526609cd1095b7dae30b9ed8e\",\"sourceMap\":\"packages/dburles_collection-helpers.js.map\",\"sourceMapUrl\":\"/packages/10b8845e36a7fe0526609cd1095b7dae30b9ed8e.map\",\"size\":3586,\"hash\":\"10b8845e36a7fe0526609cd1095b7dae30b9ed8e\"},{\"path\":\"packages/chrismbeckett_fontawesome4.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/chrismbeckett_fontawesome4.js?71dfaef8a91211745b1155d8b1686056c03f1a11\",\"sourceMap\":\"packages/chrismbeckett_fontawesome4.js.map\",\"sourceMapUrl\":\"/packages/71dfaef8a91211745b1155d8b1686056c03f1a11.map\",\"size\":1311,\"hash\":\"71dfaef8a91211745b1155d8b1686056c03f1a11\"},{\"path\":\"packages/frozeman_animation-helper.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_animation-helper.js?0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\",\"sourceMap\":\"packages/frozeman_animation-helper.js.map\",\"sourceMapUrl\":\"/packages/0e877c6fc99752c26d27dc1bbdfb3e86789bd7de.map\",\"size\":22353,\"hash\":\"0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\"},{\"path\":\"packages/frozeman_template-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_template-var.js?81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\",\"sourceMap\":\"packages/frozeman_template-var.js.map\",\"sourceMapUrl\":\"/packages/81a1223364e51eb7b4c2c1b0345b7ac3b8a52516.map\",\"size\":16437,\"hash\":\"81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\"},{\"path\":\"packages/schnie_uploader.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/schnie_uploader.js?710e32818e58766bd55225265a0370585912110f\",\"sourceMap\":\"packages/schnie_uploader.js.map\",\"sourceMapUrl\":\"/packages/710e32818e58766bd55225265a0370585912110f.map\",\"size\":27387,\"hash\":\"710e32818e58766bd55225265a0370585912110f\"},{\"path\":\"packages/mrt_underscore-string-latest.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_underscore-string-latest.js?a38ecc39a67ea4036d5d875dd102f3d8ad73174d\",\"sourceMap\":\"packages/mrt_underscore-string-latest.js.map\",\"sourceMapUrl\":\"/packages/a38ecc39a67ea4036d5d875dd102f3d8ad73174d.map\",\"size\":84515,\"hash\":\"a38ecc39a67ea4036d5d875dd102f3d8ad73174d\"},{\"path\":\"packages/joshowens_simple-form.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_simple-form.js?74dda2543f961a8ea549a1e28025d74940c271a0\",\"sourceMap\":\"packages/joshowens_simple-form.js.map\",\"sourceMapUrl\":\"/packages/74dda2543f961a8ea549a1e28025d74940c271a0.map\",\"size\":51039,\"hash\":\"74dda2543f961a8ea549a1e28025d74940c271a0\"},{\"path\":\"packages/softwarerero_accounts-t9n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/softwarerero_accounts-t9n.js?d2d8d1d115a4cb8262d753882e538fc83571d960\",\"sourceMap\":\"packages/softwarerero_accounts-t9n.js.map\",\"sourceMapUrl\":\"/packages/d2d8d1d115a4cb8262d753882e538fc83571d960.map\",\"size\":105833,\"hash\":\"d2d8d1d115a4cb8262d753882e538fc83571d960\"},{\"path\":\"packages/service-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/service-configuration.js?262da6fb1e9c97be84333c429c9a2929c80f8e3b\",\"sourceMap\":\"packages/service-configuration.js.map\",\"sourceMapUrl\":\"/packages/262da6fb1e9c97be84333c429c9a2929c80f8e3b.map\",\"size\":5082,\"hash\":\"262da6fb1e9c97be84333c429c9a2929c80f8e3b\"},{\"path\":\"packages/joshowens_accounts-entry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_accounts-entry.js?372e4dedd3ca315c19714f7ce4882c6868998214\",\"sourceMap\":\"packages/joshowens_accounts-entry.js.map\",\"sourceMapUrl\":\"/packages/372e4dedd3ca315c19714f7ce4882c6868998214.map\",\"size\":150919,\"hash\":\"372e4dedd3ca315c19714f7ce4882c6868998214\"},{\"path\":\"packages/meteorhacks_npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_npm.js?604e35d5437f43224cde2c1f9e5e9aace95a9a95\",\"sourceMap\":\"packages/meteorhacks_npm.js.map\",\"sourceMapUrl\":\"/packages/604e35d5437f43224cde2c1f9e5e9aace95a9a95.map\",\"size\":1300,\"hash\":\"604e35d5437f43224cde2c1f9e5e9aace95a9a95\"},{\"path\":\"packages/npm-container.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/npm-container.js?c4195e22b5a0a7239a415a3d95b3b702c34fa28d\",\"sourceMap\":\"packages/npm-container.js.map\",\"sourceMapUrl\":\"/packages/c4195e22b5a0a7239a415a3d95b3b702c34fa28d.map\",\"size\":1298,\"hash\":\"c4195e22b5a0a7239a415a3d95b3b702c34fa28d\"},{\"path\":\"packages/url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/url.js?2312d739008b2ffa52f13c77c5d6fc59c9e17d56\",\"sourceMap\":\"packages/url.js.map\",\"sourceMapUrl\":\"/packages/2312d739008b2ffa52f13c77c5d6fc59c9e17d56.map\",\"size\":6642,\"hash\":\"2312d739008b2ffa52f13c77c5d6fc59c9e17d56\"},{\"path\":\"packages/http.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/http.js?9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\",\"sourceMap\":\"packages/http.js.map\",\"sourceMapUrl\":\"/packages/9c5d152169ba9a5a57b6b8ec28e64bbd0d308077.map\",\"size\":37036,\"hash\":\"9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\"},{\"path\":\"packages/velocity_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_core.js?1566df70b73d8783eefb275bf28df6fe1a11a039\",\"sourceMap\":\"packages/velocity_core.js.map\",\"sourceMapUrl\":\"/packages/1566df70b73d8783eefb275bf28df6fe1a11a039.map\",\"size\":8724,\"hash\":\"1566df70b73d8783eefb275bf28df6fe1a11a039\"},{\"path\":\"packages/amplify.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/amplify.js?0943ecb804169b991257a319fa92b9e6f34e2d1b\",\"sourceMap\":\"packages/amplify.js.map\",\"sourceMapUrl\":\"/packages/0943ecb804169b991257a319fa92b9e6f34e2d1b.map\",\"size\":88428,\"hash\":\"0943ecb804169b991257a319fa92b9e6f34e2d1b\"},{\"path\":\"packages/velocity_html-reporter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_html-reporter.js?cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\",\"sourceMap\":\"packages/velocity_html-reporter.js.map\",\"sourceMapUrl\":\"/packages/cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d.map\",\"size\":85561,\"hash\":\"cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\"},{\"path\":\"packages/velocity_shim.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_shim.js?35442cb834496e09130fbab3df9f4d5dab5e6f55\",\"sourceMap\":\"packages/velocity_shim.js.map\",\"sourceMapUrl\":\"/packages/35442cb834496e09130fbab3df9f4d5dab5e6f55.map\",\"size\":2360,\"hash\":\"35442cb834496e09130fbab3df9f4d5dab5e6f55\"},{\"path\":\"packages/mike_mocha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mike_mocha.js?71466b37e24701857780026b17754fb447bd6ff3\",\"sourceMap\":\"packages/mike_mocha.js.map\",\"sourceMapUrl\":\"/packages/71466b37e24701857780026b17754fb447bd6ff3.map\",\"size\":1347056,\"hash\":\"71466b37e24701857780026b17754fb447bd6ff3\"},{\"path\":\"packages/sanjo_jasmine.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sanjo_jasmine.js?e9f0d239446c3622819a554cbd32d9556c284350\",\"sourceMap\":\"packages/sanjo_jasmine.js.map\",\"sourceMapUrl\":\"/packages/e9f0d239446c3622819a554cbd32d9556c284350.map\",\"size\":496692,\"hash\":\"e9f0d239446c3622819a554cbd32d9556c284350\"},{\"path\":\"packages/meteorhacks_kadira-binary-deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira-binary-deps.js?a244ee2e16791a2e0fed6ce317583265afab7c0c\",\"sourceMap\":\"packages/meteorhacks_kadira-binary-deps.js.map\",\"sourceMapUrl\":\"/packages/a244ee2e16791a2e0fed6ce317583265afab7c0c.map\",\"size\":1406,\"hash\":\"a244ee2e16791a2e0fed6ce317583265afab7c0c\"},{\"path\":\"packages/meteorhacks_meteorx.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_meteorx.js?afd5ff95b1c1492f60049925f1f827e2b5817bbb\",\"sourceMap\":\"packages/meteorhacks_meteorx.js.map\",\"sourceMapUrl\":\"/packages/afd5ff95b1c1492f60049925f1f827e2b5817bbb.map\",\"size\":1368,\"hash\":\"afd5ff95b1c1492f60049925f1f827e2b5817bbb\"},{\"path\":\"packages/meteorhacks_kadira.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira.js?9ee74fb46169e30c92bbd18945d536af2cb8c65f\",\"sourceMap\":\"packages/meteorhacks_kadira.js.map\",\"sourceMapUrl\":\"/packages/9ee74fb46169e30c92bbd18945d536af2cb8c65f.map\",\"size\":97584,\"hash\":\"9ee74fb46169e30c92bbd18945d536af2cb8c65f\"},{\"path\":\"packages/autoupdate.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/autoupdate.js?c823646e93561d86e6bcb3cbd2457a8540e519c1\",\"sourceMap\":\"packages/autoupdate.js.map\",\"sourceMapUrl\":\"/packages/c823646e93561d86e6bcb3cbd2457a8540e519c1.map\",\"size\":17152,\"hash\":\"c823646e93561d86e6bcb3cbd2457a8540e519c1\"},{\"path\":\"packages/meteor-platform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor-platform.js?499a2f8522e25820b1153c69a92751ccaae507b3\",\"sourceMap\":\"packages/meteor-platform.js.map\",\"sourceMapUrl\":\"/packages/499a2f8522e25820b1153c69a92751ccaae507b3.map\",\"size\":1384,\"hash\":\"499a2f8522e25820b1153c69a92751ccaae507b3\"},{\"path\":\"packages/meteorhacks_async.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_async.js?e687b9e863dc811fb3f313d1c6f237c7a2b1924b\",\"sourceMap\":\"packages/meteorhacks_async.js.map\",\"sourceMapUrl\":\"/packages/e687b9e863dc811fb3f313d1c6f237c7a2b1924b.map\",\"size\":1360,\"hash\":\"e687b9e863dc811fb3f313d1c6f237c7a2b1924b\"},{\"path\":\"packages/webapp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/webapp.js?e1be090051b82f046484dccc2de7d747e50c7328\",\"sourceMap\":\"packages/webapp.js.map\",\"sourceMapUrl\":\"/packages/e1be090051b82f046484dccc2de7d747e50c7328.map\",\"size\":3106,\"hash\":\"e1be090051b82f046484dccc2de7d747e50c7328\"},{\"path\":\"packages/spacebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/spacebars.js?3c496d2950151d744a8574297b46d2763a123bdf\",\"sourceMap\":\"packages/spacebars.js.map\",\"sourceMapUrl\":\"/packages/3c496d2950151d744a8574297b46d2763a123bdf.map\",\"size\":42134,\"hash\":\"3c496d2950151d744a8574297b46d2763a123bdf\"},{\"path\":\"packages/launch-screen.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/launch-screen.js?13e1092ebecdb7208762500188f1dc2dea5603e9\",\"sourceMap\":\"packages/launch-screen.js.map\",\"sourceMapUrl\":\"/packages/13e1092ebecdb7208762500188f1dc2dea5603e9.map\",\"size\":9707,\"hash\":\"13e1092ebecdb7208762500188f1dc2dea5603e9\"},{\"path\":\"packages/global-imports.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/global-imports.js?cc6dc6062d244dad7299e8cb749b4182b5cf9c4b\",\"size\":1545,\"hash\":\"cc6dc6062d244dad7299e8cb749b4182b5cf9c4b\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.jade.js?fbcf18ee1e20649d40cb4b28c5d88932e15208cf\",\"size\":1636,\"hash\":\"fbcf18ee1e20649d40cb4b28c5d88932e15208cf\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js?6e259c55d7f51a60230a48af0d88584d8ad91625\",\"size\":2517,\"hash\":\"6e259c55d7f51a60230a48af0d88584d8ad91625\"},{\"path\":\"app/client/views/dashboard/dashboard.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/dashboard/dashboard.jade.js?e03f28588433337ed8edb2c2207d2d76990a4afd\",\"size\":5423,\"hash\":\"e03f28588433337ed8edb2c2207d2d76990a4afd\"},{\"path\":\"app/client/views/home/home.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.jade.js?44c80a0deae167b74f43d2a84d1a505ecbfffe45\",\"size\":273,\"hash\":\"44c80a0deae167b74f43d2a84d1a505ecbfffe45\"},{\"path\":\"app/client/views/login/login.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/login/login.jade.js?08f5cb6292d23b811162d93cb23768b4950214f9\",\"size\":776,\"hash\":\"08f5cb6292d23b811162d93cb23768b4950214f9\"},{\"path\":\"app/client/views/nodes/bankaccounts.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.jade.js?6638a2e895f296f01598ff72fa74026ee98090a1\",\"size\":1756,\"hash\":\"6638a2e895f296f01598ff72fa74026ee98090a1\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.jade.js?922f444a9e3861abf247e33a10b1c3bf0bace45d\",\"size\":2120,\"hash\":\"922f444a9e3861abf247e33a10b1c3bf0bace45d\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeMenu.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeMenu.js?b4fa50b6ac4ec8323be264718b1394db16367483\",\"size\":1266,\"hash\":\"b4fa50b6ac4ec8323be264718b1394db16367483\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeViews.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeViews.js?c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\",\"size\":407,\"hash\":\"c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\"},{\"path\":\"app/client/views/nodes/exchangeDetails.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchangeDetails.jade.js?e2cc927f4eca8f837b3745f131da6e9a462c77c0\",\"size\":1857,\"hash\":\"e2cc927f4eca8f837b3745f131da6e9a462c77c0\"},{\"path\":\"app/client/views/nodes/exchanges.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.jade.js?68cf4ec54d9a88bb33db5f5355a3d56a72871571\",\"size\":1952,\"hash\":\"68cf4ec54d9a88bb33db5f5355a3d56a72871571\"},{\"path\":\"app/client/views/nodes/newBankAccount.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newBankAccount.jade.js?8ec9144864b912fda1a290ed092e16c06661b66e\",\"size\":1530,\"hash\":\"8ec9144864b912fda1a290ed092e16c06661b66e\"},{\"path\":\"app/client/views/nodes/template.newBitcoinWallet.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.newBitcoinWallet.js?0029d1c8a4f621a1b721aa61dcb7c30135802368\",\"size\":1894,\"hash\":\"0029d1c8a4f621a1b721aa61dcb7c30135802368\"},{\"path\":\"app/client/views/nodes/newExchange.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newExchange.jade.js?72527c4ea1e306695370429c743c01c4e15cd919\",\"size\":1491,\"hash\":\"72527c4ea1e306695370429c743c01c4e15cd919\"},{\"path\":\"app/client/views/nodes/nodes.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.jade.js?098f57d3c3146a9dc419ced171c2bdb7c9716a2c\",\"size\":782,\"hash\":\"098f57d3c3146a9dc419ced171c2bdb7c9716a2c\"},{\"path\":\"app/client/views/nodes/overview.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/overview.jade.js?e7091057998f7cede35110e492602734d0724983\",\"size\":5129,\"hash\":\"e7091057998f7cede35110e492602734d0724983\"},{\"path\":\"app/client/views/trades/newTransaction.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/newTransaction.jade.js?2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\",\"size\":2575,\"hash\":\"2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\"},{\"path\":\"app/client/views/trades/trades.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.jade.js?32ae21183b0e195a509c8e8db4f58108eb66d713\",\"size\":8363,\"hash\":\"32ae21183b0e195a509c8e8db4f58108eb66d713\"},{\"path\":\"app/client/views/transfers/transfers.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.jade.js?d6f0c33901b574ff717d511caaaf5bb42f6186b0\",\"size\":6477,\"hash\":\"d6f0c33901b574ff717d511caaaf5bb42f6186b0\"},{\"path\":\"app/client/views/footer.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/footer.jade.js?4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\",\"size\":246,\"hash\":\"4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\"},{\"path\":\"app/client/views/header.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.jade.js?271a7506dba2e6f22032fefac93853a78c685e37\",\"size\":2143,\"hash\":\"271a7506dba2e6f22032fefac93853a78c685e37\"},{\"path\":\"app/client/views/index.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/index.jade.js?784fe66da38ac17f86ce4a793b2676f8a6608389\",\"size\":677,\"hash\":\"784fe66da38ac17f86ce4a793b2676f8a6608389\"},{\"path\":\"app/client/views/loading.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/loading.jade.js?de9e7221bb79cb6617007062f140e57bc7769595\",\"size\":340,\"hash\":\"de9e7221bb79cb6617007062f140e57bc7769595\"},{\"path\":\"app/client/views/notFound.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/notFound.jade.js?8998a8d91e3944a06f4ebb8129e304cd5e759f05\",\"size\":226,\"hash\":\"8998a8d91e3944a06f4ebb8129e304cd5e759f05\"},{\"path\":\"app/bootstrap/js/transition.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/transition.js?b50b4578e6bfa341205b376c1179025a53bed2be\",\"size\":1831,\"hash\":\"b50b4578e6bfa341205b376c1179025a53bed2be\"},{\"path\":\"app/bootstrap/js/collapse.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/collapse.js?06af2c33960e1fc0f296d386914d8085704c54e3\",\"size\":5977,\"hash\":\"06af2c33960e1fc0f296d386914d8085704c54e3\"},{\"path\":\"app/bootstrap/js/dropdown.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/dropdown.js?4dc587579c67092051e658c12f6c8afc1ce5bbcd\",\"size\":4652,\"hash\":\"4dc587579c67092051e658c12f6c8afc1ce5bbcd\"},{\"path\":\"app/bootstrap/js/modal.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/modal.js?a5be82cb781571e4e552c589abde5d191abcc1d9\",\"size\":8112,\"hash\":\"a5be82cb781571e4e552c589abde5d191abcc1d9\"},{\"path\":\"app/bootstrap/js/tooltip.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tooltip.js?d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\",\"size\":15336,\"hash\":\"d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\"},{\"path\":\"app/bootstrap/js/popover.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/popover.js?8b2a82ab4508c2f78db7f96c3575feccf0096b26\",\"size\":3507,\"hash\":\"8b2a82ab4508c2f78db7f96c3575feccf0096b26\"},{\"path\":\"app/bootstrap/js/carousel.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/carousel.js?9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\",\"size\":7041,\"hash\":\"9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\"},{\"path\":\"app/bootstrap/js/affix.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/affix.js?98373701fb65284f67f1579c779ee3d3d31741d8\",\"size\":4791,\"hash\":\"98373701fb65284f67f1579c779ee3d3d31741d8\"},{\"path\":\"app/bootstrap/js/alert.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/alert.js?19ad96e250954bdb2ffe8984f670c79c51194842\",\"size\":2260,\"hash\":\"19ad96e250954bdb2ffe8984f670c79c51194842\"},{\"path\":\"app/bootstrap/js/button.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/button.js?9905036fb93e275db3e8607d24eb955ed2955fa7\",\"size\":3264,\"hash\":\"9905036fb93e275db3e8607d24eb955ed2955fa7\"},{\"path\":\"app/bootstrap/js/scrollspy.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/scrollspy.js?672c5c002976bcb2c949cf37418e925afbf19234\",\"size\":4697,\"hash\":\"672c5c002976bcb2c949cf37418e925afbf19234\"},{\"path\":\"app/bootstrap/js/tab.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tab.js?89467d37ebb25add19b65f4a7f9283e6f08edb49\",\"size\":3789,\"hash\":\"89467d37ebb25add19b65f4a7f9283e6f08edb49\"},{\"path\":\"app/client/lib/jquery/table-fixed-header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/lib/jquery/table-fixed-header.js?93604980b9683ae204ca2902769dcf675d2ddb6b\",\"size\":1632,\"hash\":\"93604980b9683ae204ca2902769dcf675d2ddb6b\"},{\"path\":\"app/lib/langs/de.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/de.coffee.js?b2202ff71fb0bc81bb8eba91c1227eccce925e18\",\"sourceMap\":\"app/lib/langs/de.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/b2202ff71fb0bc81bb8eba91c1227eccce925e18.map\",\"size\":1619,\"hash\":\"b2202ff71fb0bc81bb8eba91c1227eccce925e18\"},{\"path\":\"app/lib/langs/en.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/en.coffee.js?410a38395ad11958812ff423d73600a14b0bd0b3\",\"sourceMap\":\"app/lib/langs/en.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/410a38395ad11958812ff423d73600a14b0bd0b3.map\",\"size\":2808,\"hash\":\"410a38395ad11958812ff423d73600a14b0bd0b3\"},{\"path\":\"app/models/lib/exchangeRateTool.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangeRateTool.coffee.js?17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\",\"sourceMap\":\"app/models/lib/exchangeRateTool.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/17b37c2f2a5aa05bbb96a96d7d74026feeee56fb.map\",\"size\":900,\"hash\":\"17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\"},{\"path\":\"app/models/lib/exchangerates.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangerates.coffee.js?bdcf647b94ff667398f586ff7bcdee4ea5c834b8\",\"sourceMap\":\"app/models/lib/exchangerates.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/bdcf647b94ff667398f586ff7bcdee4ea5c834b8.map\",\"size\":838,\"hash\":\"bdcf647b94ff667398f586ff7bcdee4ea5c834b8\"},{\"path\":\"app/lib/collection-behaviours.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.coffee.js?f48fb1436de2ffde681a78b753b885387114915f\",\"sourceMap\":\"app/lib/collection-behaviours.coffee.js.map\",\"sourceMapUrl\":\"/lib/f48fb1436de2ffde681a78b753b885387114915f.map\",\"size\":832,\"hash\":\"f48fb1436de2ffde681a78b753b885387114915f\"},{\"path\":\"app/lib/collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.js?2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\",\"size\":561,\"hash\":\"2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\"},{\"path\":\"app/lib/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/config.coffee.js?030792e23e93eee41513f5b276cbfb252db8a6f6\",\"sourceMap\":\"app/lib/config.coffee.js.map\",\"sourceMapUrl\":\"/lib/030792e23e93eee41513f5b276cbfb252db8a6f6.map\",\"size\":786,\"hash\":\"030792e23e93eee41513f5b276cbfb252db8a6f6\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.js?2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\",\"size\":19,\"hash\":\"2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.js?b455ebf0ebb80a9aa57c3f84d8761edfc3e64564\",\"size\":194,\"hash\":\"b455ebf0ebb80a9aa57c3f84d8761edfc3e64564\"},{\"path\":\"app/client/views/home/home.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.coffee.js?49335e63b597461f45496ec342f7a00cc0f3080a\",\"sourceMap\":\"app/client/views/home/home.coffee.js.map\",\"sourceMapUrl\":\"/client/views/home/49335e63b597461f45496ec342f7a00cc0f3080a.map\",\"size\":312,\"hash\":\"49335e63b597461f45496ec342f7a00cc0f3080a\"},{\"path\":\"app/client/views/home/home.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.js?23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\",\"size\":21,\"hash\":\"23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\"},{\"path\":\"app/client/views/nodes/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.js?d9c2820a83ce54bcece438e375772473e7e3ae87\",\"size\":127,\"hash\":\"d9c2820a83ce54bcece438e375772473e7e3ae87\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.js?13871e3bcdb78752f2583592e7569b1ef21b0d5c\",\"size\":298,\"hash\":\"13871e3bcdb78752f2583592e7569b1ef21b0d5c\"},{\"path\":\"app/client/views/nodes/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.js?fd32ec9e6844b165c4487ad18647ba1f01276d6e\",\"size\":1010,\"hash\":\"fd32ec9e6844b165c4487ad18647ba1f01276d6e\"},{\"path\":\"app/client/views/nodes/nodes.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.js?52db8e7dd146acd250e10f64fd65d728e3fe2e3d\",\"size\":204,\"hash\":\"52db8e7dd146acd250e10f64fd65d728e3fe2e3d\"},{\"path\":\"app/client/views/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.coffee.js?b222f3c5af136d0cf7054734c7157f479c0a678e\",\"sourceMap\":\"app/client/views/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/client/views/trades/b222f3c5af136d0cf7054734c7157f479c0a678e.map\",\"size\":234,\"hash\":\"b222f3c5af136d0cf7054734c7157f479c0a678e\"},{\"path\":\"app/client/views/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.js?a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\",\"size\":292,\"hash\":\"a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\"},{\"path\":\"app/client/views/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.coffee.js?93d5002398572514e6a51fe66dd4e1d0378460d2\",\"sourceMap\":\"app/client/views/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/client/views/transfers/93d5002398572514e6a51fe66dd4e1d0378460d2.map\",\"size\":264,\"hash\":\"93d5002398572514e6a51fe66dd4e1d0378460d2\"},{\"path\":\"app/client/views/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.js?8e4f897906d91457950506deb5f60288cae1bf01\",\"size\":309,\"hash\":\"8e4f897906d91457950506deb5f60288cae1bf01\"},{\"path\":\"app/client/router/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/router/config.coffee.js?73f6a3c47c9524edef5ce4af626347abdbfd934e\",\"sourceMap\":\"app/client/router/config.coffee.js.map\",\"sourceMapUrl\":\"/client/router/73f6a3c47c9524edef5ce4af626347abdbfd934e.map\",\"size\":456,\"hash\":\"73f6a3c47c9524edef5ce4af626347abdbfd934e\"},{\"path\":\"app/client/views/header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.js?4866c4adf90235af832db68571e986d8036eeab5\",\"size\":174,\"hash\":\"4866c4adf90235af832db68571e986d8036eeab5\"},{\"path\":\"app/models/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.coffee.js?308ff5c07a0f1a8fff91ddc7f814114cba79aac0\",\"sourceMap\":\"app/models/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/models/trades/308ff5c07a0f1a8fff91ddc7f814114cba79aac0.map\",\"size\":1529,\"hash\":\"308ff5c07a0f1a8fff91ddc7f814114cba79aac0\"},{\"path\":\"app/models/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.js?875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\",\"size\":1296,\"hash\":\"875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\"},{\"path\":\"app/models/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.coffee.js?a832763108fb05f31c8ceb0f095c10f27ba14188\",\"sourceMap\":\"app/models/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/models/transfers/a832763108fb05f31c8ceb0f095c10f27ba14188.map\",\"size\":1739,\"hash\":\"a832763108fb05f31c8ceb0f095c10f27ba14188\"},{\"path\":\"app/models/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.js?7aeecc6e8d89a8bc23744da5adcdbc3de7935941\",\"size\":2023,\"hash\":\"7aeecc6e8d89a8bc23744da5adcdbc3de7935941\"},{\"path\":\"app/client/helpers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.coffee.js?b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\",\"sourceMap\":\"app/client/helpers.coffee.js.map\",\"sourceMapUrl\":\"/client/b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8.map\",\"size\":600,\"hash\":\"b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\"},{\"path\":\"app/client/helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.js?ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\",\"size\":631,\"hash\":\"ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\"},{\"path\":\"app/client/subscriptions.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/subscriptions.js?1ca2a7bf25eaac7696a81e64647252dcca4a207a\",\"size\":243,\"hash\":\"1ca2a7bf25eaac7696a81e64647252dcca4a207a\"},{\"path\":\"app/models/bankaccounts.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.coffee.js?c9fef6bc56367870596f000c7523501e16b78e55\",\"sourceMap\":\"app/models/bankaccounts.coffee.js.map\",\"sourceMapUrl\":\"/models/c9fef6bc56367870596f000c7523501e16b78e55.map\",\"size\":1313,\"hash\":\"c9fef6bc56367870596f000c7523501e16b78e55\"},{\"path\":\"app/models/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.js?483ddcbd320a249a5cad647235d2ecc7296ca92c\",\"size\":723,\"hash\":\"483ddcbd320a249a5cad647235d2ecc7296ca92c\"},{\"path\":\"app/models/bitcoinaddresses.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.coffee.js?756bafccedbdb2afcb4f32edca6b6abc02e5396a\",\"sourceMap\":\"app/models/bitcoinaddresses.coffee.js.map\",\"sourceMapUrl\":\"/models/756bafccedbdb2afcb4f32edca6b6abc02e5396a.map\",\"size\":1270,\"hash\":\"756bafccedbdb2afcb4f32edca6b6abc02e5396a\"},{\"path\":\"app/models/bitcoinaddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.js?3fcc17ea081183510ce0491720f0ad61922affe0\",\"size\":1743,\"hash\":\"3fcc17ea081183510ce0491720f0ad61922affe0\"},{\"path\":\"app/models/bitcoinwallets.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.coffee.js?8784729167b91c60c38b2d991a125ffec13d6ec5\",\"sourceMap\":\"app/models/bitcoinwallets.coffee.js.map\",\"sourceMapUrl\":\"/models/8784729167b91c60c38b2d991a125ffec13d6ec5.map\",\"size\":1259,\"hash\":\"8784729167b91c60c38b2d991a125ffec13d6ec5\"},{\"path\":\"app/models/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.js?a4081140c352d4265c864a797b5f5dc3b29eef19\",\"size\":702,\"hash\":\"a4081140c352d4265c864a797b5f5dc3b29eef19\"},{\"path\":\"app/models/exchanges.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.coffee.js?e853cfcb6c6fcb46d79716adef245d73dcb72bbb\",\"sourceMap\":\"app/models/exchanges.coffee.js.map\",\"sourceMapUrl\":\"/models/e853cfcb6c6fcb46d79716adef245d73dcb72bbb.map\",\"size\":1365,\"hash\":\"e853cfcb6c6fcb46d79716adef245d73dcb72bbb\"},{\"path\":\"app/models/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.js?a252eb8f3f94da18070c8086ebb359ca52977483\",\"size\":2118,\"hash\":\"a252eb8f3f94da18070c8086ebb359ca52977483\"},{\"path\":\"app/routes.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/routes.coffee.js?c2e430f0569c3e2c12f1f508ac5db21ba684664c\",\"sourceMap\":\"app/routes.coffee.js.map\",\"sourceMapUrl\":\"/c2e430f0569c3e2c12f1f508ac5db21ba684664c.map\",\"size\":1196,\"hash\":\"c2e430f0569c3e2c12f1f508ac5db21ba684664c\"},{\"path\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"where\":\"client\",\"type\":\"css\",\"cacheable\":true,\"url\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"sourceMap\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map\",\"sourceMapUrl\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.map\",\"size\":197253,\"hash\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"size\":20335,\"hash\":\"f3a9a3b609133c3d21d6b42abbf7f43bd111df72\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"size\":62926,\"hash\":\"66b1fc67e37d01ee45ca75c4eefb144d2dbe98fa\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"size\":41280,\"hash\":\"aafafdc09404c4aa4447d7e898a2183def9cc1b1\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"size\":23320,\"hash\":\"22037a3455914e5662fa51a596677bdb329e2c5c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"size\":56006,\"hash\":\"0183979056f0b87616cd99d5c54a48f3b771eee6\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"size\":287007,\"hash\":\"cd980eab6db5fa57db670cb2e4278e67e1a4d6c9\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"size\":112160,\"hash\":\"6225ccc4ec94d060f19efab97ca42d842845b949\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"size\":65452,\"hash\":\"7d65e0227d0d7cdc1718119cd2a7dce0638f151c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"size\":85908,\"hash\":\"6270a4a561a69fef5f5cc18cdf9efc256ec2ccbe\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_logo.svg\",\"size\":3723,\"hash\":\"bd19ecdc8eb1084f7bb562c298e4ce41f9cdc698\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_cog.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_cog.svg\",\"size\":987,\"hash\":\"6e74acfffcbd2bafdc8a95d9db7762ece07b1e81\"},{\"path\":\"packages/velocity_html-reporter/lib/icon-time.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/icon-time.png\",\"size\":2834,\"hash\":\"868f492022a4dab0f1522de6aae0773531bc6e85\"},{\"path\":\"app/.gitignore\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/.gitignore\",\"size\":11,\"hash\":\"f1b9a783bd788cd77162147376caa6cc22716de9\"},{\"path\":\"app/favicon.ico\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/favicon.ico\",\"size\":1150,\"hash\":\"0a8ca32c0109fb7440876d549d4c7a5bb5773e5c\"},{\"path\":\"app/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/FontAwesome.otf\",\"size\":75188,\"hash\":\"46198321f916ab2aa86c0ad51e0aacaa73783bd7\"},{\"path\":\"app/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.eot\",\"size\":72449,\"hash\":\"ad0c0513a2fbb7326ac5e11f7c94b95aa23b02e0\"},{\"path\":\"app/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.svg\",\"size\":253487,\"hash\":\"28a0cd129eb6e57d21f8c511581f1909ee6b934a\"},{\"path\":\"app/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.ttf\",\"size\":141564,\"hash\":\"c59792c0a05a4da1f9202a390a27e2d500c36752\"},{\"path\":\"app/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.woff\",\"size\":83760,\"hash\":\"7f2f3c55c2de192387c351b995115f6b79e09173\"},{\"path\":\"app/img/coyno-logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/coyno-logo.svg\",\"size\":62036,\"hash\":\"0f5b4f7ad9f7b4cd0fd6ce840eaffd6d2abee615\"},{\"path\":\"app/img/exchange-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default.png\",\"size\":2718,\"hash\":\"38a115ae448e39a661384426a6f49fd253c93981\"},{\"path\":\"app/img/exchange-icon-default2.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default2.png\",\"size\":3055,\"hash\":\"a8455f437e1a31efaf28592afc8197bcc80f8a4a\"},{\"path\":\"app/img/graph.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/graph.png\",\"size\":38395,\"hash\":\"06f3e53943afdbbdeb5bce79b7508221030875e2\"},{\"path\":\"app/img/table-hover.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/table-hover.png\",\"size\":109,\"hash\":\"f27d3bfbd2d5a1d47422cb5abcc7742a4b873b24\"},{\"path\":\"app/img/wallet-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/wallet-icon-default.png\",\"size\":857,\"hash\":\"384b53d5f09d0645737c47cd6b259b139c24e16f\"},{\"path\":\"app/img/external-logos/Bitstamp_logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Bitstamp_logo.png\",\"size\":10857,\"hash\":\"2896bb2be42d73ab629abc517c5f3e3520fb96b6\"},{\"path\":\"app/img/external-logos/Kraken-logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Kraken-logo.png\",\"size\":2870,\"hash\":\"6b28cba561e324bd31af6945df335207c4176003\"},{\"path\":\"head.html\",\"where\":\"internal\",\"type\":\"head\",\"hash\":\"92126bb9780ea2da0401bad62831eae118f2d77c\"}],\"version\":\"5de108cc2ed059767da12207dd129032f1822f04\"}"
+                  "value": "{\"manifest\":[{\"path\":\"packages/underscore.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/underscore.js?0a80a8623e1b40b5df5a05582f288ddd586eaa18\",\"sourceMap\":\"packages/underscore.js.map\",\"sourceMapUrl\":\"/packages/0a80a8623e1b40b5df5a05582f288ddd586eaa18.map\",\"size\":150686,\"hash\":\"0a80a8623e1b40b5df5a05582f288ddd586eaa18\"},{\"path\":\"packages/meteor.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor.js?61916b1060b33931a21f104fbffb67c2f3d493c5\",\"sourceMap\":\"packages/meteor.js.map\",\"sourceMapUrl\":\"/packages/61916b1060b33931a21f104fbffb67c2f3d493c5.map\",\"size\":108989,\"hash\":\"61916b1060b33931a21f104fbffb67c2f3d493c5\"},{\"path\":\"packages/standard-app-packages.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/standard-app-packages.js?be7072e6abfda638502b63fa0f809c85c8c2b8ed\",\"sourceMap\":\"packages/standard-app-packages.js.map\",\"sourceMapUrl\":\"/packages/be7072e6abfda638502b63fa0f809c85c8c2b8ed.map\",\"size\":1306,\"hash\":\"be7072e6abfda638502b63fa0f809c85c8c2b8ed\"},{\"path\":\"packages/coffeescript.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coffeescript.js?969f68786bbc68e6cad299e74922a53af3d1404b\",\"sourceMap\":\"packages/coffeescript.js.map\",\"sourceMapUrl\":\"/packages/969f68786bbc68e6cad299e74922a53af3d1404b.map\",\"size\":1294,\"hash\":\"969f68786bbc68e6cad299e74922a53af3d1404b\"},{\"path\":\"packages/less.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/less.js?7d1bf981a25a449d6270558bcfc983313c40cd26\",\"sourceMap\":\"packages/less.js.map\",\"sourceMapUrl\":\"/packages/7d1bf981a25a449d6270558bcfc983313c40cd26.map\",\"size\":1286,\"hash\":\"7d1bf981a25a449d6270558bcfc983313c40cd26\"},{\"path\":\"packages/random.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/random.js?fe7b46080c91ce482acf6fc326afbc5b176f0502\",\"sourceMap\":\"packages/random.js.map\",\"sourceMapUrl\":\"/packages/fe7b46080c91ce482acf6fc326afbc5b176f0502.map\",\"size\":24099,\"hash\":\"fe7b46080c91ce482acf6fc326afbc5b176f0502\"},{\"path\":\"packages/localstorage.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/localstorage.js?9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\",\"sourceMap\":\"packages/localstorage.js.map\",\"sourceMapUrl\":\"/packages/9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c.map\",\"size\":7092,\"hash\":\"9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\"},{\"path\":\"packages/tracker.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/tracker.js?192a05cc46b867dadbe8bf90dd961f6f8fd1574f\",\"sourceMap\":\"packages/tracker.js.map\",\"sourceMapUrl\":\"/packages/192a05cc46b867dadbe8bf90dd961f6f8fd1574f.map\",\"size\":66854,\"hash\":\"192a05cc46b867dadbe8bf90dd961f6f8fd1574f\"},{\"path\":\"packages/json.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/json.js?e22856eae714c681199eabc5c0710b904b125554\",\"sourceMap\":\"packages/json.js.map\",\"sourceMapUrl\":\"/packages/e22856eae714c681199eabc5c0710b904b125554.map\",\"size\":58343,\"hash\":\"e22856eae714c681199eabc5c0710b904b125554\"},{\"path\":\"packages/base64.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/base64.js?1a63019243b73298e2964e6d4680f25bca657726\",\"sourceMap\":\"packages/base64.js.map\",\"sourceMapUrl\":\"/packages/1a63019243b73298e2964e6d4680f25bca657726.map\",\"size\":15685,\"hash\":\"1a63019243b73298e2964e6d4680f25bca657726\"},{\"path\":\"packages/ejson.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ejson.js?71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\",\"sourceMap\":\"packages/ejson.js.map\",\"sourceMapUrl\":\"/packages/71047b64b5196348bdbe5fd5eea9ac97a5a9eb14.map\",\"size\":81471,\"hash\":\"71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\"},{\"path\":\"packages/check.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/check.js?803a2be518a0c6c3949e45cf65c4ad627a3d603a\",\"sourceMap\":\"packages/check.js.map\",\"sourceMapUrl\":\"/packages/803a2be518a0c6c3949e45cf65c4ad627a3d603a.map\",\"size\":35207,\"hash\":\"803a2be518a0c6c3949e45cf65c4ad627a3d603a\"},{\"path\":\"packages/logging.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/logging.js?07e201b648f16be8435a4f666156995eeda0c750\",\"sourceMap\":\"packages/logging.js.map\",\"sourceMapUrl\":\"/packages/07e201b648f16be8435a4f666156995eeda0c750.map\",\"size\":27996,\"hash\":\"07e201b648f16be8435a4f666156995eeda0c750\"},{\"path\":\"packages/retry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/retry.js?1f1dd2c35d300110fdaba51ce4473583bc3bf031\",\"sourceMap\":\"packages/retry.js.map\",\"sourceMapUrl\":\"/packages/1f1dd2c35d300110fdaba51ce4473583bc3bf031.map\",\"size\":7245,\"hash\":\"1f1dd2c35d300110fdaba51ce4473583bc3bf031\"},{\"path\":\"packages/reload.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reload.js?da8974b7231dd8c0caccb5f322dcf97329d486d1\",\"sourceMap\":\"packages/reload.js.map\",\"sourceMapUrl\":\"/packages/da8974b7231dd8c0caccb5f322dcf97329d486d1.map\",\"size\":25926,\"hash\":\"da8974b7231dd8c0caccb5f322dcf97329d486d1\"},{\"path\":\"packages/id-map.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/id-map.js?9ea6eaae8d74693ce2505a858d9a5e60cf191298\",\"sourceMap\":\"packages/id-map.js.map\",\"sourceMapUrl\":\"/packages/9ea6eaae8d74693ce2505a858d9a5e60cf191298.map\",\"size\":8584,\"hash\":\"9ea6eaae8d74693ce2505a858d9a5e60cf191298\"},{\"path\":\"packages/ordered-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ordered-dict.js?bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\",\"sourceMap\":\"packages/ordered-dict.js.map\",\"sourceMapUrl\":\"/packages/bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37.map\",\"size\":20395,\"hash\":\"bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\"},{\"path\":\"packages/geojson-utils.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/geojson-utils.js?81b79d5cf96d00b4b7a28987debcffb665c17526\",\"sourceMap\":\"packages/geojson-utils.js.map\",\"sourceMapUrl\":\"/packages/81b79d5cf96d00b4b7a28987debcffb665c17526.map\",\"size\":48339,\"hash\":\"81b79d5cf96d00b4b7a28987debcffb665c17526\"},{\"path\":\"packages/minimongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/minimongo.js?9adf0102ce60b3df01914155826e1661f636e91d\",\"sourceMap\":\"packages/minimongo.js.map\",\"sourceMapUrl\":\"/packages/9adf0102ce60b3df01914155826e1661f636e91d.map\",\"size\":455764,\"hash\":\"9adf0102ce60b3df01914155826e1661f636e91d\"},{\"path\":\"packages/ddp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ddp.js?1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\",\"sourceMap\":\"packages/ddp.js.map\",\"sourceMapUrl\":\"/packages/1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2.map\",\"size\":616556,\"hash\":\"1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\"},{\"path\":\"packages/follower-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/follower-livedata.js?74156c6baa89da861fc4ddb58ef158eac71e58e0\",\"sourceMap\":\"packages/follower-livedata.js.map\",\"sourceMapUrl\":\"/packages/74156c6baa89da861fc4ddb58ef158eac71e58e0.map\",\"size\":1490,\"hash\":\"74156c6baa89da861fc4ddb58ef158eac71e58e0\"},{\"path\":\"packages/application-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/application-configuration.js?dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\",\"sourceMap\":\"packages/application-configuration.js.map\",\"sourceMapUrl\":\"/packages/dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f.map\",\"size\":1485,\"hash\":\"dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\"},{\"path\":\"packages/mongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo.js?9bc2c5a8b2796fab86b51660ca643e5a49a30c84\",\"sourceMap\":\"packages/mongo.js.map\",\"sourceMapUrl\":\"/packages/9bc2c5a8b2796fab86b51660ca643e5a49a30c84.map\",\"size\":146178,\"hash\":\"9bc2c5a8b2796fab86b51660ca643e5a49a30c84\"},{\"path\":\"packages/jquery.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/jquery.js?265926494aaa3929cd2e30da265211c5929f37a4\",\"sourceMap\":\"packages/jquery.js.map\",\"sourceMapUrl\":\"/packages/265926494aaa3929cd2e30da265211c5929f37a4.map\",\"size\":1295407,\"hash\":\"265926494aaa3929cd2e30da265211c5929f37a4\"},{\"path\":\"packages/deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/deps.js?504589e1e9585dec8f9f6094e5a87b22de3783a1\",\"sourceMap\":\"packages/deps.js.map\",\"sourceMapUrl\":\"/packages/504589e1e9585dec8f9f6094e5a87b22de3783a1.map\",\"size\":1442,\"hash\":\"504589e1e9585dec8f9f6094e5a87b22de3783a1\"},{\"path\":\"packages/htmljs.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/htmljs.js?539b5fc23cf5e63bc8e324543a1026b138316a8c\",\"sourceMap\":\"packages/htmljs.js.map\",\"sourceMapUrl\":\"/packages/539b5fc23cf5e63bc8e324543a1026b138316a8c.map\",\"size\":110444,\"hash\":\"539b5fc23cf5e63bc8e324543a1026b138316a8c\"},{\"path\":\"packages/observe-sequence.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/observe-sequence.js?2fd807ea171ead273b9e6458607cb226012d9240\",\"sourceMap\":\"packages/observe-sequence.js.map\",\"sourceMapUrl\":\"/packages/2fd807ea171ead273b9e6458607cb226012d9240.map\",\"size\":30271,\"hash\":\"2fd807ea171ead273b9e6458607cb226012d9240\"},{\"path\":\"packages/reactive-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-var.js?20335b7b37165980ddd9f23943b2e5b00aae1cc2\",\"sourceMap\":\"packages/reactive-var.js.map\",\"sourceMapUrl\":\"/packages/20335b7b37165980ddd9f23943b2e5b00aae1cc2.map\",\"size\":13963,\"hash\":\"20335b7b37165980ddd9f23943b2e5b00aae1cc2\"},{\"path\":\"packages/blaze.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/blaze.js?77c0809654ee3a10dcd5a4f961fb1437e7957d33\",\"sourceMap\":\"packages/blaze.js.map\",\"sourceMapUrl\":\"/packages/77c0809654ee3a10dcd5a4f961fb1437e7957d33.map\",\"size\":385864,\"hash\":\"77c0809654ee3a10dcd5a4f961fb1437e7957d33\"},{\"path\":\"packages/accounts-base.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-base.js?6ed32803c332f93f65e36a195f42e58a62ed028d\",\"sourceMap\":\"packages/accounts-base.js.map\",\"sourceMapUrl\":\"/packages/6ed32803c332f93f65e36a195f42e58a62ed028d.map\",\"size\":108969,\"hash\":\"6ed32803c332f93f65e36a195f42e58a62ed028d\"},{\"path\":\"packages/sha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sha.js?65ef52f7221944768bfc2049d6b7e163c8ae2615\",\"sourceMap\":\"packages/sha.js.map\",\"sourceMapUrl\":\"/packages/65ef52f7221944768bfc2049d6b7e163c8ae2615.map\",\"size\":19584,\"hash\":\"65ef52f7221944768bfc2049d6b7e163c8ae2615\"},{\"path\":\"packages/srp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/srp.js?e2e28156e8c912d504a3586351c8a1119f664cfd\",\"sourceMap\":\"packages/srp.js.map\",\"sourceMapUrl\":\"/packages/e2e28156e8c912d504a3586351c8a1119f664cfd.map\",\"size\":173470,\"hash\":\"e2e28156e8c912d504a3586351c8a1119f664cfd\"},{\"path\":\"packages/accounts-password.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-password.js?6c517b689e15ab07dd443895b7ed801683dda159\",\"sourceMap\":\"packages/accounts-password.js.map\",\"sourceMapUrl\":\"/packages/6c517b689e15ab07dd443895b7ed801683dda159.map\",\"size\":33053,\"hash\":\"6c517b689e15ab07dd443895b7ed801683dda159\"},{\"path\":\"packages/aldeed_simple-schema.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_simple-schema.js?f9f115ce8032ac525bc2dde8cca4ab5937f22441\",\"sourceMap\":\"packages/aldeed_simple-schema.js.map\",\"sourceMapUrl\":\"/packages/f9f115ce8032ac525bc2dde8cca4ab5937f22441.map\",\"size\":472789,\"hash\":\"f9f115ce8032ac525bc2dde8cca4ab5937f22441\"},{\"path\":\"packages/mongo-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo-livedata.js?e6ebca489f38b73788b494509a4f83d87fdbf6c0\",\"sourceMap\":\"packages/mongo-livedata.js.map\",\"sourceMapUrl\":\"/packages/e6ebca489f38b73788b494509a4f83d87fdbf6c0.map\",\"size\":1299,\"hash\":\"e6ebca489f38b73788b494509a4f83d87fdbf6c0\"},{\"path\":\"packages/aldeed_collection2.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_collection2.js?525ba7d2b38809f4b3de1e552fabb647d8fc56ae\",\"sourceMap\":\"packages/aldeed_collection2.js.map\",\"sourceMapUrl\":\"/packages/525ba7d2b38809f4b3de1e552fabb647d8fc56ae.map\",\"size\":69751,\"hash\":\"525ba7d2b38809f4b3de1e552fabb647d8fc56ae\"},{\"path\":\"packages/matb33_collection-hooks.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/matb33_collection-hooks.js?abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\",\"sourceMap\":\"packages/matb33_collection-hooks.js.map\",\"sourceMapUrl\":\"/packages/abfb68ba8623e56062a2b978bd0b4a1827b8e1c6.map\",\"size\":72184,\"hash\":\"abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\"},{\"path\":\"packages/sewdn_collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sewdn_collection-behaviours.js?139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\",\"sourceMap\":\"packages/sewdn_collection-behaviours.js.map\",\"sourceMapUrl\":\"/packages/139fdbdf5bd43d975e2c4d39d5a18962e0dcc028.map\",\"size\":25546,\"hash\":\"139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\"},{\"path\":\"packages/dsyko_node-csv-npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dsyko_node-csv-npm.js?dd174f021d8a59fe74f62712fd862c28da24e627\",\"sourceMap\":\"packages/dsyko_node-csv-npm.js.map\",\"sourceMapUrl\":\"/packages/dd174f021d8a59fe74f62712fd862c28da24e627.map\",\"size\":1303,\"hash\":\"dd174f021d8a59fe74f62712fd862c28da24e627\"},{\"path\":\"packages/lepozepo_accounting.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/lepozepo_accounting.js?42604caee2e288664538035c00bc428b24993f06\",\"sourceMap\":\"packages/lepozepo_accounting.js.map\",\"sourceMapUrl\":\"/packages/42604caee2e288664538035c00bc428b24993f06.map\",\"size\":48023,\"hash\":\"42604caee2e288664538035c00bc428b24993f06\"},{\"path\":\"packages/ui.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ui.js?5a663333fd30f8fd913f110e0ef779e84f67c4b8\",\"sourceMap\":\"packages/ui.js.map\",\"sourceMapUrl\":\"/packages/5a663333fd30f8fd913f110e0ef779e84f67c4b8.map\",\"size\":1529,\"hash\":\"5a663333fd30f8fd913f110e0ef779e84f67c4b8\"},{\"path\":\"packages/templating.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/templating.js?599ba307216da826d8b335332ebcc9a497a369a0\",\"sourceMap\":\"packages/templating.js.map\",\"sourceMapUrl\":\"/packages/599ba307216da826d8b335332ebcc9a497a369a0.map\",\"size\":11910,\"hash\":\"599ba307216da826d8b335332ebcc9a497a369a0\"},{\"path\":\"packages/iron_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_core.js?d966a1f70c94792fd94c8a155bdbef9bec5e0047\",\"sourceMap\":\"packages/iron_core.js.map\",\"sourceMapUrl\":\"/packages/d966a1f70c94792fd94c8a155bdbef9bec5e0047.map\",\"size\":32915,\"hash\":\"d966a1f70c94792fd94c8a155bdbef9bec5e0047\"},{\"path\":\"packages/iron_dynamic-template.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_dynamic-template.js?4d8240a576804301368600b388b97065770c2964\",\"sourceMap\":\"packages/iron_dynamic-template.js.map\",\"sourceMapUrl\":\"/packages/4d8240a576804301368600b388b97065770c2964.map\",\"size\":85060,\"hash\":\"4d8240a576804301368600b388b97065770c2964\"},{\"path\":\"packages/iron_layout.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_layout.js?4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\",\"sourceMap\":\"packages/iron_layout.js.map\",\"sourceMapUrl\":\"/packages/4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062.map\",\"size\":62058,\"hash\":\"4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\"},{\"path\":\"packages/iron_url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_url.js?271d2b23f8542769347738353a73f77c63859e8e\",\"sourceMap\":\"packages/iron_url.js.map\",\"sourceMapUrl\":\"/packages/271d2b23f8542769347738353a73f77c63859e8e.map\",\"size\":65852,\"hash\":\"271d2b23f8542769347738353a73f77c63859e8e\"},{\"path\":\"packages/iron_middleware-stack.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_middleware-stack.js?bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\",\"sourceMap\":\"packages/iron_middleware-stack.js.map\",\"sourceMapUrl\":\"/packages/bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c.map\",\"size\":45589,\"hash\":\"bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\"},{\"path\":\"packages/iron_location.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_location.js?0434907da386df80b0a769a8c4decc5374a3fdb6\",\"sourceMap\":\"packages/iron_location.js.map\",\"sourceMapUrl\":\"/packages/0434907da386df80b0a769a8c4decc5374a3fdb6.map\",\"size\":51357,\"hash\":\"0434907da386df80b0a769a8c4decc5374a3fdb6\"},{\"path\":\"packages/reactive-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-dict.js?6b25309b1f0dcf775b44984324878d6f8ad1abc2\",\"sourceMap\":\"packages/reactive-dict.js.map\",\"sourceMapUrl\":\"/packages/6b25309b1f0dcf775b44984324878d6f8ad1abc2.map\",\"size\":19802,\"hash\":\"6b25309b1f0dcf775b44984324878d6f8ad1abc2\"},{\"path\":\"packages/iron_controller.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_controller.js?c4a074a0f421ce052a59282e7eae64f7049061cb\",\"sourceMap\":\"packages/iron_controller.js.map\",\"sourceMapUrl\":\"/packages/c4a074a0f421ce052a59282e7eae64f7049061cb.map\",\"size\":41091,\"hash\":\"c4a074a0f421ce052a59282e7eae64f7049061cb\"},{\"path\":\"packages/iron_router.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_router.js?c45f7b94d616b48432e190827a3ca76d48e51e9d\",\"sourceMap\":\"packages/iron_router.js.map\",\"sourceMapUrl\":\"/packages/c45f7b94d616b48432e190827a3ca76d48e51e9d.map\",\"size\":213337,\"hash\":\"c45f7b94d616b48432e190827a3ca76d48e51e9d\"},{\"path\":\"packages/mquandalle_jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mquandalle_jade.js?4ef76f2755f391c688ce8f0925fe8c8eee38b45b\",\"sourceMap\":\"packages/mquandalle_jade.js.map\",\"sourceMapUrl\":\"/packages/4ef76f2755f391c688ce8f0925fe8c8eee38b45b.map\",\"size\":1300,\"hash\":\"4ef76f2755f391c688ce8f0925fe8c8eee38b45b\"},{\"path\":\"packages/cmather_handlebars-server.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/cmather_handlebars-server.js?c6447646a77dd2f090e33422fff58fbec1bbd4f6\",\"sourceMap\":\"packages/cmather_handlebars-server.js.map\",\"sourceMapUrl\":\"/packages/c6447646a77dd2f090e33422fff58fbec1bbd4f6.map\",\"size\":1310,\"hash\":\"c6447646a77dd2f090e33422fff58fbec1bbd4f6\"},{\"path\":\"packages/livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/livedata.js?718526445deb4d9baacb6d92c551adea1d36c1e1\",\"sourceMap\":\"packages/livedata.js.map\",\"sourceMapUrl\":\"/packages/718526445deb4d9baacb6d92c551adea1d36c1e1.map\",\"size\":1413,\"hash\":\"718526445deb4d9baacb6d92c551adea1d36c1e1\"},{\"path\":\"packages/mrt_moment.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_moment.js?d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\",\"sourceMap\":\"packages/mrt_moment.js.map\",\"sourceMapUrl\":\"/packages/d7e4a40c3c8d0a0bbca78591d0b5385f3271212c.map\",\"size\":359656,\"hash\":\"d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\"},{\"path\":\"packages/aldeed_autoform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_autoform.js?fc95d300f7b6799e218f18c0f53d0525f033a36b\",\"sourceMap\":\"packages/aldeed_autoform.js.map\",\"sourceMapUrl\":\"/packages/fc95d300f7b6799e218f18c0f53d0525f033a36b.map\",\"size\":946753,\"hash\":\"fc95d300f7b6799e218f18c0f53d0525f033a36b\"},{\"path\":\"packages/nemo64_bootstrap-data.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap-data.js?5668c42202b40f6c6ea45d87def47b9c6ced760c\",\"sourceMap\":\"packages/nemo64_bootstrap-data.js.map\",\"sourceMapUrl\":\"/packages/5668c42202b40f6c6ea45d87def47b9c6ced760c.map\",\"size\":1388,\"hash\":\"5668c42202b40f6c6ea45d87def47b9c6ced760c\"},{\"path\":\"packages/nemo64_bootstrap.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap.js?ec67e21097838440b595b9cec9f3aca5493efadb\",\"sourceMap\":\"packages/nemo64_bootstrap.js.map\",\"sourceMapUrl\":\"/packages/ec67e21097838440b595b9cec9f3aca5493efadb.map\",\"size\":1431,\"hash\":\"ec67e21097838440b595b9cec9f3aca5493efadb\"},{\"path\":\"packages/mrt_just-i18n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_just-i18n.js?00ef34010e8078ed4af7d04538cb972aa3c401b2\",\"sourceMap\":\"packages/mrt_just-i18n.js.map\",\"sourceMapUrl\":\"/packages/00ef34010e8078ed4af7d04538cb972aa3c401b2.map\",\"size\":11114,\"hash\":\"00ef34010e8078ed4af7d04538cb972aa3c401b2\"},{\"path\":\"packages/coynverter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coynverter.js?0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\",\"sourceMap\":\"packages/coynverter.js.map\",\"sourceMapUrl\":\"/packages/0b9021728ffb7f3419b11d8d72b79e6c95d9ae21.map\",\"size\":23066,\"hash\":\"0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\"},{\"path\":\"packages/session.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/session.js?e436deefadc999c21b6fd16e8e1ecce55c3c3a55\",\"sourceMap\":\"packages/session.js.map\",\"sourceMapUrl\":\"/packages/e436deefadc999c21b6fd16e8e1ecce55c3c3a55.map\",\"size\":6497,\"hash\":\"e436deefadc999c21b6fd16e8e1ecce55c3c3a55\"},{\"path\":\"packages/handlebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/handlebars.js?038145b6256cd6a69c11650ed6bf12b093920095\",\"sourceMap\":\"packages/handlebars.js.map\",\"sourceMapUrl\":\"/packages/038145b6256cd6a69c11650ed6bf12b093920095.map\",\"size\":1292,\"hash\":\"038145b6256cd6a69c11650ed6bf12b093920095\"},{\"path\":\"packages/stylus.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/stylus.js?48b7e3e0953c004a73211d7489462e73ed11be2c\",\"sourceMap\":\"packages/stylus.js.map\",\"sourceMapUrl\":\"/packages/48b7e3e0953c004a73211d7489462e73ed11be2c.map\",\"size\":1288,\"hash\":\"48b7e3e0953c004a73211d7489462e73ed11be2c\"},{\"path\":\"packages/mrt_accounts-ui-bootstrap-3.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_accounts-ui-bootstrap-3.js?fe856a7bc2293ae4b81c6969339c1fd98f095c19\",\"sourceMap\":\"packages/mrt_accounts-ui-bootstrap-3.js.map\",\"sourceMapUrl\":\"/packages/fe856a7bc2293ae4b81c6969339c1fd98f095c19.map\",\"size\":232647,\"hash\":\"fe856a7bc2293ae4b81c6969339c1fd98f095c19\"},{\"path\":\"packages/dburles_collection-helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dburles_collection-helpers.js?10b8845e36a7fe0526609cd1095b7dae30b9ed8e\",\"sourceMap\":\"packages/dburles_collection-helpers.js.map\",\"sourceMapUrl\":\"/packages/10b8845e36a7fe0526609cd1095b7dae30b9ed8e.map\",\"size\":3586,\"hash\":\"10b8845e36a7fe0526609cd1095b7dae30b9ed8e\"},{\"path\":\"packages/chrismbeckett_fontawesome4.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/chrismbeckett_fontawesome4.js?71dfaef8a91211745b1155d8b1686056c03f1a11\",\"sourceMap\":\"packages/chrismbeckett_fontawesome4.js.map\",\"sourceMapUrl\":\"/packages/71dfaef8a91211745b1155d8b1686056c03f1a11.map\",\"size\":1311,\"hash\":\"71dfaef8a91211745b1155d8b1686056c03f1a11\"},{\"path\":\"packages/frozeman_animation-helper.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_animation-helper.js?0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\",\"sourceMap\":\"packages/frozeman_animation-helper.js.map\",\"sourceMapUrl\":\"/packages/0e877c6fc99752c26d27dc1bbdfb3e86789bd7de.map\",\"size\":22353,\"hash\":\"0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\"},{\"path\":\"packages/frozeman_template-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_template-var.js?81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\",\"sourceMap\":\"packages/frozeman_template-var.js.map\",\"sourceMapUrl\":\"/packages/81a1223364e51eb7b4c2c1b0345b7ac3b8a52516.map\",\"size\":16437,\"hash\":\"81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\"},{\"path\":\"packages/schnie_uploader.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/schnie_uploader.js?710e32818e58766bd55225265a0370585912110f\",\"sourceMap\":\"packages/schnie_uploader.js.map\",\"sourceMapUrl\":\"/packages/710e32818e58766bd55225265a0370585912110f.map\",\"size\":27387,\"hash\":\"710e32818e58766bd55225265a0370585912110f\"},{\"path\":\"packages/mrt_underscore-string-latest.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_underscore-string-latest.js?a38ecc39a67ea4036d5d875dd102f3d8ad73174d\",\"sourceMap\":\"packages/mrt_underscore-string-latest.js.map\",\"sourceMapUrl\":\"/packages/a38ecc39a67ea4036d5d875dd102f3d8ad73174d.map\",\"size\":84515,\"hash\":\"a38ecc39a67ea4036d5d875dd102f3d8ad73174d\"},{\"path\":\"packages/joshowens_simple-form.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_simple-form.js?74dda2543f961a8ea549a1e28025d74940c271a0\",\"sourceMap\":\"packages/joshowens_simple-form.js.map\",\"sourceMapUrl\":\"/packages/74dda2543f961a8ea549a1e28025d74940c271a0.map\",\"size\":51039,\"hash\":\"74dda2543f961a8ea549a1e28025d74940c271a0\"},{\"path\":\"packages/softwarerero_accounts-t9n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/softwarerero_accounts-t9n.js?d2d8d1d115a4cb8262d753882e538fc83571d960\",\"sourceMap\":\"packages/softwarerero_accounts-t9n.js.map\",\"sourceMapUrl\":\"/packages/d2d8d1d115a4cb8262d753882e538fc83571d960.map\",\"size\":105833,\"hash\":\"d2d8d1d115a4cb8262d753882e538fc83571d960\"},{\"path\":\"packages/service-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/service-configuration.js?262da6fb1e9c97be84333c429c9a2929c80f8e3b\",\"sourceMap\":\"packages/service-configuration.js.map\",\"sourceMapUrl\":\"/packages/262da6fb1e9c97be84333c429c9a2929c80f8e3b.map\",\"size\":5082,\"hash\":\"262da6fb1e9c97be84333c429c9a2929c80f8e3b\"},{\"path\":\"packages/joshowens_accounts-entry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_accounts-entry.js?372e4dedd3ca315c19714f7ce4882c6868998214\",\"sourceMap\":\"packages/joshowens_accounts-entry.js.map\",\"sourceMapUrl\":\"/packages/372e4dedd3ca315c19714f7ce4882c6868998214.map\",\"size\":150919,\"hash\":\"372e4dedd3ca315c19714f7ce4882c6868998214\"},{\"path\":\"packages/meteorhacks_npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_npm.js?604e35d5437f43224cde2c1f9e5e9aace95a9a95\",\"sourceMap\":\"packages/meteorhacks_npm.js.map\",\"sourceMapUrl\":\"/packages/604e35d5437f43224cde2c1f9e5e9aace95a9a95.map\",\"size\":1300,\"hash\":\"604e35d5437f43224cde2c1f9e5e9aace95a9a95\"},{\"path\":\"packages/npm-container.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/npm-container.js?c4195e22b5a0a7239a415a3d95b3b702c34fa28d\",\"sourceMap\":\"packages/npm-container.js.map\",\"sourceMapUrl\":\"/packages/c4195e22b5a0a7239a415a3d95b3b702c34fa28d.map\",\"size\":1298,\"hash\":\"c4195e22b5a0a7239a415a3d95b3b702c34fa28d\"},{\"path\":\"packages/url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/url.js?2312d739008b2ffa52f13c77c5d6fc59c9e17d56\",\"sourceMap\":\"packages/url.js.map\",\"sourceMapUrl\":\"/packages/2312d739008b2ffa52f13c77c5d6fc59c9e17d56.map\",\"size\":6642,\"hash\":\"2312d739008b2ffa52f13c77c5d6fc59c9e17d56\"},{\"path\":\"packages/http.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/http.js?9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\",\"sourceMap\":\"packages/http.js.map\",\"sourceMapUrl\":\"/packages/9c5d152169ba9a5a57b6b8ec28e64bbd0d308077.map\",\"size\":37036,\"hash\":\"9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\"},{\"path\":\"packages/velocity_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_core.js?1566df70b73d8783eefb275bf28df6fe1a11a039\",\"sourceMap\":\"packages/velocity_core.js.map\",\"sourceMapUrl\":\"/packages/1566df70b73d8783eefb275bf28df6fe1a11a039.map\",\"size\":8724,\"hash\":\"1566df70b73d8783eefb275bf28df6fe1a11a039\"},{\"path\":\"packages/amplify.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/amplify.js?0943ecb804169b991257a319fa92b9e6f34e2d1b\",\"sourceMap\":\"packages/amplify.js.map\",\"sourceMapUrl\":\"/packages/0943ecb804169b991257a319fa92b9e6f34e2d1b.map\",\"size\":88428,\"hash\":\"0943ecb804169b991257a319fa92b9e6f34e2d1b\"},{\"path\":\"packages/velocity_html-reporter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_html-reporter.js?cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\",\"sourceMap\":\"packages/velocity_html-reporter.js.map\",\"sourceMapUrl\":\"/packages/cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d.map\",\"size\":85561,\"hash\":\"cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\"},{\"path\":\"packages/velocity_shim.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_shim.js?35442cb834496e09130fbab3df9f4d5dab5e6f55\",\"sourceMap\":\"packages/velocity_shim.js.map\",\"sourceMapUrl\":\"/packages/35442cb834496e09130fbab3df9f4d5dab5e6f55.map\",\"size\":2360,\"hash\":\"35442cb834496e09130fbab3df9f4d5dab5e6f55\"},{\"path\":\"packages/mike_mocha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mike_mocha.js?71466b37e24701857780026b17754fb447bd6ff3\",\"sourceMap\":\"packages/mike_mocha.js.map\",\"sourceMapUrl\":\"/packages/71466b37e24701857780026b17754fb447bd6ff3.map\",\"size\":1347056,\"hash\":\"71466b37e24701857780026b17754fb447bd6ff3\"},{\"path\":\"packages/sanjo_jasmine.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sanjo_jasmine.js?e9f0d239446c3622819a554cbd32d9556c284350\",\"sourceMap\":\"packages/sanjo_jasmine.js.map\",\"sourceMapUrl\":\"/packages/e9f0d239446c3622819a554cbd32d9556c284350.map\",\"size\":496692,\"hash\":\"e9f0d239446c3622819a554cbd32d9556c284350\"},{\"path\":\"packages/meteorhacks_kadira-binary-deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira-binary-deps.js?a244ee2e16791a2e0fed6ce317583265afab7c0c\",\"sourceMap\":\"packages/meteorhacks_kadira-binary-deps.js.map\",\"sourceMapUrl\":\"/packages/a244ee2e16791a2e0fed6ce317583265afab7c0c.map\",\"size\":1406,\"hash\":\"a244ee2e16791a2e0fed6ce317583265afab7c0c\"},{\"path\":\"packages/meteorhacks_meteorx.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_meteorx.js?afd5ff95b1c1492f60049925f1f827e2b5817bbb\",\"sourceMap\":\"packages/meteorhacks_meteorx.js.map\",\"sourceMapUrl\":\"/packages/afd5ff95b1c1492f60049925f1f827e2b5817bbb.map\",\"size\":1368,\"hash\":\"afd5ff95b1c1492f60049925f1f827e2b5817bbb\"},{\"path\":\"packages/meteorhacks_kadira.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira.js?9ee74fb46169e30c92bbd18945d536af2cb8c65f\",\"sourceMap\":\"packages/meteorhacks_kadira.js.map\",\"sourceMapUrl\":\"/packages/9ee74fb46169e30c92bbd18945d536af2cb8c65f.map\",\"size\":97584,\"hash\":\"9ee74fb46169e30c92bbd18945d536af2cb8c65f\"},{\"path\":\"packages/autoupdate.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/autoupdate.js?c823646e93561d86e6bcb3cbd2457a8540e519c1\",\"sourceMap\":\"packages/autoupdate.js.map\",\"sourceMapUrl\":\"/packages/c823646e93561d86e6bcb3cbd2457a8540e519c1.map\",\"size\":17152,\"hash\":\"c823646e93561d86e6bcb3cbd2457a8540e519c1\"},{\"path\":\"packages/meteor-platform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor-platform.js?499a2f8522e25820b1153c69a92751ccaae507b3\",\"sourceMap\":\"packages/meteor-platform.js.map\",\"sourceMapUrl\":\"/packages/499a2f8522e25820b1153c69a92751ccaae507b3.map\",\"size\":1384,\"hash\":\"499a2f8522e25820b1153c69a92751ccaae507b3\"},{\"path\":\"packages/meteorhacks_async.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_async.js?e687b9e863dc811fb3f313d1c6f237c7a2b1924b\",\"sourceMap\":\"packages/meteorhacks_async.js.map\",\"sourceMapUrl\":\"/packages/e687b9e863dc811fb3f313d1c6f237c7a2b1924b.map\",\"size\":1360,\"hash\":\"e687b9e863dc811fb3f313d1c6f237c7a2b1924b\"},{\"path\":\"packages/webapp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/webapp.js?e1be090051b82f046484dccc2de7d747e50c7328\",\"sourceMap\":\"packages/webapp.js.map\",\"sourceMapUrl\":\"/packages/e1be090051b82f046484dccc2de7d747e50c7328.map\",\"size\":3106,\"hash\":\"e1be090051b82f046484dccc2de7d747e50c7328\"},{\"path\":\"packages/spacebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/spacebars.js?3c496d2950151d744a8574297b46d2763a123bdf\",\"sourceMap\":\"packages/spacebars.js.map\",\"sourceMapUrl\":\"/packages/3c496d2950151d744a8574297b46d2763a123bdf.map\",\"size\":42134,\"hash\":\"3c496d2950151d744a8574297b46d2763a123bdf\"},{\"path\":\"packages/launch-screen.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/launch-screen.js?13e1092ebecdb7208762500188f1dc2dea5603e9\",\"sourceMap\":\"packages/launch-screen.js.map\",\"sourceMapUrl\":\"/packages/13e1092ebecdb7208762500188f1dc2dea5603e9.map\",\"size\":9707,\"hash\":\"13e1092ebecdb7208762500188f1dc2dea5603e9\"},{\"path\":\"packages/global-imports.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/global-imports.js?cc6dc6062d244dad7299e8cb749b4182b5cf9c4b\",\"size\":1545,\"hash\":\"cc6dc6062d244dad7299e8cb749b4182b5cf9c4b\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.jade.js?fbcf18ee1e20649d40cb4b28c5d88932e15208cf\",\"size\":1636,\"hash\":\"fbcf18ee1e20649d40cb4b28c5d88932e15208cf\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js?6e259c55d7f51a60230a48af0d88584d8ad91625\",\"size\":2517,\"hash\":\"6e259c55d7f51a60230a48af0d88584d8ad91625\"},{\"path\":\"app/client/views/dashboard/dashboard.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/dashboard/dashboard.jade.js?e03f28588433337ed8edb2c2207d2d76990a4afd\",\"size\":5423,\"hash\":\"e03f28588433337ed8edb2c2207d2d76990a4afd\"},{\"path\":\"app/client/views/home/home.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.jade.js?44c80a0deae167b74f43d2a84d1a505ecbfffe45\",\"size\":273,\"hash\":\"44c80a0deae167b74f43d2a84d1a505ecbfffe45\"},{\"path\":\"app/client/views/login/login.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/login/login.jade.js?08f5cb6292d23b811162d93cb23768b4950214f9\",\"size\":776,\"hash\":\"08f5cb6292d23b811162d93cb23768b4950214f9\"},{\"path\":\"app/client/views/nodes/bankaccounts.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.jade.js?6638a2e895f296f01598ff72fa74026ee98090a1\",\"size\":1756,\"hash\":\"6638a2e895f296f01598ff72fa74026ee98090a1\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.jade.js?922f444a9e3861abf247e33a10b1c3bf0bace45d\",\"size\":2120,\"hash\":\"922f444a9e3861abf247e33a10b1c3bf0bace45d\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeMenu.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeMenu.js?b4fa50b6ac4ec8323be264718b1394db16367483\",\"size\":1266,\"hash\":\"b4fa50b6ac4ec8323be264718b1394db16367483\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeViews.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeViews.js?c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\",\"size\":407,\"hash\":\"c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\"},{\"path\":\"app/client/views/nodes/exchangeDetails.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchangeDetails.jade.js?e2cc927f4eca8f837b3745f131da6e9a462c77c0\",\"size\":1857,\"hash\":\"e2cc927f4eca8f837b3745f131da6e9a462c77c0\"},{\"path\":\"app/client/views/nodes/exchanges.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.jade.js?68cf4ec54d9a88bb33db5f5355a3d56a72871571\",\"size\":1952,\"hash\":\"68cf4ec54d9a88bb33db5f5355a3d56a72871571\"},{\"path\":\"app/client/views/nodes/newBankAccount.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newBankAccount.jade.js?8ec9144864b912fda1a290ed092e16c06661b66e\",\"size\":1530,\"hash\":\"8ec9144864b912fda1a290ed092e16c06661b66e\"},{\"path\":\"app/client/views/nodes/template.newBitcoinWallet.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.newBitcoinWallet.js?0029d1c8a4f621a1b721aa61dcb7c30135802368\",\"size\":1894,\"hash\":\"0029d1c8a4f621a1b721aa61dcb7c30135802368\"},{\"path\":\"app/client/views/nodes/newExchange.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newExchange.jade.js?72527c4ea1e306695370429c743c01c4e15cd919\",\"size\":1491,\"hash\":\"72527c4ea1e306695370429c743c01c4e15cd919\"},{\"path\":\"app/client/views/nodes/nodes.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.jade.js?098f57d3c3146a9dc419ced171c2bdb7c9716a2c\",\"size\":782,\"hash\":\"098f57d3c3146a9dc419ced171c2bdb7c9716a2c\"},{\"path\":\"app/client/views/nodes/overview.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/overview.jade.js?e7091057998f7cede35110e492602734d0724983\",\"size\":5129,\"hash\":\"e7091057998f7cede35110e492602734d0724983\"},{\"path\":\"app/client/views/trades/newTransaction.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/newTransaction.jade.js?2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\",\"size\":2575,\"hash\":\"2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\"},{\"path\":\"app/client/views/trades/trades.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.jade.js?32ae21183b0e195a509c8e8db4f58108eb66d713\",\"size\":8363,\"hash\":\"32ae21183b0e195a509c8e8db4f58108eb66d713\"},{\"path\":\"app/client/views/transfers/transfers.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.jade.js?d0d80cf322ce4bfefb52b0b3a65b992601bc0d0c\",\"size\":6511,\"hash\":\"d0d80cf322ce4bfefb52b0b3a65b992601bc0d0c\"},{\"path\":\"app/client/views/footer.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/footer.jade.js?4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\",\"size\":246,\"hash\":\"4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\"},{\"path\":\"app/client/views/header.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.jade.js?271a7506dba2e6f22032fefac93853a78c685e37\",\"size\":2143,\"hash\":\"271a7506dba2e6f22032fefac93853a78c685e37\"},{\"path\":\"app/client/views/index.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/index.jade.js?784fe66da38ac17f86ce4a793b2676f8a6608389\",\"size\":677,\"hash\":\"784fe66da38ac17f86ce4a793b2676f8a6608389\"},{\"path\":\"app/client/views/loading.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/loading.jade.js?de9e7221bb79cb6617007062f140e57bc7769595\",\"size\":340,\"hash\":\"de9e7221bb79cb6617007062f140e57bc7769595\"},{\"path\":\"app/client/views/notFound.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/notFound.jade.js?8998a8d91e3944a06f4ebb8129e304cd5e759f05\",\"size\":226,\"hash\":\"8998a8d91e3944a06f4ebb8129e304cd5e759f05\"},{\"path\":\"app/bootstrap/js/transition.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/transition.js?b50b4578e6bfa341205b376c1179025a53bed2be\",\"size\":1831,\"hash\":\"b50b4578e6bfa341205b376c1179025a53bed2be\"},{\"path\":\"app/bootstrap/js/collapse.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/collapse.js?06af2c33960e1fc0f296d386914d8085704c54e3\",\"size\":5977,\"hash\":\"06af2c33960e1fc0f296d386914d8085704c54e3\"},{\"path\":\"app/bootstrap/js/dropdown.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/dropdown.js?4dc587579c67092051e658c12f6c8afc1ce5bbcd\",\"size\":4652,\"hash\":\"4dc587579c67092051e658c12f6c8afc1ce5bbcd\"},{\"path\":\"app/bootstrap/js/modal.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/modal.js?a5be82cb781571e4e552c589abde5d191abcc1d9\",\"size\":8112,\"hash\":\"a5be82cb781571e4e552c589abde5d191abcc1d9\"},{\"path\":\"app/bootstrap/js/tooltip.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tooltip.js?d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\",\"size\":15336,\"hash\":\"d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\"},{\"path\":\"app/bootstrap/js/popover.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/popover.js?8b2a82ab4508c2f78db7f96c3575feccf0096b26\",\"size\":3507,\"hash\":\"8b2a82ab4508c2f78db7f96c3575feccf0096b26\"},{\"path\":\"app/bootstrap/js/carousel.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/carousel.js?9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\",\"size\":7041,\"hash\":\"9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\"},{\"path\":\"app/bootstrap/js/affix.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/affix.js?98373701fb65284f67f1579c779ee3d3d31741d8\",\"size\":4791,\"hash\":\"98373701fb65284f67f1579c779ee3d3d31741d8\"},{\"path\":\"app/bootstrap/js/alert.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/alert.js?19ad96e250954bdb2ffe8984f670c79c51194842\",\"size\":2260,\"hash\":\"19ad96e250954bdb2ffe8984f670c79c51194842\"},{\"path\":\"app/bootstrap/js/button.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/button.js?9905036fb93e275db3e8607d24eb955ed2955fa7\",\"size\":3264,\"hash\":\"9905036fb93e275db3e8607d24eb955ed2955fa7\"},{\"path\":\"app/bootstrap/js/scrollspy.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/scrollspy.js?672c5c002976bcb2c949cf37418e925afbf19234\",\"size\":4697,\"hash\":\"672c5c002976bcb2c949cf37418e925afbf19234\"},{\"path\":\"app/bootstrap/js/tab.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tab.js?89467d37ebb25add19b65f4a7f9283e6f08edb49\",\"size\":3789,\"hash\":\"89467d37ebb25add19b65f4a7f9283e6f08edb49\"},{\"path\":\"app/client/lib/jquery/table-fixed-header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/lib/jquery/table-fixed-header.js?93604980b9683ae204ca2902769dcf675d2ddb6b\",\"size\":1632,\"hash\":\"93604980b9683ae204ca2902769dcf675d2ddb6b\"},{\"path\":\"app/lib/langs/de.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/de.coffee.js?b2202ff71fb0bc81bb8eba91c1227eccce925e18\",\"sourceMap\":\"app/lib/langs/de.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/b2202ff71fb0bc81bb8eba91c1227eccce925e18.map\",\"size\":1619,\"hash\":\"b2202ff71fb0bc81bb8eba91c1227eccce925e18\"},{\"path\":\"app/lib/langs/en.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/en.coffee.js?410a38395ad11958812ff423d73600a14b0bd0b3\",\"sourceMap\":\"app/lib/langs/en.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/410a38395ad11958812ff423d73600a14b0bd0b3.map\",\"size\":2808,\"hash\":\"410a38395ad11958812ff423d73600a14b0bd0b3\"},{\"path\":\"app/models/lib/exchangeRateTool.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangeRateTool.coffee.js?17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\",\"sourceMap\":\"app/models/lib/exchangeRateTool.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/17b37c2f2a5aa05bbb96a96d7d74026feeee56fb.map\",\"size\":900,\"hash\":\"17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\"},{\"path\":\"app/models/lib/exchangerates.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangerates.coffee.js?bdcf647b94ff667398f586ff7bcdee4ea5c834b8\",\"sourceMap\":\"app/models/lib/exchangerates.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/bdcf647b94ff667398f586ff7bcdee4ea5c834b8.map\",\"size\":838,\"hash\":\"bdcf647b94ff667398f586ff7bcdee4ea5c834b8\"},{\"path\":\"app/lib/collection-behaviours.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.coffee.js?f48fb1436de2ffde681a78b753b885387114915f\",\"sourceMap\":\"app/lib/collection-behaviours.coffee.js.map\",\"sourceMapUrl\":\"/lib/f48fb1436de2ffde681a78b753b885387114915f.map\",\"size\":832,\"hash\":\"f48fb1436de2ffde681a78b753b885387114915f\"},{\"path\":\"app/lib/collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.js?2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\",\"size\":561,\"hash\":\"2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\"},{\"path\":\"app/lib/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/config.coffee.js?030792e23e93eee41513f5b276cbfb252db8a6f6\",\"sourceMap\":\"app/lib/config.coffee.js.map\",\"sourceMapUrl\":\"/lib/030792e23e93eee41513f5b276cbfb252db8a6f6.map\",\"size\":786,\"hash\":\"030792e23e93eee41513f5b276cbfb252db8a6f6\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.js?2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\",\"size\":19,\"hash\":\"2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.js?f008c987ef8b6b7ebb4d206306ee214f01e4508b\",\"size\":201,\"hash\":\"f008c987ef8b6b7ebb4d206306ee214f01e4508b\"},{\"path\":\"app/client/views/home/home.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.coffee.js?49335e63b597461f45496ec342f7a00cc0f3080a\",\"sourceMap\":\"app/client/views/home/home.coffee.js.map\",\"sourceMapUrl\":\"/client/views/home/49335e63b597461f45496ec342f7a00cc0f3080a.map\",\"size\":312,\"hash\":\"49335e63b597461f45496ec342f7a00cc0f3080a\"},{\"path\":\"app/client/views/home/home.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.js?23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\",\"size\":21,\"hash\":\"23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\"},{\"path\":\"app/client/views/nodes/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.js?d9c2820a83ce54bcece438e375772473e7e3ae87\",\"size\":127,\"hash\":\"d9c2820a83ce54bcece438e375772473e7e3ae87\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.js?13871e3bcdb78752f2583592e7569b1ef21b0d5c\",\"size\":298,\"hash\":\"13871e3bcdb78752f2583592e7569b1ef21b0d5c\"},{\"path\":\"app/client/views/nodes/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.js?fd32ec9e6844b165c4487ad18647ba1f01276d6e\",\"size\":1010,\"hash\":\"fd32ec9e6844b165c4487ad18647ba1f01276d6e\"},{\"path\":\"app/client/views/nodes/nodes.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.js?52db8e7dd146acd250e10f64fd65d728e3fe2e3d\",\"size\":204,\"hash\":\"52db8e7dd146acd250e10f64fd65d728e3fe2e3d\"},{\"path\":\"app/client/views/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.coffee.js?b222f3c5af136d0cf7054734c7157f479c0a678e\",\"sourceMap\":\"app/client/views/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/client/views/trades/b222f3c5af136d0cf7054734c7157f479c0a678e.map\",\"size\":234,\"hash\":\"b222f3c5af136d0cf7054734c7157f479c0a678e\"},{\"path\":\"app/client/views/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.js?a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\",\"size\":292,\"hash\":\"a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\"},{\"path\":\"app/client/views/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.coffee.js?93d5002398572514e6a51fe66dd4e1d0378460d2\",\"sourceMap\":\"app/client/views/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/client/views/transfers/93d5002398572514e6a51fe66dd4e1d0378460d2.map\",\"size\":264,\"hash\":\"93d5002398572514e6a51fe66dd4e1d0378460d2\"},{\"path\":\"app/client/views/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.js?8e4f897906d91457950506deb5f60288cae1bf01\",\"size\":309,\"hash\":\"8e4f897906d91457950506deb5f60288cae1bf01\"},{\"path\":\"app/client/router/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/router/config.coffee.js?73f6a3c47c9524edef5ce4af626347abdbfd934e\",\"sourceMap\":\"app/client/router/config.coffee.js.map\",\"sourceMapUrl\":\"/client/router/73f6a3c47c9524edef5ce4af626347abdbfd934e.map\",\"size\":456,\"hash\":\"73f6a3c47c9524edef5ce4af626347abdbfd934e\"},{\"path\":\"app/client/views/header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.js?4866c4adf90235af832db68571e986d8036eeab5\",\"size\":174,\"hash\":\"4866c4adf90235af832db68571e986d8036eeab5\"},{\"path\":\"app/models/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.coffee.js?308ff5c07a0f1a8fff91ddc7f814114cba79aac0\",\"sourceMap\":\"app/models/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/models/trades/308ff5c07a0f1a8fff91ddc7f814114cba79aac0.map\",\"size\":1529,\"hash\":\"308ff5c07a0f1a8fff91ddc7f814114cba79aac0\"},{\"path\":\"app/models/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.js?875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\",\"size\":1296,\"hash\":\"875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\"},{\"path\":\"app/models/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.coffee.js?a832763108fb05f31c8ceb0f095c10f27ba14188\",\"sourceMap\":\"app/models/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/models/transfers/a832763108fb05f31c8ceb0f095c10f27ba14188.map\",\"size\":1739,\"hash\":\"a832763108fb05f31c8ceb0f095c10f27ba14188\"},{\"path\":\"app/models/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.js?7aeecc6e8d89a8bc23744da5adcdbc3de7935941\",\"size\":2023,\"hash\":\"7aeecc6e8d89a8bc23744da5adcdbc3de7935941\"},{\"path\":\"app/client/helpers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.coffee.js?b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\",\"sourceMap\":\"app/client/helpers.coffee.js.map\",\"sourceMapUrl\":\"/client/b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8.map\",\"size\":600,\"hash\":\"b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\"},{\"path\":\"app/client/helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.js?ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\",\"size\":631,\"hash\":\"ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\"},{\"path\":\"app/client/subscriptions.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/subscriptions.js?1ca2a7bf25eaac7696a81e64647252dcca4a207a\",\"size\":243,\"hash\":\"1ca2a7bf25eaac7696a81e64647252dcca4a207a\"},{\"path\":\"app/models/bankaccounts.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.coffee.js?c9fef6bc56367870596f000c7523501e16b78e55\",\"sourceMap\":\"app/models/bankaccounts.coffee.js.map\",\"sourceMapUrl\":\"/models/c9fef6bc56367870596f000c7523501e16b78e55.map\",\"size\":1313,\"hash\":\"c9fef6bc56367870596f000c7523501e16b78e55\"},{\"path\":\"app/models/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.js?483ddcbd320a249a5cad647235d2ecc7296ca92c\",\"size\":723,\"hash\":\"483ddcbd320a249a5cad647235d2ecc7296ca92c\"},{\"path\":\"app/models/bitcoinaddresses.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.coffee.js?756bafccedbdb2afcb4f32edca6b6abc02e5396a\",\"sourceMap\":\"app/models/bitcoinaddresses.coffee.js.map\",\"sourceMapUrl\":\"/models/756bafccedbdb2afcb4f32edca6b6abc02e5396a.map\",\"size\":1270,\"hash\":\"756bafccedbdb2afcb4f32edca6b6abc02e5396a\"},{\"path\":\"app/models/bitcoinaddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.js?dbce8ceeecc2f9e3d1e24af400544d980ef20095\",\"size\":1513,\"hash\":\"dbce8ceeecc2f9e3d1e24af400544d980ef20095\"},{\"path\":\"app/models/bitcoinwallets.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.coffee.js?8784729167b91c60c38b2d991a125ffec13d6ec5\",\"sourceMap\":\"app/models/bitcoinwallets.coffee.js.map\",\"sourceMapUrl\":\"/models/8784729167b91c60c38b2d991a125ffec13d6ec5.map\",\"size\":1259,\"hash\":\"8784729167b91c60c38b2d991a125ffec13d6ec5\"},{\"path\":\"app/models/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.js?a4081140c352d4265c864a797b5f5dc3b29eef19\",\"size\":702,\"hash\":\"a4081140c352d4265c864a797b5f5dc3b29eef19\"},{\"path\":\"app/models/exchanges.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.coffee.js?e853cfcb6c6fcb46d79716adef245d73dcb72bbb\",\"sourceMap\":\"app/models/exchanges.coffee.js.map\",\"sourceMapUrl\":\"/models/e853cfcb6c6fcb46d79716adef245d73dcb72bbb.map\",\"size\":1365,\"hash\":\"e853cfcb6c6fcb46d79716adef245d73dcb72bbb\"},{\"path\":\"app/models/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.js?a252eb8f3f94da18070c8086ebb359ca52977483\",\"size\":2118,\"hash\":\"a252eb8f3f94da18070c8086ebb359ca52977483\"},{\"path\":\"app/routes.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/routes.coffee.js?c2e430f0569c3e2c12f1f508ac5db21ba684664c\",\"sourceMap\":\"app/routes.coffee.js.map\",\"sourceMapUrl\":\"/c2e430f0569c3e2c12f1f508ac5db21ba684664c.map\",\"size\":1196,\"hash\":\"c2e430f0569c3e2c12f1f508ac5db21ba684664c\"},{\"path\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"where\":\"client\",\"type\":\"css\",\"cacheable\":true,\"url\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"sourceMap\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map\",\"sourceMapUrl\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.map\",\"size\":197253,\"hash\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"size\":20335,\"hash\":\"f3a9a3b609133c3d21d6b42abbf7f43bd111df72\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"size\":62926,\"hash\":\"66b1fc67e37d01ee45ca75c4eefb144d2dbe98fa\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"size\":41280,\"hash\":\"aafafdc09404c4aa4447d7e898a2183def9cc1b1\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"size\":23320,\"hash\":\"22037a3455914e5662fa51a596677bdb329e2c5c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"size\":56006,\"hash\":\"0183979056f0b87616cd99d5c54a48f3b771eee6\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"size\":287007,\"hash\":\"cd980eab6db5fa57db670cb2e4278e67e1a4d6c9\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"size\":112160,\"hash\":\"6225ccc4ec94d060f19efab97ca42d842845b949\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"size\":65452,\"hash\":\"7d65e0227d0d7cdc1718119cd2a7dce0638f151c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"size\":85908,\"hash\":\"6270a4a561a69fef5f5cc18cdf9efc256ec2ccbe\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_logo.svg\",\"size\":3723,\"hash\":\"bd19ecdc8eb1084f7bb562c298e4ce41f9cdc698\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_cog.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_cog.svg\",\"size\":987,\"hash\":\"6e74acfffcbd2bafdc8a95d9db7762ece07b1e81\"},{\"path\":\"packages/velocity_html-reporter/lib/icon-time.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/icon-time.png\",\"size\":2834,\"hash\":\"868f492022a4dab0f1522de6aae0773531bc6e85\"},{\"path\":\"app/.gitignore\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/.gitignore\",\"size\":11,\"hash\":\"f1b9a783bd788cd77162147376caa6cc22716de9\"},{\"path\":\"app/favicon.ico\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/favicon.ico\",\"size\":1150,\"hash\":\"0a8ca32c0109fb7440876d549d4c7a5bb5773e5c\"},{\"path\":\"app/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/FontAwesome.otf\",\"size\":75188,\"hash\":\"46198321f916ab2aa86c0ad51e0aacaa73783bd7\"},{\"path\":\"app/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.eot\",\"size\":72449,\"hash\":\"ad0c0513a2fbb7326ac5e11f7c94b95aa23b02e0\"},{\"path\":\"app/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.svg\",\"size\":253487,\"hash\":\"28a0cd129eb6e57d21f8c511581f1909ee6b934a\"},{\"path\":\"app/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.ttf\",\"size\":141564,\"hash\":\"c59792c0a05a4da1f9202a390a27e2d500c36752\"},{\"path\":\"app/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.woff\",\"size\":83760,\"hash\":\"7f2f3c55c2de192387c351b995115f6b79e09173\"},{\"path\":\"app/img/coyno-logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/coyno-logo.svg\",\"size\":62036,\"hash\":\"0f5b4f7ad9f7b4cd0fd6ce840eaffd6d2abee615\"},{\"path\":\"app/img/exchange-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default.png\",\"size\":2718,\"hash\":\"38a115ae448e39a661384426a6f49fd253c93981\"},{\"path\":\"app/img/exchange-icon-default2.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default2.png\",\"size\":3055,\"hash\":\"a8455f437e1a31efaf28592afc8197bcc80f8a4a\"},{\"path\":\"app/img/graph.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/graph.png\",\"size\":38395,\"hash\":\"06f3e53943afdbbdeb5bce79b7508221030875e2\"},{\"path\":\"app/img/table-hover.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/table-hover.png\",\"size\":109,\"hash\":\"f27d3bfbd2d5a1d47422cb5abcc7742a4b873b24\"},{\"path\":\"app/img/wallet-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/wallet-icon-default.png\",\"size\":857,\"hash\":\"384b53d5f09d0645737c47cd6b259b139c24e16f\"},{\"path\":\"app/img/external-logos/Bitstamp_logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Bitstamp_logo.png\",\"size\":10857,\"hash\":\"2896bb2be42d73ab629abc517c5f3e3520fb96b6\"},{\"path\":\"app/img/external-logos/Kraken-logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Kraken-logo.png\",\"size\":2870,\"hash\":\"6b28cba561e324bd31af6945df335207c4176003\"},{\"path\":\"head.html\",\"where\":\"internal\",\"type\":\"head\",\"hash\":\"92126bb9780ea2da0401bad62831eae118f2d77c\"}],\"version\":\"eb04639ee019c77f0c1676e7dbc8f55714a40b25\"}"
                 },
                 "type": {
                   "type": "constant",
@@ -11786,7 +11750,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/underscore.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/underscore.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11803,7 +11767,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/underscore.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/underscore.js.map"
                 }
               }
             },
@@ -11812,7 +11776,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteor.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteor.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11829,7 +11793,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteor.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteor.js.map"
                 }
               }
             },
@@ -11838,7 +11802,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/standard-app-packages.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/standard-app-packages.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11855,7 +11819,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/standard-app-packages.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/standard-app-packages.js.map"
                 }
               }
             },
@@ -11864,7 +11828,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/coffeescript.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/coffeescript.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11881,7 +11845,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/coffeescript.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/coffeescript.js.map"
                 }
               }
             },
@@ -11890,7 +11854,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/less.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/less.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11907,7 +11871,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/less.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/less.js.map"
                 }
               }
             },
@@ -11916,7 +11880,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/random.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/random.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11933,7 +11897,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/random.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/random.js.map"
                 }
               }
             },
@@ -11942,7 +11906,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/localstorage.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/localstorage.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11959,7 +11923,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/localstorage.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/localstorage.js.map"
                 }
               }
             },
@@ -11968,7 +11932,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/tracker.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/tracker.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -11985,7 +11949,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/tracker.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/tracker.js.map"
                 }
               }
             },
@@ -11994,7 +11958,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/json.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/json.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12011,7 +11975,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/json.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/json.js.map"
                 }
               }
             },
@@ -12020,7 +11984,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/base64.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/base64.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12037,7 +12001,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/base64.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/base64.js.map"
                 }
               }
             },
@@ -12046,7 +12010,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ejson.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ejson.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12063,7 +12027,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ejson.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ejson.js.map"
                 }
               }
             },
@@ -12072,7 +12036,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/check.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/check.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12089,7 +12053,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/check.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/check.js.map"
                 }
               }
             },
@@ -12098,7 +12062,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/logging.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/logging.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12115,7 +12079,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/logging.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/logging.js.map"
                 }
               }
             },
@@ -12124,7 +12088,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/retry.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/retry.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12141,7 +12105,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/retry.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/retry.js.map"
                 }
               }
             },
@@ -12150,7 +12114,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reload.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reload.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12167,7 +12131,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reload.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reload.js.map"
                 }
               }
             },
@@ -12176,7 +12140,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/id-map.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/id-map.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12193,7 +12157,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/id-map.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/id-map.js.map"
                 }
               }
             },
@@ -12202,7 +12166,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ordered-dict.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ordered-dict.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12219,7 +12183,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ordered-dict.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ordered-dict.js.map"
                 }
               }
             },
@@ -12228,7 +12192,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/geojson-utils.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/geojson-utils.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12245,7 +12209,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/geojson-utils.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/geojson-utils.js.map"
                 }
               }
             },
@@ -12254,7 +12218,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/minimongo.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/minimongo.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12271,7 +12235,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/minimongo.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/minimongo.js.map"
                 }
               }
             },
@@ -12280,7 +12244,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ddp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ddp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12297,7 +12261,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ddp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ddp.js.map"
                 }
               }
             },
@@ -12306,7 +12270,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/follower-livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/follower-livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12323,7 +12287,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/follower-livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/follower-livedata.js.map"
                 }
               }
             },
@@ -12332,7 +12296,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/application-configuration.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/application-configuration.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12349,7 +12313,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/application-configuration.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/application-configuration.js.map"
                 }
               }
             },
@@ -12358,7 +12322,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mongo.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mongo.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12375,7 +12339,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mongo.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mongo.js.map"
                 }
               }
             },
@@ -12384,7 +12348,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/jquery.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/jquery.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12401,7 +12365,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/jquery.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/jquery.js.map"
                 }
               }
             },
@@ -12410,7 +12374,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/deps.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/deps.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12427,7 +12391,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/deps.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/deps.js.map"
                 }
               }
             },
@@ -12436,7 +12400,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/htmljs.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/htmljs.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12453,7 +12417,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/htmljs.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/htmljs.js.map"
                 }
               }
             },
@@ -12462,7 +12426,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/observe-sequence.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/observe-sequence.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12479,7 +12443,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/observe-sequence.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/observe-sequence.js.map"
                 }
               }
             },
@@ -12488,7 +12452,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-var.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-var.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12505,7 +12469,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-var.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-var.js.map"
                 }
               }
             },
@@ -12514,7 +12478,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/blaze.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/blaze.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12531,7 +12495,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/blaze.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/blaze.js.map"
                 }
               }
             },
@@ -12540,7 +12504,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-base.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-base.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12557,7 +12521,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-base.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-base.js.map"
                 }
               }
             },
@@ -12566,7 +12530,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sha.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sha.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12583,7 +12547,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sha.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sha.js.map"
                 }
               }
             },
@@ -12592,7 +12556,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/srp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/srp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12609,7 +12573,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/srp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/srp.js.map"
                 }
               }
             },
@@ -12618,7 +12582,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-password.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-password.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12635,7 +12599,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-password.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/accounts-password.js.map"
                 }
               }
             },
@@ -12644,7 +12608,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_simple-schema.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_simple-schema.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12661,7 +12625,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_simple-schema.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_simple-schema.js.map"
                 }
               }
             },
@@ -12670,7 +12634,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mongo-livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mongo-livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12687,7 +12651,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mongo-livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mongo-livedata.js.map"
                 }
               }
             },
@@ -12696,7 +12660,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_collection2.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_collection2.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12713,7 +12677,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_collection2.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_collection2.js.map"
                 }
               }
             },
@@ -12722,7 +12686,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/matb33_collection-hooks.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/matb33_collection-hooks.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12739,7 +12703,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/matb33_collection-hooks.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/matb33_collection-hooks.js.map"
                 }
               }
             },
@@ -12748,7 +12712,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sewdn_collection-behaviours.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sewdn_collection-behaviours.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12765,7 +12729,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sewdn_collection-behaviours.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sewdn_collection-behaviours.js.map"
                 }
               }
             },
@@ -12774,7 +12738,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/dsyko_node-csv-npm.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/dsyko_node-csv-npm.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12791,7 +12755,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/dsyko_node-csv-npm.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/dsyko_node-csv-npm.js.map"
                 }
               }
             },
@@ -12800,7 +12764,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/lepozepo_accounting.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/lepozepo_accounting.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12817,7 +12781,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/lepozepo_accounting.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/lepozepo_accounting.js.map"
                 }
               }
             },
@@ -12826,7 +12790,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ui.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ui.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12843,7 +12807,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/ui.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/ui.js.map"
                 }
               }
             },
@@ -12852,7 +12816,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/templating.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/templating.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12869,7 +12833,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/templating.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/templating.js.map"
                 }
               }
             },
@@ -12878,7 +12842,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_core.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_core.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12895,7 +12859,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_core.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_core.js.map"
                 }
               }
             },
@@ -12904,7 +12868,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_dynamic-template.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_dynamic-template.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12921,7 +12885,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_dynamic-template.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_dynamic-template.js.map"
                 }
               }
             },
@@ -12930,7 +12894,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_layout.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_layout.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12947,7 +12911,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_layout.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_layout.js.map"
                 }
               }
             },
@@ -12956,7 +12920,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_url.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_url.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12973,7 +12937,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_url.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_url.js.map"
                 }
               }
             },
@@ -12982,7 +12946,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_middleware-stack.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_middleware-stack.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -12999,7 +12963,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_middleware-stack.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_middleware-stack.js.map"
                 }
               }
             },
@@ -13008,7 +12972,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_location.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_location.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13025,7 +12989,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_location.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_location.js.map"
                 }
               }
             },
@@ -13034,7 +12998,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-dict.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-dict.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13051,7 +13015,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-dict.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/reactive-dict.js.map"
                 }
               }
             },
@@ -13060,7 +13024,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_controller.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_controller.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13077,7 +13041,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_controller.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_controller.js.map"
                 }
               }
             },
@@ -13086,7 +13050,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_router.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_router.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13103,7 +13067,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/iron_router.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/iron_router.js.map"
                 }
               }
             },
@@ -13112,7 +13076,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mquandalle_jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mquandalle_jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13129,7 +13093,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mquandalle_jade.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mquandalle_jade.js.map"
                 }
               }
             },
@@ -13138,7 +13102,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/cmather_handlebars-server.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/cmather_handlebars-server.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13155,7 +13119,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/cmather_handlebars-server.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/cmather_handlebars-server.js.map"
                 }
               }
             },
@@ -13164,7 +13128,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/livedata.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/livedata.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13181,7 +13145,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/livedata.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/livedata.js.map"
                 }
               }
             },
@@ -13190,7 +13154,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_moment.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_moment.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13207,7 +13171,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_moment.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_moment.js.map"
                 }
               }
             },
@@ -13216,7 +13180,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_autoform.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_autoform.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13233,7 +13197,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_autoform.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/aldeed_autoform.js.map"
                 }
               }
             },
@@ -13242,7 +13206,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13259,7 +13223,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data.js.map"
                 }
               }
             },
@@ -13268,7 +13232,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13285,7 +13249,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap.js.map"
                 }
               }
             },
@@ -13294,7 +13258,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_just-i18n.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_just-i18n.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13311,7 +13275,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_just-i18n.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_just-i18n.js.map"
                 }
               }
             },
@@ -13320,7 +13284,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/coynverter.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/coynverter.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13337,7 +13301,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/coynverter.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/coynverter.js.map"
                 }
               }
             },
@@ -13346,7 +13310,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/session.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/session.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13363,7 +13327,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/session.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/session.js.map"
                 }
               }
             },
@@ -13372,7 +13336,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/handlebars.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/handlebars.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13389,7 +13353,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/handlebars.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/handlebars.js.map"
                 }
               }
             },
@@ -13398,7 +13362,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/stylus.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/stylus.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13415,7 +13379,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/stylus.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/stylus.js.map"
                 }
               }
             },
@@ -13424,7 +13388,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_accounts-ui-bootstrap-3.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_accounts-ui-bootstrap-3.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13441,7 +13405,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_accounts-ui-bootstrap-3.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_accounts-ui-bootstrap-3.js.map"
                 }
               }
             },
@@ -13450,7 +13414,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/dburles_collection-helpers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/dburles_collection-helpers.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13467,7 +13431,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/dburles_collection-helpers.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/dburles_collection-helpers.js.map"
                 }
               }
             },
@@ -13476,7 +13440,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13493,7 +13457,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4.js.map"
                 }
               }
             },
@@ -13502,7 +13466,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_animation-helper.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_animation-helper.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13519,7 +13483,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_animation-helper.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_animation-helper.js.map"
                 }
               }
             },
@@ -13528,7 +13492,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_template-var.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_template-var.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13545,7 +13509,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_template-var.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/frozeman_template-var.js.map"
                 }
               }
             },
@@ -13554,7 +13518,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/schnie_uploader.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/schnie_uploader.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13571,7 +13535,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/schnie_uploader.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/schnie_uploader.js.map"
                 }
               }
             },
@@ -13580,7 +13544,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_underscore-string-latest.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_underscore-string-latest.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13597,7 +13561,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_underscore-string-latest.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mrt_underscore-string-latest.js.map"
                 }
               }
             },
@@ -13606,7 +13570,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_simple-form.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_simple-form.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13623,7 +13587,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_simple-form.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_simple-form.js.map"
                 }
               }
             },
@@ -13632,7 +13596,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/softwarerero_accounts-t9n.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/softwarerero_accounts-t9n.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13649,7 +13613,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/softwarerero_accounts-t9n.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/softwarerero_accounts-t9n.js.map"
                 }
               }
             },
@@ -13658,7 +13622,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/service-configuration.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/service-configuration.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13675,7 +13639,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/service-configuration.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/service-configuration.js.map"
                 }
               }
             },
@@ -13684,7 +13648,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_accounts-entry.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_accounts-entry.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13701,7 +13665,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_accounts-entry.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/joshowens_accounts-entry.js.map"
                 }
               }
             },
@@ -13710,7 +13674,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_npm.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_npm.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13727,7 +13691,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_npm.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_npm.js.map"
                 }
               }
             },
@@ -13736,7 +13700,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/npm-container.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/npm-container.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13753,7 +13717,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/npm-container.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/npm-container.js.map"
                 }
               }
             },
@@ -13762,7 +13726,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/url.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/url.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13779,7 +13743,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/url.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/url.js.map"
                 }
               }
             },
@@ -13788,7 +13752,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/http.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/http.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13805,7 +13769,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/http.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/http.js.map"
                 }
               }
             },
@@ -13814,7 +13778,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_core.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_core.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13831,7 +13795,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_core.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_core.js.map"
                 }
               }
             },
@@ -13840,7 +13804,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/amplify.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/amplify.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13857,7 +13821,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/amplify.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/amplify.js.map"
                 }
               }
             },
@@ -13866,7 +13830,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13883,7 +13847,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter.js.map"
                 }
               }
             },
@@ -13892,7 +13856,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_shim.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_shim.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13909,7 +13873,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_shim.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_shim.js.map"
                 }
               }
             },
@@ -13918,7 +13882,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mike_mocha.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mike_mocha.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13935,7 +13899,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mike_mocha.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mike_mocha.js.map"
                 }
               }
             },
@@ -13944,7 +13908,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sanjo_jasmine.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sanjo_jasmine.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13961,7 +13925,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/sanjo_jasmine.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/sanjo_jasmine.js.map"
                 }
               }
             },
@@ -13970,7 +13934,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira-binary-deps.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira-binary-deps.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -13987,7 +13951,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira-binary-deps.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira-binary-deps.js.map"
                 }
               }
             },
@@ -13996,7 +13960,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_meteorx.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_meteorx.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14013,7 +13977,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_meteorx.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_meteorx.js.map"
                 }
               }
             },
@@ -14022,7 +13986,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14039,7 +14003,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_kadira.js.map"
                 }
               }
             },
@@ -14048,7 +14012,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/autoupdate.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/autoupdate.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14065,7 +14029,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/autoupdate.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/autoupdate.js.map"
                 }
               }
             },
@@ -14074,7 +14038,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteor-platform.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteor-platform.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14091,7 +14055,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteor-platform.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteor-platform.js.map"
                 }
               }
             },
@@ -14100,7 +14064,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_async.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_async.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14117,7 +14081,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_async.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/meteorhacks_async.js.map"
                 }
               }
             },
@@ -14126,7 +14090,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/webapp.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/webapp.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14143,7 +14107,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/webapp.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/webapp.js.map"
                 }
               }
             },
@@ -14152,7 +14116,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/spacebars.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/spacebars.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14169,7 +14133,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/spacebars.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/spacebars.js.map"
                 }
               }
             },
@@ -14178,7 +14142,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/fastclick.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/fastclick.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14195,7 +14159,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/fastclick.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/fastclick.js.map"
                 }
               }
             },
@@ -14204,7 +14168,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mobile-status-bar.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mobile-status-bar.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14221,7 +14185,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/mobile-status-bar.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/mobile-status-bar.js.map"
                 }
               }
             },
@@ -14230,7 +14194,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/launch-screen.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/launch-screen.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14247,7 +14211,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/launch-screen.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/launch-screen.js.map"
                 }
               }
             },
@@ -14256,7 +14220,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/global-imports.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/global-imports.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14272,7 +14236,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14288,7 +14252,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14304,7 +14268,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/dashboard/dashboard.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/dashboard/dashboard.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14320,7 +14284,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14336,7 +14300,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/login/login.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/login/login.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14352,7 +14316,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bankaccounts.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bankaccounts.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14368,7 +14332,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoinwallets.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoinwallets.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14384,7 +14348,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.dynamicNodeMenu.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.dynamicNodeMenu.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14400,7 +14364,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.dynamicNodeViews.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.dynamicNodeViews.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14416,7 +14380,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchangeDetails.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchangeDetails.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14432,7 +14396,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchanges.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchanges.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14448,7 +14412,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/newBankAccount.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/newBankAccount.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14464,7 +14428,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.newBitcoinWallet.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/template.newBitcoinWallet.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14480,7 +14444,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/newExchange.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/newExchange.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14496,7 +14460,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/nodes.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/nodes.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14512,7 +14476,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/overview.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/overview.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14528,7 +14492,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/newTransaction.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/newTransaction.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14544,7 +14508,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14560,7 +14524,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14576,7 +14540,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/footer.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/footer.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14592,7 +14556,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/header.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/header.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14608,7 +14572,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/index.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/index.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14624,7 +14588,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/loading.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/loading.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14640,7 +14604,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/notFound.jade.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/notFound.jade.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14656,7 +14620,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/transition.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/transition.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14672,7 +14636,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/collapse.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/collapse.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14688,7 +14652,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/dropdown.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/dropdown.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14704,7 +14668,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/modal.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/modal.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14720,7 +14684,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/tooltip.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/tooltip.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14736,7 +14700,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/popover.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/popover.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14752,7 +14716,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/carousel.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/carousel.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14768,7 +14732,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/affix.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/affix.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14784,7 +14748,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/alert.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/alert.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14800,7 +14764,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/button.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/button.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14816,7 +14780,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/scrollspy.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/scrollspy.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14832,7 +14796,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/tab.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/bootstrap/js/tab.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14848,7 +14812,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/lib/jquery/table-fixed-header.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/lib/jquery/table-fixed-header.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -14864,7 +14828,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/de.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/de.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14881,7 +14845,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/de.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/de.coffee.js.map"
                 }
               }
             },
@@ -14890,7 +14854,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/en.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/en.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14907,7 +14871,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/en.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/langs/en.coffee.js.map"
                 }
               }
             },
@@ -14916,7 +14880,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangeRateTool.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangeRateTool.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14933,7 +14897,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangeRateTool.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangeRateTool.coffee.js.map"
                 }
               }
             },
@@ -14942,7 +14906,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangerates.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangerates.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14959,7 +14923,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangerates.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/lib/exchangerates.coffee.js.map"
                 }
               }
             },
@@ -14968,7 +14932,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -14985,7 +14949,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.coffee.js.map"
                 }
               }
             },
@@ -14994,7 +14958,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/collection-behaviours.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15010,7 +14974,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/config.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/config.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15027,7 +14991,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/lib/config.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/lib/config.coffee.js.map"
                 }
               }
             },
@@ -15036,7 +15000,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/addBitcoinAddress.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/addBitcoinAddress.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15052,7 +15016,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15068,7 +15032,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15085,7 +15049,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.coffee.js.map"
                 }
               }
             },
@@ -15094,7 +15058,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/home/home.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15110,7 +15074,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bankaccounts.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bankaccounts.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15126,7 +15090,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoinwallets.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/bitcoinwallets.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15142,7 +15106,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchanges.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/exchanges.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15158,7 +15122,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/nodes.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/nodes/nodes.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15174,7 +15138,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15191,7 +15155,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.coffee.js.map"
                 }
               }
             },
@@ -15200,7 +15164,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/trades/trades.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15216,7 +15180,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15233,7 +15197,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.coffee.js.map"
                 }
               }
             },
@@ -15242,7 +15206,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/transfers/transfers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15258,7 +15222,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/router/config.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/router/config.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15275,7 +15239,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/router/config.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/router/config.coffee.js.map"
                 }
               }
             },
@@ -15284,7 +15248,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/views/header.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/views/header.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15300,7 +15264,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15317,7 +15281,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.coffee.js.map"
                 }
               }
             },
@@ -15326,7 +15290,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/trades/trades.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15342,7 +15306,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15359,7 +15323,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.coffee.js.map"
                 }
               }
             },
@@ -15368,7 +15332,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/transfers/transfers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15384,7 +15348,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15401,7 +15365,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.coffee.js.map"
                 }
               }
             },
@@ -15410,7 +15374,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/helpers.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15426,7 +15390,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/client/subscriptions.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/client/subscriptions.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15442,7 +15406,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15459,7 +15423,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.coffee.js.map"
                 }
               }
             },
@@ -15468,7 +15432,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bankaccounts.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15484,7 +15448,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15501,7 +15465,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.coffee.js.map"
                 }
               }
             },
@@ -15510,7 +15474,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinaddresses.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15526,7 +15490,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15543,7 +15507,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.coffee.js.map"
                 }
               }
             },
@@ -15552,7 +15516,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/bitcoinwallets.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15568,7 +15532,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15585,7 +15549,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.coffee.js.map"
                 }
               }
             },
@@ -15594,7 +15558,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/models/exchanges.js"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15610,7 +15574,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/routes.coffee.js"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/routes.coffee.js"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15627,7 +15591,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/routes.coffee.js.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/routes.coffee.js.map"
                 }
               }
             },
@@ -15636,7 +15600,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css"
                 },
                 "sourceMapUrl": {
                   "type": "constant",
@@ -15653,7 +15617,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map"
                 }
               }
             },
@@ -15662,7 +15626,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15678,7 +15642,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15694,7 +15658,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15710,7 +15674,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15726,7 +15690,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15742,7 +15706,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15758,7 +15722,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15774,7 +15738,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15790,7 +15754,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15806,7 +15770,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/velocity_logo.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/velocity_logo.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15822,7 +15786,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/velocity_cog.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/velocity_cog.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15838,7 +15802,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/icon-time.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/packages/velocity_html-reporter/lib/icon-time.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15854,7 +15818,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/.gitignore"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/.gitignore"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15870,7 +15834,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/favicon.ico"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/favicon.ico"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15886,7 +15850,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/fonts/FontAwesome.otf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/fonts/FontAwesome.otf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15902,7 +15866,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.eot"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.eot"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15918,7 +15882,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15934,7 +15898,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.ttf"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.ttf"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15950,7 +15914,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.woff"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/fonts/fontawesome-webfont.woff"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15966,7 +15930,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/coyno-logo.svg"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/coyno-logo.svg"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15982,7 +15946,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/exchange-icon-default.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/exchange-icon-default.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -15998,7 +15962,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/exchange-icon-default2.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/exchange-icon-default2.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16014,7 +15978,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/graph.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/graph.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16030,7 +15994,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/table-hover.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/table-hover.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16046,7 +16010,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/wallet-icon-default.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/wallet-icon-default.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16062,7 +16026,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/external-logos/Bitstamp_logo.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/external-logos/Bitstamp_logo.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16078,7 +16042,7 @@ var packageMetadata = {
               "members": {
                 "absolutePath": {
                   "type": "constant",
-                  "value": "/home/levin/coding/coyno/meteor/.meteor/local/build/programs/web.cordova/app/img/external-logos/Kraken-logo.png"
+                  "value": "/home/levin/coding/coynows/meteor/.meteor/local/build/programs/web.cordova/app/img/external-logos/Kraken-logo.png"
                 },
                 "sourceMapUrl": {
                   "type": "undefined"
@@ -16094,7 +16058,7 @@ var packageMetadata = {
               "members": {
                 "content": {
                   "type": "constant",
-                  "value": "{\"manifest\":[{\"path\":\"packages/underscore.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/underscore.js?0a80a8623e1b40b5df5a05582f288ddd586eaa18\",\"sourceMap\":\"packages/underscore.js.map\",\"sourceMapUrl\":\"/packages/0a80a8623e1b40b5df5a05582f288ddd586eaa18.map\",\"size\":150686,\"hash\":\"0a80a8623e1b40b5df5a05582f288ddd586eaa18\"},{\"path\":\"packages/meteor.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor.js?885068204971cf198515f1e0639c7a3ca8e8a0d3\",\"sourceMap\":\"packages/meteor.js.map\",\"sourceMapUrl\":\"/packages/885068204971cf198515f1e0639c7a3ca8e8a0d3.map\",\"size\":110567,\"hash\":\"885068204971cf198515f1e0639c7a3ca8e8a0d3\"},{\"path\":\"packages/standard-app-packages.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/standard-app-packages.js?be7072e6abfda638502b63fa0f809c85c8c2b8ed\",\"sourceMap\":\"packages/standard-app-packages.js.map\",\"sourceMapUrl\":\"/packages/be7072e6abfda638502b63fa0f809c85c8c2b8ed.map\",\"size\":1306,\"hash\":\"be7072e6abfda638502b63fa0f809c85c8c2b8ed\"},{\"path\":\"packages/coffeescript.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coffeescript.js?969f68786bbc68e6cad299e74922a53af3d1404b\",\"sourceMap\":\"packages/coffeescript.js.map\",\"sourceMapUrl\":\"/packages/969f68786bbc68e6cad299e74922a53af3d1404b.map\",\"size\":1294,\"hash\":\"969f68786bbc68e6cad299e74922a53af3d1404b\"},{\"path\":\"packages/less.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/less.js?7d1bf981a25a449d6270558bcfc983313c40cd26\",\"sourceMap\":\"packages/less.js.map\",\"sourceMapUrl\":\"/packages/7d1bf981a25a449d6270558bcfc983313c40cd26.map\",\"size\":1286,\"hash\":\"7d1bf981a25a449d6270558bcfc983313c40cd26\"},{\"path\":\"packages/random.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/random.js?fe7b46080c91ce482acf6fc326afbc5b176f0502\",\"sourceMap\":\"packages/random.js.map\",\"sourceMapUrl\":\"/packages/fe7b46080c91ce482acf6fc326afbc5b176f0502.map\",\"size\":24099,\"hash\":\"fe7b46080c91ce482acf6fc326afbc5b176f0502\"},{\"path\":\"packages/localstorage.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/localstorage.js?9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\",\"sourceMap\":\"packages/localstorage.js.map\",\"sourceMapUrl\":\"/packages/9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c.map\",\"size\":7092,\"hash\":\"9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\"},{\"path\":\"packages/tracker.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/tracker.js?192a05cc46b867dadbe8bf90dd961f6f8fd1574f\",\"sourceMap\":\"packages/tracker.js.map\",\"sourceMapUrl\":\"/packages/192a05cc46b867dadbe8bf90dd961f6f8fd1574f.map\",\"size\":66854,\"hash\":\"192a05cc46b867dadbe8bf90dd961f6f8fd1574f\"},{\"path\":\"packages/json.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/json.js?e22856eae714c681199eabc5c0710b904b125554\",\"sourceMap\":\"packages/json.js.map\",\"sourceMapUrl\":\"/packages/e22856eae714c681199eabc5c0710b904b125554.map\",\"size\":58343,\"hash\":\"e22856eae714c681199eabc5c0710b904b125554\"},{\"path\":\"packages/base64.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/base64.js?1a63019243b73298e2964e6d4680f25bca657726\",\"sourceMap\":\"packages/base64.js.map\",\"sourceMapUrl\":\"/packages/1a63019243b73298e2964e6d4680f25bca657726.map\",\"size\":15685,\"hash\":\"1a63019243b73298e2964e6d4680f25bca657726\"},{\"path\":\"packages/ejson.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ejson.js?71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\",\"sourceMap\":\"packages/ejson.js.map\",\"sourceMapUrl\":\"/packages/71047b64b5196348bdbe5fd5eea9ac97a5a9eb14.map\",\"size\":81471,\"hash\":\"71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\"},{\"path\":\"packages/check.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/check.js?803a2be518a0c6c3949e45cf65c4ad627a3d603a\",\"sourceMap\":\"packages/check.js.map\",\"sourceMapUrl\":\"/packages/803a2be518a0c6c3949e45cf65c4ad627a3d603a.map\",\"size\":35207,\"hash\":\"803a2be518a0c6c3949e45cf65c4ad627a3d603a\"},{\"path\":\"packages/logging.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/logging.js?efbe67566211d95b5cc8e39ab2faae771509b7ce\",\"sourceMap\":\"packages/logging.js.map\",\"sourceMapUrl\":\"/packages/efbe67566211d95b5cc8e39ab2faae771509b7ce.map\",\"size\":29864,\"hash\":\"efbe67566211d95b5cc8e39ab2faae771509b7ce\"},{\"path\":\"packages/retry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/retry.js?1f1dd2c35d300110fdaba51ce4473583bc3bf031\",\"sourceMap\":\"packages/retry.js.map\",\"sourceMapUrl\":\"/packages/1f1dd2c35d300110fdaba51ce4473583bc3bf031.map\",\"size\":7245,\"hash\":\"1f1dd2c35d300110fdaba51ce4473583bc3bf031\"},{\"path\":\"packages/reload.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reload.js?da8974b7231dd8c0caccb5f322dcf97329d486d1\",\"sourceMap\":\"packages/reload.js.map\",\"sourceMapUrl\":\"/packages/da8974b7231dd8c0caccb5f322dcf97329d486d1.map\",\"size\":25926,\"hash\":\"da8974b7231dd8c0caccb5f322dcf97329d486d1\"},{\"path\":\"packages/id-map.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/id-map.js?9ea6eaae8d74693ce2505a858d9a5e60cf191298\",\"sourceMap\":\"packages/id-map.js.map\",\"sourceMapUrl\":\"/packages/9ea6eaae8d74693ce2505a858d9a5e60cf191298.map\",\"size\":8584,\"hash\":\"9ea6eaae8d74693ce2505a858d9a5e60cf191298\"},{\"path\":\"packages/ordered-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ordered-dict.js?bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\",\"sourceMap\":\"packages/ordered-dict.js.map\",\"sourceMapUrl\":\"/packages/bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37.map\",\"size\":20395,\"hash\":\"bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\"},{\"path\":\"packages/geojson-utils.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/geojson-utils.js?81b79d5cf96d00b4b7a28987debcffb665c17526\",\"sourceMap\":\"packages/geojson-utils.js.map\",\"sourceMapUrl\":\"/packages/81b79d5cf96d00b4b7a28987debcffb665c17526.map\",\"size\":48339,\"hash\":\"81b79d5cf96d00b4b7a28987debcffb665c17526\"},{\"path\":\"packages/minimongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/minimongo.js?9adf0102ce60b3df01914155826e1661f636e91d\",\"sourceMap\":\"packages/minimongo.js.map\",\"sourceMapUrl\":\"/packages/9adf0102ce60b3df01914155826e1661f636e91d.map\",\"size\":455764,\"hash\":\"9adf0102ce60b3df01914155826e1661f636e91d\"},{\"path\":\"packages/ddp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ddp.js?1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\",\"sourceMap\":\"packages/ddp.js.map\",\"sourceMapUrl\":\"/packages/1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2.map\",\"size\":616556,\"hash\":\"1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\"},{\"path\":\"packages/follower-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/follower-livedata.js?74156c6baa89da861fc4ddb58ef158eac71e58e0\",\"sourceMap\":\"packages/follower-livedata.js.map\",\"sourceMapUrl\":\"/packages/74156c6baa89da861fc4ddb58ef158eac71e58e0.map\",\"size\":1490,\"hash\":\"74156c6baa89da861fc4ddb58ef158eac71e58e0\"},{\"path\":\"packages/application-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/application-configuration.js?dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\",\"sourceMap\":\"packages/application-configuration.js.map\",\"sourceMapUrl\":\"/packages/dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f.map\",\"size\":1485,\"hash\":\"dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\"},{\"path\":\"packages/mongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo.js?9bc2c5a8b2796fab86b51660ca643e5a49a30c84\",\"sourceMap\":\"packages/mongo.js.map\",\"sourceMapUrl\":\"/packages/9bc2c5a8b2796fab86b51660ca643e5a49a30c84.map\",\"size\":146178,\"hash\":\"9bc2c5a8b2796fab86b51660ca643e5a49a30c84\"},{\"path\":\"packages/jquery.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/jquery.js?265926494aaa3929cd2e30da265211c5929f37a4\",\"sourceMap\":\"packages/jquery.js.map\",\"sourceMapUrl\":\"/packages/265926494aaa3929cd2e30da265211c5929f37a4.map\",\"size\":1295407,\"hash\":\"265926494aaa3929cd2e30da265211c5929f37a4\"},{\"path\":\"packages/deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/deps.js?504589e1e9585dec8f9f6094e5a87b22de3783a1\",\"sourceMap\":\"packages/deps.js.map\",\"sourceMapUrl\":\"/packages/504589e1e9585dec8f9f6094e5a87b22de3783a1.map\",\"size\":1442,\"hash\":\"504589e1e9585dec8f9f6094e5a87b22de3783a1\"},{\"path\":\"packages/htmljs.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/htmljs.js?539b5fc23cf5e63bc8e324543a1026b138316a8c\",\"sourceMap\":\"packages/htmljs.js.map\",\"sourceMapUrl\":\"/packages/539b5fc23cf5e63bc8e324543a1026b138316a8c.map\",\"size\":110444,\"hash\":\"539b5fc23cf5e63bc8e324543a1026b138316a8c\"},{\"path\":\"packages/observe-sequence.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/observe-sequence.js?2fd807ea171ead273b9e6458607cb226012d9240\",\"sourceMap\":\"packages/observe-sequence.js.map\",\"sourceMapUrl\":\"/packages/2fd807ea171ead273b9e6458607cb226012d9240.map\",\"size\":30271,\"hash\":\"2fd807ea171ead273b9e6458607cb226012d9240\"},{\"path\":\"packages/reactive-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-var.js?20335b7b37165980ddd9f23943b2e5b00aae1cc2\",\"sourceMap\":\"packages/reactive-var.js.map\",\"sourceMapUrl\":\"/packages/20335b7b37165980ddd9f23943b2e5b00aae1cc2.map\",\"size\":13963,\"hash\":\"20335b7b37165980ddd9f23943b2e5b00aae1cc2\"},{\"path\":\"packages/blaze.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/blaze.js?77c0809654ee3a10dcd5a4f961fb1437e7957d33\",\"sourceMap\":\"packages/blaze.js.map\",\"sourceMapUrl\":\"/packages/77c0809654ee3a10dcd5a4f961fb1437e7957d33.map\",\"size\":385864,\"hash\":\"77c0809654ee3a10dcd5a4f961fb1437e7957d33\"},{\"path\":\"packages/accounts-base.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-base.js?6ed32803c332f93f65e36a195f42e58a62ed028d\",\"sourceMap\":\"packages/accounts-base.js.map\",\"sourceMapUrl\":\"/packages/6ed32803c332f93f65e36a195f42e58a62ed028d.map\",\"size\":108969,\"hash\":\"6ed32803c332f93f65e36a195f42e58a62ed028d\"},{\"path\":\"packages/sha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sha.js?65ef52f7221944768bfc2049d6b7e163c8ae2615\",\"sourceMap\":\"packages/sha.js.map\",\"sourceMapUrl\":\"/packages/65ef52f7221944768bfc2049d6b7e163c8ae2615.map\",\"size\":19584,\"hash\":\"65ef52f7221944768bfc2049d6b7e163c8ae2615\"},{\"path\":\"packages/srp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/srp.js?e2e28156e8c912d504a3586351c8a1119f664cfd\",\"sourceMap\":\"packages/srp.js.map\",\"sourceMapUrl\":\"/packages/e2e28156e8c912d504a3586351c8a1119f664cfd.map\",\"size\":173470,\"hash\":\"e2e28156e8c912d504a3586351c8a1119f664cfd\"},{\"path\":\"packages/accounts-password.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-password.js?6c517b689e15ab07dd443895b7ed801683dda159\",\"sourceMap\":\"packages/accounts-password.js.map\",\"sourceMapUrl\":\"/packages/6c517b689e15ab07dd443895b7ed801683dda159.map\",\"size\":33053,\"hash\":\"6c517b689e15ab07dd443895b7ed801683dda159\"},{\"path\":\"packages/aldeed_simple-schema.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_simple-schema.js?f9f115ce8032ac525bc2dde8cca4ab5937f22441\",\"sourceMap\":\"packages/aldeed_simple-schema.js.map\",\"sourceMapUrl\":\"/packages/f9f115ce8032ac525bc2dde8cca4ab5937f22441.map\",\"size\":472789,\"hash\":\"f9f115ce8032ac525bc2dde8cca4ab5937f22441\"},{\"path\":\"packages/mongo-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo-livedata.js?e6ebca489f38b73788b494509a4f83d87fdbf6c0\",\"sourceMap\":\"packages/mongo-livedata.js.map\",\"sourceMapUrl\":\"/packages/e6ebca489f38b73788b494509a4f83d87fdbf6c0.map\",\"size\":1299,\"hash\":\"e6ebca489f38b73788b494509a4f83d87fdbf6c0\"},{\"path\":\"packages/aldeed_collection2.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_collection2.js?525ba7d2b38809f4b3de1e552fabb647d8fc56ae\",\"sourceMap\":\"packages/aldeed_collection2.js.map\",\"sourceMapUrl\":\"/packages/525ba7d2b38809f4b3de1e552fabb647d8fc56ae.map\",\"size\":69751,\"hash\":\"525ba7d2b38809f4b3de1e552fabb647d8fc56ae\"},{\"path\":\"packages/matb33_collection-hooks.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/matb33_collection-hooks.js?abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\",\"sourceMap\":\"packages/matb33_collection-hooks.js.map\",\"sourceMapUrl\":\"/packages/abfb68ba8623e56062a2b978bd0b4a1827b8e1c6.map\",\"size\":72184,\"hash\":\"abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\"},{\"path\":\"packages/sewdn_collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sewdn_collection-behaviours.js?139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\",\"sourceMap\":\"packages/sewdn_collection-behaviours.js.map\",\"sourceMapUrl\":\"/packages/139fdbdf5bd43d975e2c4d39d5a18962e0dcc028.map\",\"size\":25546,\"hash\":\"139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\"},{\"path\":\"packages/dsyko_node-csv-npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dsyko_node-csv-npm.js?dd174f021d8a59fe74f62712fd862c28da24e627\",\"sourceMap\":\"packages/dsyko_node-csv-npm.js.map\",\"sourceMapUrl\":\"/packages/dd174f021d8a59fe74f62712fd862c28da24e627.map\",\"size\":1303,\"hash\":\"dd174f021d8a59fe74f62712fd862c28da24e627\"},{\"path\":\"packages/lepozepo_accounting.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/lepozepo_accounting.js?42604caee2e288664538035c00bc428b24993f06\",\"sourceMap\":\"packages/lepozepo_accounting.js.map\",\"sourceMapUrl\":\"/packages/42604caee2e288664538035c00bc428b24993f06.map\",\"size\":48023,\"hash\":\"42604caee2e288664538035c00bc428b24993f06\"},{\"path\":\"packages/ui.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ui.js?5a663333fd30f8fd913f110e0ef779e84f67c4b8\",\"sourceMap\":\"packages/ui.js.map\",\"sourceMapUrl\":\"/packages/5a663333fd30f8fd913f110e0ef779e84f67c4b8.map\",\"size\":1529,\"hash\":\"5a663333fd30f8fd913f110e0ef779e84f67c4b8\"},{\"path\":\"packages/templating.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/templating.js?599ba307216da826d8b335332ebcc9a497a369a0\",\"sourceMap\":\"packages/templating.js.map\",\"sourceMapUrl\":\"/packages/599ba307216da826d8b335332ebcc9a497a369a0.map\",\"size\":11910,\"hash\":\"599ba307216da826d8b335332ebcc9a497a369a0\"},{\"path\":\"packages/iron_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_core.js?d966a1f70c94792fd94c8a155bdbef9bec5e0047\",\"sourceMap\":\"packages/iron_core.js.map\",\"sourceMapUrl\":\"/packages/d966a1f70c94792fd94c8a155bdbef9bec5e0047.map\",\"size\":32915,\"hash\":\"d966a1f70c94792fd94c8a155bdbef9bec5e0047\"},{\"path\":\"packages/iron_dynamic-template.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_dynamic-template.js?4d8240a576804301368600b388b97065770c2964\",\"sourceMap\":\"packages/iron_dynamic-template.js.map\",\"sourceMapUrl\":\"/packages/4d8240a576804301368600b388b97065770c2964.map\",\"size\":85060,\"hash\":\"4d8240a576804301368600b388b97065770c2964\"},{\"path\":\"packages/iron_layout.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_layout.js?4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\",\"sourceMap\":\"packages/iron_layout.js.map\",\"sourceMapUrl\":\"/packages/4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062.map\",\"size\":62058,\"hash\":\"4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\"},{\"path\":\"packages/iron_url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_url.js?271d2b23f8542769347738353a73f77c63859e8e\",\"sourceMap\":\"packages/iron_url.js.map\",\"sourceMapUrl\":\"/packages/271d2b23f8542769347738353a73f77c63859e8e.map\",\"size\":65852,\"hash\":\"271d2b23f8542769347738353a73f77c63859e8e\"},{\"path\":\"packages/iron_middleware-stack.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_middleware-stack.js?bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\",\"sourceMap\":\"packages/iron_middleware-stack.js.map\",\"sourceMapUrl\":\"/packages/bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c.map\",\"size\":45589,\"hash\":\"bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\"},{\"path\":\"packages/iron_location.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_location.js?0434907da386df80b0a769a8c4decc5374a3fdb6\",\"sourceMap\":\"packages/iron_location.js.map\",\"sourceMapUrl\":\"/packages/0434907da386df80b0a769a8c4decc5374a3fdb6.map\",\"size\":51357,\"hash\":\"0434907da386df80b0a769a8c4decc5374a3fdb6\"},{\"path\":\"packages/reactive-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-dict.js?6b25309b1f0dcf775b44984324878d6f8ad1abc2\",\"sourceMap\":\"packages/reactive-dict.js.map\",\"sourceMapUrl\":\"/packages/6b25309b1f0dcf775b44984324878d6f8ad1abc2.map\",\"size\":19802,\"hash\":\"6b25309b1f0dcf775b44984324878d6f8ad1abc2\"},{\"path\":\"packages/iron_controller.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_controller.js?c4a074a0f421ce052a59282e7eae64f7049061cb\",\"sourceMap\":\"packages/iron_controller.js.map\",\"sourceMapUrl\":\"/packages/c4a074a0f421ce052a59282e7eae64f7049061cb.map\",\"size\":41091,\"hash\":\"c4a074a0f421ce052a59282e7eae64f7049061cb\"},{\"path\":\"packages/iron_router.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_router.js?c45f7b94d616b48432e190827a3ca76d48e51e9d\",\"sourceMap\":\"packages/iron_router.js.map\",\"sourceMapUrl\":\"/packages/c45f7b94d616b48432e190827a3ca76d48e51e9d.map\",\"size\":213337,\"hash\":\"c45f7b94d616b48432e190827a3ca76d48e51e9d\"},{\"path\":\"packages/mquandalle_jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mquandalle_jade.js?4ef76f2755f391c688ce8f0925fe8c8eee38b45b\",\"sourceMap\":\"packages/mquandalle_jade.js.map\",\"sourceMapUrl\":\"/packages/4ef76f2755f391c688ce8f0925fe8c8eee38b45b.map\",\"size\":1300,\"hash\":\"4ef76f2755f391c688ce8f0925fe8c8eee38b45b\"},{\"path\":\"packages/cmather_handlebars-server.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/cmather_handlebars-server.js?c6447646a77dd2f090e33422fff58fbec1bbd4f6\",\"sourceMap\":\"packages/cmather_handlebars-server.js.map\",\"sourceMapUrl\":\"/packages/c6447646a77dd2f090e33422fff58fbec1bbd4f6.map\",\"size\":1310,\"hash\":\"c6447646a77dd2f090e33422fff58fbec1bbd4f6\"},{\"path\":\"packages/livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/livedata.js?718526445deb4d9baacb6d92c551adea1d36c1e1\",\"sourceMap\":\"packages/livedata.js.map\",\"sourceMapUrl\":\"/packages/718526445deb4d9baacb6d92c551adea1d36c1e1.map\",\"size\":1413,\"hash\":\"718526445deb4d9baacb6d92c551adea1d36c1e1\"},{\"path\":\"packages/mrt_moment.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_moment.js?d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\",\"sourceMap\":\"packages/mrt_moment.js.map\",\"sourceMapUrl\":\"/packages/d7e4a40c3c8d0a0bbca78591d0b5385f3271212c.map\",\"size\":359656,\"hash\":\"d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\"},{\"path\":\"packages/aldeed_autoform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_autoform.js?fc95d300f7b6799e218f18c0f53d0525f033a36b\",\"sourceMap\":\"packages/aldeed_autoform.js.map\",\"sourceMapUrl\":\"/packages/fc95d300f7b6799e218f18c0f53d0525f033a36b.map\",\"size\":946753,\"hash\":\"fc95d300f7b6799e218f18c0f53d0525f033a36b\"},{\"path\":\"packages/nemo64_bootstrap-data.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap-data.js?5668c42202b40f6c6ea45d87def47b9c6ced760c\",\"sourceMap\":\"packages/nemo64_bootstrap-data.js.map\",\"sourceMapUrl\":\"/packages/5668c42202b40f6c6ea45d87def47b9c6ced760c.map\",\"size\":1388,\"hash\":\"5668c42202b40f6c6ea45d87def47b9c6ced760c\"},{\"path\":\"packages/nemo64_bootstrap.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap.js?ec67e21097838440b595b9cec9f3aca5493efadb\",\"sourceMap\":\"packages/nemo64_bootstrap.js.map\",\"sourceMapUrl\":\"/packages/ec67e21097838440b595b9cec9f3aca5493efadb.map\",\"size\":1431,\"hash\":\"ec67e21097838440b595b9cec9f3aca5493efadb\"},{\"path\":\"packages/mrt_just-i18n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_just-i18n.js?00ef34010e8078ed4af7d04538cb972aa3c401b2\",\"sourceMap\":\"packages/mrt_just-i18n.js.map\",\"sourceMapUrl\":\"/packages/00ef34010e8078ed4af7d04538cb972aa3c401b2.map\",\"size\":11114,\"hash\":\"00ef34010e8078ed4af7d04538cb972aa3c401b2\"},{\"path\":\"packages/coynverter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coynverter.js?0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\",\"sourceMap\":\"packages/coynverter.js.map\",\"sourceMapUrl\":\"/packages/0b9021728ffb7f3419b11d8d72b79e6c95d9ae21.map\",\"size\":23066,\"hash\":\"0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\"},{\"path\":\"packages/session.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/session.js?e436deefadc999c21b6fd16e8e1ecce55c3c3a55\",\"sourceMap\":\"packages/session.js.map\",\"sourceMapUrl\":\"/packages/e436deefadc999c21b6fd16e8e1ecce55c3c3a55.map\",\"size\":6497,\"hash\":\"e436deefadc999c21b6fd16e8e1ecce55c3c3a55\"},{\"path\":\"packages/handlebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/handlebars.js?038145b6256cd6a69c11650ed6bf12b093920095\",\"sourceMap\":\"packages/handlebars.js.map\",\"sourceMapUrl\":\"/packages/038145b6256cd6a69c11650ed6bf12b093920095.map\",\"size\":1292,\"hash\":\"038145b6256cd6a69c11650ed6bf12b093920095\"},{\"path\":\"packages/stylus.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/stylus.js?48b7e3e0953c004a73211d7489462e73ed11be2c\",\"sourceMap\":\"packages/stylus.js.map\",\"sourceMapUrl\":\"/packages/48b7e3e0953c004a73211d7489462e73ed11be2c.map\",\"size\":1288,\"hash\":\"48b7e3e0953c004a73211d7489462e73ed11be2c\"},{\"path\":\"packages/mrt_accounts-ui-bootstrap-3.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_accounts-ui-bootstrap-3.js?fe856a7bc2293ae4b81c6969339c1fd98f095c19\",\"sourceMap\":\"packages/mrt_accounts-ui-bootstrap-3.js.map\",\"sourceMapUrl\":\"/packages/fe856a7bc2293ae4b81c6969339c1fd98f095c19.map\",\"size\":232647,\"hash\":\"fe856a7bc2293ae4b81c6969339c1fd98f095c19\"},{\"path\":\"packages/dburles_collection-helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dburles_collection-helpers.js?10b8845e36a7fe0526609cd1095b7dae30b9ed8e\",\"sourceMap\":\"packages/dburles_collection-helpers.js.map\",\"sourceMapUrl\":\"/packages/10b8845e36a7fe0526609cd1095b7dae30b9ed8e.map\",\"size\":3586,\"hash\":\"10b8845e36a7fe0526609cd1095b7dae30b9ed8e\"},{\"path\":\"packages/chrismbeckett_fontawesome4.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/chrismbeckett_fontawesome4.js?71dfaef8a91211745b1155d8b1686056c03f1a11\",\"sourceMap\":\"packages/chrismbeckett_fontawesome4.js.map\",\"sourceMapUrl\":\"/packages/71dfaef8a91211745b1155d8b1686056c03f1a11.map\",\"size\":1311,\"hash\":\"71dfaef8a91211745b1155d8b1686056c03f1a11\"},{\"path\":\"packages/frozeman_animation-helper.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_animation-helper.js?0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\",\"sourceMap\":\"packages/frozeman_animation-helper.js.map\",\"sourceMapUrl\":\"/packages/0e877c6fc99752c26d27dc1bbdfb3e86789bd7de.map\",\"size\":22353,\"hash\":\"0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\"},{\"path\":\"packages/frozeman_template-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_template-var.js?81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\",\"sourceMap\":\"packages/frozeman_template-var.js.map\",\"sourceMapUrl\":\"/packages/81a1223364e51eb7b4c2c1b0345b7ac3b8a52516.map\",\"size\":16437,\"hash\":\"81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\"},{\"path\":\"packages/schnie_uploader.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/schnie_uploader.js?710e32818e58766bd55225265a0370585912110f\",\"sourceMap\":\"packages/schnie_uploader.js.map\",\"sourceMapUrl\":\"/packages/710e32818e58766bd55225265a0370585912110f.map\",\"size\":27387,\"hash\":\"710e32818e58766bd55225265a0370585912110f\"},{\"path\":\"packages/mrt_underscore-string-latest.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_underscore-string-latest.js?a38ecc39a67ea4036d5d875dd102f3d8ad73174d\",\"sourceMap\":\"packages/mrt_underscore-string-latest.js.map\",\"sourceMapUrl\":\"/packages/a38ecc39a67ea4036d5d875dd102f3d8ad73174d.map\",\"size\":84515,\"hash\":\"a38ecc39a67ea4036d5d875dd102f3d8ad73174d\"},{\"path\":\"packages/joshowens_simple-form.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_simple-form.js?74dda2543f961a8ea549a1e28025d74940c271a0\",\"sourceMap\":\"packages/joshowens_simple-form.js.map\",\"sourceMapUrl\":\"/packages/74dda2543f961a8ea549a1e28025d74940c271a0.map\",\"size\":51039,\"hash\":\"74dda2543f961a8ea549a1e28025d74940c271a0\"},{\"path\":\"packages/softwarerero_accounts-t9n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/softwarerero_accounts-t9n.js?d2d8d1d115a4cb8262d753882e538fc83571d960\",\"sourceMap\":\"packages/softwarerero_accounts-t9n.js.map\",\"sourceMapUrl\":\"/packages/d2d8d1d115a4cb8262d753882e538fc83571d960.map\",\"size\":105833,\"hash\":\"d2d8d1d115a4cb8262d753882e538fc83571d960\"},{\"path\":\"packages/service-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/service-configuration.js?262da6fb1e9c97be84333c429c9a2929c80f8e3b\",\"sourceMap\":\"packages/service-configuration.js.map\",\"sourceMapUrl\":\"/packages/262da6fb1e9c97be84333c429c9a2929c80f8e3b.map\",\"size\":5082,\"hash\":\"262da6fb1e9c97be84333c429c9a2929c80f8e3b\"},{\"path\":\"packages/joshowens_accounts-entry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_accounts-entry.js?372e4dedd3ca315c19714f7ce4882c6868998214\",\"sourceMap\":\"packages/joshowens_accounts-entry.js.map\",\"sourceMapUrl\":\"/packages/372e4dedd3ca315c19714f7ce4882c6868998214.map\",\"size\":150919,\"hash\":\"372e4dedd3ca315c19714f7ce4882c6868998214\"},{\"path\":\"packages/meteorhacks_npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_npm.js?604e35d5437f43224cde2c1f9e5e9aace95a9a95\",\"sourceMap\":\"packages/meteorhacks_npm.js.map\",\"sourceMapUrl\":\"/packages/604e35d5437f43224cde2c1f9e5e9aace95a9a95.map\",\"size\":1300,\"hash\":\"604e35d5437f43224cde2c1f9e5e9aace95a9a95\"},{\"path\":\"packages/npm-container.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/npm-container.js?c4195e22b5a0a7239a415a3d95b3b702c34fa28d\",\"sourceMap\":\"packages/npm-container.js.map\",\"sourceMapUrl\":\"/packages/c4195e22b5a0a7239a415a3d95b3b702c34fa28d.map\",\"size\":1298,\"hash\":\"c4195e22b5a0a7239a415a3d95b3b702c34fa28d\"},{\"path\":\"packages/url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/url.js?2312d739008b2ffa52f13c77c5d6fc59c9e17d56\",\"sourceMap\":\"packages/url.js.map\",\"sourceMapUrl\":\"/packages/2312d739008b2ffa52f13c77c5d6fc59c9e17d56.map\",\"size\":6642,\"hash\":\"2312d739008b2ffa52f13c77c5d6fc59c9e17d56\"},{\"path\":\"packages/http.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/http.js?9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\",\"sourceMap\":\"packages/http.js.map\",\"sourceMapUrl\":\"/packages/9c5d152169ba9a5a57b6b8ec28e64bbd0d308077.map\",\"size\":37036,\"hash\":\"9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\"},{\"path\":\"packages/velocity_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_core.js?1566df70b73d8783eefb275bf28df6fe1a11a039\",\"sourceMap\":\"packages/velocity_core.js.map\",\"sourceMapUrl\":\"/packages/1566df70b73d8783eefb275bf28df6fe1a11a039.map\",\"size\":8724,\"hash\":\"1566df70b73d8783eefb275bf28df6fe1a11a039\"},{\"path\":\"packages/amplify.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/amplify.js?0943ecb804169b991257a319fa92b9e6f34e2d1b\",\"sourceMap\":\"packages/amplify.js.map\",\"sourceMapUrl\":\"/packages/0943ecb804169b991257a319fa92b9e6f34e2d1b.map\",\"size\":88428,\"hash\":\"0943ecb804169b991257a319fa92b9e6f34e2d1b\"},{\"path\":\"packages/velocity_html-reporter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_html-reporter.js?cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\",\"sourceMap\":\"packages/velocity_html-reporter.js.map\",\"sourceMapUrl\":\"/packages/cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d.map\",\"size\":85561,\"hash\":\"cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\"},{\"path\":\"packages/velocity_shim.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_shim.js?35442cb834496e09130fbab3df9f4d5dab5e6f55\",\"sourceMap\":\"packages/velocity_shim.js.map\",\"sourceMapUrl\":\"/packages/35442cb834496e09130fbab3df9f4d5dab5e6f55.map\",\"size\":2360,\"hash\":\"35442cb834496e09130fbab3df9f4d5dab5e6f55\"},{\"path\":\"packages/mike_mocha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mike_mocha.js?71466b37e24701857780026b17754fb447bd6ff3\",\"sourceMap\":\"packages/mike_mocha.js.map\",\"sourceMapUrl\":\"/packages/71466b37e24701857780026b17754fb447bd6ff3.map\",\"size\":1347056,\"hash\":\"71466b37e24701857780026b17754fb447bd6ff3\"},{\"path\":\"packages/sanjo_jasmine.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sanjo_jasmine.js?e9f0d239446c3622819a554cbd32d9556c284350\",\"sourceMap\":\"packages/sanjo_jasmine.js.map\",\"sourceMapUrl\":\"/packages/e9f0d239446c3622819a554cbd32d9556c284350.map\",\"size\":496692,\"hash\":\"e9f0d239446c3622819a554cbd32d9556c284350\"},{\"path\":\"packages/meteorhacks_kadira-binary-deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira-binary-deps.js?a244ee2e16791a2e0fed6ce317583265afab7c0c\",\"sourceMap\":\"packages/meteorhacks_kadira-binary-deps.js.map\",\"sourceMapUrl\":\"/packages/a244ee2e16791a2e0fed6ce317583265afab7c0c.map\",\"size\":1406,\"hash\":\"a244ee2e16791a2e0fed6ce317583265afab7c0c\"},{\"path\":\"packages/meteorhacks_meteorx.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_meteorx.js?afd5ff95b1c1492f60049925f1f827e2b5817bbb\",\"sourceMap\":\"packages/meteorhacks_meteorx.js.map\",\"sourceMapUrl\":\"/packages/afd5ff95b1c1492f60049925f1f827e2b5817bbb.map\",\"size\":1368,\"hash\":\"afd5ff95b1c1492f60049925f1f827e2b5817bbb\"},{\"path\":\"packages/meteorhacks_kadira.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira.js?9ee74fb46169e30c92bbd18945d536af2cb8c65f\",\"sourceMap\":\"packages/meteorhacks_kadira.js.map\",\"sourceMapUrl\":\"/packages/9ee74fb46169e30c92bbd18945d536af2cb8c65f.map\",\"size\":97584,\"hash\":\"9ee74fb46169e30c92bbd18945d536af2cb8c65f\"},{\"path\":\"packages/autoupdate.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/autoupdate.js?83a587ebd1efacabc89a2dd08e85b48a00b1c696\",\"sourceMap\":\"packages/autoupdate.js.map\",\"sourceMapUrl\":\"/packages/83a587ebd1efacabc89a2dd08e85b48a00b1c696.map\",\"size\":39380,\"hash\":\"83a587ebd1efacabc89a2dd08e85b48a00b1c696\"},{\"path\":\"packages/meteor-platform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor-platform.js?499a2f8522e25820b1153c69a92751ccaae507b3\",\"sourceMap\":\"packages/meteor-platform.js.map\",\"sourceMapUrl\":\"/packages/499a2f8522e25820b1153c69a92751ccaae507b3.map\",\"size\":1384,\"hash\":\"499a2f8522e25820b1153c69a92751ccaae507b3\"},{\"path\":\"packages/meteorhacks_async.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_async.js?e687b9e863dc811fb3f313d1c6f237c7a2b1924b\",\"sourceMap\":\"packages/meteorhacks_async.js.map\",\"sourceMapUrl\":\"/packages/e687b9e863dc811fb3f313d1c6f237c7a2b1924b.map\",\"size\":1360,\"hash\":\"e687b9e863dc811fb3f313d1c6f237c7a2b1924b\"},{\"path\":\"packages/webapp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/webapp.js?e1be090051b82f046484dccc2de7d747e50c7328\",\"sourceMap\":\"packages/webapp.js.map\",\"sourceMapUrl\":\"/packages/e1be090051b82f046484dccc2de7d747e50c7328.map\",\"size\":3106,\"hash\":\"e1be090051b82f046484dccc2de7d747e50c7328\"},{\"path\":\"packages/spacebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/spacebars.js?3c496d2950151d744a8574297b46d2763a123bdf\",\"sourceMap\":\"packages/spacebars.js.map\",\"sourceMapUrl\":\"/packages/3c496d2950151d744a8574297b46d2763a123bdf.map\",\"size\":42134,\"hash\":\"3c496d2950151d744a8574297b46d2763a123bdf\"},{\"path\":\"packages/fastclick.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/fastclick.js?fe15770c77da049b885a0d66c669fa44057f05ee\",\"sourceMap\":\"packages/fastclick.js.map\",\"sourceMapUrl\":\"/packages/fe15770c77da049b885a0d66c669fa44057f05ee.map\",\"size\":109373,\"hash\":\"fe15770c77da049b885a0d66c669fa44057f05ee\"},{\"path\":\"packages/mobile-status-bar.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mobile-status-bar.js?f2ba1fc67740003d54a6c78c4c73575d69dcfffe\",\"sourceMap\":\"packages/mobile-status-bar.js.map\",\"sourceMapUrl\":\"/packages/f2ba1fc67740003d54a6c78c4c73575d69dcfffe.map\",\"size\":2430,\"hash\":\"f2ba1fc67740003d54a6c78c4c73575d69dcfffe\"},{\"path\":\"packages/launch-screen.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/launch-screen.js?13e1092ebecdb7208762500188f1dc2dea5603e9\",\"sourceMap\":\"packages/launch-screen.js.map\",\"sourceMapUrl\":\"/packages/13e1092ebecdb7208762500188f1dc2dea5603e9.map\",\"size\":9707,\"hash\":\"13e1092ebecdb7208762500188f1dc2dea5603e9\"},{\"path\":\"packages/global-imports.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/global-imports.js?189c78d252d945f781147bdb85fdeb6928d14ba8\",\"size\":1586,\"hash\":\"189c78d252d945f781147bdb85fdeb6928d14ba8\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.jade.js?fbcf18ee1e20649d40cb4b28c5d88932e15208cf\",\"size\":1636,\"hash\":\"fbcf18ee1e20649d40cb4b28c5d88932e15208cf\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js?6e259c55d7f51a60230a48af0d88584d8ad91625\",\"size\":2517,\"hash\":\"6e259c55d7f51a60230a48af0d88584d8ad91625\"},{\"path\":\"app/client/views/dashboard/dashboard.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/dashboard/dashboard.jade.js?e03f28588433337ed8edb2c2207d2d76990a4afd\",\"size\":5423,\"hash\":\"e03f28588433337ed8edb2c2207d2d76990a4afd\"},{\"path\":\"app/client/views/home/home.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.jade.js?44c80a0deae167b74f43d2a84d1a505ecbfffe45\",\"size\":273,\"hash\":\"44c80a0deae167b74f43d2a84d1a505ecbfffe45\"},{\"path\":\"app/client/views/login/login.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/login/login.jade.js?08f5cb6292d23b811162d93cb23768b4950214f9\",\"size\":776,\"hash\":\"08f5cb6292d23b811162d93cb23768b4950214f9\"},{\"path\":\"app/client/views/nodes/bankaccounts.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.jade.js?6638a2e895f296f01598ff72fa74026ee98090a1\",\"size\":1756,\"hash\":\"6638a2e895f296f01598ff72fa74026ee98090a1\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.jade.js?922f444a9e3861abf247e33a10b1c3bf0bace45d\",\"size\":2120,\"hash\":\"922f444a9e3861abf247e33a10b1c3bf0bace45d\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeMenu.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeMenu.js?b4fa50b6ac4ec8323be264718b1394db16367483\",\"size\":1266,\"hash\":\"b4fa50b6ac4ec8323be264718b1394db16367483\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeViews.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeViews.js?c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\",\"size\":407,\"hash\":\"c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\"},{\"path\":\"app/client/views/nodes/exchangeDetails.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchangeDetails.jade.js?e2cc927f4eca8f837b3745f131da6e9a462c77c0\",\"size\":1857,\"hash\":\"e2cc927f4eca8f837b3745f131da6e9a462c77c0\"},{\"path\":\"app/client/views/nodes/exchanges.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.jade.js?68cf4ec54d9a88bb33db5f5355a3d56a72871571\",\"size\":1952,\"hash\":\"68cf4ec54d9a88bb33db5f5355a3d56a72871571\"},{\"path\":\"app/client/views/nodes/newBankAccount.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newBankAccount.jade.js?8ec9144864b912fda1a290ed092e16c06661b66e\",\"size\":1530,\"hash\":\"8ec9144864b912fda1a290ed092e16c06661b66e\"},{\"path\":\"app/client/views/nodes/template.newBitcoinWallet.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.newBitcoinWallet.js?0029d1c8a4f621a1b721aa61dcb7c30135802368\",\"size\":1894,\"hash\":\"0029d1c8a4f621a1b721aa61dcb7c30135802368\"},{\"path\":\"app/client/views/nodes/newExchange.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newExchange.jade.js?72527c4ea1e306695370429c743c01c4e15cd919\",\"size\":1491,\"hash\":\"72527c4ea1e306695370429c743c01c4e15cd919\"},{\"path\":\"app/client/views/nodes/nodes.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.jade.js?098f57d3c3146a9dc419ced171c2bdb7c9716a2c\",\"size\":782,\"hash\":\"098f57d3c3146a9dc419ced171c2bdb7c9716a2c\"},{\"path\":\"app/client/views/nodes/overview.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/overview.jade.js?e7091057998f7cede35110e492602734d0724983\",\"size\":5129,\"hash\":\"e7091057998f7cede35110e492602734d0724983\"},{\"path\":\"app/client/views/trades/newTransaction.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/newTransaction.jade.js?2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\",\"size\":2575,\"hash\":\"2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\"},{\"path\":\"app/client/views/trades/trades.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.jade.js?32ae21183b0e195a509c8e8db4f58108eb66d713\",\"size\":8363,\"hash\":\"32ae21183b0e195a509c8e8db4f58108eb66d713\"},{\"path\":\"app/client/views/transfers/transfers.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.jade.js?d6f0c33901b574ff717d511caaaf5bb42f6186b0\",\"size\":6477,\"hash\":\"d6f0c33901b574ff717d511caaaf5bb42f6186b0\"},{\"path\":\"app/client/views/footer.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/footer.jade.js?4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\",\"size\":246,\"hash\":\"4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\"},{\"path\":\"app/client/views/header.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.jade.js?271a7506dba2e6f22032fefac93853a78c685e37\",\"size\":2143,\"hash\":\"271a7506dba2e6f22032fefac93853a78c685e37\"},{\"path\":\"app/client/views/index.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/index.jade.js?784fe66da38ac17f86ce4a793b2676f8a6608389\",\"size\":677,\"hash\":\"784fe66da38ac17f86ce4a793b2676f8a6608389\"},{\"path\":\"app/client/views/loading.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/loading.jade.js?de9e7221bb79cb6617007062f140e57bc7769595\",\"size\":340,\"hash\":\"de9e7221bb79cb6617007062f140e57bc7769595\"},{\"path\":\"app/client/views/notFound.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/notFound.jade.js?8998a8d91e3944a06f4ebb8129e304cd5e759f05\",\"size\":226,\"hash\":\"8998a8d91e3944a06f4ebb8129e304cd5e759f05\"},{\"path\":\"app/bootstrap/js/transition.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/transition.js?b50b4578e6bfa341205b376c1179025a53bed2be\",\"size\":1831,\"hash\":\"b50b4578e6bfa341205b376c1179025a53bed2be\"},{\"path\":\"app/bootstrap/js/collapse.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/collapse.js?06af2c33960e1fc0f296d386914d8085704c54e3\",\"size\":5977,\"hash\":\"06af2c33960e1fc0f296d386914d8085704c54e3\"},{\"path\":\"app/bootstrap/js/dropdown.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/dropdown.js?4dc587579c67092051e658c12f6c8afc1ce5bbcd\",\"size\":4652,\"hash\":\"4dc587579c67092051e658c12f6c8afc1ce5bbcd\"},{\"path\":\"app/bootstrap/js/modal.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/modal.js?a5be82cb781571e4e552c589abde5d191abcc1d9\",\"size\":8112,\"hash\":\"a5be82cb781571e4e552c589abde5d191abcc1d9\"},{\"path\":\"app/bootstrap/js/tooltip.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tooltip.js?d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\",\"size\":15336,\"hash\":\"d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\"},{\"path\":\"app/bootstrap/js/popover.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/popover.js?8b2a82ab4508c2f78db7f96c3575feccf0096b26\",\"size\":3507,\"hash\":\"8b2a82ab4508c2f78db7f96c3575feccf0096b26\"},{\"path\":\"app/bootstrap/js/carousel.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/carousel.js?9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\",\"size\":7041,\"hash\":\"9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\"},{\"path\":\"app/bootstrap/js/affix.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/affix.js?98373701fb65284f67f1579c779ee3d3d31741d8\",\"size\":4791,\"hash\":\"98373701fb65284f67f1579c779ee3d3d31741d8\"},{\"path\":\"app/bootstrap/js/alert.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/alert.js?19ad96e250954bdb2ffe8984f670c79c51194842\",\"size\":2260,\"hash\":\"19ad96e250954bdb2ffe8984f670c79c51194842\"},{\"path\":\"app/bootstrap/js/button.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/button.js?9905036fb93e275db3e8607d24eb955ed2955fa7\",\"size\":3264,\"hash\":\"9905036fb93e275db3e8607d24eb955ed2955fa7\"},{\"path\":\"app/bootstrap/js/scrollspy.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/scrollspy.js?672c5c002976bcb2c949cf37418e925afbf19234\",\"size\":4697,\"hash\":\"672c5c002976bcb2c949cf37418e925afbf19234\"},{\"path\":\"app/bootstrap/js/tab.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tab.js?89467d37ebb25add19b65f4a7f9283e6f08edb49\",\"size\":3789,\"hash\":\"89467d37ebb25add19b65f4a7f9283e6f08edb49\"},{\"path\":\"app/client/lib/jquery/table-fixed-header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/lib/jquery/table-fixed-header.js?93604980b9683ae204ca2902769dcf675d2ddb6b\",\"size\":1632,\"hash\":\"93604980b9683ae204ca2902769dcf675d2ddb6b\"},{\"path\":\"app/lib/langs/de.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/de.coffee.js?b2202ff71fb0bc81bb8eba91c1227eccce925e18\",\"sourceMap\":\"app/lib/langs/de.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/b2202ff71fb0bc81bb8eba91c1227eccce925e18.map\",\"size\":1619,\"hash\":\"b2202ff71fb0bc81bb8eba91c1227eccce925e18\"},{\"path\":\"app/lib/langs/en.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/en.coffee.js?410a38395ad11958812ff423d73600a14b0bd0b3\",\"sourceMap\":\"app/lib/langs/en.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/410a38395ad11958812ff423d73600a14b0bd0b3.map\",\"size\":2808,\"hash\":\"410a38395ad11958812ff423d73600a14b0bd0b3\"},{\"path\":\"app/models/lib/exchangeRateTool.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangeRateTool.coffee.js?17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\",\"sourceMap\":\"app/models/lib/exchangeRateTool.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/17b37c2f2a5aa05bbb96a96d7d74026feeee56fb.map\",\"size\":900,\"hash\":\"17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\"},{\"path\":\"app/models/lib/exchangerates.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangerates.coffee.js?bdcf647b94ff667398f586ff7bcdee4ea5c834b8\",\"sourceMap\":\"app/models/lib/exchangerates.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/bdcf647b94ff667398f586ff7bcdee4ea5c834b8.map\",\"size\":838,\"hash\":\"bdcf647b94ff667398f586ff7bcdee4ea5c834b8\"},{\"path\":\"app/lib/collection-behaviours.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.coffee.js?f48fb1436de2ffde681a78b753b885387114915f\",\"sourceMap\":\"app/lib/collection-behaviours.coffee.js.map\",\"sourceMapUrl\":\"/lib/f48fb1436de2ffde681a78b753b885387114915f.map\",\"size\":832,\"hash\":\"f48fb1436de2ffde681a78b753b885387114915f\"},{\"path\":\"app/lib/collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.js?2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\",\"size\":561,\"hash\":\"2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\"},{\"path\":\"app/lib/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/config.coffee.js?030792e23e93eee41513f5b276cbfb252db8a6f6\",\"sourceMap\":\"app/lib/config.coffee.js.map\",\"sourceMapUrl\":\"/lib/030792e23e93eee41513f5b276cbfb252db8a6f6.map\",\"size\":786,\"hash\":\"030792e23e93eee41513f5b276cbfb252db8a6f6\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.js?2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\",\"size\":19,\"hash\":\"2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.js?b455ebf0ebb80a9aa57c3f84d8761edfc3e64564\",\"size\":194,\"hash\":\"b455ebf0ebb80a9aa57c3f84d8761edfc3e64564\"},{\"path\":\"app/client/views/home/home.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.coffee.js?49335e63b597461f45496ec342f7a00cc0f3080a\",\"sourceMap\":\"app/client/views/home/home.coffee.js.map\",\"sourceMapUrl\":\"/client/views/home/49335e63b597461f45496ec342f7a00cc0f3080a.map\",\"size\":312,\"hash\":\"49335e63b597461f45496ec342f7a00cc0f3080a\"},{\"path\":\"app/client/views/home/home.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.js?23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\",\"size\":21,\"hash\":\"23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\"},{\"path\":\"app/client/views/nodes/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.js?d9c2820a83ce54bcece438e375772473e7e3ae87\",\"size\":127,\"hash\":\"d9c2820a83ce54bcece438e375772473e7e3ae87\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.js?13871e3bcdb78752f2583592e7569b1ef21b0d5c\",\"size\":298,\"hash\":\"13871e3bcdb78752f2583592e7569b1ef21b0d5c\"},{\"path\":\"app/client/views/nodes/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.js?fd32ec9e6844b165c4487ad18647ba1f01276d6e\",\"size\":1010,\"hash\":\"fd32ec9e6844b165c4487ad18647ba1f01276d6e\"},{\"path\":\"app/client/views/nodes/nodes.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.js?52db8e7dd146acd250e10f64fd65d728e3fe2e3d\",\"size\":204,\"hash\":\"52db8e7dd146acd250e10f64fd65d728e3fe2e3d\"},{\"path\":\"app/client/views/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.coffee.js?b222f3c5af136d0cf7054734c7157f479c0a678e\",\"sourceMap\":\"app/client/views/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/client/views/trades/b222f3c5af136d0cf7054734c7157f479c0a678e.map\",\"size\":234,\"hash\":\"b222f3c5af136d0cf7054734c7157f479c0a678e\"},{\"path\":\"app/client/views/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.js?a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\",\"size\":292,\"hash\":\"a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\"},{\"path\":\"app/client/views/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.coffee.js?93d5002398572514e6a51fe66dd4e1d0378460d2\",\"sourceMap\":\"app/client/views/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/client/views/transfers/93d5002398572514e6a51fe66dd4e1d0378460d2.map\",\"size\":264,\"hash\":\"93d5002398572514e6a51fe66dd4e1d0378460d2\"},{\"path\":\"app/client/views/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.js?8e4f897906d91457950506deb5f60288cae1bf01\",\"size\":309,\"hash\":\"8e4f897906d91457950506deb5f60288cae1bf01\"},{\"path\":\"app/client/router/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/router/config.coffee.js?73f6a3c47c9524edef5ce4af626347abdbfd934e\",\"sourceMap\":\"app/client/router/config.coffee.js.map\",\"sourceMapUrl\":\"/client/router/73f6a3c47c9524edef5ce4af626347abdbfd934e.map\",\"size\":456,\"hash\":\"73f6a3c47c9524edef5ce4af626347abdbfd934e\"},{\"path\":\"app/client/views/header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.js?4866c4adf90235af832db68571e986d8036eeab5\",\"size\":174,\"hash\":\"4866c4adf90235af832db68571e986d8036eeab5\"},{\"path\":\"app/models/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.coffee.js?308ff5c07a0f1a8fff91ddc7f814114cba79aac0\",\"sourceMap\":\"app/models/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/models/trades/308ff5c07a0f1a8fff91ddc7f814114cba79aac0.map\",\"size\":1529,\"hash\":\"308ff5c07a0f1a8fff91ddc7f814114cba79aac0\"},{\"path\":\"app/models/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.js?875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\",\"size\":1296,\"hash\":\"875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\"},{\"path\":\"app/models/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.coffee.js?a832763108fb05f31c8ceb0f095c10f27ba14188\",\"sourceMap\":\"app/models/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/models/transfers/a832763108fb05f31c8ceb0f095c10f27ba14188.map\",\"size\":1739,\"hash\":\"a832763108fb05f31c8ceb0f095c10f27ba14188\"},{\"path\":\"app/models/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.js?7aeecc6e8d89a8bc23744da5adcdbc3de7935941\",\"size\":2023,\"hash\":\"7aeecc6e8d89a8bc23744da5adcdbc3de7935941\"},{\"path\":\"app/client/helpers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.coffee.js?b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\",\"sourceMap\":\"app/client/helpers.coffee.js.map\",\"sourceMapUrl\":\"/client/b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8.map\",\"size\":600,\"hash\":\"b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\"},{\"path\":\"app/client/helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.js?ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\",\"size\":631,\"hash\":\"ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\"},{\"path\":\"app/client/subscriptions.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/subscriptions.js?1ca2a7bf25eaac7696a81e64647252dcca4a207a\",\"size\":243,\"hash\":\"1ca2a7bf25eaac7696a81e64647252dcca4a207a\"},{\"path\":\"app/models/bankaccounts.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.coffee.js?c9fef6bc56367870596f000c7523501e16b78e55\",\"sourceMap\":\"app/models/bankaccounts.coffee.js.map\",\"sourceMapUrl\":\"/models/c9fef6bc56367870596f000c7523501e16b78e55.map\",\"size\":1313,\"hash\":\"c9fef6bc56367870596f000c7523501e16b78e55\"},{\"path\":\"app/models/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.js?483ddcbd320a249a5cad647235d2ecc7296ca92c\",\"size\":723,\"hash\":\"483ddcbd320a249a5cad647235d2ecc7296ca92c\"},{\"path\":\"app/models/bitcoinaddresses.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.coffee.js?756bafccedbdb2afcb4f32edca6b6abc02e5396a\",\"sourceMap\":\"app/models/bitcoinaddresses.coffee.js.map\",\"sourceMapUrl\":\"/models/756bafccedbdb2afcb4f32edca6b6abc02e5396a.map\",\"size\":1270,\"hash\":\"756bafccedbdb2afcb4f32edca6b6abc02e5396a\"},{\"path\":\"app/models/bitcoinaddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.js?3fcc17ea081183510ce0491720f0ad61922affe0\",\"size\":1743,\"hash\":\"3fcc17ea081183510ce0491720f0ad61922affe0\"},{\"path\":\"app/models/bitcoinwallets.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.coffee.js?8784729167b91c60c38b2d991a125ffec13d6ec5\",\"sourceMap\":\"app/models/bitcoinwallets.coffee.js.map\",\"sourceMapUrl\":\"/models/8784729167b91c60c38b2d991a125ffec13d6ec5.map\",\"size\":1259,\"hash\":\"8784729167b91c60c38b2d991a125ffec13d6ec5\"},{\"path\":\"app/models/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.js?a4081140c352d4265c864a797b5f5dc3b29eef19\",\"size\":702,\"hash\":\"a4081140c352d4265c864a797b5f5dc3b29eef19\"},{\"path\":\"app/models/exchanges.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.coffee.js?e853cfcb6c6fcb46d79716adef245d73dcb72bbb\",\"sourceMap\":\"app/models/exchanges.coffee.js.map\",\"sourceMapUrl\":\"/models/e853cfcb6c6fcb46d79716adef245d73dcb72bbb.map\",\"size\":1365,\"hash\":\"e853cfcb6c6fcb46d79716adef245d73dcb72bbb\"},{\"path\":\"app/models/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.js?a252eb8f3f94da18070c8086ebb359ca52977483\",\"size\":2118,\"hash\":\"a252eb8f3f94da18070c8086ebb359ca52977483\"},{\"path\":\"app/routes.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/routes.coffee.js?c2e430f0569c3e2c12f1f508ac5db21ba684664c\",\"sourceMap\":\"app/routes.coffee.js.map\",\"sourceMapUrl\":\"/c2e430f0569c3e2c12f1f508ac5db21ba684664c.map\",\"size\":1196,\"hash\":\"c2e430f0569c3e2c12f1f508ac5db21ba684664c\"},{\"path\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"where\":\"client\",\"type\":\"css\",\"cacheable\":true,\"url\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"sourceMap\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map\",\"sourceMapUrl\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.map\",\"size\":197253,\"hash\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"size\":20335,\"hash\":\"f3a9a3b609133c3d21d6b42abbf7f43bd111df72\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"size\":62926,\"hash\":\"66b1fc67e37d01ee45ca75c4eefb144d2dbe98fa\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"size\":41280,\"hash\":\"aafafdc09404c4aa4447d7e898a2183def9cc1b1\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"size\":23320,\"hash\":\"22037a3455914e5662fa51a596677bdb329e2c5c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"size\":56006,\"hash\":\"0183979056f0b87616cd99d5c54a48f3b771eee6\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"size\":287007,\"hash\":\"cd980eab6db5fa57db670cb2e4278e67e1a4d6c9\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"size\":112160,\"hash\":\"6225ccc4ec94d060f19efab97ca42d842845b949\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"size\":65452,\"hash\":\"7d65e0227d0d7cdc1718119cd2a7dce0638f151c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"size\":85908,\"hash\":\"6270a4a561a69fef5f5cc18cdf9efc256ec2ccbe\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_logo.svg\",\"size\":3723,\"hash\":\"bd19ecdc8eb1084f7bb562c298e4ce41f9cdc698\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_cog.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_cog.svg\",\"size\":987,\"hash\":\"6e74acfffcbd2bafdc8a95d9db7762ece07b1e81\"},{\"path\":\"packages/velocity_html-reporter/lib/icon-time.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/icon-time.png\",\"size\":2834,\"hash\":\"868f492022a4dab0f1522de6aae0773531bc6e85\"},{\"path\":\"app/.gitignore\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/.gitignore\",\"size\":11,\"hash\":\"f1b9a783bd788cd77162147376caa6cc22716de9\"},{\"path\":\"app/favicon.ico\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/favicon.ico\",\"size\":1150,\"hash\":\"0a8ca32c0109fb7440876d549d4c7a5bb5773e5c\"},{\"path\":\"app/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/FontAwesome.otf\",\"size\":75188,\"hash\":\"46198321f916ab2aa86c0ad51e0aacaa73783bd7\"},{\"path\":\"app/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.eot\",\"size\":72449,\"hash\":\"ad0c0513a2fbb7326ac5e11f7c94b95aa23b02e0\"},{\"path\":\"app/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.svg\",\"size\":253487,\"hash\":\"28a0cd129eb6e57d21f8c511581f1909ee6b934a\"},{\"path\":\"app/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.ttf\",\"size\":141564,\"hash\":\"c59792c0a05a4da1f9202a390a27e2d500c36752\"},{\"path\":\"app/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.woff\",\"size\":83760,\"hash\":\"7f2f3c55c2de192387c351b995115f6b79e09173\"},{\"path\":\"app/img/coyno-logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/coyno-logo.svg\",\"size\":62036,\"hash\":\"0f5b4f7ad9f7b4cd0fd6ce840eaffd6d2abee615\"},{\"path\":\"app/img/exchange-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default.png\",\"size\":2718,\"hash\":\"38a115ae448e39a661384426a6f49fd253c93981\"},{\"path\":\"app/img/exchange-icon-default2.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default2.png\",\"size\":3055,\"hash\":\"a8455f437e1a31efaf28592afc8197bcc80f8a4a\"},{\"path\":\"app/img/graph.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/graph.png\",\"size\":38395,\"hash\":\"06f3e53943afdbbdeb5bce79b7508221030875e2\"},{\"path\":\"app/img/table-hover.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/table-hover.png\",\"size\":109,\"hash\":\"f27d3bfbd2d5a1d47422cb5abcc7742a4b873b24\"},{\"path\":\"app/img/wallet-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/wallet-icon-default.png\",\"size\":857,\"hash\":\"384b53d5f09d0645737c47cd6b259b139c24e16f\"},{\"path\":\"app/img/external-logos/Bitstamp_logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Bitstamp_logo.png\",\"size\":10857,\"hash\":\"2896bb2be42d73ab629abc517c5f3e3520fb96b6\"},{\"path\":\"app/img/external-logos/Kraken-logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Kraken-logo.png\",\"size\":2870,\"hash\":\"6b28cba561e324bd31af6945df335207c4176003\"},{\"path\":\"head.html\",\"where\":\"internal\",\"type\":\"head\",\"hash\":\"92126bb9780ea2da0401bad62831eae118f2d77c\"}],\"version\":\"199e42d9c3f08a6fa27a197bde285282106bcb7f\"}"
+                  "value": "{\"manifest\":[{\"path\":\"packages/underscore.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/underscore.js?0a80a8623e1b40b5df5a05582f288ddd586eaa18\",\"sourceMap\":\"packages/underscore.js.map\",\"sourceMapUrl\":\"/packages/0a80a8623e1b40b5df5a05582f288ddd586eaa18.map\",\"size\":150686,\"hash\":\"0a80a8623e1b40b5df5a05582f288ddd586eaa18\"},{\"path\":\"packages/meteor.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor.js?885068204971cf198515f1e0639c7a3ca8e8a0d3\",\"sourceMap\":\"packages/meteor.js.map\",\"sourceMapUrl\":\"/packages/885068204971cf198515f1e0639c7a3ca8e8a0d3.map\",\"size\":110567,\"hash\":\"885068204971cf198515f1e0639c7a3ca8e8a0d3\"},{\"path\":\"packages/standard-app-packages.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/standard-app-packages.js?be7072e6abfda638502b63fa0f809c85c8c2b8ed\",\"sourceMap\":\"packages/standard-app-packages.js.map\",\"sourceMapUrl\":\"/packages/be7072e6abfda638502b63fa0f809c85c8c2b8ed.map\",\"size\":1306,\"hash\":\"be7072e6abfda638502b63fa0f809c85c8c2b8ed\"},{\"path\":\"packages/coffeescript.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coffeescript.js?969f68786bbc68e6cad299e74922a53af3d1404b\",\"sourceMap\":\"packages/coffeescript.js.map\",\"sourceMapUrl\":\"/packages/969f68786bbc68e6cad299e74922a53af3d1404b.map\",\"size\":1294,\"hash\":\"969f68786bbc68e6cad299e74922a53af3d1404b\"},{\"path\":\"packages/less.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/less.js?7d1bf981a25a449d6270558bcfc983313c40cd26\",\"sourceMap\":\"packages/less.js.map\",\"sourceMapUrl\":\"/packages/7d1bf981a25a449d6270558bcfc983313c40cd26.map\",\"size\":1286,\"hash\":\"7d1bf981a25a449d6270558bcfc983313c40cd26\"},{\"path\":\"packages/random.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/random.js?fe7b46080c91ce482acf6fc326afbc5b176f0502\",\"sourceMap\":\"packages/random.js.map\",\"sourceMapUrl\":\"/packages/fe7b46080c91ce482acf6fc326afbc5b176f0502.map\",\"size\":24099,\"hash\":\"fe7b46080c91ce482acf6fc326afbc5b176f0502\"},{\"path\":\"packages/localstorage.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/localstorage.js?9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\",\"sourceMap\":\"packages/localstorage.js.map\",\"sourceMapUrl\":\"/packages/9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c.map\",\"size\":7092,\"hash\":\"9ec7d68858d2e33aa807e5cfd5e12bb4d62fe00c\"},{\"path\":\"packages/tracker.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/tracker.js?192a05cc46b867dadbe8bf90dd961f6f8fd1574f\",\"sourceMap\":\"packages/tracker.js.map\",\"sourceMapUrl\":\"/packages/192a05cc46b867dadbe8bf90dd961f6f8fd1574f.map\",\"size\":66854,\"hash\":\"192a05cc46b867dadbe8bf90dd961f6f8fd1574f\"},{\"path\":\"packages/json.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/json.js?e22856eae714c681199eabc5c0710b904b125554\",\"sourceMap\":\"packages/json.js.map\",\"sourceMapUrl\":\"/packages/e22856eae714c681199eabc5c0710b904b125554.map\",\"size\":58343,\"hash\":\"e22856eae714c681199eabc5c0710b904b125554\"},{\"path\":\"packages/base64.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/base64.js?1a63019243b73298e2964e6d4680f25bca657726\",\"sourceMap\":\"packages/base64.js.map\",\"sourceMapUrl\":\"/packages/1a63019243b73298e2964e6d4680f25bca657726.map\",\"size\":15685,\"hash\":\"1a63019243b73298e2964e6d4680f25bca657726\"},{\"path\":\"packages/ejson.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ejson.js?71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\",\"sourceMap\":\"packages/ejson.js.map\",\"sourceMapUrl\":\"/packages/71047b64b5196348bdbe5fd5eea9ac97a5a9eb14.map\",\"size\":81471,\"hash\":\"71047b64b5196348bdbe5fd5eea9ac97a5a9eb14\"},{\"path\":\"packages/check.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/check.js?803a2be518a0c6c3949e45cf65c4ad627a3d603a\",\"sourceMap\":\"packages/check.js.map\",\"sourceMapUrl\":\"/packages/803a2be518a0c6c3949e45cf65c4ad627a3d603a.map\",\"size\":35207,\"hash\":\"803a2be518a0c6c3949e45cf65c4ad627a3d603a\"},{\"path\":\"packages/logging.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/logging.js?efbe67566211d95b5cc8e39ab2faae771509b7ce\",\"sourceMap\":\"packages/logging.js.map\",\"sourceMapUrl\":\"/packages/efbe67566211d95b5cc8e39ab2faae771509b7ce.map\",\"size\":29864,\"hash\":\"efbe67566211d95b5cc8e39ab2faae771509b7ce\"},{\"path\":\"packages/retry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/retry.js?1f1dd2c35d300110fdaba51ce4473583bc3bf031\",\"sourceMap\":\"packages/retry.js.map\",\"sourceMapUrl\":\"/packages/1f1dd2c35d300110fdaba51ce4473583bc3bf031.map\",\"size\":7245,\"hash\":\"1f1dd2c35d300110fdaba51ce4473583bc3bf031\"},{\"path\":\"packages/reload.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reload.js?da8974b7231dd8c0caccb5f322dcf97329d486d1\",\"sourceMap\":\"packages/reload.js.map\",\"sourceMapUrl\":\"/packages/da8974b7231dd8c0caccb5f322dcf97329d486d1.map\",\"size\":25926,\"hash\":\"da8974b7231dd8c0caccb5f322dcf97329d486d1\"},{\"path\":\"packages/id-map.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/id-map.js?9ea6eaae8d74693ce2505a858d9a5e60cf191298\",\"sourceMap\":\"packages/id-map.js.map\",\"sourceMapUrl\":\"/packages/9ea6eaae8d74693ce2505a858d9a5e60cf191298.map\",\"size\":8584,\"hash\":\"9ea6eaae8d74693ce2505a858d9a5e60cf191298\"},{\"path\":\"packages/ordered-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ordered-dict.js?bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\",\"sourceMap\":\"packages/ordered-dict.js.map\",\"sourceMapUrl\":\"/packages/bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37.map\",\"size\":20395,\"hash\":\"bf8af2f26c8d96bf8b2e6b407d3ed69f23c2cd37\"},{\"path\":\"packages/geojson-utils.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/geojson-utils.js?81b79d5cf96d00b4b7a28987debcffb665c17526\",\"sourceMap\":\"packages/geojson-utils.js.map\",\"sourceMapUrl\":\"/packages/81b79d5cf96d00b4b7a28987debcffb665c17526.map\",\"size\":48339,\"hash\":\"81b79d5cf96d00b4b7a28987debcffb665c17526\"},{\"path\":\"packages/minimongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/minimongo.js?9adf0102ce60b3df01914155826e1661f636e91d\",\"sourceMap\":\"packages/minimongo.js.map\",\"sourceMapUrl\":\"/packages/9adf0102ce60b3df01914155826e1661f636e91d.map\",\"size\":455764,\"hash\":\"9adf0102ce60b3df01914155826e1661f636e91d\"},{\"path\":\"packages/ddp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ddp.js?1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\",\"sourceMap\":\"packages/ddp.js.map\",\"sourceMapUrl\":\"/packages/1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2.map\",\"size\":616556,\"hash\":\"1f971b2ac9f4bdab7372cb5098ed1e26ff98dfb2\"},{\"path\":\"packages/follower-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/follower-livedata.js?74156c6baa89da861fc4ddb58ef158eac71e58e0\",\"sourceMap\":\"packages/follower-livedata.js.map\",\"sourceMapUrl\":\"/packages/74156c6baa89da861fc4ddb58ef158eac71e58e0.map\",\"size\":1490,\"hash\":\"74156c6baa89da861fc4ddb58ef158eac71e58e0\"},{\"path\":\"packages/application-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/application-configuration.js?dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\",\"sourceMap\":\"packages/application-configuration.js.map\",\"sourceMapUrl\":\"/packages/dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f.map\",\"size\":1485,\"hash\":\"dcbf1f0774460fccf098a4c9e8fad4c3a0f2952f\"},{\"path\":\"packages/mongo.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo.js?9bc2c5a8b2796fab86b51660ca643e5a49a30c84\",\"sourceMap\":\"packages/mongo.js.map\",\"sourceMapUrl\":\"/packages/9bc2c5a8b2796fab86b51660ca643e5a49a30c84.map\",\"size\":146178,\"hash\":\"9bc2c5a8b2796fab86b51660ca643e5a49a30c84\"},{\"path\":\"packages/jquery.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/jquery.js?265926494aaa3929cd2e30da265211c5929f37a4\",\"sourceMap\":\"packages/jquery.js.map\",\"sourceMapUrl\":\"/packages/265926494aaa3929cd2e30da265211c5929f37a4.map\",\"size\":1295407,\"hash\":\"265926494aaa3929cd2e30da265211c5929f37a4\"},{\"path\":\"packages/deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/deps.js?504589e1e9585dec8f9f6094e5a87b22de3783a1\",\"sourceMap\":\"packages/deps.js.map\",\"sourceMapUrl\":\"/packages/504589e1e9585dec8f9f6094e5a87b22de3783a1.map\",\"size\":1442,\"hash\":\"504589e1e9585dec8f9f6094e5a87b22de3783a1\"},{\"path\":\"packages/htmljs.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/htmljs.js?539b5fc23cf5e63bc8e324543a1026b138316a8c\",\"sourceMap\":\"packages/htmljs.js.map\",\"sourceMapUrl\":\"/packages/539b5fc23cf5e63bc8e324543a1026b138316a8c.map\",\"size\":110444,\"hash\":\"539b5fc23cf5e63bc8e324543a1026b138316a8c\"},{\"path\":\"packages/observe-sequence.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/observe-sequence.js?2fd807ea171ead273b9e6458607cb226012d9240\",\"sourceMap\":\"packages/observe-sequence.js.map\",\"sourceMapUrl\":\"/packages/2fd807ea171ead273b9e6458607cb226012d9240.map\",\"size\":30271,\"hash\":\"2fd807ea171ead273b9e6458607cb226012d9240\"},{\"path\":\"packages/reactive-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-var.js?20335b7b37165980ddd9f23943b2e5b00aae1cc2\",\"sourceMap\":\"packages/reactive-var.js.map\",\"sourceMapUrl\":\"/packages/20335b7b37165980ddd9f23943b2e5b00aae1cc2.map\",\"size\":13963,\"hash\":\"20335b7b37165980ddd9f23943b2e5b00aae1cc2\"},{\"path\":\"packages/blaze.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/blaze.js?77c0809654ee3a10dcd5a4f961fb1437e7957d33\",\"sourceMap\":\"packages/blaze.js.map\",\"sourceMapUrl\":\"/packages/77c0809654ee3a10dcd5a4f961fb1437e7957d33.map\",\"size\":385864,\"hash\":\"77c0809654ee3a10dcd5a4f961fb1437e7957d33\"},{\"path\":\"packages/accounts-base.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-base.js?6ed32803c332f93f65e36a195f42e58a62ed028d\",\"sourceMap\":\"packages/accounts-base.js.map\",\"sourceMapUrl\":\"/packages/6ed32803c332f93f65e36a195f42e58a62ed028d.map\",\"size\":108969,\"hash\":\"6ed32803c332f93f65e36a195f42e58a62ed028d\"},{\"path\":\"packages/sha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sha.js?65ef52f7221944768bfc2049d6b7e163c8ae2615\",\"sourceMap\":\"packages/sha.js.map\",\"sourceMapUrl\":\"/packages/65ef52f7221944768bfc2049d6b7e163c8ae2615.map\",\"size\":19584,\"hash\":\"65ef52f7221944768bfc2049d6b7e163c8ae2615\"},{\"path\":\"packages/srp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/srp.js?e2e28156e8c912d504a3586351c8a1119f664cfd\",\"sourceMap\":\"packages/srp.js.map\",\"sourceMapUrl\":\"/packages/e2e28156e8c912d504a3586351c8a1119f664cfd.map\",\"size\":173470,\"hash\":\"e2e28156e8c912d504a3586351c8a1119f664cfd\"},{\"path\":\"packages/accounts-password.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/accounts-password.js?6c517b689e15ab07dd443895b7ed801683dda159\",\"sourceMap\":\"packages/accounts-password.js.map\",\"sourceMapUrl\":\"/packages/6c517b689e15ab07dd443895b7ed801683dda159.map\",\"size\":33053,\"hash\":\"6c517b689e15ab07dd443895b7ed801683dda159\"},{\"path\":\"packages/aldeed_simple-schema.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_simple-schema.js?f9f115ce8032ac525bc2dde8cca4ab5937f22441\",\"sourceMap\":\"packages/aldeed_simple-schema.js.map\",\"sourceMapUrl\":\"/packages/f9f115ce8032ac525bc2dde8cca4ab5937f22441.map\",\"size\":472789,\"hash\":\"f9f115ce8032ac525bc2dde8cca4ab5937f22441\"},{\"path\":\"packages/mongo-livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mongo-livedata.js?e6ebca489f38b73788b494509a4f83d87fdbf6c0\",\"sourceMap\":\"packages/mongo-livedata.js.map\",\"sourceMapUrl\":\"/packages/e6ebca489f38b73788b494509a4f83d87fdbf6c0.map\",\"size\":1299,\"hash\":\"e6ebca489f38b73788b494509a4f83d87fdbf6c0\"},{\"path\":\"packages/aldeed_collection2.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_collection2.js?525ba7d2b38809f4b3de1e552fabb647d8fc56ae\",\"sourceMap\":\"packages/aldeed_collection2.js.map\",\"sourceMapUrl\":\"/packages/525ba7d2b38809f4b3de1e552fabb647d8fc56ae.map\",\"size\":69751,\"hash\":\"525ba7d2b38809f4b3de1e552fabb647d8fc56ae\"},{\"path\":\"packages/matb33_collection-hooks.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/matb33_collection-hooks.js?abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\",\"sourceMap\":\"packages/matb33_collection-hooks.js.map\",\"sourceMapUrl\":\"/packages/abfb68ba8623e56062a2b978bd0b4a1827b8e1c6.map\",\"size\":72184,\"hash\":\"abfb68ba8623e56062a2b978bd0b4a1827b8e1c6\"},{\"path\":\"packages/sewdn_collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sewdn_collection-behaviours.js?139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\",\"sourceMap\":\"packages/sewdn_collection-behaviours.js.map\",\"sourceMapUrl\":\"/packages/139fdbdf5bd43d975e2c4d39d5a18962e0dcc028.map\",\"size\":25546,\"hash\":\"139fdbdf5bd43d975e2c4d39d5a18962e0dcc028\"},{\"path\":\"packages/dsyko_node-csv-npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dsyko_node-csv-npm.js?dd174f021d8a59fe74f62712fd862c28da24e627\",\"sourceMap\":\"packages/dsyko_node-csv-npm.js.map\",\"sourceMapUrl\":\"/packages/dd174f021d8a59fe74f62712fd862c28da24e627.map\",\"size\":1303,\"hash\":\"dd174f021d8a59fe74f62712fd862c28da24e627\"},{\"path\":\"packages/lepozepo_accounting.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/lepozepo_accounting.js?42604caee2e288664538035c00bc428b24993f06\",\"sourceMap\":\"packages/lepozepo_accounting.js.map\",\"sourceMapUrl\":\"/packages/42604caee2e288664538035c00bc428b24993f06.map\",\"size\":48023,\"hash\":\"42604caee2e288664538035c00bc428b24993f06\"},{\"path\":\"packages/ui.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/ui.js?5a663333fd30f8fd913f110e0ef779e84f67c4b8\",\"sourceMap\":\"packages/ui.js.map\",\"sourceMapUrl\":\"/packages/5a663333fd30f8fd913f110e0ef779e84f67c4b8.map\",\"size\":1529,\"hash\":\"5a663333fd30f8fd913f110e0ef779e84f67c4b8\"},{\"path\":\"packages/templating.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/templating.js?599ba307216da826d8b335332ebcc9a497a369a0\",\"sourceMap\":\"packages/templating.js.map\",\"sourceMapUrl\":\"/packages/599ba307216da826d8b335332ebcc9a497a369a0.map\",\"size\":11910,\"hash\":\"599ba307216da826d8b335332ebcc9a497a369a0\"},{\"path\":\"packages/iron_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_core.js?d966a1f70c94792fd94c8a155bdbef9bec5e0047\",\"sourceMap\":\"packages/iron_core.js.map\",\"sourceMapUrl\":\"/packages/d966a1f70c94792fd94c8a155bdbef9bec5e0047.map\",\"size\":32915,\"hash\":\"d966a1f70c94792fd94c8a155bdbef9bec5e0047\"},{\"path\":\"packages/iron_dynamic-template.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_dynamic-template.js?4d8240a576804301368600b388b97065770c2964\",\"sourceMap\":\"packages/iron_dynamic-template.js.map\",\"sourceMapUrl\":\"/packages/4d8240a576804301368600b388b97065770c2964.map\",\"size\":85060,\"hash\":\"4d8240a576804301368600b388b97065770c2964\"},{\"path\":\"packages/iron_layout.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_layout.js?4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\",\"sourceMap\":\"packages/iron_layout.js.map\",\"sourceMapUrl\":\"/packages/4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062.map\",\"size\":62058,\"hash\":\"4e65c46acdaf0ce6a8b1a479d7b9d0b5c0902062\"},{\"path\":\"packages/iron_url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_url.js?271d2b23f8542769347738353a73f77c63859e8e\",\"sourceMap\":\"packages/iron_url.js.map\",\"sourceMapUrl\":\"/packages/271d2b23f8542769347738353a73f77c63859e8e.map\",\"size\":65852,\"hash\":\"271d2b23f8542769347738353a73f77c63859e8e\"},{\"path\":\"packages/iron_middleware-stack.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_middleware-stack.js?bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\",\"sourceMap\":\"packages/iron_middleware-stack.js.map\",\"sourceMapUrl\":\"/packages/bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c.map\",\"size\":45589,\"hash\":\"bc8692a6fce82dfbe55eead781d8e8b3afcbfd1c\"},{\"path\":\"packages/iron_location.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_location.js?0434907da386df80b0a769a8c4decc5374a3fdb6\",\"sourceMap\":\"packages/iron_location.js.map\",\"sourceMapUrl\":\"/packages/0434907da386df80b0a769a8c4decc5374a3fdb6.map\",\"size\":51357,\"hash\":\"0434907da386df80b0a769a8c4decc5374a3fdb6\"},{\"path\":\"packages/reactive-dict.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/reactive-dict.js?6b25309b1f0dcf775b44984324878d6f8ad1abc2\",\"sourceMap\":\"packages/reactive-dict.js.map\",\"sourceMapUrl\":\"/packages/6b25309b1f0dcf775b44984324878d6f8ad1abc2.map\",\"size\":19802,\"hash\":\"6b25309b1f0dcf775b44984324878d6f8ad1abc2\"},{\"path\":\"packages/iron_controller.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_controller.js?c4a074a0f421ce052a59282e7eae64f7049061cb\",\"sourceMap\":\"packages/iron_controller.js.map\",\"sourceMapUrl\":\"/packages/c4a074a0f421ce052a59282e7eae64f7049061cb.map\",\"size\":41091,\"hash\":\"c4a074a0f421ce052a59282e7eae64f7049061cb\"},{\"path\":\"packages/iron_router.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/iron_router.js?c45f7b94d616b48432e190827a3ca76d48e51e9d\",\"sourceMap\":\"packages/iron_router.js.map\",\"sourceMapUrl\":\"/packages/c45f7b94d616b48432e190827a3ca76d48e51e9d.map\",\"size\":213337,\"hash\":\"c45f7b94d616b48432e190827a3ca76d48e51e9d\"},{\"path\":\"packages/mquandalle_jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mquandalle_jade.js?4ef76f2755f391c688ce8f0925fe8c8eee38b45b\",\"sourceMap\":\"packages/mquandalle_jade.js.map\",\"sourceMapUrl\":\"/packages/4ef76f2755f391c688ce8f0925fe8c8eee38b45b.map\",\"size\":1300,\"hash\":\"4ef76f2755f391c688ce8f0925fe8c8eee38b45b\"},{\"path\":\"packages/cmather_handlebars-server.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/cmather_handlebars-server.js?c6447646a77dd2f090e33422fff58fbec1bbd4f6\",\"sourceMap\":\"packages/cmather_handlebars-server.js.map\",\"sourceMapUrl\":\"/packages/c6447646a77dd2f090e33422fff58fbec1bbd4f6.map\",\"size\":1310,\"hash\":\"c6447646a77dd2f090e33422fff58fbec1bbd4f6\"},{\"path\":\"packages/livedata.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/livedata.js?718526445deb4d9baacb6d92c551adea1d36c1e1\",\"sourceMap\":\"packages/livedata.js.map\",\"sourceMapUrl\":\"/packages/718526445deb4d9baacb6d92c551adea1d36c1e1.map\",\"size\":1413,\"hash\":\"718526445deb4d9baacb6d92c551adea1d36c1e1\"},{\"path\":\"packages/mrt_moment.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_moment.js?d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\",\"sourceMap\":\"packages/mrt_moment.js.map\",\"sourceMapUrl\":\"/packages/d7e4a40c3c8d0a0bbca78591d0b5385f3271212c.map\",\"size\":359656,\"hash\":\"d7e4a40c3c8d0a0bbca78591d0b5385f3271212c\"},{\"path\":\"packages/aldeed_autoform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/aldeed_autoform.js?fc95d300f7b6799e218f18c0f53d0525f033a36b\",\"sourceMap\":\"packages/aldeed_autoform.js.map\",\"sourceMapUrl\":\"/packages/fc95d300f7b6799e218f18c0f53d0525f033a36b.map\",\"size\":946753,\"hash\":\"fc95d300f7b6799e218f18c0f53d0525f033a36b\"},{\"path\":\"packages/nemo64_bootstrap-data.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap-data.js?5668c42202b40f6c6ea45d87def47b9c6ced760c\",\"sourceMap\":\"packages/nemo64_bootstrap-data.js.map\",\"sourceMapUrl\":\"/packages/5668c42202b40f6c6ea45d87def47b9c6ced760c.map\",\"size\":1388,\"hash\":\"5668c42202b40f6c6ea45d87def47b9c6ced760c\"},{\"path\":\"packages/nemo64_bootstrap.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/nemo64_bootstrap.js?ec67e21097838440b595b9cec9f3aca5493efadb\",\"sourceMap\":\"packages/nemo64_bootstrap.js.map\",\"sourceMapUrl\":\"/packages/ec67e21097838440b595b9cec9f3aca5493efadb.map\",\"size\":1431,\"hash\":\"ec67e21097838440b595b9cec9f3aca5493efadb\"},{\"path\":\"packages/mrt_just-i18n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_just-i18n.js?00ef34010e8078ed4af7d04538cb972aa3c401b2\",\"sourceMap\":\"packages/mrt_just-i18n.js.map\",\"sourceMapUrl\":\"/packages/00ef34010e8078ed4af7d04538cb972aa3c401b2.map\",\"size\":11114,\"hash\":\"00ef34010e8078ed4af7d04538cb972aa3c401b2\"},{\"path\":\"packages/coynverter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/coynverter.js?0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\",\"sourceMap\":\"packages/coynverter.js.map\",\"sourceMapUrl\":\"/packages/0b9021728ffb7f3419b11d8d72b79e6c95d9ae21.map\",\"size\":23066,\"hash\":\"0b9021728ffb7f3419b11d8d72b79e6c95d9ae21\"},{\"path\":\"packages/session.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/session.js?e436deefadc999c21b6fd16e8e1ecce55c3c3a55\",\"sourceMap\":\"packages/session.js.map\",\"sourceMapUrl\":\"/packages/e436deefadc999c21b6fd16e8e1ecce55c3c3a55.map\",\"size\":6497,\"hash\":\"e436deefadc999c21b6fd16e8e1ecce55c3c3a55\"},{\"path\":\"packages/handlebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/handlebars.js?038145b6256cd6a69c11650ed6bf12b093920095\",\"sourceMap\":\"packages/handlebars.js.map\",\"sourceMapUrl\":\"/packages/038145b6256cd6a69c11650ed6bf12b093920095.map\",\"size\":1292,\"hash\":\"038145b6256cd6a69c11650ed6bf12b093920095\"},{\"path\":\"packages/stylus.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/stylus.js?48b7e3e0953c004a73211d7489462e73ed11be2c\",\"sourceMap\":\"packages/stylus.js.map\",\"sourceMapUrl\":\"/packages/48b7e3e0953c004a73211d7489462e73ed11be2c.map\",\"size\":1288,\"hash\":\"48b7e3e0953c004a73211d7489462e73ed11be2c\"},{\"path\":\"packages/mrt_accounts-ui-bootstrap-3.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_accounts-ui-bootstrap-3.js?fe856a7bc2293ae4b81c6969339c1fd98f095c19\",\"sourceMap\":\"packages/mrt_accounts-ui-bootstrap-3.js.map\",\"sourceMapUrl\":\"/packages/fe856a7bc2293ae4b81c6969339c1fd98f095c19.map\",\"size\":232647,\"hash\":\"fe856a7bc2293ae4b81c6969339c1fd98f095c19\"},{\"path\":\"packages/dburles_collection-helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/dburles_collection-helpers.js?10b8845e36a7fe0526609cd1095b7dae30b9ed8e\",\"sourceMap\":\"packages/dburles_collection-helpers.js.map\",\"sourceMapUrl\":\"/packages/10b8845e36a7fe0526609cd1095b7dae30b9ed8e.map\",\"size\":3586,\"hash\":\"10b8845e36a7fe0526609cd1095b7dae30b9ed8e\"},{\"path\":\"packages/chrismbeckett_fontawesome4.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/chrismbeckett_fontawesome4.js?71dfaef8a91211745b1155d8b1686056c03f1a11\",\"sourceMap\":\"packages/chrismbeckett_fontawesome4.js.map\",\"sourceMapUrl\":\"/packages/71dfaef8a91211745b1155d8b1686056c03f1a11.map\",\"size\":1311,\"hash\":\"71dfaef8a91211745b1155d8b1686056c03f1a11\"},{\"path\":\"packages/frozeman_animation-helper.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_animation-helper.js?0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\",\"sourceMap\":\"packages/frozeman_animation-helper.js.map\",\"sourceMapUrl\":\"/packages/0e877c6fc99752c26d27dc1bbdfb3e86789bd7de.map\",\"size\":22353,\"hash\":\"0e877c6fc99752c26d27dc1bbdfb3e86789bd7de\"},{\"path\":\"packages/frozeman_template-var.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/frozeman_template-var.js?81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\",\"sourceMap\":\"packages/frozeman_template-var.js.map\",\"sourceMapUrl\":\"/packages/81a1223364e51eb7b4c2c1b0345b7ac3b8a52516.map\",\"size\":16437,\"hash\":\"81a1223364e51eb7b4c2c1b0345b7ac3b8a52516\"},{\"path\":\"packages/schnie_uploader.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/schnie_uploader.js?710e32818e58766bd55225265a0370585912110f\",\"sourceMap\":\"packages/schnie_uploader.js.map\",\"sourceMapUrl\":\"/packages/710e32818e58766bd55225265a0370585912110f.map\",\"size\":27387,\"hash\":\"710e32818e58766bd55225265a0370585912110f\"},{\"path\":\"packages/mrt_underscore-string-latest.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mrt_underscore-string-latest.js?a38ecc39a67ea4036d5d875dd102f3d8ad73174d\",\"sourceMap\":\"packages/mrt_underscore-string-latest.js.map\",\"sourceMapUrl\":\"/packages/a38ecc39a67ea4036d5d875dd102f3d8ad73174d.map\",\"size\":84515,\"hash\":\"a38ecc39a67ea4036d5d875dd102f3d8ad73174d\"},{\"path\":\"packages/joshowens_simple-form.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_simple-form.js?74dda2543f961a8ea549a1e28025d74940c271a0\",\"sourceMap\":\"packages/joshowens_simple-form.js.map\",\"sourceMapUrl\":\"/packages/74dda2543f961a8ea549a1e28025d74940c271a0.map\",\"size\":51039,\"hash\":\"74dda2543f961a8ea549a1e28025d74940c271a0\"},{\"path\":\"packages/softwarerero_accounts-t9n.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/softwarerero_accounts-t9n.js?d2d8d1d115a4cb8262d753882e538fc83571d960\",\"sourceMap\":\"packages/softwarerero_accounts-t9n.js.map\",\"sourceMapUrl\":\"/packages/d2d8d1d115a4cb8262d753882e538fc83571d960.map\",\"size\":105833,\"hash\":\"d2d8d1d115a4cb8262d753882e538fc83571d960\"},{\"path\":\"packages/service-configuration.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/service-configuration.js?262da6fb1e9c97be84333c429c9a2929c80f8e3b\",\"sourceMap\":\"packages/service-configuration.js.map\",\"sourceMapUrl\":\"/packages/262da6fb1e9c97be84333c429c9a2929c80f8e3b.map\",\"size\":5082,\"hash\":\"262da6fb1e9c97be84333c429c9a2929c80f8e3b\"},{\"path\":\"packages/joshowens_accounts-entry.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/joshowens_accounts-entry.js?372e4dedd3ca315c19714f7ce4882c6868998214\",\"sourceMap\":\"packages/joshowens_accounts-entry.js.map\",\"sourceMapUrl\":\"/packages/372e4dedd3ca315c19714f7ce4882c6868998214.map\",\"size\":150919,\"hash\":\"372e4dedd3ca315c19714f7ce4882c6868998214\"},{\"path\":\"packages/meteorhacks_npm.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_npm.js?604e35d5437f43224cde2c1f9e5e9aace95a9a95\",\"sourceMap\":\"packages/meteorhacks_npm.js.map\",\"sourceMapUrl\":\"/packages/604e35d5437f43224cde2c1f9e5e9aace95a9a95.map\",\"size\":1300,\"hash\":\"604e35d5437f43224cde2c1f9e5e9aace95a9a95\"},{\"path\":\"packages/npm-container.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/npm-container.js?c4195e22b5a0a7239a415a3d95b3b702c34fa28d\",\"sourceMap\":\"packages/npm-container.js.map\",\"sourceMapUrl\":\"/packages/c4195e22b5a0a7239a415a3d95b3b702c34fa28d.map\",\"size\":1298,\"hash\":\"c4195e22b5a0a7239a415a3d95b3b702c34fa28d\"},{\"path\":\"packages/url.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/url.js?2312d739008b2ffa52f13c77c5d6fc59c9e17d56\",\"sourceMap\":\"packages/url.js.map\",\"sourceMapUrl\":\"/packages/2312d739008b2ffa52f13c77c5d6fc59c9e17d56.map\",\"size\":6642,\"hash\":\"2312d739008b2ffa52f13c77c5d6fc59c9e17d56\"},{\"path\":\"packages/http.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/http.js?9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\",\"sourceMap\":\"packages/http.js.map\",\"sourceMapUrl\":\"/packages/9c5d152169ba9a5a57b6b8ec28e64bbd0d308077.map\",\"size\":37036,\"hash\":\"9c5d152169ba9a5a57b6b8ec28e64bbd0d308077\"},{\"path\":\"packages/velocity_core.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_core.js?1566df70b73d8783eefb275bf28df6fe1a11a039\",\"sourceMap\":\"packages/velocity_core.js.map\",\"sourceMapUrl\":\"/packages/1566df70b73d8783eefb275bf28df6fe1a11a039.map\",\"size\":8724,\"hash\":\"1566df70b73d8783eefb275bf28df6fe1a11a039\"},{\"path\":\"packages/amplify.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/amplify.js?0943ecb804169b991257a319fa92b9e6f34e2d1b\",\"sourceMap\":\"packages/amplify.js.map\",\"sourceMapUrl\":\"/packages/0943ecb804169b991257a319fa92b9e6f34e2d1b.map\",\"size\":88428,\"hash\":\"0943ecb804169b991257a319fa92b9e6f34e2d1b\"},{\"path\":\"packages/velocity_html-reporter.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_html-reporter.js?cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\",\"sourceMap\":\"packages/velocity_html-reporter.js.map\",\"sourceMapUrl\":\"/packages/cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d.map\",\"size\":85561,\"hash\":\"cf94ce8ed8b0cdf6e387fa55b112e0e005882a1d\"},{\"path\":\"packages/velocity_shim.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/velocity_shim.js?35442cb834496e09130fbab3df9f4d5dab5e6f55\",\"sourceMap\":\"packages/velocity_shim.js.map\",\"sourceMapUrl\":\"/packages/35442cb834496e09130fbab3df9f4d5dab5e6f55.map\",\"size\":2360,\"hash\":\"35442cb834496e09130fbab3df9f4d5dab5e6f55\"},{\"path\":\"packages/mike_mocha.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mike_mocha.js?71466b37e24701857780026b17754fb447bd6ff3\",\"sourceMap\":\"packages/mike_mocha.js.map\",\"sourceMapUrl\":\"/packages/71466b37e24701857780026b17754fb447bd6ff3.map\",\"size\":1347056,\"hash\":\"71466b37e24701857780026b17754fb447bd6ff3\"},{\"path\":\"packages/sanjo_jasmine.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/sanjo_jasmine.js?e9f0d239446c3622819a554cbd32d9556c284350\",\"sourceMap\":\"packages/sanjo_jasmine.js.map\",\"sourceMapUrl\":\"/packages/e9f0d239446c3622819a554cbd32d9556c284350.map\",\"size\":496692,\"hash\":\"e9f0d239446c3622819a554cbd32d9556c284350\"},{\"path\":\"packages/meteorhacks_kadira-binary-deps.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira-binary-deps.js?a244ee2e16791a2e0fed6ce317583265afab7c0c\",\"sourceMap\":\"packages/meteorhacks_kadira-binary-deps.js.map\",\"sourceMapUrl\":\"/packages/a244ee2e16791a2e0fed6ce317583265afab7c0c.map\",\"size\":1406,\"hash\":\"a244ee2e16791a2e0fed6ce317583265afab7c0c\"},{\"path\":\"packages/meteorhacks_meteorx.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_meteorx.js?afd5ff95b1c1492f60049925f1f827e2b5817bbb\",\"sourceMap\":\"packages/meteorhacks_meteorx.js.map\",\"sourceMapUrl\":\"/packages/afd5ff95b1c1492f60049925f1f827e2b5817bbb.map\",\"size\":1368,\"hash\":\"afd5ff95b1c1492f60049925f1f827e2b5817bbb\"},{\"path\":\"packages/meteorhacks_kadira.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_kadira.js?9ee74fb46169e30c92bbd18945d536af2cb8c65f\",\"sourceMap\":\"packages/meteorhacks_kadira.js.map\",\"sourceMapUrl\":\"/packages/9ee74fb46169e30c92bbd18945d536af2cb8c65f.map\",\"size\":97584,\"hash\":\"9ee74fb46169e30c92bbd18945d536af2cb8c65f\"},{\"path\":\"packages/autoupdate.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/autoupdate.js?83a587ebd1efacabc89a2dd08e85b48a00b1c696\",\"sourceMap\":\"packages/autoupdate.js.map\",\"sourceMapUrl\":\"/packages/83a587ebd1efacabc89a2dd08e85b48a00b1c696.map\",\"size\":39380,\"hash\":\"83a587ebd1efacabc89a2dd08e85b48a00b1c696\"},{\"path\":\"packages/meteor-platform.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteor-platform.js?499a2f8522e25820b1153c69a92751ccaae507b3\",\"sourceMap\":\"packages/meteor-platform.js.map\",\"sourceMapUrl\":\"/packages/499a2f8522e25820b1153c69a92751ccaae507b3.map\",\"size\":1384,\"hash\":\"499a2f8522e25820b1153c69a92751ccaae507b3\"},{\"path\":\"packages/meteorhacks_async.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/meteorhacks_async.js?e687b9e863dc811fb3f313d1c6f237c7a2b1924b\",\"sourceMap\":\"packages/meteorhacks_async.js.map\",\"sourceMapUrl\":\"/packages/e687b9e863dc811fb3f313d1c6f237c7a2b1924b.map\",\"size\":1360,\"hash\":\"e687b9e863dc811fb3f313d1c6f237c7a2b1924b\"},{\"path\":\"packages/webapp.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/webapp.js?e1be090051b82f046484dccc2de7d747e50c7328\",\"sourceMap\":\"packages/webapp.js.map\",\"sourceMapUrl\":\"/packages/e1be090051b82f046484dccc2de7d747e50c7328.map\",\"size\":3106,\"hash\":\"e1be090051b82f046484dccc2de7d747e50c7328\"},{\"path\":\"packages/spacebars.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/spacebars.js?3c496d2950151d744a8574297b46d2763a123bdf\",\"sourceMap\":\"packages/spacebars.js.map\",\"sourceMapUrl\":\"/packages/3c496d2950151d744a8574297b46d2763a123bdf.map\",\"size\":42134,\"hash\":\"3c496d2950151d744a8574297b46d2763a123bdf\"},{\"path\":\"packages/fastclick.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/fastclick.js?fe15770c77da049b885a0d66c669fa44057f05ee\",\"sourceMap\":\"packages/fastclick.js.map\",\"sourceMapUrl\":\"/packages/fe15770c77da049b885a0d66c669fa44057f05ee.map\",\"size\":109373,\"hash\":\"fe15770c77da049b885a0d66c669fa44057f05ee\"},{\"path\":\"packages/mobile-status-bar.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/mobile-status-bar.js?f2ba1fc67740003d54a6c78c4c73575d69dcfffe\",\"sourceMap\":\"packages/mobile-status-bar.js.map\",\"sourceMapUrl\":\"/packages/f2ba1fc67740003d54a6c78c4c73575d69dcfffe.map\",\"size\":2430,\"hash\":\"f2ba1fc67740003d54a6c78c4c73575d69dcfffe\"},{\"path\":\"packages/launch-screen.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/launch-screen.js?13e1092ebecdb7208762500188f1dc2dea5603e9\",\"sourceMap\":\"packages/launch-screen.js.map\",\"sourceMapUrl\":\"/packages/13e1092ebecdb7208762500188f1dc2dea5603e9.map\",\"size\":9707,\"hash\":\"13e1092ebecdb7208762500188f1dc2dea5603e9\"},{\"path\":\"packages/global-imports.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/packages/global-imports.js?189c78d252d945f781147bdb85fdeb6928d14ba8\",\"size\":1586,\"hash\":\"189c78d252d945f781147bdb85fdeb6928d14ba8\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.jade.js?fbcf18ee1e20649d40cb4b28c5d88932e15208cf\",\"size\":1636,\"hash\":\"fbcf18ee1e20649d40cb4b28c5d88932e15208cf\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.jade.js?6e259c55d7f51a60230a48af0d88584d8ad91625\",\"size\":2517,\"hash\":\"6e259c55d7f51a60230a48af0d88584d8ad91625\"},{\"path\":\"app/client/views/dashboard/dashboard.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/dashboard/dashboard.jade.js?e03f28588433337ed8edb2c2207d2d76990a4afd\",\"size\":5423,\"hash\":\"e03f28588433337ed8edb2c2207d2d76990a4afd\"},{\"path\":\"app/client/views/home/home.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.jade.js?44c80a0deae167b74f43d2a84d1a505ecbfffe45\",\"size\":273,\"hash\":\"44c80a0deae167b74f43d2a84d1a505ecbfffe45\"},{\"path\":\"app/client/views/login/login.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/login/login.jade.js?08f5cb6292d23b811162d93cb23768b4950214f9\",\"size\":776,\"hash\":\"08f5cb6292d23b811162d93cb23768b4950214f9\"},{\"path\":\"app/client/views/nodes/bankaccounts.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.jade.js?6638a2e895f296f01598ff72fa74026ee98090a1\",\"size\":1756,\"hash\":\"6638a2e895f296f01598ff72fa74026ee98090a1\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.jade.js?922f444a9e3861abf247e33a10b1c3bf0bace45d\",\"size\":2120,\"hash\":\"922f444a9e3861abf247e33a10b1c3bf0bace45d\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeMenu.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeMenu.js?b4fa50b6ac4ec8323be264718b1394db16367483\",\"size\":1266,\"hash\":\"b4fa50b6ac4ec8323be264718b1394db16367483\"},{\"path\":\"app/client/views/nodes/template.dynamicNodeViews.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.dynamicNodeViews.js?c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\",\"size\":407,\"hash\":\"c0ccd2f0cb24e7d81f75ebdbd42fb3e57caa5549\"},{\"path\":\"app/client/views/nodes/exchangeDetails.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchangeDetails.jade.js?e2cc927f4eca8f837b3745f131da6e9a462c77c0\",\"size\":1857,\"hash\":\"e2cc927f4eca8f837b3745f131da6e9a462c77c0\"},{\"path\":\"app/client/views/nodes/exchanges.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.jade.js?68cf4ec54d9a88bb33db5f5355a3d56a72871571\",\"size\":1952,\"hash\":\"68cf4ec54d9a88bb33db5f5355a3d56a72871571\"},{\"path\":\"app/client/views/nodes/newBankAccount.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newBankAccount.jade.js?8ec9144864b912fda1a290ed092e16c06661b66e\",\"size\":1530,\"hash\":\"8ec9144864b912fda1a290ed092e16c06661b66e\"},{\"path\":\"app/client/views/nodes/template.newBitcoinWallet.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/template.newBitcoinWallet.js?0029d1c8a4f621a1b721aa61dcb7c30135802368\",\"size\":1894,\"hash\":\"0029d1c8a4f621a1b721aa61dcb7c30135802368\"},{\"path\":\"app/client/views/nodes/newExchange.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/newExchange.jade.js?72527c4ea1e306695370429c743c01c4e15cd919\",\"size\":1491,\"hash\":\"72527c4ea1e306695370429c743c01c4e15cd919\"},{\"path\":\"app/client/views/nodes/nodes.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.jade.js?098f57d3c3146a9dc419ced171c2bdb7c9716a2c\",\"size\":782,\"hash\":\"098f57d3c3146a9dc419ced171c2bdb7c9716a2c\"},{\"path\":\"app/client/views/nodes/overview.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/overview.jade.js?e7091057998f7cede35110e492602734d0724983\",\"size\":5129,\"hash\":\"e7091057998f7cede35110e492602734d0724983\"},{\"path\":\"app/client/views/trades/newTransaction.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/newTransaction.jade.js?2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\",\"size\":2575,\"hash\":\"2b5a0352fdb1a04322b2678dfc5e3ae9d4b6c12b\"},{\"path\":\"app/client/views/trades/trades.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.jade.js?32ae21183b0e195a509c8e8db4f58108eb66d713\",\"size\":8363,\"hash\":\"32ae21183b0e195a509c8e8db4f58108eb66d713\"},{\"path\":\"app/client/views/transfers/transfers.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.jade.js?d0d80cf322ce4bfefb52b0b3a65b992601bc0d0c\",\"size\":6511,\"hash\":\"d0d80cf322ce4bfefb52b0b3a65b992601bc0d0c\"},{\"path\":\"app/client/views/footer.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/footer.jade.js?4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\",\"size\":246,\"hash\":\"4dbf46e906c8f0d578ffd0096bc81e9e2e80c0b5\"},{\"path\":\"app/client/views/header.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.jade.js?271a7506dba2e6f22032fefac93853a78c685e37\",\"size\":2143,\"hash\":\"271a7506dba2e6f22032fefac93853a78c685e37\"},{\"path\":\"app/client/views/index.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/index.jade.js?784fe66da38ac17f86ce4a793b2676f8a6608389\",\"size\":677,\"hash\":\"784fe66da38ac17f86ce4a793b2676f8a6608389\"},{\"path\":\"app/client/views/loading.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/loading.jade.js?de9e7221bb79cb6617007062f140e57bc7769595\",\"size\":340,\"hash\":\"de9e7221bb79cb6617007062f140e57bc7769595\"},{\"path\":\"app/client/views/notFound.jade.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/notFound.jade.js?8998a8d91e3944a06f4ebb8129e304cd5e759f05\",\"size\":226,\"hash\":\"8998a8d91e3944a06f4ebb8129e304cd5e759f05\"},{\"path\":\"app/bootstrap/js/transition.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/transition.js?b50b4578e6bfa341205b376c1179025a53bed2be\",\"size\":1831,\"hash\":\"b50b4578e6bfa341205b376c1179025a53bed2be\"},{\"path\":\"app/bootstrap/js/collapse.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/collapse.js?06af2c33960e1fc0f296d386914d8085704c54e3\",\"size\":5977,\"hash\":\"06af2c33960e1fc0f296d386914d8085704c54e3\"},{\"path\":\"app/bootstrap/js/dropdown.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/dropdown.js?4dc587579c67092051e658c12f6c8afc1ce5bbcd\",\"size\":4652,\"hash\":\"4dc587579c67092051e658c12f6c8afc1ce5bbcd\"},{\"path\":\"app/bootstrap/js/modal.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/modal.js?a5be82cb781571e4e552c589abde5d191abcc1d9\",\"size\":8112,\"hash\":\"a5be82cb781571e4e552c589abde5d191abcc1d9\"},{\"path\":\"app/bootstrap/js/tooltip.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tooltip.js?d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\",\"size\":15336,\"hash\":\"d2d0c12f566152782fc6cc3b7a0bea6ecc346d0c\"},{\"path\":\"app/bootstrap/js/popover.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/popover.js?8b2a82ab4508c2f78db7f96c3575feccf0096b26\",\"size\":3507,\"hash\":\"8b2a82ab4508c2f78db7f96c3575feccf0096b26\"},{\"path\":\"app/bootstrap/js/carousel.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/carousel.js?9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\",\"size\":7041,\"hash\":\"9ac27f10ebdcd6ad1fb1a772a0585543e454b2b3\"},{\"path\":\"app/bootstrap/js/affix.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/affix.js?98373701fb65284f67f1579c779ee3d3d31741d8\",\"size\":4791,\"hash\":\"98373701fb65284f67f1579c779ee3d3d31741d8\"},{\"path\":\"app/bootstrap/js/alert.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/alert.js?19ad96e250954bdb2ffe8984f670c79c51194842\",\"size\":2260,\"hash\":\"19ad96e250954bdb2ffe8984f670c79c51194842\"},{\"path\":\"app/bootstrap/js/button.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/button.js?9905036fb93e275db3e8607d24eb955ed2955fa7\",\"size\":3264,\"hash\":\"9905036fb93e275db3e8607d24eb955ed2955fa7\"},{\"path\":\"app/bootstrap/js/scrollspy.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/scrollspy.js?672c5c002976bcb2c949cf37418e925afbf19234\",\"size\":4697,\"hash\":\"672c5c002976bcb2c949cf37418e925afbf19234\"},{\"path\":\"app/bootstrap/js/tab.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/bootstrap/js/tab.js?89467d37ebb25add19b65f4a7f9283e6f08edb49\",\"size\":3789,\"hash\":\"89467d37ebb25add19b65f4a7f9283e6f08edb49\"},{\"path\":\"app/client/lib/jquery/table-fixed-header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/lib/jquery/table-fixed-header.js?93604980b9683ae204ca2902769dcf675d2ddb6b\",\"size\":1632,\"hash\":\"93604980b9683ae204ca2902769dcf675d2ddb6b\"},{\"path\":\"app/lib/langs/de.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/de.coffee.js?b2202ff71fb0bc81bb8eba91c1227eccce925e18\",\"sourceMap\":\"app/lib/langs/de.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/b2202ff71fb0bc81bb8eba91c1227eccce925e18.map\",\"size\":1619,\"hash\":\"b2202ff71fb0bc81bb8eba91c1227eccce925e18\"},{\"path\":\"app/lib/langs/en.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/langs/en.coffee.js?410a38395ad11958812ff423d73600a14b0bd0b3\",\"sourceMap\":\"app/lib/langs/en.coffee.js.map\",\"sourceMapUrl\":\"/lib/langs/410a38395ad11958812ff423d73600a14b0bd0b3.map\",\"size\":2808,\"hash\":\"410a38395ad11958812ff423d73600a14b0bd0b3\"},{\"path\":\"app/models/lib/exchangeRateTool.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangeRateTool.coffee.js?17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\",\"sourceMap\":\"app/models/lib/exchangeRateTool.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/17b37c2f2a5aa05bbb96a96d7d74026feeee56fb.map\",\"size\":900,\"hash\":\"17b37c2f2a5aa05bbb96a96d7d74026feeee56fb\"},{\"path\":\"app/models/lib/exchangerates.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/lib/exchangerates.coffee.js?bdcf647b94ff667398f586ff7bcdee4ea5c834b8\",\"sourceMap\":\"app/models/lib/exchangerates.coffee.js.map\",\"sourceMapUrl\":\"/models/lib/bdcf647b94ff667398f586ff7bcdee4ea5c834b8.map\",\"size\":838,\"hash\":\"bdcf647b94ff667398f586ff7bcdee4ea5c834b8\"},{\"path\":\"app/lib/collection-behaviours.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.coffee.js?f48fb1436de2ffde681a78b753b885387114915f\",\"sourceMap\":\"app/lib/collection-behaviours.coffee.js.map\",\"sourceMapUrl\":\"/lib/f48fb1436de2ffde681a78b753b885387114915f.map\",\"size\":832,\"hash\":\"f48fb1436de2ffde681a78b753b885387114915f\"},{\"path\":\"app/lib/collection-behaviours.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/collection-behaviours.js?2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\",\"size\":561,\"hash\":\"2a88af4ca9286dcdda31afc4a7c5f11066fe0a93\"},{\"path\":\"app/lib/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/lib/config.coffee.js?030792e23e93eee41513f5b276cbfb252db8a6f6\",\"sourceMap\":\"app/lib/config.coffee.js.map\",\"sourceMapUrl\":\"/lib/030792e23e93eee41513f5b276cbfb252db8a6f6.map\",\"size\":786,\"hash\":\"030792e23e93eee41513f5b276cbfb252db8a6f6\"},{\"path\":\"app/client/views/nodes/bitcoin/addBitcoinAddress.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/addBitcoinAddress.js?2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\",\"size\":19,\"hash\":\"2a3453bba5b8f7e5a39caf4f0fb6016f1b588104\"},{\"path\":\"app/client/views/nodes/bitcoin/bitcoinWalletAddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoin/bitcoinWalletAddresses.js?f008c987ef8b6b7ebb4d206306ee214f01e4508b\",\"size\":201,\"hash\":\"f008c987ef8b6b7ebb4d206306ee214f01e4508b\"},{\"path\":\"app/client/views/home/home.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.coffee.js?49335e63b597461f45496ec342f7a00cc0f3080a\",\"sourceMap\":\"app/client/views/home/home.coffee.js.map\",\"sourceMapUrl\":\"/client/views/home/49335e63b597461f45496ec342f7a00cc0f3080a.map\",\"size\":312,\"hash\":\"49335e63b597461f45496ec342f7a00cc0f3080a\"},{\"path\":\"app/client/views/home/home.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/home/home.js?23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\",\"size\":21,\"hash\":\"23f7dcbc54aa1ebb7ef433df64981c2ebddd110f\"},{\"path\":\"app/client/views/nodes/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bankaccounts.js?d9c2820a83ce54bcece438e375772473e7e3ae87\",\"size\":127,\"hash\":\"d9c2820a83ce54bcece438e375772473e7e3ae87\"},{\"path\":\"app/client/views/nodes/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/bitcoinwallets.js?13871e3bcdb78752f2583592e7569b1ef21b0d5c\",\"size\":298,\"hash\":\"13871e3bcdb78752f2583592e7569b1ef21b0d5c\"},{\"path\":\"app/client/views/nodes/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/exchanges.js?fd32ec9e6844b165c4487ad18647ba1f01276d6e\",\"size\":1010,\"hash\":\"fd32ec9e6844b165c4487ad18647ba1f01276d6e\"},{\"path\":\"app/client/views/nodes/nodes.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/nodes/nodes.js?52db8e7dd146acd250e10f64fd65d728e3fe2e3d\",\"size\":204,\"hash\":\"52db8e7dd146acd250e10f64fd65d728e3fe2e3d\"},{\"path\":\"app/client/views/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.coffee.js?b222f3c5af136d0cf7054734c7157f479c0a678e\",\"sourceMap\":\"app/client/views/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/client/views/trades/b222f3c5af136d0cf7054734c7157f479c0a678e.map\",\"size\":234,\"hash\":\"b222f3c5af136d0cf7054734c7157f479c0a678e\"},{\"path\":\"app/client/views/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/trades/trades.js?a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\",\"size\":292,\"hash\":\"a7e8388c90b5cf4345540fcc4ff05c8a04fa442b\"},{\"path\":\"app/client/views/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.coffee.js?93d5002398572514e6a51fe66dd4e1d0378460d2\",\"sourceMap\":\"app/client/views/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/client/views/transfers/93d5002398572514e6a51fe66dd4e1d0378460d2.map\",\"size\":264,\"hash\":\"93d5002398572514e6a51fe66dd4e1d0378460d2\"},{\"path\":\"app/client/views/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/transfers/transfers.js?8e4f897906d91457950506deb5f60288cae1bf01\",\"size\":309,\"hash\":\"8e4f897906d91457950506deb5f60288cae1bf01\"},{\"path\":\"app/client/router/config.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/router/config.coffee.js?73f6a3c47c9524edef5ce4af626347abdbfd934e\",\"sourceMap\":\"app/client/router/config.coffee.js.map\",\"sourceMapUrl\":\"/client/router/73f6a3c47c9524edef5ce4af626347abdbfd934e.map\",\"size\":456,\"hash\":\"73f6a3c47c9524edef5ce4af626347abdbfd934e\"},{\"path\":\"app/client/views/header.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/views/header.js?4866c4adf90235af832db68571e986d8036eeab5\",\"size\":174,\"hash\":\"4866c4adf90235af832db68571e986d8036eeab5\"},{\"path\":\"app/models/trades/trades.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.coffee.js?308ff5c07a0f1a8fff91ddc7f814114cba79aac0\",\"sourceMap\":\"app/models/trades/trades.coffee.js.map\",\"sourceMapUrl\":\"/models/trades/308ff5c07a0f1a8fff91ddc7f814114cba79aac0.map\",\"size\":1529,\"hash\":\"308ff5c07a0f1a8fff91ddc7f814114cba79aac0\"},{\"path\":\"app/models/trades/trades.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/trades/trades.js?875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\",\"size\":1296,\"hash\":\"875fdc39885e88d8d8efaf81cf22e3e8dc1a3b0a\"},{\"path\":\"app/models/transfers/transfers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.coffee.js?a832763108fb05f31c8ceb0f095c10f27ba14188\",\"sourceMap\":\"app/models/transfers/transfers.coffee.js.map\",\"sourceMapUrl\":\"/models/transfers/a832763108fb05f31c8ceb0f095c10f27ba14188.map\",\"size\":1739,\"hash\":\"a832763108fb05f31c8ceb0f095c10f27ba14188\"},{\"path\":\"app/models/transfers/transfers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/transfers/transfers.js?7aeecc6e8d89a8bc23744da5adcdbc3de7935941\",\"size\":2023,\"hash\":\"7aeecc6e8d89a8bc23744da5adcdbc3de7935941\"},{\"path\":\"app/client/helpers.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.coffee.js?b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\",\"sourceMap\":\"app/client/helpers.coffee.js.map\",\"sourceMapUrl\":\"/client/b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8.map\",\"size\":600,\"hash\":\"b4b9e07e9c2ac7ea34b3c83699f8f88b43b122d8\"},{\"path\":\"app/client/helpers.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/helpers.js?ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\",\"size\":631,\"hash\":\"ac2f324d4715d937e1c1e8aa7c0519422a6cd93e\"},{\"path\":\"app/client/subscriptions.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/client/subscriptions.js?1ca2a7bf25eaac7696a81e64647252dcca4a207a\",\"size\":243,\"hash\":\"1ca2a7bf25eaac7696a81e64647252dcca4a207a\"},{\"path\":\"app/models/bankaccounts.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.coffee.js?c9fef6bc56367870596f000c7523501e16b78e55\",\"sourceMap\":\"app/models/bankaccounts.coffee.js.map\",\"sourceMapUrl\":\"/models/c9fef6bc56367870596f000c7523501e16b78e55.map\",\"size\":1313,\"hash\":\"c9fef6bc56367870596f000c7523501e16b78e55\"},{\"path\":\"app/models/bankaccounts.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bankaccounts.js?483ddcbd320a249a5cad647235d2ecc7296ca92c\",\"size\":723,\"hash\":\"483ddcbd320a249a5cad647235d2ecc7296ca92c\"},{\"path\":\"app/models/bitcoinaddresses.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.coffee.js?756bafccedbdb2afcb4f32edca6b6abc02e5396a\",\"sourceMap\":\"app/models/bitcoinaddresses.coffee.js.map\",\"sourceMapUrl\":\"/models/756bafccedbdb2afcb4f32edca6b6abc02e5396a.map\",\"size\":1270,\"hash\":\"756bafccedbdb2afcb4f32edca6b6abc02e5396a\"},{\"path\":\"app/models/bitcoinaddresses.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinaddresses.js?dbce8ceeecc2f9e3d1e24af400544d980ef20095\",\"size\":1513,\"hash\":\"dbce8ceeecc2f9e3d1e24af400544d980ef20095\"},{\"path\":\"app/models/bitcoinwallets.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.coffee.js?8784729167b91c60c38b2d991a125ffec13d6ec5\",\"sourceMap\":\"app/models/bitcoinwallets.coffee.js.map\",\"sourceMapUrl\":\"/models/8784729167b91c60c38b2d991a125ffec13d6ec5.map\",\"size\":1259,\"hash\":\"8784729167b91c60c38b2d991a125ffec13d6ec5\"},{\"path\":\"app/models/bitcoinwallets.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/bitcoinwallets.js?a4081140c352d4265c864a797b5f5dc3b29eef19\",\"size\":702,\"hash\":\"a4081140c352d4265c864a797b5f5dc3b29eef19\"},{\"path\":\"app/models/exchanges.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.coffee.js?e853cfcb6c6fcb46d79716adef245d73dcb72bbb\",\"sourceMap\":\"app/models/exchanges.coffee.js.map\",\"sourceMapUrl\":\"/models/e853cfcb6c6fcb46d79716adef245d73dcb72bbb.map\",\"size\":1365,\"hash\":\"e853cfcb6c6fcb46d79716adef245d73dcb72bbb\"},{\"path\":\"app/models/exchanges.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/models/exchanges.js?a252eb8f3f94da18070c8086ebb359ca52977483\",\"size\":2118,\"hash\":\"a252eb8f3f94da18070c8086ebb359ca52977483\"},{\"path\":\"app/routes.coffee.js\",\"where\":\"client\",\"type\":\"js\",\"cacheable\":true,\"url\":\"/routes.coffee.js?c2e430f0569c3e2c12f1f508ac5db21ba684664c\",\"sourceMap\":\"app/routes.coffee.js.map\",\"sourceMapUrl\":\"/c2e430f0569c3e2c12f1f508ac5db21ba684664c.map\",\"size\":1196,\"hash\":\"c2e430f0569c3e2c12f1f508ac5db21ba684664c\"},{\"path\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"where\":\"client\",\"type\":\"css\",\"cacheable\":true,\"url\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css\",\"sourceMap\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.css.map\",\"sourceMapUrl\":\"/3f9fb9edde77d51b9a8a514f02ab0f034e071ec2.map\",\"size\":197253,\"hash\":\"3f9fb9edde77d51b9a8a514f02ab0f034e071ec2\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.eot\",\"size\":20335,\"hash\":\"f3a9a3b609133c3d21d6b42abbf7f43bd111df72\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.svg\",\"size\":62926,\"hash\":\"66b1fc67e37d01ee45ca75c4eefb144d2dbe98fa\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.ttf\",\"size\":41280,\"hash\":\"aafafdc09404c4aa4447d7e898a2183def9cc1b1\"},{\"path\":\"packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/nemo64_bootstrap-data/bootstrap/fonts/glyphicons-halflings-regular.woff\",\"size\":23320,\"hash\":\"22037a3455914e5662fa51a596677bdb329e2c5c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.eot\",\"size\":56006,\"hash\":\"0183979056f0b87616cd99d5c54a48f3b771eee6\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.svg\",\"size\":287007,\"hash\":\"cd980eab6db5fa57db670cb2e4278e67e1a4d6c9\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.ttf\",\"size\":112160,\"hash\":\"6225ccc4ec94d060f19efab97ca42d842845b949\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/fontawesome-webfont.woff\",\"size\":65452,\"hash\":\"7d65e0227d0d7cdc1718119cd2a7dce0638f151c\"},{\"path\":\"packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/chrismbeckett_fontawesome4/lib/fonts/FontAwesome.otf\",\"size\":85908,\"hash\":\"6270a4a561a69fef5f5cc18cdf9efc256ec2ccbe\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_logo.svg\",\"size\":3723,\"hash\":\"bd19ecdc8eb1084f7bb562c298e4ce41f9cdc698\"},{\"path\":\"packages/velocity_html-reporter/lib/velocity_cog.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/velocity_cog.svg\",\"size\":987,\"hash\":\"6e74acfffcbd2bafdc8a95d9db7762ece07b1e81\"},{\"path\":\"packages/velocity_html-reporter/lib/icon-time.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/packages/velocity_html-reporter/lib/icon-time.png\",\"size\":2834,\"hash\":\"868f492022a4dab0f1522de6aae0773531bc6e85\"},{\"path\":\"app/.gitignore\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/.gitignore\",\"size\":11,\"hash\":\"f1b9a783bd788cd77162147376caa6cc22716de9\"},{\"path\":\"app/favicon.ico\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/favicon.ico\",\"size\":1150,\"hash\":\"0a8ca32c0109fb7440876d549d4c7a5bb5773e5c\"},{\"path\":\"app/fonts/FontAwesome.otf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/FontAwesome.otf\",\"size\":75188,\"hash\":\"46198321f916ab2aa86c0ad51e0aacaa73783bd7\"},{\"path\":\"app/fonts/fontawesome-webfont.eot\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.eot\",\"size\":72449,\"hash\":\"ad0c0513a2fbb7326ac5e11f7c94b95aa23b02e0\"},{\"path\":\"app/fonts/fontawesome-webfont.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.svg\",\"size\":253487,\"hash\":\"28a0cd129eb6e57d21f8c511581f1909ee6b934a\"},{\"path\":\"app/fonts/fontawesome-webfont.ttf\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.ttf\",\"size\":141564,\"hash\":\"c59792c0a05a4da1f9202a390a27e2d500c36752\"},{\"path\":\"app/fonts/fontawesome-webfont.woff\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/fonts/fontawesome-webfont.woff\",\"size\":83760,\"hash\":\"7f2f3c55c2de192387c351b995115f6b79e09173\"},{\"path\":\"app/img/coyno-logo.svg\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/coyno-logo.svg\",\"size\":62036,\"hash\":\"0f5b4f7ad9f7b4cd0fd6ce840eaffd6d2abee615\"},{\"path\":\"app/img/exchange-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default.png\",\"size\":2718,\"hash\":\"38a115ae448e39a661384426a6f49fd253c93981\"},{\"path\":\"app/img/exchange-icon-default2.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/exchange-icon-default2.png\",\"size\":3055,\"hash\":\"a8455f437e1a31efaf28592afc8197bcc80f8a4a\"},{\"path\":\"app/img/graph.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/graph.png\",\"size\":38395,\"hash\":\"06f3e53943afdbbdeb5bce79b7508221030875e2\"},{\"path\":\"app/img/table-hover.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/table-hover.png\",\"size\":109,\"hash\":\"f27d3bfbd2d5a1d47422cb5abcc7742a4b873b24\"},{\"path\":\"app/img/wallet-icon-default.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/wallet-icon-default.png\",\"size\":857,\"hash\":\"384b53d5f09d0645737c47cd6b259b139c24e16f\"},{\"path\":\"app/img/external-logos/Bitstamp_logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Bitstamp_logo.png\",\"size\":10857,\"hash\":\"2896bb2be42d73ab629abc517c5f3e3520fb96b6\"},{\"path\":\"app/img/external-logos/Kraken-logo.png\",\"where\":\"client\",\"type\":\"asset\",\"cacheable\":false,\"url\":\"/img/external-logos/Kraken-logo.png\",\"size\":2870,\"hash\":\"6b28cba561e324bd31af6945df335207c4176003\"},{\"path\":\"head.html\",\"where\":\"internal\",\"type\":\"head\",\"hash\":\"92126bb9780ea2da0401bad62831eae118f2d77c\"}],\"version\":\"09be83330561b605a9b119cf32f35c52f780ff6d\"}"
                 },
                 "type": {
                   "type": "constant",
@@ -17134,103 +17098,67 @@ var packageMetadata = {
                     "listeners": {
                       "type": "function",
                       "members": {
-                        "/home/levin/coding/coyno/meteor/tests": {
+                        "/home/levin/coding/coynows/meteor/tests": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/collection-mocks.js": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/collection-mocks.js": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/blockchaindata": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/blockchaindata": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/package-stubs.js": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/package-stubs.js": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/packageMocksSpec.js": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/packageMocksSpec.js": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample/spec": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/integration/sample/src": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample/spec": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/client/unit/sample/src": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/blockchaindata/simplefunctions.js": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/blockchaindata/simplefunctions.js": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample/spec": {
                           "type": "function"
                         },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec/PlayerSpec.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/spec/SpecMatchers.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src/Player.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/integration/sample/src/Song.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec/PlayerSpec.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/spec/SpecMatchers.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src/Player.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/client/unit/sample/src/Song.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src/Player.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/src/Song.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec/PlayerSpec.js": {
-                          "type": "function"
-                        },
-                        "/home/levin/coding/coyno/meteor/tests/jasmine/server/unit/sample/spec/SpecMatchers.js": {
+                        "/home/levin/coding/coynows/meteor/tests/jasmine/server/unit/sample/src": {
                           "type": "function"
                         }
                       }
@@ -27165,7 +27093,7 @@ var packageMetadata = {
             },
             "hostname": {
               "type": "constant",
-              "value": "GeldDT"
+              "value": "levinnb"
             },
             "authHeaders": {
               "type": "object",
@@ -27263,12 +27191,12 @@ var packageMetadata = {
                 "metricsByMinute": {
                   "type": "object",
                   "members": {
-                    "1417342320000": {
+                    "1417438740000": {
                       "type": "object",
                       "members": {
                         "startTime": {
                           "type": "constant",
-                          "value": 1417342336788
+                          "value": 1417438741217
                         },
                         "pubs": {
                           "type": "object",
@@ -27413,7 +27341,7 @@ var packageMetadata = {
               "members": {
                 "startTime": {
                   "type": "constant",
-                  "value": 1417342336774
+                  "value": 1417438741174
                 },
                 "newSessions": {
                   "type": "constant",
@@ -27456,7 +27384,7 @@ var packageMetadata = {
                 },
                 "startTime": {
                   "type": "constant",
-                  "value": 1417342336781
+                  "value": 1417438741197
                 },
                 "maxErrors": {
                   "type": "constant",
@@ -27596,7 +27524,7 @@ var packageMetadata = {
             },
             "diff": {
               "type": "constant",
-              "value": 770
+              "value": 2824
             },
             "reSyncCount": {
               "type": "constant",
@@ -27678,7 +27606,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "9599e96bc7a59d74cd132d226eed47d22cfb28ca"
+          "value": "04909f6b0d5928b50be9a34923f690ecb6b27f85"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -27686,7 +27614,7 @@ var packageMetadata = {
         },
         "autoupdateVersionCordova": {
           "type": "constant",
-          "value": "199e42d9c3f08a6fa27a197bde285282106bcb7f"
+          "value": "09be83330561b605a9b119cf32f35c52f780ff6d"
         },
         "appId": {
           "type": "constant",

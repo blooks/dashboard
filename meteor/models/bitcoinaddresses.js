@@ -1,7 +1,6 @@
 BitcoinAddresses.helpers( {
         update: function() {
           var transactions = this.transactions();
-            console.log(transactions.length);
           var balance = computeBalance(transactions, this.address);
           BitcoinAddresses.update({"_id": this._id},{$set : {"balance": balance}})
         },
@@ -43,10 +42,4 @@ var computeBalance = function(transactions, address) {
   });
   return result;
 };
-    /* Removed to enable bulk processing.
-BitcoinAddresses.after.insert(function (userId, doc) {
-  var address = BitcoinAddresses.findOne({'_id': doc._id});
-  address.update();
-});
-*/
 }

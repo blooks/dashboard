@@ -97,7 +97,8 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   chain.apiKeyId = 'a3dcecd08d5ef5476956f88dace0521a';
   chain.apiKeySecret = '9b846d2e90118a901b9666bef6f78a2e';
   var syncChain = Async.wrap(chain, ['getAddress','getAddressesTransactions']);
-  var chainTxs = syncChain.getAddressesTransactions(addresses);
+  var chainTxs = syncChain.getAddressesTransactions(addresses, {limit : 500});
+  console.log('Asked chain.com for tx for ' + addresses.length + " addresses. Got " + chainTxs.length + " transactions.");
   chainTxs.forEach(function(chainTx) {
     addTransaction(addCoynoData(chainTxToCoynoTx(chainTx),wallet));
   });

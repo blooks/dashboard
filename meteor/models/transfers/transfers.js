@@ -21,7 +21,29 @@ var nodeLabel = function(nodeId) {
 		}
 	}
 	return "";
-}
+};
+/**
+ *
+ * @param inoutput
+ * @returns {*}
+ */
+var getNodeIdForInOutput = function (inoutput) {
+
+	//The input comes from a known Node in our DB.
+	var existingNodeId = inoutput.nodeId;
+
+	//Lets find out whether there is a BitcoinWallet for this Node.
+	var bitcoinWallet = null;
+	if (existingNodeId) {
+		var bitcoinAddress = BitcoinAddresses.findOne({"_id": existingNodeId});
+		if (bitcoinAddress) {
+			bitcoinWallet = BitcoinWallets.findOne({"_id": bitcoinAddress.walletId});
+		}
+	}
+	if (bitcoinWallet) {
+		return bitcoinWallet._id;
+	} else return;
+};
 
 Transfers.helpers({
 	inputSum: function() {
@@ -45,7 +67,7 @@ Transfers.helpers({
 		var result = this.outputSum();
 		var senderNodeId = this.senderNodeId();
 		this.details.outputs.forEach(function(output) {
-			if (output.nodeId == senderNodeId) {
+			if (getNodeIdForInOutput(output) == senderNodeId) {
 				result -= output.amount;
 			}
 		});
@@ -54,8 +76,8 @@ Transfers.helpers({
 	senderNodeId: function() {
 		var result = null;
 		this.details.inputs.forEach(function(input) {
-			if (result == null) {
-				result = input.nodeId;
+			if (!result) {
+				result = getNodeIdForInOutput(input);
 			}
 		});
 		return result;
@@ -64,8 +86,11 @@ Transfers.helpers({
 		var senderNodeId = this.senderNodeId();
 		var result = null;
 		this.details.outputs.forEach(function (output) {
-			if (result == null && (output.nodeId != senderNodeId)) {
-				result = output.nodeId;
+			if (! result) {
+				var temp = getNodeIdForInOutput(output);
+				if (temp != senderNodeId) {
+					result = temp;
+				}
 			}
 		});
 		return result;

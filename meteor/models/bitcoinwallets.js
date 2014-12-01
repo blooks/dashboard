@@ -4,7 +4,7 @@ BitcoinWallets.helpers({
     BitcoinAddresses.find({"walletId": this._id}).forEach(
       function(address)
     {
-      result += Math.max(address.balance,0);
+      result += address.balance;
     });
     return result;
 },
