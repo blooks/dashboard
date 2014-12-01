@@ -110,3 +110,4 @@ Transfers.helpers({
 		return "Outgoing";
 	}
 });
+

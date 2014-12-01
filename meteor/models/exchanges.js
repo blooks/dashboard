@@ -60,8 +60,5 @@ Exchanges.after.insert(function (userId, doc) {
   if (doc.exchange === "Bitstamp") {
     Meteor.call('getBitstampData', doc); 
   }
- // if (doc.exchange === 'Kraken') {
- //   Meteor.call('getKrakenData', doc);
- //}
 });
 }

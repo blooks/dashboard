@@ -42,4 +42,21 @@ var computeBalance = function(transactions, address) {
   });
   return result;
 };
+    BitcoinAddresses.before.remove(function (userId, doc) {
+
+        //TODO: @LEVIN redundant code! Remove!
+        var transactions = function(doc) {
+            var nodeId = doc._id;
+            return Transfers.find(
+                { $or : [
+                    { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
+                    { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+                ]
+                });
+        };
+        var transfers  = transactions(doc);
+        transfers.forEach(function(transfer) {
+            Transfers.remove({"_id": transfer._id});
+        });
+    });
 }
