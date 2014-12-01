@@ -7,6 +7,14 @@ var assert = require('assert');
 
 var chainWS = new WebSocket("wss://ws.chain.com/v2/notifications");
 
+var addTransaction = function(chainTx, db) {
+    console.log('Transaction to be added:');
+    console.log(chainTx);
+};
+
+
+
+
 chainWS.on('open', function() {
     var req = {type: "new-transaction", block_chain: "bitcoin"};
     chainWS.send(JSON.stringify(req));
@@ -29,7 +37,7 @@ chainWS.on('message', function (data, flags) {
 
             bitcoinaddresses.find({ "address": { $in : addresses}}).toArray(function (err, knownAddresses) {
                 if (knownAddresses.length) {
-                    console.dir(knownAddresses.address);
+                    addTransaction(x.payload.transaction, db);
                 }
               db.close();
             });
