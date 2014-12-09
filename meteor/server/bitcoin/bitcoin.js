@@ -131,10 +131,13 @@ var updateBIP32Wallet = function(wallet) {
   var Address = bitcore.Address;
   var knownMasterPublicKey = wallet.hdseed;
   var hkey = new HierarchicalKey(knownMasterPublicKey);
-  for (var i = 0; i < 40; ++i) {
-    addAddressToWallet(Address.fromPubKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString(), wallet);
-    addAddressToWallet(Address.fromPubKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString(), wallet);
+  var addresses = [];
+  for (var i = 0; i < 100; ++i) {
+    addresses.push(Address.fromPubKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString());
+    addresses.push(Address.fromPubKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString());
   }
+  addAddressesToWallet(addresses,wallet);
+  updateBalances(wallet);
 };
 
 var updateArmoryWallet = function(wallet) {
