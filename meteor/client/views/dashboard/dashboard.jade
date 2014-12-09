@@ -7,122 +7,58 @@ template(name="dashboard")
         .col-md-10.col-md-offset-1
           .row.desktop-zone  
             .col-sm-6
-              img(src="/img/graph.png")
+              #chart
+                svg.piechart
+
             .col-sm-6
-               table.table.table-transactions.table-zb-hover.auto-width.centered
-                  thead
-                    tr
-                      th {{i18n 'transfers.headings.table.date'}} 
-                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.date'}} ")
-                          span.glyphicon.glyphicon-info-sign
-                      th {{i18n 'transfers.headings.table.currency'}}
-                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inCurrency'}} ")
-                          span.glyphicon.glyphicon-info-sign
-                      th {{i18n 'transfers.headings.table.amount'}}
-                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inAmount'}} ")
-                          span.glyphicon.glyphicon-info-sign
-                      th.positive {{i18n 'transfers.headings.table.source'}}
-                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.source'}} ")
-                          span.glyphicon.glyphicon-info-sign
-                      th.negative {{i18n 'transfers.headings.table.target'}}
-                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
-                          span.glyphicon.glyphicon-info-sign
-                      th
-                      th.no-border              
-                  tbody
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
-                    tr 
-                      td 16/03/2013 07:34  
-                      td BTC 
-                      td 200.00
-                      td Destination
-                      td K
+              .table-zone
+                if trades
+                  table.table.table-transactions.table-zb-hover.auto-width.centered
+                    thead
+                      tr
+                        th(colspan="2").no-border &nbsp;
+                        th(colspan="2").supa-header.inflow {{i18n 'trades.headings.table.inflow'}}
+                        th(colspan="2").supa-header.outflow {{i18n 'trades.headings.table.outflow'}}
+                        th(colspan="2").no-border &nbsp;             
+                      tr
+                        th {{i18n 'trades.headings.table.date'}} 
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th {{i18n 'trades.headings.table.source'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.source'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th.positive {{i18n 'trades.headings.table.inAmount'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inAmount'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th.positive {{i18n 'trades.headings.table.inCurrency'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.inCurrency'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th.negative {{i18n 'trades.headings.table.outAmount'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outAmount'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th.negative {{i18n 'trades.headings.table.outCurrency'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.outCurrency'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th {{i18n 'trades.headings.table.volume'}}
+                          a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.volume'}} ")
+                            span.glyphicon.glyphicon-info-sign
+                        th.no-border
+                    tbody
+                      each trades
+                        tr
+                          td {{prettyDate date}}
+                          td {{venue}}
+                          td.positive {{saneNumber inflow.amount inflow.currency}} {{buy.currency}}
+                          td.positive {{buy.currency}}
+                          td.negative {{saneNumber outflow.amount outflow.currency}} {{sell.currency}}
+                          td.negative {{sell.currency}}
+                          td {{saneNumber baseAmount "EUR"}} EUR
+                          td 
+                            a.delete-trade(href="#")
+                              span.glyphicon.glyphicon-trash
+                else
+                  .row
+                    .col-sm-6.col-sm-offset-3 
+                      .add-trns-zone
+                        h3 {{i18n 'trades.headings.noTransactions'}}
+                        p {{i18n 'trades.text.noTransactions'}}

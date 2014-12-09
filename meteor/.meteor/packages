@@ -34,3 +34,6 @@ meteorhacks:npm
 
 npm-container
 meteorhacks:kadira
+d3js:d3
+pfafman:nvd3
+
