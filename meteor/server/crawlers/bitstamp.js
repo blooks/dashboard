@@ -170,6 +170,8 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.currency = base_currency;
   }
+  console.log(Meteor.user());
+  console.log(transferdetails);
   return transferdetails;
 };
 
