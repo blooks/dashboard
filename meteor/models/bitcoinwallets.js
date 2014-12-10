@@ -1,11 +1,29 @@
 BitcoinWallets.helpers({
   balance: function() {
     var result = 0;
-    BitcoinAddresses.find({"walletId": this._id}).forEach(
+    var walletId = this._id;
+    BitcoinAddresses.find({"walletId": walletId}).forEach(
       function(address)
     {
       result += address.balance;
     });
+    Transfers.find(
+        { $or : [
+          { 'details.inputs': { $elemMatch : {'nodeId': walletId }} },
+          { 'details.outputs': { $elemMatch : {'nodeId': walletId }} }
+        ]
+        }).forEach(function (transfer) {
+            transfer.details.inputs.forEach(function(input) {
+              if (input.nodeId == walletId) {
+                result -= input.amount;
+              }
+            });
+            transfer.details.outputs.forEach(function(output) {
+              if (output.nodeId == walletId) {
+                result += output.amount;
+              }
+            });
+        });
     return result;
 },
   addresses: function() {
