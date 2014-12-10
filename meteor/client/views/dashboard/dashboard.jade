@@ -7,8 +7,12 @@ template(name="dashboard")
         .col-md-10.col-md-offset-1
           .row.desktop-zone  
             .col-sm-6
-              #chart
-                svg.piechart
+              h2 Wallet holdings
+              if showPieChart        
+                #chart
+                  svg.piechart
+              else
+                h3 Add data
 
             .col-sm-6
               .table-zone
