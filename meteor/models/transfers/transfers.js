@@ -42,7 +42,7 @@ var getNodeIdForInOutput = function (inoutput) {
 	}
 	if (bitcoinWallet) {
 		return bitcoinWallet._id;
-	} else return null;
+	} else return existingNodeId;
 };
 
 Transfers.helpers({
