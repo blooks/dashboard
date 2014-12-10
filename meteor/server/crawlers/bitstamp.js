@@ -170,8 +170,6 @@ var bitstampWithdrawalToTransfer = function(withdrawal, exchange) {
     });
     transferdetails.currency = base_currency;
   }
-  console.log(Meteor.user());
-  console.log(transferdetails);
   return transferdetails;
 };
 
@@ -411,6 +409,7 @@ Meteor.methods({
     var privateBitstamp = new Bitstamp(key, secret, client_id);
     var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
     var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
+    console.log("Got " + jsonData.length + " transactions from Bitstamp");
     bitstampJSONtoDB(jsonData, exchange);
   }
 });
