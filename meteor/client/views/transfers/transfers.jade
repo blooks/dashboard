@@ -60,7 +60,7 @@ template(name="transfers")
                       tr
                         td {{prettyDate date}}
                         td {{details.currency}}
-                        td {{saneNumber amount 'BTC'}}
+                        td {{saneNumber amount this.details.currency}}
                         td {{inputLabel}}
                         td {{outputLabel}}
                         td {{fee}}

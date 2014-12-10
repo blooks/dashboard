@@ -193,7 +193,7 @@ Meteor.methods({
       case 'Electrum':
         updateElectrumWallet(wallet);
         break;
-      case 'Bitcoin Wallet (Android)' :
+      case 'BIP32' :
         updateBIP32Wallet(wallet);
         break;
     }
