@@ -42,8 +42,10 @@ var getNodeIdForInOutput = function (inoutput) {
 	}
 	if (bitcoinWallet) {
 		return bitcoinWallet._id;
-	} else return existingNodeId;
+	} else return null;
 };
+
+var serverVar = false;
 
 Transfers.helpers({
 	inputSum: function() {
@@ -95,19 +97,49 @@ Transfers.helpers({
 		});
 		return result;
 	},
-	inputLabel: function() {
+	unknownInputLabel: function() {
 		var senderNodeId = this.senderNodeId();
-		if (senderNodeId) {
-			return nodeLabel(senderNodeId);
+		if(this.senderNodeId()) {
+			return "";
 		}
 		return "Incoming";
 	},
-	outputLabel: function() {
+	knownInputLabel: function() {
+		var senderNodeId = this.senderNodeId();
+		if(this.senderNodeId()) {
+			return nodeLabel(senderNodeId);
+		}
+		return "";
+	},
+	unknownOutputLabel: function() {
 		var recipientNodeId = this.recipientNodeId();
-		if (recipientNodeId) {
-			return nodeLabel(recipientNodeId);
+		if(this.recipientNodeId()) {
+			return "";
 		}
 		return "Outgoing";
+	},
+	knownOutputLabel: function() {
+		var recipientNodeId = this.recipientNodeId();
+		if(this.recipientNodeId()) {
+			return nodeLabel(recipientNodeId);
+		}
+		return "";
+	},
+	valueLabel: function() {
+		return this.baseVolume
 	}
 });
+
+if (Meteor.isServer) {
+	Transfers.after.insert(function(userId, doc) {
+		var transfer = Transfers.findOne({"_id":doc._id});
+		var valuedCurrency = transfer.details.currency;
+		var valuedCurrencyAmount = transfer.amount();
+		var valuedDate = transfer.date;
+		console.log("V: " + valuedCurrency + "  " + valuedCurrencyAmount +"  " + valuedDate);
+		var baseVolume = Coynverter.calculateBaseAmount(valuedCurrencyAmount, valuedCurrency, valuedDate);
+
+		Transfers.update({"_id": doc._id},{$set : {"baseVolume": baseVolume}});
+	});
+}
 
