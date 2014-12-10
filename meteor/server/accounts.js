@@ -2,8 +2,8 @@ Accounts.onCreateUser(function(options, user) {
 
   var dummyBitcoinWallet = {
     userId: user._id,
-    label: 'Dummy Bitcoin Wallet',
-    device: 'BitcoinWallet'
+    type: 'Single Addresses',
+    label: 'Dummy Wallet'
   };
   var dummyBitcoinWalletId;
   try  {

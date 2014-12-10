@@ -1,5 +1,14 @@
 var Bitstamp = Meteor.npmRequire('bitstamp');
 
+//Patching Bitstamp NPM Module ; TODO: REMOVE when NPM Bitstamp Update to 1.0.9
+Bitstamp.prototype.user_transactions = function(limit, callback) {
+  if(!callback) {
+    callback = limit;
+    limit = undefined;
+  }
+  this._post('user_transactions', callback, {limit: limit});
+};
+
 var bitstampTradeToTrade = function(trade) {
   var currencydetails = {};
   var dollar_amount = 0;
@@ -49,7 +58,7 @@ var bitstampDepositToTrade = function(deposit) {
     console.log("Warning: You want to make a Bitstamp bitcoin deposit a trade. Simon says No!");
   }
   return currencydetails;
-};;
+};
 
 var bitstampDepositToTransfer = function(deposit, exchange) {
   var transferdetails = {
@@ -408,7 +417,8 @@ Meteor.methods({
     var client_id = exchange.credentials.userName;
     var privateBitstamp = new Bitstamp(key, secret, client_id);
     var wrappedPrivateBitstamp = Async.wrap(privateBitstamp, ['user_transactions']);
-    var jsonData = wrappedPrivateBitstamp.user_transactions(100000);
+    var jsonData = wrappedPrivateBitstamp.user_transactions(1000);
+    console.log("Got " + jsonData.length + " transactions from Bitstamp");
     bitstampJSONtoDB(jsonData, exchange);
   }
 });

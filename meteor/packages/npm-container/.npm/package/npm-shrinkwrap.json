@@ -150,13 +150,13 @@
               "version": "3.1.1",
               "dependencies": {
                 "sprintf": {
-                  "version": "0.1.4"
+                  "version": "0.1.5"
                 },
                 "cli": {
                   "version": "0.4.5",
                   "dependencies": {
                     "glob": {
-                      "version": "4.2.1",
+                      "version": "4.3.1",
                       "dependencies": {
                         "inflight": {
                           "version": "1.0.4",
@@ -170,13 +170,18 @@
                           "version": "2.0.1"
                         },
                         "minimatch": {
-                          "version": "1.0.0",
+                          "version": "2.0.1",
                           "dependencies": {
-                            "lru-cache": {
-                              "version": "2.5.0"
-                            },
-                            "sigmund": {
-                              "version": "1.0.0"
+                            "brace-expansion": {
+                              "version": "1.0.1",
+                              "dependencies": {
+                                "balanced-match": {
+                                  "version": "0.2.0"
+                                },
+                                "concat-map": {
+                                  "version": "0.0.0"
+                                }
+                              }
                             }
                           }
                         },
@@ -193,10 +198,10 @@
                   }
                 },
                 "cliff": {
-                  "version": "0.1.9",
+                  "version": "0.1.10",
                   "dependencies": {
                     "colors": {
-                      "version": "0.6.2"
+                      "version": "1.0.3"
                     },
                     "eyes": {
                       "version": "0.1.8"
@@ -204,11 +209,14 @@
                     "winston": {
                       "version": "0.8.3",
                       "dependencies": {
+                        "colors": {
+                          "version": "0.6.2"
+                        },
                         "cycle": {
                           "version": "1.0.3"
                         },
                         "isstream": {
-                          "version": "0.1.0"
+                          "version": "0.1.1"
                         },
                         "pkginfo": {
                           "version": "0.3.0"
@@ -256,7 +264,7 @@
               "version": "0.5.2"
             },
             "node-uuid": {
-              "version": "1.4.1"
+              "version": "1.4.2"
             },
             "tough-cookie": {
               "version": "0.12.1",
@@ -375,7 +383,7 @@
               "version": "1.0.2"
             },
             "node-uuid": {
-              "version": "1.4.1"
+              "version": "1.4.2"
             },
             "qs": {
               "version": "2.3.3"
@@ -453,7 +461,7 @@
           "version": "0.2.0"
         },
         "request": {
-          "version": "2.48.0",
+          "version": "2.51.0",
           "dependencies": {
             "bl": {
               "version": "0.9.3",
@@ -478,19 +486,24 @@
               }
             },
             "caseless": {
-              "version": "0.7.0"
+              "version": "0.8.0"
             },
             "forever-agent": {
               "version": "0.5.2"
             },
             "form-data": {
-              "version": "0.1.4",
+              "version": "0.2.0",
               "dependencies": {
-                "mime": {
-                  "version": "1.2.11"
-                },
                 "async": {
                   "version": "0.9.0"
+                },
+                "mime-types": {
+                  "version": "2.0.3",
+                  "dependencies": {
+                    "mime-db": {
+                      "version": "1.2.0"
+                    }
+                  }
                 }
               }
             },
@@ -501,7 +514,7 @@
               "version": "1.0.2"
             },
             "node-uuid": {
-              "version": "1.4.1"
+              "version": "1.4.2"
             },
             "qs": {
               "version": "2.3.3"
