@@ -39,5 +39,6 @@ BitcoinWallets.before.remove(function (userId, doc) {
 if (Meteor.isServer) {
   BitcoinWallets.after.insert(function (userId, doc) {
         Meteor.call('updateTx4Wallet', doc);
+
   });
 }
