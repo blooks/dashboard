@@ -66,10 +66,10 @@ template(name="transfers")
                                             td {{prettyDate date}}
                                             td {{details.currency}}
                                             td {{saneNumber amount 'BTC'}}
-                                            td {{unknownInputLabel}}
-                                            td {{knownOutputLabel}}
-                                            td {{knownInputLabel}}
-                                            td {{unknownOutputLabel}}
+                                            td {{fromExtern}}
+                                            td {{internSender}}
+                                            td {{internReceiver}}
+                                            td {{toExtern}}
                                             td {{saneNumber fee 'BTC'}}
                                             td ee{{baseVolume}}
                                                 //- ul.table-list
