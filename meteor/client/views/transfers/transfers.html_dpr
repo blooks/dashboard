@@ -1,0 +1,40 @@
+
+<template name="transfers">
+    <div class="page-content inset">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
+                <hr class="sub-stopper"/>
+                <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 id="transactionHelpModal" class="modal-title">How to do your taxes</h4>
+                            </div>
+                            <div class="modal-body">{{i18n 'transfers.help'}}</div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row desktop-zone">
+                        <div class="sub-menu-zone pull-right"><a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span><span>{{i18n 'template.headings.help'}}</span></a>
+                        </div>
+                        <div class="table-zone">
+                            {{#if transactions}}
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <div class="add-trns-zone">
+                                        <h3>{{i18n 'transfers.headings.noTransfers'}}</h3>
+                                        <p>{{i18n 'transfers.text.noTransfers'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
