@@ -53,7 +53,6 @@ Exchanges.helpers({
     }
     return "/img/exchange-icon-default-handshake.png";
   }
-
 });
 if (Meteor.isServer) {
 Exchanges.before.remove(function (userId, doc) {
