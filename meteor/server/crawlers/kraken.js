@@ -187,14 +187,12 @@ Meteor.methods({
     var security_loop_counter = 0;
     while (krakenData.length < numberOfKrakenTrades && security_loop_counter < 100000000) {//TODO: Better not use such a cheap hack to exit the loop.
       for (var entry in apiDataPackage.result.ledger) {
-        if (apiDataPackage.result.hasOwnProperty(entry))
-        {
+
           var newKrakenTransaction = apiDataPackage.result.ledger[entry];
           if (entry !== ledgerIdOfLastEntry) {
             krakenData.push(newKrakenTransaction);
           }
           ledgerIdOfLastEntry = entry;
-        }
       }
       apiDataPackage = syncKrakenClient.api('Ledgers', {end: ledgerIdOfLastEntry});
       ++security_loop_counter;
