@@ -6,16 +6,25 @@ template(name="dashboard")
         hr.sub-stopper
         .col-md-10.col-md-offset-1
           .row.desktop-zone  
+            .col-sm-8.line-chart
+              h3 Net worth
+              #networthChart
+                svg.chart
 
-            .row
-              .col-sm-12
-                #networthChart
-                  svg.chart
+            .col-sm-4
+                .summary-data.spacy
+                  h4.totals Total value 
+                  p.sum 521 BTC
 
-            .col-sm-6
-              h2 Wallet holdings
+                .summary-data.spacy
+                    h4.totals Profit/Loss
+                    p.sum 23 EUR
+
+
+            .col-sm-6.pie-chart
+              h3 Wallet holdings
               if showPieChart        
-                #chart
+                #pieChart
                   svg.chart
               else
                 h3 Add data
