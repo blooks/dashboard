@@ -103,7 +103,11 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
     addTransaction(addCoynoData(chainTxToCoynoTx(chainTx),wallet));
   });
 };
-
+/**
+ * Creates Coynoaddresses out of strings and puts them in the Database
+ * @param {[String]} addresses array of strings giving addresses
+ * @param {BitcoinWallets} wallet the wallet these addresses belong to
+ */
 var addAddressesToWallet = function(addresses, wallet) {
   addresses.forEach(function(address) {
     var coynoAddress = {
@@ -173,7 +177,12 @@ var updateSingleAddressWallet = function(wallet) {
   updateBalances(wallet);
 };
 
-
+/**
+ * This function will generate all nonzero addresses and update the database with the
+ * corresponding transactions
+ * In the end   it will trigger a balance update for the wallet.
+ * @param wallet Requires a wallet from our database
+ */
 var updateElectrumWallet = function(wallet) {
 
   var Address = bitcore.Address;
@@ -195,7 +204,6 @@ var updateElectrumWallet = function(wallet) {
 
 Meteor.methods({
   updateTx4Wallet: function(wallet) {
-
     switch (wallet.type) {
       case 'Armory':
         updateArmoryWallet(wallet);
