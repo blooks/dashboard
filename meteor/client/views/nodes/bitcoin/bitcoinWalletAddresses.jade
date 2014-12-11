@@ -26,4 +26,5 @@ template(name="bitcoinWalletAddresses")
                 td
                   a.delete-transaction(href="#")
                     span.glyphicon.glyphicon-trash
-  +addBitcoinAddress
+  if singleAddressWallet this
+    +addBitcoinAddress
