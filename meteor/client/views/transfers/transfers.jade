@@ -14,7 +14,6 @@ template(name="transfers")
                                 h4.modal-title(id="transactionHelpModal") How to do your taxes
                             .modal-body {{i18n 'transfers.help'}}
                             .modal-footer
-
                     //- .row
                       //-
                         .add-trns-zone
@@ -45,17 +44,14 @@ template(name="transfers")
                                             th {{i18n 'transfers.headings.table.amount'}}
                                                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.inAmount'}} ")
                                                     span.glyphicon.glyphicon-info-sign
-                                            th {{i18n 'transfers.headings.table.unknownIn'}}
-                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.unknownInAmount'}} ")
+                                            th {{i18n 'transfers.headings.table.unknown'}}
+                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.unknownSource'}} ")
                                                     span.glyphicon.glyphicon-info-sign
-                                            th {{i18n 'transfers.headings.table.knownOut'}}
-                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.unknownOutAmount'}} ")
+                                            th(colspan="2") {{i18n 'transfers.headings.table.known'}}
+                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.knownSource'}} ")
                                                     span.glyphicon.glyphicon-info-sign
-                                            th {{i18n 'transfers.headings.table.knownIn'}}
-                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.knownInAmount'}} ")
-                                                    span.glyphicon.glyphicon-info-sign
-                                            th {{i18n 'transfers.headings.table.unknownOut'}}
-                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.knownOutAmount'}} ")
+                                            th {{i18n 'transfers.headings.table.unknown'}}
+                                                a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.unknownSource'}} ")
                                                     span.glyphicon.glyphicon-info-sign
                                             th.negative Fee
                                                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
