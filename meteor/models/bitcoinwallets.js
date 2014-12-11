@@ -28,7 +28,10 @@ BitcoinWallets.helpers({
 },
   addresses: function() {
     return BitcoinAddresses.find({"walletId": this._id}).fetch();
-  }
+  },
+    update: function() {
+        Meteor.call('updateTx4Wallet', this);
+    }
 });
 BitcoinWallets.before.remove(function (userId, doc) {
   var addresses = BitcoinAddresses.find({"walletId": doc._id});

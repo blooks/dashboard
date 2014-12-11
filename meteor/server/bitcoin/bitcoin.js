@@ -163,6 +163,16 @@ var updateBalances = function (wallet) {
   });
 };
 
+var updateSingleAddressWallet = function(wallet) {
+  var schemaWallet = BitcoinWallets.findOne({"_id": wallet._id});
+  var addresses = [];
+  schemaWallet.addresses().forEach(function(address) {
+    addresses.push(address.address);
+  });
+  addAddressesToWallet(addresses,wallet);
+  updateBalances(wallet);
+};
+
 
 var updateElectrumWallet = function(wallet) {
 
@@ -196,6 +206,9 @@ Meteor.methods({
       case 'BIP32' :
         updateBIP32Wallet(wallet);
         break;
+      case 'Single Addresses' :
+         updateSingleAddressWallet(wallet);
+         break;
     }
   }
 });
