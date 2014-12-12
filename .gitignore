@@ -3,3 +3,5 @@
 *.sublime-workspace
 dump
 .idea
+
+meteor/server/kadira.js
