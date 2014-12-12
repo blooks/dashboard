@@ -1,35 +1,41 @@
 BitcoinWallets.helpers({
   balance: function() {
-    nodeId = this._id;
     var result = 0;
-    BitcoinAddresses.find({"walletId": this._id}).fetch().forEach(
+    var walletId = this._id;
+    BitcoinAddresses.find({"walletId": walletId}).forEach(
       function(address)
     {
       result += address.balance;
     });
-    var transfers = Transfers.find(
+    Transfers.find(
         { $or : [
-          { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
-          { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+          { 'details.inputs': { $elemMatch : {'nodeId': walletId }} },
+          { 'details.outputs': { $elemMatch : {'nodeId': walletId }} }
         ]
-        }).fetch();
-    transfers.forEach(function(transfer) {
-      transfer.details.inputs.forEach(function(input) {
-        if (input.nodeId == nodeId) {
-          result -= input.amount;
-        }
-      });
-      transfer.details.outputs.forEach(function(output) {
-        if (output.nodeId == nodeId) {
-          result += output.amount;
-        }
-      });
-    });
+        }).forEach(function (transfer) {
+            transfer.details.inputs.forEach(function(input) {
+              if (input.nodeId == walletId) {
+                result -= input.amount;
+              }
+            });
+            transfer.details.outputs.forEach(function(output) {
+              if (output.nodeId == walletId) {
+                result += output.amount;
+              }
+            });
+        });
     return result;
 },
+    /**
+     *
+     * @returns {any|*}
+     */
   addresses: function() {
     return BitcoinAddresses.find({"walletId": this._id}).fetch();
-  }
+  },
+    update: function() {
+        Meteor.call('updateTx4Wallet', this);
+    }
 });
 BitcoinWallets.before.remove(function (userId, doc) {
   var addresses = BitcoinAddresses.find({"walletId": doc._id});
@@ -37,3 +43,8 @@ BitcoinWallets.before.remove(function (userId, doc) {
     BitcoinAddresses.remove({"_id": address._id});
   });
 });
+if (Meteor.isServer) {
+  BitcoinWallets.after.insert(function (userId, doc) {
+        Meteor.call('updateTx4Wallet', doc);
+  });
+}

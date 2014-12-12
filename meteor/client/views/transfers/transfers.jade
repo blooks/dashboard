@@ -51,27 +51,19 @@ template(name="transfers")
                       th.negative {{i18n 'transfers.headings.table.target'}}
                         a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
                           span.glyphicon.glyphicon-info-sign
-                      th
+                      th.negative Fee
+                        a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'transfers.tooltip.outAmount'}} ")
+                          span.glyphicon.glyphicon-info-sign
                       th.no-border              
                   tbody
                    each transfers
                       tr
                         td {{prettyDate date}}
                         td {{details.currency}}
-                        td
-                          ul.table-list
-                            each details.inputs
-                              //- BTC needs to be pulled from details. How to do in current context?
-                              li {{saneNumber amount 'BTC'}}
-                        td.positive
-                          ul.table-list
-                            each details.inputs
-                              li {{labelForVolumeFragment this}}              
-                        td.negative
-                          ul.table-list
-                            each details.outputs
-                              li {{labelForVolumeFragment this}}
-                        td
+                        td {{saneNumber amount this.details.currency}}
+                        td {{inputLabel}}
+                        td {{outputLabel}}
+                        td {{fee}}
                           //- ul.table-list
                           //-   each details.outputs
                           //-     li {{saneNumber amount 'BTC'}}

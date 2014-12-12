@@ -1,9 +1,9 @@
 template(name="bitcoinWalletAddresses")
   .wallet-adresses.zone
     if addresses
-      h4 
+      h4
         i.fa.fa-qrcode
-        | Addresses in this wallet
+        | Nonzero Addresses in this wallet
       table.table.table-bordered.table-zb-hover
         thead
             tr
@@ -15,14 +15,16 @@ template(name="bitcoinWalletAddresses")
                   span.glyphicon.glyphicon-info-sign
               th Balance
                 a(href="#", data-toggle="tooltip",data-placement="top",title=" {{i18n 'trades.tooltip.date'}} ")
-                  span.glyphicon.glyphicon-info-sign                    
+                  span.glyphicon.glyphicon-info-sign
         tbody
           each addresses
-            tr
-              td {{label}}
-              td {{address}}
-              td {{saneNumber balance 'BTC'}} BTC
-              td 
-                a.delete-transaction(href="#")
-                  span.glyphicon.glyphicon-trash
-  +addBitcoinAddress this
+            if showAddress this
+              tr
+                td {{label}}
+                td {{address}}
+                td {{saneNumber balance 'BTC'}} BTC
+                td
+                  a.delete-transaction(href="#")
+                    span.glyphicon.glyphicon-trash
+  if singleAddressWallet this
+    +addBitcoinAddress

@@ -7,13 +7,13 @@ Template.currencyExchanges.events({
   'click .delete-transactions' : function(event, template) {
     var trades = Trades.find().fetch();
     trades.forEach(function(entry) {
-      result = Trades.remove({
+      var result = Trades.remove({
         _id: entry._id
       });
     });
     var transfers = Transfers.find().fetch();
     transfers.forEach(function(entry) {
-      result = Transfers.remove({
+      var result = Transfers.remove({
         _id: entry._id
       });
     });
@@ -22,6 +22,9 @@ Template.currencyExchanges.events({
   'click .update-trades' : function(event, template) {
     Meteor.call('getBitstampData');
     Meteor.call('getKrakenData');
+    BitcoinAddresses.find().fetch().forEach(function(address) {
+      address.update();
+    });
     return true;
   },
   'click .delete-exchange':  function(event, template) {

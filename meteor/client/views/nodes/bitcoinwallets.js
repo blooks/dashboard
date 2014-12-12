@@ -9,5 +9,8 @@ Template.bitcoinWallets.events({
     return BitcoinWallets.remove({
       _id: this._id
     });
+  },
+  'click .update-wallet': function(event, template) {
+    return this.update();
   }
 });

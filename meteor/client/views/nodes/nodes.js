@@ -1,7 +1,7 @@
 // on the client
 Template.dynamicNodeMenu.helpers({
-    isActive : function(currentNodeView) {
-        if (this.type == currentNodeView) {
+    isActive : function(type) {
+        if (this.type == type) {
             return "active";
         }
         return "";

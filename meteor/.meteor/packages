@@ -11,7 +11,6 @@ aldeed:collection2
 sewdn:collection-behaviours
 dsyko:node-csv-npm
 lepozepo:accounting
-meteorhacks:npm
 iron:router
 mquandalle:jade
 cmather:handlebars-server
@@ -21,7 +20,6 @@ nemo64:bootstrap
 mrt:just-i18n
 coynverter
 
-npm-container
 mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
@@ -30,4 +28,12 @@ frozeman:animation-helper
 frozeman:template-var
 joshowens:simple-form
 joshowens:accounts-entry
+meteorhacks:npm
 
+
+
+meteorhacks:kadira
+d3js:d3
+pfafman:nvd3
+
+npm-container
