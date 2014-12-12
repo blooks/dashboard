@@ -1,14 +1,5 @@
 var Bitstamp = Meteor.npmRequire('bitstamp');
 
-//Patching Bitstamp NPM Module ; TODO: REMOVE when NPM Bitstamp Update to 1.0.9
-Bitstamp.prototype.user_transactions = function(limit, callback) {
-  if(!callback) {
-    callback = limit;
-    limit = undefined;
-  }
-  this._post('user_transactions', callback, {limit: limit});
-};
-
 var bitstampTradeToTrade = function(trade) {
   var currencydetails = {};
   var dollar_amount = 0;
