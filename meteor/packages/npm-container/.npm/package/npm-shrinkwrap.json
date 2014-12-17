@@ -238,7 +238,7 @@
       }
     },
     "bitstamp": {
-      "version": "0.1.8",
+      "version": "0.1.9",
       "dependencies": {
         "underscore": {
           "version": "1.4.4"
