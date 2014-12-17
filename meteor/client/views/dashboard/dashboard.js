@@ -8,7 +8,7 @@ function walletData() {
   return result;
 };
 
-	// Wallet Pie chart
+// Wallet Pie chart
 nv.addGraph(function() {
   var areaWidth   = parseInt(d3.select("#pieChart svg").style("width").replace("px", ""),0);
   var centerWidth = -Math.floor(areaWidth/2);
@@ -31,9 +31,12 @@ nv.addGraph(function() {
         .call(chart)
         ;
     
-    d3.select("#pieChart .nv-legendWrap")
+/*    d3.select("#pieChart .nv-legendWrap")
      .attr("transform", function () { return "translate(" + centerWidth + ",10)" ; 
     });
+*/
+
+  nv.utils.windowResize(chart.update);
 
   return chart;
 });
@@ -42,32 +45,46 @@ nv.addGraph(function() {
 
 nv.addGraph(function() {
     var networthData = Meteor.user().networthData();
-    console.log(networthData);
     var chart = nv.models.linePlusBarChart()
-          .margin({top: 30, right: 60, bottom: 50, left: 70})
+          .margin({top: 30, right: 100, bottom: 50, left: 70})
           //We can set x data accessor to use index. Reason? So the bars all appear evenly spaced.
           .x(function(d,i) { return i })
           .y(function(d,i) {return d[1] })
-          ;
+      /*
+        TODO need to exclude data from day 1 --> current date where holdings = 0 
+        (to avoid a long time frame of no action) e.g. something like:
+      .filter(function(d){return networthData.values[d][1] !== "0.00000000";})*/          
+          .tooltips(true)
+          .tooltipContent(function(key,i, d) {
+           return '<h3>' + key + '</h3>' +'<span class="btc-value">' + d + '</span>' + '<span class="transaction-date">' + i + '</span>' 
+          });
 
     chart.xAxis.tickFormat(function(d) {
       var dx = networthData[0].values[d] && networthData[0].values[d][0] || 0;
-      return d3.time.format('%x')(new Date(dx))
+      return d3.time.format('%d/%m/%Y')(new Date(dx))
     });
 
     chart.y1Axis
-        .tickFormat(d3.format(',f'));
+        .tickFormat(function(d) { return d3.format('.4f')(d) + ' ' +'BTC' })
+        .scale().domain([-2, 2]);
 
     chart.y2Axis
-        .tickFormat(function(d) { return '$' + d3.format(',f')(d) });
+        .tickFormat(function(d) { return d3.format(".4f")(d) + ' ' +'BTC' })
+        ;
 
-    chart.bars.forceY([0]);
+    /*TODO set range dynamically*/
+    chart.lines.forceY([-2, d3.max(networthData[0].values, function(d) { 
+        console.log("MAX ENTRY IS:" + d);
+        return 2;
+      })]);
+    chart.bars.forceY([-2,2]);
 
     d3.select('#networthChart svg')
       .datum(networthData)
       .transition()
       .duration(0)
-      .call(chart);
+      .call(chart)
+      ;
 
     nv.utils.windowResize(chart.update);
 
