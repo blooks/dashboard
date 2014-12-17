@@ -19,13 +19,14 @@ Schemas.BitcoinAddresses = new SimpleSchema
     optional: true
   address:
     type: String
-    regEx: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/
     custom: ->
+      unless @value.match(/^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/)
+        return "invalidAddress"
       if Meteor.isClient and @isSet
         Meteor.call "isValidBitcoinAddress", @value, (error, result) ->
           unless result
             console.log("NOT VALID ADDRESS");
-            BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys [ name: "address", type: "required" ]
+            BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys [ name: "address", type: "invalidAddress" ]
           return
   balance:
     type: Number

@@ -60,3 +60,5 @@ var computeBalance = function(transactions, address) {
         });
     });
 };
+BitcoinAddresses.simpleSchema().messages({
+    invalidAddress: "[label] is not a Bitcoin Address" });
