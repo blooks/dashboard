@@ -19,9 +19,18 @@ Schemas.BitcoinAddresses = new SimpleSchema
     optional: true
   address:
     type: String
+    regEx: /^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/
+    custom: ->
+      if Meteor.isClient and @isSet
+        Meteor.call "isValidBitcoinAddress", @value, (error, result) ->
+          unless result
+            console.log("NOT VALID ADDRESS");
+            BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys [ name: "address", type: "required" ]
+          return
   balance:
     type: Number
     defaultValue: 0
+
 
 # Attach the schema to the collection
 BitcoinAddresses.attachSchema Schemas.BitcoinAddresses
@@ -31,7 +40,7 @@ BitcoinAddresses.timed()
 
 # Ensure every document is owned by a user
 BitcoinAddresses.owned()
-  #Transactions.find(userId: @userId).length
+  #Transactions.find(userId: @us  erId).length
 
 BitcoinAddresses.allow
   insert: (userId, item) ->

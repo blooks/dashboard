@@ -59,4 +59,4 @@ var computeBalance = function(transactions, address) {
             Transfers.remove({"_id": transfer._id});
         });
     });
-}
+};
