@@ -93,9 +93,9 @@
                                     {{/if}}
                                     {{/if}}
                                     {{/if}}
-                                    <td>{{fee}}
+                                    <td>{{saneNumber fee this.details.currency}}
                                     </td>
-                                    <td>{{baseVolume}}</td>
+                                    <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
                                     <td><a href="#" class="delete-transaction"><span
                                             class="glyphicon glyphicon-trash"></span></a></td>
                                 </tr>
