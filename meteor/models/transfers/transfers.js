@@ -137,17 +137,16 @@ Transfers.helpers({
 
 if (Meteor.isServer) {
     Transfers.after.insert(function (userId, doc) {
-        var transfer = Transfers.findOne({"_id": doc._id});
-        var valuedCurrency = transfer.details.currency;
-        var valuedCurrencyAmount = transfer.amount();
-        var valuedDate = transfer.date;
-        var baseVolume = Coynverter.calculateBaseAmount(valuedCurrencyAmount, valuedCurrency, valuedDate);
-        Transfers.update({"_id": doc._id}, {$set: {"baseVolume": baseVolume}});
-        //  updateBaseVolume(baseVolume);
+        updateBaseVolume(doc._id);
     });
-
-    var updateBaseVolume = function (baseVolume) {
-        Transfers.update({"_id": doc._id}, {$set: {"baseVolume": baseVolume}});
+    /**
+     * Calculates the baseVolume for the transfer.
+     * @param docId id of the transfer document to update BaseVolume of
+     */
+    var updateBaseVolume = function (docId) {
+        var transfer = Transfers.findOne({"_id": docId});
+        var baseVolume =  Coynverter.calculateBaseAmount( transfer.amount(), transfer.details.currency, transfer.date);
+        Transfers.update({"_id": docId}, {$set: {"baseVolume": baseVolume}});
     }
 }
 
