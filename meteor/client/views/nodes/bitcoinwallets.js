@@ -12,5 +12,13 @@ Template.bitcoinWallets.events({
   },
   'click .update-wallet': function(event, template) {
     return this.update();
+  },
+
+  'click .body-toggle': function(e) {
+    e.preventDefault();                
+    $(".node-body").toggleClass("body-toggled");
   }
 });
+
+
+

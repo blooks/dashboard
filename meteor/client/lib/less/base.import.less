@@ -149,16 +149,19 @@ body	{
 
 
 
-/* Detail Items styling
+/* Node Items styling
 ----------------------- */
-.details-item {
-		background-color: @gray-lighter;
-		border: 1px solid @gray-light;
-		border-top: 4px solid @gray-light;
-		border-bottom: 8px solid @gray-light;
-		padding: 1rem;
+/* TODO move all to node-item */
+.details-item,
+.node-item
+ {
+		background-color: @gray-lightest;
 }
 
+.node-inner {
+	padding: 12px;
+	padding: 1rem;	
+}
 
 /* Footer 
 -------------------- */
@@ -282,12 +285,32 @@ footer {
 
 .wallets-zone {
 	
+	.node-item {
+		.node-header {
+			 background-color: @gray-lighter;
+			 border-bottom: 3px solid @whyte;
+		}
+
+		.body-toggled {
+			  /* IE 8 */
+			  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+			  /* IE 5-7 */
+			  filter: alpha(opacity=50);
+
+			  /* Netscape */
+			  -moz-opacity: 0.5;
+
+			  /* Safari 1.x */
+			  -khtml-opacity: 0.5;
+
+			  /* Good browsers */
+			  opacity: 0.5;
+		}
+	}
 	.balance-statement {
-		width: 30%;
-		margin: 1rem auto;
-		text-align: center;
+		margin: 1rem auto;		
 		text-transform: none;
-		border: 2px solid @whyte;		
 	}
 
 	.wallet-adresses {
