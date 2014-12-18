@@ -59,4 +59,6 @@ var computeBalance = function(transactions, address) {
             Transfers.remove({"_id": transfer._id});
         });
     });
-}
+};
+BitcoinAddresses.simpleSchema().messages({
+    invalidAddress: "[label] is not a Bitcoin Address" });

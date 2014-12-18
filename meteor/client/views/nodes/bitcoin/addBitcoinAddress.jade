@@ -3,7 +3,7 @@ template(name="addBitcoinAddress")
     h4 
      i.fa.fa-plus
      | Add new Bitcoin Address
-    +autoForm collection="BitcoinAddresses" id="insertBitcoinAddressForm" type="insert"
+    +autoForm collection="BitcoinAddresses" id="insertBitcoinAddressForm" type="insert" validation="keyup"
       +afQuickField name='label'
       +afQuickField name='address'
       +afQuickField name='walletId' value=this._id type="hidden" label=false
