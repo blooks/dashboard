@@ -71,10 +71,6 @@ body	{
 	}
 }
 
-#page-wrapper {
-  width: 100%;
-}
-
 #sidebar-menu li a, 
 .sidebar-nav li a {
     color: @gray-dark;
@@ -140,6 +136,23 @@ body	{
 -------------------- */
 
 
+/* Main zone
+-------------------- */
+.login-dropdown {
+	padding-left: 10px;
+	ul.login {
+		list-style-type: none;
+		padding-left: 0;
+		display: inline;
+		
+		li {
+			display: inline;
+		}	
+	}
+}
+
+
+
 /* Detail Items styling
 ----------------------- */
 .details-item {
@@ -159,8 +172,11 @@ footer {
 	font-size: 12px; font-size: 1rem;
 }
 
-/* View Specific
+/* Specific view sections
 ------------------------------- */
+
+/* Zones
+--------------- */
 .nodes {}
 
 .exhanges-zone,
@@ -294,21 +310,6 @@ footer {
 
 }
 
-/* Form styling
----------------- */
-input {
-	background: none;
-	border: 1px solid @gray-light;
-	letter-spacing: 1px;
-
-	&:hover {
-		border: 1px solid @gray-light;
-	}
-}
-
-
-/* Table
----------------- */
 .table-zone {
 	margin-top: 40px;
 	margin-top: 4.167rem;
@@ -327,6 +328,17 @@ input {
 
 }
 
+/* Form styling
+---------------- */
+input {
+	background: none;
+	border: 1px solid @gray-light;
+	letter-spacing: 1px;
+
+	&:hover {
+		border: 1px solid @gray-light;
+	}
+}
 
 /* Graphics
 ---------------- */
@@ -442,3 +454,18 @@ hr.sub-stopper {
   text-align: center;
   padding-top: 4rem;
 }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.chart {
+	width: 100%;
+	min-height: 400px;
+}
+.nvtooltip {
+  h3 {
+	color: @whyte;
+  }
+ }

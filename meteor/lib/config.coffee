@@ -32,4 +32,4 @@ Meteor.settings.public.coyno =
   allowedNodeTypes: ['Exchange', 'BankAccount', 'BitcoinWallet']
   supportedExchanges: ['Bitstamp', 'Kraken']
   allowedBanks: ['BankAccount']
-  supportedBitcoinDevices: ['BitcoinWallet']
+  supportedBitcoinWalletTypes: ['BIP32','Armory','Electrum','Single Addresses']

@@ -1,3 +1,20 @@
+BitcoinAddresses.helpers( {
+        update: function() {
+          var transactions = this.transactions();
+          var balance = computeBalance(transactions, this.address);
+          BitcoinAddresses.update({"_id": this._id},{$set : {"balance": balance}})
+        },
+        transactions : function() {
+            var nodeId = this._id;
+            return (Transfers.find(
+            { $or : [
+              { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
+              { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+            ]
+            }).fetch());
+        }
+      }
+  );
 
 if (Meteor.isServer) {
 var computeBalance = function(transactions, address) {
@@ -24,15 +41,22 @@ var computeBalance = function(transactions, address) {
     });
   });
   return result;
-}
-BitcoinAddresses.after.insert(function (userId, doc) {
-	var transactions = Meteor.call('updateBitcoinTransactionsForAddress', doc);
-  var balance = 0 
-  try {
-    balance = computeBalance(transactions, doc.address); }
-    catch (error) {
-      console.log(error);
-    }
-  BitcoinAddresses.update({"_id": doc._id},{$set : {"balance": balance}})
-});
+};
+    BitcoinAddresses.before.remove(function (userId, doc) {
+
+        //TODO: @LEVIN redundant code! Remove!
+        var transactions = function(doc) {
+            var nodeId = doc._id;
+            return Transfers.find(
+                { $or : [
+                    { 'details.inputs': { $elemMatch : {'nodeId': nodeId }} },
+                    { 'details.outputs': { $elemMatch : {'nodeId': nodeId }} }
+                ]
+                });
+        };
+        var transfers  = transactions(doc);
+        transfers.forEach(function(transfer) {
+            Transfers.remove({"_id": transfer._id});
+        });
+    });
 }

@@ -23,6 +23,10 @@ Router.map ->
 
   @route 'dashboard',
     path: '/dashboard'
+    waitOn: ->
+      [
+        Meteor.subscribe 'bitcoinwallets'
+      ]
 
   @route 'trades',
     path: '/trades'
@@ -39,8 +43,9 @@ Router.map ->
       ]
 
   @route 'nodes',
-    path: '/nodes'
-
+    path: '/nodes/nodesOverview'
+    data: ->
+      type:  'nodesOverview'
 
   @route '/nodes/:type',
     path: '/nodes/:type'

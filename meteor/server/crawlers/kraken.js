@@ -89,7 +89,7 @@ var krakenJSONtoDB = function(krakenData, exchange) {
       outputs : [],
       currency : currency
     };
-    abs_withdrawal_amount = Math.abs(withdrawal.amount);
+    var abs_withdrawal_amount = Math.abs(withdrawal.amount);
     transferdetails.inputs.push({
       amount: abs_withdrawal_amount+withdrawal.fee,
       nodeId: exchange._id
@@ -182,16 +182,17 @@ Meteor.methods({
     var apiDataPackage = syncKrakenClient.api('Ledgers', {});
     //turn JSON Object to array
     var numberOfKrakenTrades = apiDataPackage.result.count;
-    var krakenData = []
+    var krakenData = [];
     var ledgerIdOfLastEntry = "";
     var security_loop_counter = 0;
     while (krakenData.length < numberOfKrakenTrades && security_loop_counter < 100000000) {//TODO: Better not use such a cheap hack to exit the loop.
       for (var entry in apiDataPackage.result.ledger) {
-        var newKrakenTransaction = apiDataPackage.result.ledger[entry];
-        if (entry !== ledgerIdOfLastEntry) {
-        krakenData.push(newKrakenTransaction);
-        } 
-        ledgerIdOfLastEntry = entry;
+
+          var newKrakenTransaction = apiDataPackage.result.ledger[entry];
+          if (entry !== ledgerIdOfLastEntry) {
+            krakenData.push(newKrakenTransaction);
+          }
+          ledgerIdOfLastEntry = entry;
       }
       apiDataPackage = syncKrakenClient.api('Ledgers', {end: ledgerIdOfLastEntry});
       ++security_loop_counter;

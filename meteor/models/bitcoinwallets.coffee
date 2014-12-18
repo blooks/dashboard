@@ -14,9 +14,12 @@ Schemas.BitcoinWallets = new SimpleSchema
   label:
     type: String
     optional: true
-  device:
+  type:
     type: String
-    allowedValues: Meteor.settings.public.coyno.supportedBitcoinDevices
+    allowedValues: Meteor.settings.public.coyno.supportedBitcoinWalletTypes
+  hdseed:
+    type: String
+    optional: true
 # Attach the schema to the collection
 BitcoinWallets.attachSchema Schemas.BitcoinWallets
 

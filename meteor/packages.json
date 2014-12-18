@@ -1,5 +1,7 @@
 {
   "bitstamp": "0.1.8",
   "kraken-api": "0.1.5",
-  "chain-node": "0.0.17"
+  "chain-node": "2.0.0",
+  "bitcore": "0.1.40",
+  "insight-api-client": "0.0.2"
 }

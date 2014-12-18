@@ -2,13 +2,13 @@ CollectionBehaviours.defineBehaviour('softRemovable', function(getTransform, arg
   var self = this;
   self.before.find(function (userId, selector, options) {
     if (typeof selector === 'undefined')
-      selector = {}
+      selector = {};
     if(typeof selector.removed === 'undefined')
       selector.removed = {$exists: false};
   });
   self.before.findOne(function (userId, selector, options) {
     if (typeof selector === 'undefined')
-      selector = {}
+      selector = {};
     if(typeof selector.removed === 'undefined')
       selector.removed = {$exists: false};
   });
