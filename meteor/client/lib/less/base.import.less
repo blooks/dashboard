@@ -149,16 +149,19 @@ body	{
 
 
 
-/* Detail Items styling
+/* Node Items styling
 ----------------------- */
-.details-item {
-		background-color: @gray-lighter;
-		border: 1px solid @gray-light;
-		border-top: 4px solid @gray-light;
-		border-bottom: 8px solid @gray-light;
-		padding: 1rem;
+/* TODO move all to node-item */
+.details-item,
+.node-item
+ {
+		background-color: @gray-lightest;
 }
 
+.node-inner {
+	padding: 12px;
+	padding: 1rem;	
+}
 
 /* Footer 
 -------------------- */
@@ -196,10 +199,6 @@ footer {
 .exhanges-zone,
 .wallets-zone,
 .bank-zone {
-
-	[class*="col-"] {
-  		margin-bottom: 30px;
-	}
 
 	.added-exchanges-zone {
 		margin: 2rem 0;
@@ -282,12 +281,43 @@ footer {
 
 .wallets-zone {
 	
+	.node-item {
+		background-color: @whyte;
+		margin-bottom: @grid-gutter-width;
+
+		.node-header {
+			 background-color: @gray-lighter;
+			 border-bottom: 3px solid @whyte;
+			.node-meta {
+				text-align: center;
+				margin-bottom: 12px;
+				margin-bottom: 1rem;
+
+			 .wallet-type {
+			 	
+			 	padding: 6px 10px;
+			 	padding: .5rem .8rem;
+			 	color: @brand-primary;
+			 }
+			}
+			
+			.body-toggle {
+				font-size: 3rem;
+				cursor: pointer;
+				color: @gray-light;
+			}
+
+		}
+
+		.node-body {
+			display: none;
+			background-color: @gray-lightest;
+		}
+	}
+
 	.balance-statement {
-		width: 30%;
-		margin: 1rem auto;
-		text-align: center;
+		margin: 1rem auto;		
 		text-transform: none;
-		border: 2px solid @whyte;		
 	}
 
 	.wallet-adresses {

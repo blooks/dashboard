@@ -13,6 +13,13 @@
 
 @font-family-body-sans: 'Ubuntu','Trebuchet MS', Helvetica, Arial, sans-serif;
 
+
+.brand-box {
+  border: 1px solid @brand-primary; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .opacity(@opacity: 0.5) {
   -moz-opacity: @opacity;
   -khtml-opacity: @opacity;
@@ -91,4 +98,20 @@ ul.no-bullets {
    -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); 
      -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); 
         transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); /* custom */
-}   
+} 
+
+.vcenter {
+  display:table!important; 
+  
+  [class*='col-'] {
+    display: table-cell!important;
+    vertical-align:middle;
+    float:none;
+  }
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
