@@ -8,11 +8,16 @@ Schemas.exchangeCredentials = new SimpleSchema
     type: String
     optional: true
     custom: ->
-      unless @field("exchange").value is "Bitstamp" and @value.match()
-        "required"
-
+      if @field("exchange").value is "Bitstamp"
+        if not @isSet
+          "required"
+        else "notAllowed" if not @value.match(/^[0-9]*$/)
   APIKey:
     type: String
+    custom: ->
+      if @field("exchange").value is "Bitstamp"
+        if not @value.match(/^.{32}$/)
+          "minCount"
   secret:
     type: String
 
