@@ -22,7 +22,6 @@
                         <div class="sub-menu-zone pull-right"><a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span><span>{{i18n 'template.headings.help'}}</span></a>
                         </div>
                         <div class="table-zone">
-
                             {{#if transfers}}
                                  <table class="table table-transactions table-zb-hover auto-width centered"></table>
                             <thead>
@@ -36,12 +35,9 @@
                                 <th class="negative">Fee<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
                                 <th>{{i18n 'transfers.headings.table.value'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.value'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
                                 <th class="no-border"></th>
-
                             </tr>
                             </thead>
-
                             <tbody>
-
                                 {{#each transfers}}
                                 <tr>
                                     <td>{{prettyDate date}}</td>
@@ -53,6 +49,7 @@
                                     <td>{{toExtern}}</td>
                                     <td>{{saneNumber fee 'BTC'}}</td>
                                     <td>{{baseVolume}}
+                                    <td><a href="#" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a></td>
                                 </td>
                                 </tr>
                                 {{/each}}
