@@ -6,10 +6,16 @@ Schemas = {}
 Schemas.exchangeCredentials = new SimpleSchema
   userName:
     type: String
+    optional: true
+    custom: ->
+      unless @field("exchange").value is "Bitstamp" and @value.match()
+        "required"
+
   APIKey:
     type: String
   secret:
     type: String
+
 
 Schemas.Exchanges = new SimpleSchema
 
@@ -27,7 +33,6 @@ Schemas.Exchanges = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.supportedExchanges
   credentials:
     type: Schemas.exchangeCredentials
-
 
 # Attach the schema to the collection
 Exchanges.attachSchema Schemas.Exchanges
