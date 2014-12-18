@@ -48,7 +48,7 @@ var getNodeIdForInOutput = function (inoutput) {
 var serverVar = false;
 
 Transfers.helpers({
-    transfer: function() {
+    transfer: function () {
 
     },
     inputSum: function () {
@@ -100,49 +100,38 @@ Transfers.helpers({
         });
         return result;
     },
-    fromExtern: function () {
-        var senderNodeId = this.senderNodeId();
-        if (this.senderNodeId()) {
-            return "";
-        }
-        return "Incoming";
+    toInternalLabel: function () {
+        return nodeLabel(this.recipientNodeId());
     },
-    internSender: function () {
-        var senderNodeId = this.senderNodeId();
-        if (this.senderNodeId()) {
-            return nodeLabel(senderNodeId);
-        }
-        return "";
+    fromInternalLabel: function () {
+        return nodeLabel(this.senderNodeId());
     },
-    internReceiver: function () {
-        var recipientNodeId = this.recipientNodeId();
-        if (this.recipientNodeId()) {
-            return nodeLabel(recipientNodeId);
-        }
-        return "";
-    },
-    toExtern: function () {
-        var recipientNodeId = this.recipientNodeId();
-        if (this.recipientNodeId()) {
-            return "";
-        }
+    toExternalLabel: function () {
         return "Outgoing";
+    },
+    fromExternalLabel: function () {
+        return "Incoming";
     },
     valueLabel: function () {
         return this.baseVolume
     },
-
-    getState: function () {
-        var senderNode = this.senderNodeId();
-        var recipientNode = this.recipientNodeId();
-
-        if(senderNode && recipientNode) {
-            return "internal";
-        } else if(senderNode) {
-            return "fromExternal";
-        } else {
-            return "toExternal";
+    isInternal: function () {
+        if (this.senderNodeId() && this.recipientNodeId()) {
+            return true;
         }
+        return false;
+    },
+    toExternal: function () {
+        if (this.senderNodeId()) {
+            return true;
+        }
+        return false;
+    },
+    fromExternal: function () {
+        if (this.recipientNodeId()) {
+            return true;
+        }
+        return false;
     }
 });
 
@@ -152,12 +141,13 @@ if (Meteor.isServer) {
         var valuedCurrency = transfer.details.currency;
         var valuedCurrencyAmount = transfer.amount();
         var valuedDate = transfer.date;
-        console.log("1:CurrencyAmount: " + valuedCurrencyAmount);
-        console.log("2:Currency: " + valuedCurrency);
-        console.log("3:Date: " + valuedDate);
         var baseVolume = Coynverter.calculateBaseAmount(valuedCurrencyAmount, valuedCurrency, valuedDate);
-        console.log("4:baseVolume: " + baseVolume);
         Transfers.update({"_id": doc._id}, {$set: {"baseVolume": baseVolume}});
+        //  updateBaseVolume(baseVolume);
     });
+
+    var updateBaseVolume = function (baseVolume) {
+        Transfers.update({"_id": doc._id}, {$set: {"baseVolume": baseVolume}});
+    }
 }
 

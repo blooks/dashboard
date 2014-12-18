@@ -40,17 +40,35 @@
                             <tbody>
                                 {{#each transfers}}
                                 <tr>
+
                                     <td>{{prettyDate date}}</td>
                                     <td>{{details.currency}}</td>
                                     <td>{{saneNumber amount 'BTC'}}</td>
-                                    <td>{{fromExtern}}</td>
-                                    <td>{{internSender}}</td>
-                                    <td>{{internReceiver}}</td>
-                                    <td>{{toExtern}}</td>
+
+
+                                    {{#if isInternal}}
+                                    <td></td>
+                                    <td>{{toInternalLabel}}</td>
+                                    <td>{{fromInternalLabel}}</td>
+                                    <td></td>
+                                    {{/if}}
+                                    {{#if toExternal}}
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{fromInternalLabel}}</td>
+                                    <td>{{toExternalLabel}}</td>
+                                    {{/if}}
+                                    {{#if fromExternal}}
+                                    <td>{{fromExternalLabel}}</td>
+                                    <td>{{toInternalLabel}}</td>
+                                    <td></td>
+                                    <td></td>
+                                    {{/if}}
+
                                     <td>{{saneNumber fee 'BTC'}}</td>
-                                    <td>{{baseVolume}}
+                                    <td>{{baseVolume}}</td>
+
                                     <td><a href="#" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a></td>
-                                </td>
                                 </tr>
                                 {{/each}}
 
