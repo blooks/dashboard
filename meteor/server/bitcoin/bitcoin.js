@@ -218,5 +218,8 @@ Meteor.methods({
          updateSingleAddressWallet(wallet);
          break;
     }
+  },
+  isValidBitcoinAddress: function (address) {
+    return bitcore.Address.validate(address);
   }
 });
