@@ -24,9 +24,40 @@
                         <div class="table-zone">
 
                             {{#if transfers}}
+                                 <table class="table table-transactions table-zb-hover auto-width centered"></table>
+                            <thead>
+                            <tr>
+                                <th>{{i18n 'transfers.headings.table.date'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th>{{i18n 'transfers.headings.table.currency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inCurrency'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th>{{i18n 'transfers.headings.table.amount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th>{{i18n 'transfers.headings.table.unknown'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th colspan="2">{{i18n 'transfers.headings.table.known'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.knownSource'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th>{{i18n 'transfers.headings.table.unknown'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th class="negative">Fee<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th>{{i18n 'transfers.headings.table.value'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.value'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                                <th class="no-border"></th>
+
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
                                 {{#each transfers}}
-                                    haööp
+                                <tr>
+                                    <td>{{prettyDate date}}</td>
+                                    <td>{{details.currency}}</td>
+                                    <td>{{saneNumber amount 'BTC'}}</td>
+                                    <td>{{fromExtern}}</td>
+                                    <td>{{internSender}}</td>
+                                    <td>{{internReceiver}}</td>
+                                    <td>{{toExtern}}</td>
+                                    <td>{{saneNumber fee 'BTC'}}</td>
+                                    <td>{{baseVolume}}
+                                </td>
+                                </tr>
                                 {{/each}}
+
+                            </tbody>
                             {{else}}
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
