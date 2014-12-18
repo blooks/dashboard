@@ -8,20 +8,14 @@ Schemas.exchangeCredentials = new SimpleSchema
     type: String
     optional: true
     custom: ->
-      if @field("exchange").value is "Bitstamp" and not @value?
+      unless @field("exchange").value is "Bitstamp" and @value.match()
         "required"
-      else
-        true
+
   APIKey:
     type: String
   secret:
     type: String
 
-Schemas.exchangeCredentialsSimple = new SimpleSchema
-  APIKey:
-    type: String
-  secret:
-    type: String
 
 Schemas.Exchanges = new SimpleSchema
 
@@ -39,9 +33,6 @@ Schemas.Exchanges = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.supportedExchanges
   credentials:
     type: Schemas.exchangeCredentials
-  credentialsSimple:
-    type: Schemas.exchangeCredentialsSimple
-    label: "Credentials"
 
 # Attach the schema to the collection
 Exchanges.attachSchema Schemas.Exchanges
