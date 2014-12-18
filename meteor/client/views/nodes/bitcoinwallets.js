@@ -1,6 +1,22 @@
 Template.bitcoinWallets.helpers({
+  
+  bitcoinwalletsinpacks: function(numberInPack){
+		var result = [];
+    var temp = [];
+    BitcoinWallets.find().forEach(function (wallet) {
+      temp.push(wallet);
+      if (temp.length > (numberInPack-1)) {
+        result.push(temp);
+        temp = [];
+      }
+    });
+    if (temp.length > 0) {
+    result.push(temp);
+    }
+    return result;
+  },
   bitcoinwallets: function(){
-		return BitcoinWallets.find().fetch();
+    return BitcoinWallets.find().fetch();
   }
 });
 
@@ -15,9 +31,13 @@ Template.bitcoinWallets.events({
   },
 
   'click .body-toggle': function(e) {
-    e.preventDefault();                
-    $(".node-body").toggleClass("body-toggled");
+    var targetID = "#" + this._id ; 
+    jQuery(targetID + " .node-body").slideToggle( 400, function()  {
+        jQuery(targetID + " .body-toggle").toggleClass('fa-angle-up').toggleClass('fa-angle-down');
+    });
+
   }
+
 });
 
 

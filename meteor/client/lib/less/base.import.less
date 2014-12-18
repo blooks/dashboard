@@ -200,10 +200,6 @@ footer {
 .wallets-zone,
 .bank-zone {
 
-	[class*="col-"] {
-  		margin-bottom: 30px;
-	}
-
 	.added-exchanges-zone {
 		margin: 2rem 0;
 	}
@@ -286,28 +282,39 @@ footer {
 .wallets-zone {
 	
 	.node-item {
+		background-color: @whyte;
+		margin-bottom: @grid-gutter-width;
+
 		.node-header {
 			 background-color: @gray-lighter;
 			 border-bottom: 3px solid @whyte;
+			.node-meta {
+				text-align: center;
+				margin-bottom: 12px;
+				margin-bottom: 1rem;
+
+			 .wallet-type {
+			 	
+			 	padding: 6px 10px;
+			 	padding: .5rem .8rem;
+			 	color: @brand-primary;
+			 }
+			}
+			
+			.body-toggle {
+				font-size: 3rem;
+				cursor: pointer;
+				color: @gray-light;
+			}
+
 		}
 
-		.body-toggled {
-			  /* IE 8 */
-			  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-
-			  /* IE 5-7 */
-			  filter: alpha(opacity=50);
-
-			  /* Netscape */
-			  -moz-opacity: 0.5;
-
-			  /* Safari 1.x */
-			  -khtml-opacity: 0.5;
-
-			  /* Good browsers */
-			  opacity: 0.5;
+		.node-body {
+			display: none;
+			background-color: @gray-lightest;
 		}
 	}
+
 	.balance-statement {
 		margin: 1rem auto;		
 		text-transform: none;
