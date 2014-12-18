@@ -17,6 +17,7 @@ Schemas.VolumeFragment = new SimpleSchema
     type: String
     optional: true
 
+
 Schemas.TransferDetails = new SimpleSchema
   inputs:
     type: [Schemas.VolumeFragment]
@@ -50,7 +51,9 @@ Schemas.Transfer = new SimpleSchema
   note:
     type: String
     optional: true
-          
+  baseVolume:
+    type: Number
+    defaultValue: 0
 
 # Attach the schema to the collection
 Transfers.attachSchema Schemas.Transfer
