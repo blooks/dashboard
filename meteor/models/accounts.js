@@ -18,11 +18,11 @@ Meteor.users.helpers({
                 change = 0;
                 week += 604800000;
             }
-            if (transfer.inputLabel() == 'Incoming') {
+            if (transfer.fromExternal()) {
                 balance += transfer.amount();
                 change += transfer.amount();
             }
-            if (transfer.outputLabel() == 'Outgoing') {
+            if (transfer.toExternal()) {
                 balance -= (transfer.amount() - transfer.fee());
                 change -= (transfer.amount() - transfer.fee());
             }
