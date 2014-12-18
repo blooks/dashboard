@@ -56,6 +56,9 @@ i18n.map 'en_GB',
         currency: 'Currency'
         source: 'From'
         target: 'To'
+        unknown: 'External'
+        known: 'Internal'
+        value: 'value'
       transfers: 'Transfers'
       noTransfers: 'No transfers...'
     text:
@@ -69,6 +72,9 @@ i18n.map 'en_GB',
       outAmount: 'Lorem Ipsum Tooltip Text'
       outCurrency: 'Lorem Ipsum Tooltip Text'
       volume: 'Lorem Ipsum Tooltip Text'
+      knownSource: 'Lorem Ipsum Tooltip Text'
+      unknownSource: 'Lorem Ipsum Tooltip Text'
+      value: 'Lorem Ipsum Tooltip Text'
 
   # Nodes
   nodes:
