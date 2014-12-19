@@ -1,4 +1,8 @@
 Template.dashboard.rendered = function(){
+
+
+/**
+
 //Pie chart for wallet overview 
     function walletData() {
         var result = [];
@@ -32,17 +36,17 @@ Template.dashboard.rendered = function(){
             .call(chart)
         ;
 
-        /*    d3.select("#pieChart .nv-legendWrap")
-         .attr("transform", function () { return "translate(" + centerWidth + ",10)" ;
-         });
-         */
+        //    d3.select("#pieChart .nv-legendWrap")
+        // .attr("transform", function () { return "translate(" + centerWidth + ",10)" ;
+        // });
+        //
 
         nv.utils.windowResize(chart.update);
 
         return chart;
     });
 
-    /* Line chart graph */
+    // Line chart graph
 
     nv.addGraph(function() {
         var networthData = Meteor.user().networthData();
@@ -68,10 +72,7 @@ Template.dashboard.rendered = function(){
         });
         chart.bars.forceY([min, max]);
         chart.lines.forceY([min, max]);
-        /*
-         chart.y2Axis
-         .tickFormat(function(d) { return d3.format(".4f")(d) + ' ' +'BTC' });
-         */
+
         d3.select('#networthChart svg')
             .datum(networthData)
             .call(chart)
@@ -81,7 +82,7 @@ Template.dashboard.rendered = function(){
 
         return chart;
     });
-
+*/
 };
 
 // End dahsboard.rendered
@@ -105,7 +106,7 @@ Template.dashboard.helpers({
             }
         };
         return saneNumber(Meteor.user().totalBalance(currency), currency);
-    }
+    },
 });
 
 Template.dashboard.events({
@@ -115,3 +116,45 @@ Template.dashboard.events({
         });
     }
 });
+
+// myTemplate.js
+Template.dashboard.fundsDistribution = function(currency) {
+    if (currency == 'BTC') {
+        var dataPairs = [];
+        BitcoinWallets.find({}).forEach(function (wallet) {
+            dataPairs.push([wallet.label, wallet.balance()]);
+        });
+        return {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: "Distribution of Bitcoin holdings"
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        },
+                        connectorColor: 'silver'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'genre',
+                data: dataPairs
+            }]
+        };
+    } else return;
+};
