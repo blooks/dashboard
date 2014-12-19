@@ -3,17 +3,18 @@ table {
   font-size: 12px;
   font-size: 1rem;
 
-    &.table-bordered {
-       // border: none;
-    }
+    &.table-bordered {}
 
-    &.table-transactions {
-    //  border: none; 
-    }
+    &.table-transactions {}
 
     &.auto-width {
       width: auto;
     }
+
+    .internal {
+      /* background: url(img/table-hover.png) repeat transparent; */
+    }
+
 
   thead {
     
@@ -32,18 +33,22 @@ table {
             font-family: @font-family-sans-serif;
             border-bottom: 1px;
                
-                &.supa-header {
-                 text-align: center;
-                 color: @whyte;
-                 
-                     &.inflow {
-                        background-color: @positive;
-                     }
+              &.supa-header {
+               text-align: center;
+               color: @whyte;
+               
+                   &.inflow {
+                      background-color: @positive;
+                   }
 
-                     &.outflow {
-                        background-color: @negative;
-                     }                
-                }
+                   &.outflow {
+                      background-color: @negative;
+                   }                
+              }
+
+              &.internal {
+                text-align: center;
+              }
   
             }
         }      
@@ -52,8 +57,8 @@ table {
   tbody {
     tr {
       td {
-          padding: 8px 12px;
-          padding: .75rem 1rem;
+          padding: 12px 16px;
+          padding: 1rem 1.3rem;
 
           &.inflow {
               color: @positive;
@@ -89,13 +94,49 @@ table {
           }
       }
     }
+  
+  /* Directional pseudo element arrows for Transfers table */
+  .cell-arrow-right {
+        position:relative;
+      
+      &:after {
+      content:"\A";
+      border-style: solid;
+      border-width: 5px 0 5px 10px;
+      border-color: transparent transparent transparent @gray;
+      position: absolute;
+      right: -5px;
+      top: floor((@font-size-base / 2));
+      top: @font-size-base;
+    }
+
+    &.positive {
+       &:after { 
+        border-left-color: @positive;
+      }
+    }
+
+    &.negative {
+       &:after { 
+        border-left-color: @negative;
+      }
+    }  
+  }
+
+
+  .transfer-destination-cell {
+    text-align: center;
+  }
 }
 
 .table-zb-hover>tbody>tr:hover>td, 
 .table-zb-hover>tbody>tr:hover>th {
     // background: url(img/table-hover.png) repeat transparent;
     // border-bottom-color: @brand-primary;
-    border-bottom: 1px solid @brand-primary;
-}
+    border-bottom: 1px solid @brand-primary !important;
 
+    &.note {
+      background: url('img/table-triangle-left-blue.png') no-repeat left bottom transparent; 
+    }
+}
 
