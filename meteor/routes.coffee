@@ -26,7 +26,6 @@ Router.map ->
     waitOn: ->
       [
         Meteor.subscribe 'bitcoinwallets'
-        Meteor.subscribe 'transfers'
       ]
 
   @route 'trades',
