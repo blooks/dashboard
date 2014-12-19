@@ -28,6 +28,13 @@
                             {{#if transfers}}
                                 <table class="table table-transactions table-zb-hover auto-width centered">
                                     <thead>
+                                      <tr>
+                                        <th colspan="3" class="no-border">&nbsp;</th>
+                                        <th colspan="2" class="supa-header inflow">{{i18n 'trades.headings.table.inflow'}}</th>
+                                        <th colspan="3" class="supa-header outflow">{{i18n 'trades.headings.table.outflow'}}</th>
+                                        <th colspan="2" class="no-border">&nbsp;</th>
+                                      </tr>                                    
+
                                     <tr>
                                         <th>{{i18n 'transfers.headings.table.date'}} 
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} ">
@@ -49,7 +56,7 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th colspan="2">{{i18n 'transfers.headings.table.known'}}
+                                        <th colspan="2" class="internal">{{i18n 'transfers.headings.table.known'}}
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.knownSource'}} ">
                                             <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
@@ -99,8 +106,7 @@
                                                     {{/if}}
                                                 {{/if}}
                                             {{/if}}
-                                            <td>{{saneNumber fee this.details.currency}}
-                                            </td>
+                                            <td class="negative">{{saneNumber fee this.details.currency}}</td>
                                             <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
                                             <td>
                                                 <a href="#" class="delete-transaction">
