@@ -6,7 +6,7 @@
         {{#each bitcoinwalletsinpacks 3}}
           <div class="row">
           {{#each this}} 
-          <div class="col-md-4 node-item" id="{{_id}}">
+          <div class="col-lg-4 node-item" id="{{_id}}">
             <div class="node-header">
               <div class="node-inner">
                 <div class="node-meta">
@@ -15,7 +15,7 @@
                   </span> 
                 </div>
                 <div class="row vcenter">
-                  <div class="col-md-11">           
+                  <div class="col-lg-11">           
                       <h4><i class="fa fa-book"></i> {{i18n 'nodes.wallets.walletLabelTitle'}} : 
                       <span class="fat">{{label}}</span>
                       </h4>
@@ -23,11 +23,11 @@
                       <h4><i class="fa fa-asterisk"></i> Total Balance : 
                       <span class="fat"> {{saneNumber balance 'BTC'}} BTC </span>
                       </h4>                      
-                  </div> <!-- /.col-md-10 -->
+                  </div> <!-- /.col-lg-10 -->
                   
-                  <div class="col-md-1">
+                  <div class="col-lg-1">
                       <i class="fa fa-angle-down body-toggle"></i>
-                  </div> <!-- /.col-md-2 -->
+                  </div> <!-- /.col-lg-2 -->
                 </div> <!-- /.row -->
               </div> <!-- /.node-inner -->
             </div> <!-- /.node-header -->
