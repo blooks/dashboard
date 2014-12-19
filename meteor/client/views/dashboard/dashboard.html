@@ -1,6 +1,7 @@
 
 <template name="dashboard">
     <div class="page-content inset">
+        <script src="http://code.highcharts.com/highcharts.js"></script>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="process-title">Dashboard</h1>
@@ -9,7 +10,8 @@
                     <div class="row desktop-zone">
                         <div class="col-sm-8 line-chart">
                             <h3>Net worth</h3>
-                            {{> highchartsHelper chartId="BTCPieChart" chartWidth="100%" charHeight="100%" chartObject=topGenresChart}}
+                            <div id="highchart33">
+                            </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="summary-data spacy">
@@ -23,7 +25,7 @@
                         </div>
                         <div class="col-sm-6 pie-chart">
                             <h3>Wallet holdings</h3>
-                            <h3>Add data</h3>
+                            {{> highchartsHelper chartId="BTCPieChart" chartWidth="100%" charHeight="100%" chartObject=fundsDistribution}}
                             <div class="col-sm-6"></div>
                         </div>
                     </div>
