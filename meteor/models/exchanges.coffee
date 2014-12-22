@@ -16,10 +16,16 @@ Schemas.exchangeCredentials = new SimpleSchema
     type: String
     custom: ->
       if @field("exchange").value is "Bitstamp"
-        if not @value.match(/^.{32}$/)
+        if @value.length < 32
           "minCount"
+        else "maxCount"  if @value.length > 32
   secret:
     type: String
+    custom: ->
+      if @field("exchange").value is "Bitstamp"
+        if @value.length < 32
+          "minCount"
+        else "maxCount"  if @value.length > 32
 
 
 Schemas.Exchanges = new SimpleSchema
