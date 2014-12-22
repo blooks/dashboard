@@ -1,0 +1,60 @@
+<template name="bitcoinWallets">
+  <div class="wallets-zone">
+    <h3 class="label-title"><i class="fa fa-book"></i> Added Wallets</h3>
+    <div class="row zone">
+      {{#if bitcoinwallets}}
+        {{#each bitcoinwalletsinpacks 2}}
+          <div class="row">
+          {{#each this}} 
+          <div class="col-lg-6 node-item" id="{{_id}}">
+            <div class="node-header">
+              <div class="node-inner">
+                <div class="node-meta">
+                  <span class="wallet-type brand-box">
+                    {{type}}
+                  </span> 
+                </div>
+                <div class="row vcenter">
+                  <div class="col-lg-11">           
+                      <h4><i class="fa fa-book"></i> {{i18n 'nodes.wallets.walletLabelTitle'}} : 
+                      <span class="fat">{{label}}</span>
+                      </h4>
+
+                      <h4><i class="fa fa-asterisk"></i> Total Balance : 
+                      <span class="fat"> {{saneNumber balance 'BTC'}} BTC </span>
+                      </h4>                      
+                  </div> <!-- /.col-lg-10 -->
+                  
+                  <div class="col-lg-1">
+                      <i class="fa fa-angle-down body-toggle"></i>
+                  </div> <!-- /.col-lg-2 -->
+                </div> <!-- /.row -->
+              </div> <!-- /.node-inner -->
+            </div> <!-- /.node-header -->
+
+            <div class="node-body"> 
+              <div class="node-inner">
+                 {{> bitcoinWalletAddresses this}}
+                
+                <ul class="no-bullets">
+                  {{#each balances}}
+                    <li>Balance in {{currency}} : {{saneNumber balance currency}} </li>
+                  {{/each}}                    
+                </ul>
+                
+                <div class="controls">
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-exchange"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-exchange"><span class="glyphicon glyphicon-refresh"></span></a>
+                </div>
+
+              </div> <!-- /.node-inner --> 
+            </div> <!-- /.node-body --> 
+          </div> <!-- /.node-item --> 
+          {{/each}} 
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div> <!-- /.wallets-zone -->
+{{> newBitcoinWallet}}
+</template>      
