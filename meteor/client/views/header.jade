@@ -13,11 +13,12 @@ template(name="header")
           | {{i18n 'template.headings.dashboard'}}
           span.nav-icon
             i.fa.fa-pie-chart
-      li
-        a(href="{{pathFor 'trades'}}") 
-          | {{i18n 'template.headings.trades'}}
-          span.nav-icon
-            i.fa.fa-refresh 
+      //Removed to disable Exchanges and Trades for the time being.
+        li
+          a(href="{{pathFor 'trades'}}")
+            | {{i18n 'template.headings.trades'}}
+            span.nav-icon
+              i.fa.fa-refresh
       li
         a(href="{{pathFor 'transfers'}}") 
           | {{i18n 'template.headings.transfers'}}
