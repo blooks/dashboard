@@ -1,70 +1,143 @@
 <template name="transfers">
-  <div class="page-content inset">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
-        <hr class="sub-stopper"/>
-        <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">           
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
-                <h4 id="transactionHelpModal" class="modal-title">How to do your taxes</h4>
-              </div>
-              <div class="modal-body">{{i18n 'transfers.help'}}</div>
-              <div class="modal-footer"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-10 col-md-offset-1">        
-          <div class="row desktop-zone">
-            <div class="sub-menu-zone pull-right"><a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"> </span><span>{{i18n 'template.headings.help'}}              </span></a>
-            </div>
-            <div class="table-zone">
-            {{#if transfers}}
-              <table class="table table-transactions table-zb-hover auto-width centered">
-                <thead>
-                  <tr>
-                    <th>{{i18n 'transfers.headings.table.date'}} <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th>{{i18n 'transfers.headings.table.currency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inCurrency'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th>{{i18n 'transfers.headings.table.amount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="positive">{{i18n 'transfers.headings.table.source'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.source'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="negative">{{i18n 'transfers.headings.table.target'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="negative">Fee<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="no-border">             </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each transfers}}
-                    <tr>
-                      <td>{{prettyDate date}}</td>
-                      <td>{{details.currency}}</td>
-                      <td>{{saneNumber amount this.details.currency}}</td>
-                      <td>{{inputLabel}}</td>
-                      <td>{{outputLabel}}</td>
-                      <td>{{fee}}
-                      </td>
-                      <td><a href="#" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a></td>
-                    </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-
-              {{else}}
-                <div class="row">
-                  <div class="col-sm-6 col-sm-offset-3"> 
-                    <div class="add-trns-zone">
-                      <h3>{{i18n 'transfers.headings.noTransactions'}}</h3>
-                      <p>{{i18n 'transfers.text.noTransactions'}}</p>
+    <div class="page-content inset">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
+                <hr class="sub-stopper"/>
+                <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal"
+                     aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close"><span
+                                        aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 id="transactionHelpModal" class="modal-title">How to do your taxes</h4>
+                            </div>
+                            <div class="modal-body">{{i18n 'transfers.help'}}</div>
+                            <div class="modal-footer"></div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-            {{/if}}              
+
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row desktop-zone">
+                        <div class="sub-menu-zone pull-right">
+                            <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"> </span><span>{{i18n 'template.headings.help'}}              </span></a>
+                        </div>
+                        <div class="table-zone">
+                            {{#if transfers}}
+                                <table class="table table-transactions table-zb-hover auto-width centered">
+                                    <thead>
+                                      <tr>
+                                        <th colspan="3" class="no-border">&nbsp;</th>
+                                        <th colspan="2" class="supa-header inflow">{{i18n 'trades.headings.table.inflow'}}</th>
+                                        <th colspan="3" class="supa-header outflow">{{i18n 'trades.headings.table.outflow'}}</th>
+                                        <th colspan="2" class="no-border">&nbsp;</th>
+                                      </tr>                                    
+
+                                    <tr>
+                                        <th>{{i18n 'transfers.headings.table.date'}} 
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} ">
+                                             <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>{{i18n 'transfers.headings.table.currency'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inCurrency'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>{{i18n 'transfers.headings.table.amount'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inAmount'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th class="positive">{{i18n 'transfers.headings.table.unknown'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th colspan="2" class="internal">{{i18n 'transfers.headings.table.known'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.knownSource'}} ">
+                                            <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th class="negative">{{i18n 'transfers.headings.table.unknown'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th class="negative">Fee
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>{{i18n 'transfers.headings.table.value'}}
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.value'}} ">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th colspan="2" class="no-border"></th>
+                                        
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{#each transfers}}
+                                        <tr>
+                                            <td class="note">{{prettyDate date}}</td>
+                                            <td>{{details.currency}}</td>
+                                            <td>{{saneNumber amount this.details.currency}}</td>
+                                            {{#if isInternal}}
+                                                <td></td>
+                                                <td class="transfer-destination-cell cell-arrow-right internal">{{toInternalLabel}} </td>
+                                                <td class="transfer-destination-cell internal">{{fromInternalLabel}}</td>
+                                                <td></td>
+                                            {{else}}
+                                                {{#if toExternal}}
+                                                    <td></td>
+                                                    <td class="internal"></td>
+                                                    <td class="transfer-destination-cell cell-arrow-right negative internal">{{fromInternalLabel}} </td>
+                                                    <td class="transfer-destination-cell negative">{{toExternalLabel}}</td>
+                                                {{else}}
+                                                    {{#if fromExternal}}
+                                                        <td class="transfer-destination-cell cell-arrow-right positive">{{fromExternalLabel}} </td>
+                                                        <td class="transfer-destination-cell positive internal">{{toInternalLabel}}</td>
+                                                        <td class="internal"></td>
+                                                        <td></td>
+                                                    {{/if}}
+                                                {{/if}}
+                                            {{/if}}
+                                            <td class="negative">{{saneNumber fee this.details.currency}}</td>
+                                            <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+                                            <td>
+                                                <a href="#" class="delete-transaction">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="see-transaction">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                            </td>                                            
+                                        </tr>
+                                    {{/each}}
+                                    </tbody>
+                                </table>
+
+                            {{else}}
+                                <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <div class="add-trns-zone">
+                                            <h3>{{i18n 'transfers.headings.noTransfers'}}</h3>
+
+                                            <p>{{i18n 'transfers.text.noTransfers'}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>     <!-- /.desktop-zone -->                
+                </div> <!-- /.col-md-10 -->
             </div>
-          </div> <!-- /.desktop-zone -->
-        </div> <!-- /.col-md-10 -->
-      </div>
-    </div>
-  </div> <!-- /.page-content -->
+        </div>
+    </div> <!-- /.page-content -->
 </template>

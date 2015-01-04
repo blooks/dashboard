@@ -16,4 +16,4 @@ Template.registerHelper('labelForVolumeFragment', function(volumeFragment) {
         return temp.label
     }
     return "Unknown";
-}); 
+});
