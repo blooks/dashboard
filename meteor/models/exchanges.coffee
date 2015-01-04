@@ -14,6 +14,8 @@ Schemas.exchangeCredentials = new SimpleSchema
         else "notAllowed" if not @value.match(/^[0-9]*$/)
   APIKey:
     type: String
+    min:32
+    max:32
     custom: ->
       if @field("exchange").value is "Bitstamp"
         if @value.length < 32
@@ -21,6 +23,8 @@ Schemas.exchangeCredentials = new SimpleSchema
         else "maxCount"  if @value.length > 32
   secret:
     type: String
+    min:32
+    max:32
     custom: ->
       if @field("exchange").value is "Bitstamp"
         if @value.length < 32
