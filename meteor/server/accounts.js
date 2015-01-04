@@ -1,4 +1,6 @@
 Accounts.onCreateUser(function(options, user) {
+ /*
+  * Not necessary while we have exchanges deactivated.
 
   var dummyBitcoinWallet = {
     userId: user._id,
@@ -41,5 +43,6 @@ Accounts.onCreateUser(function(options, user) {
       'XRP': dummyRippleAccountId
     }
   };
+  */
   return user;
 });

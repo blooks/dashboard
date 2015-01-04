@@ -96,6 +96,7 @@ Coynverter = (function() {
     if (!rate) {
       console.log("Coynverter returning null!");
       console.log("Converting from:" + from);
+      return 1;
     }
     return rate ? parseInt(amount * rate) : null;
   };
