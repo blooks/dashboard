@@ -1,8 +1,8 @@
 # Create the meteor collection
 @BitcoinAddresses = new Meteor.Collection('bitcoinaddresses')
 
-Schemas = {}
-
+unless @Schemas?
+  @Schemas = {}
 Schemas.BitcoinAddresses = new SimpleSchema
 
   #  regEx: SimpleSchema.RegEx.Id

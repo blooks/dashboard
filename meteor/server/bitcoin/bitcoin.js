@@ -191,7 +191,6 @@ var updateSingleAddressWallet = function(wallet) {
  * @param wallet Requires a wallet from our database
  */
 var updateElectrumWallet = function(wallet) {
-
   var Address = bitcore.Address;
   var PublicKey = bitcore.PublicKey;
   var mpk = new Electrum(wallet.hdseed);

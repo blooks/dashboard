@@ -1,7 +1,8 @@
 # Create the meteor collection
 @Exchanges = new Meteor.Collection('exchanges')
 
-Schemas = {}
+unless @Schemas?
+  @Schemas = {}
 
 Schemas.exchangeCredentials = new SimpleSchema
   userName:

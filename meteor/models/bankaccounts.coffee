@@ -1,7 +1,8 @@
 # Create the meteor collection
 @BankAccounts = new Meteor.Collection('bankaccounts')
 
-Schemas = {}
+unless @Schemas?
+  @Schemas = {}
 
 Schemas.BankAccounts = new SimpleSchema
 
