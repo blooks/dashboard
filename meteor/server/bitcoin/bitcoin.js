@@ -1,5 +1,6 @@
 var Chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
+var Electrum = Meteor.npmRequire('bitcore-electrum');
 
 var chainTxToCoynoTx = function(chainTx) {
   var result = {};
@@ -142,8 +143,8 @@ var updateBIP32Wallet = function(wallet) {
   var hkey = new HierarchicalKey(knownMasterPublicKey);
   var addresses = [];
   for (var i = 0; i < 100; ++i) {
-    addresses.push(Address.fromPubKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString());
-    addresses.push(Address.fromPubKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString());
+    addresses.push(Address.fromPublicKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString());
+    addresses.push(Address.fromPublicKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString());
   }
   addAddressesToWallet(addresses,wallet);
   updateBalances(wallet);
@@ -161,7 +162,7 @@ var updateArmoryWallet = function(wallet) {
   console.log(linedSeed);
   var iterator = Armory.fromSeed(linedSeed.join('\n'));
   for (var i = 0; i < 10; ++i) {
-    addAddressToWallet(Address.fromPubKey(iterator.pubkey).as('base58'), wallet);
+    addAddressToWallet(Address.fromPublicKey(iterator.pubkey).as('base58'), wallet);
     iterator = iterator.next();
   }
 };
@@ -191,15 +192,15 @@ var updateSingleAddressWallet = function(wallet) {
 var updateElectrumWallet = function(wallet) {
 
   var Address = bitcore.Address;
-  var Electrum = bitcore.Electrum;
+  var PublicKey = bitcore.PublicKey;
   var mpk = new Electrum(wallet.hdseed);
   var addresses = [];
   for (var i =0; i < 100; ++i) {
     var key = mpk.generatePubKey(i);
-    var addr = Address.fromPubKey(key).as('base58');
+    var addr = Address.fromPublicKey(new PublicKey(key)).toString();
     addresses.push(addr);
     var changekey = mpk.generateChangePubKey(i);
-    var changeAddr = Address.fromPubKey(changekey).as('base58');
+    var changeAddr = Address.fromPublicKey(new PublicKey(changekey)).toString();
     addresses.push(changeAddr);
   }
   addAddressesToWallet(addresses,wallet);

@@ -1,6 +1,7 @@
 {
   "bitstamp": "0.1.9",
   "kraken-api": "0.1.5",
-  "chain-node": "3.0.0",
-  "bitcore": "https://github.com/bitpay/bitcore/tarball/5ae97a7146db96f675daedfdcef2fd4842037478/"
+  "chain-node": "https://github.com/limpbrains/chain-node/tarball/326f22e0728f9d93ed9be5490eab725781484aa4",
+  "bitcore": "https://github.com/bitpay/bitcore/tarball/5ae97a7146db96f675daedfdcef2fd4842037478/",
+  "bitcore-electrum": "0.0.2"
 }
