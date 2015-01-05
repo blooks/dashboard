@@ -137,14 +137,15 @@ var addAddressToWallet = function(address, wallet) {
 };
 
 var updateBIP32Wallet = function(wallet) {
-  var HierarchicalKey = bitcore.HierarchicalKey;
+  var HDPublicKey = bitcore.HDPublicKey;
+  var PublicKey = bitcore.PublicKey;
   var Address = bitcore.Address;
   var knownMasterPublicKey = wallet.hdseed;
-  var hkey = new HierarchicalKey(knownMasterPublicKey);
+  var masterPubKey = new HDPublicKey(knownMasterPublicKey);
   var addresses = [];
   for (var i = 0; i < 100; ++i) {
-    addresses.push(Address.fromPublicKey(hkey.derive("m/0/"+ i.toString()).eckey.public).toString());
-    addresses.push(Address.fromPublicKey(hkey.derive("m/1/"+ i.toString()).eckey.public).toString());
+    addresses.push(Address.fromPublicKey(masterPubKey.derive("m/0/"+ i.toString()).publicKey).toString());
+    addresses.push(Address.fromPublicKey(masterPubKey.derive("m/1/"+ i.toString()).publicKey).toString());
   }
   addAddressesToWallet(addresses,wallet);
   updateBalances(wallet);
