@@ -2,8 +2,8 @@
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
-                <hr class="sub-stopper"/>
+               <!--  <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
+               <hr class="sub-stopper"/> -->
                 <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal"
                      aria-hidden="true" class="modal fade">
                     <div class="modal-dialog">
@@ -22,7 +22,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row desktop-zone">
                         <div class="sub-menu-zone pull-right">
-                            <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"> </span><span>{{i18n 'template.headings.help'}}              </span></a>
+                            <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span> <span>{{i18n 'template.headings.help'}}              </span></a>
                         </div>
                         <div class="table-zone">
                             {{#if transfers}}
@@ -33,10 +33,10 @@
                                         <th colspan="2" class="supa-header inflow">{{i18n 'trades.headings.table.inflow'}}</th>
                                         <th colspan="3" class="supa-header outflow">{{i18n 'trades.headings.table.outflow'}}</th>
                                         <th colspan="2" class="no-border">&nbsp;</th>
-                                      </tr>                                    
+                                      </tr>
 
                                     <tr>
-                                        <th>{{i18n 'transfers.headings.table.date'}} 
+                                        <th>{{i18n 'transfers.headings.table.date'}}
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} ">
                                              <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
@@ -77,7 +77,7 @@
                                             </a>
                                         </th>
                                         <th colspan="2" class="no-border"></th>
-                                        
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -117,7 +117,7 @@
                                                 <a href="#" class="see-transaction">
                                                     <i class="fa fa-search"></i>
                                                 </a>
-                                            </td>                                            
+                                            </td>
                                         </tr>
                                     {{/each}}
                                     </tbody>
@@ -135,7 +135,7 @@
                                 </div>
                             {{/if}}
                         </div>
-                    </div>     <!-- /.desktop-zone -->                
+                    </div>     <!-- /.desktop-zone -->
                 </div> <!-- /.col-md-10 -->
             </div>
         </div>
