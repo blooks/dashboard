@@ -1,7 +1,7 @@
 /* Z-index order:
 
-> 1000	:	Modal overlays
-> 900	:	Sidebar nav
+	1000+	:	Modal overlays
+	900+	:	Sidebar nav
 
 */
 
@@ -36,6 +36,10 @@ body	{
 
 .top-bar {
 	text-align: right;
+}
+
+.dropdown-menu {
+	left: -150px;
 }
 
 
@@ -160,7 +164,6 @@ body	{
 }
 
 
-
 /* Node Items styling
 ----------------------- */
 /* TODO move all to node-item */
@@ -181,10 +184,13 @@ footer {
 	padding: 50px 0;
 	padding: 4.167rem 0;
 	font-size: 12px; font-size: 1rem;
+	clear: both; // Ensure footer is in bottom
 }
 
 /* Specific view sections
+TODO move these to less files in folders.
 ------------------------------- */
+
 
 /* Dashboard view
 ---------------- */

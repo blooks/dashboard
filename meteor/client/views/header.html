@@ -1,4 +1,10 @@
 <template name="header">
+    <div class="login-dropdown pull-right">
+      <i class="fa fa-user"></i>
+      <ul class="login">
+        {{> loginButtons align="right"}}
+      </ul>
+    </div> <!-- /.login-dropdown -->
   <div id="sidebar-wrapper">
     <a href="/" title="Coyno - BTC Bookkeeping" class="navbar-brand">
       <svg width="123" height="30">
@@ -13,5 +19,4 @@
       <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon">         <i class="fa fa-bell"></i></span></a></li>
     </ul>
   </div>
-
 </template>

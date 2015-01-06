@@ -8,19 +8,19 @@
   <title>Coyno</title>
 </head>
 <template name="layout">
-	<div class="container-fluid">
-	  <div class="login-dropdown">
-	    <i class="fa fa-user"></i>
-	    <ul class="login">
-	      {{> loginButtons align="right"}}
-	    </ul>
-	  </div>
-	 </div>
 	<div id="wrapper" class="nav-toggled">
 		{{> yield region='header'}}
-		<div id="page-wrapper">
-			{{> yield }}
-			{{> yield region='footer'}}
-		</div>
-	</div>
+		<div class="page-content inset">
+        	<div class="container-fluid">
+	        	<div class="row">
+	            	<div class="col-md-12">
+						<div id="page-wrapper">
+							{{> yield }}
+							{{> yield region='footer'}}
+						</div>
+					</div>
+				</div> <!-- .col-md-12 -->
+			</div> <!-- .container -->
+		</div> <!-- .page-content -->
+	</div> <!-- /#wrapper -->
 </template>
