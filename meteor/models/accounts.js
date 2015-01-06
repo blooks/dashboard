@@ -12,8 +12,8 @@ Meteor.users.helpers({
         var timeDelta = 86400000;
         Transfers.find({"details.currency": 'BTC'} , {sort: ['date','asc']}).forEach(function(transfer) {
             while (transfer.date.getTime() >= week) {
-                balances.push([week, satoshiToBTC(balance)]);
-                changes.push([week, satoshiToBTC(change)]);
+                balances.push([week, parseFloat(satoshiToBTC(balance))]);
+                changes.push([week, parseFloat(satoshiToBTC(change))]);
                 change = 0;
                 week += timeDelta;
             }
@@ -26,8 +26,8 @@ Meteor.users.helpers({
                 change -= (transfer.amount() - transfer.fee());
             }
         });
-        balances.push([week, satoshiToBTC(balance)]);
-        changes.push([week, satoshiToBTC(change)]);
+        balances.push([week, parseFloat(satoshiToBTC(balance))]);
+        changes.push([week, parseFloat(satoshiToBTC(change))]);
         return  [balances, changes];
     },
     totalBalance: function(currency) {
