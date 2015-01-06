@@ -82,43 +82,59 @@
                                     </thead>
                                     <tbody>
                                     {{#each transfers}}
-                                        <tr>
-                                            <td class="note">{{prettyDate date}}</td>
-                                            <td>{{details.currency}}</td>
-                                            <td>{{saneNumber amount this.details.currency}}</td>
-                                            {{#if isInternal}}
-                                                <td></td>
-                                                <td class="transfer-destination-cell cell-arrow-right internal">{{toInternalLabel}} </td>
-                                                <td class="transfer-destination-cell internal">{{fromInternalLabel}}</td>
-                                                <td></td>
-                                            {{else}}
-                                                {{#if toExternal}}
-                                                    <td></td>
-                                                    <td class="internal"></td>
-                                                    <td class="transfer-destination-cell cell-arrow-right negative internal">{{fromInternalLabel}} </td>
-                                                    <td class="transfer-destination-cell negative">{{toExternalLabel}}</td>
-                                                {{else}}
-                                                    {{#if fromExternal}}
-                                                        <td class="transfer-destination-cell cell-arrow-right positive">{{fromExternalLabel}} </td>
-                                                        <td class="transfer-destination-cell positive internal">{{toInternalLabel}}</td>
-                                                        <td class="internal"></td>
-                                                        <td></td>
-                                                    {{/if}}
-                                                {{/if}}
-                                            {{/if}}
-                                            <td class="negative">{{saneNumber fee this.details.currency}}</td>
-                                            <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td>
-                                                <a href="#" class="delete-transaction">
-                                                    <i class="fa fa-trash-o"></i>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="see-transaction">
-                                                    <i class="fa fa-search"></i>
-                                                </a>
-                                            </td>                                            
-                                        </tr>
+
+                                    {{#if isInternal}}
+                                    <tr class="internal">
+                                        <td>{{prettyDate date}}</td>
+                                        <td>{{details.currency}}</td>
+                                        <td>{{saneNumber amount this.details.currency}}</td>
+                                        <td></td>
+                                        <td>{{toInternalLabel}}</td>
+                                        <td>{{fromInternalLabel}}</td>
+                                        <td></td>
+                                        <td>{{saneNumber fee this.details.currency}}
+                                        </td>
+                                        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+                                        <td><a href="#" class="delete-transaction"><span
+                                                class="glyphicon glyphicon-trash"></span></a></td>
+                                    </tr>
+                                    {{else}}
+                                    {{#if toExternal}}
+                                    <tr class="outgoing">
+                                        <td>{{prettyDate date}}</td>
+                                        <td>{{details.currency}}</td>
+                                        <td>{{saneNumber amount this.details.currency}}</td>
+
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{fromInternalLabel}}</td>
+                                        <td>{{toExternalLabel}}</td>
+
+                                        <td>{{saneNumber fee this.details.currency}}
+                                        </td>
+                                        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+                                        <td><a href="#" class="delete-transaction"><span
+                                                class="glyphicon glyphicon-trash"></span></a></td>
+                                    </tr>
+                                    {{else}}
+                                    {{#if fromExternal}}
+                                    <tr class="incoming">
+                                        <td>{{prettyDate date}}</td>
+                                        <td>{{details.currency}}</td>
+                                        <td>{{saneNumber amount this.details.currency}}</td>
+                                        <td>{{fromExternalLabel}}</td>
+                                        <td>{{toInternalLabel}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{saneNumber fee this.details.currency}}
+                                        </td>
+                                        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+                                        <td><a href="#" class="delete-transaction"><span
+                                                class="glyphicon glyphicon-trash"></span></a></td>
+                                    </tr>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
                                     {{/each}}
                                     </tbody>
                                 </table>
