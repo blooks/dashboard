@@ -17,7 +17,7 @@ table {
 
 
   thead {
-    
+
     tr {
     padding: 8px 15px;
     padding: .75rem 1.25rem;
@@ -25,33 +25,33 @@ table {
       &.no-border {
             border: none;
             border-bottom: 2px;
-            } 
-            
+            }
+
         th {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: @font-family-sans-serif;
             border-bottom: 1px;
-               
+
               &.supa-header {
                text-align: center;
                color: @whyte;
-               
+
                    &.inflow {
                       background-color: @positive;
                    }
 
                    &.outflow {
                       background-color: @negative;
-                   }                
+                   }
               }
 
               &.internal {
                 text-align: center;
               }
-  
+
             }
-        }      
+        }
    }
 
   tbody {
@@ -66,12 +66,12 @@ table {
 
             &.outflow {
               color: @negative;
-            }  
-          
+            }
+
           /* All ul in tables */
           ul.table-list {
             padding: 0; margin: 0;
-            list-style-type: none;  
+            list-style-type: none;
           }
         }
 
@@ -88,17 +88,17 @@ table {
           .tooltip.top .tooltip-inner {
               background-color:@darkblue;
           }
-          
+
           .tooltip.top .tooltip-arrow {
               border-top-color: @darkblue;
           }
       }
     }
-  
+
   /* Directional pseudo element arrows for Transfers table */
   .cell-arrow-right {
         position:relative;
-      
+
       &:after {
       content:"\A";
       border-style: solid;
@@ -111,16 +111,16 @@ table {
     }
 
     &.positive {
-       &:after { 
+       &:after {
         border-left-color: @positive;
       }
     }
 
     &.negative {
-       &:after { 
+       &:after {
         border-left-color: @negative;
       }
-    }  
+    }
   }
 
 
@@ -129,14 +129,14 @@ table {
   }
 }
 
-.table-zb-hover>tbody>tr:hover>td, 
+.table-zb-hover>tbody>tr:hover>td,
 .table-zb-hover>tbody>tr:hover>th {
     // background: url(img/table-hover.png) repeat transparent;
     // border-bottom-color: @brand-primary;
     border-bottom: 1px solid @brand-primary !important;
 
     &.note {
-      background: url('img/table-triangle-left-blue.png') no-repeat left bottom transparent; 
+      background: url('img/table-triangle-left-blue.png') no-repeat left bottom transparent;
     }
 }
 

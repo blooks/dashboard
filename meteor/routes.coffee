@@ -52,3 +52,7 @@ Router.map ->
     template: 'nodes'
     data: ->
       type:  @params.type
+
+  @route 'profileEdit',
+    path: '/profile'
+    template: 'userProfile'
