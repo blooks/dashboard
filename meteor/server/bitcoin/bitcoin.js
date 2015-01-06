@@ -226,6 +226,6 @@ Meteor.methods({
     }
   },
   isValidBitcoinAddress: function (address) {
-    return bitcore.Address.validate(address);
+    return bitcore.Address.isValid(address);
   }
 });

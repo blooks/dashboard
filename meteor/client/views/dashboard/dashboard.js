@@ -1,8 +1,69 @@
-Template.dashboard.rendered = function(){
+/*
+ * Function to draw the chart with local data
+ */
+var builtStockLocal = function() {
 
+    var networtData = Meteor.user().networthData();
+
+    var data = networtData[0];
+    $('#holdingsovertime').highcharts('StockChart', {
+        rangeSelector: {
+            selected: 1
+        },
+
+        title: {
+            text: 'Total Bitcoin Holdings'
+        },
+
+        series: [{
+            name: 'BTC',
+            data: data,
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+    });
 };
 
-// End dahsboard.rendered
+var fundsDistribution = function() {
+    var dataPairs = [];
+    BitcoinWallets.find({}).forEach(function (wallet) {
+        dataPairs.push([wallet.label, wallet.balance()]);
+    });
+    $('#currentholdingsperwallet').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: "Distribution of Bitcoin holdings"
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    },
+                    connectorColor: 'silver'
+                }
+            }
+        },
+        series: [{
+            name: 'BTC',
+            type: 'pie',
+            data: dataPairs
+        }]
+    });
+};
+
 
 // on the client
 Template.dashboard.helpers({
@@ -24,107 +85,18 @@ Template.dashboard.helpers({
         };
         return saneNumber(Meteor.user().totalBalance(currency), currency);
     },
-    fundsHistory: function () {
-         var netWorthData = Meteor.user().networthData();
-         return {
 
-             chart: {
-                 type: 'area'
-             },
 
-             title: {
-                 text: 'Total Bitcoin balance'
-             },
-
-             credits: {
-                 enabled: false
-             },
-
-             xAxis: {
-                 allowDecimals: false,
-                 labels: {
-                     formatter: function () {
-                         return this.value; // clean, unformatted number for year
-                     }
-                 }
-             },
-
-             yAxis: {
-                 title: {
-                     text: 'Total BTC Balance'
-                 },
-                 labels: {
-                     formatter: function () {
-                         return this.value / 1000 + 'k';
-                     }
-                 }
-             },
-
-             tooltip: {
-                 pointFormat: '{series.name} was <b>{point.y:,.4f}</b><br/> BTCs in {point.x}'
-             },
-
-             plotOptions: {
-                 area: {
-                     pointStart: netWorthData[0][0][0],
-                     marker: {
-                         enabled: false,
-                         symbol: 'circle',
-                         radius: 2,
-                         states: {
-                             hover: {
-                                 enabled: true
-                             }
-                         }
-                     }
-                 }
-             },
-
-             series: [{
-                 name: 'Balance',
-                 data: netWorthData[0].map(function (element) {return parseFloat(element[1]);})
-             }]
-         }
-     },
-    fundsDistribution : function() {
-        var dataPairs = [];
-        BitcoinWallets.find({}).forEach(function (wallet) {
-            dataPairs.push([wallet.label, wallet.balance()]);
-        });
-        return  {
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false
-            },
-            title: {
-                text: "Distribution of Bitcoin holdings"
-            },
-            tooltip: {
-                pointFormat: '<b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                        style: {
-                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                        },
-                        connectorColor: 'silver'
-                    }
-                }
-            },
-            series: [{
-                name: 'BTC',
-                type: 'pie',
-                data: dataPairs
-            }]
-        };
-    }
 });
+
+/*
+ * Call the function to built the chart when the template is rendered
+ */
+Template.dashboard.rendered = function () {
+    builtStockLocal();
+    fundsDistribution();
+};
+
 
 Template.dashboard.events({
     'click .delete-trade': function(event, template) {
