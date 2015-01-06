@@ -6,8 +6,6 @@ var builtStockLocal = function() {
     var networtData = Meteor.user().networthData();
 
     var data = networtData[0];
-    console.log(data2);
-
     $('#holdingsovertime').highcharts('StockChart', {
         rangeSelector: {
             selected: 1
