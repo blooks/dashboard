@@ -157,4 +157,12 @@ Meteor.startup(function () {
     if (!BtcToFiat.findOne() || process.env.COYNO_REFRESH_RATES)
       Coynverter.repopulateBtcToFiat();
   }
+  //Creates timer that executes a job every day to pull new exchange rates
+  var everyHour = new Cron(function() {
+    console.log("another minute has passed!");
+    Coynverter.repopulateBtcToFiat();
+  }, {
+    minute: 0,
+    hour: 0
+  });
 });
