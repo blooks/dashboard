@@ -6,7 +6,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.3.1');
   api.use('coffeescript', ['client', 'server']);
-  api.addFiles(['data/exchangerates.coffee','coynverter.js']);
+//  api.use('bitcoinaverage-client', ['client', 'server']);
+  api.addFiles(['data/exchangerates.coffee','coynverter.js', 'cron.js']);
   api.addFiles(['data/HistDollarPrices.csv', 'data/HistEuroPrices.csv'], 'server');
   api.export('Coynverter');
 });

@@ -11,6 +11,10 @@
     [
       "underscore",
       "1.0.1"
+    ],
+    [
+      "bitcoinaverage-client",
+      "0.0.5"
     ]
   ],
   "pluginDependencies": [],

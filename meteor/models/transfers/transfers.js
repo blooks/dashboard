@@ -143,6 +143,7 @@ if (Meteor.isServer) {
      * Calculates the baseVolume for the transfer.
      * @param docId id of the transfer document to update BaseVolume of
      */
+    //TODO: If transfer was added today, fetch a more current price from coynverter
     var updateBaseVolume = function (docId) {
         var transfer = Transfers.findOne({"_id": docId});
         var baseVolume =  Coynverter.calculateBaseAmount( transfer.amount(), transfer.details.currency, transfer.date);
