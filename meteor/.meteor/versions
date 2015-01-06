@@ -42,6 +42,7 @@ iron:location@1.0.6
 iron:middleware-stack@1.0.3
 iron:router@1.0.3
 iron:url@1.0.6
+jhuenges:highstock@0.0.9
 joshowens:accounts-entry@1.0.3
 joshowens:simple-form@0.2.2
 jquery@1.0.2
@@ -52,7 +53,6 @@ less@1.0.12
 livedata@1.0.12
 localstorage@1.0.2
 logging@1.0.6
-maazalik:highcharts@0.2.3
 matb33:collection-hooks@0.7.3
 meteor@1.1.4
 meteor-platform@1.2.1

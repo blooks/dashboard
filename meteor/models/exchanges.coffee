@@ -1,15 +1,37 @@
 # Create the meteor collection
 @Exchanges = new Meteor.Collection('exchanges')
 
-Schemas = {}
+unless @Schemas?
+  @Schemas = {}
 
 Schemas.exchangeCredentials = new SimpleSchema
   userName:
     type: String
+    optional: true
+    custom: ->
+      if @field("exchange").value is "Bitstamp"
+        if not @isSet
+          "required"
+        else "notAllowed" if not @value.match(/^[0-9]*$/)
   APIKey:
     type: String
+    min:32
+    max:32
+    custom: ->
+      if @field("exchange").value is "Bitstamp"
+        if @value.length < 32
+          "minCount"
+        else "maxCount"  if @value.length > 32
   secret:
     type: String
+    min:32
+    max:32
+    custom: ->
+      if @field("exchange").value is "Bitstamp"
+        if @value.length < 32
+          "minCount"
+        else "maxCount"  if @value.length > 32
+
 
 Schemas.Exchanges = new SimpleSchema
 
@@ -27,7 +49,6 @@ Schemas.Exchanges = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.supportedExchanges
   credentials:
     type: Schemas.exchangeCredentials
-
 
 # Attach the schema to the collection
 Exchanges.attachSchema Schemas.Exchanges

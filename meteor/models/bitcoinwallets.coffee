@@ -1,7 +1,12 @@
 # Create the meteor collection
 @BitcoinWallets = new Meteor.Collection('bitcoinwallets')
 
-Schemas = {}
+unless @Schemas?
+  @Schemas = {}
+
+Schemas.ArmoryRootData = new SimpleSchema
+
+Schemas.ElectrumRootData = new SimpleSchema
 
 Schemas.BitcoinWallets = new SimpleSchema
 
