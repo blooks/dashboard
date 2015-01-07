@@ -1,13 +1,11 @@
 <template name="transfers">
                <!--  <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
                <hr class="sub-stopper"/> -->
-                <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal"
-                     aria-hidden="true" class="modal fade">
+                <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" data-dismiss="modal" class="close"><span
-                                        aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 id="transactionHelpModal" class="modal-title">How to do your taxes</h4>
                             </div>
                             <div class="modal-body">{{i18n 'transfers.help'}}</div>
@@ -16,19 +14,63 @@
                     </div>
                 </div>
 
+                <!-- Modal for detailed tx analysis
+                        TODO: get all relevatn data from tx and display in this modal
+                -->
+
+                <div id="txDetailModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 id="transactionHelpModal" class="modal-title">TX details</h4>
+                            </div>
+                            <div class="modal-body">
+                                 <table>
+                                    <tr>
+                                        <td>Tx</td>
+                                        <td>Details</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete tx confirm modal
+                        TODO: make these delete modals globally available (with minor changes to logic e.g. depending on what is being deleted)
+                -->
+                <div id="txDeleteModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 id="transactionHelpModal" class="modal-title">Delete item</h4>
+                            </div>
+                            <div class="modal-body">
+                                 <p>Are you sure you want to delete transaction?</p>
+                                <button class="btn btn-lg delete">Delete</button>
+                                <button class="btn btn-lg cancel">Cancel</button>
+                            </div>
+                            <div class="modal-footer"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row desktop-zone">
                         <div class="sub-menu-zone pull-right">
-                            <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span> <span>{{i18n 'template.headings.help'}}              </span></a>
+                            <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span> <span>{{i18n 'template.headings.help'}}</span></a>
                         </div>
                         <div class="table-zone">
                             {{#if transfers}}
-                                <table class="table table-transactions table-zb-hover auto-width centered">
-                                    <thead>
+                                <table class="table table-tx table-zb-hover auto-width centered">
+<!--                                     <thead>
                                       <tr>
                                         <th colspan="3" class="no-border">&nbsp;</th>
-                                        <th colspan="2" class="supa-header inflow">{{i18n 'trades.headings.table.inflow'}}</th>
-                                        <th colspan="3" class="supa-header outflow">{{i18n 'trades.headings.table.outflow'}}</th>
+                                        <th colspan="3" class="supa-header inflow">{{i18n 'trades.headings.table.inflow'}}</th>
+                                        <th colspan="5" class="supa-header outflow">{{i18n 'trades.headings.table.outflow'}}</th>
                                         <th colspan="2" class="no-border">&nbsp;</th>
                                       </tr>
 
@@ -53,18 +95,13 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th colspan="2" class="internal">{{i18n 'transfers.headings.table.known'}}
+                                        <th colspan="4">{{i18n 'transfers.headings.table.known'}}
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.knownSource'}} ">
                                             <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th class="negative">{{i18n 'transfers.headings.table.unknown'}}
+                                        <th colspan="2" class="negative">{{i18n 'transfers.headings.table.unknown'}}
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} ">
-                                                <span class="glyphicon glyphicon-info-sign"></span>
-                                            </a>
-                                        </th>
-                                        <th class="negative">Fee
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.outAmount'}} ">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
@@ -76,56 +113,55 @@
                                         <th colspan="2" class="no-border"></th>
 
                                     </tr>
-                                    </thead>
+                                    </thead> -->
                                     <tbody>
                                     {{#each transfers}}
                                         {{#if isInternal}}
                                         <tr class="internal">
                                             <td>{{prettyDate date}}</td>
                                             <td>{{details.currency}}</td>
-                                            <td>{{saneNumber amount this.details.currency}}</td>
-                                            <td></td>
-                                            <td>{{toInternalLabel}}</td>
-                                            <td>{{fromInternalLabel}}</td>
-                                            <td></td>
-                                            <td>{{saneNumber fee this.details.currency}}
+                                            <td> &nbsp; {{saneNumber amount this.details.currency}}</td>
+                                            <td colspan="2"></td>
+                                            <td class="internal-tx-cell">{{toInternalLabel}}</td>
+                                            <td class="arrow-container"><i class="fa fa-angle-right"></i> </td>
+                                            <td class="internal-tx-cell">{{fromInternalLabel}}</td>
+                                            <td colspan="2"></td>
+                                            <td> &nbsp; {{saneNumber baseVolume 'EUR' }} EUR</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
                                             </td>
-                                            <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td><a href="#" class="delete-transaction"><span
-                                                    class="glyphicon glyphicon-trash"></span></a></td>
                                         </tr>
                                         {{else}}
                                         {{#if toExternal}}
                                         <tr class="outgoing">
                                             <td>{{prettyDate date}}</td>
                                             <td>{{details.currency}}</td>
-                                            <td>{{saneNumber amount this.details.currency}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>{{fromInternalLabel}}</td>
-                                            <td>{{toExternalLabel}}</td>
-
-                                            <td>{{saneNumber fee this.details.currency}}
+                                            <td class="negative">&#45; {{saneNumber amount this.details.currency}}</td>
+                                            <td colspan="4"></td>
+                                            <td class="negative internal-tx-cell">{{fromInternalLabel}}</td>
+                                            <td class="arrow-container"><i class="fa fa-angle-right"></i></td>
+                                            <td class="negative">{{toExternalLabel}}</td>
+                                            <td class="negative">&#45; {{saneNumber baseVolume 'EUR' }} EUR</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
                                             </td>
-                                            <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td><a href="#" class="delete-transaction"><span
-                                                    class="glyphicon glyphicon-trash"></span></a></td>
                                         </tr>
                                         {{else}}
                                         {{#if fromExternal}}
                                         <tr class="incoming">
                                             <td>{{prettyDate date}}</td>
-                                            <td>{{details.currency}}</td>
-                                            <td>{{saneNumber amount this.details.currency}}</td>
-                                            <td>{{fromExternalLabel}}</td>
-                                            <td>{{toInternalLabel}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>{{saneNumber fee this.details.currency}}
+                                            <td class="positive">{{fromExternalLabel}}</td>
+                                            <td class="positive">&#43; {{saneNumber amount this.details.currency}} <i class="fa fa-btc"></i></td>
+                                            <td class="arrow-container"><i class="fa fa-angle-right"></i></td>
+                                            <td class="positive internal-tx-cell">{{toInternalLabel}}</td>
+                                            <td colspan="4"></td>
+                                            <td class="positive">&#43; {{saneNumber baseVolume 'EUR' }} EUR</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
                                             </td>
-                                            <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td><a href="#" class="delete-transaction"><span
-                                                    class="glyphicon glyphicon-trash"></span></a></td>
                                         </tr>
                                         {{/if}}
                                         {{/if}}

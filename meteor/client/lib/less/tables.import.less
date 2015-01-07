@@ -1,3 +1,5 @@
+/*All table styles here*/
+
 /* Tables */
 table {
   font-size: 12px;
@@ -5,16 +7,11 @@ table {
 
     &.table-bordered {}
 
-    &.table-transactions {}
+    &.table-tx {}
 
     &.auto-width {
       width: auto;
     }
-
-    .internal {
-      /* background: url(img/table-hover.png) repeat transparent; */
-    }
-
 
   thead {
 
@@ -31,7 +28,7 @@ table {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-family: @font-family-sans-serif;
-            border-bottom: 1px;
+            /* border-bottom: 1px;*/
 
               &.supa-header {
                text-align: center;
@@ -45,11 +42,6 @@ table {
                       background-color: @negative;
                    }
               }
-
-              &.internal {
-                text-align: center;
-              }
-
             }
         }
    }
@@ -57,23 +49,88 @@ table {
   tbody {
     tr {
       td {
-          padding: 12px 16px;
-          padding: 1rem 1.3rem;
+            padding: 12px 16px;
+            padding: 1rem 1.3rem;
 
-          &.inflow {
-              color: @positive;
-            }
+            &.inflow {
+                color: @positive;
+              }
 
             &.outflow {
               color: @negative;
             }
+            /* Cells for arrows */
+            &.arrow-container {
+              text-align: center;
 
-          /* All ul in tables */
-          ul.table-list {
-            padding: 0; margin: 0;
-            list-style-type: none;
+              .fa {
+                font-size: 18px;
+                font-size: 1.5rem;
+              }
+            }
+          } // Close general <td>
+
+          /*Row styling according to transaction type (outgoing, incoming, internal) */
+          &.outgoing {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @negative !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left-negative.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @negative;
+              }
+            }
+          }
+
+          &.incoming {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @positive !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left-positive.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @positive;
+              }
+            }
+          }
+
+          &.internal {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @gray-light !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @gray-light;
+              }
+            }
+          }
+
+          &:last-child {
+              border-bottom: 1px solid @gray-lighter;
           }
         }
+
+
 
         a {
               .glyphicon {
@@ -85,47 +142,19 @@ table {
 
           }
 
-          .tooltip.top .tooltip-inner {
-              background-color:@darkblue;
-          }
-
-          .tooltip.top .tooltip-arrow {
-              border-top-color: @darkblue;
-          }
-      }
+    .tooltip.top .tooltip-inner {
+        background-color:@darkblue;
     }
 
-  /* Directional pseudo element arrows for Transfers table */
-  .cell-arrow-right {
-        position:relative;
-
-      &:after {
-      content:"\A";
-      border-style: solid;
-      border-width: 5px 0 5px 10px;
-      border-color: transparent transparent transparent @gray;
-      position: absolute;
-      right: -5px;
-      top: floor((@font-size-base / 2));
-      top: @font-size-base;
-    }
-
-    &.positive {
-       &:after {
-        border-left-color: @positive;
-      }
-    }
-
-    &.negative {
-       &:after {
-        border-left-color: @negative;
-      }
-    }
+    .tooltip.top .tooltip-arrow {
+        border-top-color: @darkblue;
+     }
   }
 
-
-  .transfer-destination-cell {
-    text-align: center;
+  /* All ul in tables */
+  ul.table-list {
+    padding: 0; margin: 0;
+    list-style-type: none;
   }
 }
 
@@ -133,10 +162,13 @@ table {
 .table-zb-hover>tbody>tr:hover>th {
     // background: url(img/table-hover.png) repeat transparent;
     // border-bottom-color: @brand-primary;
-    border-bottom: 1px solid @brand-primary !important;
+
 
     &.note {
-      background: url('img/table-triangle-left-blue.png') no-repeat left bottom transparent;
+      background: url('img/corner-triangle-left-positive') no-repeat left bottom transparent;
     }
 }
 
+.table > thead > tr > th {
+  border-bottom: 1px solid #dddddd;
+}
