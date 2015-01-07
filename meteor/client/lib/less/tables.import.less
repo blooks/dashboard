@@ -13,6 +13,21 @@ table {
       width: auto;
     }
 
+.positive-bg {
+  background-color: @positive;
+  color: @whyte;
+}
+
+.negative-bg {
+  background-color: @negative;
+  color: @whyte;
+}
+
+.neutral-bg {
+  background-color: @gray-light;
+  color: @whyte;
+}
+
   thead {
 
     tr {
@@ -61,11 +76,10 @@ table {
             }
             /* Cells for arrows */
             &.arrow-container {
-              text-align: center;
-
+              text-align: left;
+              padding: 0 !important;
               .fa {
-                font-size: 18px;
-                font-size: 1.5rem;
+                font-size: 35px;
               }
             }
           } // Close general <td>
