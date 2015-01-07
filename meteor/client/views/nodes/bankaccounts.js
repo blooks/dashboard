@@ -1,5 +1,5 @@
 Template.bankAccounts.helpers({
-  bankaccounts: function(){
+  bankaccounts: function () {
     return BankAccounts.find().fetch();
   }
 });

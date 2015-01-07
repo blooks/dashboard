@@ -1,3 +1,5 @@
 .meteor
 packages
 tests
+
+server/crawlers/bitstamp.js

@@ -65,6 +65,8 @@
         "$": false,
         "Router": false,
         "Async": false,
+        "Highcharts": false,
+        "CollectionBehaviours": false,
 
         "Accounts": true,
         "BankAccounts": true,
