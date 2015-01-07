@@ -138,9 +138,9 @@ var krakenJSONtoDB = function (krakenData, exchange) {
   //preconditioning. Kraken gives us ugly floatsies! Shoo floatsies!
   krakenData.forEach(function (transaction) {
     transaction.amount = parseInt(
-      Math.round(parseFloat(transaction.amount) * 100000000));
+      Math.round(parseFloat(transaction.amount) * 10e8));
     transaction.fee = parseInt(
-      Math.round(parseFloat(transaction.fee) * 100000000));
+      Math.round(parseFloat(transaction.fee) * 10e8));
   });
   for (var i = 0; i < krakenDataLength; ++i) {
     try {

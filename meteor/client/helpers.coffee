@@ -6,6 +6,6 @@ Template.registerHelper 'prettyDateLong', (date)->
 
 Template.registerHelper 'saneNumber', (internalNumber, currency)->
 	if currency is 'BTC'
-		(internalNumber/100000000).toFixed(8)
+		(internalNumber/10e8).toFixed(8)
 	else
-		(internalNumber/100000000).toFixed(2)
+		(internalNumber/10e8).toFixed(2)

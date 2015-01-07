@@ -2,7 +2,7 @@ Meteor.users.helpers({
   networthData: function () {
 
     var satoshiToBTC = function (amount) {
-      return (amount / 100000000).toFixed(8);
+      return (amount / 10e8).toFixed(8);
     };
     var balances = [];
     var changes = [];

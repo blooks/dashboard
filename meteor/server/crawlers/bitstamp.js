@@ -249,13 +249,13 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
     var dollar_amount = Math.abs(withdrawal.usd);
     currencydetails.sell = {
       amount: dollar_amount,
-      currency: 'USD', 
+      currency: 'USD',
       fee: 0
     };
     base_amount = Coynverter.calculateBaseAmount(dollar_amount, 'USD', withdrawal.datetime);;
     currencydetails.buy = {
       amount: base_amount,
-      currency: base_currency, 
+      currency: base_currency,
       fee: 0
     }
   } else {//bitcoin withdrawal
@@ -276,7 +276,7 @@ var bitstampRippleWithdrawalToTrade = function(withdrawal) {
 };
 
 var addBitstampTxToTransfers = function(bitstampTx, exchange) {
-  
+
   //Storing errors
   var errors = [];
 
@@ -289,7 +289,7 @@ var addBitstampTxToTransfers = function(bitstampTx, exchange) {
   transfer.date = bitstampTx.datetime;
   transfer.userId = Meteor.userId();
   transfer.foreignId = Meteor.userId() + exchange._id + bitstampTx.id;
-  
+
   //new transferdetails object
   var transferdetails = {};
 
@@ -380,7 +380,7 @@ var addBitstampTxToTrades = function(bitstampTx, exchange) {
 
 
 
-var bitstampJSONtoDB = function(bitstampData, exchange) { 
+var bitstampJSONtoDB = function(bitstampData, exchange) {
 
   for (var i = 0; i < bitstampData.length; ++i) {
     var bitstampTx = bitstampData[i];
@@ -389,9 +389,9 @@ var bitstampJSONtoDB = function(bitstampData, exchange) {
     bitstampTx.datetime = new Date(bitstampTx.datetime);
 
     //preconditioning. Bitstamp gives float-style-strings for amounts
-    bitstampTx.usd = parseInt(Math.round(parseFloat(bitstampTx.usd)*100000000));
-    bitstampTx.btc = parseInt(Math.round(parseFloat(bitstampTx.btc)*100000000));
-    bitstampTx.fee = parseInt(Math.round(parseFloat(bitstampTx.fee)*100000000));
+    bitstampTx.usd = parseInt(Math.round(parseFloat(bitstampTx.usd)*10e8));
+    bitstampTx.btc = parseInt(Math.round(parseFloat(bitstampTx.btc)*10e8));
+    bitstampTx.fee = parseInt(Math.round(parseFloat(bitstampTx.fee)*10e8));
 
 
     addBitstampTxToTrades(bitstampTx, exchange);
