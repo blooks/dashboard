@@ -13,13 +13,14 @@ Schemas.Amount = new SimpleSchema
     type: String
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
   fee:
-    type: Number # Fee in this currency (some exchanges charge fees left and right)
+    # Fee in this currency (some exchanges charge fees left and right)
+    type: Number
 
 Schemas.Trade = new SimpleSchema
 
   foreignId:
     type: String
-    unique : true
+    unique: true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:
@@ -48,7 +49,6 @@ Schemas.Trade = new SimpleSchema
     type: Number
     defaultValue: 0
 
-          
 
 # Attach the schema to the collection
 Trades.attachSchema Schemas.Trade
