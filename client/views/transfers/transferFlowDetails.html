@@ -17,7 +17,6 @@
                 <td class="negative">&#45; {{saneNumber baseVolume 'EUR' }} EUR</td>
             {{else}}
                 {{#if fromExternal}}
-                    <td>{{prettyDate date}}</td>
                     <td class="positive">{{fromExternalLabel}}</td>
                     <td class="positive-bg tx-arrow"><a href="#" class="btn btn-arrow-right">&#43; {{saneNumber amount this.details.currency}} {{details.currency}}</a></td>
                     <td class="positive internal-tx-cell">{{toInternalLabel}}</td>
