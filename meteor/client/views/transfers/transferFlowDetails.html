@@ -1,33 +1,36 @@
 <template name="transferFlowDetail">
-
     <tr class={{transferType}}>
         <td>{{prettyDate date}}</td>
-        <td>{{details.currency}}</td>
-        <td>{{saneNumber amount this.details.currency}}</td>
         {{#if isInternal}}
-        <td></td>
-        <td>{{toInternalLabel}}</td>
-        <td>{{fromInternalLabel}}</td>
-        <td></td>
+            <td colspan="3"></td>
+            <td class="internal-tx-cell">{{toInternalLabel}}</td>
+            <td class="neutral-bg"> &nbsp; {{saneNumber amount this.details.currency}} {{details.currency}}</td>
+            <td class="arrow-container"><i class="fa fa-play"></i></td>
+            <td class="internal-tx-cell">{{fromInternalLabel}}</td>
+            <td colspan="3"></td>
+            <td> &nbsp; {{saneNumber baseVolume 'EUR' }} EUR</td>
         {{else}}
-        {{#if toExternal}}
-        <td></td>
-        <td></td>
-        <td>{{fromInternalLabel}}</td>
-        <td>{{toExternalLabel}}</td>
-        {{else}}
-        {{#if fromExternal}}
-        <td>{{fromExternalLabel}}</td>
-        <td>{{toInternalLabel}}</td>
-        <td></td>
-        <td></td>
+            {{#if toExternal}}
+                <td colspan="6"></td>
+                <td class="negative internal-tx-cell">{{fromInternalLabel}}</td>
+                <td class="negative-bg">&#45; {{saneNumber amount this.details.currency}} {{details.currency}}</td>
+                <td class="arrow-container"><i class="fa fa-play"></i></td>
+                <td class="negative">{{toExternalLabel}}</td>
+                <td class="negative">&#45; {{saneNumber baseVolume 'EUR' }} EUR</td>
+            {{else}}
+                {{#if fromExternal}}
+                    <td class="positive">{{fromExternalLabel}}</td>
+                    <td class="positive-bg">&#43; {{saneNumber amount this.details.currency}} <i class="fa fa-btc"></i></td>
+                    <td class="arrow-container"><i class="fa fa-play"></i></td>
+                    <td class="positive internal-tx-cell">{{toInternalLabel}}</td>
+                    <td colspan="6"></td>
+                    <td class="positive">&#43; {{saneNumber baseVolume 'EUR' }} EUR</td>
+                {{/if}}
+            {{/if}}
         {{/if}}
-        {{/if}}
-        {{/if}}
-        <td>{{saneNumber fee this.details.currency}}
+        <td>
+            <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
+            <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
         </td>
-        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
-        <td><a href="#" class="delete-transaction"><span
-                class="glyphicon glyphicon-trash"></span></a></td>
     </tr>
 </template>

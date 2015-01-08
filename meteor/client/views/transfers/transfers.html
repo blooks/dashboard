@@ -116,55 +116,7 @@
                                     </thead> -->
                                     <tbody>
                                     {{#each transfers}}
-                                        {{#if isInternal}}
-                                        <tr class="internal">
-                                            <td>{{prettyDate date}}</td>
-                                            <td colspan="3"></td>
-                                            <td class="internal-tx-cell">{{toInternalLabel}}</td>
-                                            <td class="neutral-bg"> &nbsp; {{saneNumber amount this.details.currency}} {{details.currency}}</td>
-                                            <td class="arrow-container"><i class="fa fa-play"></i></td>
-                                            <td class="internal-tx-cell">{{fromInternalLabel}}</td>
-                                            <td colspan="3"></td>
-                                            <td> &nbsp; {{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </td>
-                                        </tr>
-                                        {{else}}
-                                        {{#if toExternal}}
-                                        <tr class="outgoing">
-                                            <td>{{prettyDate date}}</td>
-
-                                            <td colspan="6"></td>
-                                            <td class="negative internal-tx-cell">{{fromInternalLabel}}</td>
-                                            <td class="negative-bg">&#45; {{saneNumber amount this.details.currency}} {{details.currency}}</td>
-                                            <td class="arrow-container"><i class="fa fa-play"></i></td>
-                                            <td class="negative">{{toExternalLabel}}</td>
-                                            <td class="negative">&#45; {{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </td>
-                                        </tr>
-                                        {{else}}
-                                        {{#if fromExternal}}
-                                        <tr class="incoming">
-                                            <td>{{prettyDate date}}</td>
-                                            <td class="positive">{{fromExternalLabel}}</td>
-                                            <td class="positive-bg">&#43; {{saneNumber amount this.details.currency}} <i class="fa fa-btc"></i></td>
-                                            <td class="arrow-container"><i class="fa fa-play"></i></td>
-                                            <td class="positive internal-tx-cell">{{toInternalLabel}}</td>
-                                            <td colspan="6"></td>
-                                            <td class="positive">&#43; {{saneNumber baseVolume 'EUR' }} EUR</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>
-                                                <a href="#" data-toggle="modal" data-target="#txDeleteModal" class="delete-transaction"><span class="glyphicon glyphicon-trash"></span></a>
-                                            </td>
-                                        </tr>
-                                        {{/if}}
-                                        {{/if}}
-                                        {{/if}}
+                                      {{>transferFlowDetail}}
                                     {{/each}}
                                     </tbody>
                                 </table>
@@ -173,7 +125,6 @@
                                     <div class="col-sm-6 col-sm-offset-3">
                                         <div class="add-trns-zone">
                                             <h3>{{i18n 'transfers.headings.noTransfers'}}</h3>
-
                                             <p>{{i18n 'transfers.text.noTransfers'}}</p>
                                         </div>
                                     </div>
