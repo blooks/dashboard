@@ -1,10 +1,32 @@
+'use strict';
 
 var Chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
 var Electrum = Meteor.npmRequire('bitcore-electrum');
 
+/**
+ * Generating a Coyno style transaction out of a Chain TX
+ * See https://chain.com/docs#object-bitcoin-transaction for Chain
+ * Transactions Format
+ *
+ * TODO: Breaks for OP_Return outputs, needs to be fixed.
+ *
+ * It returns an object with
+ *  foreignId
+ *  date
+ *  details
+ *  currency = 'BTC'
+ *
+ * The return object lacks:
+ *  UserId
+ *  sourceId
+ *  baseVolume
+ *
+ * @param chainTx
+ * @returns {transfer} a transfer that can be put in the database
+ */
+
 var chainTxToCoynoTx = function (chainTx) {
-  'use strict';
   var result = {}, inputs = [], outputs = [];
   result.foreignId = Meteor.userId() + chainTx.hash;
   /* jshint camelcase: false */
@@ -39,14 +61,12 @@ var chainTxToCoynoTx = function (chainTx) {
 };
 
 var addCoynoData = function (transfer, wallet) {
-  'use strict';
   transfer.userId = Meteor.userId();
   transfer.sourceId = wallet._id;
   return transfer;
 };
 
 var connectToInternalNode = function (inoutput) {
-  'use strict';
   if (!inoutput.nodeId) {
     var internalAddress = BitcoinAddresses.findOne(
       {$and: [{'userId': Meteor.userId()}, {'address': inoutput.note}]});
@@ -58,7 +78,6 @@ var connectToInternalNode = function (inoutput) {
 };
 
 var addTransaction = function (transaction) {
-  'use strict';
   var transfer = Transfers.findOne({"foreignId": transaction.foreignId}),
     newTransfer = false,
     inputs = transfer.details.inputs,
