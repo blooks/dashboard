@@ -1,9 +1,7 @@
 /*All table styles here*/
 
 /* Tables */
-table {
-  font-size: 12px;
-  font-size: 1rem;
+.table {
 
     &.table-bordered {}
 
@@ -12,21 +10,6 @@ table {
     &.auto-width {
       width: auto;
     }
-
-.positive-bg {
-  background-color: @positive;
-  color: @whyte;
-}
-
-.negative-bg {
-  background-color: @negative;
-  color: @whyte;
-}
-
-.neutral-bg {
-  background-color: @gray-light;
-  color: @whyte;
-}
 
   thead {
 
@@ -66,6 +49,7 @@ table {
       td {
             padding: 12px 16px;
             padding: 1rem 1.3rem;
+            vertical-align: middle;
 
             &.inflow {
                 color: @positive;
@@ -85,6 +69,7 @@ table {
           } // Close general <td>
 
           /*Row styling according to transaction type (outgoing, incoming, internal) */
+ /*
           &.outgoing {
               &:hover {
                td {
@@ -102,6 +87,7 @@ table {
               }
             }
           }
+
 
           &.incoming {
               &:hover {
@@ -137,7 +123,7 @@ table {
                 color: @gray-light;
               }
             }
-          }
+          }*/
 
           &:last-child {
               border-bottom: 1px solid @gray-lighter;
@@ -170,19 +156,52 @@ table {
     padding: 0; margin: 0;
     list-style-type: none;
   }
+
+/*Styling of arrows in tx tables with incoming/outgoing/internal transfers*/
+td.tx-arrow {
+  padding-right: @button-corner-square-size;
+
+  .btn {
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: none;
+    }
 }
+
+.positive-bg {
+  .btn {
+      background-color: @positive;
+      border-color: @positive;
+      color: @whyte;
+  }
+}
+
+.negative-bg {
+  .btn {
+    background-color: @negative;
+    border-color: @negative;
+    color: @whyte;
+  }
+}
+
+.neutral-bg {
+  .btn {
+    background-color: @gray-light;
+    border-color: @gray-light;
+    color: @whyte;
+  }
+}
+
+}
+
+
 
 .table-zb-hover>tbody>tr:hover>td,
 .table-zb-hover>tbody>tr:hover>th {
     // background: url(img/table-hover.png) repeat transparent;
     // border-bottom-color: @brand-primary;
-
-
-    &.note {
-      background: url('img/corner-triangle-left-positive') no-repeat left bottom transparent;
-    }
 }
 
 .table > thead > tr > th {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 2px solid @gray-medium-light;
 }

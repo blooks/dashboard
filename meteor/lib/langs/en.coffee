@@ -15,7 +15,7 @@ i18n.map 'en_GB',
     buttons:
       save: 'Save'
       add: 'Add'
-  
+
   # Trades
   trades:
     headings:
@@ -59,7 +59,7 @@ i18n.map 'en_GB',
         unknown: 'External'
         known: 'Internal'
         value: 'value'
-      transfers: 'Transfers'
+      transfers: 'Incoming/Internal/Outgoing Transfers'
       noTransfers: 'No transfers...'
     text:
       noTransfers: 'Please add some transactions to get started. Either import or add manually below.'
