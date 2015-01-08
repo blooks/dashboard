@@ -28,12 +28,11 @@ Schemas.TransferDetails = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
 
 
-
 Schemas.Transfer = new SimpleSchema
 
   foreignId:
     type: String
-    unique : true
+    unique: true
   #  regEx: SimpleSchema.RegEx.Id
   ## Owner
   userId:

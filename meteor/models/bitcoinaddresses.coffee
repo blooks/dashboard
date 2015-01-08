@@ -25,8 +25,11 @@ Schemas.BitcoinAddresses = new SimpleSchema
       if Meteor.isClient and @isSet
         Meteor.call "isValidBitcoinAddress", @value, (error, result) ->
           unless result
-            console.log("NOT VALID ADDRESS");
-            BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys [ name: "address", type: "invalidAddress" ]
+            console.log("NOT VALID ADDRESS")
+            BitcoinAddresses
+              .simpleSchema()
+              .namedContext("insertBitcoinAddressForm")
+              .addInvalidKeys [name: "address", type: "invalidAddress"]
           return
   balance:
     type: Number
@@ -41,7 +44,7 @@ BitcoinAddresses.timed()
 
 # Ensure every document is owned by a user
 BitcoinAddresses.owned()
-  #Transactions.find(userId: @us  erId).length
+#Transactions.find(userId: @us  erId).length
 
 BitcoinAddresses.allow
   insert: (userId, item) ->
