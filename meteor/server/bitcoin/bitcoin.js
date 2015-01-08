@@ -256,7 +256,7 @@ var updateBIP32Wallet = function (wallet) {
  * @param wallet
  */
 var updateArmoryWallet = function (wallet) {
-  console.log("updateArmoryWallet says: Implement me. I am doing nothing!");
+  console.log("updateArmoryWallet says: Implement me. I am doing nothing.");
   return wallet;
 };
 
