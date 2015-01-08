@@ -1,23 +1,42 @@
+'use strict';
+
 var Chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
 var Electrum = Meteor.npmRequire('bitcore-electrum');
 
+/**
+ * Generating a Coyno style transaction out of a Chain TX
+ * See https://chain.com/docs#object-bitcoin-transaction for Chain
+ * Transactions Format
+ *
+ * TODO: Breaks for OP_Return outputs, needs to be fixed.
+ *
+ * It returns an object with
+ *  foreignId
+ *  date
+ *  details
+ *  currency = 'BTC'
+ *
+ * The return object lacks:
+ *  UserId
+ *  sourceId
+ *  baseVolume
+ *
+ * @param chainTx
+ * @returns {transfer} a transfer that can be put in the database
+ */
+
 var chainTxToCoynoTx = function (chainTx) {
-  var result = {};
+  var result = {}, inputs = [], outputs = [];
   result.foreignId = Meteor.userId() + chainTx.hash;
   /* jshint camelcase: false */
   if (chainTx.block_time) {
     result.date = new Date(chainTx.block_time);
-  }
-  else {
+  } else {
     result.date = new Date(chainTx.chain_received_at);
   }
   /* jshint camelcase: true */
-  var inputs = [];
-  var outputs = [];
-  if (!chainTx.inputs) {
-    console.log('INPUTS DO NOT EXIST!');
-  }
+  if (!chainTx.inputs) { console.log('INPUTS DO NOT EXIST!'); }
   chainTx.inputs.forEach(function (input) {
     inputs.push({
       amount: input.value,
@@ -41,11 +60,31 @@ var chainTxToCoynoTx = function (chainTx) {
   return result;
 };
 
+/**
+ * Adding additional data to the transfer object.
+ * More specifically
+ *  userId
+ *  sourceId --> from the wallet provided
+ *
+ * @param transfer
+ * @param wallet
+ * @returns {} with added UserId and SourceId
+ */
 var addCoynoData = function (transfer, wallet) {
   transfer.userId = Meteor.userId();
   transfer.sourceId = wallet._id;
   return transfer;
 };
+
+/**
+ * If the output address is not connected to a Coyno
+ * Address for this user, this function will look up
+ * whether one of the users wallets contain the address
+ * and if so connect the output to it
+ * @param inoutput
+ * @returns {} now connected to the Coyno Database Object
+ * if there is one for this address and this user
+ */
 var connectToInternalNode = function (inoutput) {
   if (!inoutput.nodeId) {
     var internalAddress = BitcoinAddresses.findOne(
@@ -57,41 +96,47 @@ var connectToInternalNode = function (inoutput) {
   return inoutput;
 };
 
-var addTransaction = function (transaction) {
-  var transfer = Transfers.findOne({"foreignId": transaction.foreignId});
-  var newTransfer = false;
-  if (!transfer) {//Transaction already stored for this User
-    transfer = transaction;
-    newTransfer = true;
+/**
+ * Tries to add a transfer to the database or update the transfer if it
+ * has already been there (e.g. the user already added the other side of the
+ * transfer as an address in one of his wallets). Will log to the console
+ * if the Database push fails.
+ *
+ *
+ * @param transfer
+ */
+var addTransfer = function (transfer) {
+  var oldTransfer = Transfers.findOne({"foreignId": transfer.foreignId}),
+    isNewTransfer = true,
+    inputs = transfer.details.inputs,
+    newInputs = [],
+    outputs = transfer.details.outputs,
+    newOutputs = [];
+
+  if (oldTransfer) {//Transaction already stored for this User
+    transfer = oldTransfer;
+    isNewTransfer = false;
   }
-  var inputs = transfer.details.inputs;
-  if (!inputs) {
-    console.log('INTERNAL INPUTS DO NOT EXIST!');
-  }
-  var newInputs = [];
+
   inputs.forEach(function (input) {
-      newInputs.push(connectToInternalNode(input));
-    }
-  );
+    newInputs.push(connectToInternalNode(input));
+  });
+  //connected inputs have been built, need to be stored
   inputs = newInputs;
-  var outputs = transfer.details.outputs;
-  if (!outputs) {
-    console.log('INTERNAL OUTPUTS DO NOT EXIST!');
-  }
-  var newOutputs = [];
+
   outputs.forEach(function (output) {
     newOutputs.push(connectToInternalNode(output));
   });
+  //connected outputs have been built, need to be stored
   outputs = newOutputs;
-  if (newTransfer) {
+
+  if (isNewTransfer) {
     try {
       Transfers.insert(transfer);
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
-  }
-  else {
+  } else {
     try {
       Transfers.update({"_id": transfer._id}, {
         $set: {
@@ -99,12 +144,23 @@ var addTransaction = function (transaction) {
           "details.inputs": inputs
         }
       });
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   }
 };
+
+/**
+ * Getting all transactions for the array of addresses from the
+ * Bitcoin blockchain via the Chain API
+ *
+ * TODO: Get all transactions instead of just 500.
+ * See https://github.com/chain-engineering/chain-node/issues/9
+ *
+ *
+ * @param addresses
+ * @param wallet
+ */
 
 var updateTransactionsForAddresses = function (addresses, wallet) {
   var chain = new Chain({
@@ -115,13 +171,17 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   var syncChain = Async.wrap(chain, ['getAddressesTransactions']);
   var chainTxs = syncChain.getAddressesTransactions(addresses, {limit: 500});
   console.log('Asked chain.com for tx for ' + addresses.length +
-    " addresses. Got " + chainTxs.length + " transactions.");
+  " addresses. Got " + chainTxs.length + " transactions.");
   chainTxs.forEach(function (chainTx) {
-    addTransaction(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
+    addTransfer(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
   });
 };
+
 /**
  * Creates Coynoaddresses out of strings and puts them in the Database
+ * It adds addresses again if the are already in the DB.
+ * TODO: The latter is a bug! See below.
+ *
  * @param {[String]} addresses array of strings giving addresses
  * @param {BitcoinWallets} wallet the wallet these addresses belong to
  */
@@ -133,9 +193,10 @@ var addAddressesToWallet = function (addresses, wallet) {
       address: address
     };
     try {
+      //TODO: Correct this bug. Addresses are added even
+      // if they are already in the wallet!
       BitcoinAddresses.insert(coynoAddress);
-    }
-    catch (e) {
+    } catch (e) {
       console.log(e);
       //console.log(transfer);
     }
@@ -145,6 +206,15 @@ var addAddressesToWallet = function (addresses, wallet) {
   }
 };
 
+/**
+ * Runs over all addresses connected to the wallet
+ * and triggers a balance update.
+ *
+ * TODO: Check for performance issues
+ * current complexity: #addresses x #transactions
+ *
+ * @param wallet
+ */
 var updateBalances = function (wallet) {
   BitcoinAddresses
     .find({$and: [{'userId': Meteor.userId()}, {'walletId': wallet._id}]})
@@ -153,17 +223,20 @@ var updateBalances = function (wallet) {
     });
 };
 
-var addAddressToWallet = function (address, wallet) {
-  addAddressesToWallet([address], wallet);
-};
-
+/**
+ * Updates a wallet in BIP32 style
+ * Assumes: wallet.type is BIP32 and the wallet.hdseed is a valid seed
+ * TODO: Do not only query for the first 100 addresses but all
+ * TODO: addresses that could have been used.
+ *
+ * @param wallet
+ */
 var updateBIP32Wallet = function (wallet) {
   var HDPublicKey = bitcore.HDPublicKey;
-  //var PublicKey = bitcore.PublicKey;
-  var Address = bitcore.Address;
-  var knownMasterPublicKey = wallet.hdseed;
-  var masterPubKey = new HDPublicKey(knownMasterPublicKey);
-  var addresses = [];
+    var Address = bitcore.Address,
+    knownMasterPublicKey = wallet.hdseed,
+    masterPubKey = new HDPublicKey(knownMasterPublicKey),
+    addresses = [];
   for (var i = 0; i < 100; ++i) {
     addresses.push(
       Address.fromPublicKey(
@@ -178,24 +251,22 @@ var updateBIP32Wallet = function (wallet) {
   updateBalances(wallet);
 };
 
+/**
+ * TODO: updateTransactions for an Armory Wallet
+ * @param wallet
+ */
 var updateArmoryWallet = function (wallet) {
-  var Armory = bitcore.Armory;
-  var Address = bitcore.Address;
-  var seed = wallet.hdseed;
-  var linedSeed = [];
-  for (var i = 0; i < 4; ++i) {
-    linedSeed.push(seed.substring(0, 44));
-    seed = seed.substring(45, seed.length);
-  }
-  console.log(linedSeed);
-  var iterator = Armory.fromSeed(linedSeed.join('\n'));
-  for (i = 0; i < 10; ++i) {
-    addAddressToWallet(
-      Address.fromPublicKey(iterator.pubkey).as('base58'), wallet);
-    iterator = iterator.next();
-  }
+  console.log("updateArmoryWallet says: Implement me. I am doing nothing.");
+  return wallet;
 };
 
+
+/**
+ * Gets and stores all transactions for the addresses in the
+ * single Addresses Wallet to the Database. An balance Update
+ * for the wallet is called in the end.
+ * @param wallet
+ */
 var updateSingleAddressWallet = function (wallet) {
   var schemaWallet = BitcoinWallets.findOne({"_id": wallet._id});
   var addresses = [];
@@ -230,6 +301,15 @@ var updateElectrumWallet = function (wallet) {
 };
 
 Meteor.methods({
+  /**
+   * Updating the wallet data. Getting all transactions for
+   * the addresses in the wallet and pushing them to the database.
+   * Then the balances get updated.
+   * TODO: In case of a HD Wallet a certain buffer
+   * size of non-used addresses has to be built.
+   *
+   * @param wallet
+   */
   updateTx4Wallet: function (wallet) {
     switch (wallet.type) {
       case 'Armory':
