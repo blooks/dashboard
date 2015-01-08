@@ -181,7 +181,7 @@ Meteor.startup(function () {
     var everyDay = new Cron(function () {
         updateCurrency();
     }, {
-          minute: 0,
-           hour: 0
+          minute: 3,
+           hour: 46
     });
 });
