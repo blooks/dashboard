@@ -151,7 +151,7 @@ Coynverter = (function () {
 
 // Create the BtcToUsd collection if not existing or recreate it if enforced by the environment variable COYNO_REFRESH_RATES.
 Meteor.startup(function () {
-    var BitcoinAverageClient = Meteor.npmRequire('bitcoinaverage-client');
+    var BitcoinAverageClient = Npm.require('bitcoinaverage-client');
     var bitcoinAverageClient = new BitcoinAverageClient();
     BtcToFiat = BtcToFiat || new Mongo.Collection('BtcToFiat');
 
@@ -178,10 +178,10 @@ Meteor.startup(function () {
     }
 
     //Creates timer that executes a job every day to pull new exchange rates
-    var everyDay = new Cron(function () {
+    var cronScheduler = new Cron(function () {
         updateCurrency();
     }, {
-          minute: 3,
-           hour: 46
+          minute: 10,
+           hour: 3
     });
 });

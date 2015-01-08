@@ -13,8 +13,8 @@
       "1.0.1"
     ],
     [
-      "bitcoinaverage-client",
-      "0.0.5"
+      "chfritz:easycron",
+      "0.0.3"
     ]
   ],
   "pluginDependencies": [],
