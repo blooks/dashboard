@@ -1,0 +1,53 @@
+<template name="transferFlowDetail">
+    {{#if isInternal}}
+    <tr class="internal">
+        <td>{{prettyDate date}}</td>
+        <td>{{details.currency}}</td>
+        <td>{{saneNumber amount this.details.currency}}</td>
+        <td></td>
+        <td>{{toInternalLabel}}</td>
+        <td>{{fromInternalLabel}}</td>
+        <td></td>
+        <td>{{saneNumber fee this.details.currency}}
+        </td>
+        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+        <td><a href="#" class="delete-transaction"><span
+                class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+    {{else}}
+    {{#if toExternal}}
+    <tr class="outgoing">
+        <td>{{prettyDate date}}</td>
+        <td>{{details.currency}}</td>
+        <td>{{saneNumber amount this.details.currency}}</td>
+        <td></td>
+        <td></td>
+        <td>{{fromInternalLabel}}</td>
+        <td>{{toExternalLabel}}</td>
+
+        <td>{{saneNumber fee this.details.currency}}
+        </td>
+        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+        <td><a href="#" class="delete-transaction"><span
+                class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+    {{else}}
+    {{#if fromExternal}}
+    <tr class="incoming">
+        <td>{{prettyDate date}}</td>
+        <td>{{details.currency}}</td>
+        <td>{{saneNumber amount this.details.currency}}</td>
+        <td>{{fromExternalLabel}}</td>
+        <td>{{toInternalLabel}}</td>
+        <td></td>
+        <td></td>
+        <td>{{saneNumber fee this.details.currency}}
+        </td>
+        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+        <td><a href="#" class="delete-transaction"><span
+                class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+    {{/if}}
+    {{/if}}
+    {{/if}}
+</template>
