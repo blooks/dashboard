@@ -60,12 +60,31 @@ var chainTxToCoynoTx = function (chainTx) {
   return result;
 };
 
+/**
+ * Adding additional data to the transfer object.
+ * More specifically
+ *  userId
+ *  sourceId --> from the wallet provided
+ *
+ * @param transfer
+ * @param wallet
+ * @returns {} with added UserId and SourceId
+ */
 var addCoynoData = function (transfer, wallet) {
   transfer.userId = Meteor.userId();
   transfer.sourceId = wallet._id;
   return transfer;
 };
 
+/**
+ * If the output address is not connected to a Coyno
+ * Address for this user, this function will look up
+ * whether one of the users wallets contain the address
+ * and if so connect the output to it
+ * @param inoutput
+ * @returns {} now connected to the Coyno Database Object
+ * if there is one for this address and this user
+ */
 var connectToInternalNode = function (inoutput) {
   if (!inoutput.nodeId) {
     var internalAddress = BitcoinAddresses.findOne(
@@ -77,32 +96,41 @@ var connectToInternalNode = function (inoutput) {
   return inoutput;
 };
 
-var addTransaction = function (transaction) {
-  var transfer = Transfers.findOne({"foreignId": transaction.foreignId}),
-    newTransfer = false,
+/**
+ * Tries to add a transfer to the database or update the transfer if it
+ * has already been there (e.g. the user already added the other side of the
+ * transfer as an address in one of his wallets). Will log to the console
+ * if the Database push fails.
+ *
+ *
+ * @param transfer
+ */
+var addTransfer = function (transfer) {
+  var oldTransfer = Transfers.findOne({"foreignId": transfer.foreignId}),
+    isNewTransfer = true,
     inputs = transfer.details.inputs,
     newInputs = [],
     outputs = transfer.details.outputs,
     newOutputs = [];
-  if (!transfer) {//Transaction already stored for this User
-    transfer = transaction;
-    newTransfer = true;
+
+  if (oldTransfer) {//Transaction already stored for this User
+    transfer = oldTransfer;
+    isNewTransfer = false;
   }
-  if (!inputs) {
-    console.log('INTERNAL INPUTS DO NOT EXIST!');
-  }
+
   inputs.forEach(function (input) {
     newInputs.push(connectToInternalNode(input));
   });
+  //connected inputs have been built, need to be stored
   inputs = newInputs;
-  if (!outputs) {
-    console.log('INTERNAL OUTPUTS DO NOT EXIST!');
-  }
+
   outputs.forEach(function (output) {
     newOutputs.push(connectToInternalNode(output));
   });
+  //connected outputs have been built, need to be stored
   outputs = newOutputs;
-  if (newTransfer) {
+
+  if (isNewTransfer) {
     try {
       Transfers.insert(transfer);
     } catch (error) {
@@ -133,7 +161,7 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   console.log('Asked chain.com for tx for ' + addresses.length +
   " addresses. Got " + chainTxs.length + " transactions.");
   chainTxs.forEach(function (chainTx) {
-    addTransaction(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
+    addTransfer(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
   });
 };
 /**
