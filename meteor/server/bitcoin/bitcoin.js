@@ -224,16 +224,6 @@ var updateBalances = function (wallet) {
 };
 
 /**
- * Wrapper to add an Address to a wallet with one
- * single address string
- * @param address
- * @param wallet
- */
-var addAddressToWallet = function (address, wallet) {
-  addAddressesToWallet([address], wallet);
-};
-
-/**
  * Updates a wallet in BIP32 style
  * Assumes: wallet.type is BIP32 and the wallet.hdseed is a valid seed
  * TODO: Do not only query for the first 100 addresses but all
