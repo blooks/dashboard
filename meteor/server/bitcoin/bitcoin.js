@@ -150,6 +150,18 @@ var addTransfer = function (transfer) {
   }
 };
 
+/**
+ * Getting all transactions for the array of addresses from the
+ * Bitcoin blockchain via the Chain API
+ *
+ * TODO: Get all transactions instead of just 500.
+ * See https://github.com/chain-engineering/chain-node/issues/9
+ *
+ *
+ * @param addresses
+ * @param wallet
+ */
+
 var updateTransactionsForAddresses = function (addresses, wallet) {
   var chain = new Chain({
     keyId: 'a3dcecd08d5ef5476956f88dace0521a',
@@ -164,8 +176,12 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
     addTransfer(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
   });
 };
+
 /**
  * Creates Coynoaddresses out of strings and puts them in the Database
+ * It adds addresses again if the are already in the DB.
+ * TODO: The latter is a bug! See below.
+ *
  * @param {[String]} addresses array of strings giving addresses
  * @param {BitcoinWallets} wallet the wallet these addresses belong to
  */
@@ -177,6 +193,8 @@ var addAddressesToWallet = function (addresses, wallet) {
       address: address
     };
     try {
+      //TODO: Correct this bug. Addresses are added even
+      // if they are already in the wallet!
       BitcoinAddresses.insert(coynoAddress);
     } catch (e) {
       console.log(e);
@@ -188,6 +206,15 @@ var addAddressesToWallet = function (addresses, wallet) {
   }
 };
 
+/**
+ * Runs over all addresses connected to the wallet
+ * and triggers a balance update.
+ *
+ * TODO: Check for performance issues
+ * current complexity: #addresses x #transactions
+ *
+ * @param wallet
+ */
 var updateBalances = function (wallet) {
   BitcoinAddresses
     .find({$and: [{'userId': Meteor.userId()}, {'walletId': wallet._id}]})
@@ -196,14 +223,27 @@ var updateBalances = function (wallet) {
     });
 };
 
+/**
+ * Wrapper to add an Address to a wallet with one
+ * single address string
+ * @param address
+ * @param wallet
+ */
 var addAddressToWallet = function (address, wallet) {
   addAddressesToWallet([address], wallet);
 };
 
+/**
+ * Updates a wallet in BIP32 style
+ * Assumes: wallet.type is BIP32 and the wallet.hdseed is a valid seed
+ * TODO: Do not only query for the first 100 addresses but all
+ * TODO: addresses that could have been used.
+ *
+ * @param wallet
+ */
 var updateBIP32Wallet = function (wallet) {
   var HDPublicKey = bitcore.HDPublicKey;
-  //var PublicKey = bitcore.PublicKey;
-  var Address = bitcore.Address,
+    var Address = bitcore.Address,
     knownMasterPublicKey = wallet.hdseed,
     masterPubKey = new HDPublicKey(knownMasterPublicKey),
     addresses = [];
@@ -221,24 +261,22 @@ var updateBIP32Wallet = function (wallet) {
   updateBalances(wallet);
 };
 
+/**
+ * TODO: updateTransactions for an Armory Wallet
+ * @param wallet
+ */
 var updateArmoryWallet = function (wallet) {
-  var Armory = bitcore.Armory;
-  var Address = bitcore.Address;
-  var seed = wallet.hdseed;
-  var linedSeed = [];
-  for (var i = 0; i < 4; ++i) {
-    linedSeed.push(seed.substring(0, 44));
-    seed = seed.substring(45, seed.length);
-  }
-  console.log(linedSeed);
-  var iterator = Armory.fromSeed(linedSeed.join('\n'));
-  for (i = 0; i < 10; ++i) {
-    addAddressToWallet(
-      Address.fromPublicKey(iterator.pubkey).as('base58'), wallet);
-    iterator = iterator.next();
-  }
+  console.log("updateArmoryWallet says: Implement me. I am doing nothing!");
+  return wallet;
 };
 
+
+/**
+ * Gets and stores all transactions for the addresses in the
+ * single Addresses Wallet to the Database. An balance Update
+ * for the wallet is called in the end.
+ * @param wallet
+ */
 var updateSingleAddressWallet = function (wallet) {
   var schemaWallet = BitcoinWallets.findOne({"_id": wallet._id});
   var addresses = [];
@@ -273,6 +311,15 @@ var updateElectrumWallet = function (wallet) {
 };
 
 Meteor.methods({
+  /**
+   * Updating the wallet data. Getting all transactions for
+   * the addresses in the wallet and pushing them to the database.
+   * Then the balances get updated.
+   * TODO: In case of a HD Wallet a certain buffer
+   * size of non-used addresses has to be built.
+   *
+   * @param wallet
+   */
   updateTx4Wallet: function (wallet) {
     switch (wallet.type) {
       case 'Armory':
