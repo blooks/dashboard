@@ -132,6 +132,15 @@ Transfers.helpers({
             return true;
         }
         return false;
+    },
+    transferType: function() {
+        if(this.isInternal()) {
+            return "internal";
+        } else if(this.toExternal()){
+            return "outgoing";
+        } else {
+            return "incoming";
+        }
     }
 });
 
