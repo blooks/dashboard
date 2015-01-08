@@ -1,23 +1,20 @@
+
 var Chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
 var Electrum = Meteor.npmRequire('bitcore-electrum');
 
 var chainTxToCoynoTx = function (chainTx) {
-  var result = {};
+  'use strict';
+  var result = {}, inputs = [], outputs = [];
   result.foreignId = Meteor.userId() + chainTx.hash;
   /* jshint camelcase: false */
   if (chainTx.block_time) {
     result.date = new Date(chainTx.block_time);
-  }
-  else {
+  } else {
     result.date = new Date(chainTx.chain_received_at);
   }
   /* jshint camelcase: true */
-  var inputs = [];
-  var outputs = [];
-  if (!chainTx.inputs) {
-    console.log('INPUTS DO NOT EXIST!');
-  }
+  if (!chainTx.inputs) { console.log('INPUTS DO NOT EXIST!'); }
   chainTx.inputs.forEach(function (input) {
     inputs.push({
       amount: input.value,
@@ -42,11 +39,14 @@ var chainTxToCoynoTx = function (chainTx) {
 };
 
 var addCoynoData = function (transfer, wallet) {
+  'use strict';
   transfer.userId = Meteor.userId();
   transfer.sourceId = wallet._id;
   return transfer;
 };
+
 var connectToInternalNode = function (inoutput) {
+  'use strict';
   if (!inoutput.nodeId) {
     var internalAddress = BitcoinAddresses.findOne(
       {$and: [{'userId': Meteor.userId()}, {'address': inoutput.note}]});
@@ -58,27 +58,27 @@ var connectToInternalNode = function (inoutput) {
 };
 
 var addTransaction = function (transaction) {
-  var transfer = Transfers.findOne({"foreignId": transaction.foreignId});
-  var newTransfer = false;
+  'use strict';
+  var transfer = Transfers.findOne({"foreignId": transaction.foreignId}),
+    newTransfer = false,
+    inputs = transfer.details.inputs,
+    newInputs = [],
+    outputs = transfer.details.outputs,
+    newOutputs = [];
   if (!transfer) {//Transaction already stored for this User
     transfer = transaction;
     newTransfer = true;
   }
-  var inputs = transfer.details.inputs;
   if (!inputs) {
     console.log('INTERNAL INPUTS DO NOT EXIST!');
   }
-  var newInputs = [];
   inputs.forEach(function (input) {
-      newInputs.push(connectToInternalNode(input));
-    }
-  );
+    newInputs.push(connectToInternalNode(input));
+  });
   inputs = newInputs;
-  var outputs = transfer.details.outputs;
   if (!outputs) {
     console.log('INTERNAL OUTPUTS DO NOT EXIST!');
   }
-  var newOutputs = [];
   outputs.forEach(function (output) {
     newOutputs.push(connectToInternalNode(output));
   });
@@ -86,12 +86,10 @@ var addTransaction = function (transaction) {
   if (newTransfer) {
     try {
       Transfers.insert(transfer);
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
-  }
-  else {
+  } else {
     try {
       Transfers.update({"_id": transfer._id}, {
         $set: {
@@ -99,8 +97,7 @@ var addTransaction = function (transaction) {
           "details.inputs": inputs
         }
       });
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   }
@@ -115,7 +112,7 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   var syncChain = Async.wrap(chain, ['getAddressesTransactions']);
   var chainTxs = syncChain.getAddressesTransactions(addresses, {limit: 500});
   console.log('Asked chain.com for tx for ' + addresses.length +
-    " addresses. Got " + chainTxs.length + " transactions.");
+  " addresses. Got " + chainTxs.length + " transactions.");
   chainTxs.forEach(function (chainTx) {
     addTransaction(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
   });
@@ -134,8 +131,7 @@ var addAddressesToWallet = function (addresses, wallet) {
     };
     try {
       BitcoinAddresses.insert(coynoAddress);
-    }
-    catch (e) {
+    } catch (e) {
       console.log(e);
       //console.log(transfer);
     }
@@ -160,10 +156,10 @@ var addAddressToWallet = function (address, wallet) {
 var updateBIP32Wallet = function (wallet) {
   var HDPublicKey = bitcore.HDPublicKey;
   //var PublicKey = bitcore.PublicKey;
-  var Address = bitcore.Address;
-  var knownMasterPublicKey = wallet.hdseed;
-  var masterPubKey = new HDPublicKey(knownMasterPublicKey);
-  var addresses = [];
+  var Address = bitcore.Address,
+    knownMasterPublicKey = wallet.hdseed,
+    masterPubKey = new HDPublicKey(knownMasterPublicKey),
+    addresses = [];
   for (var i = 0; i < 100; ++i) {
     addresses.push(
       Address.fromPublicKey(
