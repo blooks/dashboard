@@ -1,3 +1,4 @@
+# coffeelint: disable=max_line_length
 # Let's try to separate strings by views, as much as possible.
 i18n.map 'en_GB',
 
@@ -15,7 +16,7 @@ i18n.map 'en_GB',
     buttons:
       save: 'Save'
       add: 'Add'
-  
+
   # Trades
   trades:
     headings:

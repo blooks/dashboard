@@ -33,7 +33,7 @@ BitcoinWallets.timed()
 
 # Ensure every document is owned by a user
 BitcoinWallets.owned()
-  #Transactions.find(userId: @userId).length
+#Transactions.find(userId: @userId).length
 
 BitcoinWallets.allow
   insert: (userId, item) ->

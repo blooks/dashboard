@@ -9,16 +9,17 @@
 });*/
 
 Template.userProfile.helpers({
-	/*TODO @levin, on profile page we should be: 
-	email/username 
-	change password
-	delete user */
-	displayName : function () {
-		return Accounts._loginButtons.displayName();
-	},
-	userEmail : function () {
-		var user = Meteor.user();
-		if (user && user.emails)
-    	return user.emails[0].address;
-	}
+  /*TODO @levin, on profile page we should be:
+   email/username
+   change password
+   delete user */
+  displayName: function () {
+    return Accounts._loginButtons.displayName();
+  },
+  userEmail: function () {
+    var user = Meteor.user();
+    if (user && user.emails) {
+      return user.emails[0].address;
+    }
+  }
 });

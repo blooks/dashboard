@@ -5,7 +5,7 @@ Template.registerHelper 'prettyDateLong', (date)->
   moment(date).format('dddd DD/MM/YYYY hh:mm:ss');
 
 Template.registerHelper 'saneNumber', (internalNumber, currency)->
-	if currency is 'BTC'
-		(internalNumber/100000000).toFixed(8)
-	else
-		(internalNumber/100000000).toFixed(2)
+  if currency is 'BTC'
+    (internalNumber / 10e8).toFixed(8)
+  else
+    (internalNumber / 10e8).toFixed(2)

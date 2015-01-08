@@ -1,15 +1,19 @@
-CollectionBehaviours.defineBehaviour('softRemovable', function(getTransform, args){
+CollectionBehaviours.defineBehaviour('softRemovable', function () {
   var self = this;
-  self.before.find(function (userId, selector, options) {
-    if (typeof selector === 'undefined')
+  self.before.find(function (userId, selector) {
+    if (typeof selector === 'undefined') {
       selector = {};
-    if(typeof selector.removed === 'undefined')
+    }
+    if (typeof selector.removed === 'undefined') {
       selector.removed = {$exists: false};
+    }
   });
-  self.before.findOne(function (userId, selector, options) {
-    if (typeof selector === 'undefined')
+  self.before.findOne(function (userId, selector) {
+    if (typeof selector === 'undefined') {
       selector = {};
-    if(typeof selector.removed === 'undefined')
+    }
+    if (typeof selector.removed === 'undefined') {
       selector.removed = {$exists: false};
+    }
   });
 });

@@ -1,3 +1,4 @@
+# coffeelint: disable=max_line_length
 # Let's try to separate strings by views, as much as possible.
 i18n.map 'de_DE',
 
@@ -9,7 +10,7 @@ i18n.map 'de_DE',
       upload: 'Upload'
       settings: 'Einstellungen'
       help: 'Hilfe'
-  
+
   # Transactions
   transactions:
     headings:

@@ -1,11 +1,11 @@
 Template.bitcoinWalletAddresses.helpers({
-  addresses: function(){
-	return this.addresses();
+  addresses: function () {
+    return this.addresses();
   },
-  showAddress: function(address) {
+  showAddress: function (address) {
     return (address.balance > 0);
   },
-  singleAddressWallet: function(wallet) {
-    return (wallet.hdseed == null);
+  singleAddressWallet: function (wallet) {
+    return (wallet.hdseed === null || wallet.hdseed === undefined);
   }
 });

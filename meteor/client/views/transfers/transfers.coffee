@@ -1,2 +1,2 @@
 Template.transfers.rendered = () ->
-	$('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip()
