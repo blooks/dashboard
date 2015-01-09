@@ -17,7 +17,7 @@ var nodeLabel = function nodeLabel(nodeId) {
       return result.label;
     }
   }
-  return "";
+  return "External";
 };
 
 /**
@@ -101,30 +101,20 @@ Transfers.helpers({
   },
 
   /**
-   * Fetches label of a known recipient. Note that calling this
-   * function assumes
-   * that the transfer has a valid recipientNodeId.
+   * Fetches label of a the recipient. If the recipient
+   * is unknown "External" is returned.
    * @returns {string} Label of the Node.
    */
-  internalRecipientLabel: function () {
+  recipientLabel: function () {
     return nodeLabel(this.recipientNodeId());
   },
   /**
-   * Fetches label of a known sender. Note that calling this function assumes
-   * that the transfer has a valid senderNodeId.
-   * @returns {string} Label of the Node.
+   * Fetches label of the sender. If the recipient is
+   * unknown, "External" is returned.
+   * @returns {string} Label of the sender.
    */
-  outgoingRecipientLabel: function () {
+  senderLabel: function () {
     return nodeLabel(this.senderNodeId());
-  },
-  outgoingLabel: function () {
-    return "Outgoing";
-  },
-  incomingLabel: function () {
-    return "Incoming";
-  },
-  valueLabel: function () {
-    return this.baseVolume;
   },
   /**
    * Determines if transfer is internal

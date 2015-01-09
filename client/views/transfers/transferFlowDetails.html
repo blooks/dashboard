@@ -3,23 +3,23 @@
         <td>{{prettyDate date}}</td>
         {{#if isInternal}}
         <td colspan="2"></td>
-        <td class="internal-tx-cell">{{toInternalLabel}}</td>
+        <td class="internal-tx-cell">{{senderLabel}}</td>
         <td class="neutral-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> &nbsp; {{saneNumber amount this.details.currency}} {{details.currency}}</a></td>
-        <td class="internal-tx-cell">{{fromInternalLabel}}</td>
+        <td class="internal-tx-cell">{{recipientLabel}}</td>
         <td colspan="2"></td>
         <td> &nbsp; {{saneNumber baseVolume 'EUR' }} EUR</td>
         {{else}}
-            {{#if toExternal}}
+            {{#if isOutgoing}}
                 <td colspan="4"></td>
-                <td class="negative outgoing-tx-cell">{{fromInternalLabel}}</td>
+                <td class="negative outgoing-tx-cell">{{senderLabel}}</td>
                 <td class="negative-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> &#45; {{saneNumber amount this.details.currency}} {{details.currency}}</a></td>
-                <td class="negative">{{toExternalLabel}}</td>
+                <td class="negative">{{recipientLabel}}</td>
                 <td class="negative">&#45; {{saneNumber baseVolume 'EUR' }} EUR</td>
             {{else}}
-                {{#if fromExternal}}
-                    <td class="positive">{{fromExternalLabel}}</td>
+                {{#if isIncoming}}
+                    <td class="positive">{{senderLabel}}</td>
                     <td class="positive-bg tx-arrow"><a href="#" class="btn btn-arrow-right">&#43; {{saneNumber amount this.details.currency}} {{details.currency}}</a></td>
-                    <td class="positive internal-tx-cell">{{toInternalLabel}}</td>
+                    <td class="positive internal-tx-cell">{{recipientLabel}}</td>
                     <td colspan="4"></td>
                     <td class="positive">&#43; {{saneNumber baseVolume 'EUR' }} EUR</td>
                 {{/if}}
