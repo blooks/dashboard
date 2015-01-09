@@ -103,29 +103,72 @@ Transfers.helpers({
     });
     return result;
   },
-  toInternalLabel: function () {
+
+  /**
+   * Fetches label of a known recipient. Note that calling this function assumes that the transfer has a valid recipientNodeId.
+   * @returns {string} Label of the Node.
+   */
+  internalRecipientLabel: function () {
     return nodeLabel(this.recipientNodeId());
   },
-  fromInternalLabel: function () {
+  /**
+   * Fetches label of a known sender. Note that calling this function assumes that the transfer has a valid senderNodeId.
+   * @returns {string} Label of the Node.
+   */
+  outgoingRecipientLabel: function () {
     return nodeLabel(this.senderNodeId());
   },
-  toExternalLabel: function () {
+  outgoingLabel: function () {
     return "Outgoing";
   },
-  fromExternalLabel: function () {
+  incomingLabel: function () {
     return "Incoming";
   },
   valueLabel: function () {
-    return this.baseVolume;
+    return this.baseVolume
   },
+  /**
+   * Determines if transfer is internal
+   * @returns {boolean} true if the sender and the recipient of the transfer are known
+   */
   isInternal: function () {
-    return !!(this.senderNodeId() && this.recipientNodeId());
+    if (this.senderNodeId() && this.recipientNodeId()) {
+      return true;
+    }
+    return false;
   },
-  toExternal: function () {
-    return !!this.senderNodeId();
+  /**
+   * Determines if transfer is outgoing
+   * @returns {boolean} true if the sender of the transfer is known
+   */
+  isOutgoing: function () {
+    if (this.senderNodeId()) {
+      return true;
+    }
+    return false;
   },
-  fromExternal: function () {
-    return !!this.recipientNodeId();
+  /**
+   * Determines if transfer is incoming
+   * @returns {boolean} true if the recipient of the transfer is known
+   */
+  isIncoming: function () {
+    if (this.recipientNodeId()) {
+      return true;
+    }
+    return false;
+  },
+  /**
+   * Determines the type of the transfer
+   * @returns {string} type of transfer. 'internal', 'outgoing' or 'incoming'
+   */
+  transferType: function() {
+    if(this.isInternal()) {
+      return "internal";
+    } else if(this.isOutgoing()){
+      return "outgoing";
+    } else {
+      return "incoming";
+    }
   }
 });
 
