@@ -20,10 +20,6 @@ var nodeLabel = function nodeLabel(nodeId) {
   return "";
 };
 
-var labelForVolumeFragment = function (volumeFragment) {
-  return nodeLabel(volumeFragment.nodeId);
-};
-
 /**
  *
  * @param inoutput
@@ -105,14 +101,17 @@ Transfers.helpers({
   },
 
   /**
-   * Fetches label of a known recipient. Note that calling this function assumes that the transfer has a valid recipientNodeId.
+   * Fetches label of a known recipient. Note that calling this
+   * function assumes
+   * that the transfer has a valid recipientNodeId.
    * @returns {string} Label of the Node.
    */
   internalRecipientLabel: function () {
     return nodeLabel(this.recipientNodeId());
   },
   /**
-   * Fetches label of a known sender. Note that calling this function assumes that the transfer has a valid senderNodeId.
+   * Fetches label of a known sender. Note that calling this function assumes
+   * that the transfer has a valid senderNodeId.
    * @returns {string} Label of the Node.
    */
   outgoingRecipientLabel: function () {
@@ -125,11 +124,12 @@ Transfers.helpers({
     return "Incoming";
   },
   valueLabel: function () {
-    return this.baseVolume
+    return this.baseVolume;
   },
   /**
    * Determines if transfer is internal
-   * @returns {boolean} true if the sender and the recipient of the transfer are known
+   * @returns {boolean} true if the sender and the recipient of the
+   * transfer are known
    */
   isInternal: function () {
     if (this.senderNodeId() && this.recipientNodeId()) {
