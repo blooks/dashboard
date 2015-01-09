@@ -86,33 +86,17 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-<!--                                         <th class="positive">{{i18n 'transfers.headings.table.unknown'}}
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} ">
-                                                <span class="glyphicon glyphicon-info-sign"></span>
-                                            </a>
-                                        </th>
-                                        <th colspan="4">{{i18n 'transfers.headings.table.known'}}
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.knownSource'}} ">
-                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                            </a>
-                                        </th>
-                                        <th colspan="2" class="negative">{{i18n 'transfers.headings.table.unknown'}}
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.unknownSource'}} ">
-                                                <span class="glyphicon glyphicon-info-sign"></span>
-                                            </a>
-                                        </th> -->
                                         <th>{{i18n 'transfers.headings.table.value'}}
                                             <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.value'}} ">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
                                         <th colspan="2" class="no-border"></th>
-
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {{#each transfers}}
-                                        {{> transferFlowDetail }}
+                                        {{> transferRow }}
                                     {{/each}}
                                     </tbody>
                                 </table>
