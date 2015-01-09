@@ -17,11 +17,7 @@ var nodeLabel = function nodeLabel(nodeId) {
       return result.label;
     }
   }
-  return "";
-};
-
-var labelForVolumeFragment = function (volumeFragment) {
-  return nodeLabel(volumeFragment.nodeId);
+  return "External";
 };
 
 /**
@@ -103,29 +99,73 @@ Transfers.helpers({
     });
     return result;
   },
-  toInternalLabel: function () {
+
+  /**
+   * Fetches label of a the recipient. If the recipient
+   * is unknown "External" is returned.
+   * @returns {string} Label of the Node.
+   */
+  recipientLabel: function () {
     return nodeLabel(this.recipientNodeId());
   },
-  fromInternalLabel: function () {
+  /**
+   * Fetches label of the sender. If the recipient is
+   * unknown, "External" is returned.
+   * @returns {string} Label of the sender.
+   */
+  senderLabel: function () {
     return nodeLabel(this.senderNodeId());
   },
-  toExternalLabel: function () {
-    return "Outgoing";
-  },
-  fromExternalLabel: function () {
-    return "Incoming";
-  },
-  valueLabel: function () {
-    return this.baseVolume;
-  },
+  /**
+   * Determines if transfer is internal
+   * @returns {boolean} true if the sender and the recipient of the
+   * transfer are known
+   */
   isInternal: function () {
-    return !!(this.senderNodeId() && this.recipientNodeId());
+    if (this.senderNodeId() && this.recipientNodeId()) {
+      return true;
+    }
+    return false;
   },
-  toExternal: function () {
-    return !!this.senderNodeId();
+  /**
+   * Determines if transfer is outgoing
+   * @returns {boolean} true if the sender of the transfer is known
+   */
+  isOutgoing: function () {
+    if (this.senderNodeId()) {
+      return true;
+    }
+    return false;
   },
-  fromExternal: function () {
-    return !!this.recipientNodeId();
+  /**
+   * Determines if transfer is incoming
+   * @returns {boolean} true if the recipient of the transfer is known
+   */
+  isIncoming: function () {
+    if (this.recipientNodeId()) {
+      return true;
+    }
+    return false;
+  },
+  /**
+   * Determines the type of the transfer
+   * @returns {string} type of transfer. 'internal', 'outgoing' or 'incoming'
+   */
+  transferType: function () {
+    if (this.isInternal()) {
+      return "internal";
+    } else if (this.isOutgoing()) {
+      return "outgoing";
+    } else {
+      return "incoming";
+    }
+  },
+  saneAmount: function () {
+    if (this.details.currency === 'BTC') {
+      return (this.amount() / 10e7).toFixed(8);
+    } else {
+      return (this.amount() / 10e7).toFixed(2);
+    }
   }
 });
 
