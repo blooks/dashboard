@@ -12,16 +12,3 @@ Template.transfers.events({
     });
   }
 });
-/*
-        {{#if isIncoming }}
-
-            <td></td>
-        {{/if}}
-        {{#if isInternal }}
-
-        {{/if}}
-        {{#if isOutgoing }}
-            <td colspan="4"></td>
-        {{/if}}
-
-*/

@@ -132,7 +132,7 @@ Transfers.helpers({
    * @returns {boolean} true if the sender of the transfer is known
    */
   isOutgoing: function () {
-    if (this.senderNodeId()) {
+    if (this.senderNodeId() && !this.recipientNodeId()) {
       return true;
     }
     return false;
@@ -142,7 +142,7 @@ Transfers.helpers({
    * @returns {boolean} true if the recipient of the transfer is known
    */
   isIncoming: function () {
-    if (this.recipientNodeId()) {
+    if (this.recipientNodeId() && !this.senderNodeId()) {
       return true;
     }
     return false;

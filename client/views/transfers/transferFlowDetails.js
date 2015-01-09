@@ -3,7 +3,7 @@ Template.transferRow.helpers({
     var result = transfer.saneAmount();
     switch (transfer.transferType()) {
      case "internal":
-     result = " &nbsp; " + result;
+     result = " " + result;
      break;
      case "incoming":
      result =  "+" + result;
@@ -22,13 +22,20 @@ Template.transferRow.helpers({
         case 'outgoing' :
             return 4;
             break;
-        case 'incoming' :
-            return 1;
-            break;
+        //  Not called for incoming tx row
     }
   },
+  /*TODO refactor code duplication (reverse logic of colSPandBefore */
   colSpanAfter : function() {
-    return (5 - colSpanBefore);
+    switch (this.transferType()) {
+        case 'internal' :
+            return 2;
+            break;
+        // Not called for outgoing tx row
+        case 'incoming' :
+            return 4;
+            break;
+    }
   }
 
 });
