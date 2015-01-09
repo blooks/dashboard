@@ -413,7 +413,7 @@ TODO move these to less files in folders.
 
 }
 
-/* Form styling
+/* Global form styles
 ---------------- */
 input {
 	background: none;
@@ -423,6 +423,21 @@ input {
 	&:hover {
 		border: 1px solid @gray-light;
 	}
+}
+
+.big-input-item {
+	padding: 12px 0;
+	padding: 1rem 0;
+	font-size: 18px;
+	font-size: 1.5rem;
+}
+
+/* Class for heading dividing into sections */
+.form-divider {
+	border-bottom: 1px solid @gray-medium-light ;
+	color: @gray-medium-light;
+	padding-top: 24px;
+	padding-top: 2rem;
 }
 
 /* Graphics
@@ -464,7 +479,14 @@ input {
 			background-color: @brand-dark;
 			border-color: @brand-dark;
 		}
-
+	}
+	&.warning-btn {
+		color: @negative;
+		border-color: @negative;
+		&:hover, &:focus {
+			color: @whyte;
+			background-color: @negative;
+		}
 	}
 }
 
