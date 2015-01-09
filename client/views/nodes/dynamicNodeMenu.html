@@ -1,0 +1,10 @@
+<template name="dynamicNodeMenu">
+  <div class="row sub-nav-zone">
+    <ul class="nav nav-tabs">
+      <li class=" {{isActive "nodesOverview"}} "><a href="/nodes/nodesOverview"><i class="fa fa-bar-chart"></i> Overview</a></li>
+      <!-- Removed for the time being. <li class=" {{isActive "currencyExchanges"}} "><a href="/nodes/currencyExchanges"><i class="fa fa-bitcoin"></i> Exchanges</a></li>-->
+      <li class=" {{isActive "bitcoinWallets"}} "><a href="/nodes/bitcoinWallets"><i class="fa fa-bookmark-o"></i> Wallets</a></li>
+      <!--- Removed for the time being until we add Exchanges and Trades again <li class=" {{isActive "bankAccounts"}} "><a href="/nodes/bankAccounts"><i class="fa fa-credit-card"></i> Bank Accounts</a></li>-->
+    </ul>
+  </div>
+</template>

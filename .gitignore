@@ -1,7 +1,4 @@
-.DS_Store
-*.sublime-project
-*.sublime-workspace
-dump
 .idea
-
-meteor/server/kadira.js
+meteor/local
+packages/tests-proxy
+node_modules

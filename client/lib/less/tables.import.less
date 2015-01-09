@@ -1,0 +1,207 @@
+/*All table styles here*/
+
+/* Tables */
+.table {
+
+    &.table-bordered {}
+
+    &.table-tx {}
+
+    &.auto-width {
+      width: auto;
+    }
+
+  thead {
+
+    tr {
+    padding: 8px 15px;
+    padding: .75rem 1.25rem;
+
+      &.no-border {
+            border: none;
+            border-bottom: 2px;
+            }
+
+        th {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: @font-family-sans-serif;
+            /* border-bottom: 1px;*/
+
+              &.supa-header {
+               text-align: center;
+               color: @whyte;
+
+                   &.inflow {
+                      background-color: @positive;
+                   }
+
+                   &.outflow {
+                      background-color: @negative;
+                   }
+              }
+            }
+        }
+   }
+
+  tbody {
+    tr {
+      td {
+            padding: 12px 16px;
+            padding: 1rem 1.3rem;
+            vertical-align: middle;
+
+            &.inflow {
+                color: @positive;
+              }
+
+            &.outflow {
+              color: @negative;
+            }
+            /* Cells for arrows */
+            &.arrow-container {
+              text-align: left;
+              padding: 0 !important;
+              .fa {
+                font-size: 35px;
+              }
+            }
+          } // Close general <td>
+
+          /*Row styling according to transaction type (outgoing, incoming, internal) */
+ /*
+          &.outgoing {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @negative !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left-negative.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @negative;
+              }
+            }
+          }
+
+
+          &.incoming {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @positive !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left-positive.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @positive;
+              }
+            }
+          }
+
+          &.internal {
+              &:hover {
+               td {
+                  border-bottom: 1px solid @gray-light !important;
+                }
+              }
+
+            td {
+              &:first-child {
+                background: url('img/corner-triangle-left.png') no-repeat left bottom transparent;
+              }
+
+              &.arrow-container {
+                color: @gray-light;
+              }
+            }
+          }*/
+
+          &:last-child {
+              border-bottom: 1px solid @gray-lighter;
+          }
+        }
+
+
+
+        a {
+              .glyphicon {
+              color: @gray-dark;
+                  &:hover {
+                      color: @brand-primary;
+                  }
+              }
+
+          }
+
+    .tooltip.top .tooltip-inner {
+        background-color:@darkblue;
+    }
+
+    .tooltip.top .tooltip-arrow {
+        border-top-color: @darkblue;
+     }
+  }
+
+  /* All ul in tables */
+  ul.table-list {
+    padding: 0; margin: 0;
+    list-style-type: none;
+  }
+
+/*Styling of arrows in tx tables with incoming/outgoing/internal transfers*/
+td.tx-arrow {
+  padding-right: @button-corner-square-size;
+
+  .btn {
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: none;
+    }
+}
+
+.positive-bg {
+  .btn {
+      background-color: @positive;
+      border-color: @positive;
+      color: @whyte;
+  }
+}
+
+.negative-bg {
+  .btn {
+    background-color: @negative;
+    border-color: @negative;
+    color: @whyte;
+  }
+}
+
+.neutral-bg {
+  .btn {
+    background-color: @gray-light;
+    border-color: @gray-light;
+    color: @whyte;
+  }
+}
+
+}
+
+
+
+.table-zb-hover>tbody>tr:hover>td,
+.table-zb-hover>tbody>tr:hover>th {
+    // background: url(img/table-hover.png) repeat transparent;
+    // border-bottom-color: @brand-primary;
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid @gray-medium-light;
+}

@@ -1,0 +1,27 @@
+<template name="dashboard">
+    <h1 class="process-title">Dashboard</h1>
+    <hr class="sub-stopper"/>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row desktop-zone">
+         <script src="http://code.highcharts.com/highcharts.js"></script>
+            <div class="col-sm-8 line-chart">
+                <h3>Net worth</h3>
+                <div id="holdingsovertime"></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="summary-data spacy">
+                    <h4 class="totals">Total value </h4>
+                    <p class="sum">{{totalBalance 'BTC'}} BTC</p>
+                </div>
+                <div class="summary-data spacy">
+                    <h4 class="totals">Profit/Loss</h4>
+                    <p class="sum">23 EUR</p>
+                </div>
+            </div>
+            <div class="col-sm-6 pie-chart">
+                <h3>Wallet holdings</h3>
+                <div id="currentholdingsperwallet" class="col-sm-6"></div>
+            </div>
+        </div>
+    </div>
+</template>

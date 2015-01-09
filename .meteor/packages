@@ -1,0 +1,42 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+coffeescript
+less
+accounts-password
+aldeed:collection2
+sewdn:collection-behaviours
+dsyko:node-csv-npm
+lepozepo:accounting
+iron:router
+mquandalle:jade
+cmather:handlebars-server
+
+aldeed:autoform
+nemo64:bootstrap
+mrt:just-i18n
+coynverter
+
+mrt:accounts-ui-bootstrap-3
+dburles:collection-helpers
+chrismbeckett:fontawesome4
+mrt:moment
+frozeman:animation-helper
+frozeman:template-var
+joshowens:simple-form
+joshowens:accounts-entry
+meteorhacks:npm
+
+
+
+d3js:d3
+pfafman:nvd3
+
+npm-container
+
+jhuenges:highstock
+meteor-platform
+velocity:html-reporter
+mike:mocha
