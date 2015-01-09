@@ -9,7 +9,7 @@
 });*/
 
 Template.userProfile.helpers({
-  /*TODO @levin, on profile page we should be:
+  /*TODO @levin, on profile page should be:
    email/username
    change password
    delete user */
