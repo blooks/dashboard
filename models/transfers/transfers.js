@@ -162,9 +162,9 @@ Transfers.helpers({
   },
   saneAmount: function () {
     if (this.currency === 'BTC') {
-      return (this.amount / 10e8).toFixed(8);
+      return (this.amount() / 10e8).toFixed(8);
     } else {
-      return (this.amount / 10e8).toFixed(2);
+      return (this.amount() / 10e8).toFixed(2);
     }
   }
 });

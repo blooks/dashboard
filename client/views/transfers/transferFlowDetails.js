@@ -1,7 +1,7 @@
 Template.transferRow.helpers({
-  signedSaneNumber : function(transfer) {
+  signedSaneAmount : function(transfer) {
     var result = transfer.saneAmount();
-    switch (transferType) {
+    switch (transfer.transferType()) {
      case "internal":
      result = " &nbsp; " + result;
      break;
