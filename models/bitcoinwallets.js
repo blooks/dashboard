@@ -35,6 +35,9 @@ BitcoinWallets.helpers({
   },
   update: function () {
     Meteor.call('updateTx4Wallet', this);
+  },
+  saneBalance: function () {
+    return (this.balance() / 10e7).toFixed(8);
   }
 });
 
