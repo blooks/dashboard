@@ -432,6 +432,14 @@ input {
 	font-size: 1.5rem;
 }
 
+/* Class for heading dividing into sections */
+.form-divider {
+	border-bottom: 1px solid @gray-medium-light ;
+	color: @gray-medium-light;
+	padding-top: 24px;
+	padding-top: 2rem;
+}
+
 /* Graphics
 ---------------- */
 .navbar-brand {
@@ -471,7 +479,14 @@ input {
 			background-color: @brand-dark;
 			border-color: @brand-dark;
 		}
-
+	}
+	&.warning-btn {
+		color: @negative;
+		border-color: @negative;
+		&:hover, &:focus {
+			color: @whyte;
+			background-color: @negative;
+		}
 	}
 }
 

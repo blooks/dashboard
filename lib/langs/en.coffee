@@ -93,3 +93,8 @@ i18n.map 'en_GB',
       deleteExchange: "Delete exchange"
     wallets:
       walletLabelTitle: 'Wallet label'
+
+  # Nodes
+  profile:
+    headings:
+      profile: "Profile"
