@@ -29,9 +29,9 @@ Template.registerHelper('saneNumber', function(internalNumber, currency) {
   var result;
   result = "";
   if (currency === 'BTC') {
-    result = (internalNumber / 10e8).toFixed(8);
+    result = (internalNumber / 10e7).toFixed(8);
   } else {
-    result = (internalNumber / 10e8).toFixed(2);
+    result = (internalNumber / 10e7).toFixed(2);
   }
   return result;
 });
