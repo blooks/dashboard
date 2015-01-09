@@ -78,9 +78,9 @@ Template.dashboard.helpers({
     //TODO: Remove this. It is redundant to the global helper
     var saneNumber = function (internalNumber, currency) {
       if (currency === 'BTC') {
-        return (internalNumber / 10e8).toFixed(8);
+        return (internalNumber / 10e7).toFixed(8);
       } else {
-        return (internalNumber / 10e8).toFixed(2);
+        return (internalNumber / 10e7).toFixed(2);
       }
     };
     return saneNumber(Meteor.user().totalBalance(currency), currency);

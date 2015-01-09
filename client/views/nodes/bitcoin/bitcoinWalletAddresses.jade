@@ -22,7 +22,7 @@ template(name="bitcoinWalletAddresses")
               tr
                 td {{label}}
                 td {{address}}
-                td {{saneNumber balance 'BTC'}} BTC
+                td {{saneBalance}} BTC
                 td
                   a.delete-transaction(href="#")
                     span.glyphicon.glyphicon-trash
