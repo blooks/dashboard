@@ -31,6 +31,7 @@
     "browser": true,
     "node": true,
     "jquery": true,
+    "mocha": true,
 
     "globals": {
         "Meteor": false,
@@ -67,6 +68,8 @@
         "Async": false,
         "Highcharts": false,
         "CollectionBehaviours": false,
+        "MochaWeb": false,
+        "chai": false,
 
         "Accounts": true,
         "BankAccounts": true,

@@ -38,3 +38,5 @@ npm-container
 
 jhuenges:highstock
 meteor-platform
+velocity:html-reporter
+mike:mocha
