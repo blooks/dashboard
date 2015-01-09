@@ -151,13 +151,20 @@ Transfers.helpers({
    * Determines the type of the transfer
    * @returns {string} type of transfer. 'internal', 'outgoing' or 'incoming'
    */
-  transferType: function() {
-    if(this.isInternal()) {
+  transferType: function () {
+    if (this.isInternal()) {
       return "internal";
-    } else if(this.isOutgoing()){
+    } else if (this.isOutgoing()) {
       return "outgoing";
     } else {
       return "incoming";
+    }
+  },
+  saneAmount: function () {
+    if (this.currency === 'BTC') {
+      return (this.amount / 10e8).toFixed(8);
+    } else {
+      return (this.amount / 10e8).toFixed(2);
     }
   }
 });
