@@ -1,11 +1,11 @@
 <template name="transferRow">
     <tr class={{transferType}}>
         <td>{{prettyDate date}}</td>
-        <td colspan="2"></td>
+        <td colspan="{{colSpanBefore}}"></td>
         <td class="{{transferType}}-tx-cell">{{senderLabel}}</td>
         <td class="{{transferType}}-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> {{signedSaneAmount this}} {{details.currency}}</a></td>
         <td class="{{transferType}}-tx-cell">{{recipientLabel}}</td>
-        <td colspan="2"></td>
+        <td colspan="{{colSpanAfter}}"></td>
         <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
         <td>
             <a href="#" data-toggle="modal" data-target="#txDetailModal" class="see-transaction"><i class="fa fa-search"></i></a>

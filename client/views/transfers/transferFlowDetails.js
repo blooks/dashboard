@@ -13,5 +13,22 @@ Template.transferRow.helpers({
      break;
      }
     return result;
+  },
+  colSpanBefore: function() {
+    switch (this.transferType()) {
+        case 'internal' :
+            return 2;
+            break;
+        case 'outgoing' :
+            return 4;
+            break;
+        case 'incoming' :
+            return 1;
+            break;
+    }
+  },
+  colSpanAfter : function() {
+    return (5 - colSpanBefore);
   }
+
 });
