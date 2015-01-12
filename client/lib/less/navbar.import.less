@@ -1,0 +1,227 @@
+/* Top nav and sidebar styling */
+
+/* General styles */
+
+.navbar, .sidebar {
+    background-color: @gray-medium-lighter;
+    border-color: @gray-lighter
+}
+
+.sidebar {
+/*     -webkit-box-shadow: 3px 0px 10px 2px @soft-shadow;
+-moz-box-shadow: 3px 0px 10px 2px @soft-shadow;
+box-shadow: 3px 0px 10px 2px @soft-shadow; */
+}
+
+.navbar {
+    -webkit-box-shadow: 0px 3px 10px 2px @soft-shadow;
+    -moz-box-shadow: 0px 3px 10px 2px @soft-shadow;
+    box-shadow: 0px 3px 10px 2px @soft-shadow;
+}
+
+/* Top navbar  */
+.dropdown-menu {
+    left: -150px;
+}
+
+/* Sub menu nav */
+.sub-nav-zone {
+    text-align: center;
+    .tile {
+        margin-bottom: .5rem;
+        &:hover {
+            background-color: lighten(@brand-primary, 10%);
+        }
+    }
+}
+
+
+
+/* The pullout button to open/close sidebar */
+a.navbar-pullout {
+    position: absolute;
+    left: 100%;
+    background: @gray-medium-lighter;
+    border: 1px solid @gray-lighter;
+    border-left: none;
+}
+
+/* Sidebar styling */
+
+.sidebar {
+    padding: 20px;
+    border-right: 1px solid @gray-lighter;
+
+    .nav li {
+
+        a {
+            line-height: 40px;
+            text-indent: 10px;
+            color: @gray-dark;
+            text-decoration: none;
+            border-bottom: 1px solid @gray-lighter;
+            display: block;
+            -webkit-transition: color .3s;
+            -moz-transition: color .3s;
+            -o-transition: color .3s;
+            -ms-transition: color .3s;
+            transition: color .3s;
+
+            .nav-icon {
+                float: right;
+            }
+        }
+
+        &:hover, &:focus, &:active {
+            a {
+                background-color: transparent;
+                color: @brand-primary;
+                /* background: darken(@gray-lighter,3%); */
+                text-decoration: none;
+                .nav-icon {
+                    color: @brand-primary;
+                }
+            }
+        }
+    }
+}
+
+/* Navbar */
+
+/* All the default sidebar styles */
+/* toggle button settings */
+/* Note: this disables the navbar-toggle class's hide function. set visibility with the boostrap visible/hidden classes */
+/* Note: this also disables the navbar-header class positioning settings in small screens. */
+.navbar.navbar-static .navbar-header {
+    float: left;
+}
+
+.navbar .navbar-toggle.toggle-left {
+    float: left;
+    margin-left: 15px;
+}
+
+.navbar .navbar-toggle.toggle-sidebar, [data-toggle="sidebar"] {
+    display: block;
+}
+
+/* sidebar settings */
+.sidebar {
+    position: fixed;
+    display: block;
+    top: @navbar-height + 1px;
+    bottom: 0;
+    z-index: 900;
+    min-height: 100%;
+    max-height: none;
+    overflow: visible;
+}
+
+.sidebar-left {
+    left: 0;
+}
+
+
+/* css to override hiding the sidebar according to different screen sizes */
+.row .sidebar.sidebar-left {
+    .sidebar-xs-show {
+        left: 0;
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        transform: translate(0,0);
+        }
+
+
+}
+
+
+@media (min-width: 768px) {
+    .row .sidebar.sidebar-left {
+    @sidebar-icons-margin-pct: -70%;
+    -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+    -moz-transform: translate(@sidebar-icons-margin-pct,0);
+    -ms-transform: translate(@sidebar-icons-margin-pct,0);
+    -o-transform: translate(@sidebar-icons-margin-pct,0);
+    transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-sm-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+    }
+
+}
+
+@media (min-width: 992px) {
+    .row .sidebar.sidebar-left {
+
+    @sidebar-icons-margin-pct: -75%;
+    -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+    -moz-transform: translate(@sidebar-icons-margin-pct,0);
+    -ms-transform: translate(@sidebar-icons-margin-pct,0);
+    -o-transform: translate(@sidebar-icons-margin-pct,0);
+    transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-md-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+    }
+
+}
+
+@media (min-width: 1170px) {
+    .row .sidebar.sidebar-left {
+        @sidebar-icons-margin-pct: -80%;
+        -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+        -moz-transform: translate(@sidebar-icons-margin-pct,0);
+        -ms-transform: translate(@sidebar-icons-margin-pct,0);
+        -o-transform: translate(@sidebar-icons-margin-pct,0);
+        transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-lg-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+    }
+
+}
+
+/* animation class - optional: without it the sidebar would just pop in and out*/
+.sidebar-animate {
+    -webkit-transition: -webkit-transform 300ms ease;
+    -moz-transition: -moz-transform 300ms ease;
+    -o-transition: transform 300ms ease;
+    transition: transform 300ms ease;
+}
+
+/* Left panel positioning classes */
+.sidebar.sidebar-left {
+    -webkit-transform: translate(-100%,0);
+    -moz-transform: translate(-100%,0);
+    -ms-transform: translate(-100%,0);
+    -o-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+
+    &.sidebar-open {
+        -webkit-transform: translate(0,0);
+        -moz-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        -o-transform: translate(0,0);
+        transform: translate(0,0);
+    }
+}

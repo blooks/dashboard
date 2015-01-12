@@ -8,9 +8,17 @@
 @brand-dark:          darken(@brand-primary, 20%); //
 @brand-secondary:     #0C5967; // Blue
 
+/* Typefaces */
 @font-family-body-sans: 'Ubuntu','Trebuchet MS', Helvetica, Arial, sans-serif;
 
+/* Tables */
+
 @table-cell-height: (@table-cell-padding+@line-height-base);
+
+/* Shadows */
+@soft-shadow:         rgba(199,199,199,0.5); // For subtle shadows in e.g. nav and sidebar divs. 
+
+
 
 
 .brand-box {
@@ -19,6 +27,7 @@
   letter-spacing: 1px;
 }
 
+/* Opacities */
 .opacity(@opacity: 0.5) {
   -moz-opacity: @opacity;
   -khtml-opacity: @opacity;
@@ -28,6 +37,9 @@
   -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
   filter: ~"alpha(opacity=@{opperc})";
 }
+
+
+
 
 .empty-msg {
   border: 1px solid @gray;
@@ -49,26 +61,6 @@ ul.no-bullets {
 	padding-left: 0;
 }
 
-/* Centering styles and techniques */
-
-.vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.center-div {
-	position: absolute;
-	display: block;
-	left: 50%;
-}
-
-.centered {
-  margin-right: auto;
-  margin-left: auto;
-}
 
 /* Standard user feedback styles */
 .positive {
@@ -87,6 +79,8 @@ ul.no-bullets {
 	margin-bottom: 3rem;
 }
 
+/* Default transistions speeds */
+
 .cubic-bezier {
   -webkit-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960);
    -moz-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960);
@@ -99,6 +93,28 @@ ul.no-bullets {
         transition-timing-function: cubic-bezier(0.000, 0.000, 0.215, 0.960); /* custom */
 }
 
+/* Centering styles and techniques */
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.center-div {
+  position: absolute;
+  display: block;
+  left: 50%;
+}
+
+.centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Table centering workaround */
 .vcenter {
   display:table!important;
 
@@ -109,6 +125,7 @@ ul.no-bullets {
   }
 }
 
+/* Paddings & spacings */
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
