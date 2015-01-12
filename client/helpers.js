@@ -17,17 +17,17 @@ Template.registerHelper('labelForVolumeFragment', function (volumeFragment) {
   }
   return "Unknown";
 });
-Template.registerHelper('prettyDate', function(date) {
+
+Template.registerHelper('prettyDate', function (date) {
   return moment(date).format('DD/MM/YYYY hh:mm');
 });
 
-Template.registerHelper('prettyDateLong', function(date) {
+Template.registerHelper('prettyDateLong', function (date) {
   return moment(date).format('dddd DD/MM/YYYY hh:mm:ss');
 });
 
-Template.registerHelper('saneNumber', function(internalNumber, currency) {
-  var result;
-  result = "";
+Template.registerHelper('saneNumber', function (internalNumber, currency) {
+  var result = "";
   if (currency === 'BTC') {
     result = (internalNumber / 10e7).toFixed(8);
   } else {

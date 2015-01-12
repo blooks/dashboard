@@ -29,11 +29,6 @@ joshowens:simple-form
 joshowens:accounts-entry
 meteorhacks:npm
 
-
-
-d3js:d3
-pfafman:nvd3
-
 npm-container
 
 jhuenges:highstock
