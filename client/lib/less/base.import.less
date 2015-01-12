@@ -1,8 +1,8 @@
 /* Z-index order:
 
-	1040	:	Modal overlays
-	1030	:	Topnav
-	900+	:	Sidebar nav
+	1040 :		Modal overlays
+	1030 :		Topnav
+	900	:		Sidebar nav
 
 */
 
@@ -14,10 +14,6 @@ body {
   padding: 0;
 }
 
-#velocity-status-widget {
-	display: none !important;
-}
-
 html	{}
 
 body	{
@@ -27,7 +23,7 @@ body	{
 }
 
 .desktop-zone {
-	border: 1px solid @gray-medium-light;
+	border: 1px solid @gray-lighter;
 	padding: 36px 30px;
 	padding: 3rem 2.5rem;
 	background-color: @whyte;
@@ -37,39 +33,14 @@ body	{
 	}
 }
 
-/* Top Bar */
-
-.top-bar {
-	text-align: right;
-}
-
-.dropdown-menu {
-	left: -150px;
-}
-
-.nav-icon {
-	float: right;
-	padding-right: 20px;
-	color: @brand-primary;
-}
-
-/* Sub menu nav */
-.sub-nav-zone {
-	text-align: center;
-	.tile {
-		margin-bottom: .5rem;
-		&:hover {
-			background-color: lighten(@brand-primary, 10%);
-		}
-	}
-}
-
-
 /* Global view sections
 ------------------------------ */
 
 /* Main zone
 -------------------- */
+.main {
+	margin-top: @navbar-height + 20px ; // Ensure content is lower than top navbar
+}
 .login-dropdown {
 	padding-left: 10px;
 	ul.login {

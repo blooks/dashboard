@@ -8,9 +8,9 @@
 }
 
 .sidebar {
-    -webkit-box-shadow: 3px 0px 10px 2px @soft-shadow;
-    -moz-box-shadow: 3px 0px 10px 2px @soft-shadow;
-    box-shadow: 3px 0px 10px 2px @soft-shadow;
+/*     -webkit-box-shadow: 3px 0px 10px 2px @soft-shadow;
+-moz-box-shadow: 3px 0px 10px 2px @soft-shadow;
+box-shadow: 3px 0px 10px 2px @soft-shadow; */
 }
 
 .navbar {
@@ -18,6 +18,24 @@
     -moz-box-shadow: 0px 3px 10px 2px @soft-shadow;
     box-shadow: 0px 3px 10px 2px @soft-shadow;
 }
+
+/* Top navbar  */
+.dropdown-menu {
+    left: -150px;
+}
+
+/* Sub menu nav */
+.sub-nav-zone {
+    text-align: center;
+    .tile {
+        margin-bottom: .5rem;
+        &:hover {
+            background-color: lighten(@brand-primary, 10%);
+        }
+    }
+}
+
+
 
 /* The pullout button to open/close sidebar */
 a.navbar-pullout {
@@ -28,36 +46,43 @@ a.navbar-pullout {
     border-left: none;
 }
 
+/* Sidebar styling */
 
 .sidebar {
     padding: 20px;
     border-right: 1px solid @gray-lighter;
 
-    .nav li a {
-        line-height: 40px;
-        text-indent: 10px;
-        color: @gray-dark;
-        text-decoration: none;
-        background: @gray-medium-lighter;
-        border-bottom: 1px solid @gray-lighter;
-        display: block;
-        margin-right: 10px;
-        -webkit-transition: background .3s;
-        -moz-transition: background .3s;
-        -o-transition: background .3s;
-        -ms-transition: background .3s;
-        transition: background .3s;
+    .nav li {
 
-      &:hover {
-        color: @gray-dark;
-        background: darken(@gray-lighter,3%);
-        text-decoration: none;
-        }
-
-        &:focus {
+        a {
+            line-height: 40px;
+            text-indent: 10px;
+            color: @gray-dark;
             text-decoration: none;
+            border-bottom: 1px solid @gray-lighter;
+            display: block;
+            -webkit-transition: color .3s;
+            -moz-transition: color .3s;
+            -o-transition: color .3s;
+            -ms-transition: color .3s;
+            transition: color .3s;
+
+            .nav-icon {
+                float: right;
+            }
         }
 
+        &:hover, &:focus, &:active {
+            a {
+                background-color: transparent;
+                color: @brand-primary;
+                /* background: darken(@gray-lighter,3%); */
+                text-decoration: none;
+                .nav-icon {
+                    color: @brand-primary;
+                }
+            }
+        }
     }
 }
 
@@ -84,7 +109,7 @@ a.navbar-pullout {
 .sidebar {
     position: fixed;
     display: block;
-    top: 51px;
+    top: @navbar-height + 1px;
     bottom: 0;
     z-index: 900;
     min-height: 100%;
@@ -98,48 +123,80 @@ a.navbar-pullout {
 
 
 /* css to override hiding the sidebar according to different screen sizes */
-.row .sidebar.sidebar-left.sidebar-xs-show {
-    left: 0;
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    -o-transform: translate(0,0);
-    -moz-transform: translate(0,0);
-    transform: translate(0,0);
-}
-
-
-@media (min-width: 768px) {
-    .row .sidebar.sidebar-left.sidebar-sm-show {
+.row .sidebar.sidebar-left {
+    .sidebar-xs-show {
         left: 0;
         -webkit-transform: translate(0,0);
         -ms-transform: translate(0,0);
         -o-transform: translate(0,0);
         -moz-transform: translate(0,0);
         transform: translate(0,0);
+        }
+
+
+}
+
+
+@media (min-width: 768px) {
+    .row .sidebar.sidebar-left {
+    @sidebar-icons-margin-pct: -70%;
+    -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+    -moz-transform: translate(@sidebar-icons-margin-pct,0);
+    -ms-transform: translate(@sidebar-icons-margin-pct,0);
+    -o-transform: translate(@sidebar-icons-margin-pct,0);
+    transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-sm-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            transform: translate(0,0);
+        }
     }
 
 }
 
 @media (min-width: 992px) {
-    .row .sidebar.sidebar-left.sidebar-md-show {
-        left: 0;
-        -webkit-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        transform: translate(0,0);
+    .row .sidebar.sidebar-left {
+
+    @sidebar-icons-margin-pct: -75%;
+    -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+    -moz-transform: translate(@sidebar-icons-margin-pct,0);
+    -ms-transform: translate(@sidebar-icons-margin-pct,0);
+    -o-transform: translate(@sidebar-icons-margin-pct,0);
+    transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-md-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            transform: translate(0,0);
+        }
     }
 
 }
 
 @media (min-width: 1170px) {
-    .row .sidebar.sidebar-left.sidebar-lg-show {
-        left: 0;
-        -webkit-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        transform: translate(0,0);
+    .row .sidebar.sidebar-left {
+        @sidebar-icons-margin-pct: -80%;
+        -webkit-transform: translate(@sidebar-icons-margin-pct,0);
+        -moz-transform: translate(@sidebar-icons-margin-pct,0);
+        -ms-transform: translate(@sidebar-icons-margin-pct,0);
+        -o-transform: translate(@sidebar-icons-margin-pct,0);
+        transform: translate(@sidebar-icons-margin-pct,0);
+
+        .sidebar-lg-show {
+            left: 0;
+            -webkit-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            transform: translate(0,0);
+        }
     }
 
 }
