@@ -14,19 +14,17 @@ Meteor.methods({
   /**
    * 12.01.2015 LFG
    * [sendEmail description]
-   * @param  {String} to      [description]
-   * @param  {String} from    [description]
-   * @param  {String} subject [description]
-   * @param  {String} text    [description]
    * @return {undefined}         [description]
    */
-  sendEmail: function (to, from, subject, text) {
-    this.unblock();
+  sendEmail: function () {
+    Log.info("Called method to send an email");
+    var self = this;
+    self.unblock();
     Email.send({
-      to: to,
-      from: from,
-      subject: subject,
-      text: text
+      to: Meteor.users.findOne({_id: self.userId}).emails[0],
+      from: Accounts.emailTemplates.from,
+      subject: Accounts.emailTemplates.resetPassword.subject,
+      text: Accounts.emailTemplates.resetPassword.text
     });
   }
 });

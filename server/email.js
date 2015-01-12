@@ -7,7 +7,7 @@ Meteor.startup(function () {
 });
 
 Accounts.emailTemplates.siteName = "Coyno";
-Accounts.emailTemplates.from = "Coyno <hello@coyno.de>";
+Accounts.emailTemplates.from = "Coyno <noreply@coyno.de>";
 
 // DGB 2015-01-12 03:40
 // This email is sent when a new user registers. If we want to validate EMAILS
@@ -28,7 +28,7 @@ Accounts.emailTemplates.verifyEmail = {
 // DGB 2015-01-12 03:41
 // This email is send when the user request to change the password.
 Accounts.emailTemplates.resetPassword ={
-  subject: function (user) {
+  subject: function () {
     return "Coyno Reset Password Email"; 
   },
   text: function (user, url) {

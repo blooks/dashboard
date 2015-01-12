@@ -1,6 +1,5 @@
 Meteor.users.helpers({
   networthData: function () {
-
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
@@ -49,3 +48,61 @@ Meteor.users.helpers({
     return result;
   }
 });
+
+/*
+var userProfile = new SimpleSchema({
+  language: {
+    type: String,
+    optional: true
+  },
+  name: {
+    type: String,
+    optional: true
+  },
+  username: {
+    type: String,
+    optional: true
+  }
+});
+
+var Schema = {
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date();
+      } 
+      if (this.isUpsert) {
+        return {$setOnInsert: new Date()};
+      }
+      else {
+        this.unset();
+      }
+    },
+    optional: true 
+  },
+  updatedAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isUpdate) {
+        return new Date();
+      }
+    },
+    denyInsert: true,
+    optional: true
+  },
+  emails: {
+    type: [Object],
+    optional: true
+  },
+  profile: {
+    type: userProfile,
+    optional: true
+  },
+  services: {
+    type: Object,
+    optional: true,
+    blackbox: true
+  }
+};
+Meteor.users.attachSchema(new SimpleSchema(_.extend(Schema)));*/
