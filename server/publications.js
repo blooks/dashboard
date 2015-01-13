@@ -7,7 +7,7 @@ Meteor.publish("transfers", function (numberOfResults, page) {
   Log.info("Page: "+page);
   Log.info("Result to skip: "+page*numberOfResults);
   var self = this;
-  var handle = Transfers.find({}, {skip: page*numberOfResults, limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
+  var handle = Transfers.find({}, {skip: parseInt(page)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
     added: function(id, fields){
       self.added("transfers", id, fields);
     },
