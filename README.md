@@ -17,12 +17,15 @@ To work on a feature use following command:
 git flow feature start name-of-feature-branch
 ```
 
-On finishing the feature do:
+If your feature is ready to be merged, *DO NOT* use git flow finish command. 
+
+~~```git flow feature finish```~~
+
+Instead pull and merge latest changes from develop to your feature branch and publish your feature.
+
 ```
 git flow feature publish 
 ```
- (make sure you merge develop locally before publishing your feature)
-
 
 Then submit pull request on Github.
 
