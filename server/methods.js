@@ -35,14 +35,15 @@ Meteor.methods({
    */
   removeAccount: function () {
     var self = this;
-    Meteor.users.remove({_id: self.userId});
     var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
     self.unblock();
+    //LFG 13.01.2015 breaks because of the email configuration, if this block is removed, the process works fine
     Email.send({
       to: user,
       from: Accounts.emailTemplates.from,
       subject: Accounts.emailTemplates.deleteAccount.subject,
       text: Accounts.emailTemplates.deleteAccount.text
     });
+    Meteor.users.remove({_id: self.userId});
   }
 });
