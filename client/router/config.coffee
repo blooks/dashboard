@@ -5,6 +5,8 @@ Router.configure
   yieldTemplates:
     header:
       to: 'header'
+    sidebar:
+      to: 'sidebar'
     footer:
       to: 'footer'
   onBeforeAction: ->
