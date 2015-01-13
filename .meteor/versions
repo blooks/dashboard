@@ -17,6 +17,7 @@ chrismbeckett:fontawesome4@4.2.2
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.5
 coynverter@0.1.0
+d3@1.0.0
 d3js:d3@3.4.13
 dburles:collection-helpers@1.0.1
 ddp@1.0.13
@@ -75,7 +76,7 @@ npm-bcrypt@0.7.7
 npm-container@1.0.0
 observe-sequence@1.0.4
 ordered-dict@1.0.2
-pfafman:nvd3@1.7.0_3
+pfafman:nvd3@1.6.0
 practicalmeteor:chai@1.9.2_3
 practicalmeteor:loglevel@1.1.0_3
 random@1.0.2
