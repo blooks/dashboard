@@ -38,10 +38,13 @@ Router.map ->
   @route 'transfers',
     path: '/transfers'
     waitOn: ->
+      Session.setDefault('limitValues', 10) 
+      Session.setDefault('page', 0)
       [
-        Meteor.subscribe 'transfers'
+        Meteor.subscribe 'transfers', Session.get('limitValues'), Session.get('page')
       ]
-
+    data: ->
+      transfers: Transfers.find()
   @route 'nodes',
     path: '/nodes/nodesOverview'
     data: ->
