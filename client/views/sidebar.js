@@ -1,5 +1,5 @@
  Template.sidebar.events({
-   'click .sidebar': function (event, template) {
+   'click .navbar-toggle': function (event, template) {
      // DGB 2015-01-12 07:32
      // This is hacky, but there are not many more options as this version of
      // sidebar.js doesn't have callbacks. 
