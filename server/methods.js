@@ -17,9 +17,7 @@ Meteor.methods({
    * @return {undefined}         [description]
    */
   sendEmail: function () {
-    Log.info("Called method to send an email");
     var self = this;
-    console.log(Meteor.users.findOne({_id: self.userId}).emails[0].address);
     var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
     self.unblock();
     //LFG 13.01.2015 getaddrinfo ENOTFOUND is usually a DNS error (address not found)
@@ -38,5 +36,13 @@ Meteor.methods({
   removeAccount: function () {
     var self = this;
     Meteor.users.remove({_id: self.userId});
+    var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
+    self.unblock();
+    Email.send({
+      to: user,
+      from: Accounts.emailTemplates.from,
+      subject: Accounts.emailTemplates.deleteAccount.subject,
+      text: Accounts.emailTemplates.deleteAccount.text
+    });
   }
 });
