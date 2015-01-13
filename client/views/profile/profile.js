@@ -31,9 +31,16 @@ Template.userProfile.events({
     var newPassword = template.$("#new_password").val();
     var newPasswordAgain = template.$("#new_password_again").val();
     if(newPassword.length>0 && newPasswordAgain.length>0 && (newPasswordAgain===newPassword)){
-      Accounts.changePassword(oldPassword, newPassword, function () {
-        console.log("The password was changed");
-        Meteor.call("sendEmail");
+      Accounts.changePassword(oldPassword, newPassword, function (err) {
+        if(err){
+          console.log(err);
+        }else{
+          console.log("The password was changed");
+          Meteor.call("sendEmail");
+          template.$("#old_password").val("");
+          template.$("#new_password").val("");
+          template.$("#new_password_again").val("");
+        }
       });
     }
   },
