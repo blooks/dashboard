@@ -26,7 +26,26 @@
           Quisque rutrum. Vestibulum volutpat pretium libero. Nunc sed turpis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.
         </p>
         <div class="text-center">
-          <button class="btn btn-lg warning-btn" id="delete_profile">Delete profile</button>
+          <!-- Button trigger modal -->
+          <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Delete profile</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="deleteProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete account</h4>
+              </div>
+              <div class="modal-body">
+                Are you sure that you want to delete your account?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirm_delete_account">Confirm</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

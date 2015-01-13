@@ -44,7 +44,7 @@ Template.userProfile.events({
       });
     }
   },
-  "click #delete_profile": function () {
+  "click #confirm_delete_account": function () {
     //LFG 13.01.2015 Should we raise a confirmation to the user???
     Meteor.call('removeAccount');
   }
