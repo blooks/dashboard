@@ -1,7 +1,7 @@
 // on the client
 Template.transfers.helpers({
   noLastPage: function () {
-    if(Session.get('page')!==Session.get('numberOfPages')){
+    if(Session.get('page')+1!==Session.get('numberOfPages')){
       return true;
     }
   },
@@ -38,8 +38,13 @@ Template.transfers.events({
   },
   'click .nextBtn': function () {
     Session.set('page', Session.get('page')+1);
+    console.log(parseInt(Session.get('page'))+1);
+    var parsePage = parseInt(Session.get('page'))+1;
+    Router.go('/transfers/page/'+parsePage);
   },
   'click .beforeBtn' : function () {
     Session.set('page', Session.get('page')-1);
+    var parsePage = parseInt(Session.get('page'))+1;
+    Router.go('/transfers/page/'+parsePage);
   },
 });
