@@ -31,19 +31,14 @@ Template.userProfile.events({
     var newPassword = template.$("#new_password").val();
     var newPasswordAgain = template.$("#new_password_again").val();
     if(newPassword.length>0 && newPasswordAgain.length>0 && (newPasswordAgain===newPassword)){
-      Accounts.changePassword(oldPassword, newPassword, function (err, response) {
-        if(err){
-          Log.error(err);
-        }
-        if(response){
-          Log.info("The password was changed: "+response);
-          //12.01.2015 The password was changed, we need data for this email
-          Meteor.call("sendEmail");
-        }
+      Accounts.changePassword(oldPassword, newPassword, function () {
+        console.log("The password was changed");
+        Meteor.call("sendEmail");
       });
     }
   },
   "click #delete_profile": function () {
+    //LFG 13.01.2015 Should we raise a confirmation to the user???
     Meteor.call('removeAccount');
   }
 });

@@ -13,20 +13,28 @@ Meteor.methods({
   },
   /**
    * 12.01.2015 LFG
-   * [sendEmail description]
+   * [sendEmail send an email notification when the password is changed]
    * @return {undefined}         [description]
    */
   sendEmail: function () {
     Log.info("Called method to send an email");
     var self = this;
+    console.log(Meteor.users.findOne({_id: self.userId}).emails[0].address);
+    var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
     self.unblock();
+    //LFG 13.01.2015 getaddrinfo ENOTFOUND is usually a DNS error (address not found)
     Email.send({
-      to: Meteor.users.findOne({_id: self.userId}).emails[0],
+      to: user,
       from: Accounts.emailTemplates.from,
       subject: Accounts.emailTemplates.resetPassword.subject,
       text: Accounts.emailTemplates.resetPassword.text
     });
   },
+  /**
+   * 13.01.2015 LFG
+   * [removeAccount removes the user account, in meteor is not possible to use the remove in a correct way from cliente, needs to be done in server side]
+   * @return {undefined} [description]
+   */
   removeAccount: function () {
     var self = this;
     Meteor.users.remove({_id: self.userId});
