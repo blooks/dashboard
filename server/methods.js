@@ -26,5 +26,9 @@ Meteor.methods({
       subject: Accounts.emailTemplates.resetPassword.subject,
       text: Accounts.emailTemplates.resetPassword.text
     });
+  },
+  removeAccount: function () {
+    var self = this;
+    Meteor.users.remove({_id: self.userId});
   }
 });

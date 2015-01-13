@@ -42,5 +42,8 @@ Template.userProfile.events({
         }
       });
     }
+  },
+  "click #delete_profile": function () {
+    Meteor.call('removeAccount');
   }
 });
