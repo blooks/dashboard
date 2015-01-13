@@ -4,7 +4,7 @@
         {{#unless isIncoming}}
         <td colspan="{{colSpanBefore}}"></td>
         {{/unless}}
-        <td class="{{transferType}}-tx-cell">{{senderLabel}}{{isIncoming}}</td>
+        <td class="{{transferType}}-tx-cell">{{senderLabel}}</td>
         <td class="{{transferType}}-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> {{signedSaneAmount this}} {{details.currency}}</a></td>
         <td class="{{transferType}}-tx-cell">{{recipientLabel}}</td>
         {{#unless isOutgoing}}
