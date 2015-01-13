@@ -4,6 +4,7 @@ Template.transfers.helpers({
     return Transfers.find({}, {sort: ['date', 'asc']}).fetch();
   }
 });
+
 Template.transfers.events({
   'click .delete-transfer': function () {
     return Transfers.remove({
