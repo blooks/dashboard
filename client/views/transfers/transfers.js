@@ -18,6 +18,7 @@ Template.transfers.helpers({
         Log.error(err);
       }
       if(result){
+        Log.info(result);
         Session.set('numberOfPages', Math.round(result/Session.get('limitValues')));
       }
     });
