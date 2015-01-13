@@ -19,7 +19,7 @@ nemo64:bootstrap
 mrt:just-i18n
 coynverter
 
-mrt:accounts-ui-bootstrap-3
+ian:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
@@ -36,3 +36,4 @@ meteor-platform
 velocity:html-reporter
 mike:mocha
 email
+aldeed:simple-schema

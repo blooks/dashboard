@@ -28,11 +28,8 @@ Template.userProfile.events({
   "click #change_password": function (event, template) {
     event.preventDefault();
     var oldPassword = template.$("#old_password").val();
-    Log.info(oldPassword);
     var newPassword = template.$("#new_password").val();
-    Log.info(newPassword);
     var newPasswordAgain = template.$("#new_password_again").val();
-    Log.info(newPasswordAgain);
     if(newPassword.length>0 && newPasswordAgain.length>0 && (newPasswordAgain===newPassword)){
       Accounts.changePassword(oldPassword, newPassword, function (err, response) {
         if(err){

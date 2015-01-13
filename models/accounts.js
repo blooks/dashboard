@@ -49,7 +49,6 @@ Meteor.users.helpers({
   }
 });
 
-/*
 var userProfile = new SimpleSchema({
   language: {
     type: String,
@@ -65,7 +64,7 @@ var userProfile = new SimpleSchema({
   }
 });
 
-var Schema = {
+var Schema = new SimpleSchema({
   createdAt: {
     type: Date,
     autoValue: function() {
@@ -88,12 +87,19 @@ var Schema = {
         return new Date();
       }
     },
-    denyInsert: true,
     optional: true
   },
   emails: {
-    type: [Object],
-    optional: true
+    type: [Object]
+  },
+  "emails.$.address": {
+    optional: true,
+    type: String,
+    regEx: SimpleSchema.RegEx.Email
+  },
+  "emails.$.verified": {
+    optional: true,
+    type: Boolean
   },
   profile: {
     type: userProfile,
@@ -104,5 +110,6 @@ var Schema = {
     optional: true,
     blackbox: true
   }
-};
-Meteor.users.attachSchema(new SimpleSchema(_.extend(Schema)));*/
+});
+
+Meteor.users.attachSchema(Schema);
