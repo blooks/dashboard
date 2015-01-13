@@ -49,7 +49,7 @@ a.navbar-pullout {
 /* Sidebar styling */
 
 .sidebar {
-    padding: 20px;
+    padding: 20px 0;
     border-right: 1px solid @gray-lighter;
 
     .nav li {
@@ -122,43 +122,22 @@ a.navbar-pullout {
 }
 
 
-/* css to override hiding the sidebar according to different screen sizes */
-.row .sidebar.sidebar-left {
-    .sidebar-xs-show {
-        left: 0;
-        -webkit-transform: translate(0,0);
-        -ms-transform: translate(0,0);
-        -o-transform: translate(0,0);
-        -moz-transform: translate(0,0);
-        transform: translate(0,0);
-        }
-
-
-}
-
+/* Show icons on closed sidebar */
 
 @media (min-width: 768px) {
     .row .sidebar.sidebar-left {
-    @sidebar-icons-margin-pct: -70%;
+    width: 200px;
+    @sidebar-icons-margin-pct: -150px;
     -webkit-transform: translate(@sidebar-icons-margin-pct,0);
     -moz-transform: translate(@sidebar-icons-margin-pct,0);
     -ms-transform: translate(@sidebar-icons-margin-pct,0);
     -o-transform: translate(@sidebar-icons-margin-pct,0);
     transform: translate(@sidebar-icons-margin-pct,0);
-
-        .sidebar-sm-show {
-            left: 0;
-            -webkit-transform: translate(0,0);
-            -ms-transform: translate(0,0);
-            -o-transform: translate(0,0);
-            -moz-transform: translate(0,0);
-            transform: translate(0,0);
-        }
     }
 
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .row .sidebar.sidebar-left {
 
     @sidebar-icons-margin-pct: -75%;
@@ -168,35 +147,20 @@ a.navbar-pullout {
     -o-transform: translate(@sidebar-icons-margin-pct,0);
     transform: translate(@sidebar-icons-margin-pct,0);
 
-        .sidebar-md-show {
-            left: 0;
-            -webkit-transform: translate(0,0);
-            -ms-transform: translate(0,0);
-            -o-transform: translate(0,0);
-            -moz-transform: translate(0,0);
-            transform: translate(0,0);
-        }
     }
 
-}
+} */
 
 @media (min-width: 1170px) {
     .row .sidebar.sidebar-left {
-        @sidebar-icons-margin-pct: -80%;
+        width: 200px;
+        @sidebar-icons-margin-pct: -150px;
         -webkit-transform: translate(@sidebar-icons-margin-pct,0);
         -moz-transform: translate(@sidebar-icons-margin-pct,0);
         -ms-transform: translate(@sidebar-icons-margin-pct,0);
         -o-transform: translate(@sidebar-icons-margin-pct,0);
         transform: translate(@sidebar-icons-margin-pct,0);
 
-        .sidebar-lg-show {
-            left: 0;
-            -webkit-transform: translate(0,0);
-            -moz-transform: translate(0,0);
-            -ms-transform: translate(0,0);
-            -o-transform: translate(0,0);
-            transform: translate(0,0);
-        }
     }
 
 }

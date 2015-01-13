@@ -3,5 +3,8 @@ Meteor.methods({
     Coynverter.calculateBaseAmount(amount, from, date, function (err, result) {
       return result;
     });
+  },
+  totalTransfersPages: function () {
+    return Transfers.find({}).count();
   }
 });
