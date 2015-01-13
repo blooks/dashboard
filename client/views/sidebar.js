@@ -11,4 +11,7 @@
        $('.fa-chevron-right').removeClass('fa-chevron-right').addClass('fa-chevron-left');
      }
  	},
+  'click #transfers': function () {
+    Router.go('/transfers/page/1');
+  }
 });
