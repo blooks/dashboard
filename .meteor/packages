@@ -19,7 +19,7 @@ nemo64:bootstrap
 mrt:just-i18n
 coynverter
 
-ian:accounts-ui-bootstrap-3
+mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
@@ -37,3 +37,4 @@ velocity:html-reporter
 mike:mocha
 email
 aldeed:simple-schema
+reactive-var

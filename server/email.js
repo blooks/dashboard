@@ -1,10 +1,7 @@
 // DGB 2015-01-12 03:39 This setup should be at lib/config.coffee, but there is
 // no environment control there. Left here for now.
-Meteor.startup(function () {
-  if (Meteor.env!=='development'){
-    process.env.MAIL_URL = 'smtp://USER:PASSWORD@SMTPSERVER:587';
-  } 
-});
+// DGB 2015-01-13 05:57 Deprecated as LVO wants to use MAIL_URL env variable. 
+// EXAMPLE: process.env.MAIL_URL = 'smtp://USER:PASSWORD@SMTPSERVER:587';
 
 Accounts.emailTemplates.siteName = "Coyno";
 Accounts.emailTemplates.from = "Coyno <noreply@coyno.de>";
@@ -31,7 +28,7 @@ Accounts.emailTemplates.resetPassword ={
   subject: function () {
     return "Coyno Reset Password Email"; 
   },
-  text: function (user, url) {
+  text: function (user) {
     var t = null;
     t= "Hello! \n\n Welcome to Coyno " + user.profile.name + "! \n\n";
     t+="";
@@ -45,7 +42,7 @@ Accounts.emailTemplates.deleteAccount = {
   subject: function (user) {
     return "Coyno Delete User Email"; 
   },
-  text: function (user, url) {
+  text: function (user) {
     var t = null;
     t= "Goodbye! \n\n It was great to have you around at Coyno! \n\n";
     t+="";

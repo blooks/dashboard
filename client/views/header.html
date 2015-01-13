@@ -1,4 +1,4 @@
-<template name="header">
+<template name="OLDheader">
   <div class="login-dropdown pull-right">
     <i class="fa fa-user"></i>
     <ul class="login">
@@ -19,4 +19,22 @@
       <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon">         <i class="fa fa-bell"></i></span></a></li>
     </ul>
   </div> <!-- /#sidebar-wrapper -->
+</template>
+
+<template name="header">
+  DGB 2015-01-13 05:36 complicated merging, left behind for in case of trouble
+  <div class="navbar navbar-static navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a href="/" title="Coyno - BTC Bookkeeping" class="navbar-brand">
+            <svg width="123" height="30">
+              <image xlink:href="/img/coyno-logo.svg" src="/img/coyno-logo.png" width="123" height="30"></image>
+            </svg>
+          </a>
+      </div> <!-- ./navbar-header -->
+      <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons }} <!-- here -->
+      </ul>
+    </div> <!-- ./container -->
+  </div> <!-- ./navbar -->
 </template>

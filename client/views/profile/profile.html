@@ -1,16 +1,29 @@
 <template name="userProfile">
-  <h1 class="process-title">{{i18n 'profile.headings.profile'}}</h1>
-  <div class="col-md-10 col-md-offset-1">
-      <div class="row desktop-zone profile">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h3 class="form-divider">Your details</h3>
-      <div class="big-input-item">
-        <span class="field-type">Username:</span><span class="field-input editable"> {{displayName}} <span class="edit-marker"><i class="fa fa-pencil"></i></span></span><br>
-      </div>
-      <div class="big-input-item">
-        <span class="field-type">Email:</span><span class="field-input editable"> {{userEmail}} <span class="edit-marker"><i class="fa fa-pencil"></i></span></span><br>
-      </div>
-      <h3 class="form-divider">Change password</h3>
+   <h1 class="process-title">{{i18n 'profile.headings.profile'}}</h1>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row desktop-zone profile">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h3 class="form-divider">Your details</h3>
+        <div class="big-input-item">
+          {{#if getEditingSection 'username'}}
+            Introduce your new Username
+            <input class='' id='newUsername' value='{{displayUsername}}'/>
+            <button class='btn' id='saveUsername'>Save Username</button>
+          {{else}} 
+          <span class="field-type">Username:</span><span class="field-input editable"> {{displayName}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionUsername'></i></span></span><br>
+          {{/if}}
+        </div>
+        <div class="big-input-item">
+          {{#if  getEditingSection 'email'}}
+            Introduce your new email
+            <input class='' id='newEmail' value='{{userEmail}}'/>
+            <button class='btn' id='saveEmail'>Save Email</button>
+          {{else}}
+          <span class="field-type">Email:</span><span class="field-input"> {{userEmail}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionEmail'></i></span></span><br>
+          {{/if}}
+				</div>
+
+<h3 class="form-divider">Change password</h3>
       <div class="big-input-item">
         <span class="field-type">Old password:<input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control"/></span><br>
         <span class="field-type">New password:<input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control"/></span><br>
@@ -50,5 +63,8 @@
       </div>
     </div>
       </div>     <!-- /.desktop-zone -->
-  </div> <!-- /.col-md-10 -->
+
+
+
+    </div> <!-- /.col-md-10 -->
 </template>
