@@ -1,7 +1,9 @@
-Meteor.publish("transfers", function (numberOfResults, page) {
-  Log.info("Number of results to show: "+numberOfResults);
-  Log.info("Page: "+page);
-  Log.info("Result to skip: "+page*numberOfResults);
+/**
+ *
+ * @param numberOfResults
+ * @param page
+ */
+var limitToPage = function (numberOfResults, page) {
   var self = this;
   var handle = Transfers.find({}, {skip: parseInt(page)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
     added: function(id, fields){
@@ -18,7 +20,9 @@ Meteor.publish("transfers", function (numberOfResults, page) {
   self.onStop(function() {
     handle.stop();
   });
-});
+};
+
+Meteor.publish("transfers", limitToPage);
 
 Meteor.publish("bitcoinwallets", function () {
   return BitcoinWallets.find({userId: this.userId});

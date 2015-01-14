@@ -21,13 +21,19 @@ Router.map(function() {
     }
   });
   this.route('transfers', {
-    path: '/transfers/page/:number',
+    path: '/transfers',
+    data: function() {
+      return {
+        pagenum: 0,
+        amountperpage: 20
+      };
+    }
+  });
+  this.route('transfersPage', {
+    path: '/transfers/:pagenum/:amountperpage',
     template: 'transfers',
     waitOn: function() {
-      Session.setDefault('limitValues', 10);
-      Session.setDefault('page', 0);
-      Session.set('page', parseInt(this.params.number)-1);
-      return [Meteor.subscribe('transfers', Session.get('limitValues'), parseInt(this.params.number)-1)];
+      return [Meteor.subscribe('transfers', parseInt(this.params.amountperpage), parseInt(this.params.pagenum)-1)];
     },
     data: function() {
       if(Transfers.find() && Transfers.find().fetch().length>0){
@@ -41,7 +47,7 @@ Router.map(function() {
     path: '/nodes/nodesOverview',
     data: function() {
       return {
-        type: 'nodesOverview'
+        type: 'bitcoinWallets'
       };
     }
   });
