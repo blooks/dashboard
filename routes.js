@@ -20,12 +20,6 @@ Router.map(function() {
       return [Meteor.subscribe('bitcoinwallets')];
     }
   });
-  this.route('trades', {
-    path: '/trades',
-    waitOn: function() {
-      return [Meteor.subscribe('trades'), Meteor.subscribe('exchanges')];
-    }
-  });
   this.route('transfers', {
     path: '/transfers/page/:number',
     template: 'transfers',

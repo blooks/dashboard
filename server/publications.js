@@ -1,7 +1,3 @@
-Meteor.publish("trades", function () {
-  return Trades.find({userId: this.userId});
-});
-
 Meteor.publish("transfers", function (numberOfResults, page) {
   Log.info("Number of results to show: "+numberOfResults);
   Log.info("Page: "+page);
@@ -22,14 +18,6 @@ Meteor.publish("transfers", function (numberOfResults, page) {
   self.onStop(function() {
     handle.stop();
   });
-});
-
-Meteor.publish("exchanges", function() {
-  return Exchanges.find({userId: this.userId});
-});
-
-Meteor.publish("bankaccounts", function() {
-  return BankAccounts.find({userId: this.userId});
 });
 
 Meteor.publish("bitcoinwallets", function () {
