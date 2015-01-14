@@ -36,7 +36,9 @@ Router.map(function() {
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
           transfers: Transfers.find(),
-          page: parseInt(this.params.page)
+          page: parseInt(this.params.page),
+          numberOfResultsPerPage: parseInt(this.params.numberOfResults),
+          totalPages:  Math.round(Transfers.findOne({}).totalAvailable/parseInt(this.params.numberOfResults))
         };
       }
     }
