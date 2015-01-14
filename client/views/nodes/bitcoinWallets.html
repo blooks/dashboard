@@ -1,6 +1,6 @@
 <template name="bitcoinWallets">
   <div class="wallets-zone">
-    <h3 class="label-title"><i class="fa fa-book"></i> Added Wallets</h3>
+    <h3 class="label-title"><span class="icon icon-wallet"></span> Added Wallets</h3>
     <div class="row zone">
       {{#if bitcoinwallets}}
         {{#each bitcoinwalletsinpacks 2}}
@@ -16,17 +16,17 @@
                 </div>
                 <div class="row vcenter">
                   <div class="col-lg-11">
-                      <h4><i class="fa fa-book"></i> {{i18n 'nodes.wallets.walletLabelTitle'}} :
+                      <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.wallets.walletLabelTitle'}} :
                       <span class="fat">{{label}}</span>
                       </h4>
 
-                      <h4><i class="fa fa-asterisk"></i> Total Balance :
+                      <h4><span class="icon icon-asterisk"></span> Total Balance :
                       <span class="fat"> {{saneNumber balance 'BTC'}} BTC </span>
                       </h4>
                   </div> <!-- /.col-lg-10 -->
 
                   <div class="col-lg-1">
-                      <i class="fa fa-angle-down body-toggle"></i>
+                      <span class="icon icon-down-open-big body-toggle"></span>
                   </div> <!-- /.col-lg-2 -->
                 </div> <!-- /.row -->
               </div> <!-- /.node-inner -->
@@ -43,8 +43,8 @@
                 </ul>
 
                 <div class="controls">
-                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-exchange"><span class="glyphicon glyphicon-trash"></span></a>
-                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-exchange"><span class="glyphicon glyphicon-refresh"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-exchange"><span class="icon icon-trashcan"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-exchange"><span class="icon icon-ccw"></span></a>
                 </div>
 
               </div> <!-- /.node-inner -->

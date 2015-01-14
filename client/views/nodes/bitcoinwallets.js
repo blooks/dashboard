@@ -34,8 +34,8 @@ Template.bitcoinWallets.events({
     var targetID = "#" + this._id;
     jQuery(targetID + " .node-body").slideToggle(400, function () {
       jQuery(targetID + " .body-toggle")
-        .toggleClass('fa-angle-up')
-        .toggleClass('fa-angle-down');
+        .toggleClass('icon-up-open-big')
+        .toggleClass('icon-down-open-big');
     });
   }
 });

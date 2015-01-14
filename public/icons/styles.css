@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "untitled-font-1";
-  src:url("fonts/untitled-font-1.eot");
-  src:url("fonts/untitled-font-1.eot?#iefix") format("embedded-opentype"),
-    url("fonts/untitled-font-1.woff") format("woff"),
-    url("fonts/untitled-font-1.ttf") format("truetype"),
-    url("fonts/untitled-font-1.svg#untitled-font-1") format("svg");
+  font-family: "coyno";
+  src:url("fonts/coyno.eot");
+  src:url("fonts/coyno.eot?#iefix") format("embedded-opentype"),
+    url("fonts/coyno.woff") format("woff"),
+    url("fonts/coyno.ttf") format("truetype"),
+    url("fonts/coyno.svg#coyno") format("svg");
   font-weight: normal;
   font-style: normal;
 
 }
 
 [data-icon]:before {
-  font-family: "untitled-font-1" !important;
+  font-family: "coyno" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +27,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "untitled-font-1" !important;
+  font-family: "coyno" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -41,7 +41,7 @@
 .icon-bitcoin:before {
   content: "a";
 }
-.icon-vallet:before {
+.icon-wallet:before {
   content: "b";
 }
 .icon-smiley-meh:before {
@@ -53,24 +53,168 @@
 .icon-smile:before {
   content: "e";
 }
-.icon-stackoverflow:before {
-  content: "f";
-}
-.icon-twitter:before {
-  content: "g";
-}
-.icon-trash-bin:before {
-  content: "h";
-}
-.icon-cog-gear:before {
-  content: "i";
-}
 .icon-info-circled:before {
   content: "p";
 }
-.icon-pencil-1:before {
+.icon-wallet-thin:before {
+  content: "j";
+}
+.icon-blackberry:before {
+  content: "l";
+}
+.icon-bitcoin-network:before {
+  content: "m";
+}
+.icon-bug:before {
+  content: "o";
+}
+.icon-pulse:before {
+  content: "q";
+}
+.icon-asterisk:before {
+  content: "u";
+}
+.icon-graph-trend:before {
+  content: "v";
+}
+.icon-key:before {
+  content: "x";
+}
+.icon-tag:before {
+  content: "i";
+}
+.icon-ccw:before {
+  content: "A";
+}
+.icon-trashcan:before {
+  content: "C";
+}
+.icon-lamp:before {
+  content: "n";
+}
+.icon-lock-1:before {
+  content: "D";
+}
+.icon-unlock-2:before {
+  content: "E";
+}
+.icon-unlock:before {
+  content: "F";
+}
+.icon-paper-plane:before {
+  content: "G";
+}
+.icon-paperclip:before {
+  content: "H";
+}
+.icon-spinner:before {
+  content: "z";
+}
+.icon-google-plus:before {
+  content: "f";
+}
+.icon-credit-card:before {
+  content: "g";
+}
+.icon-github:before {
+  content: "s";
+}
+.icon-facebook:before {
+  content: "t";
+}
+.icon-linkedin:before {
+  content: "w";
+}
+.icon-twitter:before {
+  content: "y";
+}
+.icon-save-disk:before {
+  content: "I";
+}
+.icon-stackoverflow:before {
+  content: "J";
+}
+.icon-reddit:before {
+  content: "K";
+}
+.icon-graph-pie:before {
+  content: "L";
+}
+.icon-user:before {
+  content: "M";
+}
+.icon-accounting1:before {
+  content: "N";
+}
+.icon-bitcoin85:before {
+  content: "P";
+}
+.icon-close:before {
+  content: "T";
+}
+.icon-sign-in:before {
+  content: "U";
+}
+.icon-btc-to-btc:before {
+  content: "X";
+}
+.icon-btc-to-dollar:before {
+  content: "Q";
+}
+.icon-btc-to-eur:before {
+  content: "R";
+}
+.icon-btc-to-sterling:before {
+  content: "Y";
+}
+.icon-check:before {
+  content: "B";
+}
+.icon-circle-slash:before {
+  content: "S";
+}
+.icon-eye:before {
+  content: "Z";
+}
+.icon-folders:before {
+  content: "V";
+}
+.icon-at-sign:before {
+  content: "O";
+}
+.icon-help-circled:before {
+  content: "W";
+}
+.icon-right-open-big:before {
+  content: "1";
+}
+.icon-down-open-big:before {
+  content: "2";
+}
+.icon-up-open-big:before {
+  content: "3";
+}
+.icon-left-open-big:before {
+  content: "4";
+}
+.icon-magnifying-glass:before {
+  content: "h";
+}
+.icon-pencil:before {
   content: "r";
 }
-.icon-wallet35:before {
-  content: "j";
+.icon-flow-tree:before {
+  content: "5";
+}
+.icon-wrench:before {
+  content: "0";
+}
+.icon-cog-gear:before {
+  content: "6";
+}
+.icon-plus:before {
+  content: "7";
+}
+.icon-minus:before {
+  content: "8";
 }

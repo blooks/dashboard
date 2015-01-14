@@ -1,6 +1,6 @@
 <template name="transfers">
-   <!--  <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
-   <hr class="sub-stopper"/> -->
+   <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
+  <hr class="sub-stopper"/>
     <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -57,7 +57,7 @@
     <div class="col-md-10 col-md-offset-1">
       <div class="row desktop-zone">
         <div class="sub-menu-zone pull-right">
-          <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span> <span>{{i18n 'template.headings.help'}}</span></a>
+          <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
         </div>
         <div class="table-zone">
           {{#if transfers}}
@@ -73,17 +73,17 @@
                 <tr>
                   <th>{{i18n 'transfers.headings.table.date'}}
                       <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.date'}} ">
-                       <span class="glyphicon glyphicon-info-sign"></span>
+                       <span class="icon icon-info-circled"></span>
                       </a>
                   </th>
                   <th class="text-center" colspan="7">{{i18n 'transfers.headings.transfers'}}
                       <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.inAmount'}} ">
-                          <span class="glyphicon glyphicon-info-sign"></span>
+                          <span class="icon icon-info-circled"></span>
                       </a>
                   </th>
                   <th>{{i18n 'transfers.headings.table.value'}}
                       <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'transfers.tooltip.value'}} ">
-                          <span class="glyphicon glyphicon-info-sign"></span>
+                          <span class="icon icon-info-circled"></span>
                       </a>
                   </th>
                   <th colspan="2" class="no-border"></th>
