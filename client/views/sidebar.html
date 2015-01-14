@@ -1,13 +1,15 @@
  <template name="sidebar">
   <!-- Begin page content -->
-      <div class="col-xs-7 col-sm-3 col-md-3 col-lg-2 sidebar sidebar-left sidebar-animate">
-        <a href="#" id='test1' class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left"> 
+  <!-- col-xs-6 col-sm-3 col-md-2 col-lg-1 -->
+      <div class="sidebar sidebar-left sidebar-animate">
+        <a href="#" id='test1' class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left">
           <i class="fa fa-chevron-right"></i>
         </a>
         <ul class="nav navbar-stacked">
           <li><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><i class="fa fa-pie-chart"></i></span></a></li>
           <li><a href="{{pathFor 'trades'}}">{{i18n 'template.headings.trades'}}<span class="nav-icon"><i class="fa fa-refresh"> </i></span></a></li>
-          <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon">         <i class="fa fa-bell"></i></span></a></li>
+          <li><a href="transfers/page/1">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><i class="fa fa-exchange"></i></span></a></li>
+          <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon"><div class="icon icon-vallet"></div></span></a></li>
         </ul>
       </div> <!-- /.sidebar -->
 </template>
