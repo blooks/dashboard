@@ -50,7 +50,10 @@ Meteor.methods({
     });
     Meteor.users.remove({_id: self.userId});
   },
-
+  /**
+   * [totalTransfersPages description]
+   * @return {[type]} [description]
+   */
   totalTransfersPages: function () {
     return Transfers.find({}).count();
   }
