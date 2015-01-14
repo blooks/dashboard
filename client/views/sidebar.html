@@ -1,14 +1,18 @@
  <template name="sidebar">
   <!-- Begin page content -->
   <!-- col-xs-6 col-sm-3 col-md-2 col-lg-1 -->
+  <!-- DGB 2015-01-14 06:43 @Erasmus please move this to the less files -->
+  <style>
+    .sidebar.sidebar-left.sidebar-animate > ul > li.active {background-color:red}
+  </style>
       <div class="sidebar sidebar-left sidebar-animate">
         <a href="#" id='test1' class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left">
           <i class="fa fa-chevron-right"></i>
         </a>
         <ul class="nav navbar-stacked">
-          <li><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><i class="fa fa-pie-chart"></i></span></a></li>
-          <li><a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><i class="fa fa-exchange"></i></span></a></li>
-          <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon"><div class="icon icon-vallet"></div></span></a></li>
+          <li class='{{#if isActive 'dashboard'}}active{{/if}}'><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><i class="fa fa-pie-chart"></i></span></a></li>
+          <li class='{{#if isActive 'transfers_user'}}active{{/if}}'><a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><i class="fa fa-exchange"></i></span></a></li>
+          <li class='{{#if isActive 'nodes'}}active{{/if}}'> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon"><div class="icon icon-vallet"></div></span></a></li>
         </ul>
       </div> <!-- /.sidebar -->
 </template>
