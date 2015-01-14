@@ -36,9 +36,11 @@ Router.map(function() {
       return [Meteor.subscribe('transfers', Session.get('limitValues'), parseInt(this.params.number)-1)];
     },
     data: function() {
-      return {
-        transfers: Transfers.find()
-      };
+      if(Transfers.find() && Transfers.find().fetch().length>0){
+        return {
+          transfers: Transfers.find()
+        };
+      }
     }
   });
   this.route('nodes', {

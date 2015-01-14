@@ -29,12 +29,13 @@ joshowens:simple-form
 joshowens:accounts-entry
 meteorhacks:npm
 
+
+
+
 npm-container
 
 jhuenges:highstock
 meteor-platform
 velocity:html-reporter
 mike:mocha
-email
-aldeed:simple-schema
 reactive-var
