@@ -1,7 +1,4 @@
 Meteor.publish("transfers", function (page, numberOfResults) {
-  Log.info("Number of results to show: "+numberOfResults);
-  Log.info("Page: "+page);
-  Log.info("Results to skip: "+page*numberOfResults);
   var self = this;
   var totalAvailableResults = Transfers.find({}).count();
   var handle = Transfers.find({}, {skip: parseInt(page-1)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
