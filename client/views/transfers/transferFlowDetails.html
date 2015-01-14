@@ -4,9 +4,9 @@
         {{#unless isIncoming}}
         <td colspan="{{colSpanBefore}}"></td>
         {{/unless}}
-        <td class="{{transferType}}-tx-cell">{{senderLabel}}</td>
-        <td class="{{transferType}}-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> {{signedSaneAmount this}} {{details.currency}}</a></td>
-        <td class="{{transferType}}-tx-cell">{{recipientLabel}}</td>
+        <td class="{{representation.type}}-tx-cell">{{senderLabel}}</td>
+        <td class="{{representation.type}}-bg tx-arrow"><a href="#" class="btn btn-arrow-right"> {{signedSaneAmount this}} {{details.currency}}</a></td>
+        <td class="{{representation.type}}-tx-cell">{{recipientLabel}}</td>
         {{#unless isOutgoing}}
         <td colspan="{{colSpanAfter}}"></td>
         {{/unless}}
