@@ -20,14 +20,19 @@ Router.map(function() {
       return [Meteor.subscribe('bitcoinwallets')];
     }
   });
+  this.route('transfers_user', {
+    template: 'transfers',
+    action: function() {
+      Router.go('/transfers/1/10');
+    }
+  });
   this.route('transfers', {
-    path: '/transfers/page/:number',
+    path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
     waitOn: function() {
-      Session.setDefault('limitValues', 10);
-      Session.setDefault('page', 0);
-      Session.set('page', parseInt(this.params.number)-1);
-      return [Meteor.subscribe('transfers', Session.get('limitValues'), parseInt(this.params.number)-1)];
+      console.log("Page: "+this.params.page);
+      console.log("Number of results to show: "+this.params.numberOfResults);
+      return [Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults))];
     },
     data: function() {
       if(Transfers.find() && Transfers.find().fetch().length>0){

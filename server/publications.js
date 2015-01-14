@@ -1,9 +1,9 @@
-Meteor.publish("transfers", function (numberOfResults, page) {
+Meteor.publish("transfers", function (page, numberOfResults) {
   Log.info("Number of results to show: "+numberOfResults);
   Log.info("Page: "+page);
-  Log.info("Result to skip: "+page*numberOfResults);
+  Log.info("Results to skip: "+page*numberOfResults);
   var self = this;
-  var handle = Transfers.find({}, {skip: parseInt(page)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
+  var handle = Transfers.find({}, {skip: parseInt(page-1)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
     added: function(id, fields){
       self.added("transfers", id, fields);
     },

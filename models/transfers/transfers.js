@@ -106,7 +106,9 @@ Transfers.helpers({
    * @returns {string} Label of the Node.
    */
   recipientLabel: function () {
-    return nodeLabel(this.recipientNodeId());
+    if(this.recipientNodeId()){
+      //return nodeLabel(this.recipientNodeId());
+    }
   },
   /**
    * Fetches label of the sender. If the recipient is
@@ -114,7 +116,9 @@ Transfers.helpers({
    * @returns {string} Label of the sender.
    */
   senderLabel: function () {
-    return nodeLabel(this.senderNodeId());
+    if(this.senderNodeId()){
+      //return nodeLabel(this.senderNodeId());
+    }
   },
   /**
    * Determines if transfer is internal
