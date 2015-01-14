@@ -23,8 +23,24 @@
           {{/if}}
 				</div>
 
-<h3 class="form-divider">Change password</h3>
-      <div class="big-input-item">
+      <h3 class="form-divider">Change password</h3>
+      {{#if hasUserMessage}}
+        {{#with hasUserMessage}}
+        <style>
+          // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
+          .user-notification {}
+          .user-notification > div {padding: 1.5em; font-size: 1.2em; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
+          .user-notification > .error {background-color: red; border-color: darkred; }
+          .user-notification > .success {background-color: green; border-color: darkgreen; }
+        </style>
+        <div class='user-notification'>
+          <div class='{{class}}'>
+            {{message}}
+          </div>
+        </div>
+        {{/with}}
+      {{/if}}
+      <div class="big-input-item" id='passwordChange'>
         <span class="field-type">Old password:<input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control"/></span><br>
         <span class="field-type">New password:<input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control"/></span><br>
         <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
