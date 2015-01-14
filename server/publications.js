@@ -3,12 +3,15 @@ Meteor.publish("transfers", function (page, numberOfResults) {
   Log.info("Page: "+page);
   Log.info("Results to skip: "+page*numberOfResults);
   var self = this;
+  var totalAvailableResults = Transfers.find({}).count();
   var handle = Transfers.find({}, {skip: parseInt(page-1)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
     added: function(id, fields){
       self.added("transfers", id, fields);
+      fields.totalAvailable = totalAvailableResults;
     },
     changed: function(id, fields) {
       self.changed("transfers", id, fields);
+      fields.totalAvailable = totalAvailableResults;
     },
     removed: function(id) {
       self.removed("transfers", id);

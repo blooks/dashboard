@@ -30,14 +30,13 @@ Router.map(function() {
     path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
     waitOn: function() {
-      console.log("Page: "+this.params.page);
-      console.log("Number of results to show: "+this.params.numberOfResults);
       return [Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults))];
     },
     data: function() {
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
-          transfers: Transfers.find()
+          transfers: Transfers.find(),
+          page: parseInt(this.params.page)
         };
       }
     }
