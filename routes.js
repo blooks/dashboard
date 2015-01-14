@@ -17,7 +17,7 @@ Router.map(function() {
   this.route('dashboard', {
     path: '/dashboard',
     waitOn: function() {
-      return [Meteor.subscribe('bitcoinwallets')];
+      return [Meteor.subscribe('bitcoinwallets'), Meteor.subscribe('transfers')];
     }
   });
   this.route('transfers_user', {
