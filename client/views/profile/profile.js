@@ -34,6 +34,28 @@ Template.userProfile.helpers({
 });
 
 Template.userProfile.events({
+  "click #change_password": function (event, template) {
+    event.preventDefault();
+    var oldPassword = template.$("#old_password").val();
+    var newPassword = template.$("#new_password").val();
+    var newPasswordAgain = template.$("#new_password_again").val();
+    if(newPassword.length>0 && newPasswordAgain.length>0 && (newPasswordAgain===newPassword)){
+      Accounts.changePassword(oldPassword, newPassword, function (err) {
+        if(err){
+          console.log(err);
+        }else{
+          console.log("The password was changed");
+          Meteor.call("sendEmail");
+          template.$("#old_password").val("");
+          template.$("#new_password").val("");
+          template.$("#new_password_again").val("");
+        }
+      });
+    }
+  },
+  "click #confirm_delete_account": function () {
+    Meteor.call('removeAccount');
+  },
   // DGB 2015-01-12 05:11
   // We can refactor this by including classes on the parents to identify the
   // button who raises the events 

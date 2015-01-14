@@ -1,3 +1,4 @@
+Meteor.users.deny({remove: function () { return false; }});
 Accounts.onCreateUser(function(options, user) {
  /*
   * Not necessary while we have exchanges deactivated.

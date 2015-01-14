@@ -34,3 +34,4 @@ Meteor.settings.public.coyno =
   allowedBanks: ['BankAccount']
   supportedBitcoinWalletTypes: ['BIP32', 'Armory', 'Electrum',
                                 'Single Addresses']
+

@@ -83,7 +83,9 @@ Template.dashboard.helpers({
         return (internalNumber / 10e7).toFixed(2);
       }
     };
-    return saneNumber(Meteor.user().totalBalance(currency), currency);
+    if(Meteor.user()){
+      return saneNumber(Meteor.user().totalBalance(currency), currency);
+    }
   }
 });
 
