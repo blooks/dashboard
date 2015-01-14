@@ -1,7 +1,7 @@
 Template.transferRow.helpers({
   signedSaneAmount : function(transfer) {
     var result = transfer.saneAmount();
-    switch (transfer.transferType()) {
+    switch (transfer.representation.type) {
      case "internal":
      result = " " + result;
      break;
@@ -15,27 +15,29 @@ Template.transferRow.helpers({
     return result;
   },
   colSpanBefore: function() {
-    switch (this.transferType()) {
+    switch (this.representation.type) {
         case 'internal' :
             return 2;
-            break;
         case 'outgoing' :
             return 4;
-            break;
         //  Not called for incoming tx row
     }
   },
   /*TODO refactor code duplication (reverse logic of colSPandBefore */
   colSpanAfter : function() {
-    switch (this.transferType()) {
+    switch (this.representation.type) {
         case 'internal' :
             return 2;
-            break;
         // Not called for outgoing tx row
         case 'incoming' :
             return 4;
-            break;
     }
+  },
+  recipientLabel : function() {
+    return this.representation.recipientLabels[0];
+  },
+  senderLabel : function() {
+    return this.representation.senderLabels[0];
   }
 
 });
