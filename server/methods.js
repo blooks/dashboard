@@ -14,19 +14,28 @@ Meteor.methods({
   /**
    * 12.01.2015 LFG
    * [sendEmail send an email notification when the password is changed]
+   * DGB 2015-01-14 04:43 Converted into a generic function to be able to send
+   * any template
    * @return {undefined}         [description]
    */
-  sendEmail: function () {
+  sendEmail: function (template) {
     var self = this;
+    if (!self.userId || !template) return; //DGB 2015-01-14 04:41 Minimal security just-in-case
     var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
-    self.unblock();
-    //LFG 13.01.2015 getaddrinfo ENOTFOUND is usually a DNS error (address not found)
-    Email.send({
-      to: user,
-      from: Accounts.emailTemplates.from,
-      subject: Accounts.emailTemplates.resetPassword.subject,
-      text: Accounts.emailTemplates.resetPassword.text
-    });
+    console.log(template);
+    if (template === 'resetPassword') {
+      self.unblock();
+      Accounts.sendResetPasswordEmail(self.userId);
+    }
+    else if (template = eval('Accounts.emailTemplates.' + template)) {
+      self.unblock();
+      Email.send({
+        to: self.user,
+        from: Accounts.emailTemplates.from,
+        subject: template.subject(user),
+        text: template.text(user)
+      });
+    }
   },
   /**
    * 13.01.2015 LFG

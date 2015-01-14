@@ -25,13 +25,13 @@ Accounts.emailTemplates.verifyEmail = {
 // DGB 2015-01-12 03:41
 // This email is send when the user request to change the password.
 Accounts.emailTemplates.resetPassword ={
-  subject: function () {
+  subject: function (user) {
     return "Coyno Reset Password Email"; 
   },
-  text: function (user) {
+  text: function (user,url) {
     var t = null;
-    t= "Hello! \n\n Welcome to Coyno " + user.profile.name + "! \n\n";
-    t+="";
+    t= "Hello " + "! \n\n";  
+    t+="You have succesfully changed your email";
     return t;
   }
 };

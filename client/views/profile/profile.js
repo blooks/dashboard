@@ -7,8 +7,10 @@
         Router.go('profileEdit');
     }
 });*/
+
 Template.userProfile.created = function() {
   this.editingSection = new ReactiveVar('','');
+  this.userMessageOnEditingSection = new ReactiveVar(false,'');
 };
  
 Template.userProfile.helpers({
@@ -25,6 +27,12 @@ Template.userProfile.helpers({
       return user.emails[0].address;
     }
   },
+  hasUserMessage: function() {
+    return Template.instance().userMessageOnEditingSection.get();
+  },
+  activateDebugger: function() {
+    debugger;
+  },
   // DGB 2015-01-12 04:42
   // This functions controls the inline edit of forms
   getEditingSection: function (section) {
@@ -39,18 +47,19 @@ Template.userProfile.events({
     var oldPassword = template.$("#old_password").val();
     var newPassword = template.$("#new_password").val();
     var newPasswordAgain = template.$("#new_password_again").val();
-    if(newPassword.length>0 && newPasswordAgain.length>0 && (newPasswordAgain===newPassword)){
+    if(newPassword.length>0 && newPasswordAgain.length>=6 && (newPasswordAgain===newPassword)){
       Accounts.changePassword(oldPassword, newPassword, function (err) {
         if(err){
-          console.log(err);
+          template.userMessageOnEditingSection.set({class: 'error', message: err.reason});
         }else{
-          console.log("The password was changed");
-          Meteor.call("sendEmail");
-          template.$("#old_password").val("");
-          template.$("#new_password").val("");
-          template.$("#new_password_again").val("");
+          template.userMessageOnEditingSection.set({class: 'success', message:'The password was changed, and we have sent you an email'}) 
+          Meteor.call('sendEmail','resetPassword');
+          template.$("#passwordChange").remove("");
         }
       });
+    }
+    else {
+      template.userMessageOnEditingSection.set({class: 'error', message:'Password is too short (need at least 6 characters) or passwords do not match'}) 
     }
   },
   "click #confirm_delete_account": function () {
