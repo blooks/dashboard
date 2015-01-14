@@ -28,7 +28,7 @@ Template.userProfile.helpers({
   // DGB 2015-01-12 04:42
   // This functions controls the inline edit of forms
   getEditingSection: function (section) {
-    var editingSection = Template.instance().editingSection.get()
+    var editingSection = Template.instance().editingSection.get();
     return (editingSection===section);
   },
 });
@@ -60,10 +60,10 @@ Template.userProfile.events({
   // We can refactor this by including classes on the parents to identify the
   // button who raises the events 
   'click #setEditingSectionUsername': function (event, template) {
-    template.editingSection.set('username') 
+    template.editingSection.set('username');
 	},
   'click #setEditingSectionEmail': function (event, template) {
-    template.editingSection.set('email') 
+    template.editingSection.set('email');
 	},
 
 

@@ -61,6 +61,8 @@
         </div>
         <div class="table-zone">
           {{#if transfers}}
+            {{>transfersNavigation}}
+            <br>
             <table class="table table-tx table-zb-hover auto-width centered">
               <thead>
                 <tr>
@@ -95,22 +97,6 @@
                 {{/each}}
               </tbody>
             </table>
-            <!--Pagination section-->
-            <div class='row' style='margin-top:2em;'>
-              <div class='col-xs-4 text-center'>
-                {{#if noZero}}
-                  <div id='beforeButton' class='btn btn-primary text-center beforeBtn'>Previous</div>
-                {{/if}}
-              </div>
-              <div class='col-xs-4 text-center'>
-                <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{actualPage}}</div>
-              </div>
-              <div class='col-xs-4 text-center'>
-                {{#if noLastPage}}
-                  <div id='nextButton' class='btn btn-primary text-center nextBtn'>Next</div>
-                {{/if}}
-              </div>
-            </div>
           {{else}}
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">

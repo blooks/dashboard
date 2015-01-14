@@ -134,7 +134,6 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
-
       representation.baseVolume =
         Coynverter.calculateBaseAmount(
           transfer.amount(),

@@ -20,25 +20,23 @@ Router.map(function() {
       return [Meteor.subscribe('bitcoinwallets')];
     }
   });
-  this.route('transfers', {
-    path: '/transfers',
-    data: function() {
-      return {
-        pagenum: 0,
-        amountperpage: 20
-      };
+  this.route('transfers_user', {
+    template: 'transfers',
+    action: function() {
+      Router.go('/transfers/1/10');
     }
   });
-  this.route('transfersPage', {
-    path: '/transfers/:pagenum/:amountperpage',
+  this.route('transfers', {
+    path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
     waitOn: function() {
-      return [Meteor.subscribe('transfers', parseInt(this.params.amountperpage), parseInt(this.params.pagenum)-1)];
+      return [Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults))];
     },
     data: function() {
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
-          transfers: Transfers.find()
+          transfers: Transfers.find(),
+          page: parseInt(this.params.page)
         };
       }
     }
