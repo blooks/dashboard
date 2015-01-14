@@ -28,6 +28,19 @@ Schemas.TransferDetails = new SimpleSchema
     allowedValues: Meteor.settings.public.coyno.allowedCurrencies
 
 
+Schemas.TransferRepresentation = new SimpleSchema
+  type:
+    type: String
+  senderLabels:
+    type: [String]
+  recipientLabels:
+    type: [String]
+  amount:
+    type: Number
+  baseVolume:
+    type: Number
+
+
 Schemas.Transfer = new SimpleSchema
 
   foreignId:
@@ -53,6 +66,9 @@ Schemas.Transfer = new SimpleSchema
   baseVolume:
     type: Number
     defaultValue: 0
+  representation:
+    type: Schemas.TransferRepresentation
+    optional: true
 
 # Attach the schema to the collection
 Transfers.attachSchema Schemas.Transfer

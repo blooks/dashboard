@@ -96,6 +96,12 @@ var connectToInternalNode = function (inoutput) {
   return inoutput;
 };
 
+var updateKnownTransfer = function (transfer) {
+  var internalTransfer = Transfers.findOne({"foreignId": transfer.foreignId});
+  internalTransfer.updateRepresentation();
+};
+
+
 /**
  * Tries to add a transfer to the database or update the transfer if it
  * has already been there (e.g. the user already added the other side of the
@@ -150,6 +156,7 @@ var addTransfer = function (transfer) {
   }
 };
 
+
 /**
  * Getting all transactions for the array of addresses from the
  * Bitcoin blockchain via the Chain API
@@ -173,7 +180,9 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   console.log('Asked chain.com for tx for ' + addresses.length +
   " addresses. Got " + chainTxs.length + " transactions.");
   chainTxs.forEach(function (chainTx) {
-    addTransfer(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
+    var newTransfer = addCoynoData(chainTxToCoynoTx(chainTx), wallet);
+    addTransfer(newTransfer);
+    updateKnownTransfer(newTransfer);
   });
 };
 

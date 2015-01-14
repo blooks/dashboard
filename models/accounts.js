@@ -1,6 +1,5 @@
 Meteor.users.helpers({
   networthData: function () {
-
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
@@ -24,12 +23,13 @@ Meteor.users.helpers({
           time += timeDelta;
         }
         if (transfer.isIncoming()) {
-          balance += transfer.amount();
-          change += transfer.amount();
+          balance += transfer.representation.amount;
+          change += transfer.representation.amount;
         }
         if (transfer.isOutgoing()) {
-          balance -= (transfer.amount() - transfer.fee());
-          change -= (transfer.amount() - transfer.fee());
+          //TODO: Respect the fee!
+          balance -= (transfer.representation.amount);
+          change -= (transfer.representation.amount);
         }
       });
     balances.push([time, parseFloat(satoshiToBTC(balance))]);
@@ -40,12 +40,78 @@ Meteor.users.helpers({
     var result = 0;
     Transfers.find({"details.currency": currency}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
-        result += transfer.amount();
+        result += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        result -= (transfer.amount() + transfer.fee());
+        //TODO: Respect the fee!
+        result -= (transfer.representation.amount);
       }
     });
     return result;
   }
 });
+
+var userProfile = new SimpleSchema({
+  language: {
+    type: String,
+    optional: true
+  },
+  name: {
+    type: String,
+    optional: true
+  },
+  username: {
+    type: String,
+    optional: true
+  }
+});
+
+var Schema = new SimpleSchema({
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert) {
+        return new Date();
+      }
+      if (this.isUpsert) {
+        return {$setOnInsert: new Date()};
+      }
+      else {
+        this.unset();
+      }
+    },
+    optional: true
+  },
+  updatedAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isUpdate) {
+        return new Date();
+      }
+    },
+    optional: true
+  },
+  emails: {
+    type: [Object]
+  },
+  "emails.$.address": {
+    optional: true,
+    type: String,
+    regEx: SimpleSchema.RegEx.Email
+  },
+  "emails.$.verified": {
+    optional: true,
+    type: Boolean
+  },
+  profile: {
+    type: userProfile,
+    optional: true
+  },
+  services: {
+    type: Object,
+    optional: true,
+    blackbox: true
+  }
+});
+
+Meteor.users.attachSchema(Schema);

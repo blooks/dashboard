@@ -1,13 +1,10 @@
 if (typeof MochaWeb !== "undefined") {
   MochaWeb.testOnly(function () {
     chai.should();
-
     var testUser = {
       email: "foo@example.com",
       password: "123qweasd"
     };
-
-
     before(function (done) {
       if (Meteor.users.find({
         emails: {
@@ -18,7 +15,6 @@ if (typeof MochaWeb !== "undefined") {
       }).count() === 0) {
         Accounts.createUser(testUser, done);
       }
-
       done();
     });
 

@@ -7,8 +7,10 @@
         Router.go('profileEdit');
     }
 });*/
+
 Template.userProfile.created = function() {
   this.editingSection = new ReactiveVar('','');
+  this.userMessageOnEditingSection = new ReactiveVar(false,'');
 };
  
 Template.userProfile.helpers({
@@ -25,23 +27,52 @@ Template.userProfile.helpers({
       return user.emails[0].address;
     }
   },
+  hasUserMessage: function() {
+    return Template.instance().userMessageOnEditingSection.get();
+  },
+  activateDebugger: function() {
+    debugger;
+  },
   // DGB 2015-01-12 04:42
   // This functions controls the inline edit of forms
   getEditingSection: function (section) {
-    var editingSection = Template.instance().editingSection.get()
+    var editingSection = Template.instance().editingSection.get();
     return (editingSection===section);
   },
 });
 
 Template.userProfile.events({
+  "click #change_password": function (event, template) {
+    event.preventDefault();
+    var oldPassword = template.$("#old_password").val();
+    var newPassword = template.$("#new_password").val();
+    var newPasswordAgain = template.$("#new_password_again").val();
+    if(newPassword.length>0 && newPasswordAgain.length>=6 && (newPasswordAgain===newPassword)){
+      Accounts.changePassword(oldPassword, newPassword, function (err) {
+        if(err){
+          template.userMessageOnEditingSection.set({class: 'error', message: err.reason});
+        }else{
+          template.userMessageOnEditingSection.set({class: 'success', message:'The password was changed, and we have sent you an email'}) 
+          Meteor.call('sendEmail','resetPassword');
+          template.$("#passwordChange").remove("");
+        }
+      });
+    }
+    else {
+      template.userMessageOnEditingSection.set({class: 'error', message:'Password is too short (need at least 6 characters) or passwords do not match'}) 
+    }
+  },
+  "click #confirm_delete_account": function () {
+    Meteor.call('removeAccount');
+  },
   // DGB 2015-01-12 05:11
   // We can refactor this by including classes on the parents to identify the
   // button who raises the events 
   'click #setEditingSectionUsername': function (event, template) {
-    template.editingSection.set('username') 
+    template.editingSection.set('username');
 	},
   'click #setEditingSectionEmail': function (event, template) {
-    template.editingSection.set('email') 
+    template.editingSection.set('email');
 	},
 
 
