@@ -13,7 +13,7 @@ Coynverter = (function() {
    * @param {Date} date
    * @returns {Number}
    */
-  var exchangeRate = function( from, to, date ) {
+  var exchangeRate = function ( from, to, date ) {
 
     // TODO: usage scenarios? - decide if it'll throw errors or return nulls
 
