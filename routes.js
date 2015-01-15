@@ -17,7 +17,7 @@ Router.map(function() {
   this.route('dashboard', {
     path: '/dashboard',
     waitOn: function() {
-      return [Meteor.subscribe('bitcoinwallets')];
+      return [Meteor.subscribe('bitcoinwallets'), Meteor.subscribe('transfers')];
     }
   });
   this.route('transfers_user', {
@@ -29,14 +29,19 @@ Router.map(function() {
   this.route('transfers', {
     path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
-    waitOn: function() {
-      return [Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults))];
-    },
+    loadingTemplate: '',
     data: function() {
+      Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults));
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
           transfers: Transfers.find(),
-          page: parseInt(this.params.page)
+          page: parseInt(this.params.page),
+          numberOfResultsPerPage: parseInt(this.params.numberOfResults),
+          totalPages:  Math.ceil(Transfers.findOne({}).totalAvailable/parseInt(this.params.numberOfResults))
+        };
+      }else{
+        return {
+          noTransfers: 0
         };
       }
     }

@@ -2,13 +2,13 @@
    'click .navbar-toggle': function (event, template) {
      // DGB 2015-01-12 07:32
      // This is hacky, but there are not many more options as this version of
-     // sidebar.js doesn't have callbacks. 
+     // sidebar.js doesn't have callbacks.
      // Here we don't prevent default event, so sidebar.js can continue.
-     if ($('.fa-chevron-left').length) {
-       $('.fa-chevron-left').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+     if ($('.icon-left-open-big').length) {
+       $('.icon-left-open-big').removeClass('icon-left-open-big').addClass('icon-right-open-big');
      }
      else {
-       $('.fa-chevron-right').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+       $('.icon-right-open-big').removeClass('icon-right-open-big').addClass('icon-left-open-big');
      }
  	},
   'click #transfers': function () {

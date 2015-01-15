@@ -1,0 +1,31 @@
+<template name="bitcoinWalletAddresses">
+  <div class="wallet-adresses zone">
+    {{#if addresses}}
+      <h4><span class="icon icon-bitcoin-network"></span> Nonzero Addresses in this wallet</h4>
+      <table class="table table-bordered table-zb-hover">
+        <thead>
+          <tr>
+            <th>Label <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
+            <th>Address <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
+            <th>Balance <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each addresses}}
+              {{#if showAddress this}}
+              <tr>
+                <td>{{label}}</td>
+                <td>{{address}}</td>
+                <td>{{saneBalance}} BTC</td>
+                <td><a href="#" class="delete-transaction"><span class="icon icon-trashcan"></span></a></td>
+              </tr>
+              {{/if}}
+            {{/each}}
+        </tbody>
+      </table>
+    {{/if}}
+    {{#if singleAddressWallet this}}
+      {{> addBitcoinAddress}}
+    {{/if}}
+  </div>
+</template>

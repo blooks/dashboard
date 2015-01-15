@@ -23,12 +23,13 @@ Meteor.users.helpers({
           time += timeDelta;
         }
         if (transfer.isIncoming()) {
-          balance += transfer.amount();
-          change += transfer.amount();
+          balance += transfer.representation.amount;
+          change += transfer.representation.amount;
         }
         if (transfer.isOutgoing()) {
-          balance -= (transfer.amount() - transfer.fee());
-          change -= (transfer.amount() - transfer.fee());
+          //TODO: Respect the fee!
+          balance -= (transfer.representation.amount);
+          change -= (transfer.representation.amount);
         }
       });
     balances.push([time, parseFloat(satoshiToBTC(balance))]);
@@ -39,10 +40,11 @@ Meteor.users.helpers({
     var result = 0;
     Transfers.find({"details.currency": currency}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
-        result += transfer.amount();
+        result += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        result -= (transfer.amount() + transfer.fee());
+        //TODO: Respect the fee!
+        result -= (transfer.representation.amount);
       }
     });
     return result;
@@ -70,7 +72,7 @@ var Schema = new SimpleSchema({
     autoValue: function() {
       if (this.isInsert) {
         return new Date();
-      } 
+      }
       if (this.isUpsert) {
         return {$setOnInsert: new Date()};
       }
@@ -78,7 +80,7 @@ var Schema = new SimpleSchema({
         this.unset();
       }
     },
-    optional: true 
+    optional: true
   },
   updatedAt: {
     type: Date,
