@@ -16,7 +16,7 @@
 @table-cell-height: (@table-cell-padding+@line-height-base);
 
 /* Shadows */
-@soft-shadow:         rgba(199,199,199,0.5); // For subtle shadows in e.g. nav and sidebar divs. 
+@soft-shadow:         rgba(199,199,199,0.5); // For subtle shadows in e.g. nav and sidebar divs.
 
 
 
@@ -25,6 +25,11 @@
   border: 1px solid @brand-primary;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.bordered {
+  border: 1px solid @gray-lighter;
+  padding: 20px;
 }
 
 // Spinning Icons
@@ -46,7 +51,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  
+
   -webkit-animation: bounce 2.0s infinite ease-in-out;
   animation: bounce 2.0s infinite ease-in-out;
 }
@@ -62,10 +67,10 @@
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
