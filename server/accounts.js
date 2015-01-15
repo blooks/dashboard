@@ -12,6 +12,16 @@ Meteor.users.allow({
   }
 });
 
+// DGB 2015-01-15 08:35 Moved from lib/config.coffee
+Meteor.startup(function () {
+  AccountsEntry.config({
+    signupCode: null
+  });
+});
+
+/* DGB 2015-01-15 08:35 This triggers the server to send the "validate" email when a new user is created. The content of the email is set in the server/email.js */
+Accounts.config({sendVerificationEmail: true});
+
 Accounts.onCreateUser(function(options, user) {
   user.profile = options.profile || {};
   if(!user.profile.username){
