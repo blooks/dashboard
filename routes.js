@@ -11,8 +11,10 @@ Router.onBeforeAction(mustBeSignedIn, {
 });
 
 Router.map(function() {
-  this.route('home', {
-    path: '/'
+  this.route('/', {
+    action: function() {
+      Router.go('/dashboard');
+    }
   });
   this.route('dashboard', {
     path: '/dashboard',
