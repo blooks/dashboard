@@ -86,16 +86,14 @@ Template.userProfile.events({
 	},
   'click #saveUsername': function (event, template) {
     template.editingSection.set(''); 
-    // DGB 2015-01-12 05:43 
-    // Cannot finish with this until we fix the meteor users allow 
-    // Meteor.users.upsert(
-    //   {_id: Meteor.userId()}, 
-    //   {$set: {'profile.username':$("#newUsername").val()}},
-    //   false, 
-    //   function(err,result,template) {
-    //     // DGB 2015-01-12 05:29 Reset status on callback
-    //     template.editingSection.set(''); 
-    // }); 
+    Meteor.users.update(
+      {_id: Meteor.userId()}, 
+      {$set: {'profile.username':$("#newUsername").val()}},
+      false, 
+      function(err,result) {
+        // DGB 2015-01-12 05:29 Reset status on callback
+        template.editingSection.set(''); 
+    }); 
 	}
 }); 
 
