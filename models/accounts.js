@@ -63,6 +63,10 @@ var userProfile = new SimpleSchema({
   username: {
     type: String,
     optional: true
+  },
+  hasTransfers: {
+    type: Boolean,
+    defaultValue: false
   }
 });
 

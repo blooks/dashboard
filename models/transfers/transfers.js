@@ -39,7 +39,28 @@ var getNodeIdForInOutput = function (inoutput) {
 };
 
 if (Meteor.isServer) {
-  Transfers.helpers({
+
+
+    Transfers.after.insert(function (userId, doc) {
+      //Sanity check.
+      var user = Meteor.users.findOne({_id: userId});
+      if (! user.profile.hasTransfers) {
+        Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
+      }
+    });
+
+    Transfers.after.remove(function (userId, doc) {
+      if (! Transfers.findOne({'userId': userId})) {
+        //TODO: Reset the "no Transfers flag" for the user.
+        return;
+      } else {
+        return;
+      }
+    });
+
+
+
+    Transfers.helpers({
     inputSum: function () {
       var result = 0;
       this.details.inputs.forEach(function (input) {
