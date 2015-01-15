@@ -80,7 +80,7 @@ i18n.map 'en_GB',
   # Nodes
   nodes:
     headings:
-      nodes: "Accounts"
+      nodes: "Wallets"
       addSingle: "New Account"
       wallets: "Wallets"
     buttons:
