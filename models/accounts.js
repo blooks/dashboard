@@ -66,7 +66,7 @@ var userProfile = new SimpleSchema({
   },
   hasTransfers: {
     type: Boolean,
-    default: false
+    defaultValue: false
   }
 });
 
