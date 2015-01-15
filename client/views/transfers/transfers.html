@@ -60,7 +60,7 @@
           <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"></span> <span>{{i18n 'template.headings.help'}}</span></a>
         </div>
         <div class="table-zone">
-          {{#if transfers}}
+          {{#unless noTransfers}}
             {{>transfersNavigation}}
             <br>
             <table class="table table-tx table-zb-hover auto-width centered">
@@ -92,12 +92,17 @@
                 </tr>
               </thead>
               <tbody>
+              {{#if transfers}}
                 {{#each transfers}}
                   {{> transferRow }}
                 {{/each}}
+              {{else}}
+                {{> loading}}
+              {{/if}}
               </tbody>
             </table>
-          {{else}}
+          {{/unless}}
+          {{#if noTransfers}}
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <div class="add-trns-zone">
