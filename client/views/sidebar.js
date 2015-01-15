@@ -15,3 +15,11 @@
     Router.go('/transfers/page/1');
   }
 });
+
+Template.sidebar.helpers({
+  isActive: function (section) {
+    return (section===Router.current().route.getName());
+  },
+});
+
+
