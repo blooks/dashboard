@@ -41,11 +41,11 @@ var getNodeIdForInOutput = function (inoutput) {
 if (Meteor.isServer) {
 
 
-    Transfers.after.insert(function (userId) {
+    Transfers.after.insert(function (userId, doc) {
       //Sanity check.
-      var user = Meteor.users.findOne({'userId': userId});
+      var user = Meteor.users.findOne({_id: userId});
       if (! user.profile.hasTransfers) {
-        Meteor.users.update({'userId': userId}, {$set: {'profile.hasTransfers' : true}});
+        Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
       }
     });
 
