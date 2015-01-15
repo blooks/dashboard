@@ -58,12 +58,5 @@ Meteor.methods({
       text: Accounts.emailTemplates.deleteAccount.text(user)
     });
     Meteor.users.remove({_id: self.userId});
-  },
-  /**
-   * [totalTransfersPages description]
-   * @return {[type]} [description]
-   */
-  totalTransfersPages: function () {
-    return Transfers.find({}).count();
   }
 });
