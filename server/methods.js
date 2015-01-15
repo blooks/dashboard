@@ -47,12 +47,11 @@ Meteor.methods({
    */
   removeAccount: function () {
     var self = this;
-    var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
+    if (!self.userId) return; 
+    var user = Meteor.users.findOne({_id: self.userId});
     self.unblock();
-    // DGB 2015-01-13 06:01 Fixed
-    //LFG 13.01.2015 breaks because of the email configuration, if this block is removed, the process works fine
     Email.send({
-      to: user,
+      to: user.emails[0].address,
       from: Accounts.emailTemplates.from,
       subject: Accounts.emailTemplates.deleteAccount.subject(user),
       text: Accounts.emailTemplates.deleteAccount.text(user)
