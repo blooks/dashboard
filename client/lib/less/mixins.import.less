@@ -27,7 +27,52 @@
   letter-spacing: 1px;
 }
 
+// Spinning Icons
+// --------------------------
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: @brand-primary;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
 /* Opacities */
+// --------------------------
 .opacity(@opacity: 0.5) {
   -moz-opacity: @opacity;
   -khtml-opacity: @opacity;
@@ -63,6 +108,7 @@ ul.no-bullets {
 
 
 /* Standard user feedback styles */
+// --------------------------
 .positive {
 	color: @positive;
 }
@@ -72,6 +118,7 @@ ul.no-bullets {
 }
 
 /* Default zone margins */
+// --------------------------
 .zone {
 	margin-top: 36px;
 	margin-top: 3rem;
@@ -80,6 +127,7 @@ ul.no-bullets {
 }
 
 /* Default transistions speeds */
+// --------------------------
 
 .cubic-bezier {
   -webkit-transition: all 500ms cubic-bezier(0.000, 0.000, 0.215, 0.960);
@@ -94,6 +142,7 @@ ul.no-bullets {
 }
 
 /* Centering styles and techniques */
+// --------------------------
 
 .vertical-align {
   position: relative;
@@ -115,6 +164,7 @@ ul.no-bullets {
 }
 
 /* Table centering workaround */
+// --------------------------
 .vcenter {
   display:table!important;
 
@@ -126,6 +176,7 @@ ul.no-bullets {
 }
 
 /* Paddings & spacings */
+// --------------------------
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
