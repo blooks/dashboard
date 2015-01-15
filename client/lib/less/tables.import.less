@@ -17,31 +17,33 @@
     padding: 8px 15px;
     padding: .75rem 1.25rem;
 
-      &.no-border {
-            border: none;
-            border-bottom: 2px;
-            }
+      &.supa-header {
 
         th {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: @font-family-sans-serif;
-            /* border-bottom: 1px;*/
+           text-align: center;
+           color: @whyte;
 
-              &.supa-header {
-               text-align: center;
-               color: @whyte;
+               &.inflow-header {
+                  background-color: @positive;
+                  min-width: 380px;
+               }
 
-                   &.inflow {
-                      background-color: @positive;
-                   }
+               &.internal-header {
+                  min-width: 200px;
+               }
 
-                   &.outflow {
-                      background-color: @negative;
-                   }
-              }
+               &.outflow-header {
+                  background-color: @negative;
+                  min-width: 380px;
+               }
+
+                .no-border {
+                    border: none;
+                    border-bottom: 2px;
+                }
             }
         }
+      }
    }
 
   tbody {
@@ -165,6 +167,13 @@ td.tx-arrow {
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: none;
+/*    -webkit-touch-callout: text;
+ -webkit-user-select: text;
+ -khtml-user-select: text;
+ -moz-user-select: text;
+ -ms-user-select: text;
+ user-select: text; */
+
     }
 }
 
