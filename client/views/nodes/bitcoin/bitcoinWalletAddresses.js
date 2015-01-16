@@ -6,6 +6,9 @@ Template.bitcoinWalletAddresses.helpers({
     return (address.balance > 0);
   },
   singleAddressWallet: function (wallet) {
-    return (wallet.hdseed === null || wallet.hdseed === undefined);
+    console.log(wallet);
+    var result = (wallet.type === 'Single Addresses');
+    console.log(result);
+    return result;
   }
 });

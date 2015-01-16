@@ -5,7 +5,9 @@
       <table class="table table-bordered table-zb-hover">
         <thead>
           <tr>
+            {{#if singleAddressWallet this}}
             <th>Label <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
+            {{/if}}
             <th>Address <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
             <th>Balance <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
           </tr>
@@ -14,10 +16,11 @@
             {{#each addresses}}
               {{#if showAddress this}}
               <tr>
-                <td>{{label}}</td>
+                {{#if singleAddressWallet ..}}
+                  <td>{{label}}</td>
+                {{/if}}
                 <td>{{address}}</td>
-                <td>{{saneBalance}} BTC</td>
-                <td><a href="#" class="delete-transaction"><span class="icon icon-trashcan"></span></a></td>
+                <td>{{saneNumber balance 'BTC'}} BTC</td>
               </tr>
               {{/if}}
             {{/each}}
