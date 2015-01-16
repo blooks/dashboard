@@ -56,11 +56,11 @@
     </div>
     <div class="col-md-10 col-md-offset-1">
       <div class="row desktop-zone">
+        {{#unless noData}}
         <div class="sub-menu-zone pull-right">
           <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
         </div>
         <div class="table-zone">
-          {{#unless noData}}
             {{>transfersNavigation}}
             <br>
             <table class="table table-tx table-zb-hover auto-width centered">
@@ -101,17 +101,10 @@
               {{/if}}
               </tbody>
             </table>
-          {{else}}
-            <div class="row">
-              <div class="col-sm-6 col-sm-offset-3">
-                <div class="add-trns-zone">
-                  <h3>{{i18n 'transfers.headings.noTransfers'}}</h3>
-                  <p>{{i18n 'transfers.text.noTransfers'}}</p>
-                </div>
-              </div>
-            </div>
-          {{/unless}}
         </div>
+        {{else}}
+          {{> nodata}}
+        {{/unless}}
     </div>     <!-- /.desktop-zone -->
   </div> <!-- /.col-md-10 -->
 </template>
