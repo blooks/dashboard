@@ -281,6 +281,7 @@ var updateSingleAddressWallet = function (wallet) {
   var addresses = [];
   schemaWallet.addresses().forEach(function (address) {
     addresses.push(address.address);
+    console.log(address.address);
   });
   addAddressesToWallet(addresses, wallet);
   updateBalances(wallet);
