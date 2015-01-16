@@ -19,7 +19,7 @@ Template.registerHelper('labelForVolumeFragment', function (volumeFragment) {
 });
 
 Template.registerHelper('prettyDate', function (date) {
-  return moment(date).format('DD/MM/YYYY hh:mm');
+  return moment(date).format('ddd, DD MMM YYYY, HH:mm');
 });
 
 Template.registerHelper('prettyDateLong', function (date) {

@@ -53,6 +53,12 @@
             padding: 1rem 1.3rem;
             vertical-align: middle;
 
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
             &.inflow {
                 color: @positive;
               }
@@ -68,7 +74,7 @@
                 font-size: 35px;
               }
             }
-          } // Close general <td>
+          } // Close general <tr>
 
           /*Row styling according to transaction type (outgoing, incoming, internal) */
  /*
