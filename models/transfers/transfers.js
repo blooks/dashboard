@@ -149,7 +149,6 @@ if (Meteor.isServer) {
     } else if (this.recipientNodeId()) {
       return "incoming";
     } else {
-      console.log("Setting transfer to be orphaned.");
       return "orphaned";
     }
   },
