@@ -1,5 +1,8 @@
 /* Typograhy
 ----------------- */
+html {
+	font-size:62.5%;  // rem root
+}
 body {
 	font-family: @font-family-body-sans;
 	color: @gray-dark;
@@ -15,22 +18,17 @@ h1,h2,h3,h4,
 	word-break: break-all;
 }
 
-h1, .h2	{
-	font-size: 54px;
-	font-size: 4.5rem;
+h1	{
 	text-align: center;
 
 		&.process-title {
 			margin: 5px 0;
 			margin: 0.4rem 0;
 			color: @darkblue;
-			// color: @whyte;
 		}
 }
 
 h2 {
-	font-size: 36px; font-size: 3rem;
-
 	&.menu-headline {
 		text-align: center;
 		border-bottom: 1px solid @gray;
