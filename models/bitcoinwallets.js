@@ -48,6 +48,13 @@ BitcoinWallets.before.remove(function (userId, doc) {
   });
 });
 
+BitcoinWallets.after.remove(function (userId, doc) {
+  var oneTransfer = Transfers.findOne({'userId': doc.userId});
+  if (! oneTransfer) {
+    Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : false}});
+  }
+});
+
 if (Meteor.isServer) {
   BitcoinWallets.after.insert(function (userId, doc) {
     Meteor.call('updateTx4Wallet', doc);
