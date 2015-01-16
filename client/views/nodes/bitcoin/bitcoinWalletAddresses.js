@@ -5,7 +5,7 @@ Template.bitcoinWalletAddresses.helpers({
   showAddress: function (address) {
     return (address.balance > 0);
   },
-  singleAddressWallet: function (wallet) {
-    return (wallet.hdseed === null || wallet.hdseed === undefined);
+  singleAddressWallet: function () {
+    return (this.hdseed === null || this.hdseed === undefined);
   }
 });
