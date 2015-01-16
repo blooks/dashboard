@@ -7,6 +7,5 @@ Template.bitcoinWalletAddresses.helpers({
   },
   singleAddressWallet: function (wallet) {
     return (wallet.type === 'Single Addresses');
-
   }
 });
