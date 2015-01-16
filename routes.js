@@ -36,6 +36,7 @@ Router.map(function() {
       Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults));
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
+          noTransfers: false,
           transfers: Transfers.find(),
           page: parseInt(this.params.page),
           numberOfResultsPerPage: parseInt(this.params.numberOfResults),
@@ -43,7 +44,7 @@ Router.map(function() {
         };
       }else{
         return {
-          noTransfers: 0
+          noTransfers: true
         };
       }
     }
