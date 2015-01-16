@@ -35,3 +35,7 @@ Template.registerHelper('saneNumber', function (internalNumber, currency) {
   }
   return result;
 });
+Template.registerHelper('noData', function () {
+    return !Meteor.user().profile.hasTransfers;
+  }
+);
