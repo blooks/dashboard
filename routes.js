@@ -24,6 +24,9 @@ Router.map(function() {
   });
   this.route('transfers_user', {
     template: 'transfers',
+    waitOn: function() {
+      return [Meteor.subscribe('user')];
+    },
     action: function() {
       Router.go('/transfers/1/10');
     }
@@ -32,6 +35,9 @@ Router.map(function() {
     path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
     loadingTemplate: '',
+    waitOn: function() {
+      return [Meteor.subscribe('user')];
+    },
     data: function() {
       Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults));
       if(Transfers.find() && Transfers.find().fetch().length>0){
