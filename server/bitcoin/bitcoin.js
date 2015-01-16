@@ -98,7 +98,7 @@ var connectToInternalNode = function (inoutput) {
 
 var updateKnownTransfer = function (transfer) {
   var internalTransfer = Transfers.findOne({"foreignId": transfer.foreignId});
-  internalTransfer.updateRepresentation();
+  internalTransfer.update();
 };
 
 
@@ -176,9 +176,9 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
     blockChain: 'bitcoin'
   });
   var syncChain = Async.wrap(chain, ['getAddressesTransactions']);
+  console.log('Asking chain.com now for transactions for ' + addresses.length + ' addresses');
   var chainTxs = syncChain.getAddressesTransactions(addresses, {limit: 500});
-  console.log('Asked chain.com for tx for ' + addresses.length +
-  " addresses. Got " + chainTxs.length + " transactions.");
+  console.log("Got " + chainTxs.length + " transactions from chain. Start to process...");
   chainTxs.forEach(function (chainTx) {
     var newTransfer = addCoynoData(chainTxToCoynoTx(chainTx), wallet);
     addTransfer(newTransfer);

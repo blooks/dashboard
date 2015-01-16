@@ -38,6 +38,30 @@ var getNodeIdForInOutput = function (inoutput) {
   }
 };
 
+var checkBitcoinWalletNodeIdForExistence = function (nodeId) {
+  return (BitcoinWallets.findOne({"_id": nodeId}) !== null);
+};
+
+var removeMissingNodeIds = function(transfer) {
+  var inputs = [];
+  var outputs = [];
+  transfer.details.inputs.forEach(function(input) {
+    if (!checkBitcoinWalletNodeIdForExistence(input.nodeId)) {
+      input.nodeId = null;
+    }
+    inputs.push(input);
+  });
+  transfer.details.outputs.forEach(function(output) {
+    if (!checkBitcoinWalletNodeIdForExistence(output.nodeId)) {
+      output.nodeId = null;
+    }
+    outputs.push(output);
+  });
+  Transfers.update({"_id": transfer._id},
+    {$set: {'details.inputs' : inputs, 'details.outputs': outputs}}
+  );
+};
+
 if (Meteor.isServer) {
 
 
@@ -46,15 +70,6 @@ if (Meteor.isServer) {
       var user = Meteor.users.findOne({_id: userId});
       if (! user.profile.hasTransfers) {
         Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
-      }
-    });
-
-    Transfers.after.remove(function (userId, doc) {
-      if (! Transfers.findOne({'userId': userId})) {
-        //TODO: Reset the "no Transfers flag" for the user.
-        return;
-      } else {
-        return;
       }
     });
 
@@ -68,6 +83,7 @@ if (Meteor.isServer) {
       });
       return result;
     },
+
     outputSum: function () {
       var result = 0;
       this.details.outputs.forEach(function (output) {
@@ -77,7 +93,9 @@ if (Meteor.isServer) {
     },
     fee: function () {
       return (this.inputSum() - this.outputSum());
-    },senderNodeId: function () {
+    },
+
+      senderNodeId: function () {
       var result = null;
       this.details.inputs.forEach(function (input) {
         if (!result) {
@@ -131,11 +149,8 @@ if (Meteor.isServer) {
     } else if (this.recipientNodeId()) {
       return "incoming";
     } else {
-      //If we do know neither the sender nor the
-      // recipient this is a malformed transfer
-      // TODO: Implement proper error.
-      console.log('Trying to determine type of malformed transfer');
-      return "error";
+      console.log("Setting transfer to be orphaned.");
+      return "orphaned";
     }
   },
     amount: function () {
@@ -148,7 +163,8 @@ if (Meteor.isServer) {
       });
       return result;
     },
-    updateRepresentation: function () {
+    update: function () {
+      removeMissingNodeIds(this);
       var transfer = Transfers.findOne({"_id": this._id});
       var representation = {};
       representation.type = transfer.transferType();

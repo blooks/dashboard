@@ -24,8 +24,7 @@ if (Meteor.isServer) {
     });
     return result;
   };
-  BitcoinAddresses.before.remove(function (userId, doc) {
-
+  BitcoinAddresses.after.remove(function (userId, doc) {
     //TODO: @LEVIN redundant code! Remove!
     var transactions = function (doc) {
       var nodeId = doc._id;
@@ -39,7 +38,11 @@ if (Meteor.isServer) {
     };
     var transfers = transactions(doc);
     transfers.forEach(function (transfer) {
-      Transfers.remove({"_id": transfer._id});
+      transfer.update();
+      transfer = Transfers.findOne({"_id": transfer._id});
+      if (transfer.representation.type === 'orphaned') {
+        Transfers.remove({"_id": transfer._id});
+      }
     });
   });
 }
