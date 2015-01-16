@@ -58,5 +58,10 @@ Meteor.methods({
       text: Accounts.emailTemplates.deleteAccount.text(user)
     });
     Meteor.users.remove({_id: self.userId});
+  },
+  // DGB 2015-01-15 05:43 
+  // Returns true if the passed username is unique on the database. 
+  verifyUsernameIsUnique: function (username) {
+    return (Meteor.users.findOne({'profile.username':username})===undefined)
   }
 });

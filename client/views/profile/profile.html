@@ -1,3 +1,18 @@
+<template name="userNotification">
+<style>
+  // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
+  .user-notification {}
+  .user-notification > div {padding: 1.5em; font-size: 1.2rem; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
+  .user-notification > .error {background-color: red; border-color: darkred; }
+  .user-notification > .success {background-color: green; border-color: darkgreen; }
+</style>
+<div class='user-notification'>
+  <div class='{{class}}'>
+    {{message}}
+  </div>
+</div>
+</template>
+
 <template name="userProfile">
    <h1 class="process-title">{{i18n 'profile.headings.profile'}}</h1>
     <div class="col-md-10 col-md-offset-1">
@@ -5,8 +20,13 @@
 			<div class="col-sm-6 col-sm-offset-3">
 				<h3 class="form-divider">Your details</h3>
         <div class="big-input-item">
-          {{#if getEditingSection 'username'}}
-            Introduce your new Username
+        {{#if getEditingSection 'username'}}
+          {{#if getUserMessage 'username'}}
+            {{#with getUserMessage 'username'}}
+              {{ > userNotification }}
+            {{/with}}
+          {{/if}}
+          Introduce your new Username
             <input class='' id='newUsername' value='{{displayUsername}}'/>
             <button class='btn' id='saveUsername'>Save Username</button>
           {{else}} 
@@ -14,7 +34,7 @@
           {{/if}}
         </div>
         <div class="big-input-item">
-          {{#if  getEditingSection 'email'}}
+          {{#if getEditingSection 'email'}}
             Introduce your new email
             <input class='' id='newEmail' value='{{userEmail}}'/>
             <button class='btn' id='saveEmail'>Save Email</button>
@@ -23,22 +43,14 @@
           {{/if}}
 				</div>
 
+
       <h3 class="form-divider">Change password</h3>
-      {{#if hasUserMessage}}
-        {{#with hasUserMessage}}
-        <style>
-          // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
-          .user-notification {}
-          .user-notification > div {padding: 1.5em; font-size: 1.2em; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
-          .user-notification > .error {background-color: red; border-color: darkred; }
-          .user-notification > .success {background-color: green; border-color: darkgreen; }
-        </style>
-        <div class='user-notification'>
-          <div class='{{class}}'>
-            {{message}}
-          </div>
-        </div>
+      {{#if getEditingSection 'password'}}
+      {{#if getUserMessage 'password'}}
+        {{#with getUserMessage 'password'}}
+          {{ > userNotification }}
         {{/with}}
+      {{/if}}
       {{/if}}
       <div class="big-input-item" id='passwordChange'>
         <span class="field-type">Old password:<input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control"/></span><br>
@@ -46,6 +58,9 @@
         <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
         <button class="btn btn-default pull-right" id="change_password">Change password</button>
       </div>
+
+
+       
       <h3 class="form-divider">Delete profile</h3>
       <div class="input-buttons">
         <p>
