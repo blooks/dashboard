@@ -8,19 +8,10 @@
 */
 
 /* Base css, mobile-first */
-html,
-body {
-/*   height: 100%;
-don't add padding or margin.
-padding: 0; */
-}
-
 html	{}
 
 body	{
 	background-color: @gray-lightest;
-	font-size: 12px;
-	font-size: 1rem;
 }
 
 .desktop-zone {
@@ -31,6 +22,16 @@ body	{
 
 	&.no-border-top {
 		border-top: none;
+	}
+}
+
+/* Nav
+-------------------- */
+.sidebar {
+	font-size: 14px; font-size: 1.2	rem;
+	.nav-icon {
+		font-size: 18px;
+		font-size: 1.5rem;
 	}
 }
 
@@ -98,7 +99,7 @@ body {
 -------------------- */
 footer {
 	padding: 50px 0;
-	padding: 4.167rem 0;
+	padding: 5rem 0;
 	font-size: 12px; font-size: 1rem;
 	clear: both; // Ensure footer is in bottom
 }
@@ -120,7 +121,7 @@ TODO move these to less files in folders.
 
 	p.sum {
 		font-size: 24px;
-		font-size: 2rem;
+		font-size: 2.4rem;
 		font-weight: bold;
 	}
 }
@@ -313,12 +314,12 @@ TODO move these to less files in folders.
 
 .table-zone {
 	margin-top: 40px;
-	margin-top: 4.167rem;
+	margin-top: 4rem;
 
 	.table-control-buttons {
 	margin: 20px 0;
-	margin: 1.667rem 0;
-	padding: 1.667rem;
+	margin: 2rem 0;
+	padding: 2rem;
 	text-align: right;
 	background-color: @gray-medium-lighter;
 
@@ -343,9 +344,9 @@ input {
 
 .big-input-item {
 	padding: 12px 0;
-	padding: 1rem 0;
+	padding: 1.2rem 0;
 	font-size: 18px;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 
 /* Class for heading dividing into sections */
@@ -353,7 +354,7 @@ input {
 	border-bottom: 1px solid @gray-medium-light ;
 	color: @gray-medium-light;
 	padding-top: 24px;
-	padding-top: 2rem;
+	padding-top: 2.4rem;
 }
 
 /* Graphics
@@ -472,9 +473,10 @@ hr.sub-stopper {
 
 .loading-zone {
   font-size: 36px;
-  font-size: 3rem;
+  font-size: 3.6rem;
   color: @gray-light;
   text-align: center;
+  padding-top: 40px;
   padding-top: 4rem;
 }
 
@@ -485,7 +487,7 @@ img {
 
 .modal-directions {
 	padding: 24px 0;
-	padding: 2rem 0;
+	padding: 2.4rem 0;
 	text-align: center;
 	font-size: 3.5rem;
 	color: @gray-dark;

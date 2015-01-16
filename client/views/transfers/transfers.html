@@ -1,43 +1,6 @@
 <template name="transfers">
    <h1 class="process-title">{{i18n 'transfers.headings.transfers'}}</h1>
   <hr class="sub-stopper"/>
-    <div id="txHelpModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
-            <h4 id="transactionHelpModal" class="modal-title">How to do your taxes</h4>
-          </div>
-          <div class="modal-body">{{i18n 'transfers.help'}}</div>
-          <div class="modal-footer"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal for detailed tx analysis
-      TODO: get all relevatn data from tx and display in this modal
-    -->
-    <div id="txDetailModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
-            <h4 id="transactionHelpModal" class="modal-title">TX details</h4>
-          </div>
-          <div class="modal-body">
-             <table>
-              <tr>
-                <td>Tx</td>
-                <td>Details</td>
-              </tr>
-            </table>
-          </div>
-          <div class="modal-footer"></div>
-        </div>
-      </div>
-    </div>
-    <!-- Delete tx confirm modal
-            TODO: make these delete modals globally available (with minor changes to logic e.g. depending on what is being deleted)
-    -->
     <div id="txDeleteModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -70,7 +33,7 @@
                   <th colspan="3" class="inflow-header">{{i18n 'trades.headings.table.inflow'}}</th>
                   <th colspan="1" class="no-border internal-header">&nbsp;</th>
                   <th colspan="3" class="outflow-header">{{i18n 'trades.headings.table.outflow'}}</th>
-                  <th colspan="2" class="no-border">&nbsp;</th>
+                  <th class="no-border">&nbsp;</th>
                 </tr>
                 <tr>
                   <th>{{i18n 'transfers.headings.table.date'}}</th>
