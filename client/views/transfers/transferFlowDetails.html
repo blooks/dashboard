@@ -1,15 +1,15 @@
 <template name="transferRow">
     <tr class={{transferType}}>
-        <td>{{prettyDate date}}</td>
+        <td class="date-cell">{{prettyDate date}}</td>
         {{#unless isIncoming}}
-        <td colspan="{{colSpanBefore}}"></td>
+        <td colspan="{{colSpanBefore}}" class="hidden-on-small"></td>
         {{/unless}}
-        <td class="{{representation.type}}-tx-cell">{{senderLabel}}</td>
+        <td class="{{representation.type}}-tx-cell from-wallet-cell"><span class="show-on-small fat">From:</span> {{senderLabel}}</td>
         <td class="{{representation.type}}-bg tx-arrow"><span class="arrow arrow-right"> {{signedSaneAmount this}} {{details.currency}}</span></td>
-        <td class="{{representation.type}}-tx-cell">{{recipientLabel}}</td>
+        <td class="{{representation.type}}-tx-cell to-wallet-cell"><span class="show-on-small fat">To:</span> {{recipientLabel}}</td>
         {{#unless isOutgoing}}
-        <td colspan="{{colSpanAfter}}"></td>
+        <td colspan="{{colSpanAfter}}" class="hidden-on-small"></td>
         {{/unless}}
-        <td>{{saneNumber baseVolume 'EUR' }} EUR</td>
+        <td class="fiat-value-cell"><span class="show-on-small">Value:</span> {{saneNumber baseVolume 'EUR' }} EUR</td>
     </tr>
 </template>
