@@ -3,6 +3,8 @@
 /* Tables */
 .table {
 
+    white-space: nowrap;
+
     &.table-bordered {}
 
     &.table-tx {}
@@ -76,63 +78,6 @@
             }
           } // Close general <tr>
 
-          /*Row styling according to transaction type (outgoing, incoming, internal) */
- /*
-          &.outgoing {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @negative !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left-negative.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @negative;
-              }
-            }
-          }
-
-
-          &.incoming {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @positive !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left-positive.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @positive;
-              }
-            }
-          }
-
-          &.internal {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @gray-light !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @gray-light;
-              }
-            }
-          }*/
-
           &:last-child {
               border-bottom: 1px solid @gray-lighter;
           }
@@ -169,22 +114,15 @@
 td.tx-arrow {
   padding-right: @button-corner-square-size;
 
-  .btn {
+  .arrow {
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: none;
-/*    -webkit-touch-callout: text;
- -webkit-user-select: text;
- -khtml-user-select: text;
- -moz-user-select: text;
- -ms-user-select: text;
- user-select: text; */
-
     }
 }
 
 .incoming-bg {
-  .btn {
+  .arrow {
       background-color: @positive;
       border-color: @positive;
       color: @whyte;
@@ -192,7 +130,7 @@ td.tx-arrow {
 }
 
 .outgoing-bg {
-  .btn {
+  .arrow {
     background-color: @negative;
     border-color: @negative;
     color: @whyte;
@@ -200,7 +138,7 @@ td.tx-arrow {
 }
 
 .internal-bg {
-  .btn {
+  .arrow {
     background-color: @gray-light;
     border-color: @gray-light;
     color: @whyte;
