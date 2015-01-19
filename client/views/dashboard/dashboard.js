@@ -2,19 +2,15 @@
  * Function to draw the chart with local data
  */
 var builtStockLocal = function () {
-
   var networtData = Meteor.user().networthData();
-
   var data = networtData[0];
   $('#holdingsovertime').highcharts('StockChart', {
     rangeSelector: {
       selected: 1
     },
-
     title: {
       text: 'Total Bitcoin Holdings'
     },
-
     series: [{
       name: 'BTC',
       data: data,
@@ -64,7 +60,6 @@ var fundsDistribution = function () {
   });
 };
 
-
 // on the client
 Template.dashboard.helpers({
   trades: function () {
@@ -74,16 +69,23 @@ Template.dashboard.helpers({
     return (true);
     //TODO: @Levin Please make this now show when there is no data.
   },
+  /**
+   * [totalBalance description]
+   * @param  {[type]} currency [description]
+   * @return {[type]}          [description]
+   */
   totalBalance: function (currency) {
     //TODO: Remove this. It is redundant to the global helper
     var saneNumber = function (internalNumber, currency) {
       if (currency === 'BTC') {
-        return (internalNumber / 10e8).toFixed(8);
+        return (internalNumber / 10e7).toFixed(8);
       } else {
-        return (internalNumber / 10e8).toFixed(2);
+        return (internalNumber / 10e7).toFixed(2);
       }
     };
-    return saneNumber(Meteor.user().totalBalance(currency), currency);
+    if(Meteor.user()){
+      return saneNumber(Meteor.user().totalBalance(currency), currency);
+    }
   }
 });
 
@@ -94,7 +96,6 @@ Template.dashboard.rendered = function () {
   builtStockLocal();
   fundsDistribution();
 };
-
 
 Template.dashboard.events({
   'click .delete-trade': function () {

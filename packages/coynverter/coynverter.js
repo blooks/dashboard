@@ -13,7 +13,7 @@ Coynverter = (function() {
    * @param {Date} date
    * @returns {Number}
    */
-  var exchangeRate = function( from, to, date ) {
+  var exchangeRate = function ( from, to, date ) {
 
     // TODO: usage scenarios? - decide if it'll throw errors or return nulls
 
@@ -94,8 +94,6 @@ Coynverter = (function() {
     from = from || 'USD';
     rate = exchangeRate(from, baseCurrency, date);
     if (!rate) {
-      console.log("Coynverter returning null!");
-      console.log("Converting from:" + from);
       return 1;
     }
     return rate ? parseInt(amount * rate) : null;

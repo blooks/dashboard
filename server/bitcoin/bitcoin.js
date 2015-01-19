@@ -96,6 +96,12 @@ var connectToInternalNode = function (inoutput) {
   return inoutput;
 };
 
+var updateKnownTransfer = function (transfer) {
+  var internalTransfer = Transfers.findOne({"foreignId": transfer.foreignId});
+  internalTransfer.update();
+};
+
+
 /**
  * Tries to add a transfer to the database or update the transfer if it
  * has already been there (e.g. the user already added the other side of the
@@ -150,6 +156,7 @@ var addTransfer = function (transfer) {
   }
 };
 
+
 /**
  * Getting all transactions for the array of addresses from the
  * Bitcoin blockchain via the Chain API
@@ -169,11 +176,13 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
     blockChain: 'bitcoin'
   });
   var syncChain = Async.wrap(chain, ['getAddressesTransactions']);
+  console.log('Asking chain.com now for transactions for ' + addresses.length + ' addresses');
   var chainTxs = syncChain.getAddressesTransactions(addresses, {limit: 500});
-  console.log('Asked chain.com for tx for ' + addresses.length +
-  " addresses. Got " + chainTxs.length + " transactions.");
+  console.log("Got " + chainTxs.length + " transactions from chain. Start to process...");
   chainTxs.forEach(function (chainTx) {
-    addTransfer(addCoynoData(chainTxToCoynoTx(chainTx), wallet));
+    var newTransfer = addCoynoData(chainTxToCoynoTx(chainTx), wallet);
+    addTransfer(newTransfer);
+    updateKnownTransfer(newTransfer);
   });
 };
 
@@ -272,6 +281,7 @@ var updateSingleAddressWallet = function (wallet) {
   var addresses = [];
   schemaWallet.addresses().forEach(function (address) {
     addresses.push(address.address);
+    console.log(address.address);
   });
   addAddressesToWallet(addresses, wallet);
   updateBalances(wallet);

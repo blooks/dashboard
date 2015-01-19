@@ -1,6 +1,7 @@
 <template name="newBitcoinWallet">
-    <div class="zone">
-        <h3 class="label-title">   <i class="fa fa-plus"></i><i class="fa fa-book"> </i>New Bitcoin Wallet</h3>
+    <div class="col-lg-4">
+      <div class="bordered">
+        <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a wallet</h3>
       {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
         {{> afQuickField name='label' }}
         {{> afQuickField name='type' options='allowed' }}
@@ -9,5 +10,6 @@
         {{/unless}}
         <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
       {{/autoForm}}
+      </div>
     </div>
 </template>

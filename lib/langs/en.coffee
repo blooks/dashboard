@@ -11,7 +11,7 @@ i18n.map 'en_GB',
       upload: 'Upload'
       settings: 'Settings'
       help: 'Help'
-      accounts: 'Accounts'
+      accounts: 'Wallets'
       label: 'Label'
     buttons:
       save: 'Save'
@@ -60,7 +60,7 @@ i18n.map 'en_GB',
         unknown: 'External'
         known: 'Internal'
         value: 'value'
-      transfers: 'Incoming/Internal/Outgoing Transfers'
+      transfers: 'Transfers'
       noTransfers: 'No transfers...'
     text:
       noTransfers: 'Please add some transactions to get started. Either import or add manually below.'
@@ -80,8 +80,9 @@ i18n.map 'en_GB',
   # Nodes
   nodes:
     headings:
-      nodes: "Accounts"
+      nodes: "Wallets"
       addSingle: "New Account"
+      wallets: "Wallets"
     buttons:
       save: "Save"
       updateTransactions: 'Update Transactions'
@@ -92,4 +93,10 @@ i18n.map 'en_GB',
       addedExchange: "Added exchanges"
       deleteExchange: "Delete exchange"
     wallets:
+      wallets: "Wallets"
       walletLabelTitle: 'Wallet label'
+
+  # Profile
+  profile:
+    headings:
+      profile: "Profile"

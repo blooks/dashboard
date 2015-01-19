@@ -3,6 +3,8 @@
 /* Tables */
 .table {
 
+    white-space: nowrap;
+
     &.table-bordered {}
 
     &.table-tx {}
@@ -15,42 +17,50 @@
 
     tr {
     padding: 8px 15px;
-    padding: .75rem 1.25rem;
+    padding: .8rem 1.5rem;
 
-      &.no-border {
-            border: none;
-            border-bottom: 2px;
-            }
+      &.supa-header {
 
         th {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-family: @font-family-sans-serif;
-            /* border-bottom: 1px;*/
+           text-align: center;
+           color: @whyte;
 
-              &.supa-header {
-               text-align: center;
-               color: @whyte;
+               &.inflow-header {
+                  background-color: @positive;
+                  min-width: 380px;
+               }
 
-                   &.inflow {
-                      background-color: @positive;
-                   }
+               &.internal-header {
+                  min-width: 200px;
+               }
 
-                   &.outflow {
-                      background-color: @negative;
-                   }
-              }
+               &.outflow-header {
+                  background-color: @negative;
+                  min-width: 380px;
+               }
+
+                .no-border {
+                    border: none;
+                    border-bottom: 2px;
+                }
             }
         }
+      }
    }
 
   tbody {
     tr {
       td {
             padding: 12px 16px;
-            padding: 1rem 1.3rem;
+            padding: 1.2rem 1.6rem;
             vertical-align: middle;
 
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
             &.inflow {
                 color: @positive;
               }
@@ -66,64 +76,7 @@
                 font-size: 35px;
               }
             }
-          } // Close general <td>
-
-          /*Row styling according to transaction type (outgoing, incoming, internal) */
- /*
-          &.outgoing {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @negative !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left-negative.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @negative;
-              }
-            }
-          }
-
-
-          &.incoming {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @positive !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left-positive.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @positive;
-              }
-            }
-          }
-
-          &.internal {
-              &:hover {
-               td {
-                  border-bottom: 1px solid @gray-light !important;
-                }
-              }
-
-            td {
-              &:first-child {
-                background: url('img/corner-triangle-left.png') no-repeat left bottom transparent;
-              }
-
-              &.arrow-container {
-                color: @gray-light;
-              }
-            }
-          }*/
+          } // Close general <tr>
 
           &:last-child {
               border-bottom: 1px solid @gray-lighter;
@@ -161,31 +114,31 @@
 td.tx-arrow {
   padding-right: @button-corner-square-size;
 
-  .btn {
+  .arrow {
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: none;
     }
 }
 
-.positive-bg {
-  .btn {
+.incoming-bg {
+  .arrow {
       background-color: @positive;
       border-color: @positive;
       color: @whyte;
   }
 }
 
-.negative-bg {
-  .btn {
+.outgoing-bg {
+  .arrow {
     background-color: @negative;
     border-color: @negative;
     color: @whyte;
   }
 }
 
-.neutral-bg {
-  .btn {
+.internal-bg {
+  .arrow {
     background-color: @gray-light;
     border-color: @gray-light;
     color: @whyte;

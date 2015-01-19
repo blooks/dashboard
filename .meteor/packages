@@ -31,8 +31,6 @@ meteorhacks:npm
 
 
 
-d3js:d3
-pfafman:nvd3
 
 npm-container
 
@@ -40,3 +38,5 @@ jhuenges:highstock
 meteor-platform
 velocity:html-reporter
 mike:mocha
+reactive-var
+email

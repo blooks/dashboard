@@ -1,10 +1,6 @@
 var nodeLabel = function nodeLabel(nodeId) {
   if (nodeId) {
-    var result = Exchanges.findOne({"_id": nodeId});
-    if (result) {
-      return result.exchangeLabel;
-    }
-    result = BitcoinAddresses.findOne({"_id": nodeId});
+    var result = BitcoinAddresses.findOne({"_id": nodeId});
     if (result) {
       return BitcoinWallets.findOne({"_id": result.walletId}).label;
     }
@@ -12,16 +8,8 @@ var nodeLabel = function nodeLabel(nodeId) {
     if (result) {
       return result.label;
     }
-    result = BankAccounts.findOne({"_id": nodeId});
-    if (result) {
-      return result.label;
-    }
   }
-  return "";
-};
-
-var labelForVolumeFragment = function (volumeFragment) {
-  return nodeLabel(volumeFragment.nodeId);
+  return "External";
 };
 
 /**
@@ -50,98 +38,179 @@ var getNodeIdForInOutput = function (inoutput) {
   }
 };
 
-Transfers.helpers({
-  transfer: function () {
+var checkBitcoinWalletNodeIdForExistence = function (nodeId) {
+  return (BitcoinWallets.findOne({"_id": nodeId}) !== null);
+};
 
-  },
-  inputSum: function () {
-    var result = 0;
-    this.details.inputs.forEach(function (input) {
-      result += input.amount;
-    });
-    return result;
-  },
-  outputSum: function () {
-    var result = 0;
-    this.details.outputs.forEach(function (output) {
-      result += output.amount;
-    });
-    return result;
-  },
-  fee: function () {
-    return (this.inputSum() - this.outputSum());
-  },
-  amount: function () {
-    var result = this.outputSum();
-    var senderNodeId = this.senderNodeId();
-    this.details.outputs.forEach(function (output) {
-      if (getNodeIdForInOutput(output) === senderNodeId) {
-        result -= output.amount;
-      }
-    });
-    return result;
-  },
-  senderNodeId: function () {
-    var result = null;
-    this.details.inputs.forEach(function (input) {
-      if (!result) {
-        result = getNodeIdForInOutput(input);
-      }
-    });
-    return result;
-  },
-  recipientNodeId: function () {
-    var senderNodeId = this.senderNodeId();
-    var result = null;
-    this.details.outputs.forEach(function (output) {
-      if (!result) {
-        var temp = getNodeIdForInOutput(output);
-        if (temp !== senderNodeId) {
-          result = temp;
-        }
-      }
-    });
-    return result;
-  },
-  toInternalLabel: function () {
-    return nodeLabel(this.recipientNodeId());
-  },
-  fromInternalLabel: function () {
-    return nodeLabel(this.senderNodeId());
-  },
-  toExternalLabel: function () {
-    return "Outgoing";
-  },
-  fromExternalLabel: function () {
-    return "Incoming";
-  },
-  valueLabel: function () {
-    return this.baseVolume;
-  },
-  isInternal: function () {
-    return !!(this.senderNodeId() && this.recipientNodeId());
-  },
-  toExternal: function () {
-    return !!this.senderNodeId();
-  },
-  fromExternal: function () {
-    return !!this.recipientNodeId();
-  }
-});
+var removeMissingNodeIds = function(transfer) {
+  var inputs = [];
+  var outputs = [];
+  transfer.details.inputs.forEach(function(input) {
+    if (!checkBitcoinWalletNodeIdForExistence(input.nodeId)) {
+      input.nodeId = null;
+    }
+    inputs.push(input);
+  });
+  transfer.details.outputs.forEach(function(output) {
+    if (!checkBitcoinWalletNodeIdForExistence(output.nodeId)) {
+      output.nodeId = null;
+    }
+    outputs.push(output);
+  });
+  Transfers.update({"_id": transfer._id},
+    {$set: {'details.inputs' : inputs, 'details.outputs': outputs}}
+  );
+};
 
 if (Meteor.isServer) {
-  /**
-   * Calculates the baseVolume for the transfer.
-   * @param docId id of the transfer document to update BaseVolume of
-   */
-  var updateBaseVolume = function (docId) {
-    var transfer = Transfers.findOne({"_id": docId});
-    var baseVolume = Coynverter.calculateBaseAmount(
-      transfer.amount(), transfer.details.currency, transfer.date);
-    Transfers.update({"_id": docId}, {$set: {"baseVolume": baseVolume}});
-  };
 
-  Transfers.after.insert(function (userId, doc) {
-    updateBaseVolume(doc._id);
+
+    Transfers.after.insert(function (userId, doc) {
+      //Sanity check.
+      var user = Meteor.users.findOne({_id: userId});
+      if (! user.profile.hasTransfers) {
+        Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
+      }
+    });
+
+
+
+    Transfers.helpers({
+    inputSum: function () {
+      var result = 0;
+      this.details.inputs.forEach(function (input) {
+        result += input.amount;
+      });
+      return result;
+    },
+
+    outputSum: function () {
+      var result = 0;
+      this.details.outputs.forEach(function (output) {
+        result += output.amount;
+      });
+      return result;
+    },
+    fee: function () {
+      return (this.inputSum() - this.outputSum());
+    },
+
+      senderNodeId: function () {
+      var result = null;
+      this.details.inputs.forEach(function (input) {
+        if (!result) {
+          result = getNodeIdForInOutput(input);
+        }
+      });
+      return result;
+    },
+    recipientNodeId: function () {
+      var senderNodeId = this.senderNodeId();
+      var result = null;
+      this.details.outputs.forEach(function (output) {
+        if (!result) {
+          var temp = getNodeIdForInOutput(output);
+          if (temp !== senderNodeId) {
+            result = temp;
+          }
+        }
+      });
+      return result;
+    },
+    /**
+     * Fetches label of a the recipient. If the recipient
+     * is unknown "External" is returned.
+     * @returns {string} Label of the Node.
+     */
+    recipientLabel: function () {
+      return nodeLabel(this.recipientNodeId());
+    },
+    /**
+     * Fetches label of the sender. If the recipient is
+     * unknown, "External" is returned.
+     * @returns {string} Label of the sender.
+     */
+    senderLabel: function () {
+      return nodeLabel(this.senderNodeId());
+    },
+    /**
+     * Determines the type of the transfer
+     * @returns {string} type of transfer. 'internal', 'outgoing' or 'incoming'
+     */
+    transferType: function () {
+    if (this.senderNodeId()) {
+      //We know the node it has been sent from so it is
+      //either internal or outgoing.
+      if (this.recipientNodeId()) {
+        return 'internal';
+      } else {
+        return 'outgoing';
+      }
+    } else if (this.recipientNodeId()) {
+      return "incoming";
+    } else {
+      return "orphaned";
+    }
+  },
+    amount: function () {
+      var result = this.outputSum();
+      var senderNodeId = this.senderNodeId();
+      this.details.outputs.forEach(function (output) {
+        if (getNodeIdForInOutput(output) === senderNodeId) {
+          result -= output.amount;
+        }
+      });
+      return result;
+    },
+    update: function () {
+      removeMissingNodeIds(this);
+      var transfer = Transfers.findOne({"_id": this._id});
+      var representation = {};
+      representation.type = transfer.transferType();
+      representation.amount = transfer.amount();
+      representation.senderLabels = [transfer.senderLabel()];
+      representation.recipientLabels = [transfer.recipientLabel()];
+      representation.baseVolume =
+        Coynverter.calculateBaseAmount(
+          transfer.amount(),
+          transfer.details.currency,
+          transfer.date);
+      Transfers.update(
+        {"_id": this._id},
+        {$set: {"representation": representation}}
+      );
+    }
   });
 }
+
+Transfers.helpers({
+  /**
+   * Determines if transfer is internal
+   * @returns {boolean} true if the sender and the recipient of the
+   * transfer are known
+   */
+  isInternal: function () {
+    return (this.representation.type === 'internal');
+  },
+  /**
+   * Determines if transfer is outgoing
+   * @returns {boolean} true if the sender of the transfer is known
+   */
+  isOutgoing: function () {
+    return (this.representation.type === 'outgoing');
+  },
+  /**
+   * Determines if transfer is incoming
+   * @returns {boolean} true if the recipient of the transfer is known
+   */
+  isIncoming: function () {
+    return (this.representation.type === 'incoming');
+  },
+  saneAmount: function () {
+    if (this.details.currency === 'BTC') {
+      return (this.representation.amount / 10e7).toFixed(8);
+    } else {
+      return (this.representation.amount / 10e7).toFixed(2);
+    }
+  }
+});

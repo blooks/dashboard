@@ -1,8 +1,104 @@
+<template name="userNotification">
+<style>
+  // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
+  .user-notification {}
+  .user-notification > div {padding: 1.5em; font-size: 1.2rem; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
+  .user-notification > .error {background-color: red; border-color: darkred; }
+  .user-notification > .success {background-color: green; border-color: darkgreen; }
+</style>
+<div class='user-notification'>
+  <div class='{{class}}'>
+    {{message}}
+  </div>
+</div>
+</template>
+
 <template name="userProfile">
-				<div class="col-sm-8 col-sm-offset-2">
-					<span class="field-type">Username:</span><span class="field-input editable"> {{displayName}} <span class="edit-marker"><i class="fa fa-pencil"></i></span></span><br>
-					<span class="field-type">Email:</span><span class="field-input editable"> {{userEmail}} <span class="edit-marker"><i class="fa fa-pencil"></i></span></span><br>
-					<button class="btn btn-default btn-block">Change password</button>
-					<button class="btn btn-default btn-block">Delete profile</button>
+   <h1 class="process-title">{{i18n 'profile.headings.profile'}}</h1>
+    <div class="sub-title-icon top-consistency-margin">
+          <div class="icon icon-user"></div>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row desktop-zone profile">
+			<div class="col-sm-6 col-sm-offset-3">
+				<h3 class="form-divider">Your details</h3>
+        <div class="big-input-item">
+        {{#if getEditingSection 'username'}}
+          {{#if getUserMessage 'username'}}
+            {{#with getUserMessage 'username'}}
+              {{ > userNotification }}
+            {{/with}}
+          {{/if}}
+          Introduce your new Username
+            <input class='' id='newUsername' value='{{displayUsername}}'/>
+            <button class='btn' id='saveUsername'>Save Username</button>
+          {{else}} 
+          <span class="field-type">Username:</span><span class="field-input editable"> {{displayUsername}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionUsername'></i></span></span><br>
+          {{/if}}
+        </div>
+        <div class="big-input-item">
+          {{#if getEditingSection 'email'}}
+            Introduce your new email
+            <input class='' id='newEmail' value='{{userEmail}}'/>
+            <button class='btn' id='saveEmail'>Save Email</button>
+          {{else}}
+          <span class="field-type">Email:</span><span class="field-input"> {{userEmail}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionEmail'></i></span></span><br>
+          {{/if}}
 				</div>
+
+
+      <h3 class="form-divider">Change password</h3>
+      {{#if getEditingSection 'password'}}
+      {{#if getUserMessage 'password'}}
+        {{#with getUserMessage 'password'}}
+          {{ > userNotification }}
+        {{/with}}
+      {{/if}}
+      {{/if}}
+      <div class="big-input-item" id='passwordChange'>
+        <span class="field-type">Old password:<input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control"/></span><br>
+        <span class="field-type">New password:<input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control"/></span><br>
+        <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
+        <button class="btn btn-default pull-right" id="change_password">Change password</button>
+      </div>
+
+
+       
+      <h3 class="form-divider">Delete profile</h3>
+      <div class="input-buttons">
+        <p>
+          Duis vel nibh at velit scelerisque suscipit. Fusce egestas elit eget lorem. Praesent turpis.Sed hendrerit. Ut leo. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Sed in libero ut nibh placerat accumsan.
+          Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Vivamus laoreet. Curabitur blandit mollis lacus. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+          Pellentesque ut neque. Proin faucibus arcu quis ante. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+          Quisque rutrum. Vestibulum volutpat pretium libero. Nunc sed turpis. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede.
+        </p>
+        <div class="text-center">
+          <!-- Button trigger modal -->
+          <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Delete profile</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="deleteProfileModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete account</h4>
+              </div>
+              <div class="modal-body">
+                Are you sure that you want to delete your account?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirm_delete_account">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>     <!-- /.desktop-zone -->
+
+
+
+    </div> <!-- /.col-md-10 -->
 </template>

@@ -7,10 +7,21 @@ MIT License @ https://github.com/shpoont/bootstrap-arrow-buttons
 @button-padding: 18px;
 
 
-.btn-arrow-right,
-.btn-arrow-left {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+.arrow { // General arrow style
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+.arrow-right,
+.arrow-left {
     cursor: text;
     outline: none !important;
     position: relative;
@@ -18,15 +29,22 @@ MIT License @ https://github.com/shpoont/bootstrap-arrow-buttons
     padding-right: @button-padding;
 }
 
-.btn-arrow-right {
+//Radius ensures smooth transition btwn box and constructed arrow head.
+.arrow-right {
     padding-left: @button-padding;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
-.btn-arrow-left {
-    padding-right: @button-padding * 2;
+.arrow-left {
+    padding-right: @button-padding;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
-.btn-arrow-right:after,
-.btn-arrow-left:after { /* make two squares (before and after), looking similar to the button */
+
+
+.arrow-right:after,
+.arrow-left:after { /* make two squares (before and after), looking similar to the button */
     content:"";
     position: absolute;
     top: 5px; /* move it down because of rounded corners */
@@ -37,7 +55,7 @@ MIT License @ https://github.com/shpoont/bootstrap-arrow-buttons
     border-left-color: transparent; /* hide left border */
 }
 
-.btn-arrow-right:after {
+.arrow-right:after {
     transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -45,7 +63,7 @@ MIT License @ https://github.com/shpoont/bootstrap-arrow-buttons
     -ms-transform: rotate(45deg);
 }
 
-.btn-arrow-left:after {
+.arrow-left:after {
     transform: rotate(225deg); /* rotate left arrow squares 225 deg to point left */
     -webkit-transform: rotate(225deg);
     -moz-transform: rotate(225deg);
@@ -53,14 +71,14 @@ MIT License @ https://github.com/shpoont/bootstrap-arrow-buttons
     -ms-transform: rotate(225deg);
 }
 
-.btn-arrow-right:after,
-.btn-arrow-left:after { /* align the "after" square to the right */
+.arrow-right:after,
+.arrow-left:after { /* align the "after" square to the right */
     right: -11px;
 }
-.btn-arrow-right:after { /* bring arrow pointers to front */
+.arrow-right:after { /* bring arrow pointers to front */
     z-index: 1;
 }
 
-.btn-arrow-left:after { /* hide arrow tails background */
+.arrow-left:after { /* hide arrow tails background */
     background-color: transparent;
 }

@@ -1,0 +1,12 @@
+<template name="nodes">
+  <h1 class="process-title">{{i18n 'nodes.headings.nodes'}}</h1>
+  <div class="sub-title-icon">
+        <div class="icon icon-wallet"></div>
+  </div>
+  <div class="col-sm-10 col-sm-offset-1">
+    {{> dynamicNodeMenu}}
+    <div class="row desktop-zone no-border-top">
+       {{> dynamicNodeBody}}
+    </div>
+  </div>
+</template>

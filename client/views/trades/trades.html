@@ -15,7 +15,7 @@
         </div>
         <div class="col-lg-10 col-lg-offset-1">
           <div class="row desktop-zone">
-            <div class="sub-menu-zone pull-right"><a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="glyphicon glyphicon-hand-right"> </span>{{i18n 'template.headings.help'}}</a>
+            <div class="sub-menu-zone pull-right"><a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="icon icon-help-circled"> </span>{{i18n 'template.headings.help'}}</a>
             </div>
             <div class="table-zone">
             {{#if trades}}
@@ -28,13 +28,13 @@
                     <th colspan="2" class="no-border">&nbsp;             </th>
                   </tr>
                   <tr>
-                    <th>{{i18n 'trades.headings.table.date'}} <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th>{{i18n 'trades.headings.table.source'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.source'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="positive">{{i18n 'trades.headings.table.inAmount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.inAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="positive">{{i18n 'trades.headings.table.inCurrency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.inCurrency'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="negative">{{i18n 'trades.headings.table.outAmount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.outAmount'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th class="negative">{{i18n 'trades.headings.table.outCurrency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.outCurrency'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
-                    <th>{{i18n 'trades.headings.table.volume'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.volume'}} "><span class="glyphicon glyphicon-info-sign"></span></a></th>
+                    <th>{{i18n 'trades.headings.table.date'}} <a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.date'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th>{{i18n 'trades.headings.table.source'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.source'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th class="positive">{{i18n 'trades.headings.table.inAmount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.inAmount'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th class="positive">{{i18n 'trades.headings.table.inCurrency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.inCurrency'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th class="negative">{{i18n 'trades.headings.table.outAmount'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.outAmount'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th class="negative">{{i18n 'trades.headings.table.outCurrency'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.outCurrency'}} "><span class="icon icon-info-circled"></span></a></th>
+                    <th>{{i18n 'trades.headings.table.volume'}}<a href="#" data-toggle="tooltip" data-placement="top" title=" {{i18n 'trades.tooltip.volume'}} "><span class="icon icon-info-circled"></span></a></th>
                     <th class="no-border"></th>
                   </tr>
                 </thead>
@@ -48,7 +48,7 @@
                     <td class="negative">{{saneNumber outflow.amount outflow.currency}} {{sell.currency}}</td>
                     <td class="negative">{{sell.currency}}</td>
                     <td>{{saneNumber baseAmount "EUR"}} EUR</td>
-                    <td> <a href="#" class="delete-trade"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td> <a href="#" class="delete-trade"><span class="icon icon-trashcan"></span></a></td>
                   </tr>
                 {{/each}}
                 </tbody>

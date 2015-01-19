@@ -1,28 +1,21 @@
 /* Z-index order:
 
-	1000+	:	Modal overlays
-	900+	:	Sidebar nav
+	1040 :		Modal overlays
+	1030 :		Topnav
+	900	:		Sidebar nav
+	800 :		Footer
 
 */
 
 /* Base css, mobile-first */
-html,
-body {
-  height: 100%;
-  /* don't add padding or margin. */
-  padding: 0;
-}
-
 html	{}
 
 body	{
 	background-color: @gray-lightest;
-	font-size: 12px;
-	font-size: 1rem;
 }
 
 .desktop-zone {
-	border: 1px solid @gray-medium-light;
+	border: 1px solid @gray-lighter;
 	padding: 36px 30px;
 	padding: 3rem 2.5rem;
 	background-color: @whyte;
@@ -32,116 +25,37 @@ body	{
 	}
 }
 
-/* Top Bar */
-
-.top-bar {
-	text-align: right;
-}
-
-.dropdown-menu {
-	left: -150px;
-}
-
-
-/* Sidebar nav */
-#wrapper {
-    padding-left: 70px;
-    transition: all .4s ease 0s;
-    height: 100%
-}
-
-#sidebar-wrapper {
-    margin-left: -150px;
-    left: 70px;
-    width: 150px;
-    background: @gray-lighter;
-    position: fixed;
-    height: 100%;
-    z-index: 900;
-    transition: all .4s ease 0s;
-}
-
-.sidebar-nav {
-    display: block;
-    float: left;
-    width: 150px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#page-wrapper {
-    padding-left: 0;
-    margin-left: 0;
-    width: 100%;
-    height: auto;
-}
-
-#wrapper {
-	&.nav-toggled {
-    	padding-left: 150px;
-
-		#sidebar-wrapper {
-		    left: 150px;
-		}
+/* Nav
+-------------------- */
+.sidebar {
+	font-size: 14px; font-size: 1.2	rem;
+	.nav-icon {
+		font-size: 18px;
+		font-size: 1.5rem;
 	}
 }
 
-#sidebar-menu li a,
-.sidebar-nav li a {
-    color: @gray-dark;
-    display: block;
-    float: left;
-    text-decoration: none;
-    width: 150px;
-    background: @gray-lighter;
-    border-top: 1px solid darken(@gray-lighter, 5%);;
-    border-bottom: 1px solid darken(@gray-lighter, 8%);
-    -webkit-transition: background .3s;
-    -moz-transition: background .3s;
-    -o-transition: background .3s;
-    -ms-transition: background .3s;
-    transition: background .3s;
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
-
-.sidebar-nav li {
-  line-height: 40px;
-  text-indent: 10px;
-
-  a {
-	color: @gray-dark;
-	display: block;
-	text-decoration: none;
-	margin-right: 10px;
-
-  &:hover {
-	color: @gray-dark;
-	background: darken(@gray-lighter,3%);
-	text-decoration: none;
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+  .main-zone {
+  	/* 	padding: 60px 15px 0; */
 	}
-
-	&.nav-toggled,
-	&:focus {
-  		text-decoration: none;
-	}
-  }
 }
-
-.nav-icon {
-	float: right;
-	padding-right: 20px;
-	color: @brand-primary;
-}
-
-/* Sub menu nav */
-.sub-nav-zone {
-	text-align: center;
-	.tile {
-		margin-bottom: .5rem;
-		&:hover {
-			background-color: lighten(@brand-primary, 10%);
-		}
-	}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Fixed height footer */
+  background-color: transparent;
+  padding: 20px;
+  border-top: 1px solid @gray-lighter;
+  z-index: 800;
 }
 
 
@@ -150,6 +64,9 @@ body	{
 
 /* Main zone
 -------------------- */
+.main {
+	margin-top: @navbar-height + 10px ; // Ensure content is lower than top navbar
+}
 .login-dropdown {
 	padding-left: 10px;
 	ul.login {
@@ -182,7 +99,7 @@ body	{
 -------------------- */
 footer {
 	padding: 50px 0;
-	padding: 4.167rem 0;
+	padding: 5rem 0;
 	font-size: 12px; font-size: 1rem;
 	clear: both; // Ensure footer is in bottom
 }
@@ -197,14 +114,14 @@ TODO move these to less files in folders.
 
 .summary-data {
 	// border: 1px solid @gray-light;
-	background-color: @gray-lighter;
+	background-color: @gray-medium-lighter;
 	text-align: center;
 
 	h4.totals {	}
 
 	p.sum {
 		font-size: 24px;
-		font-size: 2rem;
+		font-size: 2.4rem;
 		font-weight: bold;
 	}
 }
@@ -263,7 +180,7 @@ TODO move these to less files in folders.
 		   -moz-border-radius: 50%;
 		    -webkit-border-radius: 50%;
 		    border-radius: 50%;
-		    background-color: @gray-lighter;
+		    background-color: @gray-medium-lighter;
 		    position: relative;
 		    left: -30px;
 
@@ -327,7 +244,7 @@ TODO move these to less files in folders.
 		margin-bottom: @grid-gutter-width;
 
 		.node-header {
-			 background-color: @gray-lighter;
+			 background-color: @gray-medium-lighter;
 			 border-bottom: 3px solid @whyte;
 			.node-meta {
 				text-align: center;
@@ -397,14 +314,14 @@ TODO move these to less files in folders.
 
 .table-zone {
 	margin-top: 40px;
-	margin-top: 4.167rem;
+	margin-top: 4rem;
 
 	.table-control-buttons {
 	margin: 20px 0;
-	margin: 1.667rem 0;
-	padding: 1.667rem;
+	margin: 2rem 0;
+	padding: 2rem;
 	text-align: right;
-	background-color: @gray-lighter;
+	background-color: @gray-medium-lighter;
 
 	.btn {
 		border: none;
@@ -413,7 +330,7 @@ TODO move these to less files in folders.
 
 }
 
-/* Form styling
+/* Global form styles
 ---------------- */
 input {
 	background: none;
@@ -423,6 +340,21 @@ input {
 	&:hover {
 		border: 1px solid @gray-light;
 	}
+}
+
+.big-input-item {
+	padding: 12px 0;
+	padding: 1.2rem 0;
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+/* Class for heading dividing into sections */
+.form-divider {
+	border-bottom: 1px solid @gray-medium-light ;
+	color: @gray-medium-light;
+	padding-top: 24px;
+	padding-top: 2.4rem;
 }
 
 /* Graphics
@@ -464,8 +396,21 @@ input {
 			background-color: @brand-dark;
 			border-color: @brand-dark;
 		}
-
 	}
+	&.warning-btn {
+		color: @negative;
+		border-color: @negative;
+		&:hover, &:focus {
+			color: @whyte;
+			background-color: @negative;
+		}
+	}
+}
+
+.sub-title-icon {
+	text-align: center;
+	font-size: 3rem;
+	color: @darkblue;
 }
 
 #main img {
@@ -534,13 +479,33 @@ hr.sub-stopper {
 
 .loading-zone {
   font-size: 36px;
-  font-size: 3rem;
+  font-size: 3.6rem;
   color: @gray-light;
   text-align: center;
+  padding-top: 40px;
   padding-top: 4rem;
 }
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+.modal-directions {
+	padding: 24px 0;
+	padding: 2.4rem 0;
+	text-align: center;
+	font-size: 3.5rem;
+	color: @gray-dark;
+
+		a {
+			&:hover, &:focus {
+				color: @brand-primary;
+			}
+		}
+}
+
+.top-consistency-margin {
+	margin-top: 10px;
+	margin-bottom: 42px;
 }
