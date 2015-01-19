@@ -321,6 +321,8 @@ Meteor.methods({
    * @param wallet
    */
   updateTx4Wallet: function (wallet) {
+    Queue.wallet.update({ wallet: wallet });
+
     switch (wallet.type) {
       case 'Armory':
         updateArmoryWallet(wallet);
