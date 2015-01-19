@@ -40,7 +40,18 @@ Template.userProfile.events({
     var oldPassword = template.$("#old_password").val();
     var newPassword = template.$("#new_password").val();
     var newPasswordAgain = template.$("#new_password_again").val();
-    if(newPassword.length>0 && newPasswordAgain.length>=6 && (newPasswordAgain===newPassword)){
+
+    var invalidPassword = function(passwordString, passwordStringAgain, currentPassword) {
+      var err = '';
+      if (passwordString === currentPassword) {err+= 'New password is the same as the old password. '}
+      if (passwordString !== passwordStringAgain) {err+= 'Passwords do not match. '}
+      if (passwordString.length<7) {err+= 'Password is too short (need to be at least 6 characters long). '}
+      if (passwordString.search(/[a-z]/i) < 0) {err+= 'Password needs to have at least a letter. '}
+      if (passwordString.search(/[0-9]/) < 0) {err+= 'Password needs to have at least a digit. '}
+      return (err==='')?false:err;
+    }
+  
+    if(!invalidPassword(newPassword, newPasswordAgain, oldPassword)){
       Accounts.changePassword(oldPassword, newPassword, function (err) {
         if(err){
           template.userMessage.set({password: {class: 'error', message: err.reason}});
@@ -48,14 +59,11 @@ Template.userProfile.events({
           template.userMessage.set({password: {class: 'success', message:'The password was changed, and we have sent you an email'}}) 
           Meteor.call('sendEmail','resetPassword');
           template.$("#passwordChange").remove("");
-         template.editingSection.set(''); 
-         template.userMessage.set(false);
-
         }
       });
     }
     else {
-      template.userMessage.set({password: {class: 'error', message:'Password is too short (need at least 6 characters) or passwords do not match'}}) 
+      template.userMessage.set({password: {class: 'error', message: invalidPassword(newPassword,newPasswordAgain,oldPassword)}}) 
     }
   },
   "click #confirm_delete_account": function () {
