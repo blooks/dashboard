@@ -32,3 +32,5 @@ mike:mocha
 reactive-var
 email
 coyno-queue
+
+npm-container
