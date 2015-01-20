@@ -1,15 +1,125 @@
 <template name="newBitcoinWallet">
-    <div class="col-lg-4">
-      <div class="bordered">
-        <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a wallet</h3>
-      {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
-        {{> afQuickField name='label' }}
-        {{> afQuickField name='type' options='allowed' }}
-        {{#unless afFieldValueIs name='type' value='Single Addresses'}}
-          {{> afQuickField name='hdseed'}}
-        {{/unless}}
-        <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
-      {{/autoForm}}
-      </div>
-    </div>
+
+{{#if areWeOnThisStage 'first'}}
+<h4>What kind of wallet do you want to add?</h4>
+
+<ul class="wallet-selection">
+  <li>
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/bitcoin-wallet-logo.png">
+    <div class="wallet-label-text">Electrum</div>
+  </a>
+  </li>
+
+  <li>
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/bitcoin-wallet-logo.png">
+    <div class="wallet-label-text">Bitcoin Wallet</div>
+  </a>
+  </li>
+
+  <li>
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/electrum-logo.png">
+    <div class="wallet-label-text">Electrum</div>
+  </a>
+  </li>
+
+  <li>
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/armory-logo.png">
+    <div class="wallet-label-text">Armory</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/trezor-logo.png">
+    <div class="wallet-label-text">Trezor</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/multibit-logo.png">
+    <div class="wallet-label-text">MultiBit</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/green-address-wallet-logo.png">
+    <div class="wallet-label-text">Green Address</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/hive-wallet-logo.png">
+    <div class="wallet-label-text">Hive</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/breadwallet-logo.png">
+    <div class="wallet-label-text">Bread Wallet</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/mycelium-logo.png">
+    <div class="wallet-label-text">Mycelium</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/kncwallet-logo.png">
+    <div class="wallet-label-text">KnC</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li class="coming-soon">
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/external-logos/msigna-logo.png">
+    <div class="wallet-label-text">mSigna</div>
+    <div class="coming-soon-sign">Coming soon</div>
+  </a>
+  </li>
+
+  <li>
+  <a href="#" class="wallet-thumbs">
+    <img src="/img/wallet-icon-default.png">
+    <div class="wallet-label-text">Single Address</div>
+  </a>
+  </li>
+
+</ul>
+{{/if}} {{!-- DGB 2015-01-20 07:17 End of stage 1 --}}
+
+{{#if areWeOnThisStage 'second'}}
+{{#with getNewWalletData}}
+<div class="bordered">
+  <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a {{ type}} wallet </h3>
+  {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
+    {{> afQuickField name='label' }}
+    {{> afQuickField name='type' options='allowed' }}
+    {{#unless afFieldValueIs name='type' value='Single Addresses'}}
+      {{> afQuickField name='hdseed'}}
+    {{/unless}}
+    <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
+  {{/autoForm}}
+</div>
+{{/with}}
+{{/if}} {{!-- DGB DGB 2015-01-20 07:18 End of stage 2 --}}
 </template>
+

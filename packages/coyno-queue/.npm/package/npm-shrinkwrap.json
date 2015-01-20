@@ -136,7 +136,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/css/-/css-1.0.8.tgz",
                       "dependencies": {
                         "css-parse": {
-                          "version": "1.0.4"
+                          "version": "https://hushhush.levinkeller.de:4873/css-parse/-/css-parse-1.0.4.tgz"
                         },
                         "css-stringify": {
                           "version": "https://hushhush.levinkeller.de:4873/css-stringify/-/css-stringify-1.0.5.tgz"
@@ -150,7 +150,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
+                              "version": "0.1.0"
                             }
                           }
                         },
@@ -208,7 +208,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
+                              "version": "0.1.0"
                             }
                           }
                         },
@@ -240,7 +240,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.34.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
+                              "version": "0.1.0"
                             }
                           }
                         },
@@ -291,10 +291,10 @@
                       "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-0.3.0.tgz",
                       "dependencies": {
                         "lru-cache": {
-                          "version": "https://hushhush.levinkeller.de:4873/lru-cache/-/lru-cache-2.5.0.tgz"
+                          "version": "2.5.0"
                         },
                         "sigmund": {
-                          "version": "https://hushhush.levinkeller.de:4873/sigmund/-/sigmund-1.0.0.tgz"
+                          "version": "1.0.0"
                         }
                       }
                     }
