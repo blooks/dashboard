@@ -17,7 +17,6 @@ chrismbeckett:fontawesome4@4.2.2
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.5
 coyno-queue@0.1.0
-coynverter@0.1.0
 dburles:collection-helpers@1.0.1
 ddp@1.0.13
 deps@1.0.6
@@ -72,7 +71,6 @@ mrt:underscore-string-latest@2.3.3
 nemo64:bootstrap@3.3.0_1
 nemo64:bootstrap-data@3.3.0_1
 npm-bcrypt@0.7.7
-npm-container@1.0.0
 observe-sequence@1.0.4
 ordered-dict@1.0.2
 practicalmeteor:chai@1.9.2_3
