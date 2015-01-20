@@ -24,12 +24,12 @@ All rights reserved.
 In the root directory
 
 ```
-  meteor
+meteor
 ```
 
 For wallet updates etc. install coyno-queue in another folder:
 ```
-  npm install coyno-queue
+npm install coyno-queue
 ```
 
 Go to npm-packages/coyno-queue. 
