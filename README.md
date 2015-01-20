@@ -38,7 +38,6 @@ Run
 
 ```
 COYNO_QUEUE_PROCESSORS=*.* COYNO_QUEUE_LOG_PRETTY=true COYNO_QUEUE_UI_PORT=3010 node index.js
-
 ```
 
 # Development
