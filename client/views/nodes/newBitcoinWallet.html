@@ -1,11 +1,13 @@
 <template name="newBitcoinWallet">
+
+{{#if areWeOnThisStage 'first'}}
 <h4>What kind of wallet do you want to add?</h4>
 
 <ul class="wallet-selection">
   <li>
   <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/bitcoin-wallet-logo.png">
-      <div class="wallet-label-text">Electrum</div>
+    <img src="/img/external-logos/bitcoin-wallet-logo.png">
+    <div class="wallet-label-text">Electrum</div>
   </a>
   </li>
 
@@ -102,14 +104,12 @@
   </li>
 
 </ul>
-</template>
+{{/if}} {{!-- DGB 2015-01-20 07:17 End of stage 1 --}}
 
-
-<template name="newBitcoinWalletTwo">
-<!-- TODO: Second step of wallet integration process needs to have fields accoring to what type of wallet was selected in step 1 (Place in separate template and perhaps find a better name too....) -->
-
-  <div class="bordered">
-    <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a [WALLET TYPE]</h3>
+{{#if areWeOnThisStage 'second'}}
+{{#with getNewWalletData}}
+<div class="bordered">
+  <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a {{ type}} wallet </h3>
   {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
     {{> afQuickField name='label' }}
     {{> afQuickField name='type' options='allowed' }}
@@ -118,5 +118,8 @@
     {{/unless}}
     <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
   {{/autoForm}}
-  </div>
+</div>
+{{/with}}
+{{/if}} {{!-- DGB DGB 2015-01-20 07:18 End of stage 2 --}}
 </template>
+
