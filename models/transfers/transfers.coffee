@@ -37,8 +37,6 @@ Schemas.TransferRepresentation = new SimpleSchema
     type: [String]
   amount:
     type: Number
-  baseVolume:
-    type: Number
 
 
 Schemas.Transfer = new SimpleSchema
@@ -63,9 +61,6 @@ Schemas.Transfer = new SimpleSchema
   note:
     type: String
     optional: true
-  baseVolume:
-    type: Number
-    defaultValue: 0
   representation:
     type: Schemas.TransferRepresentation
     optional: true

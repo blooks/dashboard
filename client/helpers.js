@@ -27,12 +27,15 @@ Template.registerHelper('prettyDateLong', function (date) {
 });
 
 Template.registerHelper('saneNumber', function (internalNumber, currency) {
+  Log.info(internalNumber);
+  Log.info(currency);
   var result = "";
   if (currency === 'BTC') {
     result = (internalNumber / 10e7).toFixed(8);
   } else {
     result = (internalNumber / 10e7).toFixed(2);
   }
+  console.log(result);
   return result;
 });
 Template.registerHelper('noData', function () {
