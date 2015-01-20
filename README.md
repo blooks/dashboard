@@ -10,7 +10,39 @@ A bookkeeping software for bitcoin traders.
 
 All rights reserved.
 
-### Git flow
+# Running the App
+
+
+## Requirements
+
+* Meteor
+* Redis-Server
+* coyno-queue
+
+## Run
+
+In the root directory
+
+```
+meteor
+```
+
+For wallet updates etc. install coyno-queue in another folder:
+```
+npm install coyno-queue
+```
+
+Go to npm-packages/coyno-queue. 
+
+Run 
+
+```
+COYNO_QUEUE_PROCESSORS=*.* COYNO_QUEUE_LOG_PRETTY=true COYNO_QUEUE_UI_PORT=3010 node index.js
+```
+
+# Development
+
+## Git flow
 
 To work on a feature use following command:
 ```
