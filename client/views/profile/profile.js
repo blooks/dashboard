@@ -11,6 +11,11 @@
 Template.userProfile.created = function() {
   this.editingSection = new ReactiveVar('','');
   this.userMessage = new ReactiveVar(false,'');
+ 
+  // DGB 2015-01-20 03:58 This variable has an unfortunatene name, pleas notice
+  // this section and the section from editingSection relate to different
+  // things.
+  this.openedSection = new ReactiveVar('','');
 };
  
 Template.userProfile.helpers({
@@ -21,6 +26,10 @@ Template.userProfile.helpers({
     if (Meteor.user() && Meteor.user().emails) {
       return Meteor.user().emails[0].address;
     }
+  },
+  getOpenedSection: function (section) {
+    var openedSection = Template.instance().openedSection.get(); 
+    return (openedSection===section);
   },
   // DGB 2015-01-12 04:42
   // This functions controls the inline edit of forms
@@ -34,6 +43,16 @@ Template.userProfile.helpers({
 });
 
 Template.userProfile.events({
+  'click #btnPasswordManagement': function (event, template) {
+    if (template.openedSection.get()==='passwordManagement') template.openedSection.set('');
+    else template.openedSection.set('passwordManagement');
+    return true;
+	},
+  'click #btnAccountManagement': function (event, template) {
+    if (template.openedSection.get()==='accountManagement') template.openedSection.set('');
+    else template.openedSection.set('accountManagement');
+    return true;
+	}, 
   "click #change_password": function (event, template) {
     event.preventDefault();
     template.editingSection.set('password'); 
@@ -76,17 +95,14 @@ Template.userProfile.events({
     template.editingSection.set('username');
 	},
  
-   // DGB 2015-01-12 05:19 
-  // On Hold. This can get tricky as per 
-  // https://github.com/meteor-useraccounts/core/issues/193
-  
   // DGB 2015-01-15 07:16 Commented out until it is clear we can do this
-  // 'click #setEditingSectionEmail': function (event, template) {
-  //   template.editingSection.set('email');
-	// },
-  // 'click #saveEmail': function (event, template) {
-  //   template.editingSection.set('');
-	// },
+  'click #setEditingSectionEmail': function (event, template) {
+     template.editingSection.set('email');
+	},
+  'click #saveEmail': function (event, template) {
+    //DGB 2015-01-19 08:14 WIP 
+    template.editingSection.set('');
+	},
   'click #saveUsername': function (event, template) {
     var username = $("#newUsername").val();
     // DGB 2015-01-15 07:05 If the user wants to save again the current username
