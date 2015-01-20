@@ -23,7 +23,7 @@ Meteor.startup(function () {
 Accounts.config({sendVerificationEmail: true});
 
 Accounts.onCreateUser(function(options, user) {
-  user.profile = options.profile || {};
+  user.profile = options.profile || {}; 
   if(!user.profile.username){
     if (options.email) {
       // DGB 2015-01-14 07:28 We need a server side check here to make sure the
