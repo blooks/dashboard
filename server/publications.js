@@ -1,21 +1,9 @@
-var conversor = function (amount, date) {
-  var Future = Npm.require("fibers/future");
-  var Coynverter = Meteor.npmRequire("coyno-converter");
-  var coynverter = new Coynverter();
-  var fut = new Future();
-  coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), "EUR", amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-    fut['return'](exchangeRate);
-  });
-  return fut.wait();
-};
-
 Meteor.publish("transfers", function (page, numberOfResults) {
   var self = this;
   var totalAvailableResults = Transfers.find({userId: this.userId}).count();
   var handle = Transfers.find({userId: this.userId}, {skip: parseInt(page-1)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
     added: function(id, fields){
       fields.totalAvailable = totalAvailableResults;
-      fields.baseVolume = Math.round(conversor(fields.representation.amount, fields.date));
       self.added("transfers", id, fields);
     },
     changed: function(id, fields) {
