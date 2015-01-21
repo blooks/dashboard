@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bitcore": {
-      "version": "https://hushhush.levinkeller.de:4873/bitcore/-/bitcore-0.8.6.tgz",
+      "version": "https://github.com/bitpay/bitcore/tarball/5ae97a7146db96f675daedfdcef2fd4842037478/",
       "dependencies": {
         "asn1.js": {
           "version": "0.4.1",
@@ -12,7 +12,7 @@
           }
         },
         "bn.js": {
-          "version": "0.16.1"
+          "version": "0.16.0"
         },
         "browser-request": {
           "version": "0.3.3"
@@ -141,10 +141,10 @@
               }
             },
             "http-signature": {
-              "version": "0.10.1",
+              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
               "dependencies": {
                 "assert-plus": {
-                  "version": "0.1.5"
+                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
                 },
                 "asn1": {
                   "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
@@ -327,7 +327,7 @@
               }
             },
             "bn.js": {
-              "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-0.15.0.tgz"
+              "version": "0.15.0"
             },
             "brfs": {
               "version": "https://hushhush.levinkeller.de:4873/brfs/-/brfs-1.0.0.tgz",
@@ -356,7 +356,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                       "dependencies": {
                         "amdefine": {
-                          "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
+                          "version": "0.1.0"
                         }
                       }
                     }
@@ -532,8 +532,16 @@
         }
       }
     },
+    "bitstamp": {
+      "version": "https://hushhush.levinkeller.de:4873/bitstamp/-/bitstamp-0.1.9.tgz",
+      "dependencies": {
+        "underscore": {
+          "version": "1.4.4"
+        }
+      }
+    },
     "chain-node": {
-      "version": "https://hushhush.levinkeller.de:4873/chain-node/-/chain-node-3.0.1.tgz",
+      "version": "https://github.com/limpbrains/chain-node/tarball/326f22e0728f9d93ed9be5490eab725781484aa4",
       "dependencies": {
         "request": {
           "version": "https://hushhush.levinkeller.de:4873/request/-/request-2.36.0.tgz",
@@ -581,10 +589,10 @@
               "version": "https://hushhush.levinkeller.de:4873/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
             },
             "http-signature": {
-              "version": "0.10.1",
+              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
               "dependencies": {
                 "assert-plus": {
-                  "version": "0.1.5"
+                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
                 },
                 "asn1": {
                   "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
@@ -777,17 +785,58 @@
         }
       }
     },
-    "coyno-converter": {
-      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.4.tgz",
+    "kraken-api": {
+      "version": "https://hushhush.levinkeller.de:4873/kraken-api/-/kraken-api-0.1.5.tgz",
       "dependencies": {
-        "moment": {
-          "version": "https://hushhush.levinkeller.de:4873/moment/-/moment-2.7.0.tgz"
+        "querystring": {
+          "version": "0.2.0"
         },
         "request": {
-          "version": "2.39.0",
+          "version": "2.51.0",
           "dependencies": {
-            "qs": {
-              "version": "https://hushhush.levinkeller.de:4873/qs/-/qs-0.6.6.tgz"
+            "bl": {
+              "version": "https://hushhush.levinkeller.de:4873/bl/-/bl-0.9.4.tgz",
+              "dependencies": {
+                "readable-stream": {
+                  "version": "https://hushhush.levinkeller.de:4873/readable-stream/-/readable-stream-1.0.33.tgz",
+                  "dependencies": {
+                    "core-util-is": {
+                      "version": "https://hushhush.levinkeller.de:4873/core-util-is/-/core-util-is-1.0.1.tgz"
+                    },
+                    "isarray": {
+                      "version": "https://hushhush.levinkeller.de:4873/isarray/-/isarray-0.0.1.tgz"
+                    },
+                    "string_decoder": {
+                      "version": "https://hushhush.levinkeller.de:4873/string_decoder/-/string_decoder-0.10.31.tgz"
+                    },
+                    "inherits": {
+                      "version": "2.0.1"
+                    }
+                  }
+                }
+              }
+            },
+            "caseless": {
+              "version": "https://hushhush.levinkeller.de:4873/caseless/-/caseless-0.8.0.tgz"
+            },
+            "forever-agent": {
+              "version": "https://hushhush.levinkeller.de:4873/forever-agent/-/forever-agent-0.5.2.tgz"
+            },
+            "form-data": {
+              "version": "https://hushhush.levinkeller.de:4873/form-data/-/form-data-0.2.0.tgz",
+              "dependencies": {
+                "async": {
+                  "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.9.0.tgz"
+                },
+                "mime-types": {
+                  "version": "https://hushhush.levinkeller.de:4873/mime-types/-/mime-types-2.0.7.tgz",
+                  "dependencies": {
+                    "mime-db": {
+                      "version": "https://hushhush.levinkeller.de:4873/mime-db/-/mime-db-1.5.0.tgz"
+                    }
+                  }
+                }
+              }
             },
             "json-stringify-safe": {
               "version": "https://hushhush.levinkeller.de:4873/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz"
@@ -795,8 +844,14 @@
             "mime-types": {
               "version": "https://hushhush.levinkeller.de:4873/mime-types/-/mime-types-1.0.2.tgz"
             },
-            "forever-agent": {
-              "version": "https://hushhush.levinkeller.de:4873/forever-agent/-/forever-agent-0.5.2.tgz"
+            "node-uuid": {
+              "version": "https://hushhush.levinkeller.de:4873/node-uuid/-/node-uuid-1.4.2.tgz"
+            },
+            "qs": {
+              "version": "https://hushhush.levinkeller.de:4873/qs/-/qs-2.3.3.tgz"
+            },
+            "tunnel-agent": {
+              "version": "https://hushhush.levinkeller.de:4873/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
             },
             "tough-cookie": {
               "version": "https://hushhush.levinkeller.de:4873/tough-cookie/-/tough-cookie-0.12.1.tgz",
@@ -806,33 +861,11 @@
                 }
               }
             },
-            "form-data": {
-              "version": "https://hushhush.levinkeller.de:4873/form-data/-/form-data-0.1.4.tgz",
-              "dependencies": {
-                "combined-stream": {
-                  "version": "https://hushhush.levinkeller.de:4873/combined-stream/-/combined-stream-0.0.7.tgz",
-                  "dependencies": {
-                    "delayed-stream": {
-                      "version": "https://hushhush.levinkeller.de:4873/delayed-stream/-/delayed-stream-0.0.5.tgz"
-                    }
-                  }
-                },
-                "mime": {
-                  "version": "https://hushhush.levinkeller.de:4873/mime/-/mime-1.2.11.tgz"
-                },
-                "async": {
-                  "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.9.0.tgz"
-                }
-              }
-            },
-            "tunnel-agent": {
-              "version": "https://hushhush.levinkeller.de:4873/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
-            },
             "http-signature": {
-              "version": "0.10.1",
+              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
               "dependencies": {
                 "assert-plus": {
-                  "version": "0.1.5"
+                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
                 },
                 "asn1": {
                   "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
@@ -843,7 +876,7 @@
               }
             },
             "oauth-sign": {
-              "version": "https://hushhush.levinkeller.de:4873/oauth-sign/-/oauth-sign-0.3.0.tgz"
+              "version": "https://hushhush.levinkeller.de:4873/oauth-sign/-/oauth-sign-0.5.0.tgz"
             },
             "hawk": {
               "version": "https://hushhush.levinkeller.de:4873/hawk/-/hawk-1.1.1.tgz",
@@ -867,61 +900,16 @@
             },
             "stringstream": {
               "version": "https://hushhush.levinkeller.de:4873/stringstream/-/stringstream-0.0.4.tgz"
-            }
-          }
-        },
-        "underscore": {
-          "version": "1.6.0"
-        },
-        "tracer": {
-          "version": "https://hushhush.levinkeller.de:4873/tracer/-/tracer-0.7.3.tgz",
-          "dependencies": {
-            "dateformat": {
-              "version": "https://hushhush.levinkeller.de:4873/dateformat/-/dateformat-1.0.2-1.2.3.tgz"
             },
-            "colors": {
-              "version": "https://hushhush.levinkeller.de:4873/colors/-/colors-0.6.2.tgz"
-            },
-            "tinytim": {
-              "version": "https://hushhush.levinkeller.de:4873/tinytim/-/tinytim-0.1.1.tgz"
-            }
-          }
-        },
-        "mongodb": {
-          "version": "https://hushhush.levinkeller.de:4873/mongodb/-/mongodb-1.4.6.tgz",
-          "dependencies": {
-            "bson": {
-              "version": "https://hushhush.levinkeller.de:4873/bson/-/bson-0.2.9.tgz",
+            "combined-stream": {
+              "version": "https://hushhush.levinkeller.de:4873/combined-stream/-/combined-stream-0.0.7.tgz",
               "dependencies": {
-                "nan": {
-                  "version": "1.0.0"
-                }
-              }
-            },
-            "kerberos": {
-              "version": "https://hushhush.levinkeller.de:4873/kerberos/-/kerberos-0.0.3.tgz"
-            },
-            "readable-stream": {
-              "version": "https://hushhush.levinkeller.de:4873/readable-stream/-/readable-stream-1.0.33.tgz",
-              "dependencies": {
-                "core-util-is": {
-                  "version": "https://hushhush.levinkeller.de:4873/core-util-is/-/core-util-is-1.0.1.tgz"
-                },
-                "isarray": {
-                  "version": "https://hushhush.levinkeller.de:4873/isarray/-/isarray-0.0.1.tgz"
-                },
-                "string_decoder": {
-                  "version": "https://hushhush.levinkeller.de:4873/string_decoder/-/string_decoder-0.10.31.tgz"
-                },
-                "inherits": {
-                  "version": "2.0.1"
+                "delayed-stream": {
+                  "version": "https://hushhush.levinkeller.de:4873/delayed-stream/-/delayed-stream-0.0.5.tgz"
                 }
               }
             }
           }
-        },
-        "node-uuid": {
-          "version": "https://hushhush.levinkeller.de:4873/node-uuid/-/node-uuid-1.4.2.tgz"
         }
       }
     }
