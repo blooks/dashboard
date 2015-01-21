@@ -57,6 +57,8 @@ var chainTxToCoynoTx = function (chainTx) {
     outputs: outputs,
     currency: 'BTC'
   };
+  //Set connected to false so Meteor knows that this transfer needs to be connected to the internal nodes.
+  result.connected = false;
   return result;
 };
 
@@ -76,31 +78,6 @@ var addCoynoData = function (transfer, wallet) {
   return transfer;
 };
 
-/**
- * If the output address is not connected to a Coyno
- * Address for this user, this function will look up
- * whether one of the users wallets contain the address
- * and if so connect the output to it
- * @param inoutput
- * @returns {} now connected to the Coyno Database Object
- * if there is one for this address and this user
- */
-var connectToInternalNode = function (inoutput) {
-  if (!inoutput.nodeId) {
-    var internalAddress = BitcoinAddresses.findOne(
-      {$and: [{'userId': Meteor.userId()}, {'address': inoutput.note}]});
-    if (internalAddress) {
-      inoutput.nodeId = internalAddress._id;
-    }
-  }
-  return inoutput;
-};
-
-var updateKnownTransfer = function (transfer) {
-  var internalTransfer = Transfers.findOne({"foreignId": transfer.foreignId});
-  internalTransfer.update();
-};
-
 
 /**
  * Tries to add a transfer to the database or update the transfer if it
@@ -113,29 +90,12 @@ var updateKnownTransfer = function (transfer) {
  */
 var addTransfer = function (transfer) {
   var oldTransfer = Transfers.findOne({"foreignId": transfer.foreignId}),
-    isNewTransfer = true,
-    inputs = transfer.details.inputs,
-    newInputs = [],
-    outputs = transfer.details.outputs,
-    newOutputs = [];
+    isNewTransfer = true;
 
   if (oldTransfer) {//Transaction already stored for this User
     transfer = oldTransfer;
     isNewTransfer = false;
   }
-
-  inputs.forEach(function (input) {
-    newInputs.push(connectToInternalNode(input));
-  });
-  //connected inputs have been built, need to be stored
-  inputs = newInputs;
-
-  outputs.forEach(function (output) {
-    newOutputs.push(connectToInternalNode(output));
-  });
-  //connected outputs have been built, need to be stored
-  outputs = newOutputs;
-
   if (isNewTransfer) {
     try {
       Transfers.insert(transfer);
@@ -146,8 +106,7 @@ var addTransfer = function (transfer) {
     try {
       Transfers.update({"_id": transfer._id}, {
         $set: {
-          "details.outputs": outputs,
-          "details.inputs": inputs
+          "connected": false
         }
       });
     } catch (error) {
@@ -182,7 +141,6 @@ var updateTransactionsForAddresses = function (addresses, wallet) {
   chainTxs.forEach(function (chainTx) {
     var newTransfer = addCoynoData(chainTxToCoynoTx(chainTx), wallet);
     addTransfer(newTransfer);
-    updateKnownTransfer(newTransfer);
   });
 };
 
