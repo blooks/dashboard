@@ -9,6 +9,9 @@ Template.transfersNavigation.helpers({
     if(this.page!==1){
       return true;
     }
+  },
+  pagination: function () {
+    console.log(this);
   }
 });
 

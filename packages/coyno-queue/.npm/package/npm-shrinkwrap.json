@@ -150,7 +150,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "0.1.0"
+                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
                             }
                           }
                         },
@@ -208,7 +208,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "0.1.0"
+                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
                             }
                           }
                         },
@@ -240,7 +240,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.34.tgz",
                           "dependencies": {
                             "amdefine": {
-                              "version": "0.1.0"
+                              "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
                             }
                           }
                         },
@@ -282,19 +282,19 @@
                   "version": "https://hushhush.levinkeller.de:4873/sax/-/sax-0.5.8.tgz"
                 },
                 "glob": {
-                  "version": "https://hushhush.levinkeller.de:4873/glob/-/glob-3.2.11.tgz",
+                  "version": "3.2.11",
                   "dependencies": {
                     "inherits": {
                       "version": "https://hushhush.levinkeller.de:4873/inherits/-/inherits-2.0.1.tgz"
                     },
                     "minimatch": {
-                      "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-0.3.0.tgz",
+                      "version": "0.3.0",
                       "dependencies": {
                         "lru-cache": {
-                          "version": "2.5.0"
+                          "version": "https://hushhush.levinkeller.de:4873/lru-cache/-/lru-cache-2.5.0.tgz"
                         },
                         "sigmund": {
-                          "version": "1.0.0"
+                          "version": "https://hushhush.levinkeller.de:4873/sigmund/-/sigmund-1.0.0.tgz"
                         }
                       }
                     }
@@ -309,10 +309,10 @@
               "version": "https://hushhush.levinkeller.de:4873/nib/-/nib-0.5.0.tgz"
             },
             "reds": {
-              "version": "https://hushhush.levinkeller.de:4873/reds/-/reds-0.2.4.tgz",
+              "version": "https://hushhush.levinkeller.de:4873/reds/-/reds-0.2.5.tgz",
               "dependencies": {
                 "natural": {
-                  "version": "https://hushhush.levinkeller.de:4873/natural/-/natural-0.1.17.tgz",
+                  "version": "https://hushhush.levinkeller.de:4873/natural/-/natural-0.2.0.tgz",
                   "dependencies": {
                     "sylvester": {
                       "version": "https://hushhush.levinkeller.de:4873/sylvester/-/sylvester-0.0.21.tgz"
@@ -321,25 +321,12 @@
                       "version": "https://hushhush.levinkeller.de:4873/apparatus/-/apparatus-0.0.8.tgz"
                     },
                     "underscore": {
-                      "version": "https://hushhush.levinkeller.de:4873/underscore/-/underscore-1.7.0.tgz"
+                      "version": "1.7.0"
                     }
                   }
                 },
                 "redis": {
-                  "version": "https://hushhush.levinkeller.de:4873/redis/-/redis-0.7.2.tgz",
-                  "dependencies": {
-                    "hiredis": {
-                      "version": "https://hushhush.levinkeller.de:4873/hiredis/-/hiredis-0.1.17.tgz",
-                      "dependencies": {
-                        "bindings": {
-                          "version": "https://hushhush.levinkeller.de:4873/bindings/-/bindings-1.2.1.tgz"
-                        },
-                        "nan": {
-                          "version": "https://hushhush.levinkeller.de:4873/nan/-/nan-1.1.2.tgz"
-                        }
-                      }
-                    }
-                  }
+                  "version": "https://hushhush.levinkeller.de:4873/redis/-/redis-0.12.1.tgz"
                 }
               }
             }

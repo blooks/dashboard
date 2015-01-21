@@ -7,6 +7,22 @@
       {{/if}}
     </div>
     <div class='col-xs-4 text-center'>
+      <nav>
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+            {{pagination}}
+            <li><a href="#">{{totalPages}}</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div>
     </div>
     <div class='col-xs-4 text-center'>
