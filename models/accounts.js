@@ -67,6 +67,10 @@ var userProfile = new SimpleSchema({
   hasTransfers: {
     type: Boolean,
     defaultValue: false
+  },
+  hasSignedTOS: {
+    type: Boolean,
+    defaultValue: false
   }
 });
 
