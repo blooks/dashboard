@@ -79,7 +79,7 @@ Template.netWorth.helpers({
       }
     };
     if(Meteor.user()){
-      return saneNumber(Meteor.user().totalBalance(currency), currency);
+      return Meteor.user().totalBalanceBasedOnUserCurrency(currency);
     }
   }
 });

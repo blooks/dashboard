@@ -34,8 +34,9 @@ Router.map(function() {
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
-        Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers')
+        Meteor.subscribe('bitcoinwallets'), 
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
       ];
     },
     data: function() {

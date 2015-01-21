@@ -2,41 +2,49 @@
 
 ul.wallet-selection {
 	list-style-type: none;
+	padding-left: 0;
 
 	li {
 		float: left;
-		width: 120px;
-		margin: 20px;
+		width: 140px;
+		margin: 20px 40px 20px 0;
+		margin: 2rem 4rem 2rem 0;
 		text-align: center;
-
+ 		transition: transform 0.2s;
 		a.wallet-thumbs {
 			text-transform: uppercase;
 
 			img {
 			  border:2px solid transparent;
-			  width: 120px;
+			  width: 140px;
 			  height: auto;
+			 -webkit-transition: transform 0.3s;
+			   -moz-transition: transform 0.3s;
+			     -o-transition: transform 0.3s;
+			        transition: transform 0.3s;
 			}
 
 			.wallet-label-text {
-				background-color: @brand-primary;
-				color: @whyte;
+				border-top: 1px solid @gray-lighter;
+				border-bottom: 1px solid @gray-lighter;
+				color: @gray;
 				text-align: center;
 			}
 
 			&:hover, &:focus {
+
 				img {
-				  border:2px solid @brand-primary;
-				  background-color: @brand-primary;
+				 -webkit-transform: scale(1.4);
+				   -moz-transform: scale(1.4);
+				     -o-transform: scale(1.4);
+				        transform: scale(1.4);
 				}
 			}
 		}
 
-
-
 		&.coming-soon {
 				position: relative;
-
+				cursor: default;
 				img {
 					@opacity: 0.4;
 					-moz-opacity: @opacity;
@@ -46,6 +54,7 @@ ul.wallet-selection {
 					@opperc: @opacity * 100;
 					-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
 					filter: ~"alpha(opacity=@{opperc})";
+					transform: none !important;
 				}
 
 				.coming-soon-sign {
