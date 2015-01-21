@@ -63,6 +63,32 @@ Meteor.methods({
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
+  // DGB 2015-01-21 06:32 
+  // Changes the email of the user. As we only allow one email per user, we know
+  // the email will be on the position 0 of the email array. We send the email to the old address to inform of the change
+  changeUserEmail: function (email) {
+    var self = this;
+    if (!self.userId) return; 
+    // DGB 2015-01-21 06:46 Validate email with Collection2 
+    if (Meteor.users.simpleSchema().namedContext().validate({$set:{'emails.$.address':email}}, {modifier: true})) {
+      try {
+        Meteor.users.update({_id: self.userId},{$set:{'emails.0.address':email}}) 
+        return true;
+    } catch (e) {
+      // DGB 2015-01-21 07:04 The reason Mongo complain after passing validation
+      // is that the email is not unique (Collection2 doesn't check this ?,
+      // weird)
+      throw new Meteor.Error(402, "Invalid Email. Some other user has already this email, please insert a different one", "", ""); 
+    } 
+     
+    }
+    else {
+     // DGB 2015-01-21 06:49 Return error, to indicate the client the email is
+      // valid
+      throw new Meteor.Error(402, "Invalid Email: Please insert a valid email address", "", ""); 
+    }
+    return true; //DGB 2015-01-21 06:52 Returns a result
+  },
   /**
    * getConversion returns the conversion value for a date based on a currency
    * @param  {String} date     The date to calculate the exchange rate

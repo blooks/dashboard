@@ -89,15 +89,32 @@ Template.userProfile.events({
   "click #confirm_delete_account": function () {
     Meteor.call('removeAccount');
   },
-  // DGB 2015-01-12 05:11
   'click .setEditingSectionUsername': function (event, template) {
     template.editingSection.set('username');
 	},
-  'click #setEditingSectionEmail': function (event, template) {
+  'click .setEditingSectionEmail': function (event, template) {
      template.editingSection.set('email');
 	},
-  'click #saveEmail': function (event, template) {
-    template.editingSection.set('');
+  'submit [name="saveEmail"]': function (event, template) {
+      event.preventDefault(); 
+      event.stopPropagation();
+      var email = $("#newEmail").val();
+      template.editingSection.set('email');
+      Meteor.call('changeUserEmail',email, function(err,result) {
+      if (err) {
+          template.userMessage.set({email: {class: 'error', message: err.reason}});
+      }
+      else {
+        if (!result) {
+          template.$("#newEmail").val();
+          template.userMessage.set({username: {class: 'error', message: '"' + email + '" is not a valid Email, please select another username'}});
+        }
+        else {
+          template.editingSection.set('');
+          template.userMessage.set(false);
+        }
+      }
+    });
 	},
   'submit [name="saveUsername"]': function (event, template) {
     event.preventDefault(); 
@@ -123,7 +140,7 @@ Template.userProfile.events({
           template.userMessage.set({username: {class: 'error', message: '"' + username + '" is already in use, please select another username'}});
         }
         else {
-          // DGB 2015-01-15 07:42 Username is unique
+          // DGB 2015-01-15 07:42 Username is unique. For extra confidence that the username is unique, it should not be editable on the profile 
           Meteor.users.update(
             {_id: Meteor.userId()}, 
             {$set: {'profile.username':username}},

@@ -60,20 +60,24 @@
                 {{ > userNotification }}
               {{/with}}
             {{/if}}
-            <div> 
+             <div>
               <span class="field-type">Email:</span>
-              <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
-              <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
-            </div>
+              <form name='saveEmail' action='' style='display: inline'>
+                <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
+                <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
+              </form>
+            </div> 
           {{else}}
-          <div> 
-            <span class="field-type">Email:</span> 
-            <span class="inputDisplay"> {{userEmail}} </span>
-            <button class="btn btn-success pull-right" id='setEditingSectionEmail'><i class="fa fa-pencil" ></i></button>
-          </div>
+          <div>
+            <span class="field-type">Email:</span>
+            <span class="inputDisplay setEditingSectionEmail"> {{userEmail}} </span>
+            <button class="btn btn-success pull-right setEditingSectionEmail" ><i class="fa fa-pencil" ></i></button>
+          </div> 
           {{/if}}
 				</div>
 
+    <div class='spacer' style='clear:both'></div>
+      
     <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
     the future 
 
