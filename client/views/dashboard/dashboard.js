@@ -2,22 +2,25 @@
  * Function to draw the chart with local data
  */
 var builtStockLocal = function (currency) {
-  var networtData = Meteor.user().networthData(currency);
-  var data = networtData[0];
-  $('#holdingsovertime').highcharts('StockChart', {
-    rangeSelector: {
-      selected: 1
-    },
-    title: {
-      text: 'Total Bitcoin Holdings'
-    },
-    series: [{
-      name: currency,
-      data: data,
-      tooltip: {
-        valueDecimals: 2
-      }
-    }]
+  Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
+    if(result && result[0]){
+      var data = result[0];
+      $('#holdingsovertime').highcharts('StockChart', {
+        rangeSelector: {
+          selected: 1
+        },
+        title: {
+          text: 'Total Bitcoin Holdings'
+        },
+        series: [{
+          name: currency,
+          data: data,
+          tooltip: {
+            valueDecimals: 2
+          }
+        }]
+      });
+    }
   });
 };
 
@@ -77,12 +80,6 @@ Template.dashboard.helpers({
   totalBalance: function (currency) {
     //TODO: Remove this. It is redundant to the global helper
     var saneNumber = function (internalNumber, currency) {
-      HTTP.get("https://api.coindesk.com/v1/bpi/currentprice/EUR.json", function (err, result){
-        var resultGet = JSON.parse(result.content);
-        var value = resultGet.bpi['EUR'].rate_float;
-        var conversion = (internalNumber/100000000)*value;
-        console.log("Value today in EUR: "+conversion);
-      });
       if (currency === 'BTC') {
         return (internalNumber / 10e7).toFixed(8);
       } else {
@@ -108,9 +105,5 @@ Template.dashboard.events({
     return Trades.remove({
       _id: this._id
     });
-  },
-  'change #currency_change_chart': function (event) {
-    event.preventDefault();
-    builtStockLocal(event.currentTarget.value);
   }
 });
