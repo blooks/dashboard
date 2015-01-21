@@ -136,7 +136,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/css/-/css-1.0.8.tgz",
                       "dependencies": {
                         "css-parse": {
-                          "version": "1.0.4"
+                          "version": "https://hushhush.levinkeller.de:4873/css-parse/-/css-parse-1.0.4.tgz"
                         },
                         "css-stringify": {
                           "version": "https://hushhush.levinkeller.de:4873/css-stringify/-/css-stringify-1.0.5.tgz"
