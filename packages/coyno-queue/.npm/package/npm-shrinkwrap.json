@@ -176,13 +176,13 @@
                       "version": "https://hushhush.levinkeller.de:4873/readdirp/-/readdirp-0.2.5.tgz",
                       "dependencies": {
                         "minimatch": {
-                          "version": "2.0.1",
+                          "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-2.0.1.tgz",
                           "dependencies": {
                             "brace-expansion": {
-                              "version": "1.1.0",
+                              "version": "https://hushhush.levinkeller.de:4873/brace-expansion/-/brace-expansion-1.1.0.tgz",
                               "dependencies": {
                                 "balanced-match": {
-                                  "version": "0.2.0"
+                                  "version": "https://hushhush.levinkeller.de:4873/balanced-match/-/balanced-match-0.2.0.tgz"
                                 },
                                 "concat-map": {
                                   "version": "https://hushhush.levinkeller.de:4873/concat-map/-/concat-map-0.0.1.tgz"
@@ -202,7 +202,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/uglify-js/-/uglify-js-2.4.0.tgz",
                       "dependencies": {
                         "async": {
-                          "version": "0.2.10"
+                          "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.2.10.tgz"
                         },
                         "source-map": {
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
@@ -234,7 +234,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/uglify-js/-/uglify-js-2.4.16.tgz",
                       "dependencies": {
                         "async": {
-                          "version": "0.2.10"
+                          "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.2.10.tgz"
                         },
                         "source-map": {
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.34.tgz",
@@ -285,7 +285,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/glob/-/glob-3.2.11.tgz",
                   "dependencies": {
                     "inherits": {
-                      "version": "2.0.1"
+                      "version": "https://hushhush.levinkeller.de:4873/inherits/-/inherits-2.0.1.tgz"
                     },
                     "minimatch": {
                       "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-0.3.0.tgz",
@@ -346,7 +346,7 @@
           }
         },
         "lodash": {
-          "version": "2.4.1"
+          "version": "https://hushhush.levinkeller.de:4873/lodash/-/lodash-2.4.1.tgz"
         }
       }
     }
