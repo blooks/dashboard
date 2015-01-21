@@ -25,18 +25,17 @@ Router.onBeforeAction(mustHaveSignedTOS, {
 Router.map(function() {
   this.route('/', {
     action: function() {
-      Router.go('/profile');
+      Router.go('/dashboard');
     }
   });
   this.route('dashboard', {
-    path: '/dashboard/overView',
+    path: '/dashboard',
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers'),
-        Meteor.subscribe('bitcoinExchangeRates')
-      ];
+        Meteor.subscribe('transfers')
+        ]
     },
     data: function() {
       return {
