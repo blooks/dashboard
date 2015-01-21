@@ -55,7 +55,7 @@ var conversor = function (amount, date, transferId) {
   currencies.forEach(function (currency){
     coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
       if(exchangeRate){
-        Fiber(function() { 
+        Fiber(function() {
           var rateCurrency = {};
           rateCurrency[currency]=Math.round(exchangeRate);
           Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});

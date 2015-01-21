@@ -1,0 +1,70 @@
+/* "Add New Wallet" journey. Wallet selection view  */
+
+ul.wallet-selection {
+	list-style-type: none;
+
+	li {
+		float: left;
+		width: 120px;
+		margin: 20px;
+		text-align: center;
+
+		a.wallet-thumbs {
+			text-transform: uppercase;
+
+			img {
+			  border:2px solid transparent;
+			  width: 120px;
+			  height: auto;
+			}
+
+			.wallet-label-text {
+				background-color: @brand-primary;
+				color: @whyte;
+				text-align: center;
+			}
+
+			&:hover, &:focus {
+				img {
+				  border:2px solid @brand-primary;
+				  background-color: @brand-primary;
+				}
+			}
+		}
+
+
+
+		&.coming-soon {
+				position: relative;
+
+				img {
+					@opacity: 0.4;
+					-moz-opacity: @opacity;
+					-khtml-opacity: @opacity;
+					-webkit-opacity: @opacity;
+					opacity: @opacity;
+					@opperc: @opacity * 100;
+					-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+					filter: ~"alpha(opacity=@{opperc})";
+				}
+
+				.coming-soon-sign {
+					border: 1px solid @brand-primary;
+					color: @brand-primary;
+					padding: 5px;
+					text-transform: uppercase;
+					font-weight: normal;
+					position: absolute;
+					top: 40%;
+
+					/* Rotate */
+				    -ms-transform: rotate(30deg); /* IE 9 */
+				    -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+				    transform: rotate(30deg);
+
+				}
+
+			}
+
+	}
+}
