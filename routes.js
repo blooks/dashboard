@@ -6,8 +6,8 @@ var mustBeSignedIn = function() {
   }
 };
 
-var mustHaveSignedTOS = function() {
-  if (!(Meteor.user().hasSignedTOS)) {
+var mustHaveSignedTOS = function () {
+  if (Meteor.user() && Meteor.user().profile && Meteor.user().profile.hasSignedTOS===false) {
     Router.go('termsOfService');
   } else {
     this.next();
