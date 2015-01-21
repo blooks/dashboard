@@ -28,7 +28,7 @@
           .inputEdit {display:inline-block; min-width:50%; padding: 0.34em}
           .big-input-item {height: 51px!important}
         </style>
-        
+<!-- 
         <div class="big-input-item">
         {{#if getEditingSection 'username'}}
           {{#if getUserMessage 'username'}}
@@ -42,7 +42,7 @@
             <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
             </form>
           </div>
-          {{else}} 
+          {{else}}
           <div>
             <span class="field-type">Username:</span>
             <span class="inputDisplay setEditingSectionUsername"> {{displayUsername}} </span>
@@ -52,7 +52,7 @@
       </div>
 
       <div class='clearfix' style='clear:both'></div>
-
+ -->
         <div class="big-input-item">
           {{#if getEditingSection 'email'}}
             {{#if getUserMessage 'email'}}
@@ -66,27 +66,27 @@
                 <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
                 <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
               </form>
-            </div> 
+            </div>
           {{else}}
           <div>
             <span class="field-type">Email:</span>
             <span class="inputDisplay setEditingSectionEmail"> {{userEmail}} </span>
             <button class="btn btn-success pull-right setEditingSectionEmail" ><i class="fa fa-pencil" ></i></button>
-          </div> 
+          </div>
           {{/if}}
 				</div>
 
     <div class='spacer' style='clear:both'></div>
-      
+
     <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
-    the future 
+    the future
 
     <div class='clearfix' style='clear:both'></div>
-    <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button> 
-    Password Management   
+    <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button>
+    Password Management
     <br><br><br>
 <button class='btn btn-primary pull-right' id='btnAccountManagement'>Delete Profile</button>
-    Account Management 
+    Account Management
     -->
 
 
@@ -105,12 +105,12 @@
         <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
         <button class="btn btn-default pull-right" id="change_password">Change password</button>
       </div>
-    {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
-  
+    {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }}
+
 
 
     <div class='spacer' style='clear:both'></div>
-       
+
     {{!--#if getOpenedSection 'accountManagement' }}
       <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
@@ -125,13 +125,13 @@
           <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Proceed with profile deletion</button>
         </div>
       </div>
-    {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}} 
+    {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}}
 
     </div>
   </div>
-</div> 
-  
-  
+</div>
+
+
 <!-- DGB 2015-01-20 03:53 Modal window for the delete password
 confirmation -->
 <!-- Modal -->
