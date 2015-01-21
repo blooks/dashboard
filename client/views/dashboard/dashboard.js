@@ -96,7 +96,7 @@ Template.dashboard.helpers({
  * Call the function to built the chart when the template is rendered
  */
 Template.dashboard.rendered = function () {
-  builtStockLocal("BTC");
+  builtStockLocal("EUR");
   fundsDistribution();
 };
 

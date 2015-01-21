@@ -1,3 +1,4 @@
+BitcoinExchangeRates = new Mongo.Collection('bitcoinExchangeRates');
 Meteor.methods({
   /**
    * [calculateBaseAmount description]
@@ -64,24 +65,6 @@ Meteor.methods({
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
   /**
-   * getConversion returns the conversion value for a date based on a currency
-   * @param  {String} date     The date to calculate the exchange rate
-   * @param  {String} currency The currency which the conversion will be done
-   * @param  {Number} amount   The amount of BTC to convert
-   * @return {Number}          The value of the amount in the provided currency
-   */
-  //Example call to server method from client: Meteor.call('getConversion', '2015-01-10', 'USD', 0.1213, function (err, result) {console.log(result)});
-  getConversion: function (date, currency, amount) {
-    var Coynverter = Meteor.npmRequire("coyno-converter");
-    var coynverter = new Coynverter();
-    var conversion = Async.runSync(function (done) {
-      coynverter.convert("meteor", date, currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-        done(null, exchangeRate);
-      });
-    });
-    return conversion.result;
-  },
-  /**
    * [dataForChartDashboardBasedOnCurrency description]
    * @param  {[type]} currency [description]
    * @return {[type]}          [description]
@@ -90,29 +73,38 @@ Meteor.methods({
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
+    var convertToBTC = function (time, amount, currency){
+      var rate = BitcoinExchangeRates.findOne({date: new Date(moment(time).format("YYYY-MM-DD"))});
+      //Log.info(amount);
+      return Math.round((amount*rate[currency])/100000000);
+    };
     var balances = [];
     var changes = [];
     var balance = 0;
     var change = 0;
     var time = 0;
-    //21.01.2015 LFG one day for time delta 60*60*24
-    var timeDelta = 86400;
-    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
+    //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
+    var timeDelta = 86400000;
+    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}, {limit: 5}).forEach(function (transfer) {
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       if (time === 0) {
-        time = transfer.date.getTime() - timeDelta;
-        console.log(time);
+        time = moment(transfer.date-timeDelta).valueOf();
       }
-      while (transfer.date.getTime() >= time) {
-        balances.push([time, parseFloat(satoshiToBTC(balance))]);
-        changes.push([time, parseFloat(satoshiToBTC(change))]);
+      while (moment(transfer.date).valueOf() >= moment(time).valueOf()) {
         change = 0;
         time += timeDelta;
+        if(currency==="EUR" || currency==='USD'){
+          balances.push([time, convertToBTC(time, balance, currency)]);
+          changes.push([time, convertToBTC(time, balance, currency)]);
+        }
+        if(currency==="BTC"){
+          balances.push([time, parseFloat(satoshiToBTC(balance))]);
+          changes.push([time, parseFloat(satoshiToBTC(change))]);
+        }
       }
       if (transfer.isIncoming()) {
         balance += transfer.representation.amount;
-        //euroBalance += transfer.baseAmount
         change += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
@@ -121,8 +113,7 @@ Meteor.methods({
         change -= (transfer.representation.amount);
       }
     });
-    balances.push([time, parseFloat(satoshiToBTC(balance))]);
-    changes.push([time, parseFloat(satoshiToBTC(change))]);
+    //console.log(balances);
     return [balances, changes];
   }
 });
