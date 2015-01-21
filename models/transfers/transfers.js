@@ -170,12 +170,8 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
-      representation.baseVolume =
-        Coynverter.calculateBaseAmount(
-          transfer.amount(),
-          transfer.details.currency,
-          transfer.date);
-      Transfers.update(
+      representation.baseVolume = 0;
+        Transfers.update(
         {"_id": this._id},
         {$set: {"representation": representation}}
       );
