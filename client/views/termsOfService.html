@@ -1,4 +1,29 @@
-<template name="termsOfService">
+<template name='termsOfService'>
+<div style='text-align:center' class='container'>
+  <h1>You are almost there, my friend</h1>
+    <h2>Please acknowledge the rules</h2>
+
+    <div style='width:300px; margin:0 auto 3em auto'>
+      - We don't have your wallet information.<br> 
+      - We don't store your private keys. <br>
+      - Please keep your wallet files safe, we will not be able to recover your coins if you lose or damage your wallet files
+    </div>
+    
+    <div style='text-align:center'>
+      <input type='checkbox'/> &nbsp;&nbsp;Allright buddy, I understand it<br>
+      <br><br>
+      {{#if currentUser.profile.hasSignedTOS }}
+        <span class='h2'>Welcome!</span>
+        <br> 
+        <a href='/nodes/nodesOverview' class='btn btn-primary'>Add new wallet</a>
+      {{else}}
+      <div style='opacity:0.2' class='btn btn-disabled'>Add new wallet</div>
+      {{/if}}
+    </div>
+</div>
+</template>
+
+<template name="termsOfServiceOLDTEMPLATEWAITINGFORMERGEORDELETE">
    <h1 class="process-title">Terms of Service</h1>
     <div class="sub-title-icon top-consistency-margin">
           <div class="icon icon-graph-trend"></div>
