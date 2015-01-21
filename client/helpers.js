@@ -27,14 +27,18 @@ Template.registerHelper('prettyDateLong', function (date) {
 });
 
 Template.registerHelper('saneNumber', function (internalNumber, currency) {
+  var valueExchange = internalNumber.filter(function( object ) {
+    return object[currency];
+  });
   var result = "";
   if (currency === 'BTC') {
     result = (internalNumber / 10e7).toFixed(8);
   } else {
-    result = (internalNumber / 10e7).toFixed(2);
+    result = (valueExchange[0][currency] / 10e7).toFixed(2);
   }
   return result;
 });
+
 Template.registerHelper('noData', function () {
     return !Meteor.user().profile.hasTransfers;
   }

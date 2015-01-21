@@ -28,11 +28,11 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
+    onBeforeAction: [mustBeSignedIn],
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
-        Meteor.subscribe('bitcoinwallets'), 
+        Meteor.subscribe('bitcoinwallets'),
         Meteor.subscribe('transfers')
       ];
     }
@@ -46,11 +46,13 @@ Router.map(function() {
       Router.go('/transfers/1/10');
     }
   });
+  /**
   this.route('termsOfService', {
     waitOn: function() {
       return [Meteor.subscribe('user')];
     },
   });
+   **/
   this.route('transfers', {
     path: '/transfers/:page/:numberOfResults',
     template: 'transfers',
