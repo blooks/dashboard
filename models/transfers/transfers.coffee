@@ -1,3 +1,7 @@
+#21.01.2015 LFG for avoiding call to an API to get the last price of BitCoin que need 
+#to publish the last day available on the databse 
+#for calculate the value of the bitcoins in the user currency
+@BitcoinExchangeRates = new Meteor.Collection('bitcoinExchangeRates');
 # Create the meteor collection
 ## A Transfer is a transaction that moves one kind of a currency between
 ## two different accounts

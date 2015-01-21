@@ -32,3 +32,6 @@ Meteor.publish('user', function() {
   return Meteor.users.find({_id: this.userId});
 });
 
+Meteor.publish('bitcoinExchangeRates', function () {
+  return BitcoinExchangeRates.find({}, {sort: {date: -1}, limit: 1});
+});
