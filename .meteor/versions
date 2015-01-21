@@ -17,12 +17,7 @@ chrismbeckett:fontawesome4@4.2.2
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.5
 coyno-queue@0.1.0
-<<<<<<< HEAD
-coynverter@0.1.0
 dburles:collection-helpers@1.0.2
-=======
-dburles:collection-helpers@1.0.1
->>>>>>> 034baa8f46bc18fe2525c3485d9ce4c70082b337
 ddp@1.0.13
 deps@1.0.6
 dsyko:node-csv-npm@0.3.7
