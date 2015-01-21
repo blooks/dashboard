@@ -28,7 +28,7 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn],
+    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
