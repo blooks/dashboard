@@ -32,8 +32,7 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
-    waitOn: function() {
+      waitOn: function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
