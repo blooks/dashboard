@@ -1,4 +1,3 @@
-BitcoinExchangeRates = new Mongo.Collection('bitcoinExchangeRates');
 Meteor.methods({
   /**
    * [calculateBaseAmount description]
