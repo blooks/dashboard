@@ -7,7 +7,7 @@ var mustBeSignedIn = function() {
 };
 
 var mustHaveSignedTOS = function() {
-  if (!(Meteor.user().hasSignedTOS)) {
+  if (!(Meteor.user().profile.hasSignedTOS)) {
     Router.go('termsOfService');
   } else {
     this.next();
@@ -18,6 +18,10 @@ var mustHaveSignedTOS = function() {
 
 Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
+});
+
+Router.onBeforeAction(mustHaveSignedTOS, {
+  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about', 'termsOfService']
 });
 
 Router.map(function() {

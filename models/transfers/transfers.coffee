@@ -41,9 +41,16 @@ Schemas.TransferRepresentation = new SimpleSchema
     type: [String]
   amount:
     type: Number
-  baseVolume:
-    type: Number
 
+currencyBaseVolume = new SimpleSchema(
+  USD:
+    type: Number
+    optional: true
+
+  EUR:
+    type: Number
+    optional: true
+)
 
 Schemas.Transfer = new SimpleSchema
 
@@ -67,11 +74,11 @@ Schemas.Transfer = new SimpleSchema
   note:
     type: String
     optional: true
-  baseVolume:
-    type: Number
-    defaultValue: 0
   representation:
     type: Schemas.TransferRepresentation
+    optional: true,
+  baseVolume:
+    type: [currencyBaseVolume],
     optional: true
 
 # Attach the schema to the collection
