@@ -1,5 +1,10 @@
 <template name="bitcoinWallets">
   <div class="container-fluid">
+   {{> bitcoinWalletImportGuide}}
+    {{> electrumWalletImportGuide}}
+    <a href="#" data-toggle="modal" data-target="#bitcoinWalletImportGuide"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
+        <a href="#" data-toggle="modal" data-target="#electrumWalletImportGuide"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
+
     <div class="wallets-zone col-lg-8">
       <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
       <div class="row zone">
@@ -57,8 +62,5 @@
       </div>
     </div> <!-- /.wallets-zone -->
     {{> newBitcoinWallet}}
-    {{> bitcoinWalletImportGuide}}
-    {{> electrumWalletImportGuide}}
-    <a href="#" data-toggle="modal" data-target="#bitcoinWalletGuide"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
-  </div> <!-- /.container -->
+     </div> <!-- /.container -->
 </template>
