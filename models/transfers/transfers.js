@@ -224,5 +224,10 @@ Transfers.helpers({
     } else {
       return (this.representation.amount / 10e7).toFixed(2);
     }
+  },
+  volumeInCurrency: function(currency) {
+    return this.baseVolume.filter(function (entry) {
+      return entry[currency];
+    })[0][currency];
   }
 });
