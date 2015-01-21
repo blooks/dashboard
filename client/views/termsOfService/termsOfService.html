@@ -10,15 +10,17 @@
     </div>
     
     <div style='text-align:center'>
-      <input type='checkbox'/> &nbsp;&nbsp;Allright buddy, I understand it<br>
-      <br><br>
-      {{#if currentUser.profile.hasSignedTOS }}
-        <span class='h2'>Welcome!</span>
-        <br> 
-        <a href='/nodes/nodesOverview' class='btn btn-primary'>Add new wallet</a>
+      {{#if currentUser.profile.hasSignedTOS}}
+        <input type='checkbox' checked disabled/>&nbsp;&nbsp;You agreed to this in the past<br> 
       {{else}}
-      <div style='opacity:0.2' class='btn btn-disabled'>Add new wallet</div>
+        <input type='checkbox' />&nbsp;&nbsp;Allright buddy, I understand it<br> 
       {{/if}}
+      
+      <div class='clearfix' style='clear:both'></div>
+      
+      {{#unless currentUser.profile.hasSignedTOS }}
+        <a id='termsOfServiceButton' href='/' class='btn btn-primary disabled pull-right'>next</a>
+      {{/unless}}
     </div>
 </div>
 </template>
