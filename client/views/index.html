@@ -11,11 +11,11 @@
 	{{> yield region='header'}}
 	<div class="container-fluid">
 		<div class="row">
-      {{#if currentUser}} 
+      {{#if currentUser}}
         {{#if currentUser.profile.hasSignedTOS }}
           {{> yield region='sidebar'}}
         {{/if}}
-      {{/if}} 
+      {{/if}}
 			<div class="main col-md-12">
 				{{> yield }}
 			</div>

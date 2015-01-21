@@ -28,7 +28,8 @@ Meteor.methods({
       self.unblock();
       Accounts.sendResetPasswordEmail(self.userId);
     }
-    else if(template = eval('Accounts.emailTemplates.' + template)){
+    // DGB 2015-01-21 07:50 Removed eval
+    else if(template = Accounts.emailTemplates[template]){
       self.unblock();
       Email.send({
         to: self.user,
@@ -48,7 +49,7 @@ Meteor.methods({
    */
   removeAccount: function () {
     var self = this;
-    if (!self.userId) return; 
+    if (!self.userId) return;
     var user = Meteor.users.findOne({_id: self.userId});
     self.unblock();
     Email.send({
@@ -59,8 +60,8 @@ Meteor.methods({
     });
     Meteor.users.remove({_id: self.userId});
   },
-  // DGB 2015-01-15 05:43 
-  // Returns true if the passed username is unique on the database. 
+  // DGB 2015-01-15 05:43
+  // Returns true if the passed username is unique on the database.
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
@@ -115,5 +116,9 @@ Meteor.methods({
     });
     //console.log(balances);
     return [balances, changes];
+  },
+  connectTransfer: function(transfer) {
+    console.log(transfer);
+    transfer.update();
   }
 });

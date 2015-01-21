@@ -6,8 +6,8 @@ var mustBeSignedIn = function() {
   }
 };
 
-var mustHaveSignedTOS = function () {
-  if (Meteor.user() && Meteor.user().profile && Meteor.user().profile.hasSignedTOS===false) {
+var mustHaveSignedTOS = function() {
+  if (!(Meteor.user().profile.hasSignedTOS)) {
     Router.go('termsOfService');
   } else {
     this.next();
@@ -20,6 +20,10 @@ Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
 });
 
+Router.onBeforeAction(mustHaveSignedTOS, {
+  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about', 'termsOfService']
+});
+
 Router.map(function() {
   this.route('/', {
     action: function() {
@@ -28,12 +32,12 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
-        Meteor.subscribe('bitcoinwallets'), 
-        Meteor.subscribe('transfers')
+        Meteor.subscribe('bitcoinwallets'),
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
       ];
     }
   });

@@ -11,6 +11,21 @@ Meteor.users.helpers({
       }
     });
     return result;
+  },
+  totalBalanceBasedOnUserCurrency: function (userCurrency) {
+    var exchangeRates = BitcoinExchangeRates.findOne();
+    var result = 0;
+    Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
+      if (transfer.isIncoming()) {
+        result += transfer.representation.amount;
+      }
+      if (transfer.isOutgoing()) {
+        //TODO: Respect the fee!
+        result -= (transfer.representation.amount);
+      }
+    });
+    result = Math.round((exchangeRates[userCurrency]*result)/100000000);
+    return result;
   }
 });
 

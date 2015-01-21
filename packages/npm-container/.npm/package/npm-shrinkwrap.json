@@ -778,13 +778,13 @@
       }
     },
     "coyno-converter": {
-      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.4.tgz",
+      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.6.tgz",
       "dependencies": {
         "moment": {
           "version": "https://hushhush.levinkeller.de:4873/moment/-/moment-2.7.0.tgz"
         },
         "request": {
-          "version": "https://hushhush.levinkeller.de:4873/request/-/request-2.39.0.tgz",
+          "version": "2.39.0",
           "dependencies": {
             "qs": {
               "version": "https://hushhush.levinkeller.de:4873/qs/-/qs-0.6.6.tgz"
@@ -871,7 +871,7 @@
           }
         },
         "underscore": {
-          "version": "https://hushhush.levinkeller.de:4873/underscore/-/underscore-1.6.0.tgz"
+          "version": "1.6.0"
         },
         "tracer": {
           "version": "https://hushhush.levinkeller.de:4873/tracer/-/tracer-0.7.3.tgz",
