@@ -2,7 +2,7 @@
 <style>
   // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
   .user-notification {}
-  .user-notification > div {padding: 1.5em; font-size: 1.2rem; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
+  .user-notification > div {margin:0em 0em 1em 0em; padding: 1.5em; font-size: 1.2rem; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
   .user-notification > .error {background-color: red; border-color: darkred; }
   .user-notification > .success {background-color: green; border-color: darkgreen; }
 </style>
@@ -19,9 +19,16 @@
           <div class="icon icon-user"></div>
     </div>
     <div class="col-md-10 col-md-offset-1">
-        <div class="row desktop-zone profile">
+     <div class="row desktop-zone profile">
 			<div class="col-sm-6 col-sm-offset-3">
-				<h3 class="form-divider">Your details</h3>
+        <h3 class="form-divider">Your details</h3>
+        <style>
+          //DGB 2015-01-19 08:04 Erasmus plx move it to main less file
+          .inputDisplay {display:inline-block; min-width:50%; padding: 0.34em; font-size: 16px; letter-spacing: 1px; border:1px solid white; }
+          .inputEdit {display:inline-block; min-width:50%; padding: 0.34em}
+          .big-input-item {height: 51px!important}
+        </style>
+        
         <div class="big-input-item">
         {{#if getEditingSection 'username'}}
           {{#if getUserMessage 'username'}}
@@ -29,25 +36,58 @@
               {{ > userNotification }}
             {{/with}}
           {{/if}}
-          Introduce your new Username
-            <input class='' id='newUsername' value='{{displayUsername}}'/>
-            <button class='btn' id='saveUsername'>Save Username</button>
+          <div>
+            <span class="field-type">Username:</span>
+            <form name='saveUsername' action='' style='display: inline'><input class='inputEdit' id='newUsername' value='{{displayUsername}}'/>
+            <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
+            </form>
+          </div>
           {{else}} 
-          <span class="field-type">Username:</span><span class="field-input editable"> {{displayUsername}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionUsername'></i></span></span><br>
-          {{/if}}
-        </div>
+          <div>
+            <span class="field-type">Username:</span>
+            <span class="inputDisplay setEditingSectionUsername"> {{displayUsername}} </span>
+            <button class="btn btn-success pull-right setEditingSectionUsername" ><i class="fa fa-pencil" ></i></button>
+          </div>
+        {{/if}}
+      </div>
+
+      <div class='clearfix' style='clear:both'></div>
+
         <div class="big-input-item">
           {{#if getEditingSection 'email'}}
-            Introduce your new email
-            <input class='' id='newEmail' value='{{userEmail}}'/>
-            <button class='btn' id='saveEmail'>Save Email</button>
+            {{#if getUserMessage 'email'}}
+              {{#with getUserMessage 'email'}}
+                {{ > userNotification }}
+              {{/with}}
+            {{/if}}
+            <div> 
+              <span class="field-type">Email:</span>
+              <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
+              <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
+            </div>
           {{else}}
-          <span class="field-type">Email:</span><span class="field-input"> {{userEmail}} <span class="edit-marker"><i class="fa fa-pencil" id='setEditingSectionEmail'></i></span></span><br>
+          <div> 
+            <span class="field-type">Email:</span> 
+            <span class="inputDisplay"> {{userEmail}} </span>
+            <button class="btn btn-success pull-right" id='setEditingSectionEmail'><i class="fa fa-pencil" ></i></button>
+          </div>
           {{/if}}
 				</div>
 
+    <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
+    the future 
 
-      <h3 class="form-divider">Change password</h3>
+    <div class='clearfix' style='clear:both'></div>
+    <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button> 
+    Password Management   
+    <br><br><br>
+<button class='btn btn-primary pull-right' id='btnAccountManagement'>Delete Profile</button>
+    Account Management 
+    -->
+
+
+    {{!-- #if getOpenedSection 'passwordManagement' --}}
+     <h3 class="form-divider">Change password</h3>
       {{#if getEditingSection 'password'}}
       {{#if getUserMessage 'password'}}
         {{#with getUserMessage 'password'}}
@@ -61,10 +101,14 @@
         <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
         <button class="btn btn-default pull-right" id="change_password">Change password</button>
       </div>
+    {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
+  
 
 
+    <div class='spacer' style='clear:both'></div>
        
-      <h3 class="form-divider">Delete profile</h3>
+    {{!--#if getOpenedSection 'accountManagement' }}
+      <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
         <p>
           Duis vel nibh at velit scelerisque suscipit. Fusce egestas elit eget lorem. Praesent turpis.Sed hendrerit. Ut leo. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Sed in libero ut nibh placerat accumsan.
@@ -74,31 +118,37 @@
         </p>
         <div class="text-center">
           <!-- Button trigger modal -->
-          <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Delete profile</button>
+          <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Proceed with profile deletion</button>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="deleteProfileModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Delete account</h4>
-              </div>
-              <div class="modal-body">
-                Are you sure that you want to delete your account?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="confirm_delete_account">Confirm</button>
-              </div>
-            </div>
-          </div>
+      </div>
+    {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}} 
+
+    </div>
+  </div>
+</div> 
+  
+  
+<!-- DGB 2015-01-20 03:53 Modal window for the delete password
+confirmation -->
+<!-- Modal -->
+  <div class="modal fade" id="deleteProfileModal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Delete account</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure that you want to delete your account?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="confirm_delete_account">Confirm</button>
         </div>
       </div>
     </div>
-      </div>     <!-- /.desktop-zone -->
+  </div>
+<!-- DGB 2015-01-20 03:54 End of modal window -->
 
 
-
-    </div> <!-- /.col-md-10 -->
 </template>

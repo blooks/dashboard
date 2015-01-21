@@ -77,7 +77,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/range-parser/-/range-parser-0.0.4.tgz"
                 },
                 "mkdirp": {
-                  "version": "https://hushhush.levinkeller.de:4873/mkdirp/-/mkdirp-0.3.5.tgz"
+                  "version": "0.3.5"
                 },
                 "cookie": {
                   "version": "https://hushhush.levinkeller.de:4873/cookie/-/cookie-0.0.5.tgz"
@@ -119,7 +119,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/commander/-/commander-2.1.0.tgz"
                 },
                 "mkdirp": {
-                  "version": "https://hushhush.levinkeller.de:4873/mkdirp/-/mkdirp-0.3.5.tgz"
+                  "version": "0.3.5"
                 },
                 "transformers": {
                   "version": "https://hushhush.levinkeller.de:4873/transformers/-/transformers-2.1.0.tgz",
@@ -147,7 +147,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/uglify-js/-/uglify-js-2.2.5.tgz",
                       "dependencies": {
                         "source-map": {
-                          "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
+                          "version": "0.1.43",
                           "dependencies": {
                             "amdefine": {
                               "version": "0.1.0"
@@ -155,10 +155,10 @@
                           }
                         },
                         "optimist": {
-                          "version": "https://hushhush.levinkeller.de:4873/optimist/-/optimist-0.3.7.tgz",
+                          "version": "0.3.7",
                           "dependencies": {
                             "wordwrap": {
-                              "version": "https://hushhush.levinkeller.de:4873/wordwrap/-/wordwrap-0.0.2.tgz"
+                              "version": "0.0.2"
                             }
                           }
                         }
@@ -176,13 +176,13 @@
                       "version": "https://hushhush.levinkeller.de:4873/readdirp/-/readdirp-0.2.5.tgz",
                       "dependencies": {
                         "minimatch": {
-                          "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-2.0.1.tgz",
+                          "version": "2.0.1",
                           "dependencies": {
                             "brace-expansion": {
-                              "version": "https://hushhush.levinkeller.de:4873/brace-expansion/-/brace-expansion-1.1.0.tgz",
+                              "version": "1.1.0",
                               "dependencies": {
                                 "balanced-match": {
-                                  "version": "https://hushhush.levinkeller.de:4873/balanced-match/-/balanced-match-0.2.0.tgz"
+                                  "version": "0.2.0"
                                 },
                                 "concat-map": {
                                   "version": "https://hushhush.levinkeller.de:4873/concat-map/-/concat-map-0.0.1.tgz"
@@ -202,10 +202,10 @@
                       "version": "https://hushhush.levinkeller.de:4873/uglify-js/-/uglify-js-2.4.0.tgz",
                       "dependencies": {
                         "async": {
-                          "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.2.10.tgz"
+                          "version": "0.2.10"
                         },
                         "source-map": {
-                          "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
+                          "version": "0.1.43",
                           "dependencies": {
                             "amdefine": {
                               "version": "0.1.0"
@@ -213,10 +213,10 @@
                           }
                         },
                         "optimist": {
-                          "version": "https://hushhush.levinkeller.de:4873/optimist/-/optimist-0.3.7.tgz",
+                          "version": "0.3.7",
                           "dependencies": {
                             "wordwrap": {
-                              "version": "https://hushhush.levinkeller.de:4873/wordwrap/-/wordwrap-0.0.2.tgz"
+                              "version": "0.0.2"
                             }
                           }
                         },
@@ -234,7 +234,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/uglify-js/-/uglify-js-2.4.16.tgz",
                       "dependencies": {
                         "async": {
-                          "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.2.10.tgz"
+                          "version": "0.2.10"
                         },
                         "source-map": {
                           "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.34.tgz",
@@ -245,10 +245,10 @@
                           }
                         },
                         "optimist": {
-                          "version": "https://hushhush.levinkeller.de:4873/optimist/-/optimist-0.3.7.tgz",
+                          "version": "0.3.7",
                           "dependencies": {
                             "wordwrap": {
-                              "version": "https://hushhush.levinkeller.de:4873/wordwrap/-/wordwrap-0.0.2.tgz"
+                              "version": "0.0.2"
                             }
                           }
                         },
@@ -268,7 +268,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/css-parse/-/css-parse-1.7.0.tgz"
                 },
                 "mkdirp": {
-                  "version": "https://hushhush.levinkeller.de:4873/mkdirp/-/mkdirp-0.3.5.tgz"
+                  "version": "0.3.5"
                 },
                 "debug": {
                   "version": "https://hushhush.levinkeller.de:4873/debug/-/debug-2.1.1.tgz",
@@ -279,7 +279,7 @@
                   }
                 },
                 "sax": {
-                  "version": "https://hushhush.levinkeller.de:4873/sax/-/sax-0.5.8.tgz"
+                  "version": "0.5.8"
                 },
                 "glob": {
                   "version": "3.2.11",
