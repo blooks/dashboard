@@ -48,7 +48,7 @@ Meteor.methods({
    */
   removeAccount: function () {
     var self = this;
-    if (!self.userId) return; 
+    if (!self.userId) return;
     var user = Meteor.users.findOne({_id: self.userId});
     self.unblock();
     Email.send({
@@ -59,8 +59,8 @@ Meteor.methods({
     });
     Meteor.users.remove({_id: self.userId});
   },
-  // DGB 2015-01-15 05:43 
-  // Returns true if the passed username is unique on the database. 
+  // DGB 2015-01-15 05:43
+  // Returns true if the passed username is unique on the database.
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
@@ -81,5 +81,9 @@ Meteor.methods({
       });
     });
     return conversion.result;
+  },
+  connectTransfer: function(transfer) {
+    console.log(transfer);
+    transfer.update();
   }
 });
