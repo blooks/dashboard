@@ -38,18 +38,21 @@
           {{/if}}
           <div>
             <span class="field-type">Username:</span>
-            <input class='inputEdit'  style='' id='newUsername' value='{{displayUsername}}'/>
+            <form name='saveUsername' action='' style='display: inline'><input class='inputEdit' id='newUsername' value='{{displayUsername}}'/>
             <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
+            </form>
           </div>
           {{else}} 
           <div>
             <span class="field-type">Username:</span>
-            <span class="inputDisplay"> {{displayUsername}} </span>
-            <button class="btn btn-success pull-right" id='setEditingSectionUsername'><i class="fa fa-pencil" ></i></button>
+            <span class="inputDisplay setEditingSectionUsername"> {{displayUsername}} </span>
+            <button class="btn btn-success pull-right setEditingSectionUsername" ><i class="fa fa-pencil" ></i></button>
           </div>
         {{/if}}
-        </div>
-    <div class='clearfix' style='clear:both'></div>
+      </div>
+
+      <div class='clearfix' style='clear:both'></div>
+
         <div class="big-input-item">
           {{#if getEditingSection 'email'}}
             {{#if getUserMessage 'email'}}
@@ -73,6 +76,7 @@
 
     <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
     the future 
+
     <div class='clearfix' style='clear:both'></div>
     <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button> 
     Password Management   
@@ -100,9 +104,10 @@
     {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
   
 
+
     <div class='spacer' style='clear:both'></div>
        
-    {{!-- #if getOpenedSection 'accountManagement' --}}
+    {{!--#if getOpenedSection 'accountManagement' }}
       <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
         <p>
@@ -119,10 +124,8 @@
     {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}} 
 
     </div>
-  </div>     <!-- /.desktop-zone -->
-
-  <div class='spacer' style='padding-top:5em'></div>
-</div> <!-- /.col-md-10 -->
+  </div>
+</div> 
   
   
 <!-- DGB 2015-01-20 03:53 Modal window for the delete password

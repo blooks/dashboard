@@ -43,16 +43,17 @@ Template.userProfile.helpers({
 });
 
 Template.userProfile.events({
-  'click #btnPasswordManagement': function (event, template) {
-    if (template.openedSection.get()==='passwordManagement') template.openedSection.set('');
-    else template.openedSection.set('passwordManagement');
-    return true;
-	},
-  'click #btnAccountManagement': function (event, template) {
-    if (template.openedSection.get()==='accountManagement') template.openedSection.set('');
-    else template.openedSection.set('accountManagement');
-    return true;
-	}, 
+  // DGB 2015-01-21 04:25 Deprecated 
+  // 'click #btnPasswordManagement': function (event, template) {
+  //   if (template.openedSection.get()==='passwordManagement') template.openedSection.set('');
+  //   else template.openedSection.set('passwordManagement');
+  //   return true;
+	// },
+  // 'click #btnAccountManagement': function (event, template) {
+  //   if (template.openedSection.get()==='accountManagement') template.openedSection.set('');
+  //   else template.openedSection.set('accountManagement');
+  //   return true;
+	// }, 
   "click #change_password": function (event, template) {
     event.preventDefault();
     template.editingSection.set('password'); 
@@ -89,21 +90,18 @@ Template.userProfile.events({
     Meteor.call('removeAccount');
   },
   // DGB 2015-01-12 05:11
-  // We can refactor this by including classes on the parents to identify the
-  // button who raises the events 
-  'click #setEditingSectionUsername': function (event, template) {
+  'click .setEditingSectionUsername': function (event, template) {
     template.editingSection.set('username');
 	},
- 
-  // DGB 2015-01-15 07:16 Commented out until it is clear we can do this
   'click #setEditingSectionEmail': function (event, template) {
      template.editingSection.set('email');
 	},
   'click #saveEmail': function (event, template) {
-    //DGB 2015-01-19 08:14 WIP 
     template.editingSection.set('');
 	},
-  'click #saveUsername': function (event, template) {
+  'submit [name="saveUsername"]': function (event, template) {
+    event.preventDefault(); 
+    event.stopPropagation();
     var username = $("#newUsername").val();
     // DGB 2015-01-15 07:05 If the user wants to save again the current username
     // we ignore the event
