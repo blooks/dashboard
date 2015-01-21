@@ -28,12 +28,13 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
+    onBeforeAction: [mustBeSignedIn],
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'), 
-        Meteor.subscribe('transfers')
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
       ];
     }
   });

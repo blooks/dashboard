@@ -77,12 +77,6 @@ Template.dashboard.helpers({
   totalBalance: function (currency) {
     //TODO: Remove this. It is redundant to the global helper
     var saneNumber = function (internalNumber, currency) {
-      HTTP.get("https://api.coindesk.com/v1/bpi/currentprice/EUR.json", function (err, result){
-        var resultGet = JSON.parse(result.content);
-        var value = resultGet.bpi['EUR'].rate_float;
-        var conversion = (internalNumber/100000000)*value;
-        console.log("Value today in EUR: "+conversion);
-      });
       if (currency === 'BTC') {
         return (internalNumber / 10e7).toFixed(8);
       } else {
@@ -90,7 +84,7 @@ Template.dashboard.helpers({
       }
     };
     if(Meteor.user()){
-      return saneNumber(Meteor.user().totalBalance(currency), currency);
+      return Meteor.user().totalBalanceBasedOnUserCurrency(currency);
     }
   }
 });
