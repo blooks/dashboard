@@ -32,11 +32,12 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-      waitOn: function() {
+    waitOn: function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers')
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
       ];
     }
   });

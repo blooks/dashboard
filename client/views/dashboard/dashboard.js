@@ -86,6 +86,11 @@ Template.dashboard.helpers({
     if(Meteor.user()){
       return saneNumber(Meteor.user().totalBalance(currency), currency);
     }
+  },
+  totalBalanceCurrency: function (currency) {
+    if(Meteor.user()){
+      return Meteor.user().totalBalanceBasedOnUserCurrency(currency);
+    }
   }
 });
 

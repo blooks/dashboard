@@ -27,7 +27,8 @@ Meteor.methods({
       self.unblock();
       Accounts.sendResetPasswordEmail(self.userId);
     }
-    else if(template = eval('Accounts.emailTemplates.' + template)){
+    // DGB 2015-01-21 07:50 Removed eval
+    else if(template = Accounts.emailTemplates[template]){
       self.unblock();
       Email.send({
         to: self.user,
