@@ -14,8 +14,6 @@ var mustHaveSignedTOS = function() {
   }
 };
 
-
-
 Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
 });
@@ -27,11 +25,11 @@ Router.onBeforeAction(mustHaveSignedTOS, {
 Router.map(function() {
   this.route('/', {
     action: function() {
-      Router.go('/dashboard');
+      Router.go('/dashboard/netWorth');
     }
   });
   this.route('dashboard', {
-    path: '/dashboard',
+    path: '/dashboard/netWorth',
     onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
     waitOn: function() {
       return [
@@ -39,6 +37,11 @@ Router.map(function() {
         Meteor.subscribe('bitcoinwallets'),
         Meteor.subscribe('transfers')
       ];
+    },
+    data: function() {
+      return {
+        type: 'netWorth'
+      };
     }
   });
   this.route('transfers_user', {
@@ -77,6 +80,22 @@ Router.map(function() {
           noTransfers: true
         };
       }
+    }
+  });
+  this.route('/dashboard/:type', {
+    path: '/dashboard/:type',
+    template: 'dashboard',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('user'),
+        Meteor.subscribe('bitcoinwallets'),
+        Meteor.subscribe('transfers')
+        ]
+      },
+    data: function() {
+      return {
+        type: this.params.type
+      };
     }
   });
   this.route('nodes', {

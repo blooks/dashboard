@@ -2,8 +2,8 @@
  * Function to draw the chart with local data
  */
 var builtStockLocal = function () {
-  var networtData = Meteor.user().networthData();
-  var data = networtData[0];
+  var networthData = Meteor.user().networthData();
+  var data = networthData[0];
   $('#holdingsovertime').highcharts('StockChart', {
     rangeSelector: {
       selected: 1
@@ -60,14 +60,9 @@ var fundsDistribution = function () {
   });
 };
 
-// on the client
-Template.dashboard.helpers({
+Template.netWorth.helpers({
   trades: function () {
     return Trades.find({}, {sort: ['date', 'asc']}).fetch();
-  },
-  showPieChart: function () {
-    return (true);
-    //TODO: @Levin Please make this now show when there is no data.
   },
   /**
    * [totalBalance description]
@@ -89,18 +84,32 @@ Template.dashboard.helpers({
   }
 });
 
+/*Template.walletHoldings.helpers({
+  showPieChart: function () {
+    return (true);
+    //TODO: @Levin Please make this now show when there is no data.
+  }
+});
+*/
 /*
- * Call the function to built the chart when the template is rendered
+ * Call the function to build the chart when the template is rendered
  */
-Template.dashboard.rendered = function () {
+Template.netWorth.rendered = function () {
   builtStockLocal();
+};
+
+Template.walletHoldings.rendered = function () {
   fundsDistribution();
 };
 
-Template.dashboard.events({
-  'click .delete-trade': function () {
-    return Trades.remove({
-      _id: this._id
-    });
+
+
+// Set active class on menu <li> according to current template
+Template.dynamicDashboardMenu.helpers({
+  isActive: function (type) {
+    if (this.type === type) {
+      return "active";
+    }
+    return "";
   }
 });
