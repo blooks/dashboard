@@ -1,0 +1,26 @@
+<template name="electrumWalletImportGuide">
+<div id="electrumWalletImportGuide" tabindex="-1" role="dialog" aria-labelledby="noDataModal" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content user-guide add-bitcoin-wallet">
+          <div class="modal-header">
+			<a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
+            <span class="meta-title brand-box">Guide</span>
+            <h3 class="modal-title">How to get <span class="fat">Master Public Key</span> from Electrum</h3>
+          </div>
+          <div class="modal-body">
+			<p>To give Coyno watch-only access to your Electrum wallet, you need to get the Master Public Key. Here we'll give you a step-by-step guide on how to do it.</p>
+			<h4>1. Go to <span class="fat">Master Public Key</span> in app</h4>
+			<p>Open the Electrum wallet and go to <span class="fat">Wallet > Master Public Key</span></p>
+			<img src="/img/user-guides/electrum-key-import-1.png" width="300" class="guide-graphic" />
+
+			<h4>2. Copy-paste <span class="fat">Master Public Key</span></h4>
+			<p>Copy the whole Master Public Key and paste it into the <span class="fat">Master Public Key field in Coyno</span></p>
+			<img src="/img/user-guides/electrum-key-import-2.png" width="300" class="guide-graphic" />
+			<p>Done! Coyno can now watch all transactions coming in and out of all the addresses generated from this Master Public Key.</p>
+			<p class="notice"><span class="fat">Please note, we do not touch your private keys so we're in no way able to back up or restore your wallet.</span></p>
+          </div>
+
+        </div>
+      </div>
+</div>
+</template>
