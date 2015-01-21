@@ -104,18 +104,55 @@
 
 {{#if areWeOnThisStage 'second'}}
 {{#with getNewWalletData}}
-<div class="bordered">
-  <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a {{ type}} wallet </h3>
+  <div class="bordered">
+  <div style='text-align:center'>
+    <img src='{{getLogoImageFromWalletType type}}'> 
+  </div>
+  <!-- DGB 2015-01-21 08:13 Deprecated
+  <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a {{type}} wallet </h3>
+  -->
+
+  <form>
+    <input type='hidden' value='{{getWalletFormatFromWalletType type}}'>   
+  <div>
+  Label
+  <input class='form-control' id='' value=''/>
+  </div>
+  <div>
+    {{#if isElectrum}}
+      <!-- Android Wallet / BIP32 -->
+      Master Public Key
+      <input class='form-control' id='' value=''/>
+    {{else}}
+      {{#if isBitcoinWallet}}
+      <!-- Electrum -->
+      HDSeed
+      <input class='form-control' id='' value=''/>
+      {{else}}
+      <!-- Single Addresses -->
+      {{/if}}
+    {{/if}}
+  </div>
+
+  <div class='clearfix' style='margin-top: 2em; clear:both'></div>
+  <button type="submit" class="btn btn-primary btn-lg pull-right disabled">{{i18n 'nodes.buttons.save'}}</button>
+  <button type='button' class="btn btn-primary back btn-lg pull-left">back</button>
+  <div class='clearfix' style='clear:both'></div>
+
+  </form>
+
+  <!--
   {{#autoForm collection='BitcoinWallets' type='insert'  id="addNewBitcoinWallet"}}
     {{> afQuickField name='label' }}
     {{> afQuickField name='type' options='allowed' }}
     {{#unless afFieldValueIs name='type' value='Single Addresses'}}
       {{> afQuickField name='hdseed'}}
     {{/unless}}
-    <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
   {{/autoForm}}
-</div>
-{{/with}}
+  -->
+
+  </div>
+  {{/with}}
 {{/if}} {{!-- DGB DGB 2015-01-20 07:18 End of stage 2 --}}
 </template>
 
