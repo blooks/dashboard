@@ -37,43 +37,52 @@
             {{/with}}
           {{/if}}
           <div>
-          <span class="field-type">Username:</span>
-                      <input class='inputEdit'  style='' id='newUsername' value='{{displayUsername}}'/>
-                      <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
+            <span class="field-type">Username:</span>
+            <input class='inputEdit'  style='' id='newUsername' value='{{displayUsername}}'/>
+            <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
           </div>
           {{else}} 
           <div>
-          <span class="inputDisplay"> {{displayUsername}} </span>
-          <button class="btn btn-success pull-right" id='setEditingSectionUsername'><i class="fa fa-pencil" ></i></button>
+            <span class="field-type">Username:</span>
+            <span class="inputDisplay"> {{displayUsername}} </span>
+            <button class="btn btn-success pull-right" id='setEditingSectionUsername'><i class="fa fa-pencil" ></i></button>
           </div>
         {{/if}}
         </div>
     <div class='clearfix' style='clear:both'></div>
         <div class="big-input-item">
-          <span class="field-type">Email:</span>
           {{#if getEditingSection 'email'}}
             {{#if getUserMessage 'email'}}
               {{#with getUserMessage 'email'}}
                 {{ > userNotification }}
               {{/with}}
             {{/if}}
-
-            <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
-            <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
+            <div> 
+              <span class="field-type">Email:</span>
+              <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
+              <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
+            </div>
           {{else}}
-          <span class="inputDisplay"> {{userEmail}} </span>
-          <button class="btn btn-success pull-right" id='setEditingSectionEmail'><i class="fa fa-pencil" ></i></button>
+          <div> 
+            <span class="field-type">Email:</span> 
+            <span class="inputDisplay"> {{userEmail}} </span>
+            <button class="btn btn-success pull-right" id='setEditingSectionEmail'><i class="fa fa-pencil" ></i></button>
+          </div>
           {{/if}}
 				</div>
 
+    <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
+    the future 
     <div class='clearfix' style='clear:both'></div>
     <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button> 
     Password Management   
     <br><br><br>
 <button class='btn btn-primary pull-right' id='btnAccountManagement'>Delete Profile</button>
     Account Management 
+    -->
 
-    {{#if getOpenedSection 'passwordManagement' }}
+
+    {{!-- #if getOpenedSection 'passwordManagement' --}}
      <h3 class="form-divider">Change password</h3>
       {{#if getEditingSection 'password'}}
       {{#if getUserMessage 'password'}}
@@ -88,12 +97,12 @@
         <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
         <button class="btn btn-default pull-right" id="change_password">Change password</button>
       </div>
-    {{/if}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
+    {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
   
 
-
+    <div class='spacer' style='clear:both'></div>
        
-    {{#if getOpenedSection 'accountManagement' }}
+    {{!-- #if getOpenedSection 'accountManagement' --}}
       <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
         <p>
@@ -107,7 +116,7 @@
           <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Proceed with profile deletion</button>
         </div>
       </div>
-    {{/if}} {{! DGB 2015-01-20 03:56 End Open Account Management }} 
+    {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}} 
 
     </div>
   </div>     <!-- /.desktop-zone -->
