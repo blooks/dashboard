@@ -85,7 +85,7 @@ Meteor.methods({
     var time = 0;
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
-    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}, {limit: 5}).forEach(function (transfer) {
+    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       if (time === 0) {
