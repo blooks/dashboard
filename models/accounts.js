@@ -24,7 +24,7 @@ Meteor.users.helpers({
         result -= (transfer.representation.amount);
       }
     });
-    result = (exchangeRates[userCurrency]*result)/100000000;
+    result = ((exchangeRates[userCurrency]*result)/100000000).toFixed(8);
     return result;
   }
 });
