@@ -12,35 +12,31 @@ var nodeLabel = function nodeLabel(nodeId) {
   return "External";
 };
 
-
-/**
- * [conversor function that saved to database the value of the bitcoin is USD and EUR for one date]
- * @param  {[type]} amount     [description]
- * @param  {[type]} date       [description]
- * @param  {[type]} transferId [description]
- * @return {[type]}            [description]
- */
-var conversor = function (amount, date, transferId) {
-  var Fiber = Npm.require("fibers");
-  var Coynverter = Meteor.npmRequire("coyno-converter");
-  var coynverter = new Coynverter();
-  var currencies = ["EUR", "USD"];
-  currencies.forEach(function (currency){
-    coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-      if(exchangeRate){
-        Fiber(function() {
-          var rateCurrency = {};
-          rateCurrency[currency]=Math.round(exchangeRate);
-          Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});
-        }).run();
-      }
-    });
-  });
-};
-
 if (Meteor.isServer) {
-
-
+  /**
+   * [conversor function that saved to database the value of the bitcoin is USD and EUR for one date]
+   * @param  {[type]} amount     [description]
+   * @param  {[type]} date       [description]
+   * @param  {[type]} transferId [description]
+   * @return {[type]}            [description]
+   */
+  var conversor = function (amount, date, transferId) {
+    var Fiber = Npm.require("fibers");
+    var Coynverter = Meteor.npmRequire("coyno-converter");
+    var coynverter = new Coynverter();
+    var currencies = ["EUR", "USD"];
+    currencies.forEach(function (currency){
+      coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
+        if(exchangeRate){
+          Fiber(function() {
+            var rateCurrency = {};
+            rateCurrency[currency]=Math.round(exchangeRate);
+            Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});
+          }).run();
+        }
+      });
+    });
+  };
   /**
    *
    * @param inoutput

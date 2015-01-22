@@ -1,3 +1,30 @@
+/*
+ * Function to draw the chart with local data
+ */
+var builtStockLocal = function (currency) {
+  Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
+    if(result && result[0]){
+      var data = result[0];
+      $('#holdingsovertime').highcharts('StockChart', {
+        rangeSelector: {
+          selected: 1
+        },
+        title: {
+          text: 'Total Bitcoin Holdings'
+        },
+        series: [{
+          name: currency,
+          data: data,
+          tooltip: {
+            valueDecimals: 2
+          }
+        }]
+      });
+    }
+  });
+};
+
+
 Template.netWorth.helpers({
   totalBalanceCurrency: function (currency) {
     if(Meteor.user()){
@@ -23,3 +50,7 @@ Template.netWorth.helpers({
     }
   }
 });
+
+Template.netWorth.rendered = function () {
+  builtStockLocal("EUR");
+};
