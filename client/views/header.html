@@ -1,28 +1,4 @@
-<template name="OLDheader">
-  <div class="login-dropdown pull-right">
-    <i class="fa fa-user"></i>
-    <ul class="login">
-      {{> loginButtons align="right"}}
-    </ul>
-  </div> <!-- /.login-dropdown -->
-  <div id="sidebar-wrapper">
-    <a href="/dashboard" title="Coyno - BTC Bookkeeping" class="navbar-brand">
-      <svg width="123" height="30">
-        <image xlink:href="/img/coyno-logo.svg" src="/img/coyno-logo.png" width="123" height="30"></image>
-      </svg>
-    </a>
-    <ul id="sidebar" class="sidebar-nav">
-      <li><a id="menu-toggle" href="#"><span class="nav-icon"><i class="fa fa-align-justify"></i></span></a></li>
-      <li><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><i class="fa fa-pie-chart"></i></span></a></li>
-      <li><a href="{{pathFor 'trades'}}">{{i18n 'template.headings.trades'}}<span class="nav-icon"><i class="fa fa-refresh"> </i></span></a></li>
-      <li><a href="{{pathFor 'transfers'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><i class="fa fa-exchange"></i></span></a></li>
-      <li> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon">         <i class="fa fa-bell"></i></span></a></li>
-    </ul>
-  </div> <!-- /#sidebar-wrapper -->
-</template>
-
 <template name="header">
-  DGB 2015-01-13 05:36 complicated merging, left behind for in case of trouble
   <div class="navbar navbar-static navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">

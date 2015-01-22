@@ -6,8 +6,22 @@ var mustBeSignedIn = function() {
   }
 };
 
+var mustHaveSignedTOS = function() {
+  if (!(Meteor.user().profile.hasSignedTOS)) {
+    Router.go('termsOfService');
+  } else {
+    this.next();
+  }
+};
+
+
+
 Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
+});
+
+Router.onBeforeAction(mustHaveSignedTOS, {
+  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about', 'termsOfService']
 });
 
 Router.map(function() {
@@ -18,8 +32,14 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
+    onBeforeAction: [mustBeSignedIn],
     waitOn: function() {
-      return [Meteor.subscribe('bitcoinwallets'), Meteor.subscribe('transfers')];
+      return [
+        Meteor.subscribe('user'),
+        Meteor.subscribe('bitcoinwallets'),
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
+      ];
     }
   });
   this.route('transfers_user', {
@@ -30,6 +50,11 @@ Router.map(function() {
     action: function() {
       Router.go('/transfers/1/10');
     }
+  });
+  this.route('termsOfService', {
+    waitOn: function() {
+      return [Meteor.subscribe('user')];
+    },
   });
   this.route('transfers', {
     path: '/transfers/:page/:numberOfResults',
