@@ -4,8 +4,6 @@ Template.netWorth.helpers({
   }
 });
 
-
-
 // Set active class on menu <li> according to current template
 Template.dynamicDashboardMenu.helpers({
   isActive: function (type) {

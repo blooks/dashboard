@@ -34,13 +34,13 @@ Router.map(function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers'),
-        Meteor.subscribe('bitcoinExchangeRates')
+        Meteor.subscribe('transfers')
       ];
     },
     data: function() {
       return {
-        type: 'netWorth'
+        type: 'netWorth',
+        currency: Meteor.user().profile.currency
       };
     }
   });
@@ -89,13 +89,13 @@ Router.map(function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers'),
-        Meteor.subscribe('bitcoinExchangeRates')
+        Meteor.subscribe('transfers')
       ];
     },
     data: function() {
       return {
-        type: this.params.type
+        type: this.params.type,
+        currency: Meteor.user().profile.currency
       };
     }
   });

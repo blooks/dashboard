@@ -282,13 +282,13 @@
                   "version": "https://hushhush.levinkeller.de:4873/sax/-/sax-0.5.8.tgz"
                 },
                 "glob": {
-                  "version": "https://hushhush.levinkeller.de:4873/glob/-/glob-3.2.11.tgz",
+                  "version": "3.2.11",
                   "dependencies": {
                     "inherits": {
                       "version": "2.0.1"
                     },
                     "minimatch": {
-                      "version": "https://hushhush.levinkeller.de:4873/minimatch/-/minimatch-0.3.0.tgz",
+                      "version": "0.3.0",
                       "dependencies": {
                         "lru-cache": {
                           "version": "2.5.0"
@@ -321,7 +321,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/apparatus/-/apparatus-0.0.8.tgz"
                     },
                     "underscore": {
-                      "version": "https://hushhush.levinkeller.de:4873/underscore/-/underscore-1.7.0.tgz"
+                      "version": "1.7.0"
                     }
                   }
                 },

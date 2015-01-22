@@ -1,6 +1,6 @@
 <template name="netWorth">
 	<div class="col-lg-8 line-chart">
-	    <h3>Total Bitcoin holdings</h3>
+	    <h3>Net worth</h3>
 	    <div id="holdingsovertime"></div>
 	</div>
 	<div class="col-lg-4">
@@ -10,7 +10,7 @@
 	    </div>
 	    <div class="summary-data spacy">
 	        <h4 class="totals">Total fiat value </h4>
-	        <p class="sum">{{totalBalanceCurrency 'EUR'}} &euro;</p>
+	         <p class="sum">{{totalBalanceCurrency currency}} {{this.currency}}</p>
 	    </div>
 	</div>
 </template>

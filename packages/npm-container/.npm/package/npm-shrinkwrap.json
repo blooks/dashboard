@@ -108,7 +108,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.9.0.tgz"
                 },
                 "mime-types": {
-                  "version": "https://hushhush.levinkeller.de:4873/mime-types/-/mime-types-2.0.7.tgz",
+                  "version": "2.0.7",
                   "dependencies": {
                     "mime-db": {
                       "version": "https://hushhush.levinkeller.de:4873/mime-db/-/mime-db-1.5.0.tgz"
@@ -311,16 +311,16 @@
               "version": "https://hushhush.levinkeller.de:4873/bignum/-/bignum-0.6.2.tgz"
             },
             "bindings": {
-              "version": "1.1.1"
+              "version": "https://hushhush.levinkeller.de:4873/bindings/-/bindings-1.1.1.tgz"
             },
             "binary": {
-              "version": "0.3.0",
+              "version": "https://hushhush.levinkeller.de:4873/binary/-/binary-0.3.0.tgz",
               "dependencies": {
                 "chainsaw": {
-                  "version": "0.1.0",
+                  "version": "https://hushhush.levinkeller.de:4873/chainsaw/-/chainsaw-0.1.0.tgz",
                   "dependencies": {
                     "traverse": {
-                      "version": "0.3.9"
+                      "version": "https://hushhush.levinkeller.de:4873/traverse/-/traverse-0.3.9.tgz"
                     }
                   }
                 }
@@ -333,13 +333,13 @@
               "version": "https://hushhush.levinkeller.de:4873/brfs/-/brfs-1.0.0.tgz",
               "dependencies": {
                 "through": {
-                  "version": "2.2.7"
+                  "version": "https://hushhush.levinkeller.de:4873/through/-/through-2.2.7.tgz"
                 },
                 "falafel": {
-                  "version": "0.1.6",
+                  "version": "https://hushhush.levinkeller.de:4873/falafel/-/falafel-0.1.6.tgz",
                   "dependencies": {
                     "esprima": {
-                      "version": "1.0.4"
+                      "version": "https://hushhush.levinkeller.de:4873/esprima/-/esprima-1.0.4.tgz"
                     }
                   }
                 },
@@ -347,10 +347,10 @@
                   "version": "https://hushhush.levinkeller.de:4873/escodegen/-/escodegen-0.0.17.tgz",
                   "dependencies": {
                     "esprima": {
-                      "version": "1.0.4"
+                      "version": "https://hushhush.levinkeller.de:4873/esprima/-/esprima-1.0.4.tgz"
                     },
                     "estraverse": {
-                      "version": "0.0.4"
+                      "version": "https://hushhush.levinkeller.de:4873/estraverse/-/estraverse-0.0.4.tgz"
                     },
                     "source-map": {
                       "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
@@ -380,7 +380,7 @@
               "version": "https://hushhush.levinkeller.de:4873/elliptic/-/elliptic-0.15.12.tgz",
               "dependencies": {
                 "hash.js": {
-                  "version": "https://hushhush.levinkeller.de:4873/hash.js/-/hash.js-0.2.1.tgz"
+                  "version": "0.2.1"
                 },
                 "inherits": {
                   "version": "2.0.1"
@@ -399,7 +399,7 @@
               "version": "0.0.3"
             },
             "preconditions": {
-              "version": "1.0.8",
+              "version": "https://hushhush.levinkeller.de:4873/preconditions/-/preconditions-1.0.8.tgz",
               "dependencies": {
                 "lodash": {
                   "version": "2.4.1"
@@ -883,7 +883,7 @@
               "version": "https://hushhush.levinkeller.de:4873/colors/-/colors-0.6.2.tgz"
             },
             "tinytim": {
-              "version": "https://hushhush.levinkeller.de:4873/tinytim/-/tinytim-0.1.1.tgz"
+              "version": "0.1.1"
             }
           }
         },
