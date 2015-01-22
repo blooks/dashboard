@@ -1,7 +1,9 @@
 /*
  * Function to draw the chart with local data
  */
+
 var builtStockLocal = function (currency) {
+  console.log(currency);
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result && result[0]){
       var data = result[0];
@@ -10,7 +12,7 @@ var builtStockLocal = function (currency) {
           selected: 1
         },
         title: {
-          text: 'Total Bitcoin Holdings'
+          text: 'Total '+currency+' Holdings'
         },
         series: [{
           name: currency,
@@ -52,5 +54,7 @@ Template.netWorth.helpers({
 });
 
 Template.netWorth.rendered = function () {
-  builtStockLocal("EUR");
+  if(Meteor.user().profile.currency){
+    builtStockLocal(Meteor.user().profile.currency);
+  }
 };

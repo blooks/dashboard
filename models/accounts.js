@@ -1,3 +1,5 @@
+//This variable stores the value of the currency returnd in the callback of one method call
+var valueCurrency = new ReactiveVar(0);
 Meteor.users.helpers({
   totalBalance: function (currency) {
     var result = 0;
@@ -13,7 +15,9 @@ Meteor.users.helpers({
     return result;
   },
   totalBalanceBasedOnUserCurrency: function (userCurrency) {
-    var exchangeRates = BitcoinExchangeRates.findOne();
+    Meteor.call('getLastExchangeRateForBTC', userCurrency, function (err, response) {
+      valueCurrency.set(response);
+    });
     var result = 0;
     Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
@@ -24,8 +28,10 @@ Meteor.users.helpers({
         result -= (transfer.representation.amount);
       }
     });
-    result = ((exchangeRates[userCurrency]*result)/100000000).toFixed(8);
-    return result;
+    if(valueCurrency.get()!==0){
+      result = ((valueCurrency.get()*result)/100000000).toFixed(8);
+      return result;
+    }
   }
 });
 
@@ -49,6 +55,11 @@ var userProfile = new SimpleSchema({
   hasSignedTOS: {
     type: Boolean,
     defaultValue: false
+  },
+  currency: {
+    type: String,
+    optional: true,
+    allowedValues: ['EUR', 'USD', 'BTC']
   }
 });
 
@@ -83,6 +94,8 @@ var Schema = new SimpleSchema({
   "emails.$.address": {
     optional: true,
     type: String,
+    unique: true, //DGB 2015-01-21 06:59 Added
+    index: true,
     regEx: SimpleSchema.RegEx.Email
   },
   "emails.$.verified": {

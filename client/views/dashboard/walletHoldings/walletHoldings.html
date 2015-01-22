@@ -1,6 +1,33 @@
 <template name="walletHoldings">
-	<div class="col-sm-6 pie-chart">
-	    <h3>Wallet holdings</h3>
-	    <div id="currentholdingsperwallet" class="col-sm-6"></div>
+	<div class="col-lg-8 pie-chart">
+	    <h3>Wallet distribution</h3>
+	    <div id="currentholdingsperwallet" class="col-lg-8"></div>
+	</div>
+	<div class="col-lg-4">
+	   {{#if bitcoinwallets}}
+	    <div class="summary-data spacy">
+			<table class="table table-tx table-zb-hover auto-width centered">
+		    	<thead>
+		    		<tr>
+		    			<td>Wallet</td>
+		    			<td>Value</td>
+		    			<td>Percent</td>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+
+ 		    		{{#each this}}
+			    		<tr>
+			    			<td>Label </td>
+			    			<td> BTC</td>
+			    			<td></td>
+			    		</tr>
+			    	{{/each}}
+
+
+		    	</tbody>
+		    </table>
+	    </div>
+	    {{/if}}
 	</div>
 </template>
