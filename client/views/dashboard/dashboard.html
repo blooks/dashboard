@@ -4,26 +4,10 @@
           <div class="icon icon-graph-trend"></div>
     </div>
     <div class="col-md-10 col-md-offset-1">
+        {{> dynamicDashboardMenu}}
         <div class="row desktop-zone">
             {{#unless noData}}
-            <div class="col-sm-8 line-chart">
-                <h3>Net worth</h3>
-                <div id="holdingsovertime"></div>
-            </div>
-            <div class="col-sm-4">
-                <div class="summary-data spacy">
-                    <h4 class="totals">Total value</h4>
-                    <p class="sum">{{totalBalance 'BTC'}} BTC</p>
-                </div>
-                <div class="summary-data spacy">
-                    <h4 class="totals">Total value </h4>
-                    <p class="sum">{{totalBalanceCurrency 'EUR'}} EUR</p>
-                </div>
-            </div>
-            <div class="col-sm-6 pie-chart">
-                <h3>Wallet holdings</h3>
-                <div id="currentholdingsperwallet" class="col-sm-6"></div>
-            </div>
+                {{> dynamicDashboardBody}}
             {{else}}
                 {{> noData}}
             {{/unless}}
