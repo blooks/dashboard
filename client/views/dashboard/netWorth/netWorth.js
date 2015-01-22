@@ -1,6 +1,7 @@
 /*
  * Function to draw the chart with local data
  */
+
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result && result[0]){

@@ -119,5 +119,8 @@ Meteor.methods({
   connectTransfer: function(transfer) {
     console.log(transfer);
     transfer.update();
+  },
+  getLastExchangeRateForBTC: function (currency) {
+    return BitcoinExchangeRates.findOne({}, {sort: {date: -1}})[currency];
   }
 });
