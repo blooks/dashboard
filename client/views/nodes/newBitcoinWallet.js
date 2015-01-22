@@ -1,4 +1,3 @@
-
 Template.newBitcoinWallet.created = function() {
   this.newWalletStage = new ReactiveVar('first','');
   this.newWalletData = new ReactiveVar(false,'');
@@ -19,10 +18,10 @@ Template.newBitcoinWallet.events({
     // DGB 2015-01-20 06:57 There are better ways to get this data
     var wallet=$($(event.currentTarget).children()[1]).html()
     if (!(['Armory','Electrum','Bitcoin Wallet','Electrum'].indexOf(wallet) === -1)) {
-      template.newWalletData.set({type:wallet}); 
-      template.newWalletStage.set('second'); 
+      template.newWalletData.set({type:wallet});
+      template.newWalletStage.set('second');
     }
-  } 
+  }
 });
 
 

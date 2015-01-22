@@ -1,109 +1,105 @@
 <template name="newBitcoinWallet">
 
 {{#if areWeOnThisStage 'first'}}
-<h4>What kind of wallet do you want to add?</h4>
 
-<ul class="wallet-selection">
-  <li>
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/bitcoin-wallet-logo.png">
-    <div class="wallet-label-text">Electrum</div>
-  </a>
-  </li>
+<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy">
+<h3>What kind of <span class="fat">wallet</span> do you want to add..?</h3>
+  <ul class="wallet-selection text-center">
+    <li>
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/bitcoin-wallet-logo.png">
+      <div class="wallet-label-text">Bitcoin Wallet</div>
+    </a>
+    </li>
 
-  <li>
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/bitcoin-wallet-logo.png">
-    <div class="wallet-label-text">Bitcoin Wallet</div>
-  </a>
-  </li>
+    <li>
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/electrum-logo.png">
+      <div class="wallet-label-text">Electrum</div>
+    </a>
+    </li>
 
-  <li>
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/electrum-logo.png">
-    <div class="wallet-label-text">Electrum</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/armory-logo.png">
+      <div class="wallet-label-text">Armory</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li>
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/armory-logo.png">
-    <div class="wallet-label-text">Armory</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/trezor-logo.png">
+      <div class="wallet-label-text">Trezor</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/trezor-logo.png">
-    <div class="wallet-label-text">Trezor</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/multibit-logo.png">
+      <div class="wallet-label-text">MultiBit</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/multibit-logo.png">
-    <div class="wallet-label-text">MultiBit</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/green-address-wallet-logo.png">
+      <div class="wallet-label-text">Green Address</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/green-address-wallet-logo.png">
-    <div class="wallet-label-text">Green Address</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/hive-wallet-logo.png">
+      <div class="wallet-label-text">Hive</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/hive-wallet-logo.png">
-    <div class="wallet-label-text">Hive</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/breadwallet-logo.png">
+      <div class="wallet-label-text">Bread Wallet</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/breadwallet-logo.png">
-    <div class="wallet-label-text">Bread Wallet</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/mycelium-logo.png">
+      <div class="wallet-label-text">Mycelium</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/mycelium-logo.png">
-    <div class="wallet-label-text">Mycelium</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/kncwallet-logo.png">
+      <div class="wallet-label-text">KnC</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/kncwallet-logo.png">
-    <div class="wallet-label-text">KnC</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li class="coming-soon">
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/external-logos/msigna-logo.png">
+      <div class="wallet-label-text">mSigna</div>
+      <div class="coming-soon-sign">Coming soon</div>
+    </a>
+    </li>
 
-  <li class="coming-soon">
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/external-logos/msigna-logo.png">
-    <div class="wallet-label-text">mSigna</div>
-    <div class="coming-soon-sign">Coming soon</div>
-  </a>
-  </li>
+    <li>
+    <a href="#" class="wallet-thumbs">
+      <img src="/img/wallet-icon-default.png">
+      <div class="wallet-label-text">Single Address</div>
+    </a>
+    </li>
 
-  <li>
-  <a href="#" class="wallet-thumbs">
-    <img src="/img/wallet-icon-default.png">
-    <div class="wallet-label-text">Single Address</div>
-  </a>
-  </li>
-
-</ul>
+  </ul>
+</div>
 {{/if}} {{!-- DGB 2015-01-20 07:17 End of stage 1 --}}
 
 {{#if areWeOnThisStage 'second'}}

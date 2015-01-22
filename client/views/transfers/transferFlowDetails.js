@@ -38,6 +38,9 @@ Template.transferRow.helpers({
   },
   senderLabel : function() {
     return this.representation.senderLabels[0];
+  },
+  baseVolumeRep: function() {
+    var baseCurrency = "EUR";
+    return this.volumeInCurrency(baseCurrency);
   }
-
 });

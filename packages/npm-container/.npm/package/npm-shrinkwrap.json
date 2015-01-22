@@ -631,10 +631,10 @@
               }
             },
             "crypto-browserify": {
-              "version": "https://hushhush.levinkeller.de:4873/crypto-browserify/-/crypto-browserify-3.9.8.tgz",
+              "version": "https://hushhush.levinkeller.de:4873/crypto-browserify/-/crypto-browserify-3.9.9.tgz",
               "dependencies": {
                 "browserify-aes": {
-                  "version": "https://hushhush.levinkeller.de:4873/browserify-aes/-/browserify-aes-0.8.1.tgz"
+                  "version": "https://hushhush.levinkeller.de:4873/browserify-aes/-/browserify-aes-1.0.0.tgz"
                 },
                 "browserify-sign": {
                   "version": "https://hushhush.levinkeller.de:4873/browserify-sign/-/browserify-sign-2.8.0.tgz",
@@ -778,7 +778,7 @@
       }
     },
     "coyno-converter": {
-      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.4.tgz",
+      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.6.tgz",
       "dependencies": {
         "moment": {
           "version": "https://hushhush.levinkeller.de:4873/moment/-/moment-2.7.0.tgz"

@@ -9,29 +9,27 @@ Meteor.users.helpers({
     var change = 0;
     var time = 0;
     var timeDelta = 86400;
-    Transfers
-      .find({"details.currency": 'BTC'}, {sort: ['date', 'asc']})
-      .forEach(function (transfer) {
-        //Start from timedelta before the time of the first transaction
-        if (time === 0) {
-          time = transfer.date.getTime() - timeDelta;
-        }
-        while (transfer.date.getTime() >= time) {
-          balances.push([time, parseFloat(satoshiToBTC(balance))]);
-          changes.push([time, parseFloat(satoshiToBTC(change))]);
-          change = 0;
-          time += timeDelta;
-        }
-        if (transfer.isIncoming()) {
-          balance += transfer.representation.amount;
-          change += transfer.representation.amount;
-        }
-        if (transfer.isOutgoing()) {
-          //TODO: Respect the fee!
-          balance -= (transfer.representation.amount);
-          change -= (transfer.representation.amount);
-        }
-      });
+    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
+      //Start from timedelta before the time of the first transaction
+      if (time === 0) {
+        time = transfer.date.getTime() - timeDelta;
+      }
+      while (transfer.date.getTime() >= time) {
+        balances.push([time, parseFloat(satoshiToBTC(balance))]);
+        changes.push([time, parseFloat(satoshiToBTC(change))]);
+        change = 0;
+        time += timeDelta;
+      }
+      if (transfer.isIncoming()) {
+        balance += transfer.representation.amount;
+        change += transfer.representation.amount;
+      }
+      if (transfer.isOutgoing()) {
+        //TODO: Respect the fee!
+        balance -= (transfer.representation.amount);
+        change -= (transfer.representation.amount);
+      }
+    });
     balances.push([time, parseFloat(satoshiToBTC(balance))]);
     changes.push([time, parseFloat(satoshiToBTC(change))]);
     return [balances, changes];
@@ -47,6 +45,21 @@ Meteor.users.helpers({
         result -= (transfer.representation.amount);
       }
     });
+    return result;
+  },
+  totalBalanceBasedOnUserCurrency: function (userCurrency) {
+    var exchangeRates = BitcoinExchangeRates.findOne();
+    var result = 0;
+    Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
+      if (transfer.isIncoming()) {
+        result += transfer.representation.amount;
+      }
+      if (transfer.isOutgoing()) {
+        //TODO: Respect the fee!
+        result -= (transfer.representation.amount);
+      }
+    });
+    result = Math.round((exchangeRates[userCurrency]*result)/100000000);
     return result;
   }
 });
@@ -65,6 +78,10 @@ var userProfile = new SimpleSchema({
     optional: true
   },
   hasTransfers: {
+    type: Boolean,
+    defaultValue: false
+  },
+  hasSignedTOS: {
     type: Boolean,
     defaultValue: false
   }
