@@ -16,6 +16,13 @@ Template.transfersNavigation.helpers({
       arrayWithNthPages.push(i+1);
     }
     return arrayWithNthPages;
+  },
+  isActive: function (pageNumber) {
+    if(pageNumber.toString()===Router.current().params.page){
+      return 'active';
+    }else{
+      return '';
+    }
   }
 });
 

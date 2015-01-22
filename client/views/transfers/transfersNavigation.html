@@ -1,40 +1,40 @@
 <template name="transfersNavigation">
   <!--Pagination section-->
   <div class='row' style='margin-top:2em;'>
-    <!-- <div class='col-xs-4 text-center'>
+    <div class='col-xs-4 text-center'>
       {{#if noZero}}
-        <div id='beforeButton' class='btn btn-primary text-center beforeBtn'>Previous</div>
+        <div class='btn btn-primary text-center before_button'>Previous</div>
       {{/if}}
-    </div> -->
-    <div class='col-xs-12 text-center'>
+    </div>
+    <div class='col-xs-4 text-center'>
       <nav>
         <ul class="pagination">
-          {{#if noZero}}
+          <!-- {{#if noZero}}
             <li>
               <a class='before_button' aria-label="Previous" style="cursor: pointer;">
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-          {{/if}}
+          {{/if}} -->
           {{#each pagination}}
-            <li><a class="page_to_go" data-page-number="{{this}}">{{this}}</a></li>
+            <li class="{{isActive this}}"><a class="page_to_go" data-page-number="{{this}}">{{this}}</a></li>
           {{/each}}
-          {{#if noLastPage}}
+          <!-- {{#if noLastPage}}
             <li>
               <a class='next_button' aria-label="Next" style="cursor: pointer;">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
-          {{/if}}
+          {{/if}} -->
         </ul>
       </nav>
-      <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div>
+      <!-- <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div> -->
     </div>
-    <!-- <div class='col-xs-4 text-center'>
+    <div class='col-xs-4 text-center'>
       {{#if noLastPage}}
-        <div id='nextButton' class='btn btn-primary text-center nextBtn'>Next</div>
+        <div class='btn btn-primary text-center next_button'>Next</div>
       {{/if}}
-    </div> -->
+    </div>
   </div>
 </template>
   
