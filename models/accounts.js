@@ -59,7 +59,8 @@ var userProfile = new SimpleSchema({
   currency: {
     type: String,
     optional: true,
-    allowedValues: ['EUR', 'USD', 'BTC']
+    allowedValues: ['EUR', 'USD', 'BTC'],
+    defaultValue: 'EUR'
   }
 });
 
