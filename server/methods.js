@@ -120,7 +120,7 @@ Meteor.methods({
     console.log(transfer);
     transfer.update();
   },
-  getLastExchangeRateForBTC: function () {
-    return BitcoinExchangeRates.find({}, {sort: {date: -1}, limit: 1});
+  getLastExchangeRateForBTC: function (currency) {
+    return BitcoinExchangeRates.findOne({}, {sort: {date: -1}})[currency];
   }
 });

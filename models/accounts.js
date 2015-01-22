@@ -1,3 +1,5 @@
+//This variable stores the value of the currency returnd in the callback of one method call
+var valueCurrency = new ReactiveVar(0);
 Meteor.users.helpers({
   totalBalance: function (currency) {
     var result = 0;
@@ -13,10 +15,9 @@ Meteor.users.helpers({
     return result;
   },
   totalBalanceBasedOnUserCurrency: function (userCurrency) {
-    var exchangeRates = Meteor.call('getLastExchangeRateForBTC', function (err, response) {
-      console.log(response);
+    Meteor.call('getLastExchangeRateForBTC', userCurrency, function (err, response) {
+      valueCurrency.set(response);
     });
-    console.log(exchangeRates);
     var result = 0;
     Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
@@ -27,8 +28,10 @@ Meteor.users.helpers({
         result -= (transfer.representation.amount);
       }
     });
-    result = ((exchangeRates[userCurrency]*result)/100000000).toFixed(8);
-    //return result;
+    if(valueCurrency.get()!==0){
+      result = ((valueCurrency.get()*result)/100000000).toFixed(8);
+      return result;
+    }
   }
 });
 
