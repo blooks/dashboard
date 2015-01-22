@@ -727,7 +727,7 @@
                   }
                 },
                 "inherits": {
-                  "version": "https://hushhush.levinkeller.de:4873/inherits/-/inherits-2.0.1.tgz"
+                  "version": "2.0.1"
                 },
                 "pbkdf2-compat": {
                   "version": "https://hushhush.levinkeller.de:4873/pbkdf2-compat/-/pbkdf2-compat-2.0.1.tgz"
@@ -763,7 +763,7 @@
                   }
                 },
                 "randombytes": {
-                  "version": "https://hushhush.levinkeller.de:4873/randombytes/-/randombytes-2.0.0.tgz"
+                  "version": "https://hushhush.levinkeller.de:4873/randombytes/-/randombytes-2.0.1.tgz"
                 }
               }
             },

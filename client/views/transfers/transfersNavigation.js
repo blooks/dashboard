@@ -11,7 +11,11 @@ Template.transfersNavigation.helpers({
     }
   },
   pagination: function () {
-    console.log(this);
+    var arrayWithNthPages = [];
+    for(var i=0; i<this.totalPages; i++){
+      arrayWithNthPages.push(i+1);
+    }
+    return arrayWithNthPages;
   }
 });
 
@@ -21,15 +25,18 @@ Template.transfersNavigation.events({
       _id: this._id
     });
   },
-  'click .nextBtn': function () {
+  'click .next_button': function () {
     Router.go('/transfers/'+(this.page+1)+'/'+this.numberOfResultsPerPage);
   },
-  'click .beforeBtn' : function () {
+  'click .before_button' : function () {
     var page = this.page-1;
     if(page.get!==0){
       Router.go('/transfers/'+page+'/'+this.numberOfResultsPerPage);
     }else{
       Router.go('/transfers/'+(page+1)+'/'+this.numberOfResultsPerPage);
     }
+  },
+  'click .page_to_go': function (event) {
+    Router.go('/transfers/'+event.target.attributes[1].value+'/10');
   }
 });
