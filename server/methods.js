@@ -64,26 +64,11 @@ Meteor.methods({
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
-  /**
-   * getConversion returns the conversion value for a date based on a currency
-   * @param  {String} date     The date to calculate the exchange rate
-   * @param  {String} currency The currency which the conversion will be done
-   * @param  {Number} amount   The amount of BTC to convert
-   * @return {Number}          The value of the amount in the provided currency
-   */
-  //Example call to server method from client: Meteor.call('getConversion', '2015-01-10', 'USD', 0.1213, function (err, result) {console.log(result)});
-  getConversion: function (date, currency, amount) {
-    var Coynverter = Meteor.npmRequire("coyno-converter");
-    var coynverter = new Coynverter();
-    var conversion = Async.runSync(function (done) {
-      coynverter.convert("meteor", date, currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-        done(null, exchangeRate);
-      });
-    });
-    return conversion.result;
-  },
   connectTransfer: function(transfer) {
     console.log(transfer);
     transfer.update();
+  },
+  getLastExchangeRateForBTC: function () {
+    return BitcoinExchangeRates.find({}, {sort: {date: -1}, limit: 1});
   }
 });

@@ -34,8 +34,7 @@ Router.map(function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers'),
-        Meteor.subscribe('bitcoinExchangeRates')
+        Meteor.subscribe('transfers')
       ];
     },
     data: function() {
@@ -89,8 +88,7 @@ Router.map(function() {
       return [
         Meteor.subscribe('user'),
         Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers'),
-        Meteor.subscribe('bitcoinExchangeRates')
+        Meteor.subscribe('transfers')
       ];
     },
     data: function() {

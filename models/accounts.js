@@ -48,7 +48,10 @@ Meteor.users.helpers({
     return result;
   },
   totalBalanceBasedOnUserCurrency: function (userCurrency) {
-    var exchangeRates = BitcoinExchangeRates.findOne();
+    var exchangeRates = Meteor.call('getLastExchangeRateForBTC', function (err, response) {
+      console.log(response);
+    });
+    console.log(exchangeRates);
     var result = 0;
     Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
@@ -60,7 +63,7 @@ Meteor.users.helpers({
       }
     });
     result = ((exchangeRates[userCurrency]*result)/100000000).toFixed(8);
-    return result;
+    //return result;
   }
 });
 
