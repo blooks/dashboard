@@ -9,16 +9,19 @@
 	    	<thead>
 	    		<tr>
 	    			<td>Wallet</td>
-	    			<td>Value</td>
+	    			<td>Amount in BTC</td>
 	    			<td>Percent</td>
 	    		</tr>
 	    	</thead>
 	    	<tbody>
-	    		<tr>
-	    			<td></td>
-	    			<td></td>
-	    			<td></td>
-	    		</tr>
+				{{#each wallets}}
+					{{> singleWalletLine}}
+				{{/each}}
+            	<tr>
+					<td>Total</td>
+					<td>{{totalBalance 'BTC'}}</td>
+					<td>100%</td>
+            </tr>
 	    	</tbody>
 	    </table>
 	    </div>
