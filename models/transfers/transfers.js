@@ -12,85 +12,81 @@ var nodeLabel = function nodeLabel(nodeId) {
   return "External";
 };
 
-/**
- *
- * @param inoutput
- * @returns {*}
- */
-var getNodeIdForInOutput = function (inoutput) {
-  //The input comes from a known Node in our DB.
-  var existingNodeId = inoutput.nodeId;
-  //Lets find out whether there is a BitcoinWallet for this Node.
-  var bitcoinWallet = null;
-  if (existingNodeId) {
-    var bitcoinAddress = BitcoinAddresses.findOne({"_id": existingNodeId});
-    if (bitcoinAddress) {
-      bitcoinWallet = BitcoinWallets.findOne({"_id": bitcoinAddress.walletId});
-    }
-  }
-  if (bitcoinWallet) {
-    return bitcoinWallet._id;
-  }
-  else {
-    return null;
-  }
-};
-
-var checkBitcoinWalletNodeIdForExistence = function (nodeId) {
-  return (BitcoinWallets.findOne({"_id": nodeId}) !== null);
-};
-
-/**
- * [conversor function that saved to database the value of the bitcoin is USD and EUR for one date]
- * @param  {[type]} amount     [description]
- * @param  {[type]} date       [description]
- * @param  {[type]} transferId [description]
- * @return {[type]}            [description]
- */
-var conversor = function (amount, date, transferId) {
-  var Fiber = Npm.require("fibers");
-  var Coynverter = Meteor.npmRequire("coyno-converter");
-  var coynverter = new Coynverter();
-  var currencies = ["EUR", "USD"];
-  currencies.forEach(function (currency){
-    coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-      if(exchangeRate){
-        Fiber(function() {
-          var rateCurrency = {};
-          rateCurrency[currency]=Math.round(exchangeRate);
-          Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});
-        }).run();
-      }
-    });
-  });
-};
-
-var removeMissingNodeIds = function(transfer) {
-  var inputs = [];
-  var outputs = [];
-  transfer.details.inputs.forEach(function(input) {
-    if (!checkBitcoinWalletNodeIdForExistence(input.nodeId)) {
-      input.nodeId = null;
-    }
-    inputs.push(input);
-  });
-  transfer.details.outputs.forEach(function(output) {
-    if (!checkBitcoinWalletNodeIdForExistence(output.nodeId)) {
-      output.nodeId = null;
-    }
-    outputs.push(output);
-  });
-  Transfers.update({"_id": transfer._id},
-    {$set: {'details.inputs' : inputs, 'details.outputs': outputs}}
-  );
-};
-
 if (Meteor.isServer) {
+  /**
+   * [conversor function that saved to database the value of the bitcoin is USD and EUR for one date]
+   * @param  {[type]} amount     [description]
+   * @param  {[type]} date       [description]
+   * @param  {[type]} transferId [description]
+   * @return {[type]}            [description]
+   */
+  var conversor = function (amount, date, transferId) {
+    var Fiber = Npm.require("fibers");
+    var Coynverter = Meteor.npmRequire("coyno-converter");
+    var coynverter = new Coynverter();
+    var currencies = ["EUR", "USD"];
+    currencies.forEach(function (currency){
+      coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
+        if(exchangeRate){
+          Fiber(function() {
+            var rateCurrency = {};
+            rateCurrency[currency]=Math.round(exchangeRate);
+            Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});
+          }).run();
+        }
+      });
+    });
+  };
+  /**
+   *
+   * @param inoutput
+   * @returns {*}
+   */
+  var getNodeIdForBitcoinAddress = function (userId, address) {
+    var internalAddress = BitcoinAddresses.findOne({"userId": userId, "address": address});
+    if (internalAddress) {
+      return internalAddress._id;
+    }
+    //The Address does not belong to the user.
+    return null;
+  };
+  /**
+   *
+   * @param inoutput
+   * @returns {*}
+   */
+  var getNodeIdForInOutput = function (inoutput) {
+    //The input comes from a known Node in our DB.
+    var existingNodeId = inoutput.nodeId;
+    //Lets find out whether there is a BitcoinWallet for this Node.
+    var bitcoinWallet = null;
+    if (existingNodeId) {
+      var bitcoinAddress = BitcoinAddresses.findOne({"_id": existingNodeId});
+      if (bitcoinAddress) {
+        bitcoinWallet = BitcoinWallets.findOne({"_id": bitcoinAddress.walletId});
+      }
+    }
+    if (bitcoinWallet) {
+      return bitcoinWallet._id;
+    }
+    else {
+      return null;
+    }
+  };
+
   Transfers.after.insert(function (userId, doc) {
     //Sanity check.
     var user = Meteor.users.findOne({_id: userId});
     if (! user.profile.hasTransfers) {
       Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
+    }
+    var transfer = Transfers.findOne({_id: doc._id, userId: userId});
+    transfer.update();
+  });
+  Transfers.after.update(function (userId, doc, fieldNames, modifier, options) {
+    var transfer = Transfers.findOne({_id: doc._id, userId: userId});
+    if (transfer && !transfer.connected) {
+      transfer.update();
     }
   });
   Transfers.helpers({
@@ -179,7 +175,9 @@ if (Meteor.isServer) {
       return result;
     },
     update: function () {
-      removeMissingNodeIds(this);
+      if (!this.connected) {
+        this.connect();
+      }
       var transfer = Transfers.findOne({"_id": this._id});
       var representation = {};
       representation.type = transfer.transferType();
@@ -191,10 +189,33 @@ if (Meteor.isServer) {
         {"_id": transfer._id},
         {$set: {"representation": representation}}
       );
-    }
+    },
+    connect: function() {
+      var inputs = [];
+      var outputs = [];
+      var userId = this.userId;
+      this.details.inputs.forEach(function (input) {
+          var nodeId = getNodeIdForBitcoinAddress(userId, input.note);
+          if (nodeId) {
+            input.nodeId = nodeId;
+          }
+          inputs.push(input);
+        }
+      );
+      this.details.outputs.forEach(function(output) {
+          var nodeId = getNodeIdForBitcoinAddress(userId, output.note);
+          if (nodeId) {
+            output.nodeId = nodeId;
+          }
+          outputs.push(output);
+        }
+      );
+      Transfers.update({"_id": this._id},
+        {$set: {'details.inputs' : inputs, 'details.outputs': outputs, 'connected': true}}
+      );
+    },
   });
 }
-
 Transfers.helpers({
   /**
    * Determines if transfer is internal

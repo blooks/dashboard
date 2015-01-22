@@ -14,8 +14,6 @@ var mustHaveSignedTOS = function() {
   }
 };
 
-
-
 Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
 });
@@ -32,7 +30,6 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    onBeforeAction: [mustBeSignedIn],
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
@@ -40,6 +37,11 @@ Router.map(function() {
         Meteor.subscribe('transfers'),
         Meteor.subscribe('bitcoinExchangeRates')
       ];
+    },
+    data: function() {
+      return {
+        type: 'netWorth'
+      };
     }
   });
   this.route('transfers_user', {
@@ -54,7 +56,7 @@ Router.map(function() {
   this.route('termsOfService', {
     waitOn: function() {
       return [Meteor.subscribe('user')];
-    },
+    }
   });
   this.route('transfers', {
     path: '/transfers/:page/:numberOfResults',
@@ -78,6 +80,23 @@ Router.map(function() {
           noTransfers: true
         };
       }
+    }
+  });
+  this.route('/dashboard/:type', {
+    path: '/dashboard/:type',
+    template: 'dashboard',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('user'),
+        Meteor.subscribe('bitcoinwallets'),
+        Meteor.subscribe('transfers'),
+        Meteor.subscribe('bitcoinExchangeRates')
+      ];
+    },
+    data: function() {
+      return {
+        type: this.params.type
+      };
     }
   });
   this.route('nodes', {

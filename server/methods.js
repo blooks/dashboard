@@ -27,7 +27,8 @@ Meteor.methods({
       self.unblock();
       Accounts.sendResetPasswordEmail(self.userId);
     }
-    else if(template = eval('Accounts.emailTemplates.' + template)){
+    // DGB 2015-01-21 07:50 Removed eval
+    else if(template = Accounts.emailTemplates[template]){
       self.unblock();
       Email.send({
         to: self.user,
@@ -47,7 +48,7 @@ Meteor.methods({
    */
   removeAccount: function () {
     var self = this;
-    if (!self.userId) return; 
+    if (!self.userId) return;
     var user = Meteor.users.findOne({_id: self.userId});
     self.unblock();
     Email.send({
@@ -58,8 +59,8 @@ Meteor.methods({
     });
     Meteor.users.remove({_id: self.userId});
   },
-  // DGB 2015-01-15 05:43 
-  // Returns true if the passed username is unique on the database. 
+  // DGB 2015-01-15 05:43
+  // Returns true if the passed username is unique on the database.
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
@@ -101,21 +102,59 @@ Meteor.methods({
     return true; //DGB 2015-01-21 06:52 Returns a result
   },
   /**
-   * getConversion returns the conversion value for a date based on a currency
-   * @param  {String} date     The date to calculate the exchange rate
-   * @param  {String} currency The currency which the conversion will be done
-   * @param  {Number} amount   The amount of BTC to convert
-   * @return {Number}          The value of the amount in the provided currency
+   * [dataForChartDashboardBasedOnCurrency description]
+   * @param  {[type]} currency [description]
+   * @return {[type]}          [description]
    */
-  //Example call to server method from client: Meteor.call('getConversion', '2015-01-10', 'USD', 0.1213, function (err, result) {console.log(result)});
-  getConversion: function (date, currency, amount) {
-    var Coynverter = Meteor.npmRequire("coyno-converter");
-    var coynverter = new Coynverter();
-    var conversion = Async.runSync(function (done) {
-      coynverter.convert("meteor", date, currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-        done(null, exchangeRate);
-      });
+  dataForChartDashboardBasedOnCurrency: function (currency) {
+    var satoshiToBTC = function (amount) {
+      return (amount / 10e7).toFixed(8);
+    };
+    var convertToBTC = function (time, amount, currency){
+      var rate = BitcoinExchangeRates.findOne({date: new Date(moment(time).format("YYYY-MM-DD"))});
+      //Log.info(amount);
+      return Math.round((amount*rate[currency])/100000000);
+    };
+    var balances = [];
+    var changes = [];
+    var balance = 0;
+    var change = 0;
+    var time = 0;
+    //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
+    var timeDelta = 86400000;
+    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
+      //console.log(transfer.baseVolume);
+      //Start from timedelta before the time of the first transaction
+      if (time === 0) {
+        time = moment(transfer.date-timeDelta).valueOf();
+      }
+      while (moment(transfer.date).valueOf() >= moment(time).valueOf()) {
+        change = 0;
+        time += timeDelta;
+        if(currency==="EUR" || currency==='USD'){
+          balances.push([time, convertToBTC(time, balance, currency)]);
+          changes.push([time, convertToBTC(time, balance, currency)]);
+        }
+        if(currency==="BTC"){
+          balances.push([time, parseFloat(satoshiToBTC(balance))]);
+          changes.push([time, parseFloat(satoshiToBTC(change))]);
+        }
+      }
+      if (transfer.isIncoming()) {
+        balance += transfer.representation.amount;
+        change += transfer.representation.amount;
+      }
+      if (transfer.isOutgoing()) {
+        //TODO: Respect the fee!
+        balance -= (transfer.representation.amount);
+        change -= (transfer.representation.amount);
+      }
     });
-    return conversion.result;
+    //console.log(balances);
+    return [balances, changes];
+  },
+  connectTransfer: function(transfer) {
+    console.log(transfer);
+    transfer.update();
   }
 });

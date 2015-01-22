@@ -763,7 +763,7 @@
                   }
                 },
                 "randombytes": {
-                  "version": "https://hushhush.levinkeller.de:4873/randombytes/-/randombytes-2.0.0.tgz"
+                  "version": "https://hushhush.levinkeller.de:4873/randombytes/-/randombytes-2.0.1.tgz"
                 }
               }
             },
