@@ -778,7 +778,7 @@
       }
     },
     "coyno-converter": {
-      "version": "https://registry.coyno.com/coyno-converter/-/coyno-converter-0.0.11.tgz",
+      "version": "https://registry.coyno.com/coyno-converter/-/coyno-converter-0.0.13.tgz",
       "dependencies": {
         "moment": {
           "version": "https://registry.coyno.com/moment/-/moment-2.7.0.tgz"
