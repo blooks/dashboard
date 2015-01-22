@@ -40,7 +40,8 @@ Router.map(function() {
     },
     data: function() {
       return {
-        type: 'netWorth'
+        type: 'netWorth',
+        currency: Meteor.user().profile.currency
       };
     }
   });
@@ -95,7 +96,8 @@ Router.map(function() {
     },
     data: function() {
       return {
-        type: this.params.type
+        type: this.params.type,
+        currency: Meteor.user().profile.currency
       };
     }
   });
