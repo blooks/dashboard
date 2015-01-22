@@ -33,7 +33,7 @@ var fundsDistribution = function () {
       plotShadow: false
     },
     title: {
-      text: "Distribution of Bitcoin holdings"
+      text: ""
     },
     tooltip: {
       pointFormat: '<b>{point.percentage:.1f}%</b>'
@@ -42,11 +42,13 @@ var fundsDistribution = function () {
       pie: {
         allowPointSelect: true,
         cursor: 'pointer',
+        showInLegend: true,
+
         dataLabels: {
-          enabled: true,
+          enabled: false,
           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
           style: {
-            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || '#333333'
           },
           connectorColor: 'silver'
         }

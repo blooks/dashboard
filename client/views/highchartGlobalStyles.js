@@ -4,7 +4,7 @@
 
 // Load the fonts
 Highcharts.createElement('link', {
-	href: 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700',
+	href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700',
 	rel: 'stylesheet',
 	type: 'text/css'
 }, null, document.getElementsByTagName('head')[0]);
@@ -13,7 +13,7 @@ var brandPrimary = '#9A2158';
 
 Highcharts.theme = {
 	colors: [
-	brandPrimary, "#E73183", "#5A1333", // Brand pinks
+	brandPrimary, "#4E0928", "#E73183", "#811C49", "#5A1333",  // Brand pinks
 	"#0C5967", "#1CD3F3", "#09434E",  // Secondary blues
 	"#90CD17", "#69A74D", "#4FDA7A"  // Greens
 	],
