@@ -83,6 +83,9 @@ Schemas.Transfer = new SimpleSchema
   connected:
     type: Boolean
 
+
+    #*************************** CONNECTED: false
+
 # Attach the schema to the collection
 Transfers.attachSchema Schemas.Transfer
 
