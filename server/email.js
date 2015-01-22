@@ -12,7 +12,7 @@ Accounts.emailTemplates.from = "Coyno <noreply@coyno.de>";
 // validate the email.
 Accounts.emailTemplates.verifyEmail = {
   subject: function (user) {
-    return "Coyno Verification Email"; 
+    return "Coyno Welcome Email"; 
   },
   text: function (user, url) {
     var t = null;
@@ -21,6 +21,22 @@ Accounts.emailTemplates.verifyEmail = {
     return t;
   }
 };
+
+// DGB 2015-01-21 07:17
+// This email is send when the user request to change his email
+Accounts.emailTemplates.changeEmail ={
+  subject: function () {
+    return "Coyno change email"; 
+  },
+  text: function () {
+    var t = null;
+    t= "Hello " + "! \n\n";  
+    t+="You have succesfully changed your email";
+    return t;
+  }
+};
+
+
 
 // DGB 2015-01-12 03:41
 // This email is send when the user request to change the password.

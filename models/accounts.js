@@ -94,6 +94,8 @@ var Schema = new SimpleSchema({
   "emails.$.address": {
     optional: true,
     type: String,
+    unique: true, //DGB 2015-01-21 06:59 Added
+    index: true,
     regEx: SimpleSchema.RegEx.Email
   },
   "emails.$.verified": {
