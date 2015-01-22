@@ -10,7 +10,7 @@ var fundsDistribution = function () {
       plotShadow: false
     },
     title: {
-      text: "Distribution of Bitcoin holdings"
+      text: ""
     },
     tooltip: {
       pointFormat: '<b>{point.percentage:.1f}%</b>'
@@ -20,7 +20,7 @@ var fundsDistribution = function () {
         allowPointSelect: true,
         cursor: 'pointer',
         dataLabels: {
-          enabled: true,
+          enabled: false,
           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
           style: {
             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
@@ -36,7 +36,6 @@ var fundsDistribution = function () {
     }]
   });
 };
-
 
 Template.walletHoldings.rendered = function () {
   fundsDistribution();
