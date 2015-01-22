@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bitcore": {
-      "version": "https://hushhush.levinkeller.de:4873/bitcore/-/bitcore-0.8.6.tgz",
+      "version": "https://registry.coyno.com/bitcore/-/bitcore-0.8.6.tgz",
       "dependencies": {
         "asn1.js": {
           "version": "0.4.1",
@@ -86,7 +86,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/core-util-is/-/core-util-is-1.0.1.tgz"
                     },
                     "isarray": {
-                      "version": "https://hushhush.levinkeller.de:4873/isarray/-/isarray-0.0.1.tgz"
+                      "version": "https://registry.coyno.com/isarray/-/isarray-0.0.1.tgz"
                     },
                     "string_decoder": {
                       "version": "https://hushhush.levinkeller.de:4873/string_decoder/-/string_decoder-0.10.31.tgz"
@@ -141,16 +141,16 @@
               }
             },
             "http-signature": {
-              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
+              "version": "0.10.1",
               "dependencies": {
                 "assert-plus": {
-                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
+                  "version": "0.1.5"
                 },
                 "asn1": {
-                  "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
+                  "version": "https://registry.coyno.com/asn1/-/asn1-0.1.11.tgz"
                 },
                 "ctype": {
-                  "version": "https://hushhush.levinkeller.de:4873/ctype/-/ctype-0.5.3.tgz"
+                  "version": "https://registry.coyno.com/ctype/-/ctype-0.5.3.tgz"
                 }
               }
             },
@@ -184,7 +184,7 @@
               "version": "https://hushhush.levinkeller.de:4873/combined-stream/-/combined-stream-0.0.7.tgz",
               "dependencies": {
                 "delayed-stream": {
-                  "version": "https://hushhush.levinkeller.de:4873/delayed-stream/-/delayed-stream-0.0.5.tgz"
+                  "version": "https://registry.coyno.com/delayed-stream/-/delayed-stream-0.0.5.tgz"
                 }
               }
             }
@@ -226,7 +226,7 @@
                                   "version": "https://hushhush.levinkeller.de:4873/balanced-match/-/balanced-match-0.2.0.tgz"
                                 },
                                 "concat-map": {
-                                  "version": "https://hushhush.levinkeller.de:4873/concat-map/-/concat-map-0.0.1.tgz"
+                                  "version": "https://registry.coyno.com/concat-map/-/concat-map-0.0.1.tgz"
                                 }
                               }
                             }
@@ -291,7 +291,7 @@
       }
     },
     "bitcore-electrum": {
-      "version": "https://hushhush.levinkeller.de:4873/bitcore-electrum/-/bitcore-electrum-0.0.3.tgz",
+      "version": "https://registry.coyno.com/bitcore-electrum/-/bitcore-electrum-0.0.3.tgz",
       "dependencies": {
         "bitcore": {
           "version": "https://hushhush.levinkeller.de:4873/bitcore/-/bitcore-0.1.41.tgz",
@@ -308,10 +308,10 @@
               "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.2.10.tgz"
             },
             "bignum": {
-              "version": "https://hushhush.levinkeller.de:4873/bignum/-/bignum-0.6.2.tgz"
+              "version": "https://registry.coyno.com/bignum/-/bignum-0.6.2.tgz"
             },
             "bindings": {
-              "version": "https://hushhush.levinkeller.de:4873/bindings/-/bindings-1.1.1.tgz"
+              "version": "https://registry.coyno.com/bindings/-/bindings-1.1.1.tgz"
             },
             "binary": {
               "version": "https://hushhush.levinkeller.de:4873/binary/-/binary-0.3.0.tgz",
@@ -327,10 +327,10 @@
               }
             },
             "bn.js": {
-              "version": "0.15.0"
+              "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-0.15.0.tgz"
             },
             "brfs": {
-              "version": "https://hushhush.levinkeller.de:4873/brfs/-/brfs-1.0.0.tgz",
+              "version": "https://registry.coyno.com/brfs/-/brfs-1.0.0.tgz",
               "dependencies": {
                 "through": {
                   "version": "https://hushhush.levinkeller.de:4873/through/-/through-2.2.7.tgz"
@@ -344,7 +344,7 @@
                   }
                 },
                 "escodegen": {
-                  "version": "https://hushhush.levinkeller.de:4873/escodegen/-/escodegen-0.0.17.tgz",
+                  "version": "https://registry.coyno.com/escodegen/-/escodegen-0.0.17.tgz",
                   "dependencies": {
                     "esprima": {
                       "version": "https://hushhush.levinkeller.de:4873/esprima/-/esprima-1.0.4.tgz"
@@ -356,7 +356,7 @@
                       "version": "https://hushhush.levinkeller.de:4873/source-map/-/source-map-0.1.43.tgz",
                       "dependencies": {
                         "amdefine": {
-                          "version": "0.1.0"
+                          "version": "https://hushhush.levinkeller.de:4873/amdefine/-/amdefine-0.1.0.tgz"
                         }
                       }
                     }
@@ -368,10 +368,10 @@
               "version": "git://github.com/bitpay/node-bufferput.git#d01b46ae0874e32b2beb4448b193f0a70c7e7b34"
             },
             "buffers": {
-              "version": "0.1.1"
+              "version": "https://registry.coyno.com/buffers/-/buffers-0.1.1.tgz"
             },
             "buffertools": {
-              "version": "https://hushhush.levinkeller.de:4873/buffertools/-/buffertools-2.1.2.tgz"
+              "version": "https://registry.coyno.com/buffertools/-/buffertools-2.1.2.tgz"
             },
             "browserify-buffertools": {
               "version": "git://github.com/maraoz/browserify-buffertools.git#fe676bceffad2797d096f1aaf929cf1645121799"
@@ -396,7 +396,7 @@
               }
             },
             "jsrsasign": {
-              "version": "0.0.3"
+              "version": "https://registry.coyno.com/jsrsasign/-/jsrsasign-0.0.3.tgz"
             },
             "preconditions": {
               "version": "https://hushhush.levinkeller.de:4873/preconditions/-/preconditions-1.0.8.tgz",
@@ -407,7 +407,7 @@
               }
             },
             "protobufjs": {
-              "version": "3.0.0",
+              "version": "https://registry.coyno.com/protobufjs/-/protobufjs-3.0.0.tgz",
               "dependencies": {
                 "bytebuffer": {
                   "version": "https://hushhush.levinkeller.de:4873/bytebuffer/-/bytebuffer-3.1.1.tgz",
@@ -434,7 +434,7 @@
               }
             },
             "sjcl": {
-              "version": "https://hushhush.levinkeller.de:4873/sjcl/-/sjcl-1.0.1.tgz"
+              "version": "https://registry.coyno.com/sjcl/-/sjcl-1.0.1.tgz"
             },
             "socks5-client": {
               "version": "0.3.6",
@@ -472,7 +472,7 @@
                                       "version": "https://hushhush.levinkeller.de:4873/balanced-match/-/balanced-match-0.2.0.tgz"
                                     },
                                     "concat-map": {
-                                      "version": "https://hushhush.levinkeller.de:4873/concat-map/-/concat-map-0.0.1.tgz"
+                                      "version": "https://registry.coyno.com/concat-map/-/concat-map-0.0.1.tgz"
                                     }
                                   }
                                 }
@@ -533,10 +533,10 @@
       }
     },
     "chain-node": {
-      "version": "https://hushhush.levinkeller.de:4873/chain-node/-/chain-node-3.0.1.tgz",
+      "version": "https://registry.coyno.com/chain-node/-/chain-node-3.0.1.tgz",
       "dependencies": {
         "request": {
-          "version": "https://hushhush.levinkeller.de:4873/request/-/request-2.36.0.tgz",
+          "version": "https://registry.coyno.com/request/-/request-2.36.0.tgz",
           "dependencies": {
             "qs": {
               "version": "https://hushhush.levinkeller.de:4873/qs/-/qs-0.6.6.tgz"
@@ -568,7 +568,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/combined-stream/-/combined-stream-0.0.7.tgz",
                   "dependencies": {
                     "delayed-stream": {
-                      "version": "https://hushhush.levinkeller.de:4873/delayed-stream/-/delayed-stream-0.0.5.tgz"
+                      "version": "https://registry.coyno.com/delayed-stream/-/delayed-stream-0.0.5.tgz"
                     }
                   }
                 },
@@ -581,16 +581,16 @@
               "version": "https://hushhush.levinkeller.de:4873/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
             },
             "http-signature": {
-              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
+              "version": "0.10.1",
               "dependencies": {
                 "assert-plus": {
-                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
+                  "version": "0.1.5"
                 },
                 "asn1": {
-                  "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
+                  "version": "https://registry.coyno.com/asn1/-/asn1-0.1.11.tgz"
                 },
                 "ctype": {
-                  "version": "https://hushhush.levinkeller.de:4873/ctype/-/ctype-0.5.3.tgz"
+                  "version": "https://registry.coyno.com/ctype/-/ctype-0.5.3.tgz"
                 }
               }
             },
@@ -620,10 +620,10 @@
           }
         },
         "bitcoinjs-lib": {
-          "version": "https://hushhush.levinkeller.de:4873/bitcoinjs-lib/-/bitcoinjs-lib-1.2.0.tgz",
+          "version": "https://registry.coyno.com/bitcoinjs-lib/-/bitcoinjs-lib-1.2.0.tgz",
           "dependencies": {
             "bs58check": {
-              "version": "https://hushhush.levinkeller.de:4873/bs58check/-/bs58check-1.0.3.tgz",
+              "version": "https://registry.coyno.com/bs58check/-/bs58check-1.0.3.tgz",
               "dependencies": {
                 "bs58": {
                   "version": "https://hushhush.levinkeller.de:4873/bs58/-/bs58-2.0.1.tgz"
@@ -637,7 +637,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/browserify-aes/-/browserify-aes-1.0.0.tgz"
                 },
                 "browserify-sign": {
-                  "version": "https://hushhush.levinkeller.de:4873/browserify-sign/-/browserify-sign-2.8.0.tgz",
+                  "version": "https://registry.coyno.com/browserify-sign/-/browserify-sign-2.8.0.tgz",
                   "dependencies": {
                     "bn.js": {
                       "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-1.0.0.tgz"
@@ -671,14 +671,14 @@
                           "version": "https://hushhush.levinkeller.de:4873/asn1.js-rfc3280/-/asn1.js-rfc3280-1.0.0.tgz"
                         },
                         "pemstrip": {
-                          "version": "https://hushhush.levinkeller.de:4873/pemstrip/-/pemstrip-0.0.1.tgz"
+                          "version": "https://registry.coyno.com/pemstrip/-/pemstrip-0.0.1.tgz"
                         }
                       }
                     }
                   }
                 },
                 "create-ecdh": {
-                  "version": "https://hushhush.levinkeller.de:4873/create-ecdh/-/create-ecdh-1.0.3.tgz",
+                  "version": "https://registry.coyno.com/create-ecdh/-/create-ecdh-1.0.3.tgz",
                   "dependencies": {
                     "bn.js": {
                       "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-1.0.0.tgz"
@@ -711,7 +711,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/create-hmac/-/create-hmac-1.1.0.tgz"
                 },
                 "diffie-hellman": {
-                  "version": "https://hushhush.levinkeller.de:4873/diffie-hellman/-/diffie-hellman-2.2.3.tgz",
+                  "version": "https://registry.coyno.com/diffie-hellman/-/diffie-hellman-2.2.3.tgz",
                   "dependencies": {
                     "bn.js": {
                       "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-1.0.0.tgz"
@@ -730,10 +730,10 @@
                   "version": "2.0.1"
                 },
                 "pbkdf2-compat": {
-                  "version": "https://hushhush.levinkeller.de:4873/pbkdf2-compat/-/pbkdf2-compat-2.0.1.tgz"
+                  "version": "https://registry.coyno.com/pbkdf2-compat/-/pbkdf2-compat-2.0.1.tgz"
                 },
                 "public-encrypt": {
-                  "version": "https://hushhush.levinkeller.de:4873/public-encrypt/-/public-encrypt-1.1.2.tgz",
+                  "version": "https://registry.coyno.com/public-encrypt/-/public-encrypt-1.1.2.tgz",
                   "dependencies": {
                     "bn.js": {
                       "version": "https://hushhush.levinkeller.de:4873/bn.js/-/bn.js-1.0.0.tgz"
@@ -756,7 +756,7 @@
                           "version": "https://hushhush.levinkeller.de:4873/asn1.js-rfc3280/-/asn1.js-rfc3280-1.0.0.tgz"
                         },
                         "pemstrip": {
-                          "version": "https://hushhush.levinkeller.de:4873/pemstrip/-/pemstrip-0.0.1.tgz"
+                          "version": "https://registry.coyno.com/pemstrip/-/pemstrip-0.0.1.tgz"
                         }
                       }
                     }
@@ -768,7 +768,7 @@
               }
             },
             "ecurve": {
-              "version": "https://hushhush.levinkeller.de:4873/ecurve/-/ecurve-1.0.0.tgz"
+              "version": "https://registry.coyno.com/ecurve/-/ecurve-1.0.0.tgz"
             }
           }
         },
@@ -778,10 +778,10 @@
       }
     },
     "coyno-converter": {
-      "version": "https://hushhush.levinkeller.de:4873/coyno-converter/-/coyno-converter-0.0.6.tgz",
+      "version": "https://registry.coyno.com/coyno-converter/-/coyno-converter-0.0.6.tgz",
       "dependencies": {
         "moment": {
-          "version": "https://hushhush.levinkeller.de:4873/moment/-/moment-2.7.0.tgz"
+          "version": "https://registry.coyno.com/moment/-/moment-2.7.0.tgz"
         },
         "request": {
           "version": "https://hushhush.levinkeller.de:4873/request/-/request-2.39.0.tgz",
@@ -813,7 +813,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/combined-stream/-/combined-stream-0.0.7.tgz",
                   "dependencies": {
                     "delayed-stream": {
-                      "version": "https://hushhush.levinkeller.de:4873/delayed-stream/-/delayed-stream-0.0.5.tgz"
+                      "version": "https://registry.coyno.com/delayed-stream/-/delayed-stream-0.0.5.tgz"
                     }
                   }
                 },
@@ -829,16 +829,16 @@
               "version": "https://hushhush.levinkeller.de:4873/tunnel-agent/-/tunnel-agent-0.4.0.tgz"
             },
             "http-signature": {
-              "version": "https://hushhush.levinkeller.de:4873/http-signature/-/http-signature-0.10.1.tgz",
+              "version": "0.10.1",
               "dependencies": {
                 "assert-plus": {
-                  "version": "https://hushhush.levinkeller.de:4873/assert-plus/-/assert-plus-0.1.5.tgz"
+                  "version": "0.1.5"
                 },
                 "asn1": {
-                  "version": "https://hushhush.levinkeller.de:4873/asn1/-/asn1-0.1.11.tgz"
+                  "version": "https://registry.coyno.com/asn1/-/asn1-0.1.11.tgz"
                 },
                 "ctype": {
-                  "version": "https://hushhush.levinkeller.de:4873/ctype/-/ctype-0.5.3.tgz"
+                  "version": "https://registry.coyno.com/ctype/-/ctype-0.5.3.tgz"
                 }
               }
             },
@@ -871,13 +871,13 @@
           }
         },
         "underscore": {
-          "version": "https://hushhush.levinkeller.de:4873/underscore/-/underscore-1.6.0.tgz"
+          "version": "https://registry.coyno.com/underscore/-/underscore-1.6.0.tgz"
         },
         "tracer": {
-          "version": "https://hushhush.levinkeller.de:4873/tracer/-/tracer-0.7.3.tgz",
+          "version": "https://registry.coyno.com/tracer/-/tracer-0.7.3.tgz",
           "dependencies": {
             "dateformat": {
-              "version": "https://hushhush.levinkeller.de:4873/dateformat/-/dateformat-1.0.2-1.2.3.tgz"
+              "version": "https://registry.coyno.com/dateformat/-/dateformat-1.0.2-1.2.3.tgz"
             },
             "colors": {
               "version": "https://hushhush.levinkeller.de:4873/colors/-/colors-0.6.2.tgz"
@@ -888,18 +888,18 @@
           }
         },
         "mongodb": {
-          "version": "https://hushhush.levinkeller.de:4873/mongodb/-/mongodb-1.4.6.tgz",
+          "version": "https://registry.coyno.com/mongodb/-/mongodb-1.4.6.tgz",
           "dependencies": {
             "bson": {
-              "version": "https://hushhush.levinkeller.de:4873/bson/-/bson-0.2.9.tgz",
+              "version": "https://registry.coyno.com/bson/-/bson-0.2.9.tgz",
               "dependencies": {
                 "nan": {
-                  "version": "https://hushhush.levinkeller.de:4873/nan/-/nan-1.0.0.tgz"
+                  "version": "1.0.0"
                 }
               }
             },
             "kerberos": {
-              "version": "https://hushhush.levinkeller.de:4873/kerberos/-/kerberos-0.0.3.tgz"
+              "version": "https://registry.coyno.com/kerberos/-/kerberos-0.0.3.tgz"
             },
             "readable-stream": {
               "version": "https://hushhush.levinkeller.de:4873/readable-stream/-/readable-stream-1.0.33.tgz",
@@ -908,7 +908,7 @@
                   "version": "https://hushhush.levinkeller.de:4873/core-util-is/-/core-util-is-1.0.1.tgz"
                 },
                 "isarray": {
-                  "version": "https://hushhush.levinkeller.de:4873/isarray/-/isarray-0.0.1.tgz"
+                  "version": "https://registry.coyno.com/isarray/-/isarray-0.0.1.tgz"
                 },
                 "string_decoder": {
                   "version": "https://hushhush.levinkeller.de:4873/string_decoder/-/string_decoder-0.10.31.tgz"
