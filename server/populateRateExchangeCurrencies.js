@@ -1,3 +1,4 @@
+//BitcoinExchangeRates = new Mongo.Collection('bitcoinExchangeRates');
 Meteor.startup(function () {
   if(BitcoinExchangeRates.find().fetch().length===0){
     var currencies = ["EUR", "USD"];
@@ -12,3 +13,4 @@ Meteor.startup(function () {
     });
   }
 });
+
