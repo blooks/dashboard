@@ -25,16 +25,15 @@ Router.onBeforeAction(mustHaveSignedTOS, {
 Router.map(function() {
   this.route('/', {
     action: function() {
-      Router.go('/dashboard/netWorth');
+      Router.go('/profile');
     }
   });
   this.route('dashboard', {
-    path: '/dashboard/netWorth',
-    onBeforeAction: [mustBeSignedIn, mustHaveSignedTOS],
+    path: '/dashboard/overView',
     waitOn: function() {
       return [
         Meteor.subscribe('user'),
-        Meteor.subscribe('bitcoinwallets'), 
+        Meteor.subscribe('bitcoinwallets'),
         Meteor.subscribe('transfers'),
         Meteor.subscribe('bitcoinExchangeRates')
       ];
@@ -57,7 +56,7 @@ Router.map(function() {
   this.route('termsOfService', {
     waitOn: function() {
       return [Meteor.subscribe('user')];
-    },
+    }
   });
   this.route('transfers', {
     path: '/transfers/:page/:numberOfResults',

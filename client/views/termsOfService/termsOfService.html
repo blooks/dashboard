@@ -1,45 +1,31 @@
 <template name='termsOfService'>
 <div style='text-align:center' class='container'>
-  <h1>You are almost there, my friend</h1>
-    <h2>Please acknowledge the rules</h2>
-
-    <div style='width:300px; margin:0 auto 3em auto'>
-      - We don't have your wallet information.<br> 
-      - We don't store your private keys. <br>
-      - Please keep your wallet files safe, we will not be able to recover your coins if you lose or damage your wallet files
-    </div>
-    
-    <div style='text-align:center'>
-      <input type='checkbox'/> &nbsp;&nbsp;Allright buddy, I understand it<br>
-      <br><br>
-      {{#if currentUser.profile.hasSignedTOS }}
-        <span class='h2'>Welcome!</span>
-        <br> 
-        <a href='/nodes/nodesOverview' class='btn btn-primary'>Add new wallet</a>
-      {{else}}
-      <div style='opacity:0.2' class='btn btn-disabled'>Add new wallet</div>
-      {{/if}}
-    </div>
-</div>
-</template>
-
-<template name="termsOfServiceOLDTEMPLATEWAITINGFORMERGEORDELETE">
    <h1 class="process-title">Terms of Service</h1>
     <div class="sub-title-icon top-consistency-margin">
           <div class="icon icon-graph-trend"></div>
     </div>
-    <div class="col-md-10 col-md-offset-1">
-        <div class="row desktop-zone">
-         <p>Fusce neque. Nullam accumsan lorem in dui. Ut tincidunt tincidunt erat. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Etiam iaculis nunc ac metus.
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row desktop-zone">
+            <h2>Please acknowledge the rules</h2>
 
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non dolor. In auctor lobortis lacus. Suspendisse feugiat. Etiam ut purus mattis mauris sodales aliquam.
-
-        Quisque rutrum. Duis vel nibh at velit scelerisque suscipit. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Ut id nisl quis enim dignissim sagittis.
-
-        Sed libero. Morbi nec metus. Aenean viverra rhoncus pede. Vivamus elementum semper nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-        Praesent ut ligula non mi varius sagittis. Vivamus euismod mauris. Nulla facilisi. Phasellus volutpat, metus eget egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut lacus. Ut non enim eleifend felis pretium feugiat.</p>
-        <button type="button" class="btn btn-primary" id="ToS-agree">I understand</button>
+            <div style='width:300px; margin:0 auto 3em auto'>
+              - We don't have your wallet information.<br> 
+              - We don't store your private keys. <br>
+              - Please keep your wallet files safe, we will not be able to recover your coins if you lose or damage your wallet files
+            </div>
+            
+            <div style='text-align:center'>
+              <input type='checkbox'/> &nbsp;&nbsp;Allright buddy, I understand it<br>
+              <br><br>
+              {{#if currentUser.profile.hasSignedTOS }}
+                <span class='h2'>Welcome!</span>
+                <br> 
+                <a href='/nodes/nodesOverview' class='btn btn-primary'>Add new wallet</a>
+              {{else}}
+              <div style='opacity:0.2' class='btn btn-disabled'>Add new wallet</div>
+              {{/if}}
+            </div>
+        </div>
         </div>
     </div>
 </template>
