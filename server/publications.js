@@ -1,4 +1,5 @@
 Meteor.publish("transfers", function (page, numberOfResults) {
+  console.log(process.env.MONGO_URL);
   var self = this;
   var totalAvailableResults = Transfers.find({userId: this.userId}).count();
   var handle = Transfers.find({userId: this.userId}, {skip: parseInt(page-1)*parseInt(numberOfResults), limit: numberOfResults, sort: {createdAt: -1}}).observeChanges({
