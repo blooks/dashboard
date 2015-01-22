@@ -9,8 +9,18 @@
           </a>
       </div> <!-- ./navbar-header -->
       <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons }} <!-- here -->
+        {{> loginButtons }} <!-- here -->
       </ul>
+      {{#if currentUser}}
+        <ul class="nav navbar-nav navbar-right">
+          <select class="form-control" id="user_currency">
+            <option value="-1">Currency</option>
+            {{#each possibleCurrencies}}
+              <option value="{{this}}" {{isSelected this}}>{{this}}</option>
+            {{/each}}
+          </select>
+        </ul>
+      {{/if}}
     </div> <!-- ./container -->
   </div> <!-- ./navbar -->
 </template>

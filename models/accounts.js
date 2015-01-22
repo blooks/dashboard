@@ -49,6 +49,11 @@ var userProfile = new SimpleSchema({
   hasSignedTOS: {
     type: Boolean,
     defaultValue: false
+  },
+  currency: {
+    type: String,
+    optional: true,
+    allowedValues: ['EUR', 'USD', 'BTC']
   }
 });
 
