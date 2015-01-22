@@ -1,16 +1,16 @@
 <template name="netWorth">
-  <div class="col-sm-8 line-chart">
-    <h3>Net worth</h3>
-    <div id="holdingsovertime"></div>
-  </div>
-  <div class="col-sm-4">
-    <div class="summary-data spacy">
-      <h4 class="totals">Total value</h4>
-      <p class="sum">{{totalBalance 'BTC'}} BTC</p>
-    </div>
-    <div class="summary-data spacy">
-      <h4 class="totals">Total value </h4>
-      <p class="sum">{{totalBalanceCurrency currency}} {{this.currency}}</p>
-    </div>
-  </div>
+	<div class="col-lg-8 line-chart">
+	    <h3>Net worth</h3>
+	    <div id="holdingsovertime"></div>
+	</div>
+	<div class="col-lg-4">
+	    <div class="summary-data spacy">
+	        <h4 class="totals">Total value</h4>
+	        <p class="sum">{{totalBalance 'BTC' }} <span class="icon icon-bitcoin"></span></p>
+	    </div>
+	    <div class="summary-data spacy">
+	        <h4 class="totals">Total fiat value </h4>
+	         <p class="sum">{{totalBalanceCurrency currency}} {{this.currency}}</p>
+	    </div>
+	</div>
 </template>

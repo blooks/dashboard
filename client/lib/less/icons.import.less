@@ -20,7 +20,7 @@
   font-variant: normal !important;
   text-transform: none !important;
   speak: none;
-  line-height: 1;
+  line-height: @line-height-computed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,14 +33,12 @@
   font-variant: normal !important;
   text-transform: none !important;
   speak: none;
-  line-height: 1;
+  line-height: @line-height-computed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  vertical-align: baseline;
 }
 
-.icon-bitcoin:before {
-  content: "a";
-}
 .icon-wallet:before {
   content: "b";
 }
@@ -140,9 +138,6 @@
 .icon-user:before {
   content: "M";
 }
-.icon-accounting1:before {
-  content: "N";
-}
 .icon-bitcoin85:before {
   content: "P";
 }
@@ -212,7 +207,7 @@
 .icon-minus:before {
   content: "8";
 }
-.icon-information3:before {
+.icon-info:before {
   content: "k";
 }
 .icon-arrow-down:before {
@@ -238,4 +233,19 @@
 }
 .icon-exchange:before {
   content: "%";
+}
+.icon-bitcoin:before {
+  content: "N";
+}
+.icon-chain8:before {
+  content: "a";
+}
+.icon-chart46:before {
+  content: "'";
+}
+.icon-chart47:before {
+  content: "(";
+}
+.icon-piechart:before {
+  content: "$";
 }

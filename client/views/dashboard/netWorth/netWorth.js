@@ -13,6 +13,7 @@ var builtStockLocal = function (currency) {
         },
         title: {
           text: 'Total '+currency+' Holdings'
+
         },
         series: [{
           name: currency,

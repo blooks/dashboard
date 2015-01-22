@@ -10,7 +10,7 @@ var fundsDistribution = function () {
       plotShadow: false
     },
     title: {
-      text: "Distribution of Bitcoin holdings"
+      text: ""
     },
     tooltip: {
       pointFormat: '<b>{point.percentage:.1f}%</b>'
@@ -20,7 +20,7 @@ var fundsDistribution = function () {
         allowPointSelect: true,
         cursor: 'pointer',
         dataLabels: {
-          enabled: true,
+          enabled: false,
           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
           style: {
             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
@@ -37,7 +37,30 @@ var fundsDistribution = function () {
   });
 };
 
-
 Template.walletHoldings.rendered = function () {
   fundsDistribution();
 };
+
+Template.walletHoldings.helpers({
+  wallets: function () {
+    return BitcoinWallets.find({}).fetch();
+  },
+  /**
+   * [totalBalance description]
+   * @param  {[type]} currency [description]
+   * @return {[type]}          [description]
+   */
+  totalBalance: function (currency) {
+    //TODO: Remove this. It is redundant to the global helper
+    var saneNumber = function (internalNumber, currency) {
+      if (currency === 'BTC') {
+        return (internalNumber / 10e7).toFixed(8);
+      } else {
+        return (internalNumber / 10e7).toFixed(2);
+      }
+    };
+    if(Meteor.user()){
+      return saneNumber(Meteor.user().totalBalance(currency), currency);
+    }
+  }
+});

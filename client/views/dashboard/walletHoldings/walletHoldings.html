@@ -4,30 +4,26 @@
 	    <div id="currentholdingsperwallet" class="col-lg-8"></div>
 	</div>
 	<div class="col-lg-4">
-	   {{#if bitcoinwallets}}
 	    <div class="summary-data spacy">
-			<table class="table table-tx table-zb-hover auto-width centered">
-		    	<thead>
-		    		<tr>
-		    			<td>Wallet</td>
-		    			<td>Value</td>
-		    			<td>Percent</td>
-		    		</tr>
-		    	</thead>
-		    	<tbody>
-
- 		    		{{#each this}}
-			    		<tr>
-			    			<td>Label </td>
-			    			<td> BTC</td>
-			    			<td></td>
-			    		</tr>
-			    	{{/each}}
-
-
-		    	</tbody>
-		    </table>
+	    <table class="table table-tx table-zb-hover auto-width centered">
+	    	<thead>
+	    		<tr>
+	    			<td>Wallet</td>
+	    			<td>Amount in BTC</td>
+	    			<td>Percent</td>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+				{{#each wallets}}
+					{{> singleWalletLine}}
+				{{/each}}
+            	<tr>
+					<td>Total</td>
+					<td>{{totalBalance 'BTC'}}</td>
+					<td>100%</td>
+            </tr>
+	    	</tbody>
+	    </table>
 	    </div>
-	    {{/if}}
 	</div>
 </template>

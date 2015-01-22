@@ -38,10 +38,12 @@ Router.map(function() {
       ];
     },
     data: function() {
-      return {
-        type: 'netWorth',
-        currency: Meteor.user().profile.currency
-      };
+      if(Meteor.user()){
+        return {
+          type: 'netWorth',
+          currency: Meteor.user().profile.currency
+        };
+      }
     }
   });
   this.route('transfers_user', {
@@ -93,10 +95,12 @@ Router.map(function() {
       ];
     },
     data: function() {
-      return {
-        type: this.params.type,
-        currency: Meteor.user().profile.currency
-      };
+      if(Meteor.user()){
+        return {
+          type: this.params.type,
+          currency: Meteor.user().profile.currency
+        };
+      }
     }
   });
   this.route('nodes', {
