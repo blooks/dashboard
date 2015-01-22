@@ -158,7 +158,7 @@
               "version": "https://hushhush.levinkeller.de:4873/oauth-sign/-/oauth-sign-0.5.0.tgz"
             },
             "hawk": {
-              "version": "https://registry.coyno.com/hawk/-/hawk-1.1.1.tgz",
+              "version": "https://hushhush.levinkeller.de:4873/hawk/-/hawk-1.1.1.tgz",
               "dependencies": {
                 "hoek": {
                   "version": "https://hushhush.levinkeller.de:4873/hoek/-/hoek-0.9.1.tgz"
@@ -368,7 +368,7 @@
               "version": "git://github.com/bitpay/node-bufferput.git#d01b46ae0874e32b2beb4448b193f0a70c7e7b34"
             },
             "buffers": {
-              "version": "https://registry.coyno.com/buffers/-/buffers-0.1.1.tgz"
+              "version": "0.1.1"
             },
             "buffertools": {
               "version": "https://registry.coyno.com/buffertools/-/buffertools-2.1.2.tgz"
@@ -377,7 +377,7 @@
               "version": "git://github.com/maraoz/browserify-buffertools.git#fe676bceffad2797d096f1aaf929cf1645121799"
             },
             "elliptic": {
-              "version": "https://registry.coyno.com/elliptic/-/elliptic-0.15.12.tgz",
+              "version": "https://hushhush.levinkeller.de:4873/elliptic/-/elliptic-0.15.12.tgz",
               "dependencies": {
                 "hash.js": {
                   "version": "https://hushhush.levinkeller.de:4873/hash.js/-/hash.js-0.2.1.tgz"
@@ -396,7 +396,7 @@
               }
             },
             "jsrsasign": {
-              "version": "https://registry.coyno.com/jsrsasign/-/jsrsasign-0.0.3.tgz"
+              "version": "0.0.3"
             },
             "preconditions": {
               "version": "1.0.8",
@@ -407,7 +407,7 @@
               }
             },
             "protobufjs": {
-              "version": "https://registry.coyno.com/protobufjs/-/protobufjs-3.0.0.tgz",
+              "version": "3.0.0",
               "dependencies": {
                 "bytebuffer": {
                   "version": "https://hushhush.levinkeller.de:4873/bytebuffer/-/bytebuffer-3.1.1.tgz",
@@ -784,7 +784,7 @@
           "version": "https://registry.coyno.com/moment/-/moment-2.7.0.tgz"
         },
         "request": {
-          "version": "https://registry.coyno.com/request/-/request-2.39.0.tgz",
+          "version": "2.39.0",
           "dependencies": {
             "qs": {
               "version": "https://hushhush.levinkeller.de:4873/qs/-/qs-0.6.6.tgz"
@@ -846,7 +846,7 @@
               "version": "https://hushhush.levinkeller.de:4873/oauth-sign/-/oauth-sign-0.3.0.tgz"
             },
             "hawk": {
-              "version": "https://registry.coyno.com/hawk/-/hawk-1.1.1.tgz",
+              "version": "https://hushhush.levinkeller.de:4873/hawk/-/hawk-1.1.1.tgz",
               "dependencies": {
                 "hoek": {
                   "version": "https://hushhush.levinkeller.de:4873/hoek/-/hoek-0.9.1.tgz"
