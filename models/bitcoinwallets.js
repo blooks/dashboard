@@ -79,7 +79,8 @@ BitcoinWallets.allow({
 });
 
 BitcoinWallets.simpleSchema().messages({
-  invalidBIP32xpub: "[label] is not of the correct format!"
+  invalidBIP32xpub: "[label] is not of the correct format!",
+  seedAlreadyStored: "A wallet [label] already in the database"
 });
 
 
