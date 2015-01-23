@@ -125,7 +125,6 @@ if (Meteor.isServer) {
     // DGB 2015-01-23 05:17 
     // Cascading removals only if the user has wallets
     userWallets.forEach(function(wallet) {
-       console.log('Deleting wallet:' + wallet._id);
        BitcoinWallets.remove({_id: wallet._id});
     });
   });
