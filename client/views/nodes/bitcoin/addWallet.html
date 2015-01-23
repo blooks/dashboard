@@ -1,15 +1,29 @@
 <template name="addWallet">
-    <div class="col-lg-4">
-            <div class="bordered">
+<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
+       <img src="/img/external-logos/{{actiontype}}-logo.png">
+       <h3 class="label-title"> Adding {{actiontype}} </h3>
+{{#unless isArmory}}
+
+            {{> Template.dynamic template=guideTemplate}}
                 <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a wallet</h3>
-                {{#autoForm collection='BitcoinWallets' type='insert'  id='addNewBitcoinWallet'  validation='keyup'}}
+                {{#autoForm collection='BitcoinWallets' type='insert'  id='addNewBitcoinWallet'  validation='keyup' autofocus=''}}
                     {{> afQuickField name='label' }}
                     {{> afQuickField name='type' value=actiontype type='hidden'}}
+                    <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
                     {{#unless afFieldValueIs name='type' value='single-addresses'}}
                         {{> afQuickField name='hdseed'}}
                     {{/unless}}
                     <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
                 {{/autoForm}}
-            </div>
-        </div>
+{{else}}
+{{> mockupForBitcoinInputTemplate}}
+{{/unless}}
+<!--      <div class="row decision-callout">
+   ... or
+ </div>
+ -->
+      <div class="row">
+        <button type="button" class="btn back btn-no-box">&lt; ... or select another wallet</button>
+      </div>
+</div>
 </template>

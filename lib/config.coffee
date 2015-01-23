@@ -35,8 +35,9 @@ Meteor.settings.public.coyno =
   supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'single-addresses']
   availableWallets: [{type: 'bitcoin-wallet', label: 'Bitcoin Wallet'},
                     {type: 'electrum', label: 'Electrum'},
+                    {type: 'armory', label: 'Armory'},
     {type: 'single-addresses', label: 'Single Addresses'}]
-  unavailableWallets: [{type: 'armory', label: 'Armory'},
+  unavailableWallets: [
     {type: 'trezor', label: 'Trezor'},
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},
