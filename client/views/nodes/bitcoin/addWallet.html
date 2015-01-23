@@ -4,7 +4,7 @@
                 <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a wallet</h3>
                 {{#autoForm collection='BitcoinWallets' type='insert'  id='addNewBitcoinWallet'  validation='keyup'}}
                     {{> afQuickField name='label' }}
-                    {{> afQuickField name='type' value=actiontype}}
+                    {{> afQuickField name='type' value=actiontype type='hidden'}}
                     {{#unless afFieldValueIs name='type' value='single-addresses'}}
                         {{> afQuickField name='hdseed'}}
                     {{/unless}}
