@@ -1,178 +1,185 @@
 <template name="newBitcoinWallet">
 
-{{#if areWeOnThisStage 'first'}}
+  {{#if areWeOnThisStage "first"}}
 
-<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy">
-<h3>What kind of <span class="fat">wallet</span> do you want to add..?</h3>
-  <ul class="wallet-selection text-center">
-    <li>
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/bitcoin-wallet-logo.png">
-      <div class="wallet-label-text">Bitcoin Wallet</div>
-    </a>
-    </li>
+  <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy">
+    <h3>What kind of <span class="fat">wallet</span> do you want to add..?</h3>
+    <ul class="wallet-selection text-center">
+      <li>
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/bitcoin-wallet-logo.png">
+          <div class="wallet-label-text">Bitcoin Wallet</div>
+        </a>
+      </li>
 
-    <li>
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/electrum-logo.png">
-      <div class="wallet-label-text">Electrum</div>
-    </a>
-    </li>
+      <li>
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/electrum-logo.png">
+          <div class="wallet-label-text">Electrum</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/armory-logo.png">
-      <div class="wallet-label-text">Armory</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/armory-logo.png">
+          <div class="wallet-label-text">Armory</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/trezor-logo.png">
-      <div class="wallet-label-text">Trezor</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/trezor-logo.png">
+          <div class="wallet-label-text">Trezor</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/multibit-logo.png">
-      <div class="wallet-label-text">MultiBit</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/multibit-logo.png">
+          <div class="wallet-label-text">MultiBit</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/green-address-wallet-logo.png">
-      <div class="wallet-label-text">Green Address</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/green-address-wallet-logo.png">
+          <div class="wallet-label-text">Green Address</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/hive-wallet-logo.png">
-      <div class="wallet-label-text">Hive</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/hive-wallet-logo.png">
+          <div class="wallet-label-text">Hive</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/breadwallet-logo.png">
-      <div class="wallet-label-text">Bread Wallet</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/breadwallet-logo.png">
+          <div class="wallet-label-text">Bread Wallet</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/mycelium-logo.png">
-      <div class="wallet-label-text">Mycelium</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/mycelium-logo.png">
+          <div class="wallet-label-text">Mycelium</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/kncwallet-logo.png">
-      <div class="wallet-label-text">KnC</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/kncwallet-logo.png">
+          <div class="wallet-label-text">KnC</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li class="coming-soon">
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/external-logos/msigna-logo.png">
-      <div class="wallet-label-text">mSigna</div>
-      <div class="coming-soon-sign">Coming soon</div>
-    </a>
-    </li>
+      <li class="coming-soon">
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/external-logos/msigna-logo.png">
+          <div class="wallet-label-text">mSigna</div>
+          <div class="coming-soon-sign">Coming soon</div>
+        </a>
+      </li>
 
-    <li>
-    <a href="#" class="wallet-thumbs">
-      <img src="/img/wallet-icon-default.png">
-      <div class="wallet-label-text">Single Address</div>
-    </a>
-    </li>
+      <li>
+        <a href="#" class="wallet-thumbs">
+          <img src="/img/wallet-icon-default.png">
+          <div class="wallet-label-text">Single Address</div>
+        </a>
+      </li>
 
-  </ul>
-</div>
-{{/if}} {{!-- DGB 2015-01-20 07:17 End of stage 1 --}}
+    </ul>
+  </div>
+  {{/if}} {{!-- DGB 2015-01-20 07:17 End of stage 1 --}}
 
-{{#if areWeOnThisStage 'second'}}
+  {{#if areWeOnThisStage "second"}}
   {{#with getNewWalletData}}
-    
-    {{#if isElectrum}}
-    {{> electrumWalletImportGuide}}
-        <a href="#" data-toggle="modal" data-target="#electrumWalletImportGuide"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
-    {{/if}}
 
-    {{#if isBitcoinWallet}}
-   {{> bitcoinWalletImportGuide}}
-    <a href="#" data-toggle="modal" data-target="#bitcoinWalletImportGuide"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
-    {{/if}}
+    <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
+      <img src="{{getLogoImageFromWalletType type}}" class="new-wallet-logo" />
+      <h3 class="label-title"> Adding {{type}} </h3>
+      <div class="row">
+        <button type="button" class="btn back btn-no-box">&lt; Select another wallet</button>
+      </div>
 
+      <form class="bold-input-text">
+       <input name="type" type="hidden" value="{{getWalletFormatFromWalletType type}}">
+        <div class="spacy form-group">
+          <label class="field-type">Label</label>
+            <div class="input-group">
+            <input type="text" name="label" class="form-control bold-input" id="" value="" placeholder="Wallet label" autofocus />
+           <span class="input-group-addon">
+           {{#if validFormLabel}}
+              {{> newBitcoinWalletGoodValidation}}
+              {{else}}
+              {{> newBitcoinWalletBadValidation}}
+           {{/if}}
+           </span>
+        </div>
+      </div>
 
-  <div class="bordered">
-  <div style='text-align:center'>
-    <img src='{{getLogoImageFromWalletType type}}'> 
-  </div>
-  <!-- DGB 2015-01-21 08:13 Deprecated
-  <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a {{type}} wallet </h3>
-  -->
-
-  <div style='width: 500px; margin: 0 auto;'> <!-- Starts container for the form -->
-  <form class='form-inline'>
-    <input name='type' type='hidden' value='{{getWalletFormatFromWalletType type}}'>   
-    
-  {{#if validFormLabel}}{{> newBitcoinWalletGoodValidation}}{{else}}{{> newBitcoinWalletBadValidation}}{{/if}}
-  <div >
-    <strong style='min-width: 120px; text-align: right; display: inline-block; padding-right:1em;'>Label</strong>
-  <input name='label' class='form-control form-inline' style='width: 350px' id='' value=''/>
-  </div>
-  
-  <div class='clearfix'></div>
-  
       {{#if isElectrum}}
-       {{#if validFormSeed}}{{> newBitcoinWalletGoodValidation}}{{else}}{{> newBitcoinWalletBadValidation}}{{/if}}
-        <div >
-        <!-- Android Wallet / BIP32 -->
-      <strong style='min-width: 120px; text-align: right; display: inline-block;padding-right:1em;'>Master Public Key</strong>
-      <textarea name='hdseed' class='form-control' id='' style='width: 350px; height: 200px;' value=''></textarea>
-    </div>
-    {{else}}
-      {{#if isBitcoinWallet}}
-       <!-- Electrum -->
-      {{#if validFormSeed}}{{> newBitcoinWalletGoodValidation}}{{else}}{{> newBitcoinWalletBadValidation}}{{/if}}
-      <div>
-      <strong style='min-width: 120px; text-align: right; display: inline-block; padding-right:1em;'>HDSeed</strong>
-      <textarea name='hdseed' class='form-control' id='' style='width: 350px' value=''></textarea>
+      <!-- Electrum -->
+      <div class="spacy form-group">
+        {{> electrumWalletImportGuide}}
+          <label class="field-type">Master Public Key <a href="#" data-toggle="modal" data-target="#electrumWalletImportGuide"><span class="icon icon-help-circled"></span></a></label>
+          <div class="input-group">
+          <input type="text" name="hdseed" class="form-control bold-input" id="" value="" placeholder="Paste your public key" />
+          <span class="input-group-addon">
+          {{#if validFormSeed}}
+            {{> newBitcoinWalletGoodValidation}}
+            {{else}}
+            {{> newBitcoinWalletBadValidation}}
+          {{/if}}
+          </span>
+        </div>
       </div>
       {{else}}
-      <!-- Single Addresses -->
+        <!--  Android Wallet / BIP32 -->
+      {{#if isBitcoinWallet}}
+        <div class="spacy form-group">
+          {{> bitcoinWalletImportGuide}}
+
+          <label class="field-type">HDSeed <a href="#" data-toggle="modal" data-target="#bitcoinWalletImportGuide"><span class="icon icon-help-circled"></span></a></label>
+          <div class="input-group">
+            <input type="text" name="hdseed" class="form-control bold-input" id="" value="" placeholder="Paste your public key" />
+            <span class="input-group-addon">
+              {{#if validFormSeed}}
+                {{> newBitcoinWalletGoodValidation}}
+              {{else}}
+                {{> newBitcoinWalletBadValidation}}
+              {{/if}}
+            </span>
+          </div>
+        </div>
+        {{else}}
+        <!-- Single Addresses -->
+        {{/if}}
       {{/if}}
-    {{/if}}
 
-  <div class='clearfix' style='margin-top: 2em; clear:both'></div>
-  <button type="submit" class="btn btn-primary btn-lg pull-right {{#unless validForm}}disabled{{/unless}}">{{i18n 'nodes.buttons.save'}}</button>
-  <button type='button' class="btn btn-primary back btn-lg pull-left">back</button>
-  <div class='clearfix' style='clear:both'></div>
-
-</form>
-</div> <!-- End container -->
-
+      <div class="row clearfix">
+        <button type="submit" class="btn btn-lg {{#unless validForm}} disabled {{/unless}}">Add this wallet</button>
+      </div>
+    </form>
   </div>
   {{/with}}
-{{/if}} {{!-- DGB DGB 2015-01-20 07:18 End of stage 2 --}}
+  {{/if}} {{!-- DGB DGB 2015-01-20 07:18 End of stage 2 --}}
 </template>
 
-<template name='newBitcoinWalletBadValidation'>
-  <span class='pull-right' style='color:red; font-size: 2em;'><i class='icon icon-close'></i></span>
+<template name="newBitcoinWalletBadValidation">
+  <span class="negative"><i class="icon icon-close"></i></span>
 </template>
 
-<template name='newBitcoinWalletGoodValidation'>
-  <span class='pull-right'  style='color:green; font-size: 2em;'><i class='icon icon-check'></i></span>
+<template name="newBitcoinWalletGoodValidation">
+  <span class="positive"><i class="icon icon-check"></i></span>
 </template>
