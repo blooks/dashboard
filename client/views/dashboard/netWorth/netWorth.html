@@ -10,7 +10,12 @@
 	    </div>
 	    <div class="summary-data spacy">
 	        <h4 class="totals">Total fiat value </h4>
-	         <p class="sum">{{totalBalanceCurrency currency}} {{this.currency}}</p>
+	         <p class="sum">{{totalBalanceFiat}} {{userCurrency}}</p>
 	    </div>
+		{{#if currencyIsFiat}}
+        <a href="/dashboard/netWorth/BTC">Show in BTC</a>
+		{{else}}
+			<a href="/dashboard/netWorth/BTC">Show in BTC</a>
+		{{/if}}
 	</div>
 </template>

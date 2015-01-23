@@ -16,12 +16,13 @@ Coynverter.update = function () {
 };
 
 Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
-  var conversionSync= Async.wrap(CoynoCoynverter, ['convert']);
-  var conversionResult = conversionSync.convert(fromCurrency, toCurrency, amountToConvert, date);
-  return conversionResult;
+  if (fromCurrency === toCurrency) {
+    return amountToConvert;
+  };
+  var syncConverter= Async.wrap(CoynoCoynverter, ['convert']);
+  return syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date);
 };
 
 Meteor.startup(function () {
   Coynverter.update();
-  Log.info(Coynverter.convert('BTC', 'EUR', 1, '2015-01-10'));
 });

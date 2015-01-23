@@ -1,17 +1,5 @@
 Meteor.methods({
   /**
-   * [calculateBaseAmount description]
-   * @param  {[type]} amount [description]
-   * @param  {[type]} from   [description]
-   * @param  {[type]} date   [description]
-   * @return {[type]}        [description]
-   */
-  calculateBaseAmount: function (amount, from, date) {
-    Coynverter.calculateBaseAmount(amount, from, date, function (err, result) {
-      return result;
-    });
-  },
-  /**
    * 12.01.2015 LFG
    * [sendEmail send an email notification when the password is changed]
    * DGB 2015-01-14 04:43 Converted into a generic function to be able to send
@@ -107,8 +95,12 @@ Meteor.methods({
    * @return {[type]}          [description]
    */
   dataForChartDashboardBasedOnCurrency: function (currency) {
-    var satoshiToBTC = function (amount) {
-      return (amount / 10e7).toFixed(8);
+    var convertToSaneAmount = function (amount, currency) {
+      if (currency === 'BTC') {
+        return parseFloat((amount / 10e7).toFixed(8));
+      } else {
+        return parseFloat((amount / 10e7).toFixed(2));
+      }
     };
     var balances = [];
     var balance = 0;
@@ -149,14 +141,13 @@ Meteor.methods({
         balance -= (transfer.representation.amount);
       }
     });
-    //console.log(balances);
-    return balances;
+    var result = [];
+    balances.forEach(function (entry) {
+      result.push([entry[0], convertToSaneAmount(entry[1][currency])]);
+    });
+    return result;
   },
-  connectTransfer: function(transfer) {
-    console.log(transfer);
-    transfer.update();
-  },
-  getLastExchangeRateForBTC: function (currency) {
-    return Coynverter.convert('BTC', currency, 1, moment().format('YYYY-MM-DD'));
+  convert: function (fromCurrency, toCurrency, amount, time) {
+    return Coynverter.convert(fromCurrency, toCurrency, amount, time);
   }
 });
