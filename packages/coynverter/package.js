@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.3.1');
-  api.addFiles('coyno:coynverter.js');
+  api.addFiles('coynverter.js');
   api.export('Coynverter', 'server');
 });
 

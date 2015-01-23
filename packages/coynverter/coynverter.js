@@ -1,4 +1,4 @@
-var CoynverterPackage = Meteor.npmRequire("coyno-converter");
+var CoynverterPackage = Npm.require("coyno-converter");
 
 Coynverter = {
   mongourl: process.env.MONGO_URL,
