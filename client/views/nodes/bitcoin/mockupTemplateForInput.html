@@ -1,0 +1,41 @@
+<template name="mockupForBitcoinInputTemplate">
+		<!-- Here the Modal guide template is dynamically included according to wallet type (see adWallet.js for method) --> 
+		{{> Template.dynamic template=guideTemplate}}
+	   <form class="bold-input-text">
+			<div class="spacy form-group">
+	          <label class="field-type">Label</label>
+	            <div class="input-group">
+	            <input type="text" name="label" class="form-control bold-input" id="" value="" placeholder="Wallet label" autofocus />
+					<span class="input-group-addon">
+						<span class="negative"><i class="icon icon-close"></i></span>
+						<!--
+						@David Span container must change class to "positive" and icon-close become icon-check
+
+						<span class="positive"><i class="icon icon-check"></i></span>
+							-->
+					</span>
+	        	</div>
+	      	</div>
+
+			<div class="spacy form-group">
+	          <label class="field-type">HD Seed <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span></a></label>
+	          <!-- Label is dependent on Wallet type (ie. Master PUblic Key for Electrum and other names in future ) -->
+	            <div class="input-group">
+	            <input type="text" name="label" class="form-control bold-input" id="" value="" placeholder="Public seed here" />
+					<span class="input-group-addon">
+						<span class="negative"><i class="icon icon-close"></i></span>
+						<!--
+						@David Span container must change class to "positive" and icon-close become icon-check
+
+						<span class="positive"><i class="icon icon-check"></i></span>
+							-->
+					</span>
+	        	</div>
+	      	</div>
+
+ 		<div class="row clearfix">
+        	<button type="submit" class="btn btn-lg disabled">Add this wallet</button>
+      	</div>
+
+	   </form>
+</template>
