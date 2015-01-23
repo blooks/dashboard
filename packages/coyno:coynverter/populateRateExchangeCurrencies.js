@@ -5,15 +5,9 @@ Meteor.startup(function () {
     var Coynverter = Meteor.npmRequire("coyno-converter");
     var coynverter = new Coynverter(process.env.MONGO_URL);
     currencies.forEach(function (currency) {
-      try {
-        coynverter.updateExchangeRates(currency, "bitcoinExchangeRates", function (err, result) {
-          if (err) {
-            Log.error(err);
-          }
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
+        coynverter.update(currency);
+    });
 });
+
+//TODO: Cronjob to daily get new rates.
 
