@@ -8,7 +8,9 @@ Meteor.users.helpers({
         result += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        result -= (transfer.representation.fee);
+        if(typeof transfer.representation.fee === 'Number'){
+          result -= (transfer.representation.fee);
+        }
         result -= (transfer.representation.amount);
       }
     });
