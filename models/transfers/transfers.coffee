@@ -1,5 +1,5 @@
-#21.01.2015 LFG for avoiding call to an API to get the last price of BitCoin que need 
-#to publish the last day available on the databse 
+#21.01.2015 LFG for avoiding call to an API to get the last price of BitCoin que need
+#to publish the last day available on the databse
 #for calculate the value of the bitcoins in the user currency
 # Create the meteor collection
 ## A Transfer is a transaction that moves one kind of a currency between
@@ -39,6 +39,8 @@ Schemas.TransferRepresentation = new SimpleSchema
   recipientLabels:
     type: [String]
   amount:
+    type: Number
+  fee:
     type: Number
 
 currencyBaseVolume = new SimpleSchema(

@@ -184,6 +184,7 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
+      representation.fee = transfer.fee();
       conversor(representation.amount, transfer.date, transfer._id);
       Transfers.update(
         {"_id": transfer._id},
