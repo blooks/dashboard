@@ -104,7 +104,7 @@ Router.map(function() {
     }
   });
   this.route('nodes', {
-    path: '/nodes/nodesOverview',
+    path: '/nodes/',
     data: function() {
       return {
         type: 'bitcoinWallets'
