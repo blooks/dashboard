@@ -17,6 +17,12 @@ Template.bitcoinWallets.helpers({
   },
   bitcoinwallets: function () {
     return BitcoinWallets.find().fetch();
+  },
+  dynamicTemplate: function() {
+    if (this.action === "add") {
+      return "newBitcoinWallet";
+    }
+    return "";
   }
 });
 
