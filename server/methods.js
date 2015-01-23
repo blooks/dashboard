@@ -106,11 +106,7 @@ Meteor.methods({
    * @param  {[type]} currency [description]
    * @return {[type]}          [description]
    */
-  dataForChartDashboardBasedOnCurrency: function (currency) {
-    var satoshiToBTC = function (amount) {
-      return (amount / 10e7).toFixed(8);
-    };
-
+  dataForChartDashboardBasedOnCurrency: function (userCurrency) {
     var balances = [];
     var balance = 0;
     var time = 0;
@@ -118,14 +114,14 @@ Meteor.methods({
     var timeDelta = 86400000;
     Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
       var transferTime = transfer.date.getTime();
-      var fiatCurrencies = Meteor.settings.global.coyno.fiatCurrencies;
+      var fiatCurrencies = ["EUR", "USD"];
       var valuations = {};
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       if (time === 0) {
         time = transferTime-timeDelta;
         valuations = {};
-        fiatCurrencies.forEach(function(currency) {
+        fiatCurrencies.forEach(function (currency) {
           {
             valuations[currency] = 0;
           }
@@ -136,7 +132,7 @@ Meteor.methods({
       while (time <= transferTime)  {
         time += timeDelta;
         valuations = {};
-        fiatCurrencies.forEach(function(currency) {
+        fiatCurrencies.forEach(function (currency) {
           valuations[currency] = Coynverter.convert('BTC', currency, balance, time);
         });
         valuations['BTC'] = balance;
@@ -158,6 +154,6 @@ Meteor.methods({
     transfer.update();
   },
   getLastExchangeRateForBTC: function (currency) {
-    return BitcoinExchangeRates.findOne({}, {sort: {date: -1}})[currency];
+    return Coynverter.convert('BTC', currency, 1, moment().format('YYYY-MM-DD'));
   }
 });
