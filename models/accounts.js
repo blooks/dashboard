@@ -115,3 +115,18 @@ var Schema = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema);
+
+if (Meteor.isServer) {
+  // DGB 2015-01-23 05:19 
+  // Before we delete the user, we remove related wallets first. Wallets will
+  // cascade into accounts, accounts will cascade into transfers
+  Meteor.users.before.remove(function (userId, doc) {
+    var userWallets = BitcoinWallets.find({'userId': doc._id},{fields:{id:1}}).fetch();
+    // DGB 2015-01-23 05:17 
+    // Cascading removals only if the user has wallets
+    userWallets.forEach(function(wallet) {
+       console.log('Deleting wallet:' + wallet._id);
+       BitcoinWallets.remove({_id: wallet._id});
+    });
+  });
+}
