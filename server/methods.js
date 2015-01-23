@@ -64,23 +64,23 @@ Meteor.methods({
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
-  // DGB 2015-01-21 06:32 
+  // DGB 2015-01-21 06:32
   // Changes the email of the user. As we only allow one email per user, we know
   // the email will be on the position 0 of the email array. We send the email to the old address to inform of the change
   changeUserEmail: function (email) {
     var self = this;
-    if (!self.userId) return; 
-    // DGB 2015-01-21 06:46 Validate email with Collection2 
+    if (!self.userId) return;
+    // DGB 2015-01-21 06:46 Validate email with Collection2
     if (Meteor.users.simpleSchema().namedContext().validate({$set:{'emails.$.address':email}}, {modifier: true})) {
       try {
         oldEmail=Meteor.users.findOne({_id: self.userId}).emails[0].address;
-        Meteor.users.update({_id: self.userId},{$set:{'emails.0.address':email}}) 
+        Meteor.users.update({_id: self.userId},{$set:{'emails.0.address':email}})
       } catch (e) {
       // DGB 2015-01-21 07:04 The reason Mongo complain after passing validation
       // is that the email is not unique (Collection2 doesn't check this ?,
       // weird)
-        throw new Meteor.Error(402, "Invalid Email. Some other user has already this email, please insert a different one", "", ""); 
-      } 
+        throw new Meteor.Error(402, "Invalid Email. Some other user has already this email, please insert a different one", "", "");
+      }
       // DGB 2015-01-21 07:16 Cannot use the method, we want to send it to the
       // old Address
       try {
@@ -91,13 +91,13 @@ Meteor.methods({
         text: Accounts.emailTemplates.changeEmail.text()
       });
       } catch (e) {
-      throw new Meteor.Error(500, "Error while delivering an email warning you of the modification of your email", "", ""); 
+      throw new Meteor.Error(500, "Error while delivering an email warning you of the modification of your email", "", "");
       }
     }
     else {
      // DGB 2015-01-21 06:49 Return error, to indicate the client the email is
       // valid
-      throw new Meteor.Error(402, "Invalid Email: Please insert a valid email address", "", ""); 
+      throw new Meteor.Error(402, "Invalid Email: Please insert a valid email address", "", "");
     }
     return true; //DGB 2015-01-21 06:52 Returns a result
   },
@@ -110,10 +110,10 @@ Meteor.methods({
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
-    var convertToBTC = function (time, amount, currency){
+    var convertToFiat = function (time, amount, currency){
       var rate = BitcoinExchangeRates.findOne({date: new Date(moment(time).format("YYYY-MM-DD"))});
       //Log.info(amount);
-      return Math.round((amount*rate[currency])/100000000);
+      return parseFloat(satoshiToBTC(Math.round(amount*rate[currency])));
     };
     var balances = [];
     var changes = [];
@@ -132,8 +132,8 @@ Meteor.methods({
         change = 0;
         time += timeDelta;
         if(currency==="EUR" || currency==='USD'){
-          balances.push([time, convertToBTC(time, balance, currency)]);
-          changes.push([time, convertToBTC(time, balance, currency)]);
+          balances.push([time, convertToFiat(time, balance, currency)]);
+          changes.push([time, convertToFiat(time, balance, currency)]);
         }
         if(currency==="BTC"){
           balances.push([time, parseFloat(satoshiToBTC(balance))]);
