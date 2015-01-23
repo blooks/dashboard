@@ -42,7 +42,7 @@ Meteor.methods({
    * 13.01.2015 LFG
    * [removeAccount removes the user account, in meteor is not possible to use the remove in a correct way from cliente, needs to be done in server side]
    * DGB 2015-01-13 06:02 This method needs to remove ALL data related to
-   * the user, at the moment is only removing the user from the database but not
+   * the user, at the is only removing the user from the database but not
    * the related transactions.
    * @return {undefined} [description]
    */
@@ -110,54 +110,53 @@ Meteor.methods({
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
-    var convertToFiat = function (time, amount, currency){
-      var rate = BitcoinExchangeRates.findOne({date: new Date(moment(time).format("YYYY-MM-DD"))});
-      //Log.info(amount);
-      return parseFloat(satoshiToBTC(Math.round(amount*rate[currency])));
-    };
     var balances = [];
-    var changes = [];
     var balance = 0;
-    var change = 0;
     var time = 0;
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
     Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
+      var transferTime = transfer.date.getTime();
+      var fiatCurrencies = ["EUR", "USD"];
+      var valuations = {};
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       if (time === 0) {
-        time = moment(transfer.date-timeDelta).valueOf();
+        time = transferTime-timeDelta;
+        valuations = {};
+        fiatCurrencies.forEach(function (currency) {
+          {
+            valuations[currency] = 0;
+          }
+        });
+        valuations['BTC'] = 0;
+        balances.push([time, valuations]);
       }
-      while (moment(transfer.date).valueOf() >= moment(time).valueOf()) {
-        change = 0;
+      while (time <= transferTime)  {
         time += timeDelta;
-        if(currency==="EUR" || currency==='USD'){
-          balances.push([time, convertToFiat(time, balance, currency)]);
-          changes.push([time, convertToFiat(time, balance, currency)]);
-        }
-        if(currency==="BTC"){
-          balances.push([time, parseFloat(satoshiToBTC(balance))]);
-          changes.push([time, parseFloat(satoshiToBTC(change))]);
-        }
+        valuations = {};
+        fiatCurrencies.forEach(function (currency) {
+          valuations[currency] = Coynverter.convert('BTC', currency, balance, time);
+        });
+        valuations['BTC'] = balance;
+        balances.push([time, valuations]);
       }
       if (transfer.isIncoming()) {
         balance += transfer.representation.amount;
-        change += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
+        balance -= (transfer.representation.fee);
         balance -= (transfer.representation.amount);
-        change -= (transfer.representation.amount);
       }
     });
     //console.log(balances);
-    return [balances, changes];
+    return balances;
   },
   connectTransfer: function(transfer) {
     console.log(transfer);
     transfer.update();
   },
   getLastExchangeRateForBTC: function (currency) {
-    return BitcoinExchangeRates.findOne({}, {sort: {date: -1}})[currency];
+    return Coynverter.convert('BTC', currency, 1, moment().format('YYYY-MM-DD'));
   }
 });

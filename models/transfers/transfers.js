@@ -14,30 +14,6 @@ var nodeLabel = function nodeLabel(nodeId) {
 
 if (Meteor.isServer) {
   /**
-   * [conversor function that saved to database the value of the bitcoin is USD and EUR for one date]
-   * @param  {[type]} amount     [description]
-   * @param  {[type]} date       [description]
-   * @param  {[type]} transferId [description]
-   * @return {[type]}            [description]
-   */
-  var conversor = function (amount, date, transferId) {
-    var Fiber = Npm.require("fibers");
-    var Coynverter = Meteor.npmRequire("coyno-converter");
-    var coynverter = new Coynverter(process.env.MONGO_URL);
-    var currencies = ["EUR", "USD"];
-    currencies.forEach(function (currency){
-      coynverter.convert(moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
-        if(exchangeRate){
-          Fiber(function() {
-            var rateCurrency = {};
-            rateCurrency[currency]=Math.round(exchangeRate);
-            Transfers.update({"_id": transferId}, {$push: {"baseVolume": rateCurrency}});
-          }).run();
-        }
-      });
-    });
-  };
-  /**
    *
    * @param inoutput
    * @returns {*}
@@ -184,11 +160,18 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
+
+      var currencies = ["EUR", "USD"];
+      var valuesToSave = [];
+      currencies.forEach(function (currency) {
+        var exchangeRate = {};
+        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, moment(transfer.date).format('YYYY-MM-DD')));
+        valuesToSave.push(exchangeRate);
+      });
       representation.fee = transfer.fee();
-      conversor(representation.amount, transfer.date, transfer._id);
       Transfers.update(
         {"_id": transfer._id},
-        {$set: {"representation": representation}}
+        {$set: {"representation": representation, "baseVolume": valuesToSave}}
       );
     },
     connect: function() {

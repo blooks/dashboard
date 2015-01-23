@@ -28,6 +28,7 @@ Meteor.settings.public = {} unless Meteor.settings.public?
 Meteor.settings.public.coyno =
   allowedCurrencies: ['EUR', 'USD', 'BTC', 'XRP', 'Altcoin']
   valuedCurrencies: ['EUR', 'USD', 'BTC']
+  fiatCurrencies: ['EUR', 'USD']
   defaultJurisdiction: 'de'
   allowedNodeTypes: ['Exchange', 'BankAccount', 'BitcoinWallet']
   supportedExchanges: ['Bitstamp', 'Kraken']

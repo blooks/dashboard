@@ -1,6 +1,5 @@
 {
   "chain-node": "3.0.1",
   "bitcore": "0.9.3",
-  "bitcore-electrum": "0.0.3",
-  "coyno-converter": "0.0.14"
+  "bitcore-electrum": "0.0.3"
 }

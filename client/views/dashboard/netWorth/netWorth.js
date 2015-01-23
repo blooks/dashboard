@@ -3,7 +3,6 @@
  */
 
 var builtStockLocal = function (currency) {
-  console.log(currency);
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result && result[0]){
       var data = result[0];
@@ -13,7 +12,6 @@ var builtStockLocal = function (currency) {
         },
         title: {
           text: 'Total '+currency+' Holdings'
-
         },
         series: [{
           name: currency,
