@@ -104,19 +104,21 @@ Router.map(function() {
     }
   });
   this.route('nodes', {
-    path: '/nodes/nodesOverview',
+    path: '/nodes/',
     data: function() {
       return {
         type: 'bitcoinWallets'
       };
     }
   });
-  this.route('/nodes/:type', {
-    path: '/nodes/:type',
+  this.route('nodesdetails', {
+    path: '/nodes/:type/:action?/:actiontype?',
     template: 'nodes',
     data: function() {
       return {
-        type: this.params.type
+        type: this.params.type,
+        action: this.params.action,
+        actiontype: this.params.actiontype
       };
     }
   });
