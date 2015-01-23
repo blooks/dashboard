@@ -108,9 +108,6 @@
     <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
       <img src="{{getLogoImageFromWalletType type}}" class="new-wallet-logo" />
       <h3 class="label-title"> Adding {{type}} </h3>
-      <div class="row">
-        <button type="button" class="btn back btn-no-box">&lt; Select another wallet</button>
-      </div>
 
       <form class="bold-input-text">
        <input name="type" type="hidden" value="{{getWalletFormatFromWalletType type}}">
@@ -169,6 +166,13 @@
 
       <div class="row clearfix">
         <button type="submit" class="btn btn-lg {{#unless validForm}} disabled {{/unless}}">Add this wallet</button>
+      </div>
+      <div class="row decision-callout">
+        or
+      </div>
+
+      <div class="row">
+        <button type="button" class="btn back btn-no-box">&lt; Select another wallet</button>
       </div>
     </form>
   </div>
