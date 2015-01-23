@@ -1,16 +1,7 @@
 <template name="userNotification">
-<style>
-  // DGB 2015-01-14 04:31 Erasmus, it is safe to rename of modify these classes. Please add them on the global styling so we can less-isy the class and use mixins. This style is a placeholder.
-  .user-notification {}
-  .user-notification > div {margin:0em 0em 1em 0em; padding: 1.5em; font-size: 1.2rem; color: white; font-weight: bold; background-color: #aaa; border: 2px solid #555;}
-  .user-notification > .error {background-color: red; border-color: darkred; }
-  .user-notification > .success {background-color: green; border-color: darkgreen; }
-</style>
-<div class='user-notification'>
-  <div class='{{class}}'>
+  <div class='user-notification {{class}} spacy'>
     {{message}}
   </div>
-</div>
 </template>
 
 <template name="userProfile">
@@ -22,75 +13,29 @@
      <div class="row desktop-zone profile">
 			<div class="col-sm-6 col-sm-offset-3">
         <h3 class="form-divider">Your details</h3>
-        <style>
-          //DGB 2015-01-19 08:04 Erasmus plx move it to main less file
-          .inputDisplay {display:inline-block; min-width:50%; padding: 0.34em; font-size: 16px; letter-spacing: 1px; border:1px solid white; }
-          .inputEdit {display:inline-block; min-width:50%; padding: 0.34em}
-          .big-input-item {height: 51px!important}
-        </style>
-<!-- 
-        <div class="big-input-item">
-        {{#if getEditingSection 'username'}}
-          {{#if getUserMessage 'username'}}
-            {{#with getUserMessage 'username'}}
-              {{ > userNotification }}
-            {{/with}}
-          {{/if}}
-          <div>
-            <span class="field-type">Username:</span>
-            <form name='saveUsername' action='' style='display: inline'><input class='inputEdit' id='newUsername' value='{{displayUsername}}'/>
-            <button class='btn btn-primary pull-right' id='saveUsername'><i class="fa fa-save"></i></button>
-            </form>
-          </div>
-          {{else}}
-          <div>
-            <span class="field-type">Username:</span>
-            <span class="inputDisplay setEditingSectionUsername"> {{displayUsername}} </span>
-            <button class="btn btn-success pull-right setEditingSectionUsername" ><i class="fa fa-pencil" ></i></button>
-          </div>
-        {{/if}}
-      </div>
-
-      <div class='clearfix' style='clear:both'></div>
- -->
-        <div class="big-input-item">
-          {{#if getEditingSection 'email'}}
-            {{#if getUserMessage 'email'}}
-              {{#with getUserMessage 'email'}}
-                {{ > userNotification }}
-              {{/with}}
-            {{/if}}
-             <div>
+          <div class="bold-input-text">
+            {{#if getEditingSection 'email'}}
+              {{#if getUserMessage 'email'}}
+                {{#with getUserMessage 'email'}}
+                  {{ > userNotification }}
+                {{/with}}
+              {{/if}}
+              <div class="spacy">
+                <span class="field-type">Email:</span>
+                <form name='saveEmail' action='' class="inline-form">
+                  <input class='inputEdit inline-edit no-box' id='newEmail' value='{{userEmail}}'/>
+                  <button class='btn btn-no-box' id='saveEmail'><span class="icon icon-save-disk"></span></button>
+                </form>
+              </div>
+            {{else}}
+            <div class="spacy">
               <span class="field-type">Email:</span>
-              <form name='saveEmail' action='' style='display: inline'>
-                <input class='inputEdit' id='newEmail' value='{{userEmail}}'/>
-                <button class='btn btn-primary pull-right' id='saveEmail'><i class="fa fa-save"></i></button>
-              </form>
+              <span class="inputDisplay setEditingSectionEmail no-box"> {{userEmail}} </span>
+              <button class="btn btn-no-box setEditingSectionEmail" ><span class="icon icon-pencil"></span></button>
             </div>
-          {{else}}
-          <div>
-            <span class="field-type">Email:</span>
-            <span class="inputDisplay setEditingSectionEmail"> {{userEmail}} </span>
-            <button class="btn btn-success pull-right setEditingSectionEmail" ><i class="fa fa-pencil" ></i></button>
+            {{/if}}
           </div>
-          {{/if}}
-				</div>
 
-    <div class='spacer' style='clear:both'></div>
-
-    <!-- DGB 2015-01-21 03:24 Commented out for now, we will do this split in
-    the future
-
-    <div class='clearfix' style='clear:both'></div>
-    <button class='btn btn-primary pull-right' id='btnPasswordManagement'>Change Password</button>
-    Password Management
-    <br><br><br>
-<button class='btn btn-primary pull-right' id='btnAccountManagement'>Delete Profile</button>
-    Account Management
-    -->
-
-
-    {{!-- #if getOpenedSection 'passwordManagement' --}}
      <h3 class="form-divider">Change password</h3>
       {{#if getEditingSection 'password'}}
       {{#if getUserMessage 'password'}}
@@ -99,19 +44,15 @@
         {{/with}}
       {{/if}}
       {{/if}}
-      <div class="big-input-item" id='passwordChange'>
-        <span class="field-type">Old password:<input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control"/></span><br>
-        <span class="field-type">New password:<input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control"/></span><br>
-        <span class="field-type">Repeat new password:<input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control"/></span><br>
+      <div class="bold-input-text spacy" id='passwordChange'>
+        <span class="field-type"><input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control bold-input"/></span><br>
+        <span class="field-type"><input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control bold-input"/></span><br>
+        <span class="field-type"><input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control bold-input"/></span><br>
         <button class="btn btn-default pull-right" id="change_password">Change password</button>
       </div>
-    {{!--/if --}} {{! DGB 2015-01-20 03:56 End Open Account Management }}
-
-
 
     <div class='spacer' style='clear:both'></div>
 
-    {{!--#if getOpenedSection 'accountManagement' }}
       <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
         <p>
@@ -122,11 +63,9 @@
         </p>
         <div class="text-center">
           <!-- Button trigger modal -->
-          <button class="btn btn-lg warning-btn" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal">Proceed with profile deletion</button>
+          <button class="btn btn-lg warning-btn spacy" id="delete_profile" data-toggle="modal" data-target="#deleteProfileModal"><span class="icon icon-close"></span>  Delete profile</button>
         </div>
       </div>
-    {{!-- /if}} {{! DGB 2015-01-20 03:56 End Open Account Management --}}
-
     </div>
   </div>
 </div>

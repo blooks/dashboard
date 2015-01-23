@@ -1,6 +1,12 @@
 /* Global form styles
 ---------------- */
-input {
+.inline-form {
+	display: inline;
+}
+
+input[type=text],
+input[type=password],
+textarea {
 	background: none;
 	border: 1px solid @gray-light;
 	letter-spacing: 1px;
@@ -8,14 +14,37 @@ input {
 	&:hover {
 		border: 1px solid @gray-light;
 	}
+
+	&:focus {
+		-moz-box-shadow:    inset 0 10px 10px -10px @gray-lighter;
+		-webkit-box-shadow: inset 0 10px 10px -10px @gray-lighter;
+		box-shadow:         inset 0 10px 10px -10px @gray-lighter;
+		border: 1px solid @gray;
+		outline: none;
+	}
+
+	/* For direct inline-editable content */
 }
 
-.big-input-item {
-	padding: 12px 0;
-	padding: 1.2rem 0;
+.bold-input-text {
 	font-size: 18px;
 	font-size: 1.8rem;
 }
+
+.bold-input {
+		padding: @padding-xl-vertical @padding-large-horizontal;
+}
+
+.no-box {
+	border: none;
+	&:focus {
+		outline: none;
+		-moz-box-shadow:    none;
+		-webkit-box-shadow: none;
+		box-shadow:         none;
+	}
+}
+
 
 /* Class for heading dividing into sections */
 .form-divider {
@@ -102,4 +131,12 @@ ul.wallet-selection {
 			}
 
 	}
+}
+
+button.btn.btn-no-box {
+	border: none;
+		&:hover, &:focus {
+			background-color: transparent;
+			color: @brand-dark;
+		}
 }

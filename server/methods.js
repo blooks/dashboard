@@ -106,7 +106,10 @@ Meteor.methods({
    * @param  {[type]} currency [description]
    * @return {[type]}          [description]
    */
-  dataForChartDashboardBasedOnCurrency: function (userCurrency) {
+  dataForChartDashboardBasedOnCurrency: function (currency) {
+    var satoshiToBTC = function (amount) {
+      return (amount / 10e7).toFixed(8);
+    };
     var balances = [];
     var balance = 0;
     var time = 0;
@@ -142,7 +145,7 @@ Meteor.methods({
         balance += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
+        balance -= (transfer.representation.fee);
         balance -= (transfer.representation.amount);
       }
     });

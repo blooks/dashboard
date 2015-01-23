@@ -11,11 +11,14 @@ Template.sidebar.created = function() {
   },200);
   });
 };
- 
+
 
 Template.sidebar.helpers({
   isActive: function (section) {
-    return (section===Router.current().route.getName());
+    if (section===this.type) {
+      return "active";
+    }
+    return "";
   },
 });
 

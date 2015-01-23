@@ -280,16 +280,13 @@ Meteor.methods({
    */
   updateTx4Wallet: function (wallet) {
     switch (wallet.type) {
-      case 'Armory':
-        updateArmoryWallet(wallet);
-        break;
-      case 'Electrum':
+      case 'electrum':
         updateElectrumWallet(wallet);
         break;
-      case 'BIP32' :
+      case 'bitcoin-wallet' :
         updateBIP32Wallet(wallet);
         break;
-      case 'Single Addresses' :
+      case 'single-addresses' :
         updateSingleAddressWallet(wallet);
         break;
     }

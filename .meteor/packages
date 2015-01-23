@@ -31,8 +31,9 @@ velocity:html-reporter
 mike:mocha
 reactive-var
 email
-
-npm-container
 http
 
 coyno:coynverter
+
+npm-container
+

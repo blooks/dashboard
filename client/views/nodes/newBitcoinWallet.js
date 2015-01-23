@@ -7,6 +7,15 @@ Template.newBitcoinWallet.created = function() {
 };
 
 Template.newBitcoinWallet.helpers({
+  availableWallets : function() {
+    return Meteor.settings.public.coyno.availableWallets;
+  },
+  currentRoute: function() {
+    return Router.current().url;
+  },
+  unavailableWallets : function() {
+    return Meteor.settings.public.coyno.unavailableWallets;
+  },
  areWeOnThisStage: function(s) {
     var stage = Template.instance().newWalletStage.get();
     return Template.instance().newWalletStage.get()===s;
@@ -15,7 +24,7 @@ Template.newBitcoinWallet.helpers({
     return Template.instance().newWalletData.get();
   },
   getLogoImageFromWalletType: function(s) {
-    if (s==='Single Address') return '/img/wallet-icon-default.png' 
+    if (s==='Single Address') return '/img/wallet-icon-default.png'
     return '/img/external-logos/' + s.replace(/\s/g, '-').toLowerCase() + '-logo.png';
   },
   isElectrum: function() {
@@ -34,14 +43,14 @@ Template.newBitcoinWallet.helpers({
     return (Template.instance().newWalletFormValidLabel.get());
   },
   getWalletFormatFromWalletType: function(s) {
-    // DGB 2015-01-21 08:33 This is needed to respect Erasmus wording, but it is not very elegant or easy to maintain and I can see a lot of trouble in the future 
+    // DGB 2015-01-21 08:33 This is needed to respect Erasmus wording, but it is not very elegant or easy to maintain and I can see a lot of trouble in the future
     if (s==='Bitcoin Wallet') return 'BIP32';
     if (s==='Single Address') return 'Single Addresses';
     return s; // DGB 2015-01-21 08:25 True for Armory & Electrum
   }
 });
 
-// DGB 2015-01-22 05:43 
+// DGB 2015-01-22 05:43
 // defined with var so it is only on the scope of THIS template
 // Template.newBitcoinWallet.validateLabel = function(label) {
 var validateLabel = function(label,type) {
@@ -60,7 +69,7 @@ Template.newBitcoinWallet.events({
     var form = event.target.parentNode.parentNode;
     var validationLabel = validateLabel(form.label.value,form.type.value);
     // DGB 2015-01-22 07:46 Needed because conditions are different for the
-    // Account containers 
+    // Account containers
     if (form.type.value!=='Single Addresses') {
       var validationSeed = validateSeed(form.hdseed.value,form.type.value);
       template.newWalletFormValid.set(validationLabel && validationSeed && validateType(form.type.value));
@@ -89,20 +98,20 @@ Template.newBitcoinWallet.events({
   'submit form': function(event,template) {
     event.preventDefault();
     event.stopPropagation();
-    
+
     if (!template.newWalletFormValid.get()) {
       // DGB 2015-01-22 05:26 Validation failed
       // We should not reach this stage because the user should not be allowed
       // to click in the button
-      return 
+      return
     }
-    // DGB 2015-01-22 05:25 If we are still here means that the 
+    // DGB 2015-01-22 05:25 If we are still here means that the
     // data is valid (Or looks valid at least)
     // WARNING Allowing these inserts on the browser doesn't look like a very
     // smart idea, a user could create a loop on the browser and associate a
     // ton of garbage wallets on his account, which is an expensive process on our side -> afterwards our servers will
     // need to process and waste bandwidth and CPU cycles. Maybe we  need to give this a thought.
-    
+
     // DGB 2015-01-22 08:51 userId is actually not needed, it is overwriten by the insert funcion at
     // model level
     var newWallet = {userId: Meteor.userId(), label:  event.target.label.value, type: event.target.type.value};
@@ -119,7 +128,7 @@ Template.newBitcoinWallet.events({
     });
 
     // DGB 2015-01-22 08:50 The insert takes a *REALLY* long time because we make a remote API call to get the acocunts. Until we improve this and delay/defer this to a bg process, we need to fake it till we make it.
-    
+
     template.newWalletStage.set('first');
     Router.go('/nodes/bitcoinWallets');
 

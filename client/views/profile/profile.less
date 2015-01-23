@@ -1,4 +1,43 @@
+@import (reference) "../../lib/less/bootstrap/custom.bootstrap.import.less";
+@import (reference) "../../lib/less/mixins.import.less";
+
 .profile {
+  .user-notification {
+	margin:0em 0em 1rem 0em;
+	padding: 1.5rem;
+
+	&.error  {
+			border: 1px solid @negative;
+			color: @negative;
+		}
+
+	&.success {
+			border: 1px solid @positive;
+			color: @positive;
+		}
+	}
+
+	input.inline-edit {
+		border-top: none;
+		border-right: none;
+		border-left: none;
+		border-bottom: 2px dotted @gray-dark;
+	}
+
+	.field-type {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+
+	.inputDisplay {
+		display:inline-block;
+		min-width:50%;
+		border-bottom: 2px dotted @gray-lighter;
+		padding: 1px 0;
+	}
+	.inputEdit {display:inline-block; min-width:50%;}
+
 	.warning-btn {
 		margin-top: 20px;
 	}

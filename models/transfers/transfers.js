@@ -160,13 +160,15 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
+
       var currencies = ["EUR", "USD"];
       var valuesToSave = [];
       currencies.forEach(function (currency) {
         var exchangeRate = {};
-        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, moment(transfer.date).format('YYYY-MM-DD'))); 
+        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, moment(transfer.date).format('YYYY-MM-DD')));
         valuesToSave.push(exchangeRate);
       });
+      representation.fee = transfer.fee();
       Transfers.update(
         {"_id": transfer._id},
         {$set: {"representation": representation, "baseVolume": valuesToSave}}
