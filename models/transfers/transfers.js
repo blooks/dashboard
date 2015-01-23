@@ -23,10 +23,10 @@ if (Meteor.isServer) {
   var conversor = function (amount, date, transferId) {
     var Fiber = Npm.require("fibers");
     var Coynverter = Meteor.npmRequire("coyno-converter");
-    var coynverter = new Coynverter();
+    var coynverter = new Coynverter(process.env.MONGO_URL);
     var currencies = ["EUR", "USD"];
     currencies.forEach(function (currency){
-      coynverter.convert("meteor", moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
+      coynverter.convert(moment(date).format('YYYY-MM-DD'), currency, amount, "bitcoinExchangeRates", function (err, exchangeRate) {
         if(exchangeRate){
           Fiber(function() {
             var rateCurrency = {};
@@ -184,6 +184,7 @@ if (Meteor.isServer) {
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
+      representation.fee = transfer.fee();
       conversor(representation.amount, transfer.date, transfer._id);
       Transfers.update(
         {"_id": transfer._id},
