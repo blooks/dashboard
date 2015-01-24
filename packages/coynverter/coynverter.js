@@ -1,18 +1,12 @@
-var CoynverterPackage = Npm.require("coyno-converter");
+var Coynverter = Npm.require("coyno-converter");
 
 Coynverter = {
-  mongourl: process.env.MONGO_URL,
-  collection: "BitcoinExchangeRates",
-  currencies: ["EUR", "USD"]
 };
 
 var CoynoCoynverter = new CoynverterPackage(Coynverter.mongourl, Coynverter.collection);
 
 Coynverter.update = function () {
-  var currencies = Coynverter.currencies;
-  currencies.forEach(function (currency) {
-    CoynoCoynverter.update(currency, function (err, result) {});
-  });
+  Async.wrap()
 };
 
 Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
