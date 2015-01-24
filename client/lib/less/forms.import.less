@@ -22,8 +22,6 @@ textarea {
 		border: 1px solid @gray;
 		outline: none;
 	}
-
-	/* For direct inline-editable content */
 }
 
 .bold-input-text {
@@ -31,8 +29,8 @@ textarea {
 	font-size: 1.8rem;
 }
 
-.bold-input {
-		padding: @padding-xl-vertical @padding-large-horizontal;
+input.padded-input-field {
+	padding: @padding-xl-vertical @padding-large-horizontal;
 }
 
 .no-box {
@@ -99,7 +97,13 @@ ul.wallet-selection {
 
 		&.coming-soon {
 				position: relative;
-				cursor: default;
+			a.wallet-thumbs {
+				cursor: default !important;
+				
+				.wallet-label-text {
+					color: @gray-lighter;
+				}
+
 				img {
 					@opacity: 0.4;
 					-moz-opacity: @opacity;
@@ -120,6 +124,7 @@ ul.wallet-selection {
 					font-weight: normal;
 					position: absolute;
 					top: 40%;
+					width: 100%;
 
 					/* Rotate */
 				    -ms-transform: rotate(30deg); /* IE 9 */
@@ -127,16 +132,16 @@ ul.wallet-selection {
 				    transform: rotate(30deg);
 
 				}
-
 			}
-
+		}
 	}
 }
 
-button.btn.btn-no-box {
+.btn.btn-no-box {
 	border: none;
 		&:hover, &:focus {
 			background-color: transparent;
 			color: @brand-dark;
+			border: none;
 		}
 }

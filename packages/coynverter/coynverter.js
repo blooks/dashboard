@@ -23,5 +23,4 @@ Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) 
 
 Meteor.startup(function () {
   Coynverter.update();
-  Log.info(Coynverter.convert('BTC', 'EUR', 1, '2015-01-10'));
 });
