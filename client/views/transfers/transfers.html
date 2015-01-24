@@ -3,22 +3,6 @@
     <div class="sub-title-icon top-consistency-margin">
           <div class="icon icon-exchange"></div>
     </div>
-    <div id="txDeleteModal" tabindex="-1" role="dialog" aria-labelledby="transactionHelpModal" aria-hidden="true" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
-            <h4 id="transactionHelpModal" class="modal-title">Delete item</h4>
-          </div>
-          <div class="modal-body">
-            <p>Are you sure you want to delete transaction?</p>
-            <button class="btn btn-lg delete">Delete</button>
-            <button class="btn btn-lg cancel">Cancel</button>
-          </div>
-          <div class="modal-footer"></div>
-        </div>
-      </div>
-    </div>
     <div class="col-md-10 col-md-offset-1">
       <div class="row desktop-zone">
         {{#unless noData}}
@@ -40,7 +24,7 @@
                   <tr>
                     <th>{{i18n 'transfers.headings.table.date'}}</th>
                     <th class="text-center" colspan="7">{{i18n 'transfers.headings.transfers'}}</th>
-                    <th>{{i18n 'transfers.headings.table.value'}}</th>
+                    <th class="text-right">{{i18n 'transfers.headings.table.value'}}</th>
                     <th colspan="2" class="no-border"></th>
                   </tr>
                 </thead>
