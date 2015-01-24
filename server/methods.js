@@ -95,6 +95,7 @@ Meteor.methods({
    * @return {[type]}          [description]
    */
   dataForChartDashboardBasedOnCurrency: function (currency) {
+    var self = this;
     var convertToSaneAmount = function (amount, currency) {
       if (currency === 'BTC') {
         return parseFloat((amount / 10e7).toFixed(8));
@@ -104,11 +105,12 @@ Meteor.methods({
 
     };
     var balances = [];
-    var changes = [];
     var balance = 0;
-    var change = 0;
     var time = 0;
     var currencies = ["EUR", "USD", "BTC"];
+    currencies.forEach(function(currency) {
+      balances[currency] = [];
+    });
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
     Transfers.find({"details.currency": 'BTC', userId: self.userId}, {sort: ['date', 'asc']}).forEach(function (transfer) {
@@ -120,32 +122,18 @@ Meteor.methods({
       }
       if (transfer.isIncoming()) {
         balance += transfer.representation.amount;
-        change += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
-        balance -= (transfer.representation.amount);
-        change -= (transfer.representation.amount);
+        balance -= (transfer.representation.amount + transfer.representation.fee);
       }
       while (transferTime >= time) {
-        change = 0;
         time += timeDelta;
-        if(currency==='BTC'){
-          balances.push([time, parseFloat(satoshiToBTC(balance))]);
-          changes.push([time, parseFloat(satoshiToBTC(change))]);
-        }else{
-          balances.push([time, Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))]);
-          changes.push([time, Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))]);
-        }
+          balances.push([time, convertToSaneAmount(parseFloat(Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))), currency)]);
       }
     });
-    var result = [];
-    balances.forEach(function (entry) {
-      result.push([entry[0], convertToSaneAmount(entry[1][currency])]);
-    });
-    return result;
+    return balances;
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
-    return Coynverter.convert(fromCurrency, toCurrency, amount, time);
+    return Coynverter.convert(fromCurrency, toCurrency, amount, new Date(time));
   }
 });

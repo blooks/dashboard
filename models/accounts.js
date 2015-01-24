@@ -14,22 +14,10 @@ Meteor.users.helpers({
     return result;
   },
   totalBalanceInFiat: function () {
+    var bitcoinBalance = this.totalBalance('BTC');
     var currency = Meteor.user().profile.currency;
-    var exchangeRate = 0;
-    console.log(exchangeRate);
-    var balance = 0;
-    Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
-      if (transfer.isIncoming()) {
-        balance += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
-        balance -= (transfer.representation.amount);
-      }
-    });
     var returnValue = 0;
-    Meteor.call('convert', 'BTC', currency, balance, moment().format('YYYY-MM-DD'), function (err, result) {
-      console.log(result);
+    Meteor.call('convert', 'BTC', currency, bitcoinBalance, new Date(), function (err, result) {
       returnValue = parseFloat(result/10e7).toFixed(2);
     });
     return returnValue;

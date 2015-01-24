@@ -41,7 +41,7 @@ Router.map(function() {
       if(Meteor.user()){
         return {
           type: 'netWorth',
-          currency: Meteor.user().profile.currency
+          currency: 'fiat'
         };
       }
     }

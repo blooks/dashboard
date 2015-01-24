@@ -5,6 +5,7 @@
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){
+      console.log(result);
       var data = result;
       $('#holdingsovertime').highcharts('StockChart', {
         rangeSelector: {
@@ -56,8 +57,7 @@ Template.netWorth.helpers({
 });
 
 Template.netWorth.rendered = function () {
-  console.log(this);
-  if (this.currency === 'fiat') {
+  if (this.data.currency === 'fiat') {
     builtStockLocal(Meteor.user().profile.currency);
   } else {
     builtStockLocal('BTC');
