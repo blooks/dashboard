@@ -47,6 +47,9 @@ Template.netWorth.helpers({
       return saneNumber(Meteor.user().totalBalance(currency), currency);
     }
   },
+  currencyIsFiat: function() {
+    return (this.currency === "fiat");
+  },
   totalBalanceFiat: function() {
     console.log(Meteor.user().totalBalanceInFiat());
     return Meteor.user().totalBalanceInFiat();

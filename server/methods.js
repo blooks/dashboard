@@ -128,11 +128,7 @@ Meteor.methods({
       }
       while (transferTime >= time) {
         time += timeDelta;
-        if (currency === 'BTC') {
-          balances.push([time, convertToSaneAmount(balance, 'BTC')]);
-        } else {
-          balances.push([time, convertToSaneAmount(parseFloat(Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))), currency)]);
-        }
+        balances.push([time, convertToSaneAmount(parseFloat(Coynverter.convert('BTC', currency, balance, new Date(time))), currency)]);
       }
     });
     return balances;
