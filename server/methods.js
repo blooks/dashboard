@@ -107,53 +107,52 @@ Meteor.methods({
    * @return {[type]}          [description]
    */
   dataForChartDashboardBasedOnCurrency: function (currency) {
+    var self = this;
+    self.unblock();
     var satoshiToBTC = function (amount) {
       return (amount / 10e7).toFixed(8);
     };
     var balances = [];
+    var changes = [];
     var balance = 0;
+    var change = 0;
     var time = 0;
+    var currencies = ["EUR", "USD", "BTC"];
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
-    Transfers.find({"details.currency": 'BTC'}, {sort: ['date', 'asc']}).forEach(function (transfer) {
-      var transferTime = transfer.date.getTime();
-      var fiatCurrencies = ["EUR", "USD"];
-      var valuations = {};
+    Transfers.find({"details.currency": 'BTC', userId: self.userId}, {sort: ['date', 'asc']}).forEach(function (transfer) {
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
+      var transferTime = transfer.date.getTime();
       if (time === 0) {
         time = transferTime-timeDelta;
-        valuations = {};
-        fiatCurrencies.forEach(function (currency) {
-          {
-            valuations[currency] = 0;
-          }
-        });
-        valuations['BTC'] = 0;
-        balances.push([time, valuations]);
-      }
-      while (time <= transferTime)  {
-        time += timeDelta;
-        valuations = {};
-        fiatCurrencies.forEach(function (currency) {
-          valuations[currency] = Coynverter.convert('BTC', currency, balance, time);
-        });
-        valuations['BTC'] = balance;
-        balances.push([time, valuations]);
       }
       if (transfer.isIncoming()) {
         balance += transfer.representation.amount;
+        change += transfer.representation.amount;
       }
       if (transfer.isOutgoing()) {
-        balance -= (transfer.representation.fee);
+        //TODO: Respect the fee!
         balance -= (transfer.representation.amount);
+        change -= (transfer.representation.amount);
+      }
+      while (transferTime >= time) {
+        change = 0;
+        time += timeDelta;
+        if(currency==='BTC'){
+          balances.push([time, parseFloat(satoshiToBTC(balance))]);
+          changes.push([time, parseFloat(satoshiToBTC(change))]);
+        }else{
+          balances.push([time, Math.round(Coynverter.convert('BTC', currency, balance, moment(time).format("YYYY-MM-DD"))/100000000)]);
+          changes.push([time, Math.round(Coynverter.convert('BTC', currency, balance, moment(time).format("YYYY-MM-DD"))/100000000)]);
+        }
       }
     });
     //console.log(balances);
-    return balances;
+    return [balances, changes];
   },
   connectTransfer: function(transfer) {
-    console.log(transfer);
+    //console.log(transfer);
     transfer.update();
   },
   getLastExchangeRateForBTC: function (currency) {
