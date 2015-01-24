@@ -16,7 +16,6 @@ body	{
 
 .desktop-zone {
 	border: 1px solid @gray-lighter;
-	border-top: none;
 	padding: 36px 30px;
 	padding: 3rem 2.5rem;
 	background-color: @whyte;
@@ -35,6 +34,13 @@ body	{
 		font-size: 1.5rem;
 	}
 }
+
+/* TODO @Erasmus. Dirty hack to hide password change in  dropdown. 
+Please remove from accounts-UI completely */
+#login-buttons-open-change-password {
+	display: none;
+}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -79,6 +85,8 @@ body {
 			display: inline;
 		}
 	}
+
+
 }
 
 
@@ -336,6 +344,7 @@ TODO move these to less files in folders.
 
 	.logo {
 		height: 30px;
+		height: 3rem;
 	}
 }
 
@@ -405,9 +414,6 @@ a.read-more {
 
 	}
 }
-
-
-
 .controls {
 	clear: both;
 	display: block;
@@ -445,20 +451,6 @@ a.read-more {
 img {
 	max-width: 100%;
 	height: auto;
-}
-
-.modal-directions {
-	padding: 24px 0;
-	padding: 2.4rem 0;
-	text-align: center;
-	font-size: 3.5rem;
-	color: @gray-dark;
-
-		a {
-			&:hover, &:focus {
-				color: @brand-primary;
-			}
-		}
 }
 
 .top-consistency-margin {

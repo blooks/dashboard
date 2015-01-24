@@ -36,6 +36,8 @@ box-shadow: 3px 0px 10px 2px @soft-shadow; */
 }
 
 
+/* Sidebar styling
+====================== */
 
 /* The pullout button to open/close sidebar */
 a.navbar-pullout {
@@ -46,7 +48,6 @@ a.navbar-pullout {
     border-left: none;
 }
 
-/* Sidebar styling */
 
 .sidebar {
     padding: 20px 0;
@@ -180,7 +181,7 @@ a.navbar-pullout {
 }
 
 
-/* Sub nav pills 
+/* Sub nav pills
 ================== */
 ul.nav-pills {
   li {
@@ -189,4 +190,17 @@ ul.nav-pills {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+}
+
+/* Other selectors in navbar
+================== */
+.currency-selector {
+    padding: 10px 0;
+}
+.simple-select-dropdown {
+    background: transparent;
+    border: 1px solid @gray-lighter;
+    &:focus, &:hover, &:active {
+        outline: none;
+    }
 }

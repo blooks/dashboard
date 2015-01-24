@@ -8,10 +8,9 @@ Template.sidebar.created = function() {
       else {
            $('.icon-left-open-big').removeClass('icon-left-open-big').addClass('icon-right-open-big');
       }
-  },200);
+  }, 200);
   });
 };
-
 
 Template.sidebar.helpers({
   isActive: function (section) {
@@ -19,7 +18,7 @@ Template.sidebar.helpers({
       return "active";
     }
     return "";
-  },
+  }
 });
 
 
