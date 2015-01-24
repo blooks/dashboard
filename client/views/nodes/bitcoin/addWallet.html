@@ -1,29 +1,27 @@
 <template name="addWallet">
+{{> Template.dynamic template=guideTemplate}}
 <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
-       <img src="/img/external-logos/{{actiontype}}-logo.png">
-       <h3 class="label-title"> Adding {{actiontype}} </h3>
+       <div class="text-center">
+           <img src="/img/external-logos/{{actiontype}}-logo.png">
+           <h3 class="label-title">Add {{actiontype}}</h3>
+        </div>
 {{#unless isArmory}}
-
-            {{> Template.dynamic template=guideTemplate}}
-                <h3 class="label-title"><span class="icon icon-wallet-plus"></span> Add a wallet</h3>
-                {{#autoForm collection='BitcoinWallets' type='insert'  id='addNewBitcoinWallet'  validation='keyup' autofocus=''}}
-                    {{> afQuickField name='label' }}
-                    {{> afQuickField name='type' value=actiontype type='hidden'}}
-                    <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
+                {{#autoForm collection='BitcoinWallets' type='insert' id='addNewBitcoinWallet' class='bold-input-text' validation='keyup' }}
+                    {{> afQuickField name='label' autofocus='' class="spacy padded-input-field" placeholder="Wallet label"}}
+                    {{> afQuickField name='type' value=actiontype type='hidden' label=false}}
+                    <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span></a>
                     {{#unless afFieldValueIs name='type' value='single-addresses'}}
-                        {{> afQuickField name='hdseed'}}
+                        {{> afQuickField class='spacy padded-input-field' name='hdseed' label="HD seed" placeholder='Paste HD seed here' type='textarea'}}
                     {{/unless}}
-                    <button type="submit" class="btn btn-primary btn-lg">{{i18n 'nodes.buttons.save'}}</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg spacy">Add wallet {{buttonState}}</button>
+                    </div>
                 {{/autoForm}}
-{{else}}
-{{> mockupForBitcoinInputTemplate}}
+        {{else}}
+        {{> mockupForBitcoinInputTemplate}}
 {{/unless}}
-<!--      <div class="row decision-callout">
-   ... or
- </div>
- -->
-      <div class="row">
-        <button type="button" class="btn back btn-no-box">&lt; ... or select another wallet</button>
+      <div class="row spacy text-center">
+            <button type="button" class="btn back btn-no-box">&lt; ... or select another wallet</button>
       </div>
 </div>
 </template>
