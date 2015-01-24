@@ -134,8 +134,8 @@ Meteor.methods({
           balances.push([time, parseFloat(satoshiToBTC(balance))]);
           changes.push([time, parseFloat(satoshiToBTC(change))]);
         }else{
-          balances.push([time, Math.round(Coynverter.convert('BTC', currency, balance, moment(time).format("YYYY-MM-DD"))/100000000)]);
-          changes.push([time, Math.round(Coynverter.convert('BTC', currency, balance, moment(time).format("YYYY-MM-DD"))/100000000)]);
+          balances.push([time, Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))]);
+          changes.push([time, Math.round(Coynverter.convert('BTC', currency, balance, new Date(time)))]);
         }
       }
     });
