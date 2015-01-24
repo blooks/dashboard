@@ -5,7 +5,6 @@
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){
-      console.log(result);
       var data = result;
       $('#holdingsovertime').highcharts('StockChart', {
         rangeSelector: {
