@@ -32,12 +32,13 @@ Schemas.BitcoinWallets = new SimpleSchema({
           break;
         case 'electrum':
           if (!this.value.match(/^[a-f0-9]{128}$/)) {
-          return 'invalidElectrumSeed';
-          };
+            return 'invalidElectrumSeed';
+          }
+          break;
         case 'bitcoin-wallet':
           if (!this.value.match(/^[xpub][A-Za-z0-9]{110}$/)) {
             return 'invalidBIP32xpub';
-          };
+          }
           break;
       }
       // DGB 2015-01-22 08:09 Common test for all wallet types
@@ -80,6 +81,7 @@ BitcoinWallets.allow({
 
 BitcoinWallets.simpleSchema().messages({
   invalidBIP32xpub: "[label] is not of the correct format!",
+  invalidElectrumSeed: "[label] is not of the correct electrum Master Public Key format.",
   seedAlreadyStored: "A wallet [label] already in the database"
 });
 

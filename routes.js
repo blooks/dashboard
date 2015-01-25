@@ -41,7 +41,7 @@ Router.map(function() {
       if(Meteor.user()){
         return {
           type: 'netWorth',
-          currency: Meteor.user().profile.currency
+          currency: 'fiat'
         };
       }
     }
@@ -84,8 +84,8 @@ Router.map(function() {
       }
     }
   });
-  this.route('/dashboard/:type', {
-    path: '/dashboard/:type',
+  this.route('dashboardtype', {
+    path: '/dashboard/:type/:currency?',
     template: 'dashboard',
     waitOn: function() {
       return [
@@ -95,12 +95,10 @@ Router.map(function() {
       ];
     },
     data: function() {
-      if(Meteor.user()){
-        return {
+      return {
           type: this.params.type,
-          currency: Meteor.user().profile.currency
-        };
-      }
+          currency: this.params.currency
+      };
     }
   });
   this.route('nodes', {

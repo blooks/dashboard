@@ -1,26 +1,32 @@
-var CoynverterPackage = Npm.require("coyno-converter");
+if (Meteor.isServer) {
+  var coynoconverter = Npm.require("coyno-converter");
 
-Coynverter = {
-  mongourl: process.env.MONGO_URL,
-  collection: "BitcoinExchangeRates",
-  currencies: ["EUR", "USD"]
-};
+  Coynverter = {
+    mongourl: process.env.MONGO_URL
+  };
 
-var CoynoCoynverter = new CoynverterPackage(Coynverter.mongourl, Coynverter.collection);
+  var NodeConverter = new coynoconverter(Coynverter.mongourl);
 
-Coynverter.update = function () {
-  var currencies = Coynverter.currencies;
-  currencies.forEach(function (currency) {
-    CoynoCoynverter.update(currency, function (err, result) {});
+  Coynverter.update = function () {
+    var syncConverter = Async.wrap(NodeConverter, ["update"]);
+    var result = syncConverter.update();
+    console.log("Coynverter Update done. Result was:" + result);
+  };
+
+  Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
+    var syncConverter = Async.wrap(NodeConverter, ['convert']);
+    var result;
+    try {
+      result = syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date);
+    } catch (error) {
+      console.log("Coynverter wanted to convert something. But there was an error:");
+      console.log(error);
+      result = 0;
+    }
+    return result;
+  };
+
+  Meteor.startup(function () {
+    Coynverter.update();
   });
 };
-
-Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
-  var conversionSync= Async.wrap(CoynoCoynverter, ['convert']);
-  var conversionResult = conversionSync.convert(fromCurrency, toCurrency, amountToConvert, date);
-  return conversionResult;
-};
-
-Meteor.startup(function () {
-  Coynverter.update();
-});

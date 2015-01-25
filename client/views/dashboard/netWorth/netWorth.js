@@ -2,16 +2,20 @@
  * Function to draw the chart with local data
  */
 
+
+var totalBalanceFiat = new ReactiveVar(0);
+
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
-    if(result && result[0]){
-      var data = result[0];
+    if(result){
+      var data = result;
       $('#holdingsovertime').highcharts('StockChart', {
         rangeSelector: {
-          selected: 1
+          selected: 1,
+          inputEnabled : false
         },
         title: {
-          text: 'Total '+currency+' Holdings'
+          text: 'Networth over time in '+currency
         },
         series: [{
           name: currency,
@@ -27,11 +31,6 @@ var builtStockLocal = function (currency) {
 
 
 Template.netWorth.helpers({
-  totalBalanceCurrency: function (currency) {
-    if(Meteor.user()){
-      return Meteor.user().totalBalanceBasedOnUserCurrency(currency);
-    }
-  },
    /**
    * [totalBalance description]
    * @param  {[type]} currency [description]
@@ -49,11 +48,22 @@ Template.netWorth.helpers({
     if(Meteor.user()){
       return saneNumber(Meteor.user().totalBalance(currency), currency);
     }
+  },
+  currencyIsFiat: function() {
+    return (this.currency === "fiat");
+  },
+  totalFiat: function() {
+    return totalBalanceFiat.get();
+  },
+  userCurrency : function () {
+    return Meteor.user().profile.currency;
   }
 });
 
 Template.netWorth.rendered = function () {
-  if(Meteor.user().profile.currency){
+  if (this.data.currency === 'fiat') {
     builtStockLocal(Meteor.user().profile.currency);
+  } else {
+    builtStockLocal('BTC');
   }
 };
