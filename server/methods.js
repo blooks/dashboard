@@ -115,8 +115,10 @@ Meteor.methods({
       //Start from timedelta before the time of the first transaction
       var transferTime = transfer.date.getTime();
       if (timeWindowEnd === 0) {
-        //First time in the loop. Initialise.
-        timeWindowEnd = transferTime;
+        //First time in the loop. Initialise. We set the end of the first window
+        // on the timewindow of the
+        // timewindow after the first transfer
+        timeWindowEnd = (transferTime - (transferTime % timeDelta) + timeDelta);
         balances.push([(timeWindowEnd - timeDelta), convertToSaneAmount(parseFloat(0), currency)]);
       }
       if (transferTime <= timeWindowEnd ) {
