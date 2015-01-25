@@ -134,6 +134,7 @@ Meteor.methods({
     return balances;
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
-    return Coynverter.convert(fromCurrency, toCurrency, amount, new Date(time));
+    console.log("convert call with:" +fromCurrency + toCurrency + amount + time);
+    return Coynverter.convert(fromCurrency, toCurrency, amount, time);
   }
 });

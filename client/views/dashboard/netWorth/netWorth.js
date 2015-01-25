@@ -2,6 +2,9 @@
  * Function to draw the chart with local data
  */
 
+
+var totalBalanceFiat = new ReactiveVar(0);
+
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){
@@ -49,9 +52,8 @@ Template.netWorth.helpers({
   currencyIsFiat: function() {
     return (this.currency === "fiat");
   },
-  totalBalanceFiat: function() {
-    console.log(Meteor.user().totalBalanceInFiat());
-    return Meteor.user().totalBalanceInFiat();
+  totalFiat: function() {
+    return totalBalanceFiat.get();
   },
   userCurrency : function () {
     return Meteor.user().profile.currency;
