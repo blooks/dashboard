@@ -156,6 +156,9 @@ Meteor.methods({
         if (queuedTransfer.isOutgoing()) {
           balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee);
         }
+        if (queuedTransfer.isInternal()) {
+          balance -= (queuedTransfer.representation.fee);
+        }
       });
       //Go until today.
       while (timeWindowEnd < new Date().getTime()) {
