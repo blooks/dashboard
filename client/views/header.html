@@ -8,19 +8,21 @@
             </svg>
           </a>
       </div> <!-- ./navbar-header -->
-      <ul class="nav navbar-nav navbar-right">
-        {{> loginButtons }} <!-- here -->
-      </ul>
+      <div class="navbar-right">
       {{#if currentUser}}
-        <ul class="nav navbar-nav navbar-right">
-          <select class="form-control" id="user_currency">
-            <option value="-1">Currency</option>
+        <div class="nav navbar-nav currency-selector">
+          <select class="form-control simple-select-dropdown" id="user_currency">
             {{#each possibleCurrencies}}
               <option value="{{this}}" {{isSelected this}}>{{this}}</option>
             {{/each}}
           </select>
-        </ul>
+        </div>
       {{/if}}
+        <ul class="nav navbar-nav">
+          {{> loginButtons }} <!-- here -->
+        </ul>
+      </div>
+
     </div> <!-- ./container -->
   </div> <!-- ./navbar -->
 </template>
