@@ -3,15 +3,11 @@
     <div class="sub-title-icon top-consistency-margin">
           <div class="icon icon-exchange"></div>
     </div>
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 transfers">
       <div class="row desktop-zone">
         {{#unless noData}}
-        <div class="sub-menu-zone pull-right">
-          <a href="#" data-toggle="modal" data-target="#txHelpModal"><span class="icon icon-help-circled"></span> <span>{{i18n 'template.headings.help'}}</span></a>
-        </div>
         <div class="table-zone">
             {{>transfersNavigation}}
-            <br>
             <div id="responsive-table">
               <table class="table table-tx table-zb-hover auto-width centered">
                 <thead>
