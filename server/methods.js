@@ -132,6 +132,9 @@ Meteor.methods({
           if (queuedTransfer.isOutgoing()) {
             balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee);
           }
+          if (queuedTransfer.isInternal()) {
+            balance -= (queuedTransfer.representation.fee);
+          }
         });
         transfersInTimeWindow = [];
         //Pushing Time Window End until the current transfer is in the current time window.
