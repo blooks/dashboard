@@ -138,7 +138,8 @@ Meteor.methods({
         while (transferTime > timeWindowEnd) {
           balances.push([timeWindowEnd, convertToSaneAmount
           (parseFloat
-          (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
+            //Taking the valuation of the balance for this time window at the middle of the time window.
+          (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd - (timeDelta/2)))), currency)
           ]);
           timeWindowEnd += timeDelta;
         }
@@ -160,7 +161,7 @@ Meteor.methods({
       while (timeWindowEnd < new Date().getTime()) {
         balances.push([timeWindowEnd, convertToSaneAmount
         (parseFloat
-        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
+        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd- (timeDelta/2)))), currency)
         ]);
         timeWindowEnd+=timeDelta;
       }
