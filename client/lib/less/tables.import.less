@@ -1,7 +1,7 @@
 /*All table styles here*/
 
 /* Tables */
-.table {
+.table.table-tx {
 
     white-space: nowrap;
 
@@ -65,6 +65,7 @@
             }
             &:last-child {
                 padding-right: 0;
+                text-align: right;
             }
             &.inflow {
                 color: @positive;
@@ -81,7 +82,8 @@
                 font-size: 35px;
               }
             }
-          } // Close general <tr>
+            &.from-wallet-cell, &.to-wallet-cell {}
+          } // Close general <td>
 
           &:last-child {
               border-bottom: 1px solid @gray-lighter;

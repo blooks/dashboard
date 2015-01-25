@@ -165,7 +165,7 @@ if (Meteor.isServer) {
       var valuesToSave = [];
       currencies.forEach(function (currency) {
         var exchangeRate = {};
-        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, moment(transfer.date).format('YYYY-MM-DD')));
+        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, new Date(transfer.date)));
         valuesToSave.push(exchangeRate);
       });
       representation.fee = transfer.fee();

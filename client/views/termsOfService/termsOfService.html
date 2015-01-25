@@ -1,31 +1,47 @@
 <template name='termsOfService'>
   <h1 class="process-title">Terms of Service</h1>
   <div class="sub-title-icon top-consistency-margin">
-    <div class="icon icon-graph-trend"></div>
+    <div class="icon icon-info"></div>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
     <div class="row desktop-zone">
-      <h2>Please acknowledge the rules</h2>
+      <h2 class="text-center"><span class="fat">A few words</span> before we begin...</h2>
+      <div class="col-md-10 col-md-offset-1 spacy">
+        <div class="row big-text">
+          <div class="col-md-4">
+            <h3><span class="icon icon-wrench"></span> This is <span class="fat">beta</span></h3>
+            <p>
+              This is the beta version of our software. We're very proud of it, but it may come with a bug or two... We hope you enjoy what we've made and that you are more than welcome to get in touch with comments, suggestions and feedback on <a href="mailto:beta@coyno.com">beta@coyno.com</a>. We look forward to hear from you!
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3><span class="icon icon-lamp"></span><span class="fat">Use at your own risk</span></h3>
+            <p>
+              All the data provided via our service comes as is, with no guarantee of its correctness. You use the service at your own risk. Please be aware that it may be necessary for us to <span class="fat">reset or delete all your data</span> at some point as the product evolves (sorry!).
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3><span class="icon icon-eye"></span> We are <span class="fat">watch-only</span></h3>
+            <p>
+            <span class="fat">Coyno never touches your private keys</span>. So please keep your wallet files safe, as <span class="fat">we will never be able to restore your wallet(s)</span> on your behalf.
+            </p>
+          </div>
+        </div>
 
-      <div style='width:300px; margin:0 auto 3em auto'>
-        - We don't have your wallet information.<br>
-        - We don't store your private keys. <br>
-        - Please keep your wallet files safe, we will not be able to recover your coins if you lose or damage your wallet files
-      </div>
+        <div class="row text-center spacy">
+          <div class="checkbox-zone spacy">
+           {{#if currentUser.profile.hasSignedTOS}}
+            <input type='checkbox' checked disabled/> <label>You already agreed to these conditions.</label>
+            {{else}}
+            <input type='checkbox' id="ToS-agree" /> <label for="ToS-agree">I understand and accept</label>
+            {{/if}}
+          </div>
 
-      <div style='text-align:center'>
-        {{#if currentUser.profile.hasSignedTOS}}
-        <input type='checkbox' checked disabled/>&nbsp;&nbsp;You agreed to this in the past<br>
-        {{else}}
-        <input type='checkbox' />&nbsp;&nbsp;Allright buddy, I understand it<br>
-        {{/if}}
-
-        <div class='clearfix' style='clear:both'></div>
-
-        {{#unless currentUser.profile.hasSignedTOS }}
-        <a id='termsOfServiceButton' href='/' class='btn btn-primary disabled pull-right'>next</a>
-        {{/unless}}
+          {{#unless currentUser.profile.hasSignedTOS }}
+            <a id='termsOfServiceButton' href='/' class='btn btn-primary btn-lg spacy disabled'>Let's begin</a>
+          {{/unless}}
+        </div>
       </div>
     </div>
   </div>
