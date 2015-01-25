@@ -64,26 +64,26 @@ Meteor.methods({
         oldEmail=Meteor.users.findOne({_id: self.userId}).emails[0].address;
         Meteor.users.update({_id: self.userId},{$set:{'emails.0.address':email}})
       } catch (e) {
-      // DGB 2015-01-21 07:04 The reason Mongo complain after passing validation
-      // is that the email is not unique (Collection2 doesn't check this ?,
-      // weird)
+        // DGB 2015-01-21 07:04 The reason Mongo complain after passing validation
+        // is that the email is not unique (Collection2 doesn't check this ?,
+        // weird)
         throw new Meteor.Error(402, "Invalid Email. Some other user has already this email, please insert a different one", "", "");
       }
       // DGB 2015-01-21 07:16 Cannot use the method, we want to send it to the
       // old Address
       try {
-       Email.send({
-        to: oldEmail,
-        from: Accounts.emailTemplates.from,
-        subject: Accounts.emailTemplates.changeEmail.subject(),
-        text: Accounts.emailTemplates.changeEmail.text()
-      });
+        Email.send({
+          to: oldEmail,
+          from: Accounts.emailTemplates.from,
+          subject: Accounts.emailTemplates.changeEmail.subject(),
+          text: Accounts.emailTemplates.changeEmail.text()
+        });
       } catch (e) {
-      throw new Meteor.Error(500, "Error while delivering an email warning you of the modification of your email", "", "");
+        throw new Meteor.Error(500, "Error while delivering an email warning you of the modification of your email", "", "");
       }
     }
     else {
-     // DGB 2015-01-21 06:49 Return error, to indicate the client the email is
+      // DGB 2015-01-21 06:49 Return error, to indicate the client the email is
       // valid
       throw new Meteor.Error(402, "Invalid Email: Please insert a valid email address", "", "");
     }
@@ -106,31 +106,63 @@ Meteor.methods({
     };
     var balances = [];
     var balance = 0;
-    var time = 0;
-    var currencies = ["EUR", "USD", "BTC"];
-    currencies.forEach(function(currency) {
-      balances[currency] = [];
-    });
+    var timeWindowEnd = 0;
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
+    var transfersInTimeWindow = [];
     Transfers.find({"details.currency": 'BTC', userId: self.userId}, {sort: ['date', 'asc']}).forEach(function (transfer) {
       //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       var transferTime = transfer.date.getTime();
-      if (time === 0) {
-        time = transferTime-timeDelta;
+      if (timeWindowEnd === 0) {
+        //First time in the loop. Initialise.
+        timeWindowEnd = transferTime;
+        balances.push([(timeWindowEnd - timeDelta), convertToSaneAmount(parseFloat(0), currency)]);
       }
-      if (transfer.isIncoming()) {
-        balance += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        balance -= (transfer.representation.amount + transfer.representation.fee);
-      }
-      while (transferTime >= time) {
-        time += timeDelta;
-        balances.push([time, convertToSaneAmount(parseFloat(Coynverter.convert('BTC', currency, balance, new Date(time))), currency)]);
+      if (transferTime <= timeWindowEnd ) {
+        transfersInTimeWindow.push(transfer);
+      } else {
+        //process queued transfers, repeat until current transfer is in time window. Queue it.
+        transfersInTimeWindow.forEach(function (queuedTransfer) {
+          if (queuedTransfer.isIncoming()) {
+            balance += queuedTransfer.representation.amount;
+          }
+          if (queuedTransfer.isOutgoing()) {
+            balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee);
+          }
+        });
+        transfersInTimeWindow = [];
+        //Pushing Time Window End until the current transfer is in the current time window.
+        while (transferTime > timeWindowEnd) {
+          balances.push([timeWindowEnd, convertToSaneAmount
+          (parseFloat
+          (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
+          ]);
+          timeWindowEnd += timeDelta;
+        }
+        transfersInTimeWindow.push(transfer);
       }
     });
+    //One transfer remains to be processed
+    if (transfersInTimeWindow.length) {
+      //This loop should always be called if there is at least one transfer.
+      transfersInTimeWindow.forEach(function (queuedTransfer) {
+        if (queuedTransfer.isIncoming()) {
+          balance += queuedTransfer.representation.amount;
+        }
+        if (queuedTransfer.isOutgoing()) {
+          balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee);
+        }
+      });
+      //Go until today.
+      while (timeWindowEnd < new Date().getTime()) {
+        balances.push([timeWindowEnd, convertToSaneAmount
+        (parseFloat
+        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
+        ]);
+        timeWindowEnd+=timeDelta;
+      }
+    }
     return balances;
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
