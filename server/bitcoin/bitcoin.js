@@ -3,6 +3,7 @@
 var Chain = Meteor.npmRequire('chain-node');
 var bitcore = Meteor.npmRequire('bitcore');
 var Electrum = Meteor.npmRequire('bitcore-electrum');
+var Dispatcher = Meteor.npmRequire('coyno-dispatcher');
 
 /**
  * Generating a Coyno style transaction out of a Chain TX
@@ -279,6 +280,10 @@ Meteor.methods({
    * @param wallet
    */
   updateTx4Wallet: function (wallet) {
+    //TODO: check if wallet exists, user is owner and can trigger update
+
+    Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
+
     switch (wallet.type) {
       case 'electrum':
         updateElectrumWallet(wallet);
