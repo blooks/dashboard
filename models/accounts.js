@@ -2,7 +2,8 @@
 Meteor.users.helpers({
   totalBalance: function (currency) {
     var result = 0;
-    Transfers.find({"details.currency": currency}).forEach(function (transfer) {
+    var counter = 0;
+    Transfers.find({"details.currency": currency}, {sort: {date: -1}}).forEach(function (transfer) {
       if (transfer.isIncoming()) {
         result += transfer.representation.amount;
       }

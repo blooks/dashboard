@@ -16,10 +16,10 @@ var builtStockLocal = function (currency) {
           text: 'Networth over time in '+currency
         },
         series: [{
-          name: currency,
+          name: currency  ,
           data: data,
           tooltip: {
-            valueDecimals: 2
+            valueDecimals: 4
           }
         }]
       });
