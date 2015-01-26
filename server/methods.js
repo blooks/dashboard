@@ -52,6 +52,14 @@ Meteor.methods({
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
+  updateTotalFiat: function() {
+       var self = this;
+       if (!self.userId) return;
+       var user = Meteor.users.findOne({_id: self.userId});
+       var totalFiatBalance = user.totalBalanceInFiat();
+       console.log('TotalFiat is: ' + totalFiatBalance);
+       Meteor.users.update({_id: self.userId}, {$set: { 'profile.totalFiat': totalFiatBalance}});
+     },
   // DGB 2015-01-21 06:32
   // Changes the email of the user. As we only allow one email per user, we know
   // the email will be on the position 0 of the email array. We send the email to the old address to inform of the change
@@ -122,7 +130,7 @@ Meteor.methods({
         timeWindowEnd = (transferTime - (transferTime % timeDelta) + timeDelta);
         balances.push([(timeWindowEnd - timeDelta), convertToSaneAmount(parseFloat(0), currency)]);
       }
-      if (transferTime <= timeWindowEnd || transferTime > timeNow) {
+      if (transferTime <= timeWindowEnd) {
         transfersInTimeWindow.push(transfer);
       } else {
         //process queued transfers, repeat until current transfer is in time window. Queue it.
@@ -140,10 +148,12 @@ Meteor.methods({
         transfersInTimeWindow = [];
         //Pushing Time Window End until the current transfer is in the current time window.
         while (transferTime > timeWindowEnd) {
-          balances.push([timeWindowEnd, convertToSaneAmount
-          (parseFloat
+          balances.push([timeWindowEnd, convertToSaneAmount(
+          parseFloat(
             //Taking the valuation of the balance for this time window at the middle of the time window.
-          (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd - (timeDelta/2)))), currency)
+            Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)), currency
+            )
+          )
           ]);
           timeWindowEnd += timeDelta;
         }
@@ -168,7 +178,7 @@ Meteor.methods({
       while (timeWindowEnd < timeNow) {
         balances.push([timeWindowEnd, convertToSaneAmount
         (parseFloat
-        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd- (timeDelta/2)))), currency)
+        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
         ]);
         timeWindowEnd+=timeDelta;
       }
