@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "coyno-converter": {
-      "version": "https://registry.coyno.com/coyno-converter/-/coyno-converter-0.0.22.tgz",
+      "version": "https://registry.coyno.com/coyno-converter/-/coyno-converter-0.0.24.tgz",
       "dependencies": {
         "async": {
           "version": "https://hushhush.levinkeller.de:4873/async/-/async-0.9.0.tgz"
         },
         "coindesk-api": {
-          "version": "https://registry.coyno.com/coindesk-api/-/coindesk-api-0.0.4.tgz",
+          "version": "https://registry.coyno.com/coindesk-api/-/coindesk-api-0.0.5.tgz",
           "dependencies": {
             "request": {
               "version": "2.51.0",

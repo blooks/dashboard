@@ -10,19 +10,25 @@ Meteor.users.helpers({
         result -= (transfer.representation.fee);
         result -= (transfer.representation.amount);
       }
+      if (transfer.isInternal()) {
+        result -= (transfer.representation.fee);
+      }
     });
     return result;
-  },
-  totalBalanceInFiat: function () {
-    var bitcoinBalance = this.totalBalance('BTC');
-    var currency = Meteor.user().profile.currency;
-    var returnValue = 0;
-    Meteor.call('convert', 'BTC', currency, bitcoinBalance, new Date(), function (err, result) {
-      returnValue = parseFloat(result/10e7).toFixed(2);
-    });
-    return returnValue;
   }
 });
+
+if (Meteor.isServer)
+{
+  Meteor.users.helpers({
+    totalBalanceInFiat: function () {
+      var bitcoinBalance = this.totalBalance('BTC');
+      var currency = Meteor.user().profile.currency;
+      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
+      return parseInt(returnValue);
+    }
+  });
+}
 
 var userProfile = new SimpleSchema({
   language: {
@@ -50,6 +56,10 @@ var userProfile = new SimpleSchema({
     optional: true,
     allowedValues: ['EUR', 'USD', 'BTC'],
     defaultValue: 'EUR'
+  },
+  totalFiat: {
+    type: Number,
+    defaultValue: 0
   }
 });
 

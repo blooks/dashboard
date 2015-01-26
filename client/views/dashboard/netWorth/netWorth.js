@@ -50,7 +50,8 @@ Template.netWorth.helpers({
     }
   },
   totalFiat: function() {
-    return totalBalanceFiat.get();
+    console.log(Meteor.user().profile.totalFiat);
+    return Meteor.user().profile.totalFiat;
   },
   currencyIsFiat: function() {
     return (this.currency === 'fiat');
@@ -61,6 +62,7 @@ Template.netWorth.helpers({
 });
 
 Template.netWorth.rendered = function () {
+  Meteor.call('updateTotalFiat');
   builtStockLocal(Meteor.user().profile.currency);
   };
 Template.netWorth.events = {
