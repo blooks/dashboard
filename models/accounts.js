@@ -1,5 +1,4 @@
-//This variable stores the value of the currency returnd in the callback of one method call
-var valueCurrency = new ReactiveVar(0);
+
 Meteor.users.helpers({
   totalBalance: function (currency) {
     var result = 0;
@@ -11,29 +10,25 @@ Meteor.users.helpers({
         result -= (transfer.representation.fee);
         result -= (transfer.representation.amount);
       }
+      if (transfer.isInternal()) {
+        result -= (transfer.representation.fee);
+      }
     });
     return result;
-  },
-  totalBalanceBasedOnUserCurrency: function (userCurrency) {
-    Meteor.call('getLastExchangeRateForBTC', userCurrency, function (err, response) {
-      valueCurrency.set(response);
-    });
-    var result = 0;
-    Transfers.find({"details.currency": "BTC"}).forEach(function (transfer) {
-      if (transfer.isIncoming()) {
-        result += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
-        result -= (transfer.representation.amount);
-      }
-    });
-    if(valueCurrency.get()!==0){
-      result = ((valueCurrency.get()*result)/100000000).toFixed(8);
-      return result;
-    }
   }
 });
+
+if (Meteor.isServer)
+{
+  Meteor.users.helpers({
+    totalBalanceInFiat: function () {
+      var bitcoinBalance = this.totalBalance('BTC');
+      var currency = Meteor.user().profile.currency;
+      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
+      return parseInt(returnValue);
+    }
+  });
+}
 
 var userProfile = new SimpleSchema({
   language: {
@@ -61,6 +56,10 @@ var userProfile = new SimpleSchema({
     optional: true,
     allowedValues: ['EUR', 'USD', 'BTC'],
     defaultValue: 'EUR'
+  },
+  totalFiat: {
+    type: Number,
+    defaultValue: 0
   }
 });
 
@@ -117,12 +116,12 @@ var Schema = new SimpleSchema({
 Meteor.users.attachSchema(Schema);
 
 if (Meteor.isServer) {
-  // DGB 2015-01-23 05:19 
+  // DGB 2015-01-23 05:19
   // Before we delete the user, we remove related wallets first. Wallets will
   // cascade into accounts, accounts will cascade into transfers
   Meteor.users.before.remove(function (userId, doc) {
     var userWallets = BitcoinWallets.find({'userId': doc._id},{fields:{id:1}}).fetch();
-    // DGB 2015-01-23 05:17 
+    // DGB 2015-01-23 05:17
     // Cascading removals only if the user has wallets
     userWallets.forEach(function(wallet) {
        BitcoinWallets.remove({_id: wallet._id});

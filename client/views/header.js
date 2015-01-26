@@ -8,6 +8,7 @@ Template.header.events({
     event.preventDefault();
     var userCurrency = $('#user_currency').val();
     Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.currency': userCurrency}});
+    Meteor.call("updateTotalFiat");
   }
 });
 

@@ -16,7 +16,6 @@ body	{
 
 .desktop-zone {
 	border: 1px solid @gray-lighter;
-	border-top: none;
 	padding: 36px 30px;
 	padding: 3rem 2.5rem;
 	background-color: @whyte;
@@ -36,6 +35,13 @@ body	{
 	}
 }
 
+/* TODO @Erasmus. Dirty hack to hide password change in  dropdown.
+Please remove from accounts-UI completely */
+#login-buttons-open-change-password {
+	display: none;
+}
+
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -43,20 +49,21 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-  .main-zone {
-  	/* 	padding: 60px 15px 0; */
-	}
+  margin-bottom: 100px; /* Margin bottom by footer height */
 }
-.footer {
+.footer-zone {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Fixed height footer */
+  height: 100px; /* Fixed height footer */
   background-color: transparent;
-  padding: 20px;
-  border-top: 1px solid @gray-lighter;
   z-index: 800;
+
+	.footer {
+		border-top: 1px solid @gray-lighter;
+		padding-top: 10px; padding-top: 1rem;
+		margin-top: 10px; margin-top: 1rem;
+	}
 }
 
 
@@ -79,6 +86,8 @@ body {
 			display: inline;
 		}
 	}
+
+
 }
 
 
@@ -96,14 +105,6 @@ body {
 	padding: 1rem;
 }
 
-/* Footer
--------------------- */
-footer {
-	padding: 50px 0;
-	padding: 5rem 0;
-	font-size: 12px; font-size: 1rem;
-	clear: both; // Ensure footer is in bottom
-}
 
 /* Specific view sections
 TODO move these to less files in folders.
@@ -336,6 +337,7 @@ TODO move these to less files in folders.
 
 	.logo {
 		height: 30px;
+		height: 3rem;
 	}
 }
 
@@ -351,6 +353,12 @@ TODO move these to less files in folders.
 
 	&[disabled] {
 		color: @whyte;
+	}
+
+	&.disabled {
+		color: @gray-light;
+		border-color: @gray-light;
+		background-color: transparent;
 	}
 
 	&:hover, &:focus	{
@@ -405,9 +413,6 @@ a.read-more {
 
 	}
 }
-
-
-
 .controls {
 	clear: both;
 	display: block;
@@ -445,20 +450,6 @@ a.read-more {
 img {
 	max-width: 100%;
 	height: auto;
-}
-
-.modal-directions {
-	padding: 24px 0;
-	padding: 2.4rem 0;
-	text-align: center;
-	font-size: 3.5rem;
-	color: @gray-dark;
-
-		a {
-			&:hover, &:focus {
-				color: @brand-primary;
-			}
-		}
 }
 
 .top-consistency-margin {
