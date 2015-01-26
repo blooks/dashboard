@@ -1,6 +1,12 @@
 <template name="addWallet">
 {{> Template.dynamic template=guideTemplate}}
-<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
+
+  <style>
+    .badValidation {color:red; font-size: 2em;}
+    .goodValidation {color:green; font-size: 2em;}
+  </style>
+
+  <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
        <div class="text-center">
            <img src="/img/external-logos/{{actiontype}}-logo.png">
            <h3 class="label-title">Add {{actiontype}}</h3>
@@ -9,6 +15,11 @@
             {{> afQuickField name='label' autofocus='' class="spacy padded-input-field" placeholder="Wallet label"}}
             {{> afQuickField name='type' value=actiontype type='hidden' label=false}}
             <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span></a>
+            {{#if afFieldIsInvalid name='hdseed' class='pull-right' style=''}}
+              {{>newBitcoinWalletBadValidation}}
+              {{else}} 
+              {{>newBitcoinWalletGoodValidation}}
+            {{/if}}
             {{#unless afFieldValueIs name='type' value='single-addresses'}}
                 {{> afQuickField class='spacy padded-input-field' name='hdseed' label="HD seed" placeholder='Paste HD seed here' type='textarea'}}
             {{/unless}}
@@ -22,3 +33,13 @@
       </div>
 </div>
 </template>
+
+<template name='newBitcoinWalletBadValidation'>
+  <span class='pull-right badValidation'><i class='icon icon-close'></i></span>
+</template>
+
+<template name='newBitcoinWalletGoodValidation'>
+  <span class='pull-right goodValidation'><i class='icon icon-check'></i></span>
+</template>
+
+
