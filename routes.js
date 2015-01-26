@@ -120,6 +120,11 @@ Router.map(function() {
       };
     }
   });
+
+ this.route('nodesAddWallet', {
+    path: '/nodes/bitcoinWallets/add'
+  });
+
   return this.route('profileEdit', {
     path: '/profile',
     template: 'userProfile'
