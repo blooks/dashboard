@@ -2,6 +2,13 @@
 	<div class="col-lg-8 line-chart">
 	    <h3>Net worth</h3>
 	    <div id="holdingsovertime"></div>
+	   	<div class="row text-center">
+	   	{{#if currencyIsFiat}}
+        	<a id="dashboardChangeStockCurrency" class="btn" href="/dashboard/netWorth/BTC">Show in Bitcoin</a>
+		{{else}}
+			<a id="dashboardChangeStockCurrency" class="btn" href="/dashboard/netWorth/fiat">Show in fiat</a>
+		{{/if}}
+		</div>
 	</div>
 	<div class="col-lg-4">
 	    <div class="summary-data spacy">
@@ -12,10 +19,5 @@
 	        <h4 class="totals">Total fiat value </h4>
 	         <p class="sum">{{saneNumber totalFiat userCurrency}} {{userCurrency}}</p>
 	    </div>
-		{{#if currencyIsFiat}}
-        	<a id="dashboardChangeStockCurrency" href="/dashboard/netWorth/BTC">Show in BTC</a>
-		{{else}}
-			<a id="dashboardChangeStockCurrency" href="/dashboard/netWorth/fiat">Show in fiat</a>
-		{{/if}}
 	</div>
 </template>

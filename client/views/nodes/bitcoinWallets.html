@@ -1,7 +1,7 @@
 <template name="bitcoinWallets">
     {{#unless action}}
 <div class="container-fluid">
-    <div class="wallets-zone col-lg-8">
+    <div class="wallets-zone col-lg-12">
       <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
       <div class="row zone">
         {{#if bitcoinwallets}}
@@ -17,7 +17,7 @@
                     </span>
                   </div>
                   <div class="row vcenter">
-                    <div class="col-lg-11">
+                    <div class="col-sm-11">
                         <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.wallets.walletLabelTitle'}} :
                         <span class="fat">{{label}}</span>
                         </h4>
@@ -27,7 +27,7 @@
                         </h4>
                     </div> <!-- /.col-lg-10 -->
 
-                    <div class="col-lg-1">
+                    <div class="col-sm-1">
                         <span class="icon icon-down-open-big body-toggle"></span>
                     </div> <!-- /.col-lg-2 -->
                   </div> <!-- /.row -->
