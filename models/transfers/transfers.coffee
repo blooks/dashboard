@@ -81,11 +81,6 @@ Schemas.Transfer = new SimpleSchema
   baseVolume:
     type: [currencyBaseVolume]
     optional: true
-  connected:
-    type: Boolean
-
-
-    #*************************** CONNECTED: false
 
 # Attach the schema to the collection
 Transfers.attachSchema Schemas.Transfer
