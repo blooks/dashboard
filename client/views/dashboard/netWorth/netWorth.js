@@ -49,11 +49,11 @@ Template.netWorth.helpers({
       return saneNumber(Meteor.user().totalBalance(currency), currency);
     }
   },
-  currencyIsFiat: function() {
-    return (this.currency === "fiat");
-  },
   totalFiat: function() {
     return totalBalanceFiat.get();
+  },
+  currencyIsFiat: function() {
+    return (this.currency === 'fiat');
   },
   userCurrency : function () {
     return Meteor.user().profile.currency;
@@ -61,9 +61,14 @@ Template.netWorth.helpers({
 });
 
 Template.netWorth.rendered = function () {
-  if (this.data.currency === 'fiat') {
-    builtStockLocal(Meteor.user().profile.currency);
-  } else {
-    builtStockLocal('BTC');
+  builtStockLocal(Meteor.user().profile.currency);
+  };
+Template.netWorth.events = {
+  'click #dashboardChangeStockCurrency': function () {
+    if (this.currency === 'BTC') {
+      builtStockLocal(Meteor.user().profile.currency);
+    } else {
+      builtStockLocal('BTC');
+    }
   }
 };
