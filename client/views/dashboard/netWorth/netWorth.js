@@ -3,8 +3,6 @@
  */
 
 
-var totalBalanceFiat = new ReactiveVar(0);
-
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){

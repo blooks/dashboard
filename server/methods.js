@@ -10,7 +10,6 @@ Meteor.methods({
     var self = this;
     if (!self.userId || !template) return; //DGB 2015-01-14 04:41 Minimal security just-in-case
     var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
-    console.log(template);
     if (template === 'resetPassword') {
       self.unblock();
       Accounts.sendResetPasswordEmail(self.userId);
@@ -57,7 +56,6 @@ Meteor.methods({
        if (!self.userId) return;
        var user = Meteor.users.findOne({_id: self.userId});
        var totalFiatBalance = user.totalBalanceInFiat();
-       console.log('TotalFiat is: ' + totalFiatBalance);
        Meteor.users.update({_id: self.userId}, {$set: { 'profile.totalFiat': totalFiatBalance}});
      },
   // DGB 2015-01-21 06:32
@@ -120,7 +118,6 @@ Meteor.methods({
     var timeDelta = 86400000;
     var transfersInTimeWindow = [];
     Transfers.find({"details.currency": 'BTC', userId: self.userId}, {sort: ['date', 'asc']}).forEach(function (transfer) {
-      //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       var transferTime = transfer.date.getTime();
       if (timeWindowEnd === 0) {
@@ -186,7 +183,6 @@ Meteor.methods({
     return balances;
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
-    console.log("convert call with:" +fromCurrency + toCurrency + amount + time);
     return Coynverter.convert(fromCurrency, toCurrency, amount, time);
   }
 });
