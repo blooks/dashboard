@@ -50,7 +50,6 @@ Template.netWorth.helpers({
     }
   },
   totalFiat: function() {
-    console.log(Meteor.user().profile.totalFiat);
     return Meteor.user().profile.totalFiat;
   },
   currencyIsFiat: function() {

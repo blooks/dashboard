@@ -73,7 +73,7 @@ Router.map(function() {
     }
   });
   this.route('dashboardtype', {
-    path: '/dashboard/:type/:currency',
+    path: '/dashboard/:type/:currency?',
     template: 'dashboard',
     waitOn: function() {
       return [
@@ -85,7 +85,7 @@ Router.map(function() {
     data: function() {
       return {
           type: this.params.type,
-          currency: this.params.currency
+          currency: (this.params.currency || 'fiat')
       };
     }
   });
