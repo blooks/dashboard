@@ -35,7 +35,7 @@ body	{
 	}
 }
 
-/* TODO @Erasmus. Dirty hack to hide password change in  dropdown. 
+/* TODO @Erasmus. Dirty hack to hide password change in  dropdown.
 Please remove from accounts-UI completely */
 #login-buttons-open-change-password {
 	display: none;
@@ -49,20 +49,21 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-  .main-zone {
-  	/* 	padding: 60px 15px 0; */
-	}
+  margin-bottom: 100px; /* Margin bottom by footer height */
 }
-.footer {
+.footer-zone {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Fixed height footer */
+  height: 100px; /* Fixed height footer */
   background-color: transparent;
-  padding: 20px;
-  border-top: 1px solid @gray-lighter;
   z-index: 800;
+
+	.footer {
+		border-top: 1px solid @gray-lighter;
+		padding-top: 10px; padding-top: 1rem;
+		margin-top: 10px; margin-top: 1rem;
+	}
 }
 
 
@@ -104,14 +105,6 @@ body {
 	padding: 1rem;
 }
 
-/* Footer
--------------------- */
-footer {
-	padding: 50px 0;
-	padding: 5rem 0;
-	font-size: 12px; font-size: 1rem;
-	clear: both; // Ensure footer is in bottom
-}
 
 /* Specific view sections
 TODO move these to less files in folders.
