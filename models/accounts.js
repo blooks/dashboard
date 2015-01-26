@@ -1,19 +1,12 @@
 
 Meteor.users.helpers({
   totalBalance: function (currency) {
+    if (currency !== "BTC") {
+      return 0;
+    }
     var result = 0;
-    var counter = 0;
-    Transfers.find({"details.currency": currency}, {sort: {date: -1}}).forEach(function (transfer) {
-      if (transfer.isIncoming()) {
-        result += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        result -= (transfer.representation.fee);
-        result -= (transfer.representation.amount);
-      }
-      if (transfer.isInternal()) {
-        result -= (transfer.representation.fee);
-      }
+    BitcoinWallets.find({userId: Meteor.userId()}).forEach(function(wallet){
+      result += wallet.balance();
     });
     return result;
   }
