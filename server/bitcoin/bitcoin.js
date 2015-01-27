@@ -119,7 +119,7 @@ Meteor.methods({
    */
   updateTx4Wallet: function (wallet) {
     //TODO: check if wallet exists, user is owner and can trigger update
-
+    console.log("Updating a wallet");
     switch (wallet.type) {
       case 'electrum':
         updateElectrumWallet(wallet);

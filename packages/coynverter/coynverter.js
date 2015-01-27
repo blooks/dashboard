@@ -25,15 +25,4 @@ if (Meteor.isServer) {
     }
     return result;
   };
-
-  Meteor.startup(function () {
-    Coynverter.update();
-  });
-  var MyCron = new Cron(600000);
-
-  // 5 is the number of intervals between invoking the job
-  // so this job will happen once every 5 minute
-  MyCron.addJob(1, function () {
-    Coynverter.update();
-  });
 }
