@@ -5,11 +5,11 @@
 	</div>
 	<div class="col-md-6 col-lg-4">
 	    <div class="summary-data spacy">
-	    <table class="table table-tx table-zb-hover auto-width centered">
+	    <table class="table auto-width centered spacy">
 	    	<thead>
-	    		<tr>
+	    		<tr class="fat">
 	    			<td>Wallet</td>
-	    			<td>Amount in BTC</td>
+	    			<td class="text-center">Amount in BTC</td>
 	    			<td>Percent</td>
 	    		</tr>
 	    	</thead>
@@ -17,11 +17,11 @@
 				{{#each wallets}}
 					{{> singleWalletLine}}
 				{{/each}}
-            	<tr>
+            	<tr class="fat">
 					<td>Total</td>
-					<td>{{totalBalance 'BTC'}}</td>
-					<td>100%</td>
-            </tr>
+					<td class="text-center">{{totalBalance 'BTC'}}</td>
+					<td>100.00&#37;</td>
+            	</tr>
 	    	</tbody>
 	    </table>
 	    </div>
