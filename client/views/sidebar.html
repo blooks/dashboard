@@ -2,13 +2,14 @@
   <!-- Begin page content -->
   <!-- col-xs-6 col-sm-3 col-md-2 col-lg-1 -->
       <div class="sidebar sidebar-left sidebar-animate">
-        <a href="#" id='test1' class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left">
+        <a href="#" class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left">
           <div class="icon icon-right-open-big"></div>
         </a>
         <ul class="nav navbar-stacked">
-          <li class='{{#if isActive 'dashboard'}}active{{/if}}'><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><div class="icon icon-graph-trend"></div></span></a></li>
-          <li class='{{#if isActive 'transfers'}}active{{/if}}'><a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><div class="icon icon-exchange"></div></span></a></li>
-          <li class='{{#if isActive 'nodes'}}active{{/if}}'> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon"><div class="icon icon-wallet"></div></span></a></li>
+          <li class="{{isActive 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><div class="icon icon-graph-trend"></div></span></a></li>
+          <li class="{{isActive 'transfers'}}"><a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><div class="icon icon-exchange"></div></span></a></li>
+          <li class="{{isActive 'nodes'}}"> <a href="{{pathFor 'nodes'}}">{{i18n 'template.headings.accounts'}}<span class="nav-icon"><div class="icon icon-wallet"></div></span></a></li>
+          <li class="{{isActive 'userProfile'}}"> <a href="{{pathFor 'profileEdit'}}">Profile<span class="nav-icon"><div class="icon icon-user"></div></span></a></li>
         </ul>
       </div> <!-- /.sidebar -->
 </template>

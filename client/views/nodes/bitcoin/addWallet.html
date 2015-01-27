@@ -1,0 +1,24 @@
+<template name="addWallet">
+{{> Template.dynamic template=guideTemplate}}
+<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
+       <div class="text-center">
+           <img src="/img/external-logos/{{actiontype}}-logo.png">
+           <h3 class="label-title">Add {{actiontype}}</h3>
+        </div>
+        {{#autoForm collection='BitcoinWallets' type='insert' id='addNewBitcoinWallet' class='bold-input-text' validation='keyup' }}
+            {{> afQuickField name='label' autofocus='' class="spacy padded-input-field" placeholder="Wallet label"}}
+            {{> afQuickField name='type' value=actiontype type='hidden' label=false}}
+            <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span></a>
+            {{#unless afFieldValueIs name='type' value='single-addresses'}}
+                {{> afQuickField class='spacy padded-input-field' name='hdseed' label="HD seed" placeholder='Paste HD seed here' type='textarea'}}
+            {{/unless}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg spacy">Add wallet {{buttonState}}</button>
+            </div>
+        {{/autoForm}}
+
+      <div class="row spacy text-center">
+            <a href="/nodes/bitcoinWallets/add" class="btn back btn-no-box">&lt; ... or select another wallet</a>
+      </div>
+</div>
+</template>

@@ -1,18 +1,26 @@
 Package.describe({
-  summary: "Convert currencies according to historical rates.",
-  version: "0.1.0"
+  name: 'coyno:coynverter',
+  version: '0.0.1',
+  // Brief, one-line summary of the package.
+  summary: 'Wrapper for NPM package coyno-converter',
+  // By default, Meteor will default to using README.md for documentation.
+  // To avoid submitting documentation, set this field to null.
+  documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('METEOR@0.9.3.1');
-  api.use('coffeescript', ['client', 'server']);
-  api.addFiles(['data/exchangerates.coffee','coynverter.js']);
-  api.addFiles(['data/HistDollarPrices.csv', 'data/HistEuroPrices.csv'], 'server');
-  api.export('Coynverter');
+  api.versionsFrom('1.0.3.1');
+  api.use('mrt:cron-tick');
+  api.export('Coynverter', 'server');
+  api.addFiles('coynverter.js');
+});
+
+Npm.depends({
+  "coyno-converter": "0.0.24"
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('coynverter');
-  api.addFiles('coynverter-tests.js', 'server');
+  api.use('coyno:coynverter');
+  api.addFiles('coyno:coynverter-tests.js');
 });

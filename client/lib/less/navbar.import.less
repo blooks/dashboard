@@ -36,6 +36,8 @@ box-shadow: 3px 0px 10px 2px @soft-shadow; */
 }
 
 
+/* Sidebar styling
+====================== */
 
 /* The pullout button to open/close sidebar */
 a.navbar-pullout {
@@ -46,7 +48,6 @@ a.navbar-pullout {
     border-left: none;
 }
 
-/* Sidebar styling */
 
 .sidebar {
     padding: 20px 0;
@@ -127,7 +128,7 @@ a.navbar-pullout {
 
 /* Show icons on closed sidebar */
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .row .sidebar.sidebar-left {
     width: 200px;
     @sidebar-icons-margin-pct: -150px;
@@ -140,21 +141,7 @@ a.navbar-pullout {
 
 }
 
-/* @media (min-width: 992px) {
-    .row .sidebar.sidebar-left {
-
-    @sidebar-icons-margin-pct: -75%;
-    -webkit-transform: translate(@sidebar-icons-margin-pct,0);
-    -moz-transform: translate(@sidebar-icons-margin-pct,0);
-    -ms-transform: translate(@sidebar-icons-margin-pct,0);
-    -o-transform: translate(@sidebar-icons-margin-pct,0);
-    transform: translate(@sidebar-icons-margin-pct,0);
-
-    }
-
-} */
-
-@media (min-width: 1170px) {
+@media (min-width: 1200px) {
     .row .sidebar.sidebar-left {
         width: 200px;
         @sidebar-icons-margin-pct: -150px;
@@ -190,5 +177,30 @@ a.navbar-pullout {
         -ms-transform: translate(0,0);
         -o-transform: translate(0,0);
         transform: translate(0,0);
+    }
+}
+
+
+/* Sub nav pills
+================== */
+ul.nav-pills {
+  li {
+    border: 1px solid @gray-light;
+    margin: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+/* Other selectors in navbar
+================== */
+.currency-selector {
+    padding: 10px 0;
+}
+.simple-select-dropdown {
+    background: transparent;
+    border: 1px solid @gray-lighter;
+    &:focus, &:hover, &:active {
+        outline: none;
     }
 }

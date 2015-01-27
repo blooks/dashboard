@@ -38,6 +38,12 @@ Template.transferRow.helpers({
   },
   senderLabel : function() {
     return this.representation.senderLabels[0];
+  },
+  baseVolumeRep: function() {
+    var baseCurrency = Meteor.user().profile.currency;
+    return this.volumeInCurrency(baseCurrency);
+  },
+  currency: function () {
+    return Meteor.user().profile.currency;
   }
-
 });

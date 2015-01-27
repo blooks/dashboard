@@ -12,70 +12,54 @@ var nodeLabel = function nodeLabel(nodeId) {
   return "External";
 };
 
-/**
- *
- * @param inoutput
- * @returns {*}
- */
-var getNodeIdForInOutput = function (inoutput) {
-
-  //The input comes from a known Node in our DB.
-  var existingNodeId = inoutput.nodeId;
-
-  //Lets find out whether there is a BitcoinWallet for this Node.
-  var bitcoinWallet = null;
-  if (existingNodeId) {
-    var bitcoinAddress = BitcoinAddresses.findOne({"_id": existingNodeId});
-    if (bitcoinAddress) {
-      bitcoinWallet = BitcoinWallets.findOne({"_id": bitcoinAddress.walletId});
-    }
-  }
-  if (bitcoinWallet) {
-    return bitcoinWallet._id;
-  }
-  else {
-    return null;
-  }
-};
-
-var checkBitcoinWalletNodeIdForExistence = function (nodeId) {
-  return (BitcoinWallets.findOne({"_id": nodeId}) !== null);
-};
-
-var removeMissingNodeIds = function(transfer) {
-  var inputs = [];
-  var outputs = [];
-  transfer.details.inputs.forEach(function(input) {
-    if (!checkBitcoinWalletNodeIdForExistence(input.nodeId)) {
-      input.nodeId = null;
-    }
-    inputs.push(input);
-  });
-  transfer.details.outputs.forEach(function(output) {
-    if (!checkBitcoinWalletNodeIdForExistence(output.nodeId)) {
-      output.nodeId = null;
-    }
-    outputs.push(output);
-  });
-  Transfers.update({"_id": transfer._id},
-    {$set: {'details.inputs' : inputs, 'details.outputs': outputs}}
-  );
-};
-
 if (Meteor.isServer) {
-
-
-    Transfers.after.insert(function (userId, doc) {
-      //Sanity check.
-      var user = Meteor.users.findOne({_id: userId});
-      if (! user.profile.hasTransfers) {
-        Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
+  /**
+   *
+   * @param inoutput
+   * @returns {*}
+   */
+  var getNodeIdForBitcoinAddress = function (userId, address) {
+    var internalAddress = BitcoinAddresses.findOne({"userId": userId, "address": address});
+    if (internalAddress) {
+      return internalAddress._id;
+    }
+    //The Address does not belong to the user.
+    return null;
+  };
+  /**
+   *
+   * @param inoutput
+   * @returns {*}
+   */
+  var getNodeIdForInOutput = function (inoutput) {
+    //The input comes from a known Node in our DB.
+    var existingNodeId = inoutput.nodeId;
+    //Lets find out whether there is a BitcoinWallet for this Node.
+    var bitcoinWallet = null;
+    if (existingNodeId) {
+      var bitcoinAddress = BitcoinAddresses.findOne({"_id": existingNodeId});
+      if (bitcoinAddress) {
+        bitcoinWallet = BitcoinWallets.findOne({"_id": bitcoinAddress.walletId});
       }
-    });
+    }
+    if (bitcoinWallet) {
+      return bitcoinWallet._id;
+    }
+    else {
+      return null;
+    }
+  };
 
-
-
-    Transfers.helpers({
+  Transfers.after.insert(function (userId, doc) {
+    //Sanity check.
+    var user = Meteor.users.findOne({_id: userId});
+    if (! user.profile.hasTransfers) {
+      Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers' : true}});
+    }
+    var transfer = Transfers.findOne({_id: doc._id, userId: userId});
+    transfer.update();
+  });
+  Transfers.helpers({
     inputSum: function () {
       var result = 0;
       this.details.inputs.forEach(function (input) {
@@ -83,7 +67,6 @@ if (Meteor.isServer) {
       });
       return result;
     },
-
     outputSum: function () {
       var result = 0;
       this.details.outputs.forEach(function (output) {
@@ -94,8 +77,7 @@ if (Meteor.isServer) {
     fee: function () {
       return (this.inputSum() - this.outputSum());
     },
-
-      senderNodeId: function () {
+    senderNodeId: function () {
       var result = null;
       this.details.inputs.forEach(function (input) {
         if (!result) {
@@ -138,20 +120,20 @@ if (Meteor.isServer) {
      * @returns {string} type of transfer. 'internal', 'outgoing' or 'incoming'
      */
     transferType: function () {
-    if (this.senderNodeId()) {
-      //We know the node it has been sent from so it is
-      //either internal or outgoing.
-      if (this.recipientNodeId()) {
-        return 'internal';
+      if (this.senderNodeId()) {
+        //We know the node it has been sent from so it is
+        //either internal or outgoing.
+        if (this.recipientNodeId()) {
+          return 'internal';
+        } else {
+          return 'outgoing';
+        }
+      } else if (this.recipientNodeId()) {
+        return "incoming";
       } else {
-        return 'outgoing';
+        return "orphaned";
       }
-    } else if (this.recipientNodeId()) {
-      return "incoming";
-    } else {
-      return "orphaned";
-    }
-  },
+    },
     amount: function () {
       var result = this.outputSum();
       var senderNodeId = this.senderNodeId();
@@ -163,26 +145,28 @@ if (Meteor.isServer) {
       return result;
     },
     update: function () {
-      removeMissingNodeIds(this);
       var transfer = Transfers.findOne({"_id": this._id});
       var representation = {};
       representation.type = transfer.transferType();
       representation.amount = transfer.amount();
       representation.senderLabels = [transfer.senderLabel()];
       representation.recipientLabels = [transfer.recipientLabel()];
-      representation.baseVolume =
-        Coynverter.calculateBaseAmount(
-          transfer.amount(),
-          transfer.details.currency,
-          transfer.date);
+
+      var currencies = ["EUR", "USD"];
+      var valuesToSave = [];
+      currencies.forEach(function (currency) {
+        var exchangeRate = {};
+        exchangeRate[currency] = Math.round(Coynverter.convert('BTC', currency, representation.amount, new Date(transfer.date)));
+        valuesToSave.push(exchangeRate);
+      });
+      representation.fee = transfer.fee();
       Transfers.update(
-        {"_id": this._id},
-        {$set: {"representation": representation}}
+        {"_id": transfer._id},
+        {$set: {"representation": representation, "baseVolume": valuesToSave}}
       );
     }
   });
 }
-
 Transfers.helpers({
   /**
    * Determines if transfer is internal
@@ -212,5 +196,10 @@ Transfers.helpers({
     } else {
       return (this.representation.amount / 10e7).toFixed(2);
     }
+  },
+  volumeInCurrency: function(currency) {
+    return this.baseVolume.filter(function (entry) {
+      return entry[currency];
+    })[0][currency];
   }
 });

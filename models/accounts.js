@@ -1,55 +1,28 @@
+
 Meteor.users.helpers({
-  networthData: function () {
-    var satoshiToBTC = function (amount) {
-      return (amount / 10e7).toFixed(8);
-    };
-    var balances = [];
-    var changes = [];
-    var balance = 0;
-    var change = 0;
-    var time = 0;
-    var timeDelta = 86400;
-    Transfers
-      .find({"details.currency": 'BTC'}, {sort: ['date', 'asc']})
-      .forEach(function (transfer) {
-        //Start from timedelta before the time of the first transaction
-        if (time === 0) {
-          time = transfer.date.getTime() - timeDelta;
-        }
-        while (transfer.date.getTime() >= time) {
-          balances.push([time, parseFloat(satoshiToBTC(balance))]);
-          changes.push([time, parseFloat(satoshiToBTC(change))]);
-          change = 0;
-          time += timeDelta;
-        }
-        if (transfer.isIncoming()) {
-          balance += transfer.representation.amount;
-          change += transfer.representation.amount;
-        }
-        if (transfer.isOutgoing()) {
-          //TODO: Respect the fee!
-          balance -= (transfer.representation.amount);
-          change -= (transfer.representation.amount);
-        }
-      });
-    balances.push([time, parseFloat(satoshiToBTC(balance))]);
-    changes.push([time, parseFloat(satoshiToBTC(change))]);
-    return [balances, changes];
-  },
   totalBalance: function (currency) {
+    if (currency !== "BTC") {
+      return 0;
+    }
     var result = 0;
-    Transfers.find({"details.currency": currency}).forEach(function (transfer) {
-      if (transfer.isIncoming()) {
-        result += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        //TODO: Respect the fee!
-        result -= (transfer.representation.amount);
-      }
+    BitcoinWallets.find({userId: Meteor.userId()}).forEach(function(wallet){
+      result += wallet.balance();
     });
     return result;
   }
 });
+
+if (Meteor.isServer)
+{
+  Meteor.users.helpers({
+    totalBalanceInFiat: function () {
+      var bitcoinBalance = this.totalBalance('BTC');
+      var currency = Meteor.user().profile.currency;
+      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
+      return parseInt(returnValue);
+    }
+  });
+}
 
 var userProfile = new SimpleSchema({
   language: {
@@ -67,6 +40,20 @@ var userProfile = new SimpleSchema({
   hasTransfers: {
     type: Boolean,
     defaultValue: false
+  },
+  hasSignedTOS: {
+    type: Boolean,
+    defaultValue: false
+  },
+  currency: {
+    type: String,
+    optional: true,
+    allowedValues: ['EUR', 'USD', 'BTC'],
+    defaultValue: 'EUR'
+  },
+  totalFiat: {
+    type: Number,
+    defaultValue: 0
   }
 });
 
@@ -101,6 +88,8 @@ var Schema = new SimpleSchema({
   "emails.$.address": {
     optional: true,
     type: String,
+    unique: true, //DGB 2015-01-21 06:59 Added
+    index: true,
     regEx: SimpleSchema.RegEx.Email
   },
   "emails.$.verified": {
@@ -119,3 +108,17 @@ var Schema = new SimpleSchema({
 });
 
 Meteor.users.attachSchema(Schema);
+
+if (Meteor.isServer) {
+  // DGB 2015-01-23 05:19
+  // Before we delete the user, we remove related wallets first. Wallets will
+  // cascade into accounts, accounts will cascade into transfers
+  Meteor.users.before.remove(function (userId, doc) {
+    var userWallets = BitcoinWallets.find({'userId': doc._id},{fields:{id:1}}).fetch();
+    // DGB 2015-01-23 05:17
+    // Cascading removals only if the user has wallets
+    userWallets.forEach(function(wallet) {
+       BitcoinWallets.remove({_id: wallet._id});
+    });
+  });
+}

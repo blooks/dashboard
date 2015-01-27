@@ -6,8 +6,20 @@ var mustBeSignedIn = function() {
   }
 };
 
+var mustHaveSignedTOS = function() {
+  if (Meteor.user() && Meteor.user().profile && !Meteor.user().profile.hasSignedTOS) {
+    Router.go('termsOfService');
+  } else {
+    this.next();
+  }
+};
+
 Router.onBeforeAction(mustBeSignedIn, {
   except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
+});
+
+Router.onBeforeAction(mustHaveSignedTOS, {
+  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about', 'termsOfService']
 });
 
 Router.map(function() {
@@ -18,8 +30,8 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    waitOn: function() {
-      return [Meteor.subscribe('bitcoinwallets'), Meteor.subscribe('transfers')];
+    action: function() {
+      Router.go('/dashboard/netWorth/fiat');
     }
   });
   this.route('transfers_user', {
@@ -29,6 +41,11 @@ Router.map(function() {
     },
     action: function() {
       Router.go('/transfers/1/10');
+    }
+  });
+  this.route('termsOfService', {
+    waitOn: function() {
+      return [Meteor.subscribe('user')];
     }
   });
   this.route('transfers', {
@@ -55,23 +72,47 @@ Router.map(function() {
       }
     }
   });
+  this.route('dashboardtype', {
+    path: '/dashboard/:type/:currency?',
+    template: 'dashboard',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('user'),
+        Meteor.subscribe('bitcoinwallets'),
+        Meteor.subscribe('transfers')
+      ];
+    },
+    data: function() {
+      return {
+          type: this.params.type,
+          currency: (this.params.currency || 'fiat')
+      };
+    }
+  });
   this.route('nodes', {
-    path: '/nodes/nodesOverview',
+    path: '/nodes/',
     data: function() {
       return {
         type: 'bitcoinWallets'
       };
     }
   });
-  this.route('/nodes/:type', {
-    path: '/nodes/:type',
+  this.route('nodesdetails', {
+    path: '/nodes/:type/:action?/:actiontype?',
     template: 'nodes',
     data: function() {
       return {
-        type: this.params.type
+        type: this.params.type,
+        action: this.params.action,
+        actiontype: this.params.actiontype
       };
     }
   });
+
+ this.route('nodesAddWallet', {
+    path: '/nodes/bitcoinWallets/add'
+  });
+
   return this.route('profileEdit', {
     path: '/profile',
     template: 'userProfile'

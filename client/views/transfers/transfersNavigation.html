@@ -1,19 +1,41 @@
 <template name="transfersNavigation">
   <!--Pagination section-->
-  <div class='row' style='margin-top:2em;'>
-    <div class='col-xs-4 text-center'>
+  <div class="row page-controls">
+    <div class='col-xs-3 text-center'>
       {{#if noZero}}
-        <div id='beforeButton' class='btn btn-primary text-center beforeBtn'>Previous</div>
+        <span class="prev-page">&lt; Previous</span>
       {{/if}}
     </div>
-    <div class='col-xs-4 text-center'>
-      <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div>
+    <div class='col-xs-6 text-center'>
+      <nav>
+        <ul class="pagination">
+          <!-- {{#if noZero}}
+            <li>
+              <a class='before_button' aria-label="Previous" style="cursor: pointer;">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          {{/if}} -->
+          {{#each pagination}}
+            <li class="{{isActive this}}">
+              <span class="go-to-page" data-page-number="{{this}}">{{this}}</span>
+            </li>
+          {{/each}}
+          <!-- {{#if noLastPage}}
+            <li>
+              <a class='next_button' aria-label="Next" style="cursor: pointer;">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          {{/if}} -->
+        </ul>
+      </nav>
+      <!-- <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div> -->
     </div>
-    <div class='col-xs-4 text-center'>
+    <div class='col-xs-3 text-center'>
       {{#if noLastPage}}
-        <div id='nextButton' class='btn btn-primary text-center nextBtn'>Next</div>
+        <span class="next-page">Next &gt;</span>
       {{/if}}
     </div>
   </div>
 </template>
-  

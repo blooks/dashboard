@@ -8,15 +8,17 @@ Template.sidebar.created = function() {
       else {
            $('.icon-left-open-big').removeClass('icon-left-open-big').addClass('icon-right-open-big');
       }
-  },200);
+  }, 200);
   });
 };
- 
 
 Template.sidebar.helpers({
   isActive: function (section) {
-    return (section===Router.current().route.getName());
-  },
+    if (section===this.type) {
+      return "active";
+    }
+    return "";
+  }
 });
 
 

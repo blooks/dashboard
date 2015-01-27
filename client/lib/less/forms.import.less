@@ -1,0 +1,148 @@
+/* Global form styles
+---------------- */
+.inline-form {
+	display: inline;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+	background: none;
+	border: 1px solid @gray-light;
+	letter-spacing: 1px;
+	font-weight: 400;
+
+	&:hover {
+		border: 1px solid @gray-light;
+	}
+
+	&:focus {
+		-moz-box-shadow:    inset 0 10px 10px -10px @gray-lighter;
+		-webkit-box-shadow: inset 0 10px 10px -10px @gray-lighter;
+		box-shadow:         inset 0 10px 10px -10px @gray-lighter;
+		border: 1px solid @gray;
+		outline: none;
+	}
+}
+
+.bold-input-text {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+input.padded-input-field {
+	padding: @padding-xl-vertical @padding-large-horizontal;
+}
+
+.no-box {
+	border: none;
+	&:focus {
+		outline: none;
+		-moz-box-shadow:    none;
+		-webkit-box-shadow: none;
+		box-shadow:         none;
+	}
+}
+
+
+/* Class for heading dividing into sections */
+.form-divider {
+	border-bottom: 1px solid @gray-medium-light ;
+	color: @gray-medium-light;
+	padding-top: 24px;
+	padding-top: 2.4rem;
+}
+
+/* "Add New Wallet" journey. Wallet selection view  */
+ul.wallet-selection {
+	list-style-type: none;
+	padding-left: 0;
+
+	li {
+		float: left;
+		width: 140px;
+		margin: 20px 40px 20px 0;
+		margin: 2rem 4rem 2rem 0;
+		text-align: center;
+ 		transition: transform 0.2s;
+		a.wallet-thumbs {
+			text-transform: uppercase;
+
+			img {
+			  border:2px solid transparent;
+			  width: 140px;
+			  height: auto;
+			 -webkit-transition: transform 0.3s;
+			   -moz-transition: transform 0.3s;
+			     -o-transition: transform 0.3s;
+			        transition: transform 0.3s;
+			}
+
+			.wallet-label-text {
+				border-top: 1px solid @gray-lighter;
+				border-bottom: 1px solid @gray-lighter;
+				color: @gray;
+				text-align: center;
+			}
+
+			&:hover, &:focus {
+
+				img {
+				 -webkit-transform: scale(1.4);
+				   -moz-transform: scale(1.4);
+				     -o-transform: scale(1.4);
+				        transform: scale(1.4);
+				}
+			}
+		}
+
+		&.coming-soon {
+				position: relative;
+			a.wallet-thumbs {
+				cursor: default !important;
+
+				.wallet-label-text {
+					color: @gray-lighter;
+				}
+
+				img {
+					@opacity: 0.4;
+					-moz-opacity: @opacity;
+					-khtml-opacity: @opacity;
+					-webkit-opacity: @opacity;
+					opacity: @opacity;
+					@opperc: @opacity * 100;
+					-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+					filter: ~"alpha(opacity=@{opperc})";
+					transform: none !important;
+				}
+
+				.coming-soon-sign {
+					border: 1px solid @brand-primary;
+					color: @brand-primary;
+					padding: 5px;
+					text-transform: uppercase;
+					font-weight: normal;
+					position: absolute;
+					top: 40%;
+					width: 100%;
+
+					/* Rotate */
+				    -ms-transform: rotate(30deg); /* IE 9 */
+				    -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+				    transform: rotate(30deg);
+
+				}
+			}
+		}
+	}
+}
+
+.btn.btn-no-box {
+	border: none;
+		&:hover, &:focus {
+			background-color: transparent;
+			color: @brand-dark;
+			border: none;
+		}
+}

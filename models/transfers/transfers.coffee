@@ -1,3 +1,6 @@
+#21.01.2015 LFG for avoiding call to an API to get the last price of BitCoin que need
+#to publish the last day available on the databse
+#for calculate the value of the bitcoins in the user currency
 # Create the meteor collection
 ## A Transfer is a transaction that moves one kind of a currency between
 ## two different accounts
@@ -37,9 +40,18 @@ Schemas.TransferRepresentation = new SimpleSchema
     type: [String]
   amount:
     type: Number
-  baseVolume:
+  fee:
     type: Number
 
+currencyBaseVolume = new SimpleSchema(
+  USD:
+    type: Number
+    optional: true
+
+  EUR:
+    type: Number
+    optional: true
+)
 
 Schemas.Transfer = new SimpleSchema
 
@@ -63,11 +75,11 @@ Schemas.Transfer = new SimpleSchema
   note:
     type: String
     optional: true
-  baseVolume:
-    type: Number
-    defaultValue: 0
   representation:
     type: Schemas.TransferRepresentation
+    optional: true
+  baseVolume:
+    type: [currencyBaseVolume]
     optional: true
 
 # Attach the schema to the collection

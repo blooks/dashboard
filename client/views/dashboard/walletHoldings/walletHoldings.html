@@ -1,0 +1,29 @@
+<template name="walletHoldings">
+	<div class="col-lg-8 pie-chart">
+	    <h3>Wallet distribution</h3>
+	    <div id="currentholdingsperwallet" class="col-md-6 col-lg-8"></div>
+	</div>
+	<div class="col-md-6 col-lg-4">
+	    <div class="summary-data spacy">
+	    <table class="table auto-width centered spacy">
+	    	<thead>
+	    		<tr class="fat">
+	    			<td>Wallet</td>
+	    			<td class="text-center">Amount in BTC</td>
+	    			<td>Percent</td>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+				{{#each wallets}}
+					{{> singleWalletLine}}
+				{{/each}}
+            	<tr class="fat">
+					<td>Total</td>
+					<td class="text-center">{{totalBalance 'BTC'}}</td>
+					<td>100.00&#37;</td>
+            	</tr>
+	    	</tbody>
+	    </table>
+	    </div>
+	</div>
+</template>
