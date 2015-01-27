@@ -1,7 +1,7 @@
 /*All table styles here*/
 
 /* Tables */
-.table.table-tx {
+.table {
 
     white-space: nowrap;
 
@@ -60,13 +60,6 @@
             padding: 1.2rem 1.6rem;
             vertical-align: middle;
 
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-                text-align: right;
-            }
             &.inflow {
                 color: @positive;
               }
@@ -152,6 +145,21 @@ td.tx-arrow {
   }
 }
 
+}
+
+table.table-tx tbody {
+    tr {
+      td {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+                text-align: right;
+            } 
+
+      }
+  }
 }
 
 @media only screen and (max-width: 768px) {
