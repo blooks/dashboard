@@ -16,8 +16,8 @@ Accounts.emailTemplates.verifyEmail = {
   },
   text: function (user, url) {
     var t = null;
-    t= "Hello there! \n\n Thank you for opening your account at Coyno. \n\n Feel free to contact us at any time via Email on support@coyno.com and engage with us on reddit at /r/coyno.\n\n";
-    t+="Sincerly, \n\n your Coyno team.";
+    t= "Hello! \n\n Thank you for opening your account at Coyno. \n\n Feel free to contact us at any time via e-mail on support@coyno.com and engage with us on reddit at /r/coyno.\n\n";
+    t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
 };
@@ -30,9 +30,9 @@ Accounts.emailTemplates.changeEmail ={
   },
   text: function () {
     var t = null;
-    t= "Hello there" + "! \n\n";
+    t= "Hello!\n\n";
     t+="You changed your e-mail. If you did not execute this change yourself please contact us asap on support@coyno.com.";
-    t+="Sincerly, \n\n your Coyno team.";
+    t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
 };
@@ -47,9 +47,9 @@ Accounts.emailTemplates.resetPassword ={
   },
   text: function (user,url) {
     var t = null;
-    t= "Hello " + "! \n\n";
+    t= "Hello!\n\n";
     t+="You requested a password reset. Unfortunately the feature is not implemented yet. Please contact us on support@coyno.com and we will help you.";
-    t+="Sincerly, \n\n your Coyno team.";
+    t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
 };
@@ -62,9 +62,9 @@ Accounts.emailTemplates.deleteAccount = {
   },
   text: function (user) {
     var t = null;
-    t= "Goodbye! \n\n We deleted your Coyno Account following your request. We deleted all data connected to your account. \n\n";
+    t= "Goodbye!\n\nWe deleted your Coyno Account following your request. We deleted all data connected to your account.\n\n";
     t+="We are sorry to see you go, but hope you come back in the future!\n\n";
-    t+="Sincerly, \n\n your Coyno team.";
+    t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
 };

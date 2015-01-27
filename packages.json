@@ -1,5 +1,5 @@
 {
   "bitcore": "0.9.3",
   "bitcore-electrum": "0.0.3",
-  "coyno-dispatcher": "0.0.4"
+  "coyno-dispatcher": "0.0.5"
 }
