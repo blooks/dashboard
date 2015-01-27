@@ -25,4 +25,8 @@ if (Meteor.isServer) {
     }
     return result;
   };
+
+  Meteor.startup(function () {
+    Coynverter.update();
+  });
 }
