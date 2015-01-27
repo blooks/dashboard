@@ -1,28 +1,28 @@
 
 Meteor.users.helpers({
   totalBalance: function (currency) {
+    if (currency !== "BTC") {
+      return 0;
+    }
     var result = 0;
-    Transfers.find({"details.currency": currency}).forEach(function (transfer) {
-      if (transfer.isIncoming()) {
-        result += transfer.representation.amount;
-      }
-      if (transfer.isOutgoing()) {
-        result -= (transfer.representation.fee);
-        result -= (transfer.representation.amount);
-      }
+    BitcoinWallets.find({userId: Meteor.userId()}).forEach(function(wallet){
+      result += wallet.balance();
     });
     return result;
-  },
-  totalBalanceInFiat: function () {
-    var bitcoinBalance = this.totalBalance('BTC');
-    var currency = Meteor.user().profile.currency;
-    var returnValue = 0;
-    Meteor.call('convert', 'BTC', currency, bitcoinBalance, new Date(), function (err, result) {
-      returnValue = parseFloat(result/10e7).toFixed(2);
-    });
-    return returnValue;
   }
 });
+
+if (Meteor.isServer)
+{
+  Meteor.users.helpers({
+    totalBalanceInFiat: function () {
+      var bitcoinBalance = this.totalBalance('BTC');
+      var currency = Meteor.user().profile.currency;
+      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
+      return parseInt(returnValue);
+    }
+  });
+}
 
 var userProfile = new SimpleSchema({
   language: {
@@ -50,6 +50,10 @@ var userProfile = new SimpleSchema({
     optional: true,
     allowedValues: ['EUR', 'USD', 'BTC'],
     defaultValue: 'EUR'
+  },
+  totalFiat: {
+    type: Number,
+    defaultValue: 0
   }
 });
 

@@ -30,20 +30,8 @@ Router.map(function() {
   });
   this.route('dashboard', {
     path: '/dashboard',
-    waitOn: function() {
-      return [
-        Meteor.subscribe('user'),
-        Meteor.subscribe('bitcoinwallets'),
-        Meteor.subscribe('transfers')
-      ];
-    },
-    data: function() {
-      if(Meteor.user()){
-        return {
-          type: 'netWorth',
-          currency: 'fiat'
-        };
-      }
+    action: function() {
+      Router.go('/dashboard/netWorth/fiat');
     }
   });
   this.route('transfers_user', {
@@ -97,7 +85,7 @@ Router.map(function() {
     data: function() {
       return {
           type: this.params.type,
-          currency: this.params.currency
+          currency: (this.params.currency || 'fiat')
       };
     }
   });
@@ -120,6 +108,11 @@ Router.map(function() {
       };
     }
   });
+
+ this.route('nodesAddWallet', {
+    path: '/nodes/bitcoinWallets/add'
+  });
+
   return this.route('profileEdit', {
     path: '/profile',
     template: 'userProfile'

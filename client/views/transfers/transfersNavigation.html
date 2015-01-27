@@ -1,12 +1,12 @@
 <template name="transfersNavigation">
   <!--Pagination section-->
-  <div class='row' style='margin-top:2em;'>
-    <div class='col-xs-4 text-center'>
+  <div class="row page-controls">
+    <div class='col-xs-3 text-center'>
       {{#if noZero}}
-        <div class='btn btn-primary text-center before_button'>Previous</div>
+        <span class="prev-page">&lt; Previous</span>
       {{/if}}
     </div>
-    <div class='col-xs-4 text-center'>
+    <div class='col-xs-6 text-center'>
       <nav>
         <ul class="pagination">
           <!-- {{#if noZero}}
@@ -17,7 +17,9 @@
             </li>
           {{/if}} -->
           {{#each pagination}}
-            <li class="{{isActive this}}"><a class="page_to_go" data-page-number="{{this}}">{{this}}</a></li>
+            <li class="{{isActive this}}">
+              <span class="go-to-page" data-page-number="{{this}}">{{this}}</span>
+            </li>
           {{/each}}
           <!-- {{#if noLastPage}}
             <li>
@@ -30,11 +32,10 @@
       </nav>
       <!-- <div id='loadMoreButton' style="text-align:center; width: 100%; margin:0 auto;">{{page}} of {{totalPages}}</div> -->
     </div>
-    <div class='col-xs-4 text-center'>
+    <div class='col-xs-3 text-center'>
       {{#if noLastPage}}
-        <div class='btn btn-primary text-center next_button'>Next</div>
+        <span class="next-page">Next &gt;</span>
       {{/if}}
     </div>
   </div>
 </template>
-  

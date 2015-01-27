@@ -32,10 +32,12 @@ Template.transfersNavigation.events({
       _id: this._id
     });
   },
-  'click .next_button': function () {
+  'click .next-page': function () {
+    event.preventDefault();
     Router.go('/transfers/'+(this.page+1)+'/'+this.numberOfResultsPerPage);
   },
-  'click .before_button' : function () {
+  'click .prev-page' : function () {
+    event.preventDefault();
     var page = this.page-1;
     if(page.get!==0){
       Router.go('/transfers/'+page+'/'+this.numberOfResultsPerPage);
@@ -43,7 +45,8 @@ Template.transfersNavigation.events({
       Router.go('/transfers/'+(page+1)+'/'+this.numberOfResultsPerPage);
     }
   },
-  'click .page_to_go': function (event) {
+  'click .go-to-page': function (event) {
+    event.preventDefault();
     Router.go('/transfers/'+event.target.attributes[1].value+'/10');
   }
 });

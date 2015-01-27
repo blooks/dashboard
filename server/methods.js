@@ -10,7 +10,6 @@ Meteor.methods({
     var self = this;
     if (!self.userId || !template) return; //DGB 2015-01-14 04:41 Minimal security just-in-case
     var user = Meteor.users.findOne({_id: self.userId}).emails[0].address;
-    console.log(template);
     if (template === 'resetPassword') {
       self.unblock();
       Accounts.sendResetPasswordEmail(self.userId);
@@ -52,6 +51,13 @@ Meteor.methods({
   verifyUsernameIsUnique: function (username) {
     return (Meteor.users.findOne({'profile.username':username})===undefined);
   },
+  updateTotalFiat: function() {
+       var self = this;
+       if (!self.userId) return;
+       var user = Meteor.users.findOne({_id: self.userId});
+       var totalFiatBalance = user.totalBalanceInFiat();
+       Meteor.users.update({_id: self.userId}, {$set: { 'profile.totalFiat': totalFiatBalance}});
+     },
   // DGB 2015-01-21 06:32
   // Changes the email of the user. As we only allow one email per user, we know
   // the email will be on the position 0 of the email array. We send the email to the old address to inform of the change
@@ -107,11 +113,11 @@ Meteor.methods({
     var balances = [];
     var balance = 0;
     var timeWindowEnd = 0;
+    var timeNow = new Date().getTime();
     //21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
     var timeDelta = 86400000;
     var transfersInTimeWindow = [];
     Transfers.find({"details.currency": 'BTC', userId: self.userId}, {sort: ['date', 'asc']}).forEach(function (transfer) {
-      //console.log(transfer.baseVolume);
       //Start from timedelta before the time of the first transaction
       var transferTime = transfer.date.getTime();
       if (timeWindowEnd === 0) {
@@ -121,7 +127,7 @@ Meteor.methods({
         timeWindowEnd = (transferTime - (transferTime % timeDelta) + timeDelta);
         balances.push([(timeWindowEnd - timeDelta), convertToSaneAmount(parseFloat(0), currency)]);
       }
-      if (transferTime <= timeWindowEnd ) {
+      if (transferTime <= timeWindowEnd) {
         transfersInTimeWindow.push(transfer);
       } else {
         //process queued transfers, repeat until current transfer is in time window. Queue it.
@@ -139,10 +145,12 @@ Meteor.methods({
         transfersInTimeWindow = [];
         //Pushing Time Window End until the current transfer is in the current time window.
         while (transferTime > timeWindowEnd) {
-          balances.push([timeWindowEnd, convertToSaneAmount
-          (parseFloat
+          balances.push([timeWindowEnd, convertToSaneAmount(
+          parseFloat(
             //Taking the valuation of the balance for this time window at the middle of the time window.
-          (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd - (timeDelta/2)))), currency)
+            Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)), currency
+            )
+          )
           ]);
           timeWindowEnd += timeDelta;
         }
@@ -164,10 +172,10 @@ Meteor.methods({
         }
       });
       //Go until today.
-      while (timeWindowEnd < new Date().getTime()) {
+      while (timeWindowEnd < timeNow) {
         balances.push([timeWindowEnd, convertToSaneAmount
         (parseFloat
-        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd- (timeDelta/2)))), currency)
+        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
         ]);
         timeWindowEnd+=timeDelta;
       }
@@ -175,7 +183,6 @@ Meteor.methods({
     return balances;
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
-    console.log("convert call with:" +fromCurrency + toCurrency + amount + time);
     return Coynverter.convert(fromCurrency, toCurrency, amount, time);
   }
 });

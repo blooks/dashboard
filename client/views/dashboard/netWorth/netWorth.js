@@ -3,8 +3,6 @@
  */
 
 
-var totalBalanceFiat = new ReactiveVar(0);
-
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){
@@ -18,10 +16,10 @@ var builtStockLocal = function (currency) {
           text: 'Networth over time in '+currency
         },
         series: [{
-          name: currency,
+          name: currency  ,
           data: data,
           tooltip: {
-            valueDecimals: 2
+            valueDecimals: 4
           }
         }]
       });
@@ -49,11 +47,11 @@ Template.netWorth.helpers({
       return saneNumber(Meteor.user().totalBalance(currency), currency);
     }
   },
-  currencyIsFiat: function() {
-    return (this.currency === "fiat");
-  },
   totalFiat: function() {
-    return totalBalanceFiat.get();
+    return Meteor.user().profile.totalFiat;
+  },
+  currencyIsFiat: function() {
+    return (this.currency === 'fiat');
   },
   userCurrency : function () {
     return Meteor.user().profile.currency;
@@ -61,9 +59,15 @@ Template.netWorth.helpers({
 });
 
 Template.netWorth.rendered = function () {
-  if (this.data.currency === 'fiat') {
-    builtStockLocal(Meteor.user().profile.currency);
-  } else {
-    builtStockLocal('BTC');
+  Meteor.call('updateTotalFiat');
+  builtStockLocal(Meteor.user().profile.currency);
+  };
+Template.netWorth.events = {
+  'click #dashboardChangeStockCurrency': function () {
+    if (this.currency === 'BTC') {
+      builtStockLocal(Meteor.user().profile.currency);
+    } else {
+      builtStockLocal('BTC');
+    }
   }
 };
