@@ -59,12 +59,6 @@ if (Meteor.isServer) {
     var transfer = Transfers.findOne({_id: doc._id, userId: userId});
     transfer.update();
   });
-  Transfers.after.update(function (userId, doc, fieldNames, modifier, options) {
-    var transfer = Transfers.findOne({_id: doc._id, userId: userId});
-    if (transfer && !transfer.connected) {
-      transfer.update();
-    }
-  });
   Transfers.helpers({
     inputSum: function () {
       var result = 0;
@@ -151,9 +145,6 @@ if (Meteor.isServer) {
       return result;
     },
     update: function () {
-      if (!this.connected) {
-        this.connect();
-      }
       var transfer = Transfers.findOne({"_id": this._id});
       var representation = {};
       representation.type = transfer.transferType();
@@ -173,31 +164,7 @@ if (Meteor.isServer) {
         {"_id": transfer._id},
         {$set: {"representation": representation, "baseVolume": valuesToSave}}
       );
-    },
-    connect: function() {
-      var inputs = [];
-      var outputs = [];
-      var userId = this.userId;
-      this.details.inputs.forEach(function (input) {
-          var nodeId = getNodeIdForBitcoinAddress(userId, input.note);
-          if (nodeId) {
-            input.nodeId = nodeId;
-          }
-          inputs.push(input);
-        }
-      );
-      this.details.outputs.forEach(function(output) {
-          var nodeId = getNodeIdForBitcoinAddress(userId, output.note);
-          if (nodeId) {
-            output.nodeId = nodeId;
-          }
-          outputs.push(output);
-        }
-      );
-      Transfers.update({"_id": this._id},
-        {$set: {'details.inputs' : inputs, 'details.outputs': outputs, 'connected': true}}
-      );
-    },
+    }
   });
 }
 Transfers.helpers({
