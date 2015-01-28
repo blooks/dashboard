@@ -5,3 +5,7 @@ Template.noData.rendered = function () {
   	keyboard: false
 });
 };
+
+Template.noData.destroyed = function() {
+  $('body').removeClass("modal-open");
+};
