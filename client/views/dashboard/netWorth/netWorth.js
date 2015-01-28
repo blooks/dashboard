@@ -19,7 +19,7 @@ var builtStockLocal = function (currency) {
           name: currency  ,
           data: data,
           tooltip: {
-            valueDecimals: 4
+            valueDecimals: 2
           }
         }]
       });
