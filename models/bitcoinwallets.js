@@ -36,10 +36,10 @@ Schemas.BitcoinWallets = new SimpleSchema({
           }
           break;
         case 'bitcoin-wallet':
-          if (!this.value.match(/^[xpub][A-Za-z0-9]{110}$/)) {
-            return 'invalidBIP32xpub';
+          if (this.value.match(/^xpub[A-Za-z0-9]{107}$/)) {
+            break;
           }
-          break;
+          return 'invalidBIP32xpub';
       }
       // DGB 2015-01-22 08:09 Common test for all wallet types
       if (BitcoinWallets.findOne({userId: Meteor.userId(),hdseed:this.value})) {
