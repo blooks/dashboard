@@ -2,6 +2,12 @@
  * Function to draw the chart with local data
  */
 
+var digits = function (currency) {
+  if (currency === 'BTC') {
+    return 4
+  }
+  return 2;
+}
 
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
@@ -19,7 +25,7 @@ var builtStockLocal = function (currency) {
           name: currency  ,
           data: data,
           tooltip: {
-            valueDecimals: 2
+            valueDecimals: digits(currency)
           }
         }]
       });

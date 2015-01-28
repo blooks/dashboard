@@ -1,3 +1,8 @@
+
+var convertToSaneAmount = function (amount) {
+  return parseFloat(amount / 10e7);
+};
+
 Meteor.methods({
   /**
    * 12.01.2015 LFG
@@ -102,14 +107,6 @@ Meteor.methods({
    */
   dataForChartDashboardBasedOnCurrency: function (currency) {
     var self = this;
-    var convertToSaneAmount = function (amount, currency) {
-      if (currency === 'BTC') {
-        return parseFloat((amount / 10e7).toFixed(8));
-      } else {
-        return parseFloat((amount / 10e7).toFixed(2));
-      }
-
-    };
     var balances = [];
     var balance = 0;
     var timeWindowEnd = 0;
@@ -145,13 +142,8 @@ Meteor.methods({
         transfersInTimeWindow = [];
         //Pushing Time Window End until the current transfer is in the current time window.
         while (transferTime > timeWindowEnd) {
-          balances.push([timeWindowEnd, convertToSaneAmount(
-          parseFloat(
-            //Taking the valuation of the balance for this time window at the middle of the time window.
-            Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)), currency
-            )
-          )
-          ]);
+          balances.push([timeWindowEnd,
+            convertToSaneAmount(Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)))]);
           timeWindowEnd += timeDelta;
         }
         transfersInTimeWindow.push(transfer);
@@ -173,10 +165,8 @@ Meteor.methods({
       });
       //Go until today.
       while (timeWindowEnd < timeNow) {
-        balances.push([timeWindowEnd, convertToSaneAmount
-        (parseFloat
-        (Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd))), currency)
-        ]);
+        balances.push([timeWindowEnd,
+          convertToSaneAmount(Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)))]);
         timeWindowEnd+=timeDelta;
       }
     }
