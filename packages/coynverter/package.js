@@ -16,7 +16,7 @@ Package.onUse(function(api) {
 });
 
 Npm.depends({
-  "coyno-converter": "0.0.24"
+  "coyno-converter": "0.0.26"
 });
 
 Package.onTest(function(api) {
