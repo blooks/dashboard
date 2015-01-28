@@ -29,4 +29,16 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     Coynverter.update();
   });
+
+  SyncedCron.add({
+    name: 'Update Exchange Rates',
+    schedule: function(parser) {
+      // parser is a later.parse object
+      return parser.cron('5 * * * * *');
+    },
+    job: function() {
+      Coynverter.update();
+    }
+  });
+  SyncedCron.start();
 }
