@@ -4,6 +4,11 @@ if (this.Schemas == null) {
   this.Schemas = {};
 }
 
+var isXPubFormat = function(string) {
+  return string.match(/^xpub[A-Za-z0-9]{107}$/);
+};
+
+
 Schemas.ArmoryRootData = new SimpleSchema;
 
 Schemas.ElectrumRootData = new SimpleSchema;
@@ -25,24 +30,47 @@ Schemas.BitcoinWallets = new SimpleSchema({
     type: String,
     optional: true,
     custom: function() {
+      var rawSeedData = this.value;
       // DGB 2015-01-22 07:15 Checks if this seed is unique for this user,
       // returns string if invalid
       switch (this.field('type').value) {
         case 'single-addresses':
           break;
         case 'electrum':
+          if (!this.value) {
+            return 'required';
+          }
           if (!this.value.match(/^[a-f0-9]{128}$/)) {
             return 'invalidElectrumSeed';
           }
           break;
         case 'bitcoin-wallet':
-          if (this.value.match(/^xpub[A-Za-z0-9]{107}$/)) {
-            break;
+          if (!this.value) {
+            return 'required';
+          }
+          var uri = URI.parse(this.value);
+          var query = uri.query;
+          rawSeedData = uri.path;
+          if (rawSeedData && isXPubFormat(rawSeedData)) {
+            if (query) {
+              var queryParams = URI.parseQuery(query);
+              if (queryParams.h) {
+                if (queryParams.h === "bip32") {
+                  break;
+                } else {
+                  return 'invalidHierarchie';
+                }
+              } else {
+                return 'missingHierarchieParam'
+              }
+            } else {
+              break;
+            }
           }
           return 'invalidBIP32xpub';
       }
       // DGB 2015-01-22 08:09 Common test for all wallet types
-      if (BitcoinWallets.findOne({userId: Meteor.userId(),hdseed:this.value})) {
+      if (BitcoinWallets.findOne({userId: Meteor.userId(),hdseed:rawSeedData})) {
         return "seedAlreadyStored";
       }
       return;
@@ -80,9 +108,11 @@ BitcoinWallets.allow({
 });
 
 BitcoinWallets.simpleSchema().messages({
-  invalidBIP32xpub: "[label] is not of the correct format!",
+  invalidBIP32xpub: "xpub string is not of the correct format!",
   invalidElectrumSeed: "[label] is not of the correct electrum Master Public Key format.",
-  seedAlreadyStored: "A wallet [label] already in the database"
+  seedAlreadyStored: "A wallet with this [label] is already in the database.",
+  invalidHierarchie: "Bitcoin Wallet only supports the BIP32 hierarchie. Check the value of the query parameter &quot;h&quot;",
+  missingHierarchieParam: "Giving a URL, but the hierarchie parameter is missing."
 });
 
 
@@ -144,6 +174,16 @@ if (Meteor.isServer) {
       Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers': false}});
     }
   });
+  BitcoinWallets.before.insert(function (userId, doc) {
+      if (!isXPubFormat(doc.hdseed)) {
+        var cleanedHDSeed = URI.parse(doc.hdseed).path;
+        if (isXPubFormat(cleanedHDSeed)) {
+          doc.hdseed = cleanedHDSeed;
+        } else {
+          console.log("Found broken hdseed string on wallet insert");
+        }
+      }
+    });
   BitcoinWallets.after.insert(function (userId, doc) {
     Meteor.call('updateTx4Wallet', doc);
   });
