@@ -68,6 +68,7 @@ mrt:accounts-ui-bootstrap-3@0.3.3
 mrt:just-i18n@0.3.0
 mrt:moment@2.8.1
 mrt:underscore-string-latest@2.3.3
+mrt:uri-js@1.10.2
 nemo64:bootstrap@3.3.1_1
 nemo64:bootstrap-data@3.3.1_1
 npm-bcrypt@0.7.7
