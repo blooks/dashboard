@@ -27,17 +27,23 @@ In the root directory
 meteor
 ```
 
-For wallet updates etc. install coyno-queue in another folder:
+For wallet updates etc. you need to also run coyno-runner.
+If you want to start coyno runner for the first time, go to another folder and do:
 ```
-npm install coyno-queue
+git clone git@github.com:coyno/coyno-runner.git
+cd coyno-runner
+npm install
 ```
-
-Go to npm-packages/coyno-queue. 
-
-Run 
+If you already have a local copy of coyno-runner go the its directory and do:
 
 ```
-COYNO_QUEUE_PROCESSORS=*.* COYNO_QUEUE_LOG_PRETTY=true COYNO_QUEUE_UI_PORT=3010 node index.js
+git pull
+npm install
+```
+Then start the process:
+
+```
+QUEUE_UI_PORT=3010 PRETTY_LOGS=true LOG_LEVEL=trace WORKERS=*.*:5 node index.js -wum
 ```
 
 # Development
