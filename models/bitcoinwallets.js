@@ -8,6 +8,18 @@ var isXPubFormat = function(string) {
   return string.match(/^xpub[A-Za-z0-9]{107}$/);
 };
 
+var checkArmoryInputFormat = function(string) {
+  if (string.match(
+    /^Watch-OnlyRootID:[a-z]{18}Watch-OnlyRootData:[a-z]{144}$/
+  )) {
+    return;
+  }
+    return "No!";
+};
+
+var compressString = function(string) {
+  return string.replace(/ /g,"").replace(/(\r\n|\n|\r)/gm,"");
+};
 
 Schemas.ArmoryRootData = new SimpleSchema;
 
@@ -68,6 +80,13 @@ Schemas.BitcoinWallets = new SimpleSchema({
             }
           }
           return 'invalidBIP32xpub';
+        case 'armory':
+          var trimmedInput = compressString(this.value);
+          var error = checkArmoryInputFormat(trimmedInput);
+          if (error) {
+            return error;
+          }
+          break;
       }
       // DGB 2015-01-22 08:09 Common test for all wallet types
       if (BitcoinWallets.findOne({userId: Meteor.userId(),hdseed:rawSeedData})) {
