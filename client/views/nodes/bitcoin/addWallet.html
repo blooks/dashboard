@@ -6,7 +6,7 @@
            <h3 class="label-title">Add {{actiontype}}</h3>
         </div>
         {{#autoForm collection='BitcoinWallets' type='insert' id='addNewBitcoinWallet' class='bold-input-text' validation='keyup' }}
-            {{> afQuickField name='label' autofocus='' class="spacy padded-input-field" placeholder="Wallet label"}}
+            {{> afQuickField name='label' autofocus='' placeholder="Wallet label"}}
             {{> afQuickField name='type' value=actiontype type='hidden' label=false}}
             {{#unless afFieldValueIs name='type' value='single-addresses'}}
                 {{> afQuickField class='spacy padded-input-field' name='hdseed' label="HD seed" placeholder='Paste HD seed here' type='textarea'}}
