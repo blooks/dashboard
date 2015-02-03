@@ -1,7 +1,6 @@
 'use strict';
 
 var bitcore = Meteor.npmRequire('bitcore');
-var Electrum = Meteor.npmRequire('bitcore-electrum');
 var Dispatcher = Meteor.npmRequire('coyno-dispatcher');
 
 /**
@@ -59,15 +58,6 @@ var updateBIP32Wallet = function (wallet) {
 };
 
 /**
- * Updates armory wallets
- * @param wallet
- */
-var updateArmoryWallet = function (wallet) {
-  Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
-};
-
-
-/**
  * Gets and stores all transactions for the addresses in the
  * single Addresses Wallet to the Database. An balance Update
  * for the wallet is called in the end.
@@ -80,29 +70,6 @@ var updateSingleAddressWallet = function (wallet) {
     addresses.push(address.address);
     console.log(address.address);
   });
-  addAddressesToWallet(addresses, wallet);
-  Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
-};
-
-/**
- * This function will generate all nonzero addresses and update the database
- * with the corresponding transactions
- * In the end   it will trigger a balance update for the wallet.
- * @param wallet Requires a wallet from our database
- */
-var updateElectrumWallet = function (wallet) {
-  var Address = bitcore.Address;
-  var PublicKey = bitcore.PublicKey;
-  var mpk = new Electrum(wallet.hdseed);
-  var addresses = [];
-  for (var i = 0; i < 100; ++i) {
-    var key = mpk.generatePubKey(i);
-    var addr = Address.fromPublicKey(new PublicKey(key)).toString();
-    addresses.push(addr);
-    var changekey = mpk.generateChangePubKey(i);
-    var changeAddr = Address.fromPublicKey(new PublicKey(changekey)).toString();
-    addresses.push(changeAddr);
-  }
   addAddressesToWallet(addresses, wallet);
   Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
 };
@@ -122,7 +89,7 @@ Meteor.methods({
     console.log("Updating a wallet");
     switch (wallet.type) {
       case 'electrum':
-        updateElectrumWallet(wallet);
+        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
         break;
       case 'bitcoin-wallet':
         updateBIP32Wallet(wallet);
@@ -131,7 +98,7 @@ Meteor.methods({
         updateSingleAddressWallet(wallet);
         break;
       case 'armory':
-        updateArmoryWallet(wallet);
+        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
         break;
     }
   },
