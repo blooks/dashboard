@@ -8,17 +8,9 @@ var isXPubFormat = function(string) {
   return string.match(/^xpub[A-Za-z0-9]{107}$/);
 };
 
+var armoryRegex = /Watch-OnlyRootID:([asdfghjkwertuion]{18})Watch-OnlyRootData:([asdfghjkwertuion]{144})/;
 var checkArmoryInputFormat = function(string) {
-  if (string.match(
-    /^Watch-OnlyRootID:[a-z]{18}Watch-OnlyRootData:[a-z]{144}$/
-  )) {
-    return;
-  }
-    return "No!";
-};
-
-var compressString = function(string) {
-  return string.replace(/ /g,"").replace(/(\r\n|\n|\r)/gm,"");
+  return string.replace(/\s/gm,"").match(armoryRegex);
 };
 
 Schemas.ArmoryRootData = new SimpleSchema;
@@ -81,10 +73,17 @@ Schemas.BitcoinWallets = new SimpleSchema({
           }
           return 'invalidBIP32xpub';
         case 'armory':
-          var trimmedInput = compressString(this.value);
-          var error = checkArmoryInputFormat(trimmedInput);
-          if (error) {
-            return error;
+          if (this.value) {
+            var match = checkArmoryInputFormat(this.value);
+            if (!match) {
+              return 'invalidArmorySeed';
+            }
+            else if (BitcoinWallets.findOne({
+                userId: Meteor.userId(),
+                'hdseed.id': match[1],
+                'hdseed.data': match[2]})) {
+              return "seedAlreadyStored";
+            }
           }
           break;
       }
@@ -131,7 +130,8 @@ BitcoinWallets.simpleSchema().messages({
   invalidElectrumSeed: "[label] is not of the correct electrum Master Public Key format.",
   seedAlreadyStored: "A wallet with this [label] is already in the database.",
   invalidHierarchie: "Bitcoin Wallet only supports the BIP32 hierarchie. Check the value of the query parameter &quot;h&quot;",
-  missingHierarchieParam: "Giving a URL, but the hierarchie parameter is missing."
+  missingHierarchieParam: "Giving a URL, but the hierarchie parameter is missing.",
+  invalidArmorySeed: "[label] is not of the correct Armory Watch-Only Root ID/Data format."
 });
 
 
@@ -186,6 +186,7 @@ BitcoinWallets.before.remove(function (userId, doc) {
   });
 });
 
+
 if (Meteor.isServer) {
   BitcoinWallets.after.remove(function (userId, doc) {
     var oneTransfer = Transfers.findOne({'userId': doc.userId});
@@ -194,15 +195,28 @@ if (Meteor.isServer) {
     }
   });
   BitcoinWallets.before.insert(function (userId, doc) {
-      if (!isXPubFormat(doc.hdseed)) {
-        var cleanedHDSeed = URI.parse(doc.hdseed).path;
-        if (isXPubFormat(cleanedHDSeed)) {
-          doc.hdseed = cleanedHDSeed;
-        } else {
-          console.log("Found broken hdseed string on wallet insert");
+    switch (doc.type) {
+      case 'armory':
+        if (typeof doc.hdseed === 'string') {
+          var match = checkArmoryInputFormat(doc.hdseed);
+          doc.hdseed = {
+            id: match[1],
+            data: match[2]
+          };
         }
-      }
-    });
+        break;
+      case 'bitcoin-wallet':
+        if (!isXPubFormat(doc.hdseed)) {
+          var cleanedHDSeed = URI.parse(doc.hdseed).path;
+          if (isXPubFormat(cleanedHDSeed)) {
+            doc.hdseed = cleanedHDSeed;
+          } else {
+            console.log("Found broken hdseed string on wallet insert");
+          }
+        }
+        break;
+    }
+  });
   BitcoinWallets.after.insert(function (userId, doc) {
     Meteor.call('updateTx4Wallet', doc);
   });
