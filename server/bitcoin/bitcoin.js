@@ -30,34 +30,6 @@ var addAddressesToWallet = function (addresses, wallet) {
 };
 
 /**
- * Updates a wallet in BIP32 style
- * Assumes: wallet.type is BIP32 and the wallet.hdseed is a valid seed
- * TODO: Do not only query for the first 100 addresses but all
- * TODO: addresses that could have been used.
- *
- * @param wallet
- */
-var updateBIP32Wallet = function (wallet) {
-  var HDPublicKey = bitcore.HDPublicKey;
-    var Address = bitcore.Address,
-    knownMasterPublicKey = wallet.hdseed,
-    masterPubKey = new HDPublicKey(knownMasterPublicKey),
-    addresses = [];
-  for (var i = 0; i < 100; ++i) {
-    addresses.push(
-      Address.fromPublicKey(
-        masterPubKey.derive("m/0/" + i.toString()).publicKey
-      ).toString());
-    addresses.push(
-      Address.fromPublicKey(
-        masterPubKey.derive("m/1/" + i.toString()).publicKey
-      ).toString());
-  }
-  addAddressesToWallet(addresses, wallet);
-  Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
-};
-
-/**
  * Gets and stores all transactions for the addresses in the
  * single Addresses Wallet to the Database. An balance Update
  * for the wallet is called in the end.
