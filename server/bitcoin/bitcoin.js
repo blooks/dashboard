@@ -87,20 +87,7 @@ Meteor.methods({
   updateTx4Wallet: function (wallet) {
     //TODO: check if wallet exists, user is owner and can trigger update
     console.log("Updating a wallet");
-    switch (wallet.type) {
-      case 'electrum':
-        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
-        break;
-      case 'bitcoin-wallet':
-        updateBIP32Wallet(wallet);
-        break;
-      case 'single-addresses':
-        updateSingleAddressWallet(wallet);
-        break;
-      case 'armory':
-        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
-        break;
-    }
+    Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
   },
   isValidBitcoinAddress: function (address) {
     return bitcore.Address.isValid(address);
