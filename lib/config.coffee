@@ -34,7 +34,7 @@ Meteor.settings.public.coyno =
   supportedExchanges: ['Bitstamp', 'Kraken']
   allowedBanks: ['BankAccount']
   supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum']
-  availableWallets: [{type: 'bitcoin-wallet', label: 'Bitcoin Wallet'},
+  availableWallets: [{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'}]
   unavailableWallets: [
     {type: 'single-addresses', label: 'Single Addresses'},
