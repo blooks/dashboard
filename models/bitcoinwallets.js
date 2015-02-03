@@ -49,29 +49,28 @@ Schemas.BitcoinWallets = new SimpleSchema({
           }
           break;
         case 'bitcoin-wallet':
+        case 'trezor':
           if (!this.value) {
             return 'required';
           }
           var uri = URI.parse(this.value);
           var query = uri.query;
           rawSeedData = uri.path;
-          if (rawSeedData && isXPubFormat(rawSeedData)) {
-            if (query) {
-              var queryParams = URI.parseQuery(query);
-              if (queryParams.h) {
-                if (queryParams.h === "bip32") {
-                  break;
-                } else {
-                  return 'invalidHierarchie';
-                }
-              } else {
-                return 'missingHierarchieParam'
-              }
-            } else {
-              break;
-            }
+          if (!rawSeedData || !isXPubFormat(rawSeedData)) {
+            return 'invalidBIP32xpub';
           }
-          return 'invalidBIP32xpub';
+          else if (!query) {
+            break;
+          }
+
+          var queryParams = URI.parseQuery(query);
+          if (!queryParams.h) {
+            return 'missingHierarchieParam';
+          }
+          else if (queryParams.h !== "bip32") {
+            return 'invalidHierarchie';
+          }
+          break;
         case 'armory':
           if (this.value) {
             var match = checkArmoryInputFormat(this.value);
@@ -206,6 +205,7 @@ if (Meteor.isServer) {
         }
         break;
       case 'bitcoin-wallet':
+      case 'trezor':
         if (!isXPubFormat(doc.hdseed)) {
           var cleanedHDSeed = URI.parse(doc.hdseed).path;
           if (isXPubFormat(cleanedHDSeed)) {

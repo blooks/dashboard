@@ -33,13 +33,13 @@ Meteor.settings.public.coyno =
   allowedNodeTypes: ['Exchange', 'BankAccount', 'BitcoinWallet']
   supportedExchanges: ['Bitstamp', 'Kraken']
   allowedBanks: ['BankAccount']
-  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory']
+  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor']
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'},
-                    {type: 'armory', label: 'Armory'}]
+                    {type: 'armory', label: 'Armory'},
+                    {type: 'trezor', label: 'Trezor'}]
   unavailableWallets: [
     {type: 'single-addresses', label: 'Single Addresses'},
-    {type: 'trezor', label: 'Trezor'},
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},
     {type: 'hive-wallet', label: 'Hive'},
