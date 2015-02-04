@@ -50,6 +50,7 @@ Schemas.BitcoinWallets = new SimpleSchema({
           break;
         case 'bitcoin-wallet':
         case 'trezor':
+        case 'mycelium':
           if (!this.value) {
             return 'required';
           }
@@ -206,6 +207,7 @@ if (Meteor.isServer) {
         break;
       case 'bitcoin-wallet':
       case 'trezor':
+      case 'mycelium':
         if (!isXPubFormat(doc.hdseed)) {
           var cleanedHDSeed = URI.parse(doc.hdseed).path;
           if (isXPubFormat(cleanedHDSeed)) {
