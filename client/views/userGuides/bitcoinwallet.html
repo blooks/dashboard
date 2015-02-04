@@ -1,0 +1,33 @@
+<template name="bitcoin-walletGuideContent">
+          <div class="modal-header">
+			<a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
+            <span class="meta-title brand-box">Guide</span>
+            <h3 class="modal-title">How to get <span class="fat">HD seed (xpub key)</span> from Bitcoin Wallet</h3>
+          </div>
+          <div class="modal-body">
+			<p>To give Coyno watch-only access to your wallet, you need to get the HD seed (xpub) key from the wallet (this guide is for version 4.18+ of the wallet software).</p>
+			<h4>1. Go to <span class="fat">Show xpub</span> in app</h4>
+			<p>Open the Bitcoin wallet app and go to <span class="fat">Settings > Diagnostics > Show xpub</span></p>
+			<img src="/img/user-guides/bitcoin-wallet-screenshot-1.png" width="300" class="guide-graphic" />
+			<img src="/img/user-guides/bitcoin-wallet-screenshot-2.png" width="300" class="guide-graphic" />
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-3.png" width="300" class="guide-graphic" />
+
+			<h4>2. Send the xpub key to <span class="fat">your email</span></h4>
+			<p><span class="fat">Tick the "Append wallet dump"</span> and untick all other boxes</p>
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-4.png" width="300" class="guide-graphic" />
+
+			<p>Select your preferred email client (we'll take Gmail here)</p>
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-5.png" width="300" class="guide-graphic" />
+			 <p>Change the <span class="fat">To: address to your own email address</span> and send.</p>
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-6.png" width="300" class="guide-graphic" />
+
+			<h4>3. Copy-paste the <span class="fat">xpub key</span> from the email</h4>
+			<p><i>Now is a good time to switch to a computer (or another device already logged in to your Coyno account)</i>.</p>
+			<p>In the email you've just received, you'll find the xpub key</p>
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-8.png" class="guide-graphic full-width" />
+			<img src="/img/user-guides/bitcoin-wallet-new-screenshot-9.png" class="guide-graphic full-width" />
+			<p>
+			<span class="fat">Copy the whole key</span> (including the "xpub" in the beginning) and <span class="fat">paste it into the HD seed field</span> here in Coyno. Done! Coyno can now watch all transactions coming in and out of all the addresses generated from this HD seed.</p>
+			<p class="notice"><span class="fat">Please note, we do not touch your private keys so we're in no way able to back up or restore your wallet.</span></p>
+          </div>
+</template>
