@@ -1,14 +1,11 @@
-<template name="importGuide-bitcoin-wallet">
-<div id="importGuide-bitcoin-wallet" tabindex="-1" role="dialog" aria-labelledby="noDataModal" aria-hidden="true" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content user-guide add-bitcoin-wallet">
+<template name="bitcoin-walletOldGuideContent">
           <div class="modal-header">
 			<a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
             <span class="meta-title brand-box">Guide</span>
-            <h3 class="modal-title">How to get <span class="fat">HD seed</span> from Bitcoin Wallet</h3>
+            <h3 class="modal-title">How to get <span class="fat">HD seed (xpub key)</span> from Bitcoin Wallet</h3>
           </div>
           <div class="modal-body">
-			<p>To give Coyno watch-only access to your wallet, you need to get the HD seed key. Here we'll give you a step-by-step guide on how to do it (it's a bit cumbersome, but you only need to do this once).</p>
+			<p>To give Coyno watch-only access to your wallet, you need to get the HD seed (xpub) key.</p>
 			<h4>1. Go to <span class="fat">Report issue</span> in app</h4>
 			<p>Open the Bitcoin wallet app and go to <span class="fat">Settings > Diagnostics > Report Issue</span></p>
 			<img src="/img/user-guides/bitcoin-wallet-screenshot-1.png" width="300" class="guide-graphic" />
@@ -36,8 +33,4 @@
 			<span class="fat">Copy the whole key</span> (including the "xpub" in the beginning) and <span class="fat">paste it into the HD seed field</span> here in Coyno. Done! Coyno can now watch all transactions coming in and out of all the addresses generated from this HD seed.</p>
 			<p class="notice"><span class="fat">Please note, we do not touch your private keys so we're in no way able to back up or restore your wallet.</span></p>
           </div>
-
-        </div>
-      </div>
-</div>
 </template>
