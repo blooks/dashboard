@@ -13,11 +13,9 @@
             {{/unless}}
             <a href="#" data-toggle="modal" data-target="#{{guideTemplate}}"><span class="icon icon-help-circled"></span> How to get the seed?</a>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg spacy">Add wallet {{buttonState}}</button>
+                <button type="submit" id="submitWalletButton" class="btn btn-primary btn-lg spacy disabled">Add wallet</button>
             </div>
         {{/autoForm}}
-
-
       <div class="row spacy text-center">
             <a href="/nodes/bitcoinWallets/add" class="btn back btn-no-box">&lt; ... or select another wallet</a>
       </div>
