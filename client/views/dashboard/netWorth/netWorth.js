@@ -19,7 +19,7 @@ var builtStockLocal = function (currency) {
           inputEnabled : false
         },
         title: {
-          text: 'Networth over time in '+currency
+          text: 'Net worth over time in '+currency
         },
         series: [{
           name: currency  ,

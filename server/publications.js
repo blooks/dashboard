@@ -4,7 +4,7 @@ Meteor.publish("transfers", function (page, numberOfResults) {
   var handle = Transfers.find({userId: this.userId}, {
     skip: parseInt(page-1)*parseInt(numberOfResults),
     limit: numberOfResults,
-    sort: {date: 1}
+    sort: {date: -1}
   }).observeChanges({
     added: function(id, fields){
       fields.totalAvailable = totalAvailableResults;
