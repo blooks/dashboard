@@ -37,13 +37,13 @@ Meteor.settings.public.coyno =
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'},
                     {type: 'armory', label: 'Armory'},
-                    {type: 'trezor', label: 'Trezor'}]
+                    {type: 'trezor', label: 'Trezor'},
+                    {type: 'mycelium', label: 'Mycelium'}]
   unavailableWallets: [
     {type: 'single-addresses', label: 'Single Addresses'},
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},
     {type: 'hive-wallet', label: 'Hive'},
     {type: 'breadwallet', label: 'Bread Wallet'},
-    {type: 'mycelium', label: 'Mycelium'},
     {type: 'kncwallet', label: 'KnC'},
     {type: 'msigna', label: 'mSigna'}]
