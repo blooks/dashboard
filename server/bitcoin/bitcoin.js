@@ -20,5 +20,8 @@ Meteor.methods({
   },
   isValidBitcoinAddress: function (address) {
     return bitcore.Address.isValid(address);
+  },
+  isValidXPub: function (xpubkey) {
+    return bitcore.HDPublicKey.isValidSerialized(xpubkey);
   }
 });

@@ -1,10 +1,13 @@
+
+
+
 this.BitcoinWallets = new Meteor.Collection('bitcoinwallets');
 
 if (this.Schemas == null) {
   this.Schemas = {};
 }
 
-var isXPubFormat = function(string) {
+var localXPubCheck = function(string) {
   return string.match(/^xpub[A-Za-z0-9]{107}$/);
 };
 
@@ -57,19 +60,31 @@ Schemas.BitcoinWallets = new SimpleSchema({
           var uri = URI.parse(this.value);
           var query = uri.query;
           rawSeedData = uri.path;
-          if (!rawSeedData || !isXPubFormat(rawSeedData)) {
+          if (!rawSeedData || !localXPubCheck(rawSeedData)) {
             return 'invalidBIP32xpub';
           }
-          else if (!query) {
-            break;
+          if (Meteor.isClient && this.isSet) {
+            Meteor.call("isValidXPub", rawSeedData, function (error, result) {
+              if (!result) {
+                BitcoinWallets.simpleSchema().namedContext("addNewBitcoinWallet").addInvalidKeys([
+                  {
+                    name: "hdseed",
+                    type: "checksumfailed"
+                  }
+                ]);
+              }
+            });
+          } else if (Meteor.isServer) {
+            Meteor.call("isValidXPub", rawSeedData);
           }
-
-          var queryParams = URI.parseQuery(query);
-          if (!queryParams.h) {
-            return 'missingHierarchieParam';
-          }
-          else if (queryParams.h !== "bip32") {
-            return 'invalidHierarchie';
+          if (query) {
+            var queryParams = URI.parseQuery(query);
+            if (!queryParams.h) {
+              return 'missingHierarchieParam';
+            }
+            else if (queryParams.h !== "bip32") {
+              return 'invalidHierarchie';
+            }
           }
           break;
         case 'armory':
@@ -131,7 +146,8 @@ BitcoinWallets.simpleSchema().messages({
   seedAlreadyStored: "A wallet with this [label] is already in the database.",
   invalidHierarchie: "Bitcoin Wallet only supports the BIP32 hierarchie. Check the value of the query parameter &quot;h&quot;",
   missingHierarchieParam: "Giving a URL, but the hierarchie parameter is missing.",
-  invalidArmorySeed: "[label] is not of the correct Armory Watch-Only Root ID/Data format."
+  invalidArmorySeed: "[label] is not of the correct Armory Watch-Only Root ID/Data format.",
+  checksumfailed: "There is a typo in the input for [label]. Please check again."
 });
 
 
@@ -208,9 +224,9 @@ if (Meteor.isServer) {
       case 'bitcoin-wallet':
       case 'trezor':
       case 'mycelium':
-        if (!isXPubFormat(doc.hdseed)) {
+        if (!localXPubCheck(doc.hdseed)) {
           var cleanedHDSeed = URI.parse(doc.hdseed).path;
-          if (isXPubFormat(cleanedHDSeed)) {
+          if (localXPubCheck(cleanedHDSeed)) {
             doc.hdseed = cleanedHDSeed;
           } else {
             console.log("Found broken hdseed string on wallet insert");
