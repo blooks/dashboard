@@ -1,14 +1,10 @@
 // on the client
 Template.transfersNavigation.helpers({
-  noLastPage: function () {
-    if(this.page!==this.totalPages){
-      return true;
-    }
+  lastPage: function () {
+    return (this.page==this.totalPages);
   },
-  noZero: function () {
-    if(this.page!==1){
-      return true;
-    }
+  firstPage: function () {
+    return (this.page==1);
   },
   pagination: function () {
     var arrayWithNthPages = [];
@@ -23,6 +19,12 @@ Template.transfersNavigation.helpers({
     }else{
       return '';
     }
+  },
+  linkToNextPage: function (){
+    return '/transfers/'+(this.page+1)+'/'+this.numberOfResultsPerPage;
+  },
+  linkToBeforePage: function() {
+    return '/transfers/'+(this.page-1)+'/'+this.numberOfResultsPerPage;
   }
 });
 
@@ -31,19 +33,6 @@ Template.transfersNavigation.events({
     return Transfers.remove({
       _id: this._id
     });
-  },
-  'click .next-page': function () {
-    event.preventDefault();
-    Router.go('/transfers/'+(this.page+1)+'/'+this.numberOfResultsPerPage);
-  },
-  'click .prev-page' : function () {
-    event.preventDefault();
-    var page = this.page-1;
-    if(page.get!==0){
-      Router.go('/transfers/'+page+'/'+this.numberOfResultsPerPage);
-    }else{
-      Router.go('/transfers/'+(page+1)+'/'+this.numberOfResultsPerPage);
-    }
   },
   'click .go-to-page': function (event) {
     event.preventDefault();
