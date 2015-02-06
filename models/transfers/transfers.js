@@ -192,14 +192,18 @@ Transfers.helpers({
   },
   saneAmount: function () {
     if (this.details.currency === 'BTC') {
-      return (this.representation.amount / 10e7).toFixed(8);
+        return (this.representation.amount * (1 / 10e7)).toFixed(8);
     } else {
-      return (this.representation.amount / 10e7).toFixed(2);
+        return (this.representation.amount * (1 / 10e7)).toFixed(2);
     }
   },
   volumeInCurrency: function(currency) {
-    return this.baseVolume.filter(function (entry) {
-      return entry[currency];
-    })[0][currency];
+    var result = 0;
+    this.baseVolume.forEach(function (entry) {
+        if (entry.hasOwnProperty(currency)) {
+          result = entry[currency];
+        }
+     });
+    return result;
   }
 });

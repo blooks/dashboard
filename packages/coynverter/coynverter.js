@@ -16,6 +16,9 @@ if (Meteor.isServer) {
   Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
     var syncConverter = Async.wrap(NodeConverter, ['convert']);
     var result;
+    amountToConvert = Math.abs(amountToConvert);
+    console.log(amountToConvert);
+    if (amountToConvert == 0) return 0;
     try {
       result = syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date);
     } catch (error) {
