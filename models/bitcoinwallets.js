@@ -187,6 +187,9 @@ BitcoinWallets.helpers({
   addresses: function () {
     return BitcoinAddresses.find({"walletId": this._id}).fetch();
   },
+  singleAddresses: function() {
+    return BitcoinAddresses.find({"walletId": this._id, "order" : { $lt: 0 } }).fetch();
+  },
   update: function () {
     Meteor.call('updateTx4Wallet', this);
   },
