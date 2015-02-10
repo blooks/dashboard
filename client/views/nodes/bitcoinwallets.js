@@ -63,3 +63,17 @@ Template.bitcoinWallets.events({
 
 
 
+AutoForm.hooks({
+  insertBitcoinAddressForm: {
+    after: {
+      insert: function (err, result, template) {
+        if (!err) {
+          var address = BitcoinAddresses.findOne({_id: result});
+          var wallet = BitcoinWallets.findOne({_id: address.walletId});
+          console.log(wallet);
+          Meteor.call('updateTx4Wallet', wallet);
+        }
+      }
+    }
+  }
+});
