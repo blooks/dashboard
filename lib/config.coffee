@@ -33,12 +33,13 @@ Meteor.settings.public.coyno =
   allowedNodeTypes: ['Exchange', 'BankAccount', 'BitcoinWallet']
   supportedExchanges: ['Bitstamp', 'Kraken']
   allowedBanks: ['BankAccount']
-  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium']
+  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase']
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'},
                     {type: 'armory', label: 'Armory'},
                     {type: 'trezor', label: 'Trezor'},
-                    {type: 'mycelium', label: 'Mycelium'}]
+                    {type: 'mycelium', label: 'Mycelium'},
+                    {type: 'coinbase', label: 'Coinbase'}]
   unavailableWallets: [
     {type: 'single-addresses', label: 'Single Addresses'},
     {type: 'multibit', label: 'MultiBit'},
@@ -46,4 +47,5 @@ Meteor.settings.public.coyno =
     {type: 'hive-wallet', label: 'Hive'},
     {type: 'breadwallet', label: 'Bread Wallet'},
     {type: 'kncwallet', label: 'KnC'},
-    {type: 'msigna', label: 'mSigna'}]
+    {type: 'msigna', label: 'mSigna'},
+    {type: 'blockchaininfo', label: 'Blockchain.info'}]
