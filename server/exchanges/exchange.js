@@ -1,5 +1,3 @@
-var Coinbase = Meteor.npmRequire('coinbase');
-
 Meteor.methods({
   /**
    * Updating the wallet data. Getting all transactions for
