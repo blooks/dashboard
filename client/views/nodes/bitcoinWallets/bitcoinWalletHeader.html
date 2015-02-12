@@ -5,10 +5,12 @@
             <span class="wallet-type brand-box">
                 {{type}}
             </span>
-            <span class="controls">
+            <span class="controls pull-right">
                 <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
                 <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-wallet"><span class="icon icon-ccw"></span></a>
-                <a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-help-circled"></span>Details</a>
+                {{#unless readOnly}}
+                    <a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a>
+                {{/unless}}
             </span>
         </div>
         <div class="row vcenter">
