@@ -195,6 +195,10 @@ BitcoinWallets.helpers({
   },
   saneBalance: function () {
     return (this.balance() / 10e7).toFixed(8);
+  },
+  //If the wallet has a supernode it is readonly for the user.
+  readOnly: function () {
+    return (this.superNode !== undefined);
   }
 });
 

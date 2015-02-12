@@ -28,9 +28,11 @@
                     </div> <!-- /.col-lg-10 -->
                       <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
                       <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-wallet"><span class="icon icon-ccw"></span></a>
+                      {{#unless readOnly}}
                       <div class="col-sm-1">
                           <span class="icon icon-down-open-big icon-circle data-toggle"></span>
                       </div> <!-- /.col-lg-2 -->
+                      {{/unless}}
                     <div class="col-sm-1">
                         <span class="icon icon-down-open-big body-toggle"></span>
                     </div> <!-- /.col-lg-2 -->
@@ -52,18 +54,24 @@
                 </div> <!-- /.node-inner -->
               </div> <!-- /.node-body -->
                 <div class="node-data">
+                    {{#if hdseed}}
                     <div class="node-inner">
                            HDSeed: {{hdseed}}
                     </div> <!-- /.node-inner -->
+                    {{/if}}
+                    {{#unless readOnly}}
                     {{#if singleAddressess}}
                         Single Addresses:
                     <ul class="no-bullets">
                         {{#each singleAddressess}}
-                            <li>{{this.label}}   {{this.address}}   <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a></li>
+                            <li>{{this.label}}   {{this.address}}
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a>
+                            </li>
                         {{/each}}
                     </ul>
-                        {{/if}}
+                    {{/if}}
                         {{> addBitcoinAddress}}
+                    {{/unless}}
                 </div> <!-- /.node-body -->
             </div> <!-- /.node-item -->
             {{/each}}
