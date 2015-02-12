@@ -17,6 +17,7 @@ AutoForm.hooks({
     }
   }
 });
+
 Template.addWallet.rendered = function () {
   var self = this;
   this.autorun(function () {
