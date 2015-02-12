@@ -1,0 +1,9 @@
+<template name="newExchange">
+        {{#autoForm collection='Exchanges' type='insert' id='insertExchangeForm'  validation='keyup'}}
+            {{> afQuickField name='label' }}
+            {{> afQuickField name='exchange' value=this.actiontype type='hidden' label=false}}
+            {{> afQuickField name='credentials.APIKey'}}
+            {{> afQuickField name='credentials.secret'}}
+            <button type="submit" class="btn btn-primary btn-lg pull-right">{{i18n 'nodes.buttons.save'}}</button>
+        {{/autoForm}}
+</template>

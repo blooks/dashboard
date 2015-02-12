@@ -30,18 +30,18 @@ Meteor.settings.public.coyno =
   valuedCurrencies: ['EUR', 'USD', 'BTC']
   fiatCurrencies: ['EUR', 'USD']
   defaultJurisdiction: 'de'
-  allowedNodeTypes: ['Exchange', 'BankAccount', 'BitcoinWallet']
-  supportedExchanges: ['Bitstamp', 'Kraken']
-  allowedBanks: ['BankAccount']
-  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase']
+  allowedNodeTypes: ['exchange', 'bankaccount', 'bitcoinwallet']
+  supportedExchanges: ['coinbase']
+  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase', 'single-addresses'],
+  supportedNodeTypes: ['bitcoinwallet','bitcoinaddress','exchange'],
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'},
                     {type: 'armory', label: 'Armory'},
                     {type: 'trezor', label: 'Trezor'},
                     {type: 'mycelium', label: 'Mycelium'},
+    {type: 'single-addresses', label: 'Single Addresses'},
                     {type: 'coinbase', label: 'Coinbase'}]
   unavailableWallets: [
-    {type: 'single-addresses', label: 'Single Addresses'},
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},
     {type: 'hive-wallet', label: 'Hive'},

@@ -16,10 +16,6 @@ var checkArmoryInputFormat = function(string) {
   return string.replace(/\s/gm,"").match(armoryRegex);
 };
 
-Schemas.ArmoryRootData = new SimpleSchema;
-
-Schemas.ElectrumRootData = new SimpleSchema;
-
 Schemas.BitcoinWallets = new SimpleSchema({
   userId: {
     type: String,
@@ -108,6 +104,10 @@ Schemas.BitcoinWallets = new SimpleSchema({
       }
       return;
     }
+  },
+  superNode: {
+    type: Schemas.nodeReference,
+    optional: true
   }
 });
 
@@ -199,6 +199,14 @@ BitcoinWallets.helpers({
 });
 
 BitcoinWallets.before.remove(function (userId, doc) {
+  var self = BitcoinWallets.findOne({_id: doc._id});
+  if (self.superNode) {
+    switch (self.superNode.nodeType) {
+      case 'exchange':
+        Exchanges.remove({_id: self.superNode.id});
+        break;
+    }
+  };
   var addresses = BitcoinAddresses.find({"walletId": doc._id});
   addresses.forEach(function (address) {
     BitcoinAddresses.remove({"_id": address._id});
