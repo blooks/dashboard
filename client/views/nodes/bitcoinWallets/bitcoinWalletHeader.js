@@ -14,13 +14,5 @@ Template.bitcoinWalletHeader.events({
         .toggleClass('icon-up-open-big')
         .toggleClass('icon-down-open-big');
     });
-  },
-  'click .data-toggle': function () {
-    var targetID = "#" + this._id;
-    jQuery(targetID + " .node-data").slideToggle(400, function () {
-      jQuery(targetID + " .data-toggle")
-        .toggleClass('icon-up-open-big')
-        .toggleClass('icon-down-open-big');
-    });
   }
 });

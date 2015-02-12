@@ -29,15 +29,6 @@ Template.bitcoinWallets.helpers({
   }
 });
 
-Template.bitcoinWallets.events({
-  'click .delete-bitcoin-address': function () {
-  return BitcoinAddresses.remove({
-    _id: this._id
-  });
-  }
-});
-
-
 
 AutoForm.hooks({
   insertBitcoinAddressForm: {

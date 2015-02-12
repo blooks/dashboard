@@ -1,0 +1,27 @@
+<template name="bitcoinWalletFooter">
+    {{#unless readOnly}}
+        <div class="node-footer">
+            <h4>Add a single Bitcoin address</h4>
+            <span class="icon icon-down-open-big icon-circle data-toggle"></span>
+        </div>
+    {{/unless}}
+
+    <div class="node-data">
+        <div class="node-inner">
+            HDSeed: {{hdseed}}
+
+            {{#unless readOnly}}
+                {{#if singleAddressess}}
+                    Single Addresses:
+                    <ul class="no-bullets">
+                        {{#each singleAddressess}}
+                            <li>{{this.label}}   {{this.address}}   <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a></li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                {{> addBitcoinAddress}}
+            {{/unless}}
+        </div> <!-- /.node-inner -->
+    </div> <!-- /.node-body -->
+
+</template>

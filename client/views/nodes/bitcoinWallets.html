@@ -10,33 +10,8 @@
                                 {{#each this}}
                                     <div class="col-lg-6 node-item" id="{{_id}}">
                                         {{> bitcoinWalletHeader}}
-                                        <div class="node-body">
-                                            <div class="node-inner">
-                                                {{> bitcoinWalletAddresses this}}
-                                                <ul class="no-bullets">
-                                                    {{#each balances}}
-                                                        <li>Balance in {{currency}} : {{saneNumber balance currency}} </li>
-                                                    {{/each}}
-                                                </ul>
-                                            </div> <!-- /.node-inner -->
-                                        </div> <!-- /.node-body -->
-                                        <div class="node-data">
-                                            <div class="node-inner">
-                                                HDSeed: {{hdseed}}
-                                            </div> <!-- /.node-inner -->
-                                            {{#if singleAddressess}}
-                                                Single Addresses:
-                                                <ul class="no-bullets">
-                                                    {{#each singleAddressess}}
-                                                        <li>{{this.label}}   {{this.address}}   <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a></li>
-                                                    {{/each}}
-                                                </ul>
-                                            {{/if}}
-                                            {{> addBitcoinAddress}}
-                                        </div> <!-- /.node-body -->
-                                        <div>
-                                            <span class="icon icon-down-open-big icon-plus data-toggle"></span>
-                                        </div> <!-- /.col-lg-2 -->
+                                        {{> bitcoinWalletBody}}
+                                        {{> bitcoinWalletFooter}}
                                     </div> <!-- /.node-item -->
                                 {{/each}}
                             </div>
