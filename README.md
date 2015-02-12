@@ -28,22 +28,26 @@ meteor
 ```
 
 For wallet updates etc. you need to also run coyno-runner.
+
 If you want to start coyno runner for the first time, go to another folder and do:
 ```
 git clone git@github.com:coyno/coyno-runner.git
 cd coyno-runner
 npm install
+cp config.example.js config.js
 ```
+Edit and save the config file!
+
 If you already have a local copy of coyno-runner go the its directory and do:
 
 ```
 git pull
+rm node_modules -r
 npm install
 ```
 Then start the process:
-
 ```
-QUEUE_UI_PORT=3010 PRETTY_LOGS=true LOG_LEVEL=trace WORKERS=*.*:5 node index.js -wum
+node index.js -wum
 ```
 
 # Development
