@@ -1,12 +1,12 @@
-<template name="bitcoinWalletFooter">
+<template name="bitcoinWalletDetailsModal">
     {{#unless readOnly}}
         <div class="node-footer">
-            <h4>Add a single Bitcoin address</h4>
+            <h4>Show Watch Data</h4>
             <span class="icon icon-down-open-big icon-circle data-toggle"></span>
         </div>
     {{/unless}}
-
-    <div class="node-data">
+    {{this.label}}
+    <div class="wallet-data">
         <div class="node-inner">
             HDSeed: {{hdseed}}
 
