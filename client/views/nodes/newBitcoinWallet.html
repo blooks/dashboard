@@ -1,30 +1,29 @@
 <template name="newBitcoinWallet">
-
-{{#unless actiontype}}
-<div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy">
-<h3>What kind of <span class="fat">wallet</span> do you want to add..?</h3>
-  <ul class="wallet-selection text-center">
-{{#each availableWallets}}
-    <li>
-      <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
-        <img src="/img/external-logos/{{type}}-logo.png">
-        <div class="wallet-label-text">{{label}}</div>
-      </a>
-    </li>
-    {{/each}}
-    {{#each unavailableWallets}}
-    <li class="coming-soon">
-      <a href="#" class="wallet-thumbs">
-        <img src="/img/external-logos/{{type}}-logo.png">
-        <div class="wallet-label-text">{{label}}</div>
-        <div class="coming-soon-sign">Coming soon</div>
-      </a>
-    </li>
-{{/each}}
-  </ul>
-</div>
-{{else}}
-    {{>addWallet}}
-{{/unless}}
-    </template>
+    {{#unless actiontype}}
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy">
+            <h3>What kind of <span class="fat">wallet</span> do you want to add..?</h3>
+            <ul class="wallet-selection text-center">
+                {{#each availableWallets}}
+                    <li>
+                        <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                    </li>
+                {{/each}}
+                {{#each unavailableWallets}}
+                    <li class="coming-soon">
+                        <a href="#" class="wallet-thumbs">
+                            <img src="/img/external-logos/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                            <div class="coming-soon-sign">Coming soon</div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{else}}
+        {{>addWallet}}
+    {{/unless}}
+</template>
 
