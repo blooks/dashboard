@@ -11,7 +11,9 @@
                                     <div class="col-lg-6 node-item" id="{{_id}}">
                                         {{> bitcoinWalletHeader}}
                                         {{> bitcoinWalletBody}}
-                                        {{> bitcoinWalletDetails }}
+                                        {{#unless readOnly}}
+                                            {{> bitcoinWalletDetails }}
+                                        {{/unless}}
                                      </div> <!-- /.node-item -->
                                 {{/each}}
                             </div>

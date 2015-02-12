@@ -7,13 +7,15 @@
     .node-header {
       background-color: @gray-medium-lighter;
       border-bottom: 3px solid @whyte;
+
       .node-meta {
-        text-align: center;
+        clear: both;
         margin-bottom: 12px;
         margin-bottom: 1rem;
+        height: 30px;
+        height: 3rem;
 
         .wallet-type {
-
           padding: 6px 10px;
           padding: .5rem .8rem;
           color: @brand-primary;
@@ -45,16 +47,18 @@
     text-transform: none;
   }
 
-  .wallet-adresses {
-  }
-
   .add-address-zone {
     clear: both;
   }
+}
 
-  .controls {
-    padding-top: 10px;
-  }
+.details-item,
+.node-item
+{
+  background-color: @gray-lightest;
+}
 
-
+.node-inner {
+  padding: 12px;
+  padding: 1rem;
 }

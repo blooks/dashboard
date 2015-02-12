@@ -1,9 +1,7 @@
 <template name="addBitcoinAddress">
     <div class="add-address-zone zone">
-        <div class="">
-            <h4><a href="#" class="icon icon-up-open-big icon-circle bitcoin-address-add-toggle"></a>Add a <span class="fat">single Bitcoin address</span></h4>
-        </div>
-        <div class="bitcoin-address-add data-toggle">
+        <h4 class="bitcoin-add-address-toggle"><span class="fat">Add</span> a single <span class="fat">Bitcoin address</span> <span class="icon icon-up-open-big toggle-button"></span> </h4>
+        <div class="bitcoin-add-address">
         {{#autoForm collection="BitcoinAddresses" id="insertBitcoinAddressForm" type="insert" validation="keyup"}}
             {{>afQuickField name='label'}}
             {{>afQuickField name='address'}}
