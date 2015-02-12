@@ -1,87 +1,26 @@
 <template name="bitcoinWallets">
     {{#unless action}}
-<div class="container-fluid">
-    <div class="wallets-zone col-lg-12">
-      <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
-      <div class="row zone">
-        {{#if bitcoinwallets}}
-          {{#each bitcoinwalletsinpacks 2}}
-            <div class="row">
-            {{#each this}}
-            <div class="col-lg-6 node-item" id="{{_id}}">
-              <div class="node-header">
-                <div class="node-inner">
-                  <div class="node-meta">
-                    <span class="wallet-type brand-box">
-                      {{type}}
-                    </span>
-                  </div>
-                  <div class="row vcenter">
-                    <div class="col-sm-11">
-                        <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.wallets.walletLabelTitle'}} :
-                        <span class="fat">{{label}}</span>
-                        </h4>
-
-                        <h4><span class="icon icon-asterisk"></span> Total Balance :
-                        <span class="fat"> {{saneNumber balance 'BTC'}} BTC </span>
-                        </h4>
-                    </div> <!-- /.col-lg-10 -->
-                      <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
-                      <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-wallet"><span class="icon icon-ccw"></span></a>
-                      {{#unless readOnly}}
-                      <div class="col-sm-1">
-                          <span class="icon icon-down-open-big icon-circle data-toggle"></span>
-                      </div> <!-- /.col-lg-2 -->
-                      {{/unless}}
-                    <div class="col-sm-1">
-                        <span class="icon icon-down-open-big body-toggle"></span>
-                    </div> <!-- /.col-lg-2 -->
-                  </div> <!-- /.row -->
-                </div> <!-- /.node-inner -->
-              </div> <!-- /.node-header -->
-              <div class="node-body">
-                <div class="node-inner">
-                   {{> bitcoinWalletAddresses this}}
-                  <ul class="no-bullets">
-                    {{#each balances}}
-                      <li>Balance in {{currency}} : {{saneNumber balance currency}} </li>
-                    {{/each}}
-                  </ul>
-
-                  <div class="controls">
-                  </div>
-
-                </div> <!-- /.node-inner -->
-              </div> <!-- /.node-body -->
-                <div class="node-data">
-                    {{#if hdseed}}
-                    <div class="node-inner">
-                           HDSeed: {{hdseed}}
-                    </div> <!-- /.node-inner -->
-                    {{/if}}
-                    {{#unless readOnly}}
-                    {{#if singleAddressess}}
-                        Single Addresses:
-                    <ul class="no-bullets">
-                        {{#each singleAddressess}}
-                            <li>{{this.label}}   {{this.address}}
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a>
-                            </li>
+        <div class="container-fluid">
+            <div class="wallets-zone col-lg-12">
+                <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
+                <div class="row zone">
+                    {{#if bitcoinwallets}}
+                        {{#each bitcoinwalletsinpacks 2}}
+                            <div class="row">
+                                {{#each this}}
+                                    <div class="col-lg-6 node-item" id="{{_id}}">
+                                        {{> bitcoinWalletHeader}}
+                                        {{> bitcoinWalletBody}}
+                                        {{> bitcoinWalletFooter}}
+                                    </div> <!-- /.node-item -->
+                                {{/each}}
+                            </div>
                         {{/each}}
-                    </ul>
                     {{/if}}
-                        {{> addBitcoinAddress}}
-                    {{/unless}}
-                </div> <!-- /.node-body -->
-            </div> <!-- /.node-item -->
-            {{/each}}
-            </div>
-          {{/each}}
-        {{/if}}
-      </div>
-    </div> <!-- /.wallets-zone -->
-  </div> <!-- /.container -->
-      {{else}}
+                </div>
+            </div> <!-- /.wallets-zone -->
+        </div> <!-- /.container -->
+    {{else}}
         {{> Template.dynamic template=dynamicTemplate}}
-      {{/unless}}
+    {{/unless}}
 </template>
