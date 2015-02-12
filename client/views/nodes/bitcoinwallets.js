@@ -23,28 +23,23 @@ Template.bitcoinWallets.helpers({
       return "newBitcoinWallet";
     }
     return "";
-  }
-});
-
-Template.bitcoinWallets.events({
-  'click .delete-bitcoin-wallet': function () {
-    return BitcoinWallets.remove({
-      _id: this._id
-    });
   },
-  'click .update-wallet': function () {
-    return this.update();
-  },
-
-  'click .body-toggle': function () {
-    var targetID = "#" + this._id;
-    jQuery(targetID + " .node-body").slideToggle(400, function () {
-      jQuery(targetID + " .body-toggle")
-        .toggleClass('icon-up-open-big')
-        .toggleClass('icon-down-open-big');
-    });
+  singleAddressess: function() {
+    return this.singleAddresses();
   }
 });
 
 
-
+AutoForm.hooks({
+  insertBitcoinAddressForm: {
+    after: {
+      insert: function (err, result, template) {
+        if (!err) {
+          var address = BitcoinAddresses.findOne({_id: result});
+          var wallet = BitcoinWallets.findOne({_id: address.walletId});
+          Meteor.call('updateTx4Wallet', wallet);
+        }
+      }
+    }
+  }
+});

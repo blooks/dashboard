@@ -1,0 +1,32 @@
+<template name="bitcoinWalletHeader">
+<div class="node-header">
+    <div class="node-inner">
+        <div class="node-meta">
+            <span class="wallet-type brand-box">
+                {{type}}
+            </span>
+            <span class="controls pull-right">
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-wallet"><span class="icon icon-ccw"></span></a>
+                {{#unless readOnly}}
+                    <a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a>
+                {{/unless}}
+            </span>
+        </div>
+        <div class="row vcenter">
+            <div class="col-sm-11">
+                <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.wallets.walletLabelTitle'}} :
+                    <span class="fat">{{label}}</span>
+                </h4>
+
+                <h4><span class="icon icon-asterisk"></span> Total Balance :
+                    <span class="fat"> {{saneNumber balance 'BTC'}} <span class="icon icon-bitcoin"></span></span>
+                </h4>
+            </div> <!-- /.col-lg-10 -->
+            <div class="col-sm-1">
+                <span class="icon icon-down-open-big body-toggle"></span>
+            </div> <!-- /.col-lg-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.node-inner -->
+</div> <!-- /.node-header -->
+</template>

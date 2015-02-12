@@ -1,4 +1,5 @@
 
+
 Meteor.users.helpers({
   totalBalance: function (currency) {
     if (currency !== "BTC") {
@@ -23,39 +24,6 @@ if (Meteor.isServer)
     }
   });
 }
-
-var userProfile = new SimpleSchema({
-  language: {
-    type: String,
-    optional: true
-  },
-  name: {
-    type: String,
-    optional: true
-  },
-  username: {
-    type: String,
-    optional: true
-  },
-  hasTransfers: {
-    type: Boolean,
-    defaultValue: false
-  },
-  hasSignedTOS: {
-    type: Boolean,
-    defaultValue: false
-  },
-  currency: {
-    type: String,
-    optional: true,
-    allowedValues: ['EUR', 'USD', 'BTC'],
-    defaultValue: 'EUR'
-  },
-  totalFiat: {
-    type: Number,
-    defaultValue: 0
-  }
-});
 
 var Schema = new SimpleSchema({
   createdAt: {
@@ -97,7 +65,7 @@ var Schema = new SimpleSchema({
     type: Boolean
   },
   profile: {
-    type: userProfile,
+    type: Schemas.userProfile,
     optional: true
   },
   services: {

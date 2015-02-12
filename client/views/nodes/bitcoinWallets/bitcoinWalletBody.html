@@ -1,0 +1,12 @@
+<template name="bitcoinWalletBody">
+    <div class="node-body">
+        <div class="node-inner">
+          {{> bitcoinWalletAddresses this}}
+            <ul class="no-bullets">
+              {{#each balances}}
+                  <li>Balance in {{currency}} : {{saneNumber balance currency}} </li>
+              {{/each}}
+            </ul>
+        </div> <!-- /.node-inner -->
+    </div> <!-- /.node-body -->
+</template>
