@@ -33,12 +33,13 @@ Schemas.BitcoinWallets = new SimpleSchema({
     type: String,
     optional: true,
     custom: function() {
+      if (this.field('type').value === 'single-addresses') {
+        return;
+      }
       var rawSeedData = this.value;
       // DGB 2015-01-22 07:15 Checks if this seed is unique for this user,
       // returns string if invalid
       switch (this.field('type').value) {
-        case 'single-addresses':
-          break;
         case 'electrum':
           if (!this.value) {
             return 'required';

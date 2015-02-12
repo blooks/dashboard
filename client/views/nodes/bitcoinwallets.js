@@ -70,7 +70,6 @@ AutoForm.hooks({
         if (!err) {
           var address = BitcoinAddresses.findOne({_id: result});
           var wallet = BitcoinWallets.findOne({_id: address.walletId});
-          console.log(wallet);
           Meteor.call('updateTx4Wallet', wallet);
         }
       }
