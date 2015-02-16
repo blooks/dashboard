@@ -227,7 +227,9 @@ if (Meteor.isServer) {
 
 Exchanges.simpleSchema().messages({
   noaccess: "The credentials are invalid. We cannot get access to Coinbase.",
-  wrongpermissions: "These API credentials have too many or too few permissions. Please allow only(!) 'addresses'"
+  wrongpermissions: "These API credentials have too many or too few permissions. Please allow only(!) 'addresses'",
+  coinbaseapisecretwrongformat: "Provided string is not of the Coinbase API secret format.",
+  coinbaseapikeywrongformat: "Provided string is not of the Coinbase API secret format."
 });
 
 
