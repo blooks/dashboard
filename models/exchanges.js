@@ -153,6 +153,7 @@ if (Meteor.isServer)
       var wrappedCoinbase = Async.wrap(coinbase, ["listAllAddresses"]);
       var addresses = wrappedCoinbase.listAllAddresses();
       var wallet = null;
+      var numNewAddresses = 0;
       if (this.subNode) {
         wallet = BitcoinWallets.findOne({_id: this.subNode.id});
       } else {
@@ -174,7 +175,7 @@ if (Meteor.isServer)
           };
           Exchanges.update({_id: this._id},{$set : {subNode: subNode}});
         } catch (err) {
-          console.log(err);
+          //Duplicate key. Do nothing.
         }
         wallet = BitcoinWallets.findOne({_id: walletId});
       }
@@ -187,11 +188,14 @@ if (Meteor.isServer)
         };
         try {
           BitcoinAddresses.insert(coynoAddress);
+          ++numNewAddresses;
         } catch (err) {
           console.log(err);
         }
       });
-      wallet.update();
+      if (numNewAddresses > 0) {
+        wallet.update();
+      }
     }
   }
   });

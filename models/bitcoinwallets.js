@@ -252,6 +252,7 @@ if (Meteor.isServer) {
     }
   });
   BitcoinWallets.after.insert(function (userId, doc) {
+    var wallet = BitcoinWallets.findOne({_id: doc._id});
     Meteor.call('updateTx4Wallet', doc);
   });
 }

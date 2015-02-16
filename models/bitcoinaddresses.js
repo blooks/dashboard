@@ -45,7 +45,9 @@ if (Meteor.isServer) {
       }
     });
   });
+  BitcoinAddresses._ensureIndex({userId: 1, address: 1}, {unique: true});
 }
+
 
 BitcoinAddresses.simpleSchema().messages({
   invalidAddress: "[label] is not a Bitcoin Address"
