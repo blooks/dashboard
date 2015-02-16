@@ -6,12 +6,16 @@ Meteor.methods({
       APIKey: APIKey,
       APISecret: secret
     });
-    var wrappedCoinbase = Async.wrap(coinbase, ["addresses"]);
+    var wrappedCoinbase = Async.wrap(coinbase, ["addresses", "authorization"]);
     try {
       wrappedCoinbase.addresses();
     } catch (err) {
       console.log('Invalid API Keys');
       return "noaccess";
+    }
+    var auth = wrappedCoinbase.authorization();
+    if (auth.scopes.length > 1 || auth.scopes.indexOf('addresses') < 0) {
+      return "wrongpermissions";
     }
     return;
   }

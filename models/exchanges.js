@@ -44,9 +44,19 @@ Schemas.exchangeCredentials = new SimpleSchema({
                     }
                   ]);
                     break;
-                  case "toomanypermissions":
-                    break;
-                  case "missingpermissions":
+                  case "wrongpermissions":
+                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                      {
+                        name: "credentials.APIKey",
+                        type: "wrongpermissions"
+                      }
+                    ]);
+                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                      {
+                        name: "credentials.secret",
+                        type: "wrongpermissions"
+                      }
+                    ]);
                     break;
                 }
               });
@@ -140,6 +150,11 @@ Exchanges.helpers({
 }
 if (Meteor.isServer)
 {
+
+  Exchanges._ensureIndex({userId: 1, credentials: 1}, {unique: true});
+
+
+
   var Coinbase = Meteor.npmRequire('coinbase');
   Exchanges.helpers({
   update: function() {
@@ -152,10 +167,10 @@ if (Meteor.isServer)
       });
       var wrappedCoinbase = Async.wrap(coinbase, ["listAllAddresses"]);
       var addresses = wrappedCoinbase.listAllAddresses();
-      var wallet = null;
+      var wallet = BitcoinWallets.findOne({"superNode.id": this._id});
       var numNewAddresses = 0;
-      if (this.subNode) {
-        wallet = BitcoinWallets.findOne({_id: this.subNode.id});
+      if (wallet) {
+        //Wallet already there, do nothing.
       } else {
         var shadowWallet = {
           userId: this.userId,
@@ -173,9 +188,10 @@ if (Meteor.isServer)
             nodeType: 'bitcoinwallet',
             id: walletId
           };
+          this.subNode = subNode;
           Exchanges.update({_id: this._id},{$set : {subNode: subNode}});
         } catch (err) {
-          //Duplicate key. Do nothing.
+          console.log(err);
         }
         wallet = BitcoinWallets.findOne({_id: walletId});
       }
@@ -190,7 +206,7 @@ if (Meteor.isServer)
           BitcoinAddresses.insert(coynoAddress);
           ++numNewAddresses;
         } catch (err) {
-          console.log(err);
+          //Duplicate key. Do nothing.
         }
       });
       if (numNewAddresses > 0) {
@@ -210,7 +226,8 @@ if (Meteor.isServer) {
 
 
 Exchanges.simpleSchema().messages({
-  noaccess: "The credentials are invalid. We cannot get access to Coinbase."
+  noaccess: "The credentials are invalid. We cannot get access to Coinbase.",
+  wrongpermissions: "These API credentials have too many or too few permissions. Please allow only(!) 'addresses'"
 });
 
 
