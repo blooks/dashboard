@@ -1,4 +1,3 @@
-
 var convertToSaneAmount = function (amount) {
   return parseFloat(amount / 10e7);
 };

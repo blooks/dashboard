@@ -16,10 +16,6 @@ var checkArmoryInputFormat = function(string) {
   return string.replace(/\s/gm,"").match(armoryRegex);
 };
 
-Schemas.ArmoryRootData = new SimpleSchema;
-
-Schemas.ElectrumRootData = new SimpleSchema;
-
 Schemas.BitcoinWallets = new SimpleSchema({
   userId: {
     type: String,
@@ -37,12 +33,13 @@ Schemas.BitcoinWallets = new SimpleSchema({
     type: String,
     optional: true,
     custom: function() {
+      if (this.field('type').value === 'single-addresses') {
+        return;
+      }
       var rawSeedData = this.value;
       // DGB 2015-01-22 07:15 Checks if this seed is unique for this user,
       // returns string if invalid
       switch (this.field('type').value) {
-        case 'single-addresses':
-          break;
         case 'electrum':
           if (!this.value) {
             return 'required';
@@ -108,6 +105,10 @@ Schemas.BitcoinWallets = new SimpleSchema({
       }
       return;
     }
+  },
+  superNode: {
+    type: Schemas.nodeReference,
+    optional: true
   }
 });
 
@@ -187,15 +188,30 @@ BitcoinWallets.helpers({
   addresses: function () {
     return BitcoinAddresses.find({"walletId": this._id}).fetch();
   },
+  singleAddresses: function() {
+    return BitcoinAddresses.find({"walletId": this._id, "order" : { $lt: 0 } }).fetch();
+  },
   update: function () {
     Meteor.call('updateTx4Wallet', this);
   },
   saneBalance: function () {
     return (this.balance() / 10e7).toFixed(8);
+  },
+  //If the wallet has a supernode it is readonly for the user.
+  readOnly: function () {
+    return (this.superNode !== undefined);
   }
 });
 
 BitcoinWallets.before.remove(function (userId, doc) {
+  var self = BitcoinWallets.findOne({_id: doc._id});
+  if (self.superNode) {
+    switch (self.superNode.nodeType) {
+      case 'exchange':
+        Exchanges.remove({_id: self.superNode.id});
+        break;
+    }
+  };
   var addresses = BitcoinAddresses.find({"walletId": doc._id});
   addresses.forEach(function (address) {
     BitcoinAddresses.remove({"_id": address._id});
@@ -204,6 +220,10 @@ BitcoinWallets.before.remove(function (userId, doc) {
 
 
 if (Meteor.isServer) {
+
+
+  BitcoinWallets._ensureIndex({userId: 1, superNode: 1}, {unique: true});
+
   BitcoinWallets.after.remove(function (userId, doc) {
     var oneTransfer = Transfers.findOne({'userId': doc.userId});
     if (!oneTransfer) {

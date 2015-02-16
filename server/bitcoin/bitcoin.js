@@ -16,6 +16,15 @@ Meteor.methods({
   updateTx4Wallet: function (wallet) {
     //TODO: check if wallet exists, user is owner and can trigger update
     console.log("Updating a wallet");
+
+    if (wallet.superNode) {
+      if (wallet.superNode.nodeType === 'exchange') {
+        console.log("Updating Exchange");
+        var exchange = Exchanges.findOne({_id: wallet.superNode.id});
+        exchange.update();
+      }
+    }
+
     Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
   },
   isValidBitcoinAddress: function (address) {

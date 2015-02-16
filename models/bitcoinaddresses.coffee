@@ -17,6 +17,9 @@ Schemas.BitcoinAddresses = new SimpleSchema
   label:
     type: String
     optional: true
+  order:
+    type: Number
+    defaultValue: -1
   address:
     type: String
     custom: ->
