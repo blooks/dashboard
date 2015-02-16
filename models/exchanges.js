@@ -58,6 +58,20 @@ Schemas.exchangeCredentials = new SimpleSchema({
                       }
                     ]);
                     break;
+                  case "deactivated":
+                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                      {
+                        name: "credentials.APIKey",
+                        type: "deactivated"
+                      }
+                    ]);
+                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                      {
+                        name: "credentials.secret",
+                        type: "deactivated"
+                      }
+                    ]);
+                    break;
                 }
               });
             } else {
@@ -229,7 +243,8 @@ Exchanges.simpleSchema().messages({
   noaccess: "The credentials are invalid. We cannot get access to Coinbase.",
   wrongpermissions: "These API credentials have too many or too few permissions. Please allow only(!) 'addresses'",
   coinbaseapisecretwrongformat: "Provided string is not of the Coinbase API secret format.",
-  coinbaseapikeywrongformat: "Provided string is not of the Coinbase API secret format."
+  coinbaseapikeywrongformat: "Provided string is not of the Coinbase API secret format.",
+  deactivated: "These API credentials are disabled. You need to enable them first through Coinbase."
 });
 
 

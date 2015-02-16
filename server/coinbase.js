@@ -10,6 +10,9 @@ Meteor.methods({
     try {
       wrappedCoinbase.addresses();
     } catch (err) {
+      if (err.error === "API Key disabled") {
+        return "deactivated";
+      }
       console.log('Invalid API Keys');
       return "noaccess";
     }
