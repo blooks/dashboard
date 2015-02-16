@@ -221,9 +221,6 @@ BitcoinWallets.before.remove(function (userId, doc) {
 
 if (Meteor.isServer) {
 
-
-  BitcoinWallets._ensureIndex({userId: 1, superNode: 1}, {sparse: true, unique: true});
-
   BitcoinWallets.after.remove(function (userId, doc) {
     var oneTransfer = Transfers.findOne({'userId': doc.userId});
     if (!oneTransfer) {
