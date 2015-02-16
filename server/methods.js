@@ -163,7 +163,7 @@ Meteor.methods({
         }
       });
       //Go until today.
-      while (timeWindowEnd < timeNow) {
+      while (timeWindowEnd < timeNow + timeDelta) {
         balances.push([timeWindowEnd,
           convertToSaneAmount(Coynverter.convert('BTC', currency, balance, new Date(timeWindowEnd)))]);
         timeWindowEnd+=timeDelta;
