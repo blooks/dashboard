@@ -167,8 +167,6 @@ if (Meteor.isServer)
 
   Exchanges._ensureIndex({userId: 1, credentials: 1}, {unique: true});
 
-
-
   var Coinbase = Meteor.npmRequire('coinbase');
   Exchanges.helpers({
   update: function() {
