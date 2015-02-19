@@ -56,14 +56,14 @@ Router.map(function() {
       return [Meteor.subscribe('user')];
     },
     data: function() {
-      Meteor.subscribe('transfers', parseInt(this.params.page), parseInt(this.params.numberOfResults));
+      Meteor.subscribe('transfers', parseInt(this.params.page, 10), parseInt(this.params.numberOfResults, 10));
       if(Transfers.find() && Transfers.find().fetch().length>0){
         return {
           noTransfers: false,
           transfers: Transfers.find(),
-          page: parseInt(this.params.page),
-          numberOfResultsPerPage: parseInt(this.params.numberOfResults),
-          totalPages:  Math.ceil(Transfers.findOne({}).totalAvailable/parseInt(this.params.numberOfResults))
+          page: parseInt(this.params.page, 10),
+          numberOfResultsPerPage: parseInt(this.params.numberOfResults, 10),
+          totalPages:  Math.ceil(Transfers.findOne({}).totalAvailable/parseInt(this.params.numberOfResults, 10))
         };
       }else{
         return {

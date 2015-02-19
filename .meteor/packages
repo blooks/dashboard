@@ -28,7 +28,6 @@ meteorhacks:npm
 jhuenges:highstock
 meteor-platform
 velocity:html-reporter
-mike:mocha
 reactive-var
 email
 http

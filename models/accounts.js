@@ -20,7 +20,7 @@ if (Meteor.isServer)
       var bitcoinBalance = this.totalBalance('BTC');
       var currency = Meteor.user().profile.currency;
       var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
-      return parseInt(returnValue);
+      return parseInt(returnValue, 10);
     }
   });
 }
