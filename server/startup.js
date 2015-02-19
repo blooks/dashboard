@@ -3,7 +3,7 @@ Meteor.startup(function () {
     name: 'Update Wallets',
     schedule: function(parser) {
       // parser is a later.parse object
-      return parser.cron('10 * * * * *');
+      return parser.cron('10 0 * * * *');
     },
     job: function() {
       BitcoinWallets.find().forEach(function(wallet) {
