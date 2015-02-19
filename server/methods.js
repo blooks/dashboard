@@ -175,3 +175,4 @@ Meteor.methods({
     return Coynverter.convert(fromCurrency, toCurrency, amount, time);
   }
 });
+
