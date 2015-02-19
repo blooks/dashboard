@@ -12,7 +12,8 @@
                                         {{> bitcoinWalletHeader}}
                                         {{> bitcoinWalletBody}}
                                         {{#unless readOnly}}
-                                            {{> bitcoinWalletDetails }}
+                                            {{> bitcoinWalletAddAddressModal }}
+                                            {{> bitcoinWalletDetailsModal }}
                                         {{/unless}}
                                      </div> <!-- /.node-item -->
                                 {{/each}}

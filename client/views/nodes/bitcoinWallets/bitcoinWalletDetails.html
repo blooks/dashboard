@@ -1,4 +1,4 @@
-<template name="bitcoinWalletDetails">
+<template name="bitcoinWalletDetailsModal">
     <div id="bitcoinWalletDetails{{_id}}" tabindex="-1" role="dialog" aria-labelledby="bitcoinWalletDetailsModal{{_id}}" aria-hidden="true" class="modal fade">
         <div class="modal-dialog wallet-details">
             <div class="modal-content">
@@ -15,14 +15,13 @@
                     </div>
                     {{/if}}
                     {{#if singleAddressess}}
-                        <h4>Single <span class="fat">addresses</span> added to wallet</h4>
+                        <h4><span class="fat">Single addresses</span> added to wallet</h4>
                         <ul class="no-bullets">
                             {{#each singleAddressess}}
                                 <li><span class="fat">{{this.label}}</span> {{this.address}} <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-address"><span class="icon icon-trashcan"></span></a></li>
                             {{/each}}
                         </ul>
                     {{/if}}
-                    {{> addBitcoinAddress}}
                 </div>
             </div>
         </div>
