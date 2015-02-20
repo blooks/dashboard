@@ -6,11 +6,12 @@
                 {{type}}
             </span>
             <span class="controls pull-right">
-                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
-                <a href="#" data-toggle="tooltip" data-placement="top" title=" " class="update-wallet"><span class="icon icon-ccw"></span></a>
-                {{#unless readOnly}}
-                    <a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a>
-                {{/unless}}
+            <span data-toggle="tooltip" data-placement="top" title="See wallet details"><a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a></span>
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Update wallet" class="update-wallet"><span class="icon icon-ccw"></span></a>
+            {{#unless readOnly}}
+                <span data-toggle="tooltip" data-placement="top" title="Add single address to wallet"><a href="#" data-toggle="modal" data-target="#bitcoinWalletAddAddress{{_id}}"><span class="icon icon-plus"></span></a></span>
+            {{/unless}}
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Delete wallet!" class="delete-bitcoin-wallet"><span class="icon icon-trashcan"></span></a>
             </span>
         </div>
         <div class="row vcenter">
