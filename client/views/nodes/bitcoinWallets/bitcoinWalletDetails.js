@@ -1,4 +1,4 @@
-Template.bitcoinWalletDetails.events({
+Template.bitcoinWalletDetailsModal.events({
   'click .delete-bitcoin-address': function () {
     return BitcoinAddresses.remove({
       _id: this._id
@@ -13,7 +13,7 @@ Template.bitcoinWalletDetails.events({
     });
   }
 });
-Template.bitcoinWalletDetails.helpers({
+Template.bitcoinWalletDetailsModal.helpers({
   singleAddressess: function() {
     return this.singleAddresses();
   }

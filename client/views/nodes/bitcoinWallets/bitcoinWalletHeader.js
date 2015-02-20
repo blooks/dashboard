@@ -16,3 +16,7 @@ Template.bitcoinWalletHeader.events({
     });
   }
 });
+
+Template.bitcoinWalletHeader.rendered = function () {
+  $('[data-toggle="tooltip"]').tooltip();
+};
