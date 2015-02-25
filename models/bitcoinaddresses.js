@@ -29,14 +29,22 @@ Schemas.BitcoinAddresses = new SimpleSchema({
       }
       if (Meteor.isClient && this.isSet) {
         return Meteor.call("isValidBitcoinAddress", this.value, function(error, result) {
-          if (!result) {
-            console.log("NOT VALID ADDRESS");
+          switch (result) {
+            case "invalidFormat":
             BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys([
               {
                 name: "address",
                 type: "invalidAddress"
               }
             ]);
+            break;
+            case "duplicate":
+              BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys([
+                {
+                  name: "address",
+                  type: "duplicate"
+                }
+              ]);
           }
         });
       }
@@ -130,7 +138,8 @@ if (Meteor.isServer) {
 
 
 BitcoinAddresses.simpleSchema().messages({
-  invalidAddress: "[label] is not a Bitcoin Address"
+  invalidAddress: "[label] is not a Bitcoin Address",
+  duplicate: "[label] is already stored in another wallet"
 });
 
 BitcoinAddresses.helpers({

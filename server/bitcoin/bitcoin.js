@@ -28,7 +28,13 @@ Meteor.methods({
     Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
   },
   isValidBitcoinAddress: function (address) {
-    return bitcore.Address.isValid(address);
+    if (!bitcore.Address.isValid(address)) {
+      return "invalidFormat";
+    }
+    if (BitcoinAddresses.findOne({userId: this.userId, address: address})) {
+      return "duplicate";
+    }
+    return;
   },
   isValidXPub: function (xpubkey) {
     return bitcore.HDPublicKey.isValidSerialized(xpubkey);
