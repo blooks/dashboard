@@ -96,7 +96,7 @@ Accounts.emailTemplates.deleteAccount = {
     t+="Sincerely,\n\nthe Coyno team";
     return t;
   },
-  html: function (user, url) {
+  html: function () {
     return SSR.render("deleteUser");
   }
 };
