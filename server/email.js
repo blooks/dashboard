@@ -16,7 +16,7 @@ Accounts.emailTemplates.verifyEmail = {
   },
   text: function (user, url) {
     var t = null;
-    t= "Hello! \n\n Thank you for opening your account at Coyno. \n\n Feel free to contact us at any time via e-mail on support@coyno.com and engage with us on reddit at /r/coyno.\n\n";
+    t= "Hello! \n\n Thank you for opening your account at Coyno. \n\n Please confirm here: " + url + "\n\n";
     t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
@@ -39,9 +39,6 @@ Accounts.emailTemplates.changeEmail ={
 
 
 
-// DGB 2015-01-12 03:41
-// This email is send when the user request to change the password.
-/*
 Accounts.emailTemplates.resetPassword ={
   subject: function (user) {
     return "Coyno password reset request";
@@ -49,12 +46,11 @@ Accounts.emailTemplates.resetPassword ={
   text: function (user,url) {
     var t = null;
     t= "Hello!\n\n";
-    t+="You requested a password reset. Unfortunately the feature is not implemented yet. Please contact us on support@coyno.com and we will help you.";
+    t+="You requested a password reset. Go to this URL: " + url + " to reset your password.";
     t+="Sincerely,\n\nthe Coyno team";
     return t;
   }
 };
-*/
 // DGB 2015-01-12 03:43
 // This is NOT a standard Meteor.Accounts email template
 Accounts.emailTemplates.deleteAccount = {
