@@ -38,3 +38,4 @@ mrt:uri-js
 npm-container
 percolate:synced-cron
 useraccounts:bootstrap
+meteorhacks:ssr

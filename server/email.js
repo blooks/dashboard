@@ -1,3 +1,5 @@
+SSR.compileTemplate('emailFooter',  Assets.getText('emailtemplates/emailFooter.html'));
+SSR.compileTemplate('confirmationHTML',  Assets.getText('emailtemplates/confirmation.html'));
 // DGB 2015-01-12 03:39 This setup should be at lib/config.coffee, but there is
 // no environment control there. Left here for now.
 // DGB 2015-01-13 05:57 Deprecated as LVO wants to use MAIL_URL env variable.
@@ -49,6 +51,9 @@ Accounts.emailTemplates.resetPassword ={
     t+="You requested a password reset. Go to this URL: " + url + " to reset your password.";
     t+="Sincerely,\n\nthe Coyno team";
     return t;
+  },
+  html: function (user, url) {
+    return SSR.render("confirmationHTML");
   }
 };
 // DGB 2015-01-12 03:43
