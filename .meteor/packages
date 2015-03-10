@@ -22,12 +22,9 @@ chrismbeckett:fontawesome4
 mrt:moment
 frozeman:animation-helper
 frozeman:template-var
-joshowens:simple-form
-joshowens:accounts-entry
 meteorhacks:npm
 jhuenges:highstock
 meteor-platform
-velocity:html-reporter
 reactive-var
 email
 http
@@ -40,3 +37,4 @@ mrt:uri-js
 
 npm-container
 percolate:synced-cron
+useraccounts:bootstrap

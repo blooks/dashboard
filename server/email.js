@@ -41,6 +41,7 @@ Accounts.emailTemplates.changeEmail ={
 
 // DGB 2015-01-12 03:41
 // This email is send when the user request to change the password.
+/*
 Accounts.emailTemplates.resetPassword ={
   subject: function (user) {
     return "Coyno password reset request";
@@ -53,7 +54,7 @@ Accounts.emailTemplates.resetPassword ={
     return t;
   }
 };
-
+*/
 // DGB 2015-01-12 03:43
 // This is NOT a standard Meteor.Accounts email template
 Accounts.emailTemplates.deleteAccount = {

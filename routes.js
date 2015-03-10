@@ -1,11 +1,3 @@
-var mustBeSignedIn = function() {
-  if (!(Meteor.user() || Meteor.loggingIn())) {
-    Router.go('entrySignIn');
-  } else {
-    this.next();
-  }
-};
-
 var mustHaveSignedTOS = function() {
   if (Meteor.user() && Meteor.user().profile && !Meteor.user().profile.hasSignedTOS) {
     Router.go('termsOfService');
@@ -13,13 +5,12 @@ var mustHaveSignedTOS = function() {
     this.next();
   }
 };
-
-Router.onBeforeAction(mustBeSignedIn, {
-  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about']
+Router.onBeforeAction(mustHaveSignedTOS, {
+  except: ['sign-in', 'sign-up', 'reset-password', 'forgot-password', 'contact', 'about', 'termsOfService']
 });
 
-Router.onBeforeAction(mustHaveSignedTOS, {
-  except: ['entrySignIn', 'entrySignUp', 'entrySignOut', 'entryForgotPassword', 'contact', 'about', 'termsOfService']
+Router.plugin('ensureSignedIn', {
+  except: ['sign-in', 'sign-up', 'reset-password', 'forgot-password', 'contact', 'about']
 });
 
 Router.map(function() {
@@ -118,3 +109,14 @@ Router.map(function() {
     template: 'userProfile'
   });
 });
+
+AccountsTemplates.configure({
+  // Behaviour
+  showForgotPasswordLink: true
+});
+
+AccountsTemplates.configureRoute('signIn');
+AccountsTemplates.configureRoute('signUp');
+AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('forgotPwd');
+
