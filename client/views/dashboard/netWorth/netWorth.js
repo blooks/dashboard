@@ -12,8 +12,7 @@ var digits = function (currency) {
 var builtStockLocal = function (currency) {
   Meteor.call("dataForChartDashboardBasedOnCurrency", currency, function (err, result) {
     if(result){
-      var data = result;
-      $('#holdingsovertime').highcharts('StockChart', {
+      $('#holdingsovertime').removeClass("icon-spinner").highcharts('StockChart', {
         rangeSelector: {
           selected: 1,
           inputEnabled : false
@@ -23,7 +22,7 @@ var builtStockLocal = function (currency) {
         },
         series: [{
           name: currency  ,
-          data: data,
+          data: result,
           tooltip: {
             valueDecimals: digits(currency)
           }
