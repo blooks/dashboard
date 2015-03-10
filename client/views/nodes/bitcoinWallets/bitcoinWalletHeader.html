@@ -7,7 +7,11 @@
             </span>
             <span class="controls pull-right">
             <span data-toggle="tooltip" data-placement="top" title="See wallet details"><a href="#" data-toggle="modal" data-target="#bitcoinWalletDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a></span>
+            {{#unless updating}}
             <a href="#" data-toggle="tooltip" data-placement="top" title="Update wallet" class="update-wallet"><span class="icon icon-ccw"></span></a>
+                {{else}}
+                <span data-toggle="tooltip" data-placement="top" title="Updating Wallet" class="updating-wallet"><span class="icon icon-spinner"></span></span>
+            {{/unless}}
             {{#unless readOnly}}
                 <span data-toggle="tooltip" data-placement="top" title="Add single address to wallet"><a href="#" data-toggle="modal" data-target="#bitcoinWalletAddAddress{{_id}}"><span class="icon icon-plus"></span></a></span>
             {{/unless}}

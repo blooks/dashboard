@@ -109,6 +109,10 @@ Schemas.BitcoinWallets = new SimpleSchema({
   superNode: {
     type: Schemas.nodeReference,
     optional: true
+  },
+  updating:  {
+    type: Boolean,
+    defaultValue: false
   }
 });
 
