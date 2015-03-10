@@ -29,53 +29,10 @@ Template.userProfile.helpers({
   },
   getUserMessage: function(section) {
     return Template.instance().userMessage.get()[section];
-  },
+  }
 });
 
 Template.userProfile.events({
-  // DGB 2015-01-21 04:25 Deprecated
-  // 'click #btnPasswordManagement': function (event, template) {
-  //   if (template.openedSection.get()==='passwordManagement') template.openedSection.set('');
-  //   else template.openedSection.set('passwordManagement');
-  //   return true;
-	// },
-  // 'click #btnAccountManagement': function (event, template) {
-  //   if (template.openedSection.get()==='accountManagement') template.openedSection.set('');
-  //   else template.openedSection.set('accountManagement');
-  //   return true;
-	// },
-  "click #change_password": function (event, template) {
-    event.preventDefault();
-    template.editingSection.set('password');
-    var oldPassword = template.$("#old_password").val();
-    var newPassword = template.$("#new_password").val();
-    var newPasswordAgain = template.$("#new_password_again").val();
-
-    var invalidPassword = function(passwordString, passwordStringAgain, currentPassword) {
-      var err = '';
-      if (passwordString === currentPassword) {err+= 'New password is the same as the old password. '}
-      if (passwordString !== passwordStringAgain) {err+= 'Passwords do not match. '}
-      if (passwordString.length<7) {err+= 'Password is too short (need to be at least 6 characters long). '}
-      if (passwordString.search(/[a-z]/i) < 0) {err+= 'Password needs to have at least a letter. '}
-      if (passwordString.search(/[0-9]/) < 0) {err+= 'Password needs to have at least a digit. '}
-      return (err==='')?false:err;
-    }
-
-    if(!invalidPassword(newPassword, newPasswordAgain, oldPassword)){
-      Accounts.changePassword(oldPassword, newPassword, function (err) {
-        if(err){
-          template.userMessage.set({password: {class: 'error', message: err.reason}});
-        }else{
-          template.userMessage.set({password: {class: 'success', message:'The password was changed, and we have sent you an email'}})
-          Meteor.call('sendEmail','resetPassword');
-          template.$("#passwordChange").remove("");
-        }
-      });
-    }
-    else {
-      template.userMessage.set({password: {class: 'error', message: invalidPassword(newPassword,newPasswordAgain,oldPassword)}})
-    }
-  },
   "click #confirm_delete_account": function () {
     Meteor.call('removeAccount');
   },
