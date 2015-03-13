@@ -153,15 +153,12 @@ Exchanges.allow({
   }
 });
 
-if (Meteor.isClient)
-{
 Exchanges.helpers({
-
   update: function () {
     Meteor.call('updateExchange', this);
   }
 });
-}
+/*
 if (Meteor.isServer)
 {
 
@@ -170,6 +167,8 @@ if (Meteor.isServer)
   var Coinbase = Meteor.npmRequire('coinbase');
   Exchanges.helpers({
   update: function() {
+    Meteor.call('updateExchange')
+    return;
     var userId = this.userId,
       self = this;
     if (this.exchange && this.exchange === 'coinbase') {
@@ -228,6 +227,7 @@ if (Meteor.isServer)
   }
   });
 }
+*/
 
 if (Meteor.isServer) {
   Exchanges.after.insert(function (userId, doc) {

@@ -12,12 +12,6 @@ Meteor.methods({
    * @param wallet
    */
   updateExchange: function (exchange) {
-    if (exchange) {
-      exchange = Exchanges.findOne({_id: exchange._id});
-      if (exchange) {
-        exchange.update();
-      }
-    }
     Dispatcher.exchange.update({exchangeId: exchange._id, userId: exchange.userId});
   }
 });

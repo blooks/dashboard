@@ -14,18 +14,18 @@ Meteor.methods({
    */
   updateTx4Wallet: function (wallet) {
     //TODO: check if wallet exists, user is owner and can trigger update
-    var wallet = BitcoinWallets.findOne({_id: wallet._id});
+    wallet = BitcoinWallets.findOne({_id: wallet._id});
     if (wallet) {
-      BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
       if (wallet.superNode) {
         if (wallet.superNode.nodeType === 'exchange') {
           console.log("Updating Exchange");
           var exchange = Exchanges.findOne({_id: wallet.superNode.id});
           exchange.update();
         }
+      } else {
+        BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
+        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
       }
-
-      Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
     }
   },
   isValidBitcoinAddress: function (address) {
