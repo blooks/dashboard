@@ -18,7 +18,6 @@ Meteor.methods({
     if (wallet) {
       if (wallet.superNode) {
         if (wallet.superNode.nodeType === 'exchange') {
-          console.log("Updating Exchange");
           var exchange = Exchanges.findOne({_id: wallet.superNode.id});
           exchange.update();
         }
