@@ -1,3 +1,6 @@
+
+var Dispatcher = Meteor.npmRequire('coyno-dispatcher');
+
 Meteor.methods({
   /**
    * Updating the wallet data. Getting all transactions for
@@ -15,5 +18,6 @@ Meteor.methods({
         exchange.update();
       }
     }
+    Dispatcher.exchange.update({exchangeId: exchange._id, userId: exchange.userId});
   }
 });
