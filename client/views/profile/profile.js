@@ -1,3 +1,13 @@
+Template.userProfile.created = function() {
+  this.editingSection = new ReactiveVar('','');
+  this.userMessage = new ReactiveVar(false,'');
+
+  // DGB 2015-01-20 03:58 This variable has an unfortunatene name, pleas notice
+  // this section and the section from editingSection relate to different
+  // things.
+  this.openedSection = new ReactiveVar('','');
+};
+
 Template.userProfile.helpers({
   displayUsername: function () {
     return Meteor.user().profile.username;
