@@ -1,4 +1,4 @@
-this.Transfers = new Meteor.Collection('transfers');
+this.Transfers = new Mongo.Collection('transfers');
 
 if (this.Schemas == null) {
   this.Schemas = {};

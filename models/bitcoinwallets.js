@@ -1,7 +1,7 @@
 
 
 
-this.BitcoinWallets = new Meteor.Collection('bitcoinwallets');
+this.BitcoinWallets = new Mongo.Collection('bitcoinwallets');
 
 if (this.Schemas == null) {
   this.Schemas = {};

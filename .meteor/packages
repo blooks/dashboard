@@ -5,9 +5,7 @@
 
 coffeescript
 less
-accounts-password
 aldeed:collection2
-sewdn:collection-behaviours
 dsyko:node-csv-npm
 lepozepo:accounting
 iron:router
@@ -16,7 +14,6 @@ cmather:handlebars-server
 aldeed:autoform
 nemo64:bootstrap
 mrt:just-i18n
-mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
@@ -39,3 +36,6 @@ npm-container
 percolate:synced-cron
 useraccounts:bootstrap
 meteorhacks:ssr
+sewdn:collection-behaviours
+accounts-password
+accounts-ui

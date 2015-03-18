@@ -1,4 +1,4 @@
-this.Exchanges = new Meteor.Collection('exchanges');
+this.Exchanges = new Mongo.Collection('exchanges');
 
 if (this.Schemas == null) {
   this.Schemas = {};
