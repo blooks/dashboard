@@ -6,23 +6,18 @@
 coffeescript
 less
 aldeed:collection2
-dsyko:node-csv-npm
 lepozepo:accounting
 iron:router
 mquandalle:jade
-cmather:handlebars-server
 aldeed:autoform
 nemo64:bootstrap
 mrt:just-i18n
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
-frozeman:animation-helper
-frozeman:template-var
 meteorhacks:npm
 jhuenges:highstock
 meteor-platform
-reactive-var
 email
 http
 
