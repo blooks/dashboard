@@ -20,12 +20,19 @@
 }
 
 .user-drop {
-    margin-top: 8px;
-    margin-top: .8rem;
-    margin-right: 15px;
-    margin-right: 1.5rem;
+    margin: 0 15px;
+    margin: 0 1.5rem;
 
-    #login-buttons {
+    #login-buttons-logout.brand-box.btn {
+        border: 1px solid @gray-medium-lighter;
+        &:hover {
+            background-color: transparent;
+            color: darken(@brand-primary, 10%);
+            border: 1px solid @brand-primary;
+        }
+    }
+
+/*    #login-buttons {
         position: relative;
         display: inline-block;
         margin-right: 0.2px; // Fixes display on IE8: http://www.compsoft.co.uk/Blog/2009/11/inline-block-not-quite-inline-blocking.html
@@ -49,8 +56,26 @@
             background: @gray-medium-lighter;
             border: 1px solid @gray-lighter;
 
+            .login-close-text {
+                visibility: hidden;
+                display: block;
+                text-align: right;
+                font-weight: bold;
+                font-family: @font-family-sans-serif;
+                color: @gray-light;
+
+            }
+
+            .login-close-text:after {
+                content: 'X';
+                visibility:visible;
+
+            }
+
             .login-button {
-                .brand-box();
+                border: 1px solid @brand-primary;
+                text-transform: uppercase;
+                letter-spacing: 1px;
                 color: @brand-primary;
                 padding: 5px 0;
                 text-align: center;
@@ -81,7 +106,7 @@
             }
 
         }
-    }
+    }*/
 }
 
 .currency-selector {}
