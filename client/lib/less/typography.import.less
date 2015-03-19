@@ -60,10 +60,12 @@ table thead {
 #main p a {
 	text-decoration: underline;
 
+  	&:visited {
+	  color: @brand-secondary;
+	}
 	&:hover,
-	&:focus {
+	&:focus,&:active {
 		color: @brand-primary;
-		text-decoration: underline;
 	}
 }
 
@@ -79,7 +81,6 @@ footer {
 }
 
 /* Global Misc */
-
 .btn {
   	text-transform: uppercase;
   	letter-spacing: 3px;
