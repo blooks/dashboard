@@ -1,4 +1,4 @@
-this.Transfers = new Meteor.Collection('transfers');
+this.Transfers = new Mongo.Collection('transfers');
 
 if (this.Schemas == null) {
   this.Schemas = {};
@@ -169,6 +169,9 @@ var nodeLabel = function nodeLabel(nodeId) {
 };
 
 if (Meteor.isServer) {
+
+  Transfers._ensureIndex({'details.inputs.nodeId': 1});
+  Transfers._ensureIndex({'details.outputs.nodeId': 1});
   /**
    *
    * @param inoutput

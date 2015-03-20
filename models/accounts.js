@@ -1,6 +1,6 @@
+var Users = Meteor.users;
 
-
-Meteor.users.helpers({
+Users.helpers({
   totalBalance: function (currency) {
     if (currency !== "BTC") {
       return 0;
@@ -15,7 +15,7 @@ Meteor.users.helpers({
 
 if (Meteor.isServer)
 {
-  Meteor.users.helpers({
+  Users.helpers({
     totalBalanceInFiat: function () {
       var bitcoinBalance = this.totalBalance('BTC');
       var currency = Meteor.user().profile.currency;

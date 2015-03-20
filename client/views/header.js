@@ -9,6 +9,11 @@ Template.header.events({
     var userCurrency = $('#user_currency').val();
     Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.currency': userCurrency}});
     Meteor.call("updateTotalFiat");
+  },
+  'click #login-buttons-logout': function() {
+    Meteor.logout(function () {
+      loginButtonsSession.closeDropdown();
+    });
   }
 });
 

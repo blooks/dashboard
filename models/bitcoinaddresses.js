@@ -1,4 +1,4 @@
-this.BitcoinAddresses = new Meteor.Collection('bitcoinaddresses');
+this.BitcoinAddresses = new Mongo.Collection('bitcoinaddresses');
 
 if (this.Schemas == null) {
   this.Schemas = {};
