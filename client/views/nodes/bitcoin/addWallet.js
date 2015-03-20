@@ -3,7 +3,7 @@ Template.addWallet.helpers({
     return "importGuide";
   },
   isExchange: function() {
-    return (Meteor.settings["public"].coyno.supportedExchanges.indexOf(this.actiontype) >= 0);
+    return (Meteor.settings["public"].coyno.supportedExchangeTypes.indexOf(this.actiontype) >= 0);
   }
 });
 

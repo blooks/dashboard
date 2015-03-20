@@ -99,7 +99,7 @@ Schemas.exchangeCredentials = new SimpleSchema({
   exchange: {
     type: String,
     optional: true,
-    allowedValues: Meteor.settings["public"].coyno.supportedExchanges
+    allowedValues: Meteor.settings["public"].coyno.supportedExchangeTypes
   }
 });
 
@@ -113,7 +113,7 @@ Schemas.Exchanges = new SimpleSchema({
   },
   exchange: {
     type: String,
-    allowedValues: Meteor.settings["public"].coyno.supportedExchanges
+    allowedValues: Meteor.settings["public"].coyno.supportedExchangeTypes
   },
   credentials: {
     type: Schemas.exchangeCredentials

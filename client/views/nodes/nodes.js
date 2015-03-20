@@ -1,9 +1,6 @@
-// on the client
-Template.dynamicNodeMenu.helpers({
-  actionIs: function (action) {
-    if (this.action === action) {
-      return "active";
-    }
-    return "";
+
+Template.nodes.helpers({
+  heading: function () {
+    return 'nodes.headings.' + this.type;
   }
 });

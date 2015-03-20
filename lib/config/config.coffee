@@ -31,7 +31,9 @@ Meteor.settings.public.coyno =
   fiatCurrencies: ['EUR', 'USD']
   defaultJurisdiction: 'de'
   allowedNodeTypes: ['exchange', 'bankaccount', 'bitcoinwallet']
-  supportedExchanges: ['coinbase']
+  supportedExchangeTypes: ['coinbase'],
+  availableExchanges:[{type: 'coinbase', label: 'Coinbase'}]
+  unavailableExchanges:[{type: 'mtgox', label: 'MtGox'}]
   supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase', 'single-addresses'],
   supportedNodeTypes: ['bitcoinwallet','bitcoinaddress','exchange'],
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},

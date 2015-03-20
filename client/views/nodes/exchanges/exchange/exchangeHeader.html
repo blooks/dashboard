@@ -3,7 +3,7 @@
     <div class="node-inner">
         <div class="node-meta">
             <span class="exchange-type brand-box">
-                {{type}}
+                {{i18n typeString}}
             </span>
             <span class="controls pull-right">
             <span data-toggle="tooltip" data-placement="top" title="See exchange details"><a href="#" data-toggle="modal" data-target="#exchangeDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a></span>
@@ -22,10 +22,6 @@
             <div class="col-sm-11">
                 <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.exchanges.label'}} :
                     <span class="fat">{{label}}</span>
-                </h4>
-
-                <h4><span class="icon icon-asterisk"></span> Total Balance :
-                    <span class="fat"> {{saneNumber balance 'BTC'}} <span class="icon icon-bitcoin"></span></span>
                 </h4>
             </div> <!-- /.col-lg-10 -->
             <div class="col-sm-1">
