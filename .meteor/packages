@@ -33,5 +33,5 @@ useraccounts:bootstrap
 meteorhacks:ssr
 sewdn:collection-behaviours
 accounts-password
-accounts-ui
 reactive-var
+accounts-ui-unstyled

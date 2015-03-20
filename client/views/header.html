@@ -10,7 +10,7 @@
       </div> <!-- ./navbar-header -->
       <div class="navbar-right">
       {{#if currentUser}}
-        <div class="nav navbar-nav currency-selector">
+        <div class="top-bar-drop-item currency-selector">
           <select class="form-control simple-select-dropdown" id="user_currency">
             {{#each possibleCurrencies}}
               <option value="{{this}}" {{isSelected this}}>{{this}}</option>
@@ -18,11 +18,12 @@
           </select>
         </div>
       {{/if}}
-        <ul class="nav navbar-nav">
-             {{> loginButtons }} <!--  here -->
-        </ul>
+        <div class="top-bar-drop-item user-drop">
+          {{#if currentUser}}
+            <div id="login-buttons-logout" class="brand-box btn"><span class="icon icon-sign-out"></span> Sign out</div>
+          {{/if}}
+        </div>
       </div>
-
     </div> <!-- ./container -->
   </div> <!-- ./navbar -->
 </template>

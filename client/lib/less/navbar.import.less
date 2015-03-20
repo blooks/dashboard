@@ -1,28 +1,125 @@
 /* Top nav and sidebar styling */
 
 /* General styles */
-
 .navbar, .sidebar {
     background-color: @gray-medium-lighter;
     border-color: @gray-lighter
 }
 
-.sidebar {
-/*     -webkit-box-shadow: 3px 0px 10px 2px @soft-shadow;
--moz-box-shadow: 3px 0px 10px 2px @soft-shadow;
-box-shadow: 3px 0px 10px 2px @soft-shadow; */
-}
-
-.navbar {
+.navbar, .accounts-dialog {
     -webkit-box-shadow: 0px 3px 10px 2px @soft-shadow;
     -moz-box-shadow: 0px 3px 10px 2px @soft-shadow;
     box-shadow: 0px 3px 10px 2px @soft-shadow;
 }
 
-/* Top navbar  */
-.dropdown-menu {
-    left: -150px;
+/* Top Bar styling
+====================== */
+.top-bar-drop-item {
+    float: left;
+    padding-top: 10px;padding-top: 1rem;
 }
+
+.user-drop {
+    margin: 0 15px;
+    margin: 0 1.5rem;
+
+    #login-buttons-logout.brand-box.btn {
+        border: 1px solid @gray-medium-lighter;
+        &:hover {
+            background-color: transparent;
+            color: darken(@brand-primary, 10%);
+            border: 1px solid @brand-primary;
+        }
+    }
+
+/*    #login-buttons {
+        position: relative;
+        display: inline-block;
+        margin-right: 0.2px; // Fixes display on IE8: http://www.compsoft.co.uk/Blog/2009/11/inline-block-not-quite-inline-blocking.html
+        .top-bar-item-padding();
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .accounts-dialog {
+            .top-bar-item-padding();
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            margin: -8px -12px 0 -12px;
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            z-index: 800;
+            background: @gray-medium-lighter;
+            border: 1px solid @gray-lighter;
+
+            .login-close-text {
+                visibility: hidden;
+                display: block;
+                text-align: right;
+                font-weight: bold;
+                font-family: @font-family-sans-serif;
+                color: @gray-light;
+
+            }
+
+            .login-close-text:after {
+                content: 'X';
+                visibility:visible;
+
+            }
+
+            .login-button {
+                border: 1px solid @brand-primary;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: @brand-primary;
+                padding: 5px 0;
+                text-align: center;
+                &:hover {
+                    color: @whyte;
+                    background-color: @brand-primary;
+                }
+            }
+
+            & > * {
+                line-height: 1.6;
+            }
+            & > .login-close-text {
+                line-height: inherit;
+                font-size: inherit;
+                font-family: inherit;
+            }
+
+            label, .title {
+                font-size: 80%;
+                margin-top: 7px;
+                margin-bottom: -2px;
+            }
+
+            label {
+                // Bootstrap sets labels as 'display: block;'. Undo that.
+                display: inline;
+            }
+
+        }
+    }*/
+}
+
+.currency-selector {}
+
+.simple-select-dropdown {
+    background: transparent;
+    border: 1px solid @gray-lighter;
+    &:focus, &:hover, &:active {
+        outline: none;
+    }
+}
+
+
 
 /* Sub menu nav */
 .sub-nav-zone {
@@ -90,9 +187,8 @@ a.navbar-pullout {
     }
 }
 
-/* Navbar */
-
-/* All the default sidebar styles */
+/* Navbar
+All the default sidebar styles */
 /* toggle button settings */
 /* Note: this disables the navbar-toggle class's hide function. set visibility with the boostrap visible/hidden classes */
 /* Note: this also disables the navbar-header class positioning settings in small screens. */
@@ -190,17 +286,4 @@ ul.nav-pills {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-}
-
-/* Other selectors in navbar
-================== */
-.currency-selector {
-    padding: 10px 0;
-}
-.simple-select-dropdown {
-    background: transparent;
-    border: 1px solid @gray-lighter;
-    &:focus, &:hover, &:active {
-        outline: none;
-    }
 }
