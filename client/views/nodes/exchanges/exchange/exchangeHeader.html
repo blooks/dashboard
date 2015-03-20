@@ -1,0 +1,37 @@
+<template name="exchangeHeader">
+<div class="node-header">
+    <div class="node-inner">
+        <div class="node-meta">
+            <span class="exchange-type brand-box">
+                {{type}}
+            </span>
+            <span class="controls pull-right">
+            <span data-toggle="tooltip" data-placement="top" title="See exchange details"><a href="#" data-toggle="modal" data-target="#exchangeDetails{{_id}}"><span class="icon icon-magnifying-glass"></span></a></span>
+
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Update exchange" class="update-exchange">
+                {{#unless updating}}
+                    <span class="icon icon-ccw"></span>
+                {{else}}
+                    <span class="icon icon-ccw spin-icon"></span>
+                {{/unless}}
+            </a>
+                <a href="#" data-toggle="tooltip" data-placement="top" title="Delete Exchange!" class="delete-exchange"><span class="icon icon-trashcan"></span></a>
+            </span>
+        </div>
+        <div class="row vcenter">
+            <div class="col-sm-11">
+                <h4><span class="icon icon-bitcoin85"></span> {{i18n 'nodes.exchanges.label'}} :
+                    <span class="fat">{{label}}</span>
+                </h4>
+
+                <h4><span class="icon icon-asterisk"></span> Total Balance :
+                    <span class="fat"> {{saneNumber balance 'BTC'}} <span class="icon icon-bitcoin"></span></span>
+                </h4>
+            </div> <!-- /.col-lg-10 -->
+            <div class="col-sm-1">
+                <span class="icon icon-down-open-big body-toggle"></span>
+            </div> <!-- /.col-lg-2 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.node-inner -->
+</div> <!-- /.node-header -->
+</template>

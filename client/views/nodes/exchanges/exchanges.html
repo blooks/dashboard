@@ -1,0 +1,22 @@
+<template name="exchanges">
+    {{#unless action}}
+        <div class="container-fluid">
+            <div class="exchanges-zone col-lg-12">
+                <h3 class="label-title">{{i18n 'nodes.headings.exchanges'}}</h3>
+                <div class="row zone">
+                    {{#if exchanges}}
+                        {{#each exchangesinpacks 2}}
+                            <div class="row">
+                                {{#each this}}
+                                    {{> exchange}}
+                                {{/each}}
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </div> <!-- /.exchanges-zone -->
+        </div> <!-- /.container -->
+    {{else}}
+        {{> Template.dynamic template=dynamicTemplate}}
+    {{/unless}}
+</template>

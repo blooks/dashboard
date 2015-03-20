@@ -12,7 +12,9 @@ i18n.map 'en_GB',
       settings: 'Settings'
       help: 'Help'
       accounts: 'Wallets'
+      exchanges: 'Exchanges'
       label: 'Label'
+      wallets: 'Wallets'
     buttons:
       save: 'Save'
       add: 'Add'
@@ -81,6 +83,7 @@ i18n.map 'en_GB',
   nodes:
     headings:
       nodes: "Wallets"
+      exchanges: "Exchanges"
       addSingle: "New Account"
       wallets: "Wallets"
     buttons:
@@ -88,7 +91,7 @@ i18n.map 'en_GB',
       updateTransactions: 'Update Transactions'
       deleteAll: 'Delete All Transactions'
     exchanges:
-      exchangeLabelTitle: "Exchange label"
+      label: "Exchange label"
       addNewExchange: "Add exchange"
       addedExchange: "Added exchanges"
       deleteExchange: "Delete exchange"
