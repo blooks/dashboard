@@ -169,6 +169,9 @@ var nodeLabel = function nodeLabel(nodeId) {
 };
 
 if (Meteor.isServer) {
+
+  Transfers._ensureIndex({'details.inputs.nodeId': 1});
+  Transfers._ensureIndex({'details.outputs.nodeId': 1});
   /**
    *
    * @param inoutput
