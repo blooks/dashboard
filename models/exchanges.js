@@ -16,7 +16,6 @@ var checkAPISecretCoinbase = function(string) {
 Schemas.exchangeCredentials = new SimpleSchema({
   secret: {
     type: String,
-
     custom: function() {
       if (this.value) {
         if (!checkAPISecretCoinbase(this.value)) {
@@ -31,13 +30,13 @@ Schemas.exchangeCredentials = new SimpleSchema({
               Meteor.call('checkCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value, function (error, result) {
                 switch (result) {
                   case "noaccess":
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                       {
                         name: "credentials.APIKey",
                         type: "noaccess"
                       }
                     ]);
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                     {
                       name: "credentials.secret",
                       type: "noaccess"
@@ -45,13 +44,13 @@ Schemas.exchangeCredentials = new SimpleSchema({
                   ]);
                     break;
                   case "wrongpermissions":
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                       {
                         name: "credentials.APIKey",
                         type: "wrongpermissions"
                       }
                     ]);
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                       {
                         name: "credentials.secret",
                         type: "wrongpermissions"
@@ -59,13 +58,13 @@ Schemas.exchangeCredentials = new SimpleSchema({
                     ]);
                     break;
                   case "deactivated":
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                       {
                         name: "credentials.APIKey",
                         type: "deactivated"
                       }
                     ]);
-                    Exchanges.simpleSchema().namedContext("insertExchangeForm").addInvalidKeys([
+                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
                       {
                         name: "credentials.secret",
                         type: "deactivated"
@@ -75,7 +74,7 @@ Schemas.exchangeCredentials = new SimpleSchema({
                 }
               });
             } else {
-               return Meteor.call('checkCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value);
+               retuurn Meteor.call('ceckCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value);
             }
         }
       }
@@ -156,6 +155,9 @@ Exchanges.allow({
 Exchanges.helpers({
   update: function () {
     Meteor.call('updateExchange', this);
+  },
+  type: function () {
+    return this.exchange;
   }
 });
 /*

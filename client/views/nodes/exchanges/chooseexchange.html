@@ -1,28 +1,20 @@
-<template name="newBitcoinWallet">
+<template name="chooseExchange">
     {{#unless actiontype}}
         <div class="spacy">
-            <h3>Select the <span class="fat">type of wallet</span> you want to connect</h3>
+            <h3>Select the <span class="fat">type of exchange</span> you want to connect</h3>
             <ul class="wallet-selection text-center">
-                {{#each availableWallets}}
+                {{#each availableExchanges}}
                     <li>
                         <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
-                            <img src="/img/external-logos/{{type}}-logo.png">
-                            <div class="wallet-label-text">{{label}}</div>
-                        </a>
-                    </li>
-                {{/each}}
-                {{#each hybridWallets}}
-                    <li>
-                        <a href="/nodes/exchanges/add/{{type}}" class="wallet-thumbs">
                             <img src="/img/external-logos/exchanges/{{type}}-logo.png">
                             <div class="wallet-label-text">{{label}}</div>
                         </a>
                     </li>
                 {{/each}}
-                {{#each unavailableWallets}}
+                {{#each unavailableExchanges}}
                     <li class="coming-soon">
                         <a href="#" class="wallet-thumbs">
-                            <img src="/img/external-logos/{{type}}-logo.png">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
                             <div class="wallet-label-text">{{label}}</div>
                             <div class="coming-soon-sign">Coming soon</div>
                         </a>
@@ -31,7 +23,7 @@
             </ul>
         </div>
     {{else}}
-        {{>addWallet}}
+        {{>inputExchange}}
     {{/unless}}
 </template>
 

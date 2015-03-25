@@ -41,8 +41,8 @@ Meteor.settings.public.coyno =
                     {type: 'armory', label: 'Armory'},
                     {type: 'trezor', label: 'Trezor'},
                     {type: 'mycelium', label: 'Mycelium'},
-    {type: 'single-addresses', label: 'Single Addresses'},
-                    {type: 'coinbase', label: 'Coinbase'}]
+    {type: 'single-addresses', label: 'Single Addresses'}]
+  availableHybridWallets: [{type: 'coinbase', label: 'Coinbase'}]
   unavailableWallets: [
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},

@@ -19,7 +19,7 @@ Template.exchanges.helpers({
   },
   dynamicTemplate: function() {
     if (this.action === "add") {
-      return "addExchange";
+      return "chooseExchange";
     }
     return "";
   }
