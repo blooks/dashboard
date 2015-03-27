@@ -32,7 +32,7 @@ Meteor.settings.public.coyno =
   defaultJurisdiction: 'de'
   allowedNodeTypes: ['exchange', 'bankaccount', 'bitcoinwallet']
   supportedExchangeTypes: ['coinbase'],
-  availableExchanges:[{type: 'coinbase', label: 'Coinbase'}]
+  availableExchanges:[{type: 'coinbase', label: 'Coinbase', url: "https://www.coinbase.com/oauth/authorize?client_id=a487ae93c605709254bd63ff68481dffcd9593d7ae27dbb2a8e46ab39342c630&redirect_uri=http://localhost:3000/addcoinbase&response_type=code&scope=user+addresses"}]
   unavailableExchanges:[{type: 'mtgox', label: 'MtGox'}]
   supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase', 'single-addresses'],
   supportedNodeTypes: ['bitcoinwallet','bitcoinaddress','exchange'],

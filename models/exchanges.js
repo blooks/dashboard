@@ -4,96 +4,14 @@ if (this.Schemas == null) {
   this.Schemas = {};
 }
 
-
-var checkAPIKeyCoinbase = function(string) {
-  return string.match(/^[A-Z,a-z,0-9]{16}$/);
-};
-
-var checkAPISecretCoinbase = function(string) {
-  return string.match(/^[A-Z,a-z,0-9]{32}$/);
-};
-
 Schemas.exchangeCredentials = new SimpleSchema({
   secret: {
     type: String,
-    custom: function() {
-      if (this.value) {
-        if (!checkAPISecretCoinbase(this.value)) {
-          return "coinbaseapisecretwrongformat";
-        }
-        if (
-          this.field('credentials').value["APIKey"] &&
-          checkAPIKeyCoinbase(this.field('credentials').value["APIKey"])
-        ) {
-          if (Meteor.isClient) {
-
-              Meteor.call('checkCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value, function (error, result) {
-                switch (result) {
-                  case "noaccess":
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                      {
-                        name: "credentials.APIKey",
-                        type: "noaccess"
-                      }
-                    ]);
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                    {
-                      name: "credentials.secret",
-                      type: "noaccess"
-                    }
-                  ]);
-                    break;
-                  case "wrongpermissions":
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                      {
-                        name: "credentials.APIKey",
-                        type: "wrongpermissions"
-                      }
-                    ]);
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                      {
-                        name: "credentials.secret",
-                        type: "wrongpermissions"
-                      }
-                    ]);
-                    break;
-                  case "deactivated":
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                      {
-                        name: "credentials.APIKey",
-                        type: "deactivated"
-                      }
-                    ]);
-                    Exchanges.simpleSchema().namedContext("inputExchangeForm").addInvalidKeys([
-                      {
-                        name: "credentials.secret",
-                        type: "deactivated"
-                      }
-                    ]);
-                    break;
-                }
-              });
-            } else {
-               return Meteor.call('ceckCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value);
-            }
-        }
-      }
-      else {
-        return "required";
-      }
-    }
+    optional: true
   },
   APIKey: {
     type: String,
-    custom: function() {
-      if (this.value) {
-        if (!checkAPIKeyCoinbase(this.value)) {
-          return "coinbaseapikeywrongformat";
-        }
-      } else {
-        return "required";
-      }
-    }
+    optional: true
   },
   exchange: {
     type: String,
