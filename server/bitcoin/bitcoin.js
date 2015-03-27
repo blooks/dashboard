@@ -19,7 +19,9 @@ Meteor.methods({
       if (wallet.superNode) {
         if (wallet.superNode.nodeType === 'exchange') {
           var exchange = Exchanges.findOne({_id: wallet.superNode.id});
-          exchange.update();
+          if (exchange) {
+            exchange.update();
+          }
         }
       } else {
         BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
