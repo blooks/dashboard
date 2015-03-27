@@ -74,7 +74,7 @@ Schemas.exchangeCredentials = new SimpleSchema({
                 }
               });
             } else {
-               retuurn Meteor.call('ceckCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value);
+               return Meteor.call('ceckCoinbaseCredentials', this.field('credentials').value["APIKey"], this.value);
             }
         }
       }
