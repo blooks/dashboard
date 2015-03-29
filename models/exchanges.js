@@ -17,7 +17,15 @@ Schemas.exchangeCredentials = new SimpleSchema({
     type: String,
     optional: true,
     allowedValues: Meteor.settings["public"].coyno.supportedExchangeTypes
-  }
+  },
+  accessToken: {
+    type: String,
+    optional: true
+  },
+  refreshToken: {
+    type: String,
+    optional: true
+  },
 });
 
 Schemas.Exchanges = new SimpleSchema({

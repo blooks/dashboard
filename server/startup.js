@@ -11,8 +11,5 @@ Meteor.startup(function () {
       });
     }
   });
-  BitcoinWallets.find().forEach(function(wallet) {
-    wallet.update();
-  });
   SyncedCron.start();
 });
