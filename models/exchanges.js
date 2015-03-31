@@ -94,6 +94,7 @@ if (Meteor.isServer) {
   Exchanges.after.insert(function (userId, doc) {
     Exchanges.findOne({_id: doc._id}).update();
   });
+  //We dont want to add connections to an external service twice for the same user.
   Exchanges._ensureIndex({userId: 1, "credentials.externalId": 1}, {unique: true});
 }
 
