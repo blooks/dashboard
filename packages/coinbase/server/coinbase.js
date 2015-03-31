@@ -27,9 +27,19 @@ Coinbase.authorize = function (code) {
   }
   if (response) {
     if (response.data) {
-      return {
+      var coinbaseClient = new coinbase.Client({
+        apiKey : " ",
+        apiSecret : " ",
         accessToken: response.data.access_token,
         refreshToken: response.data.refresh_token
+      })
+      getUser = Meteor.wrapAsync(coinbaseClient.getCurrentUser, coinbaseClient);
+      var coinbaseUser = getUser();
+      return {
+        accessToken: response.data.access_token,
+        refreshToken: response.data.refresh_token,
+        externalId: coinbaseUser.id,
+        userName: coinbaseUser.name
       }
     }
   }

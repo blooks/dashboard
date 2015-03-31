@@ -26,6 +26,9 @@ Schemas.exchangeCredentials = new SimpleSchema({
     type: String,
     optional: true
   },
+  externalId: {
+    type: String
+  }
 });
 
 Schemas.Exchanges = new SimpleSchema({
@@ -86,81 +89,12 @@ Exchanges.helpers({
     return this.exchange;
   }
 });
-/*
-if (Meteor.isServer)
-{
-
-  Exchanges._ensureIndex({userId: 1, credentials: 1}, {unique: true});
-
-  var Coinbase = Meteor.npmRequire('coinbase');
-  Exchanges.helpers({
-  update: function() {
-    Meteor.call('updateExchange')
-    return;
-    var userId = this.userId,
-      self = this;
-    if (this.exchange && this.exchange === 'coinbase') {
-      var coinbase = new Coinbase({
-        APIKey: this.credentials.APIKey,
-        APISecret: this.credentials.secret
-      });
-      var wrappedCoinbase = Async.wrap(coinbase, ["listAllAddresses"]);
-      var addresses = wrappedCoinbase.listAllAddresses();
-      var wallet = BitcoinWallets.findOne({"superNode.id": this._id});
-      var numNewAddresses = 0;
-      if (wallet) {
-        //Wallet already there, do nothing.
-      } else {
-        var shadowWallet = {
-          userId: this.userId,
-          label: this.label,
-          type: "single-addresses",
-          superNode: {
-            nodeType: 'exchange',
-            id: this._id
-          }
-        };
-        var walletId = null;
-        try {
-          walletId = BitcoinWallets.insert(shadowWallet);
-          var subNode = {
-            nodeType: 'bitcoinwallet',
-            id: walletId
-          };
-          this.subNode = subNode;
-          Exchanges.update({_id: this._id},{$set : {subNode: subNode}});
-        } catch (err) {
-          console.log(err);
-        }
-        wallet = BitcoinWallets.findOne({_id: walletId});
-      }
-      addresses.forEach(function(address) {
-        var coynoAddress = {
-          userId: userId,
-          walletId: wallet._id,
-          address: address,
-          order: -1
-        };
-        try {
-          BitcoinAddresses.insert(coynoAddress);
-          ++numNewAddresses;
-        } catch (err) {
-          //Duplicate key. Do nothing.
-        }
-      });
-      if (numNewAddresses > 0) {
-        wallet.update();
-      }
-    }
-  }
-  });
-}
-*/
 
 if (Meteor.isServer) {
   Exchanges.after.insert(function (userId, doc) {
     Exchanges.findOne({_id: doc._id}).update();
   });
+  Exchanges._ensureIndex({userId: 1, "credentials.externalId": 1}, {unique: true});
 }
 
 

@@ -6,14 +6,15 @@ Meteor.methods({
     var exchangeCredentials = {
       exchange: "coinbase",
       accessToken: tokens.accessToken,
-      refreshToken: tokens.refreshToken
+      refreshToken: tokens.refreshToken,
+      externalId: tokens.externalId
     };
     coinbaseExchange = {
       userId: user._id,
-      label: "Coinbase",
+      label: tokens.userName,
       exchange: "coinbase",
       credentials: exchangeCredentials,
     };
-    Exchanges.insert(coinbaseExchange);
+    Exchanges.upsert({"userId": user._id, "credentials.externalId": tokens.externalId}, { $set: coinbaseExchange });
   }
 });
