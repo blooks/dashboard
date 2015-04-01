@@ -14,7 +14,7 @@ Coinbase.authorize = function (code) {
   var queryUrl = "https://www.coinbase.com/oauth/token?grant_type=authorization_code&code=";
   queryUrl += code;
   queryUrl += "&redirect_uri=";
-  queryUrl += "http://localhost:3000/addcoinbase"
+  queryUrl += "https://beta.coyno.com/addcoinbase"
   queryUrl += "&client_id=";
   queryUrl += this.clientId;
   queryUrl += "&client_secret=";
