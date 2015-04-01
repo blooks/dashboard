@@ -23,5 +23,8 @@ Meteor.methods({
     } else {
       Exchanges.insert(coinbaseExchange);
     }
+  },
+  coinbaseId: function() {
+    return process.env.COINBASE_ID;
   }
 });
