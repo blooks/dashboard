@@ -15,6 +15,13 @@ Meteor.methods({
       exchange: "coinbase",
       credentials: exchangeCredentials,
     };
-    Exchanges.upsert({"userId": user._id, "credentials.externalId": tokens.externalId}, { $set: coinbaseExchange });
+    var exchanges = Exchanges.find({"userId": user._id, "credentials.externalId": tokens.externalId}).fetch();
+    if (exchanges.length > 0) {
+      var exchange = exchanges[0];
+      var newId = Exchanges.update({_id: exchange._id}, {$set : coinbaseExchange});
+      Exchanges.findOne({_id: exchange._id}).update();
+    } else {
+      Exchanges.insert(coinbaseExchange);
+    }
   }
 });

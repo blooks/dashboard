@@ -114,6 +114,10 @@ Schemas.BitcoinWallets = new SimpleSchema({
     type: Boolean,
     defaultValue: false
   },
+  /*
+    externalId needs to be userId+externalId for the "unique" to properly work.
+    Mongo does not support spare, compound and unique indexes.
+   */
   externalId: {
     type: String,
     unique: true,
