@@ -32,19 +32,19 @@ Meteor.settings.public.coyno =
   defaultJurisdiction: 'de'
   allowedNodeTypes: ['exchange', 'bankaccount', 'bitcoinwallet']
   supportedExchanges: ['coinbase']
-  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'coinbase', 'single-addresses'],
+  supportedBitcoinWalletTypes: ['bitcoin-wallet', 'electrum', 'armory', 'trezor', 'mycelium', 'single-addresses'],
   supportedNodeTypes: ['bitcoinwallet','bitcoinaddress','exchange'],
   availableWallets:[{type: 'bitcoin-wallet', label: 'Bitcoin Wallet (mobile)'},
                     {type: 'electrum', label: 'Electrum'},
                     {type: 'armory', label: 'Armory'},
                     {type: 'trezor', label: 'Trezor'},
                     {type: 'mycelium', label: 'Mycelium'},
-    {type: 'single-addresses', label: 'Single Addresses'},
-                    {type: 'coinbase', label: 'Coinbase'}]
+    {type: 'single-addresses', label: 'Single Addresses'}]
   unavailableWallets: [
     {type: 'multibit', label: 'MultiBit'},
     {type: 'green-address-wallet', label: 'Green Address'},
     {type: 'hive-wallet', label: 'Hive'},
+    {type: 'coinbase', label: 'Coinbase'},
     {type: 'breadwallet', label: 'Bread Wallet'},
     {type: 'kncwallet', label: 'KnC'},
     {type: 'msigna', label: 'mSigna'},
