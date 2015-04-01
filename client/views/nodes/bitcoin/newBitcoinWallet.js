@@ -9,6 +9,6 @@ Template.newBitcoinWallet.helpers({
     return Meteor.settings.public.coyno.unavailableWallets;
   },
   hybridWallets: function () {
-    return Meteor.settings.public.coyno.availableHybridWallets;
+    return Meteor.settings.public.coyno.availableExchanges;
   }
 });

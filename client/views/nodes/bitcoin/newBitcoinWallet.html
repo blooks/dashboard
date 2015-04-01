@@ -13,10 +13,17 @@
                 {{/each}}
                 {{#each hybridWallets}}
                     <li>
+                    {{#unless url}}
                         <a href="/nodes/exchanges/add/{{type}}" class="wallet-thumbs">
                             <img src="/img/external-logos/exchanges/{{type}}-logo.png">
                             <div class="wallet-label-text">{{label}}</div>
                         </a>
+                    {{else}}
+                        <a href="{{url}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                    {{/unless}}
                     </li>
                 {{/each}}
                 {{#each unavailableWallets}}
