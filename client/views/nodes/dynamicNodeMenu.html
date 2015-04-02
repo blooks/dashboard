@@ -1,8 +1,8 @@
 <template name="dynamicNodeMenu">
   <div class="row sub-nav-zone">
     <ul class="nav nav-tabs">
-          <li class=" {{actionIs undefined}} "><a href="/nodes/bitcoinWallets"><span class="icon icon-wallet"></span> {{i18n 'nodes.headings.wallets'}}</a></li>
- 	      <li class=" {{actionIs "add"}} "><a href="/nodes/bitcoinWallets/add"><span class="icon icon-plus"></span> Add a wallet</a></li>
+          <li class=" {{actionIs undefined}} "><a href="/nodes/{{type}}"><span class="icon icon-{{type}}"></span> {{i18n home}}</a></li>
+ 	      <li class=" {{actionIs "add"}} "><a href="/nodes/{{type}}/add"><span class="icon icon-plus"></span> {{i18n add}}</a></li>
     </ul>
   </div>
 </template>

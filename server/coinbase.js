@@ -1,25 +1,30 @@
-var Coinbase = Meteor.npmRequire('coinbase');
-
 Meteor.methods({
-  checkCoinbaseCredentials: function(APIKey, secret) {
-    var coinbase = new Coinbase({
-      APIKey: APIKey,
-      APISecret: secret
-    });
-    var wrappedCoinbase = Async.wrap(coinbase, ["addresses", "authorization"]);
-    try {
-      wrappedCoinbase.addresses();
-    } catch (err) {
-      if (err.error === "API Key disabled") {
-        return "deactivated";
-      }
-      console.log('Invalid API Keys');
-      return "noaccess";
+  addCoinbaseAccount: function(code) {
+    var tokens = Coinbase.authorize(code);
+    var user = Meteor.user();
+    var coinbaseExchange = {};
+    var exchangeCredentials = {
+      exchange: "coinbase",
+      accessToken: tokens.accessToken,
+      refreshToken: tokens.refreshToken,
+      externalId: tokens.externalId
+    };
+    coinbaseExchange = {
+      userId: user._id,
+      label: tokens.userName,
+      exchange: "coinbase",
+      credentials: exchangeCredentials,
+    };
+    var exchanges = Exchanges.find({"userId": user._id, "credentials.externalId": tokens.externalId}).fetch();
+    if (exchanges.length > 0) {
+      var exchange = exchanges[0];
+      var newId = Exchanges.update({_id: exchange._id}, {$set : coinbaseExchange});
+      Exchanges.findOne({_id: exchange._id}).update();
+    } else {
+      Exchanges.insert(coinbaseExchange);
     }
-    var auth = wrappedCoinbase.authorization();
-    if (auth.scopes.length > 1 || auth.scopes.indexOf('addresses') < 0) {
-      return "wrongpermissions";
-    }
-    return;
+  },
+  coinbaseId: function() {
+    return process.env.COINBASE_ID;
   }
 });

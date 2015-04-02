@@ -8,4 +8,5 @@ Template.noData.rendered = function () {
 
 Template.noData.destroyed = function() {
   $('body').removeClass("modal-open");
+  $('.modal-backdrop').fadeOut();
 };

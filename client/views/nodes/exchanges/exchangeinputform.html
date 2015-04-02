@@ -1,0 +1,24 @@
+<template name="inputExchange">
+        {{> importGuide }}
+        <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 spacy wallet-data">
+            <div class="text-center">
+                <img src="/img/external-logos/exchanges/{{actiontype}}-logo.png">
+                <h3 class="label-title">Connect <span class="fat">{{actiontype}}</span></h3>
+            </div>
+        {{#autoForm collection='Exchanges' type='insert' id='inputExchangeForm'  validation='keyup'}}
+            {{> afQuickField name='label' }}
+            {{> afQuickField name='exchange' value=this.actiontype type='hidden' label=false}}
+            {{> afQuickField name='credentials.APIKey'}}
+            {{> afQuickField name='credentials.secret'}}
+
+            <a href="#" data-toggle="modal" data-target="#importGuide"><span class="icon icon-help-circled"></span> How do I get the API key?</a>
+
+            <div class="text-center">
+                <button type="submit" id="submitExchangeButton" class="btn btn-primary btn-lg spacy disabled">Exchange wallet</button>
+            </div>
+        {{/autoForm}}
+            <div class="row spacy text-center">
+                <a href="/nodes/bitcoinWallets/add" class="btn back btn-no-box"><span class="icon icon-arrow-left"></span> or select another wallet</a>
+            </div>
+        </div>
+</template>

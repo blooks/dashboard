@@ -7,5 +7,8 @@ Template.newBitcoinWallet.helpers({
   },
   unavailableWallets: function () {
     return Meteor.settings.public.coyno.unavailableWallets;
+  },
+  hybridWallets: function () {
+    return Meteor.settings.public.coyno.availableExchanges;
   }
 });

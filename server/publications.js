@@ -37,5 +37,10 @@ Meteor.publish('user', function() {
 });
 
 Meteor.publish('exchanges', function() {
-  return Exchanges.find({userId: this.userId});
+  /*
+    Levin:
+    Very important to not share the credentials with the user. They might contain very
+    sensible and powerful data like accessTokens for oauth applications.
+   */
+  return Exchanges.find({userId: this.userId}, {fields: {credentials : 0} });
 });

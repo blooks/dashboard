@@ -113,6 +113,15 @@ Schemas.BitcoinWallets = new SimpleSchema({
   updating:  {
     type: Boolean,
     defaultValue: false
+  },
+  /*
+    externalId needs to be userId+externalId for the "unique" to properly work.
+    Mongo does not support spare, compound and unique indexes.
+   */
+  externalId: {
+    type: String,
+    unique: true,
+    optional: true
   }
 });
 
@@ -225,7 +234,7 @@ BitcoinWallets.before.remove(function (userId, doc) {
 
 if (Meteor.isServer) {
 
-  BitcoinWallets.after.remove(function (userId, doc) {
+ BitcoinWallets.after.remove(function (userId, doc) {
     var oneTransfer = Transfers.findOne({'userId': doc.userId});
     if (!oneTransfer) {
       Meteor.users.update({_id: userId}, {$set: {'profile.hasTransfers': false}});
