@@ -6,7 +6,10 @@ Template.addWallet.helpers({
     return (Meteor.settings["public"].coyno.supportedExchangeTypes.indexOf(this.actiontype) >= 0);
   },
   typeLabel: function() {
-    return (Meteor.settings["public"].coyno.availableWallets[this.actiontype]);
+    var self = this;
+    return Meteor.settings["public"].coyno.availableWallets.filter(function (item) {
+      return self.actiontype === item.type;
+    })[0].label;
   }
 });
 

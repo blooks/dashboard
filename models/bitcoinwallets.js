@@ -41,6 +41,7 @@ Schemas.BitcoinWallets = new SimpleSchema({
           }
           break;
         case 'bitcoin-wallet':
+        case 'electrum2' :
         case 'trezor':
         case 'mycelium':
           var uri = URI.parse(this.value);
