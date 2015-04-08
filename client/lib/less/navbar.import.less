@@ -152,13 +152,25 @@ a.navbar-pullout {
 
     .nav li {
 
-        a {
+    &.navbar-divider-headline {
+        p {
+            padding-top: 15px;
+            font-weight: 700;
+        }
+    }
+
+        border-bottom: 1px solid @gray-lighter;
+
+        a,p {
             line-height: 40px;
             text-indent: 10px;
             color: @gray-dark;
             text-decoration: none;
-            border-bottom: 1px solid @gray-lighter;
             display: block;
+        }
+
+
+        a {
             -webkit-transition: color .3s;
             -moz-transition: color .3s;
             -o-transition: color .3s;
@@ -223,7 +235,6 @@ All the default sidebar styles */
 
 
 /* Show icons on closed sidebar */
-
 @media (min-width: 992px) {
     .row .sidebar.sidebar-left {
     width: 200px;
