@@ -24,7 +24,6 @@ http
 coyno:coynverter
 
 
-mrt:uri-js
 
 
 npm-container
@@ -36,3 +35,8 @@ accounts-password
 reactive-var
 accounts-ui-unstyled
 coyno:coinbase
+coyno:electrum
+coyno:electrum2
+coyno:bip32
+olragon:uri-js
+coyno:armory

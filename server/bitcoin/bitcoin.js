@@ -37,8 +37,5 @@ Meteor.methods({
       return "duplicate";
     }
     return;
-  },
-  isValidXPub: function (xpubkey) {
-    return bitcore.HDPublicKey.isValidSerialized(xpubkey);
   }
 });

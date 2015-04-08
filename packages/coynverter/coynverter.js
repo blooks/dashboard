@@ -9,7 +9,12 @@ if (Meteor.isServer) {
 
   Coynverter.update = function () {
     var syncConverter = Async.wrap(NodeConverter, ["update"]);
-    var result = syncConverter.update();
+    var result;
+    try {
+      result = syncConverter.update();
+    } catch(err) {
+      result = err;
+    }
     console.log("Coynverter Update done. Result was:" + result);
   };
 

@@ -7,15 +7,6 @@ if (this.Schemas == null) {
   this.Schemas = {};
 }
 
-var localXPubCheck = function(string) {
-  return string.match(/^xpub[A-Za-z0-9]{107}$/);
-};
-
-var armoryRegex = /Watch-OnlyRootID:([asdfghjkwertuion]{18})Watch-OnlyRootData:([asdfghjkwertuion]{144})/;
-var checkArmoryInputFormat = function(string) {
-  return string.replace(/\s/gm,"").match(armoryRegex);
-};
-
 Schemas.BitcoinWallets = new SimpleSchema({
   userId: {
     type: String,
@@ -37,29 +28,28 @@ Schemas.BitcoinWallets = new SimpleSchema({
         return;
       }
       var rawSeedData = this.value;
-      // DGB 2015-01-22 07:15 Checks if this seed is unique for this user,
-      // returns string if invalid
+
+      //An HD Seed is required for all wallets that are not single-addresses wallets
+      if (!this.value) {
+        return 'required';
+      }
+
       switch (this.field('type').value) {
         case 'electrum':
-          if (!this.value) {
-            return 'required';
-          }
-          if (!this.value.match(/^[a-f0-9]{128}$/)) {
+          if (!Electrum.verifyMPK(this.value)) {
             return 'invalidElectrumSeed';
           }
           break;
         case 'bitcoin-wallet':
+        case 'electrum2' :
         case 'trezor':
         case 'mycelium':
-          if (!this.value) {
-            return 'required';
-          }
           var uri = URI.parse(this.value);
-          var query = uri.query;
-          rawSeedData = uri.path;
-          if (!rawSeedData || !localXPubCheck(rawSeedData)) {
-            return 'invalidBIP32xpub';
+          var errorMessage = BIP32.checkxpuburi(uri);
+          if (errorMessage) {
+            return (errorMessage);
           }
+          rawSeedData = uri.path;
           if (Meteor.isClient && this.isSet) {
             Meteor.call("isValidXPub", rawSeedData, function (error, result) {
               if (!result) {
@@ -74,26 +64,17 @@ Schemas.BitcoinWallets = new SimpleSchema({
           } else if (Meteor.isServer) {
             Meteor.call("isValidXPub", rawSeedData);
           }
-          if (query) {
-            var queryParams = URI.parseQuery(query);
-            if (!queryParams.h) {
-              return 'missingHierarchieParam';
-            }
-            else if (queryParams.h !== "bip32") {
-              return 'invalidHierarchie';
-            }
-          }
           break;
         case 'armory':
           if (this.value) {
-            var match = checkArmoryInputFormat(this.value);
-            if (!match) {
+            var rootData = Armory.convertStringToRootData(this.value);
+            if (!rootData) {
               return 'invalidArmorySeed';
             }
             else if (BitcoinWallets.findOne({
                 userId: Meteor.userId(),
-                'hdseed.id': match[1],
-                'hdseed.data': match[2]})) {
+                'hdseed.id': rootData[1],
+                'hdseed.data': rootData[2]})) {
               return "seedAlreadyStored";
             }
           }
@@ -244,7 +225,7 @@ if (Meteor.isServer) {
     switch (doc.type) {
       case 'armory':
         if (typeof doc.hdseed === 'string') {
-          var match = checkArmoryInputFormat(doc.hdseed);
+          var match = Armory.convertStringToRootData(doc.hdseed);
           doc.hdseed = {
             id: match[1],
             data: match[2]
@@ -254,9 +235,9 @@ if (Meteor.isServer) {
       case 'bitcoin-wallet':
       case 'trezor':
       case 'mycelium':
-        if (!localXPubCheck(doc.hdseed)) {
+        if (!BIP32.localXPubCheck(doc.hdseed)) {
           var cleanedHDSeed = URI.parse(doc.hdseed).path;
-          if (localXPubCheck(cleanedHDSeed)) {
+          if (BIP32.localXPubCheck(cleanedHDSeed)) {
             doc.hdseed = cleanedHDSeed;
           } else {
             console.log("Found broken hdseed string on wallet insert");
