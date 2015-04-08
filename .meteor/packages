@@ -37,3 +37,5 @@ reactive-var
 accounts-ui-unstyled
 coyno:coinbase
 coyno:electrum
+coyno:electrum2
+coyno:bip32
