@@ -4,6 +4,9 @@ Template.addWallet.helpers({
   },
   isExchange: function() {
     return (Meteor.settings["public"].coyno.supportedExchangeTypes.indexOf(this.actiontype) >= 0);
+  },
+  typeLabel: function() {
+    return (Meteor.settings["public"].coyno.availableWallets[this.actiontype]);
   }
 });
 

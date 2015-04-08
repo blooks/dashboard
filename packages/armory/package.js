@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'coyno:bip32',
+  name: 'coyno:armory',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -12,14 +12,12 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
-  api.use('olragon:uri-js');
   api.addFiles('public/verification.js');
-  api.addFiles('server/verification.js', 'server');
-  api.export('BIP32');
+  api.export('Armory');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('coyno:bip32');
-  api.addFiles('bip32-tests.js');
+  api.use('coyno:armory');
+  api.addFiles('armory-tests.js');
 });
