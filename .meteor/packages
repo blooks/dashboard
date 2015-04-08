@@ -36,3 +36,4 @@ accounts-password
 reactive-var
 accounts-ui-unstyled
 coyno:coinbase
+coyno:electrum

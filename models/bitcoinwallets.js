@@ -44,7 +44,7 @@ Schemas.BitcoinWallets = new SimpleSchema({
           if (!this.value) {
             return 'required';
           }
-          if (!this.value.match(/^[a-f0-9]{128}$/)) {
+          if (!Electrum.verifyMPK(this.value)) {
             return 'invalidElectrumSeed';
           }
           break;
