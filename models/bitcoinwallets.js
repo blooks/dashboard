@@ -14,7 +14,18 @@ Schemas.BitcoinWallets = new SimpleSchema({
   },
   label: {
     type: String,
-    optional: true
+    optional: true,
+    custom: function() {
+      if (!this.value) {
+        return 'required';
+      }
+      if (this.value.length < 3) {
+        return 'labeltooshort';
+      }
+      if (BitcoinWallets.findOne({userId: Meteor.userId(),label:this.value})) {
+        return 'labelinuse';
+      }
+    }
   },
   type: {
     type: String,
@@ -142,7 +153,9 @@ BitcoinWallets.simpleSchema().messages({
   invalidHierarchie: "Bitcoin Wallet only supports the BIP32 hierarchie. Check the value of the query parameter &quot;h&quot;",
   missingHierarchieParam: "Giving a URL, but the hierarchie parameter is missing.",
   invalidArmorySeed: "[label] is not of the correct Armory Watch-Only Root ID/Data format.",
-  checksumfailed: "There is a typo in the input for [label]. Please check again."
+  checksumfailed: "There is a typo in the input for [label]. Please check again.",
+  labeltooshort: "Please provide at least 3 letters.",
+  labelinuse: "You already gave this label to another wallet."
 });
 
 
@@ -214,6 +227,8 @@ BitcoinWallets.before.remove(function (userId, doc) {
 
 
 if (Meteor.isServer) {
+
+ BitcoinWallets._ensureIndex({userId: 1, label: 1}, {unique: true});
 
  BitcoinWallets.after.remove(function (userId, doc) {
     var oneTransfer = Transfers.findOne({'userId': doc.userId});
