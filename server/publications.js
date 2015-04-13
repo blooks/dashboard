@@ -1,9 +1,11 @@
-Meteor.publish("transfers", function (page, numberOfResults) {
+Meteor.publish("transfers", function (page, documentsPerPage) {
   var self = this;
   var totalAvailableResults = Transfers.find({userId: this.userId}).count();
+  var maxNumPages = Math.ceil(totalAvailableResults/documentsPerPage);
+  page = Math.min(page, maxNumPages);
   var handle = Transfers.find({userId: this.userId}, {
-    skip: parseInt(page-1, 10)*parseInt(numberOfResults, 10),
-    limit: numberOfResults,
+    skip: parseInt(page-1, 10)*parseInt(documentsPerPage, 10),
+    limit: documentsPerPage,
     sort: {date: -1}
   }).observeChanges({
     added: function(id, fields){
