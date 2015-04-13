@@ -8,10 +8,11 @@
           </div>
           <div class="modal-body">
 			<p>
-				To get started with Coyno, please go to <a href="{{pathFor 'nodesAddWallet'}}"><span class="fat">Wallets</span></a> and upload your <span class="fat">public keys</span>
+              {{i18n 'template.modal.noData'}}
 			</p>
 			<div class="modal-directions text-center spacy">
-				<a href="{{pathFor 'nodesAddWallet'}}" class="btn btn-primary btn-lg"><span class="icon icon-wallet"></span> Upload wallet data</a>
+				<a href="{{pathFor 'nodesAddWallet'}}" class="btn btn-primary btn-lg"><span class="icon icon-wallet"></span> {{i18n 'template.modal.connectWallet'}}</a>
+                <a href="{{pathFor 'nodesAddExchange'}}" class="btn btn-primary btn-lg"><span class="icon icon-exchange"></span> {{i18n 'template.modal.connectExchange'}}</a>
 			</div>
           </div>
 
