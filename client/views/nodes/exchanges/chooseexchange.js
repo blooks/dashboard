@@ -7,5 +7,8 @@ Template.chooseExchange.helpers({
   },
   unavailableExchanges: function () {
     return Meteor.settings.public.coyno.unavailableExchanges;
+  },
+  goneExchanges: function () {
+    return Meteor.settings.public.coyno.goneExchanges;
   }
 });
