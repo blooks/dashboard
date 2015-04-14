@@ -1,6 +1,6 @@
 Template.newBitcoinWallet.helpers({
-  availableWallets: function () {
-    return Meteor.settings.public.coyno.availableWallets;
+  hdWallets: function () {
+    return Meteor.settings.public.coyno.supportedHDWallets;
   },
   currentRoute: function () {
     return Router.current().url;

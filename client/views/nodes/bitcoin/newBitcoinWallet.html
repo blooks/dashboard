@@ -3,7 +3,7 @@
         <div class="spacy clearfix">
             <h3>Select the <span class="fat">type of wallet</span> you want to connect</h3>
             <ul class="wallet-selection text-center">
-                {{#each availableWallets}}
+                {{#each hdWallets}}
                     <li>
                         <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
                             <img src="/img/external-logos/wallets/{{type}}-logo.png">
@@ -44,7 +44,7 @@
             <p>{{i18n 'nodes.wallets.singleAddressExplainer'}}</p>
             <ul class="wallet-selection text-center">
                 <li>
-                    <a href="#" class="wallet-thumbs">
+                    <a href="{{currentRoute}}/single-addresses" class="wallet-thumbs">
                         <img src="/img/external-logos/wallets/single-addresses-logo.png">
                         <div class="wallet-label-text">{{label}}</div>
                     </a>
