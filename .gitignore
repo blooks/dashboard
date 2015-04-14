@@ -1,6 +1,7 @@
 .idea
 meteor/local
 packages/tests-proxy
+packages/npm-container
 node_modules
 packages/coynverter/.npm
 

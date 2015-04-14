@@ -27,10 +27,11 @@ Template.registerHelper('prettyDateLong', function (date) {
 });
 
 Template.registerHelper('saneNumber', function (internalNumber, currency) {
+
   if (currency === 'BTC') {
-    return (internalNumber / 10e7).toFixed(8);
+      return (internalNumber * (1/ 10e7)).toFixed(8);
   } else {
-    return (internalNumber / 10e7).toFixed(2);
+      return (internalNumber * (1/ 10e7)).toFixed(2);
   }
 });
 

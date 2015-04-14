@@ -7,7 +7,7 @@
 <template name="userProfile">
    <h1 class="process-title">{{i18n 'profile.headings.profile'}}</h1>
     <div class="sub-title-icon top-consistency-margin">
-          <div class="icon icon-user"></div>
+          <div class="icon icon-user-outline"></div>
     </div>
     <div class="col-md-10 col-md-offset-1">
      <div class="row desktop-zone profile">
@@ -35,22 +35,7 @@
             </div>
             {{/if}}
           </div>
-
-     <h3 class="form-divider">Change password</h3>
-      {{#if getEditingSection 'password'}}
-      {{#if getUserMessage 'password'}}
-        {{#with getUserMessage 'password'}}
-          {{ > userNotification }}
-        {{/with}}
-      {{/if}}
-      {{/if}}
-      <div class="bold-input-text spacy" id='passwordChange'>
-        <span class="field-type"><input type="password" id="old_password" placeholder="Old password" required="" autocomplete="off" class="form-control padded-input-field"/></span><br>
-        <span class="field-type"><input type="password" id="new_password" placeholder="New password" required="" autocomplete="off" class="form-control padded-input-field"/></span><br>
-        <span class="field-type"><input type="password" id="new_password_again" placeholder="New password again" required="" autocomplete="off" class="form-control padded-input-field"/></span><br>
-        <button class="btn btn-default pull-right" id="change_password">Change password</button>
-      </div>
-
+    {{> atForm state='changePwd'}}
       <h3 class="form-divider">Delete your profile</h3>
       <div class="input-buttons">
         <p>

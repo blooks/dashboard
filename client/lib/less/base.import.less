@@ -15,10 +15,11 @@ body	{
 }
 
 .desktop-zone {
-	border: 1px solid @gray-lighter;
-	padding: 36px 30px;
-	padding: 3rem 2.5rem;
 	background-color: @whyte;
+	border: 1px solid @gray-lighter;
+  	min-height: 335px;
+  	padding: 36px 30px;
+	padding: 3rem 2.5rem;
 
 	&.no-border-top {
 		border-top: none;
@@ -28,14 +29,15 @@ body	{
 /* Nav
 -------------------- */
 .sidebar {
-	font-size: 14px; font-size: 1.2	rem;
+  font-size: 14px;
+  font-size: 1.2 rem;
 	.nav-icon {
 		font-size: 18px;
 		font-size: 1.5rem;
 	}
 }
 
-/* TODO @Erasmus. Dirty hack to hide password change in  dropdown.
+/* TODO @Erasmus. Dirty hack to hide password change in dropdown.
 Please remove from accounts-UI completely */
 #login-buttons-open-change-password {
 	display: none;
@@ -88,21 +90,6 @@ body {
 	}
 
 
-}
-
-
-/* Node Items styling
------------------------ */
-/* TODO move all to node-item */
-.details-item,
-.node-item
- {
-		background-color: @gray-lightest;
-}
-
-.node-inner {
-	padding: 12px;
-	padding: 1rem;
 }
 
 
@@ -234,59 +221,6 @@ TODO move these to less files in folders.
 	}
 }
 
-.wallets-zone {
-
-	.node-item {
-		background-color: @whyte;
-		margin-bottom: @grid-gutter-width;
-
-		.node-header {
-			 background-color: @gray-medium-lighter;
-			 border-bottom: 3px solid @whyte;
-			.node-meta {
-				text-align: center;
-				margin-bottom: 12px;
-				margin-bottom: 1rem;
-
-			 .wallet-type {
-
-			 	padding: 6px 10px;
-			 	padding: .5rem .8rem;
-			 	color: @brand-primary;
-			 }
-			}
-
-			.body-toggle {
-				font-size: 3rem;
-				cursor: pointer;
-				color: @gray-light;
-			}
-
-		}
-
-		.node-body {
-			display: none;
-			background-color: @gray-lightest;
-		}
-	}
-
-	.balance-statement {
-		margin: 1rem auto;
-		text-transform: none;
-	}
-
-	.wallet-adresses {
-	}
-
-	.add-address-zone {
-		clear: both;
-	}
-
-	.controls {
-		padding-top: 10px;
-	}
-}
-
 .tax-screen {
 
 	.cost-basis-box {
@@ -331,7 +265,7 @@ TODO move these to less files in folders.
 ---------------- */
 .navbar-brand {
 	padding-top: 10px;
-	padding-top: 0.8333rem;
+	padding-top: 1rem;
 
 	.logo {
 		height: 30px;
@@ -410,11 +344,6 @@ a.read-more {
 		border: 1px solid @brand-primary;
 
 	}
-}
-.controls {
-	clear: both;
-	display: block;
-	padding-top: 10px;
 }
 
 .tile {

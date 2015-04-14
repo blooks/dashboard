@@ -5,36 +5,38 @@
 
 coffeescript
 less
-accounts-password
 aldeed:collection2
-sewdn:collection-behaviours
-dsyko:node-csv-npm
 lepozepo:accounting
 iron:router
 mquandalle:jade
-cmather:handlebars-server
 aldeed:autoform
 nemo64:bootstrap
 mrt:just-i18n
-mrt:accounts-ui-bootstrap-3
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
-frozeman:animation-helper
-frozeman:template-var
-joshowens:simple-form
-joshowens:accounts-entry
 meteorhacks:npm
 jhuenges:highstock
 meteor-platform
-velocity:html-reporter
-mike:mocha
-reactive-var
 email
 http
 
 coyno:coynverter
 
-npm-container
 
-mrt:uri-js
+
+
+npm-container
+percolate:synced-cron
+useraccounts:bootstrap
+meteorhacks:ssr
+sewdn:collection-behaviours
+accounts-password
+reactive-var
+accounts-ui-unstyled
+coyno:coinbase
+coyno:electrum
+coyno:electrum2
+coyno:bip32
+olragon:uri-js
+coyno:armory

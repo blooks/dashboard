@@ -1,3 +1,91 @@
+this.BitcoinAddresses = new Mongo.Collection('bitcoinaddresses');
+
+if (this.Schemas == null) {
+  this.Schemas = {};
+}
+
+Schemas.BitcoinAddresses = new SimpleSchema({
+  userId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  },
+  walletId: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Id
+  },
+  label: {
+    type: String,
+    optional: true
+  },
+  order: {
+    type: Number,
+    defaultValue: -1
+  },
+  address: {
+    type: String,
+    custom: function() {
+      if (!this.value.match(/^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/)) {
+        return "invalidAddress";
+      }
+      if (Meteor.isClient && this.isSet) {
+        return Meteor.call("isValidBitcoinAddress", this.value, function(error, result) {
+          switch (result) {
+            case "invalidFormat":
+            BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys([
+              {
+                name: "address",
+                type: "invalidAddress"
+              }
+            ]);
+            break;
+            case "duplicate":
+              BitcoinAddresses.simpleSchema().namedContext("insertBitcoinAddressForm").addInvalidKeys([
+                {
+                  name: "address",
+                  type: "duplicate"
+                }
+              ]);
+          }
+        });
+      }
+    }
+  },
+  balance: {
+    type: Number,
+    defaultValue: 0
+  }
+});
+
+BitcoinAddresses.attachSchema(Schemas.BitcoinAddresses);
+
+BitcoinAddresses.timed();
+
+BitcoinAddresses.owned();
+
+BitcoinAddresses.allow({
+  insert: function(userId, item) {
+    if (userId == null) {
+      throw new Meteor.Error(400, "You need to log in to insert.");
+    }
+    return _.extend(item, {
+      userId: userId
+    });
+  },
+  update: function(userId, doc, filedNames, modifier) {
+    if (userId !== doc.userId) {
+      throw new Meteor.Error(400, "You can only edit your own entries.");
+    }
+    return true;
+  },
+  remove: function(userId, doc) {
+    if (doc.userId !== userId) {
+      throw new Meteor.Error(400, "You can only delete your own entries.");
+    }
+    return true;
+  }
+});
+
+
 if (Meteor.isServer) {
   var computeBalance = function (transactions, address) {
     var result = 0;
@@ -45,10 +133,13 @@ if (Meteor.isServer) {
       }
     });
   });
+  BitcoinAddresses._ensureIndex({userId: 1, address: 1}, {unique: true});
 }
 
+
 BitcoinAddresses.simpleSchema().messages({
-  invalidAddress: "[label] is not a Bitcoin Address"
+  invalidAddress: "[label] is not a Bitcoin Address",
+  duplicate: "[label] is already stored in another wallet"
 });
 
 BitcoinAddresses.helpers({

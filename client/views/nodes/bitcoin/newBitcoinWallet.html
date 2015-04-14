@@ -1,0 +1,59 @@
+<template name="newBitcoinWallet">
+    {{#unless actiontype}}
+        <div class="spacy clearfix">
+            <h3>Select the <span class="fat">type of wallet</span> you want to connect</h3>
+            <ul class="wallet-selection text-center">
+                {{#each hdWallets}}
+                    <li>
+                        <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/wallets/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                    </li>
+                {{/each}}
+                {{#each hybridWallets}}
+                    <li>
+                    {{#unless url}}
+                        <a href="/nodes/exchanges/add/{{type}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                    {{else}}
+                        <a href="{{url}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                    {{/unless}}
+                    </li>
+                {{/each}}
+                {{#each unavailableWallets}}
+                    <li class="coming-soon">
+                        <a href="#" class="wallet-thumbs">
+                            <img src="/img/external-logos/wallets/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                            <div class="coming-soon-sign">Coming soon</div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <!-- TODO @Levin: please include this below the list of wallets and remove from list of "normal" wallets -->
+        <div class="spacy clearfix">
+            <h3>{{i18n 'nodes.wallets.singleAddressHeader'}}</h3>
+            <p>{{i18n 'nodes.wallets.singleAddressExplainer'}}</p>
+            <ul class="wallet-selection text-center">
+                <li>
+                    <a href="{{currentRoute}}/single-addresses" class="wallet-thumbs">
+                        <img src="/img/external-logos/wallets/single-addresses-logo.png">
+                        <div class="wallet-label-text">Single Addresses</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    {{else}}
+        {{>addWallet}}
+    {{/unless}}
+
+</template>
+

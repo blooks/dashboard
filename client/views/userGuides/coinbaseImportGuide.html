@@ -1,0 +1,36 @@
+<template name="coinbaseGuideContent">
+          <div class="modal-header">
+			<a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
+            <span class="meta-title brand-box">Guide</span>
+            <h3 class="modal-title">How to get <span class="fat">API Key</span> from Coinbase</h3>
+          </div>
+          <div class="modal-body">
+			<p>To give Coyno watch-only access to your Coinbase wallet, you need to generate an API Key and copy-paste the Key and Secret here.</p>
+			<h4>1. Generate <span class="fat">API Key</span></h4>
+			<p>Log in to your Coinbase account and go to <span class="fat">Settings > API Access</span></p>
+			<img src="/img/user-guides/coinbase/Coinbase-guide-1.png" class="guide-graphic" />
+			  <br />
+			<img src="/img/user-guides/coinbase/Coinbase-guide-2.png" class="guide-graphic" />
+              <br />
+            <p>Click the button that says <span class="fat">"+ New API Key"</span></p>
+              <br />
+			<img src="/img/user-guides/coinbase/Coinbase-guide-2-1.png" class="guide-graphic" />
+              <br />
+			<p>Tick the box next to the <span class="fat">wallet you want to share</span> (one API Key per wallet).</p>
+			<p>Under <span class="fat">Permissions</span>, tick the box <span class="fat">next to “addresses”</span>.</p>
+              <br />
+            <img src="/img/user-guides/coinbase/Coinbase-guide-3.png" class="guide-graphic" />
+
+			<h4>2. Enable <span class="fat">the API Key</span></h4>
+			<p>Now the key has been generated. You must enable it before it works.</p>
+			<p><span class="fat">Click enable"</span> to the right of the new key</p>
+			<img src="/img/user-guides/coinbase/Coinbase-guide-4.png" class="guide-graphic" />
+            <p>Coinbase will send you an email with the verification code to enable the key (for security). Follow their instructions to enable the key.</p>
+              <h4>3. Copy-paste the <span class="fat">API Key and Secret</span></h4>
+			<img src="/img/user-guides/coinbase/Coinbase-guide-5.png" class="guide-graphic" />
+			<p><span class="fat">Copy both the API Key and the Secret</span> <span class="fat">paste them into the fields</span> here in Coyno. Done! Coyno can now watch all transactions coming in and out of all the addresses associated with this API Key.</p>
+			<p class="notice"><span class="fat">Please note, Coyno has only read-access and is in no way able to back up or restore your Coinbase wallet or account.</span></p>
+			<hr />
+
+          </div>
+</template>

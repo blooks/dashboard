@@ -9,7 +9,11 @@ Template.transferRow.helpers({
      result =  "+" + result;
      break;
      case "outgoing":
-     result = "-" + result;
+       if (result > 0) {
+         result = "-" + result;
+       } else {
+         result = " " + result;
+       }
      break;
      }
     return result;

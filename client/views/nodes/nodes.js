@@ -1,9 +1,12 @@
-// on the client
-Template.dynamicNodeMenu.helpers({
-  actionIs: function (action) {
-    if (this.action === action) {
-      return "active";
+
+Template.nodes.helpers({
+  heading: function () {
+    return 'nodes.headings.' + this.type;
+  },
+  iconType: function() {
+    switch (this.type) {
+      case 'bitcoinWallets': return 'wallet';
+      case 'exchanges' : return 'exchange';
     }
-    return "";
   }
 });

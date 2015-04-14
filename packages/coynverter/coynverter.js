@@ -9,13 +9,20 @@ if (Meteor.isServer) {
 
   Coynverter.update = function () {
     var syncConverter = Async.wrap(NodeConverter, ["update"]);
-    var result = syncConverter.update();
+    var result;
+    try {
+      result = syncConverter.update();
+    } catch(err) {
+      result = err;
+    }
     console.log("Coynverter Update done. Result was:" + result);
   };
 
   Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
     var syncConverter = Async.wrap(NodeConverter, ['convert']);
     var result;
+    amountToConvert = Math.abs(amountToConvert);
+    if (amountToConvert == 0) return 0;
     try {
       result = syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date);
     } catch (error) {
@@ -28,17 +35,15 @@ if (Meteor.isServer) {
 
   Meteor.startup(function () {
     Coynverter.update();
+    SyncedCron.add({
+      name: 'Update Exchange Rates',
+      schedule: function(parser) {
+        // parser is a later.parse object
+        return parser.cron('5 * * * * *');
+      },
+      job: function() {
+        Coynverter.update();
+      }
+    });
   });
-
-  SyncedCron.add({
-    name: 'Update Exchange Rates',
-    schedule: function(parser) {
-      // parser is a later.parse object
-      return parser.cron('5 * * * * *');
-    },
-    job: function() {
-      Coynverter.update();
-    }
-  });
-  SyncedCron.start();
 }

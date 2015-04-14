@@ -1,0 +1,29 @@
+<template name="bitcoinWallets">
+    {{#unless action}}
+        <div class="container-fluid">
+            <div class="wallets-zone col-lg-12">
+                {{> bitcoinWalletAddAddressModal }}
+                <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
+                <div class="row zone">
+                    {{#if bitcoinwallets}}
+                        {{#each bitcoinwalletsinpacks 2}}
+                            <div class="row">
+                                {{#each this}}
+                                    <div class="col-lg-6 node-item" id="{{_id}}">
+                                        {{> bitcoinWalletHeader}}
+                                        {{> bitcoinWalletBody}}
+                                        {{#unless readOnly}}
+                                            {{> bitcoinWalletDetailsModal }}
+                                        {{/unless}}
+                                     </div> <!-- /.node-item -->
+                                {{/each}}
+                            </div>
+                        {{/each}}
+                    {{/if}}
+                </div>
+            </div> <!-- /.wallets-zone -->
+        </div> <!-- /.container -->
+    {{else}}
+        {{> Template.dynamic template=dynamicTemplate}}
+    {{/unless}}
+</template>

@@ -1,25 +1,29 @@
 Template.addWallet.helpers({
   guideTemplate: function () {
-    return "importGuide-"+this.actiontype;
+    return "importGuide";
+  },
+  isExchange: function() {
+    return (Meteor.settings["public"].coyno.supportedExchangeTypes.indexOf(this.actiontype) >= 0);
+  },
+  typeLabel: function() {
+    var self = this;
+    return Meteor.settings["public"].coyno.availableWallets.filter(function (item) {
+      return self.actiontype === item.type;
+    })[0].label;
   }
-
 });
 
 AutoForm.hooks({
   addNewBitcoinWallet: {
-
     after: {
-      insert: function(error, result, template) {
+      insert: function (error, result, template) {
         if (error) return;
         Router.go('/nodes');
-      },
-      update: function(error, result, template) {},
-      "methodName": function(error, result, template) {}
-    },
-      onSuccess :  function(insertDoc, updateDoc, currentDoc) {
+      }
     }
   }
 });
+
 Template.addWallet.rendered = function () {
   var self = this;
   this.autorun(function () {

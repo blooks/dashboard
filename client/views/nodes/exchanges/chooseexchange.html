@@ -1,0 +1,45 @@
+<template name="chooseExchange">
+    {{#unless actiontype}}
+        <div class="spacy">
+            <h3>Select the <span class="fat">type of exchange</span> you want to connect</h3>
+            <ul class="wallet-selection text-center">
+                {{#each availableExchanges}}
+                    <li>
+                        {{#unless url}}
+                            <a href="{{currentRoute}}/{{type}}" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                        </a>
+                        {{else}}
+                            <a href="{{url}}" class="wallet-thumbs">
+                                <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                                <div class="wallet-label-text">{{label}}</div>
+                            </a>
+                        {{/unless}}
+                    </li>
+                {{/each}}
+                {{#each unavailableExchanges}}
+                    <li class="coming-soon">
+                        <a href="#" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                            <div class="coming-soon-sign">Coming soon</div>
+                        </a>
+                    </li>
+                {{/each}}
+                {{#each goneExchanges}}
+                    <li class="coming-soon">
+                        <a href="#" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                            <div class="coming-soon-sign">Just kidding</div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    {{else}}
+        {{>inputExchange}}
+    {{/unless}}
+</template>
+

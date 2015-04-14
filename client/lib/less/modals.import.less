@@ -1,0 +1,68 @@
+.modal-dialog {
+  .meta-title {
+    color: @brand-primary;
+    padding: 2px 5px;
+    padding: .2rem .5rem;
+  }
+
+  h4 {
+    margin-top: 30px;
+    margin-top: 3rem;
+    border-bottom: 1px solid @gray-lighter;
+  }
+
+  /* Wallet details modals */
+
+  &.wallet-details {
+
+    .hd-seed {
+      word-break: break-all;
+      border: 2px dashed @gray-lighter;
+      background-color: @gray-lightest;
+    }
+    .bitcoin-add-address {
+      display: none;
+    }
+
+  }
+
+  /* User guide modals */
+  &.user-guide {
+
+    img {
+      &.guide-graphic {
+        /* width: 300px; */
+        margin: 20px auto;
+        border: 1px solid @gray-lighter;
+        -moz-box-shadow:    3px 3px 5px #ccc;
+        -webkit-box-shadow: 3px 3px 5px #ccc;
+        box-shadow:         3px 3px 5px #ccc;
+      }
+
+      &.full-width {
+        width: 100%;
+      }
+    }
+
+    .modal-body {
+      text-align: center;
+      h4,p {
+        text-align: left;
+      }
+    }
+
+    .modal-directions {
+      padding: 24px 0;
+      padding: 2.4rem 0;
+      text-align: center;
+      font-size: 3.5rem;
+      color: @gray-dark;
+
+      a {
+        &:hover, &:focus {
+          color: @brand-primary;
+        }
+      }
+    }
+  }
+}

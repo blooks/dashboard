@@ -1,0 +1,22 @@
+<template name="armoryGuideContent">
+          <div class="modal-header">
+			<a href="#" data-dismiss="modal" class="close"><span aria-hidden="false">&times;</span><span class="sr-only">Close</span></a>
+            <span class="meta-title brand-box">Guide</span>
+            <h3 class="modal-title">How to give <span class="fat">Watch-only access</span> to Armory wallet</h3>
+          </div>
+          <div class="modal-body">
+			<p>To give Coyno watch-only access to your Armory wallet, you need to get the Root Data from the Armory wallet. Here we'll give you a step-by-step guide on how to do it.</p>
+			<h4>1. Go to <span class="fat">Wallet Properties</span></h4>
+			<p>Open Armory, click on the wallet you'd like to track with Coyno and click <span class="fat">Wallet Properties</span></p>
+			<img src="/img/user-guides/armory/armory-1.png" class="guide-graphic" />
+
+			<h4>2. Copy-paste <span class="fat">Root-Data</span></h4>
+			<p>Click on <span class="fat">Export Watching-Only Copy</span></p>
+			<img src="/img/user-guides/armory/armory-2.png" class="guide-graphic" />
+			<p>In the Watch-Only Wallet Export window, click the "Copy to clipboard" under the "Root Only". This is the Root Data needed to watch the wallet.</p>
+			<img src="/img/user-guides/armory/armory-3.png" class="guide-graphic" />
+			<p>Paste <span class="fat">all the text</span> into the HD seed field in the Coyno app.</p>
+			<p>Done! Coyno can now watch all transactions coming in and out of all the addresses generated from this Root data.</p>
+			<p class="notice"><span class="fat">Please note, we do not touch your private keys so we're in no way able to back up or restore your wallet.</span></p>
+          </div>
+</template>

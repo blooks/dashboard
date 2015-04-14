@@ -1,7 +1,9 @@
 <template name="netWorth">
 	<div class="col-lg-8 line-chart">
 	    <h3>Net worth</h3>
-	    <div id="holdingsovertime"></div>
+	    <div id="holdingsovertime">
+            <div class="loader">Loading...</div>
+		</div>
 	   	<div class="row text-center spacy">
 	   	{{#if currencyIsFiat}}
         	<a id="dashboardChangeStockCurrency" class="btn" href="/dashboard/netWorth/BTC">Show in Bitcoin</a>
