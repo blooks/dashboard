@@ -2,6 +2,7 @@
     {{#unless action}}
         <div class="container-fluid">
             <div class="wallets-zone col-lg-12">
+                {{> bitcoinWalletAddAddressModal }}
                 <h3 class="label-title">{{i18n 'nodes.headings.wallets'}}</h3>
                 <div class="row zone">
                     {{#if bitcoinwallets}}
@@ -12,7 +13,6 @@
                                         {{> bitcoinWalletHeader}}
                                         {{> bitcoinWalletBody}}
                                         {{#unless readOnly}}
-                                            {{> bitcoinWalletAddAddressModal }}
                                             {{> bitcoinWalletDetailsModal }}
                                         {{/unless}}
                                      </div> <!-- /.node-item -->
