@@ -27,6 +27,15 @@
                         </a>
                     </li>
                 {{/each}}
+                {{#each goneExchanges}}
+                    <li class="coming-soon">
+                        <a href="#" class="wallet-thumbs">
+                            <img src="/img/external-logos/exchanges/{{type}}-logo.png">
+                            <div class="wallet-label-text">{{label}}</div>
+                            <div class="coming-soon-sign">Just kidding</div>
+                        </a>
+                    </li>
+                {{/each}}
             </ul>
         </div>
     {{else}}
