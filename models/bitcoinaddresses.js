@@ -24,7 +24,6 @@ Schemas.BitcoinAddresses = new SimpleSchema({
   address: {
     type: String,
     custom: function() {
-      console.log('Client sided address checking for: ' + this.value);
       if (!this.value.match(/^[13][a-km-zA-HJ-NP-Z0-9]{26,33}$/)) {
         return "invalidAddress";
       }
