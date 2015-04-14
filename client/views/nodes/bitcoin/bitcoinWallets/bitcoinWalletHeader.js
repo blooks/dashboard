@@ -14,6 +14,11 @@ Template.bitcoinWalletHeader.events({
         .toggleClass('icon-up-open-big')
         .toggleClass('icon-down-open-big');
     });
+  },
+  'click .add-address-toggle': function (event, template) {
+    jQuery('#bitcoinWalletAddAddress #addAddressModalTitle').text(template.data.label);
+    jQuery('#bitcoinWalletAddAddress #addBitcoinAddressWalletIdField').val(template.data._id);
+    jQuery('#bitcoinWalletAddAddress').modal('toggle');
   }
 });
 
