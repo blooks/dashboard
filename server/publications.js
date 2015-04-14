@@ -2,7 +2,7 @@ Meteor.publish("transfers", function (page, documentsPerPage) {
   var self = this;
   var totalAvailableResults = Transfers.find({userId: this.userId}).count();
   var maxNumPages = Math.ceil(totalAvailableResults/documentsPerPage);
-  page = Math.min(page, maxNumPages);
+  page = Math.max(Math.min(page, maxNumPages),1);
   var handle = Transfers.find({userId: this.userId}, {
     skip: parseInt(page-1, 10)*parseInt(documentsPerPage, 10),
     limit: documentsPerPage,
