@@ -1,16 +1,29 @@
 <template name="transferRow">
     <tr class={{transferType}}>
-        <td class="date-cell">{{prettyDate date}}</td>
+        <td class="date-cell">{{prettyDateShort date}}</td>
         {{#unless isIncoming}}
-        <td colspan="{{colSpanBefore}}" class="hidden-on-small"></td>
+            <td colspan="{{colSpanBefore}}" class="hidden-on-small hidden-on-medium"></td>
         {{/unless}}
-        <td class="{{representation.type}}-tx-cell from-wallet-cell"><span class="show-on-small fat">From:</span> {{senderLabel}}</td>
-        <td class="{{representation.type}}-bg tx-arrow"><span class="arrow arrow-right"> {{signedSaneAmount this}} {{details.currency}}</span></td>
-        <td class="{{representation.type}}-tx-cell to-wallet-cell"><span class="show-on-small fat">To:</span> {{recipientLabel}}</td>
+        <td class="{{representation.type}}-tx-cell from-wallet-cell">
+            <span class="show-on-small fat">From:</span>
+            <span class="party-title fixed-max-width">{{senderLabel}}</span>
+        </td>
+        <td class="{{representation.type}}-bg tx-arrow">
+            <span class="arrow"> {{signedSaneAmount this}} {{details.currency}}</span>
+        </td>
+        <td class="{{representation.type}}-tx-cell to-wallet-cell">
+            <span class="show-on-small fat">To:</span>
+            <span class="party-title fixed-max-width">{{recipientLabel}}</span>
+        </td>
         {{#unless isOutgoing}}
-        <td colspan="{{colSpanAfter}}" class="hidden-on-small"></td>
+            <td colspan="{{colSpanAfter}}" class="hidden-on-small hidden-on-medium"></td>
         {{/unless}}
-        <td class="fiat-value-cell"><span class="show-on-small">Value:</span> {{saneNumber baseVolumeRep 'EUR' }} {{currency}}</td>
-        <td><a href="http://blockchain.info/tx/{{hash}}" target="_blank" class="icon icon-magnifying-glass"></a></td>
+        <td class="fiat-value-cell">
+            <span class="show-on-small">Fiat value:</span>
+            {{saneNumber baseVolumeRep 'EUR' }} {{currency}}
+        </td>
+        <td>
+            <a href="http://blockchain.info/tx/{{hash}}" target="_blank" class="icon icon-magnifying-glass"></a>
+        </td>
     </tr>
 </template>
