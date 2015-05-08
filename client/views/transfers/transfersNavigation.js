@@ -90,6 +90,22 @@ Template.transfersNavigation.helpers({
     }else{
       return '';
     }
+  },
+  //TODO @Levin. Code dup, please fix
+  // Apply .ghost class to arrows when on first or final page
+  hideNextArrow: function() {
+    if(this.page===this.totalPages) {
+      return 'ghost';
+    } else {
+      return '';
+    }
+  },
+  hidePrevArrow: function() {
+    if(this.page===1) {
+      return 'ghost';
+    } else {
+      return '';
+    }
   }
 });
 
@@ -102,5 +118,17 @@ Template.transfersNavigation.events({
   'click .go-to-page': function (event) {
     event.preventDefault();
     Router.go('/transfers/'+event.target.attributes[1].value+'/10');
+  },
+  //TODO @Levin. Code dup, please fix
+  // Cycle through pages with arrows
+  'click .next-page': function () {
+    var nextPage = this.page + 1;
+    event.preventDefault();
+    Router.go('/transfers/'+nextPage+'/10');
+  },
+  'click .prev-page': function () {
+    var prevPage = this.page - 1;
+    event.preventDefault();
+    Router.go('/transfers/'+prevPage+'/10');
   }
 });
