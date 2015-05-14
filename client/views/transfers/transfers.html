@@ -5,7 +5,6 @@
     </div>
     <div class="col-md-10 col-md-offset-1 transfers">
       <div class="row desktop-zone">
-        {{#unless noData}}
         <div class="table-zone">
             {{>transfersNavigation}}
             <div id="responsive-table">
@@ -43,9 +42,6 @@
               </table>
             </div>
         </div>
-        {{else}}
-          {{> noData}}
-        {{/unless}}
     </div>     <!-- /.desktop-zone -->
   </div> <!-- /.col-md-10 -->
 </template>

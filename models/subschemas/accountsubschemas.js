@@ -32,5 +32,9 @@ Schemas.userProfile = new SimpleSchema({
   totalFiat: {
     type: Number,
     defaultValue: 0
+  },
+  guest: {
+    type: Boolean,
+    defaultValue: false
   }
 });
