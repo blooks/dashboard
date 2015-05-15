@@ -18,6 +18,9 @@ Template.sidebar.helpers({
       return "active";
     }
     return "";
+  },
+  notGuest: function() {
+    return !Meteor.user().profile.guest;
   }
 });
 

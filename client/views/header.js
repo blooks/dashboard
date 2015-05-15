@@ -14,6 +14,23 @@ Template.header.events({
     Meteor.logout(function () {
       loginButtonsSession.closeDropdown();
     });
+  },
+  'click #login-buttons-signin': function() {
+    AccountsGuest.forced = false;
+    Meteor.logout(function () {
+      Router.go('/sign-in');
+    });
+  },
+  'click #login-buttons-demo': function() {
+    Meteor.loginVisitor(function() {
+      AccountsGuest.forced = false;
+    });
+  },
+  'click #login-buttons-signup': function() {
+    AccountsGuest.forced = false;
+    Meteor.logout(function () {
+      Router.go('/sign-up');
+    });
   }
 });
 
@@ -25,5 +42,8 @@ Template.header.helpers({
   },
   possibleCurrencies: function () {
     return ['EUR', 'USD'];
+  },
+  notEvenGuest: function() {
+    return !Meteor.user();
   }
 });

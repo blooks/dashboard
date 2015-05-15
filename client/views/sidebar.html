@@ -14,9 +14,10 @@
             <li class="navbar-divider-headline"><p>Data</p></li>
             <li class="{{isActive 'nodes'}}"> <a href="/nodes/bitcoinWallets">{{i18n 'template.headings.wallets'}}<span class="nav-icon"><div class="icon icon-wallet"></div></span></a></li>
           <li class="{{isActive 'exchanges'}}"> <a href="/nodes/exchanges">{{i18n 'template.headings.exchanges'}}<span class="nav-icon"><div class="icon icon-exchange"></div></span></a></li>
-
+        {{#if notGuest}}
             <li class="navbar-divider-headline"><p>User</p></li>
             <li class="{{isActive 'userProfile'}}"> <a href="{{pathFor 'profileEdit'}}">Profile<span class="nav-icon"><div class="icon icon-user-outline"></div></span></a></li>
+         {{/if}}
         </ul>
       </div> <!-- /.sidebar -->
 </template>
