@@ -42,7 +42,7 @@
               </span>
             </a>
             </li>
-
+            {{#if notGuest}}
             <li class="navbar-divider-headline"><p>User</p></li>
             <li class="{{isActive 'userProfile'}}">
                 <a href="{{pathFor 'profileEdit'}}">Profile
@@ -51,6 +51,7 @@
                     </span>
                 </a>
             </li>
+         {{/if}}
         </ul>
     </div> <!-- /.sidebar -->
 </template>
