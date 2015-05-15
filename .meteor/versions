@@ -5,7 +5,7 @@ accounts-ui-unstyled@1.1.7
 aldeed:autoform@5.1.2
 aldeed:collection2@2.3.3
 aldeed:simple-schema@1.3.3
-artwells:accounts-guest@0.1.10
+artwells:accounts-guest@0.1.11
 autoupdate@1.2.1
 base64@1.0.3
 binary-heap@1.0.3
@@ -73,7 +73,7 @@ nemo64:bootstrap-data@3.3.4_1
 npm-bcrypt@0.7.8_2
 npm-container@1.0.0
 observe-sequence@1.0.6
-okgrow:analytics@0.2.4
+okgrow:analytics@0.2.5
 olragon:uri-js@1.13.1
 ordered-dict@1.0.3
 percolate:synced-cron@1.2.1
