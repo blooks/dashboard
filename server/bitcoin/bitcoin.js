@@ -24,7 +24,7 @@ Meteor.methods({
           }
         }
       } else {
-        BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
+        //BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
         Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId});
       }
     }
