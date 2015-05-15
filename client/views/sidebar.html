@@ -1,23 +1,57 @@
- <template name="sidebar">
-  <!-- Begin page content -->
-  <!-- col-xs-6 col-sm-3 col-md-2 col-lg-1 -->
-      <div class="sidebar sidebar-left sidebar-animate">
+<template name="sidebar">
+    <!-- Begin page content -->
+    <!-- col-xs-6 col-sm-3 col-md-2 col-lg-1 -->
+    <div class="sidebar sidebar-left sidebar-animate">
         <a href="#" class="navbar-pullout navbar-toggle toggle-left" data-toggle="sidebar" data-target=".sidebar-left">
-          <div class="icon icon-right-open-big"></div>
+            <div class="icon icon-right-open-big"></div>
         </a>
         <ul class="nav navbar-stacked">
-
+            <li class="{{isActive 'home'}}">
+                <a href="{{pathFor 'home'}}">Temp Home
+                    <span class="nav-icon">
+                      <div class="icon icon-info"></div>
+                  </span>
+                </a>
+            </li>
             <li class="navbar-divider-headline"><p>Analytics</p></li>
-          <li class="{{isActive 'dashboard'}}"><a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}<span class="nav-icon"><div class="icon icon-pie-chart"></div></span></a></li>
-          <li class="{{isActive 'transfers'}}"><a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}<span class="nav-icon"><div class="icon icon-book-open"></div></span></a></li>
+            <li class="{{isActive 'dashboard'}}">
+                <a href="{{pathFor 'dashboard'}}">{{i18n 'template.headings.dashboard'}}
+                    <span class="nav-icon">
+                      <div class="icon icon-pie-chart"></div>
+                  </span>
+                </a>
+            </li>
+            <li class="{{isActive 'transfers'}}">
+                <a href="{{pathFor 'transfers_user'}}">{{i18n 'template.headings.transfers'}}
+                    <span class="nav-icon">
+                      <div class="icon icon-book-open"></div>
+                  </span>
+                </a>
+            </li>
 
             <li class="navbar-divider-headline"><p>Data</p></li>
-            <li class="{{isActive 'nodes'}}"> <a href="/nodes/bitcoinWallets">{{i18n 'template.headings.wallets'}}<span class="nav-icon"><div class="icon icon-wallet"></div></span></a></li>
-          <li class="{{isActive 'exchanges'}}"> <a href="/nodes/exchanges">{{i18n 'template.headings.exchanges'}}<span class="nav-icon"><div class="icon icon-exchange"></div></span></a></li>
-        {{#if notGuest}}
+            <li class="{{isActive 'nodes'}}"> <a href="/nodes/bitcoinWallets">{{i18n 'template.headings.wallets'}}
+                <span class="nav-icon">
+                    <div class="icon icon-wallet"></div>
+                </span>
+            </a>
+            </li>
+            <li class="{{isActive 'exchanges'}}"> <a href="/nodes/exchanges">{{i18n 'template.headings.exchanges'}}
+                <span class="nav-icon">
+                  <div class="icon icon-exchange"></div>
+              </span>
+            </a>
+            </li>
+            {{#if notGuest}}
             <li class="navbar-divider-headline"><p>User</p></li>
-            <li class="{{isActive 'userProfile'}}"> <a href="{{pathFor 'profileEdit'}}">Profile<span class="nav-icon"><div class="icon icon-user-outline"></div></span></a></li>
+            <li class="{{isActive 'userProfile'}}">
+                <a href="{{pathFor 'profileEdit'}}">Profile
+                    <span class="nav-icon">
+                        <div class="icon icon-user-outline"></div>
+                    </span>
+                </a>
+            </li>
          {{/if}}
         </ul>
-      </div> <!-- /.sidebar -->
+    </div> <!-- /.sidebar -->
 </template>
