@@ -1,9 +1,13 @@
 dependencies:
   override:
-    - echo $NPMRC >> .npmrc
+    - echo "registry="$NPM_REGISTRY >> .npmrc
+    - echo "_auth="$NPM_AUTH_TOKEN >> .npmrc
+    - echo "email="NPM_EMAIL >> .npmrc
+    - echo "always-auth=true" >> .npmrc
+    - echo "strict-ssl=false" >> .npmrc
 test:
   override:
-    - exit 0
+    - docker build .
 
 machine:
   services:

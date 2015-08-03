@@ -5,3 +5,4 @@ packages/npm-container
 node_modules
 packages/coynverter/.npm
 
+.npmrc
