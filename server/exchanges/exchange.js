@@ -3,7 +3,12 @@ var CoynoJobs = Meteor.npmRequire('coyno-jobs');
 if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
   process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST;
 }
-console.log(process.env.REDIS_URL);
+
+if (!process.env.REDIS_URL) {
+  log.warn('No redis URL set. Defaulting to localhost');
+  process.env.REDIS_URL = 'redis://localhost';
+}
+
 var jobs = new CoynoJobs(process.env.REDIS_URL);
 
 Meteor.methods({
