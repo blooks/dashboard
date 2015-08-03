@@ -4,19 +4,21 @@
         <div class='row-xs-6 text-center'>
             <nav>
                 <ul class="pagination">
+                    <li class="prev-page {{hidePrevArrow}}"><a href="#"><div class="icon icon-left-open-big"></div></a></li>
                     {{#each menuItems}}
                         <li class="{{isActive pageNumber}}">
                             {{#if pageNumber}}
                                 {{#if linkToPage}}
                                     <a href={{linkToPage}}>{{pageNumber}}</a>
                                 {{else}}
-                                    <span>{{pageNumber}}</span>
+                                    <a href="#" class="disabled">{{pageNumber}}</a>
                                 {{/if}}
                             {{else}}
-                                <span class="hide-this-please">X</span>
+                                <span class="hide">x</span>
                             {{/if}}
                         </li>
                     {{/each}}
+                    <li class="next-page {{hideNextArrow}}"><a href="#"><div class="icon icon-right-open-big"></div></a></li>
                 </ul>
             </nav>
         </div>

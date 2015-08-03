@@ -3,10 +3,10 @@ Template.sidebar.created = function() {
     Meteor.setTimeout(function() {
       var target = $('.sidebar');
       if (target.hasClass('sidebar-open')) {
-           $('.icon-right-open-big').removeClass('icon-right-open-big').addClass('icon-left-open-big');
+           $('.sidebar .icon-right-open-big').removeClass('icon-right-open-big').addClass('icon-left-open-big');
       }
       else {
-           $('.icon-left-open-big').removeClass('icon-left-open-big').addClass('icon-right-open-big');
+           $('.sidebar .icon-left-open-big').removeClass('icon-left-open-big').addClass('icon-right-open-big');
       }
   }, 200);
   });
@@ -18,6 +18,9 @@ Template.sidebar.helpers({
       return "active";
     }
     return "";
+  },
+  notGuest: function() {
+    return !Meteor.user().profile.guest;
   }
 });
 

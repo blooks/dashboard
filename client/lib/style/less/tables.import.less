@@ -5,19 +5,21 @@
 
     white-space: nowrap;
 
-    &.table-bordered {}
 
-    &.table-tx {}
+  .party-title {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 
-    &.auto-width {
+  &.auto-width {
       width: auto;
     }
 
   thead {
 
     tr {
-    padding: 8px 15px;
-    padding: .8rem 1.5rem;
+    padding: 4px 7px;
+    padding: .4rem .7rem;
 
       &.supa-header {
 
@@ -56,9 +58,10 @@
   tbody {
     tr {
       td {
-            padding: 12px 16px;
-            padding: 1.2rem 1.6rem;
+            padding: 6px 8px;
+            padding: .6rem .8rem;
             vertical-align: middle;
+            line-height: 20px;
 
             &.inflow {
                 color: @positive;
@@ -75,7 +78,6 @@
                 font-size: 35px;
               }
             }
-            &.from-wallet-cell, &.to-wallet-cell {}
           } // Close general <td>
 
           &:last-child {
@@ -110,7 +112,7 @@
     list-style-type: none;
   }
 
-/*Styling of arrows in tx tables with incoming/outgoing/internal transfers*/
+/*Styling of arrows in tx tables */
 td.tx-arrow {
   padding-right: @button-corner-square-size;
 
@@ -126,6 +128,9 @@ td.tx-arrow {
       background-color: @positive;
       border-color: @positive;
       color: @whyte;
+      &:after {
+        border-color: @positive transparent transparent transparent;
+      }
   }
 }
 
@@ -134,6 +139,9 @@ td.tx-arrow {
     background-color: @negative;
     border-color: @negative;
     color: @whyte;
+    &:after {
+      border-color: @negative transparent transparent transparent;
+    }
   }
 }
 
@@ -142,6 +150,9 @@ td.tx-arrow {
     background-color: @gray-light;
     border-color: @gray-light;
     color: @whyte;
+    &:after {
+      border-color: @gray-light transparent transparent transparent;
+    }
   }
 }
 
@@ -162,18 +173,14 @@ table.table-tx tbody {
   }
 }
 
+// Responsive table on small screens
 @media only screen and (max-width: 768px) {
   /* Force table to not be like tables anymore */
-  #responsive-table table,
-  #responsive-table thead,
-  #responsive-table tbody,
-  #responsive-table th,
-  #responsive-table td,
-  #responsive-table tr {
-    display: block;
+  #responsive-table {
+    table, thead, tbody,th,td,tr {
+      display: block;
+    }
   }
-
-
 
   /* Hide table headers (but not display: none;, for accessibility) */
   #responsive-table thead tr {
@@ -192,24 +199,12 @@ table.table-tx tbody {
     padding-left: 5%;
     padding-right: 5%;
     white-space: normal;
-    text-align:left;
+    text-align:center;
 
     &.date-cell {
       background-color: @gray-lightest;
       font-weight: bold;
       text-align: center;
-    }
-
-    &.tx-arrow {
-      text-align: center;
-    }
-
-    &.fiat-value-cell {
-      text-align: center;
-    }
-
-    &.to-wallet-cell {
-      text-align: right;
     }
   }
 
@@ -222,7 +217,7 @@ table.table-tx tbody {
     width: 45%;
     padding-right: 10px;
     white-space: nowrap;
-    text-align:left;
+    text-align:center;
     font-weight: bold;
   }
 
@@ -237,6 +232,9 @@ table.table-tx tbody {
     display: inline;
    }
 
+  .hidden-on-medium {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px)  {
@@ -247,6 +245,41 @@ table.table-tx tbody {
     }
 
   .show-on-small {
-    display: none; // Certain elements are for small version only
+    display: none; // Certain elements are for small screens
    }
+
+  .fixed-max-width {
+    max-width: 400px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+}
+
+
+// Hide to reveal on larger screens
+.hidden-on-medium,
+tr.hidden-on-medium,
+td.hidden-on-medium,
+th.hidden-on-medium
+{
+  display: none;
+}
+
+
+@media screen and (min-width: 1470px)  {
+
+  .hidden-on-medium {
+    display: inline-block;
+  }
+  tr.hidden-on-medium {
+    display: table-row;
+  }
+  td.hidden-on-medium {
+    display: table-cell;
+  }
+  th.hidden-on-medium {
+   display: table-cell;
+  }
+
 }

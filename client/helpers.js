@@ -26,6 +26,10 @@ Template.registerHelper('prettyDateLong', function (date) {
   return moment(date).format('dddd DD/MM/YYYY hh:mm:ss');
 });
 
+Template.registerHelper('prettyDateShort', function (date) {
+  return moment(date).format('DD-MM-YYYY, HH:mm');
+});
+
 Template.registerHelper('saneNumber', function (internalNumber, currency) {
 
   if (currency === 'BTC') {

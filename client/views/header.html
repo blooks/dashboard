@@ -9,7 +9,7 @@
           </a>
       </div> <!-- ./navbar-header -->
       <div class="navbar-right">
-      {{#if currentUser}}
+          {{#if currentUser}}
         <div class="top-bar-drop-item currency-selector">
           <select class="form-control simple-select-dropdown" id="user_currency">
             {{#each possibleCurrencies}}
@@ -19,11 +19,20 @@
         </div>
       {{/if}}
         <div class="top-bar-drop-item user-drop">
-          {{#if currentUser}}
+        {{#if currentUser}}
             <div id="login-buttons-logout" class="brand-box btn"><span class="icon icon-sign-out"></span> Sign out</div>
+          {{else}}
+            {{#if notEvenGuest}}
+            <div id="login-buttons-demo" class="brand-box btn"><span class="icon icon-demo"></span>Demo</div>
+            {{else}}
+                DEMOACCOUNT!!!! WILL BE DELETED IN 24 hours!!!!
+            {{/if}}
+            <div id="login-buttons-signin" class="brand-box btn"><span class="icon icon-sign-in"></span>Sign in</div>
+            <div id="login-buttons-signup" class="brand-box btn"><span class="icon icon-sign-up"></span>Sign up</div>
           {{/if}}
         </div>
       </div>
     </div> <!-- ./container -->
   </div> <!-- ./navbar -->
+    {{> notifications}}
 </template>

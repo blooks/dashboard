@@ -5,13 +5,12 @@
     </div>
     <div class="col-md-10 col-md-offset-1 transfers">
       <div class="row desktop-zone">
-        {{#unless noData}}
         <div class="table-zone">
             {{>transfersNavigation}}
             <div id="responsive-table">
               <table class="table table-tx table-zb-hover auto-width centered">
                 <thead>
-                  <tr class="supa-header">
+                  <tr class="supa-header hidden-on-medium">
                     <th class="no-border">&nbsp;</th>
                     <th colspan="3" class="inflow-header">{{i18n 'trades.headings.table.inflow'}}</th>
                     <th colspan="1" class="no-border internal-header">&nbsp;</th>
@@ -19,7 +18,9 @@
                   </tr>
                   <tr>
                     <th>{{i18n 'transfers.headings.table.date'}}</th>
-                    <th class="text-center" colspan="7">{{i18n 'transfers.headings.transfers'}}</th>
+                    <th colspan="2" class="hidden-on-medium"></th>
+                    <th class="text-center" colspan="3">{{i18n 'transfers.headings.transfers'}}</th>
+                    <th colspan="2" class="hidden-on-medium"></th>
                     <th class="text-right">
                     {{i18n 'transfers.headings.table.value'}}
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Value at the time"><span class="icon icon-info"></span></a>
@@ -41,9 +42,6 @@
               </table>
             </div>
         </div>
-        {{else}}
-          {{> noData}}
-        {{/unless}}
     </div>     <!-- /.desktop-zone -->
   </div> <!-- /.col-md-10 -->
 </template>

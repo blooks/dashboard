@@ -1,7 +1,7 @@
-this.Exchanges = new Mongo.Collection('exchanges');
+Exchanges = new Mongo.Collection('exchanges');
 
-if (this.Schemas == null) {
-  this.Schemas = {};
+if (Schemas == null) {
+  Schemas = {};
 }
 
 Schemas.exchangeCredentials = new SimpleSchema({
