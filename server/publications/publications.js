@@ -19,3 +19,7 @@ Meteor.publish('exchanges', function() {
    */
   return Exchanges.find({userId: this.userId}, {fields: {credentials : 0} });
 });
+
+Meteor.publish('servernotifications', function () {
+  return Notification.find({userId: this.userId});
+});

@@ -47,3 +47,22 @@ Template.header.helpers({
     return !Meteor.user();
   }
 });
+Template.header.onRendered(function() {
+  Notification.find().observeChanges({
+    added: function(id, doc) {
+      switch (doc.type) {
+        case 'info':
+          Notifications.info(doc.title, doc.message);
+              break;
+        case 'error':
+          Notifications.error(doc.title, doc.message);
+              break;
+        case 'success':
+          Notifications.success(doc.title, doc.message);
+          break;
+
+      }
+      Notification.remove({_id: id});
+    }
+});
+});
