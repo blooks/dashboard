@@ -32,20 +32,7 @@ Meteor.methods({
         }
       } else {
         //BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
-        jobs.addJob('wallet.update', {walletId: wallet._id, userId: wallet.userId, complete: true},
-        function onSave(err) {
-          if (err) {
-            Notification.error('Wallet update failed.', 'The wallet update failed.');
-            return log.error(err);
-          }
-        },
-        function onComplete(err) {
-          if (err) {
-            Notification.error('Wallet update failed.', 'The wallet update failed.');
-            return log.error(err);
-          }
-          Notification.success('Wallet update success.', 'The wallet update finished successfully.');
-        });
+        jobs.addJob('wallet.update', {walletId: wallet._id, userId: wallet.userId, complete: true});
       }
     }
   },

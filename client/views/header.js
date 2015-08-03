@@ -48,6 +48,7 @@ Template.header.helpers({
   }
 });
 Template.header.onRendered(function() {
+  _.extend(Notifications.defaultOptions, {timeout: 5000});
   Notification.find().observeChanges({
     added: function(id, doc) {
       switch (doc.type) {
