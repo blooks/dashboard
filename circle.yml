@@ -2,7 +2,8 @@ dependencies:
   override:
     - echo $NPMRC >> .npmrc
 test:
-  - exit 0
+  override:
+    - exit 0
 
 machine:
   services:
