@@ -3,7 +3,7 @@ dependencies:
     - echo $NPMRC >> .npmrc
 test:
   override:
-    - exit 0
+    - docker build .
 
 machine:
   services:
