@@ -20,9 +20,9 @@ Meteor.methods({
   updateTx4Wallet: function (wallet) {
     var self = this;
     //TODO: check if wallet exists, user is owner and can trigger update
-    Notification.info('Updating Wallet', 'A wallet is being updated.');
     wallet = BitcoinWallets.findOne({_id: wallet._id});
     if (wallet) {
+      Notification.info('Updating Wallet', 'Wallet "' + wallet.label + '" is being updated.');
       if (wallet.superNode) {
         if (wallet.superNode.nodeType === 'exchange') {
           var exchange = Exchanges.findOne({_id: wallet.superNode.id});
