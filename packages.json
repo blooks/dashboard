@@ -1,5 +1,5 @@
 {
   "bitcore": "0.9.3",
-  "coyno-dispatcher": "0.0.13",
+  "coyno-jobs": "0.0.1",
   "coinbase": "1.0.2"
 }

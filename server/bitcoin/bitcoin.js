@@ -1,7 +1,12 @@
 'use strict';
 
 var bitcore = Meteor.npmRequire('bitcore');
-var Dispatcher = Meteor.npmRequire('coyno-dispatcher');
+var CoynoJobs = Meteor.npmRequire('coyno-jobs');
+if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
+  process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST;
+}
+console.log(process.env.REDIS_URL);
+var jobs = new CoynoJobs(process.env.REDIS_URL);
 
 Meteor.methods({
   /**
@@ -13,7 +18,9 @@ Meteor.methods({
    * @param wallet
    */
   updateTx4Wallet: function (wallet) {
+    var self = this;
     //TODO: check if wallet exists, user is owner and can trigger update
+    Notification.info('Updating Wallet', 'A wallet is being updated.');
     wallet = BitcoinWallets.findOne({_id: wallet._id});
     if (wallet) {
       if (wallet.superNode) {
@@ -25,7 +32,20 @@ Meteor.methods({
         }
       } else {
         //BitcoinWallets.update({_id: wallet._id}, {$set: {updating: true}});
-        Dispatcher.wallet.update({walletId: wallet._id, userId: wallet.userId, complete: true});
+        jobs.addJob('wallet.update', {walletId: wallet._id, userId: wallet.userId, complete: true},
+        function onSave(err) {
+          if (err) {
+            Notification.error('Wallet update failed.', 'The wallet update failed.');
+            return log.error(err);
+          }
+        },
+        function onComplete(err) {
+          if (err) {
+            Notification.error('Wallet update failed.', 'The wallet update failed.');
+            return log.error(err);
+          }
+          Notification.success('Wallet update success.', 'The wallet update finished successfully.');
+        });
       }
     }
   },
