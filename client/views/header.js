@@ -16,18 +16,18 @@ Template.header.events({
     });
   },
   'click #login-buttons-signin': function() {
-    AccountsGuest.forced = false;
+    //AccountsGuest.forced = false;
     Meteor.logout(function () {
       Router.go('/sign-in');
     });
   },
   'click #login-buttons-demo': function() {
     Meteor.loginVisitor(function() {
-      AccountsGuest.forced = false;
+      //AccountsGuest.forced = false;
     });
   },
   'click #login-buttons-signup': function() {
-    AccountsGuest.forced = false;
+    //AccountsGuest.forced = false;
     Meteor.logout(function () {
       Router.go('/sign-up');
     });
