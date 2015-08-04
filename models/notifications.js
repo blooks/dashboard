@@ -53,12 +53,18 @@ Notification.allow({
 
 if (Meteor.isServer) {
   Notification.info =  function (title, message) {
+    if (Meteor.userId()) {
       Notification.insert({userId: Meteor.userId(), title: title, message: message});
+    }
     };
     Notification.error = function (title, message) {
-      Notification.insert({userId: Meteor.userId(), type: 'error', title: title, message: message});
+      if (Meteor.userId()) {
+        Notification.insert({userId: Meteor.userId(), type: 'error', title: title, message: message});
+      }
     };
     Notification.success = function (title, message) {
-      Notification.insert({userId: Meteor.userId(), type: 'success', title: title, message: message});
+      if (Meteor.userId()) {
+        Notification.insert({userId: Meteor.userId(), type: 'success', title: title, message: message});
+      }
     };
 }
