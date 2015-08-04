@@ -19,9 +19,11 @@ Template.sidebar.helpers({
     }
     return "";
   },
+  /*
   notGuest: function() {
     return !Meteor.user().profile.guest;
   }
+  */
 });
 
 
