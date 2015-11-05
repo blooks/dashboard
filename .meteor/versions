@@ -17,7 +17,7 @@ coffeescript@1.0.6
 coyno:armory@0.0.1
 coyno:bip32@0.0.1
 coyno:coinbase@0.0.1
-coyno:coynverter@0.0.1
+coyno:coynverter@0.1.0
 coyno:electrum@0.0.1
 coyno:electrum2@0.0.1
 dburles:collection-helpers@1.0.3
