@@ -1,7 +1,7 @@
 dependencies:
   override:
     - echo "registry="$NPM_REGISTRY >> .npmrc
-    - echo "_auth="$NPM_AUTH_TOKEN >> .npmrc
+    - echo "_auth="$NPM_AUTH >> .npmrc
     - echo "email="NPM_EMAIL >> .npmrc
     - echo "always-auth=true" >> .npmrc
     - echo "strict-ssl=false" >> .npmrc
