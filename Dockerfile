@@ -1,4 +1,4 @@
-FROM meteorhacks/meteord:base
+FROM meteorhacks/meteord:onbuild
 
 COPY ./ /app
 COPY .npmrc /root/.npmrc

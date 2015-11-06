@@ -1,10 +1,10 @@
 
-var coinbase = Meteor.npmRequire('coinbase');
+var coinbase = Npm.require('coinbase');
 
 Coinbase = {
   clientId: process.env.COINBASE_ID,
   clientSecret: process.env.COINBASE_SECRET
-}
+};
 /**
  *
  * @param code
@@ -14,7 +14,7 @@ Coinbase.authorize = function (code) {
   var queryUrl = "https://www.coinbase.com/oauth/token?grant_type=authorization_code&code=";
   queryUrl += code;
   queryUrl += "&redirect_uri=";
-  queryUrl += "https://app.coyno.com/addcoinbase"
+  queryUrl += "https://app.coyno.com/addcoinbase";
   queryUrl += "&client_id=";
   queryUrl += this.clientId;
   queryUrl += "&client_secret=";
