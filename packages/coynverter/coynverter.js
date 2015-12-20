@@ -32,7 +32,7 @@ if (Meteor.isServer) {
     }
     return result;
   };
-/*
+
   Meteor.startup(function () {
     Coynverter.update();
     SyncedCron.add({
@@ -46,5 +46,4 @@ if (Meteor.isServer) {
       }
     });
   });
-  */
 }
