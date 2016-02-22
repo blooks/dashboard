@@ -1,6 +1,6 @@
 'use strict';
 
-var bitcore = Meteor.npmRequire('bitcore');
+var bitcore = Npm.require('bitcore-lib');
 
 
 Meteor.methods({

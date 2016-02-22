@@ -17,7 +17,6 @@ chrismbeckett:fontawesome4
 mrt:moment
 meteorhacks:npm
 jhuenges:highstock
-meteor-platform
 email
 http
 
@@ -26,7 +25,6 @@ coyno:coynverter
 
 
 
-npm-container
 percolate:synced-cron
 useraccounts:bootstrap
 meteorhacks:ssr
@@ -44,3 +42,25 @@ meteorhacks:kadira
 okgrow:analytics
 wylio:winston-papertrail
 gfk:notifications
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+
+
+
+
+
+
+npm-container
+useraccounts:iron-routing

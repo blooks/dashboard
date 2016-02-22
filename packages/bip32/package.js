@@ -23,3 +23,7 @@ Package.onTest(function(api) {
   api.use('coyno:bip32');
   api.addFiles('bip32-tests.js');
 });
+
+Npm.depends({
+  'bitcore-lib': 'https://github.com/satoshipay/bitcore-lib/archive/82696cf1ad495ce097876ab9d376e30976bb7abe.tar.gz'
+});

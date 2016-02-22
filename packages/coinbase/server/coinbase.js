@@ -1,5 +1,5 @@
 
-var coinbase = Meteor.npmRequire('coinbase');
+var coinbase = Npm.require('coinbase');
 
 Coinbase = {
   clientId: process.env.COINBASE_ID,

@@ -1,5 +1,5 @@
 {
-  "bitcore": "0.9.3",
+  "bitcore-lib": "https://github.com/satoshipay/bitcore-lib/archive/82696cf1ad495ce097876ab9d376e30976bb7abe.tar.gz",
   "coyno-jobs": "0.0.3",
   "coinbase": "1.0.2"
 }
