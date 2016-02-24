@@ -148,6 +148,18 @@ Meteor.methods({
   },
   convert: function (fromCurrency, toCurrency, amount, time) {
     return Coynverter.convert(fromCurrency, toCurrency, amount, time);
+  },
+  allTransfers: function() {
+    var result = [];
+    Transfers.find({userId: this.userId}).forEach(function(transfer) {
+      var niceTransfer = transfer.representation;
+      niceTransfer.baseVolume = transfer.baseVolume;
+      niceTransfer.date = transfer.date;
+      niceTransfer.details = transfer.details;
+      niceTransfer.hash = transfer.hash();
+      result.push(niceTransfer);
+    });
+    return JSON.stringify(result);
   }
 });
 
