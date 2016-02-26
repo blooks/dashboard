@@ -92,6 +92,10 @@ Schemas.Transfer = new SimpleSchema({
   baseVolume: {
     type: [currencyBaseVolume],
     optional: true
+  },
+  customValue: {
+    type: Number,
+    optional: true
   }
 });
 

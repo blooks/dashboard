@@ -49,5 +49,42 @@ Template.transferRow.helpers({
   },
   currency: function () {
     return Meteor.user().profile.currency;
+  },
+  editing:function(){
+    var instance = Template.instance();
+    return  instance.vars.get('editing');
   }
+});
+
+Template.transferRow.events({
+  'click #editButton' : function(event, template) {
+    var instance = Template.instance();
+    instance.vars.set('editing', true);
+  },
+  'click #saveButton' : function(event, template) {
+    var instance = Template.instance();
+    var newNote = instance.$('.note-input').val();
+    var customValue = Number(instance.$('.value-input').val());
+    var oldValue = Number(instance.$('.value-input').data('old-valuation'));
+    var update;
+    if (newNote) {
+      update = {
+        note : newNote
+      };
+    }
+    if (customValue !== oldValue) {
+      if (!update) {
+        update = {};
+      }
+      update.customValue = Math.round(customValue * 10e7);
+    }
+    Transfers.update(this._id, {$set: update});
+    instance.vars.set('editing', false);
+  }
+});
+
+Template.transferRow.onCreated( function(){
+  var self = this;
+  self.vars = new ReactiveDict();
+  self.vars.setDefault( 'editing' , false );
 });
