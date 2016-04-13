@@ -157,6 +157,8 @@ Meteor.methods({
       niceTransfer.date = transfer.date;
       niceTransfer.details = transfer.details;
       niceTransfer.hash = transfer.hash();
+      niceTransfer.customValuation = transfer.customValue;
+      niceTransfer.note = transfer.note;
       result.push(niceTransfer);
     });
     return JSON.stringify(result);

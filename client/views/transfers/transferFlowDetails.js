@@ -56,12 +56,7 @@ Template.transferRow.helpers({
   }
 });
 
-Template.transferRow.events({
-  'click #editButton' : function(event, template) {
-    var instance = Template.instance();
-    instance.vars.set('editing', true);
-  },
-  'click #saveButton' : function(event, template) {
+var saveTransfer = function(templateInstance) {
     var instance = Template.instance();
     var newNote = instance.$('.note-input').val();
     var customValue = Number(instance.$('.value-input').val());
@@ -78,8 +73,26 @@ Template.transferRow.events({
       }
       update.customValue = Math.round(customValue * 10e7);
     }
-    Transfers.update(this._id, {$set: update});
+  if (update) {
+    Transfers.update(templateInstance._id, {$set: update});
+  }
     instance.vars.set('editing', false);
+};
+
+Template.transferRow.events({
+  'click #editButton, click .fiat-value-cell, click .note-cell' : function(event, template) {
+    var instance = Template.instance();
+    instance.vars.set('editing', true);
+  },
+  'click #saveButton' : function(event, template) {
+    saveTransfer(this);
+  },
+  'keypress': function(event) {
+    var instance = Template.instance();
+    var editing = instance.vars.get('editing');
+    if (editing && event.keyCode === 13) {
+      saveTransfer(this);
+    }
   }
 });
 
