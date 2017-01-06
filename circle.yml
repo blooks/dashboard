@@ -1,7 +1,15 @@
 machine:
   services:
     - docker
+  node:
+    version: 6
+dependencies:
+  pre:
+    - curl https://install.meteor.com/ | sh
 
+test:
+  override:
+    - exit 0
 deployment:
   develop:
     branch: develop
