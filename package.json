@@ -26,5 +26,10 @@
     "env": {
       "meteor": true
     }
+  },
+  "standard": {
+    "env": {
+      "meteor": true
+    }
   }
 }
