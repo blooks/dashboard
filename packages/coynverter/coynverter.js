@@ -8,7 +8,7 @@ if (Meteor.isServer) {
   var NodeConverter = new coynoconverter(Coynverter.mongourl)
 
   Coynverter.update = function () {
-    var syncConverter = Async.wrap(NodeConverter, [ 'update' ])
+    var syncConverter = Meteor.wrapAsync(NodeConverter, [ 'update' ])
     var result
     try {
       result = syncConverter.update()
@@ -19,7 +19,7 @@ if (Meteor.isServer) {
   }
 
   Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
-    var syncConverter = Async.wrap(NodeConverter, [ 'convert' ])
+    var syncConverter = Meteor.wrapAsync(NodeConverter, [ 'convert' ])
     var result
     amountToConvert = Math.abs(amountToConvert)
     if (amountToConvert == 0) return 0

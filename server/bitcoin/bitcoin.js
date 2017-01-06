@@ -1,7 +1,7 @@
 'use strict'
 
-var bitcore = Meteor.npmRequire('bitcore-lib')
-var CoynoJobs = Meteor.npmRequire('@blooks/jobs')
+var bitcore = Npm.require('bitcore-lib')
+var CoynoJobs = Npm.require('@blooks/jobs')
 if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
   process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST
 }

@@ -1,4 +1,4 @@
-var CoynoJobs = Meteor.npmRequire('@blooks/jobs')
+import CoynoJobs from '@blooks/jobs'
 if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
   process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST
 }
