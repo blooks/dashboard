@@ -1,26 +1,26 @@
 Template.exchanges.helpers({
   exchangesinpacks: function (numberInPack) {
-    var result = [];
-    var temp = [];
+    var result = []
+    var temp = []
     Exchanges.find().forEach(function (exchange) {
-      temp.push(exchange);
+      temp.push(exchange)
       if (temp.length > (numberInPack - 1)) {
-        result.push(temp);
-        temp = [];
+        result.push(temp)
+        temp = []
       }
-    });
+    })
     if (temp.length > 0) {
-      result.push(temp);
+      result.push(temp)
     }
-    return result;
+    return result
   },
   exchanges: function () {
-    return Exchanges.find().fetch();
+    return Exchanges.find().fetch()
   },
-  dynamicTemplate: function() {
-    if (this.action === "add") {
-      return "chooseExchange";
+  dynamicTemplate: function () {
+    if (this.action === 'add') {
+      return 'chooseExchange'
     }
-    return "";
+    return ''
   }
-});
+})

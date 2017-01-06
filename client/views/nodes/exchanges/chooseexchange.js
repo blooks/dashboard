@@ -1,14 +1,14 @@
 Template.chooseExchange.helpers({
   availableExchanges: function () {
-    return Meteor.settings.public.coyno.availableExchanges;
+    return Meteor.settings.public.coyno.availableExchanges
   },
   currentRoute: function () {
-    return Router.current().url;
+    return Router.current().url
   },
   unavailableExchanges: function () {
-    return Meteor.settings.public.coyno.unavailableExchanges;
+    return Meteor.settings.public.coyno.unavailableExchanges
   },
   goneExchanges: function () {
-    return Meteor.settings.public.coyno.goneExchanges;
+    return Meteor.settings.public.coyno.goneExchanges
   }
-});
+})

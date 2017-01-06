@@ -8,16 +8,16 @@ Package.describe({
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
-});
+})
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.1');
-  api.addFiles('public/verification.js');
-  api.export('Electrum');
-});
+Package.onUse(function (api) {
+  api.versionsFrom('1.1')
+  api.addFiles('public/verification.js')
+  api.export('Electrum')
+})
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('electrum');
-  api.addFiles('electrum-tests.js');
-});
+Package.onTest(function (api) {
+  api.use('tinytest')
+  api.use('electrum')
+  api.addFiles('electrum-tests.js')
+})

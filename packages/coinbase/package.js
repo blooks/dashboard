@@ -8,20 +8,20 @@ Package.describe({
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
-});
+})
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.0.5');
-  api.addFiles('server/coinbase.js', 'server');
-  api.export('Coinbase', 'server');
-});
+Package.onUse(function (api) {
+  api.versionsFrom('1.0.5')
+  api.addFiles('server/coinbase.js', 'server')
+  api.export('Coinbase', 'server')
+})
 
 Npm.depends({
-  "coinbase": "1.0.2"
-});
+  'coinbase': '1.0.2'
+})
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('coyno:coinbase');
-  api.addFiles('coinbase-tests.js');
-});
+Package.onTest(function (api) {
+  api.use('tinytest')
+  api.use('coyno:coinbase')
+  api.addFiles('coinbase-tests.js')
+})

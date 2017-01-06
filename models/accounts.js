@@ -1,51 +1,49 @@
-var Users = Meteor.users;
+var Users = Meteor.users
 
 Users.helpers({
   totalBalance: function (currency) {
-    if (currency !== "BTC") {
-      return 0;
+    if (currency !== 'BTC') {
+      return 0
     }
-    var result = 0;
-    BitcoinWallets.find({userId: Meteor.userId()}).forEach(function(wallet){
-      result += wallet.balance();
-    });
-    return result;
+    var result = 0
+    BitcoinWallets.find({ userId: Meteor.userId() }).forEach(function (wallet) {
+      result += wallet.balance()
+    })
+    return result
   }
-});
+})
 
-if (Meteor.isServer)
-{
+if (Meteor.isServer) {
   Users.helpers({
     totalBalanceInFiat: function () {
-      var bitcoinBalance = this.totalBalance('BTC');
-      var currency = Meteor.user().profile.currency;
-      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date());
-      return parseInt(returnValue, 10);
+      var bitcoinBalance = this.totalBalance('BTC')
+      var currency = Meteor.user().profile.currency
+      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date())
+      return parseInt(returnValue, 10)
     }
-  });
+  })
 }
 
 var Schema = new SimpleSchema({
   createdAt: {
     type: Date,
-    autoValue: function() {
+    autoValue: function () {
       if (this.isInsert) {
-        return new Date();
+        return new Date()
       }
       if (this.isUpsert) {
-        return {$setOnInsert: new Date()};
-      }
-      else {
-        this.unset();
+        return { $setOnInsert: new Date() }
+      } else {
+        this.unset()
       }
     },
     optional: true
   },
   updatedAt: {
     type: Date,
-    autoValue: function() {
+    autoValue: function () {
       if (this.isUpdate) {
-        return new Date();
+        return new Date()
       }
     },
     optional: true
@@ -53,14 +51,14 @@ var Schema = new SimpleSchema({
   emails: {
     type: [Object]
   },
-  "emails.$.address": {
+  'emails.$.address': {
     optional: true,
     type: String,
-    unique: true, //DGB 2015-01-21 06:59 Added
+    unique: true, // DGB 2015-01-21 06:59 Added
     index: true,
     regEx: SimpleSchema.RegEx.Email
   },
-  "emails.$.verified": {
+  'emails.$.verified': {
     optional: true,
     type: Boolean
   },
@@ -73,20 +71,20 @@ var Schema = new SimpleSchema({
     optional: true,
     blackbox: true
   }
-});
+})
 
-Meteor.users.attachSchema(Schema);
+Meteor.users.attachSchema(Schema)
 
 if (Meteor.isServer) {
   // DGB 2015-01-23 05:19
   // Before we delete the user, we remove related wallets first. Wallets will
   // cascade into accounts, accounts will cascade into transfers
   Meteor.users.before.remove(function (userId, doc) {
-    var userWallets = BitcoinWallets.find({'userId': doc._id},{fields:{id:1}}).fetch();
+    var userWallets = BitcoinWallets.find({ 'userId': doc._id }, { fields: { id: 1 } }).fetch()
     // DGB 2015-01-23 05:17
     // Cascading removals only if the user has wallets
-    userWallets.forEach(function(wallet) {
-       BitcoinWallets.remove({_id: wallet._id});
-    });
-  });
+    userWallets.forEach(function (wallet) {
+      BitcoinWallets.remove({ _id: wallet._id })
+    })
+  })
 }
