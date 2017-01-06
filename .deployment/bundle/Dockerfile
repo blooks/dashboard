@@ -1,4 +1,4 @@
-FROM meteorhacks/meteord:base
+FROM abernix/meteord:base
 MAINTAINER Leo Lara
 
 ENV NODE_ENV production
