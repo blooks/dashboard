@@ -15,7 +15,7 @@ deployment:
     branch: develop
     commands:
       - docker info
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS tutum.co
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - meteor build .deployment/bundle
       - cd .deployment/bundle && docker build -t blooks/dashboard:develop .
       - docker push blooks/dashboard:develop
