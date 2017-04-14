@@ -6,21 +6,21 @@ Package.describe({
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
-});
+})
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.0.3.1');
-  api.use('percolate:synced-cron');
-  api.export('Coynverter', 'server');
-  api.addFiles('coynverter.js');
-});
+Package.onUse(function (api) {
+  api.versionsFrom('1.0.3.1')
+  api.use('percolate:synced-cron')
+  api.export('Coynverter', 'server')
+  api.addFiles('coynverter.js')
+})
 
 Npm.depends({
-  "coyno-converter": "0.1.0"
-});
+  '@blooks/exchange-rates': '0.1.3'
+})
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('coyno:coynverter');
-  api.addFiles('coyno:coynverter-tests.js');
-});
+Package.onTest(function (api) {
+  api.use('tinytest')
+  api.use('coyno:coynverter')
+  api.addFiles('coyno:coynverter-tests.js')
+})

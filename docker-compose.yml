@@ -1,0 +1,17 @@
+version: '2'
+services:
+  dashboard:
+    build:
+      context: .
+    environment:
+    - MONGO_URL=mongodb://mongo/blooks
+    - STARTUP_DELAY=10
+    restart: always
+    ports:
+    - 3000:3000
+    links:
+    - mongo:mongo
+    volumes:
+    - ./:/app/
+  mongo:
+    image: mongo:3

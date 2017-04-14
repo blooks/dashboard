@@ -1,83 +1,80 @@
-(function ($) {
-
+;(function ($) {
   $.fn.fixedHeader = function (options) {
     var config = {
       topOffset: 50,
       bgColor: '#ffffff'
-    };
+    }
     if (options) {
-      $.extend(config, options);
+      $.extend(config, options)
     }
 
     return this.each(function () {
-      var o = $(this);
+      var o = $(this)
 
-      var $win = $(window);
-      var $head = $('thead.header', o);
-      var isFixed = 0;
-      var headTop = $head.length && $head.offset().top - config.topOffset;
+      var $win = $(window)
+      var $head = $('thead.header', o)
+      var isFixed = 0
+      var headTop = $head.length && $head.offset().top - config.topOffset
 
-      function processScroll() {
+      function processScroll () {
         if (!o.is(':visible')) {
-          return;
+          return
         }
-        var scrollTop = $win.scrollTop();
-        var t = $head.length && $head.offset().top - config.topOffset;
+        var scrollTop = $win.scrollTop()
+        var t = $head.length && $head.offset().top - config.topOffset
         if (!isFixed && headTop !== t) {
-          headTop = t;
+          headTop = t
         }
 
         if (scrollTop >= headTop && !isFixed) {
-          isFixed = 1;
+          isFixed = 1
         }
         else if (scrollTop <= headTop && isFixed) {
-          isFixed = 0;
+          isFixed = 0
         }
 
         if (isFixed) {
-          $('thead.header-copy', o).removeClass('hide');
-        }
-        else {
-          $('thead.header-copy', o).addClass('hide');
+          $('thead.header-copy', o).removeClass('hide')
+        } else {
+          $('thead.header-copy', o).addClass('hide')
         }
       }
 
-      $win.on('scroll', processScroll);
+      $win.on('scroll', processScroll)
 
       // hack sad times - holdover until rewrite for 2.1
       $head.on('click', function () {
         if (!isFixed) {
           setTimeout(function () {
-            $win.scrollTop($win.scrollTop() - 47);
-          }, 10);
+            $win.scrollTop($win.scrollTop() - 47)
+          }, 10)
         }
-      });
+      })
 
       $head
         .clone()
         .removeClass('header')
         .addClass('header-copy header-fixed')
-        .appendTo(o);
+        .appendTo(o)
 
-      var ww = [];
+      var ww = []
       o.find('thead.header > tr:first > th').each(function (i, h) {
-        ww.push($(h).width());
-      });
+        ww.push($(h).width())
+      })
       $.each(ww, function (i, w) {
         o
           .find(
             'thead.header > tr > th:eq(' + i + '), ' +
             'thead.header-copy > tr > th:eq(' + i + ')')
-          .css({width: w});
-      });
+          .css({ width: w })
+      })
 
       o.find('thead.header-copy').css({
         margin: '0 auto',
         width: o.width(),
         'background-color': config.bgColor
-      });
-      processScroll();
-    });
-  };
-
-})(jQuery);
+      })
+      processScroll()
+    })
+  }
+})(jQuery)

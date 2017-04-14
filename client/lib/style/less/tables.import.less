@@ -1,10 +1,10 @@
 /*All table styles here*/
 
 /* Tables */
+
 .table {
 
-    white-space: nowrap;
-
+  white-space: nowrap;
 
   .party-title {
     font-weight: bold;
@@ -12,41 +12,41 @@
   }
 
   &.auto-width {
-      width: auto;
-    }
+    width: auto;
+  }
 
   thead {
 
     tr {
-    padding: 4px 7px;
-    padding: .4rem .7rem;
+      padding: 4px 7px;
+      padding: .4rem .7rem;
 
       &.supa-header {
 
         th {
-            text-align: center;
-            color: @whyte;
+          text-align: center;
+          color: @whyte;
 
-               &.inflow-header {
-                  background-color: @positive;
-                  min-width: 380px;
-               }
+          &.inflow-header {
+            background-color: @positive;
+            min-width: 380px;
+          }
 
-               &.internal-header {
-                  min-width: 200px;
-               }
+          &.internal-header {
+            min-width: 200px;
+          }
 
-               &.outflow-header {
-                  background-color: @negative;
-                  min-width: 380px;
-               }
+          &.outflow-header {
+            background-color: @negative;
+            min-width: 380px;
+          }
 
-                .no-border {
-                    border: none;
-                    border-bottom: 2px;
-                }
-            }
+          .no-border {
+            border: none;
+            border-bottom: 2px;
+          }
         }
+      }
 
       th {
         border-bottom: 2px solid @gray-medium-light;
@@ -58,118 +58,129 @@
   tbody {
     tr {
       td {
-            padding: 6px 8px;
-            padding: .6rem .8rem;
-            vertical-align: middle;
-            line-height: 20px;
+        padding: 6px 8px;
+        padding: .6rem .8rem;
+        vertical-align: middle;
+        line-height: 20px;
 
-            &.inflow {
-                color: @positive;
-              }
-
-            &.outflow {
-              color: @negative;
-            }
-            /* Cells for arrows */
-            &.arrow-container {
-              text-align: left;
-              padding: 0 !important;
-              .fa {
-                font-size: 35px;
-              }
-            }
-          } // Close general <td>
-
-          &:last-child {
-              border-bottom: 1px solid @gray-lighter;
-          }
+        &.inflow {
+          color: @positive;
         }
 
-
-
-        a {
-              .glyphicon {
-              color: @gray-dark;
-                  &:hover {
-                      color: @brand-primary;
-                  }
-              }
-
+        &.outflow {
+          color: @negative;
+        }
+        /* Cells for arrows */
+        &.arrow-container {
+          text-align: left;
+          padding: 0 !important;
+          .fa {
+            font-size: 35px;
           }
+        }
+        input {
+          &.value-input {
+            width: 45px
+          }
+          &.note-input {
+            width: 100%
+          }
+        }
+      }
+      // Close general <td>
+
+      &:last-child {
+        border-bottom: 1px solid @gray-lighter;
+      }
+    }
+
+    a {
+      .glyphicon {
+        color: @gray-dark;
+        &:hover {
+          color: @brand-primary;
+        }
+      }
+
+    }
 
     .tooltip.top .tooltip-inner {
-        background-color:@darkblue;
+      background-color: @darkblue;
     }
 
     .tooltip.top .tooltip-arrow {
-        border-top-color: @darkblue;
-     }
+      border-top-color: @darkblue;
+    }
   }
 
   /* All ul in tables */
   ul.table-list {
-    padding: 0; margin: 0;
+    padding: 0;
+    margin: 0;
     list-style-type: none;
   }
 
-/*Styling of arrows in tx tables */
-td.tx-arrow {
-  padding-right: @button-corner-square-size;
+  /*Styling of arrows in tx tables */
+  td.tx-arrow {
+    padding-right: @button-corner-square-size;
 
-  .arrow {
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: none;
+    .arrow {
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: none;
     }
-}
+  }
 
-.incoming-bg {
-  .arrow {
+  .incoming-bg {
+    .arrow {
       background-color: @positive;
       border-color: @positive;
       color: @whyte;
       &:after {
         border-color: @positive transparent transparent transparent;
       }
-  }
-}
-
-.outgoing-bg {
-  .arrow {
-    background-color: @negative;
-    border-color: @negative;
-    color: @whyte;
-    &:after {
-      border-color: @negative transparent transparent transparent;
     }
   }
-}
 
-.internal-bg {
-  .arrow {
-    background-color: @gray-light;
-    border-color: @gray-light;
-    color: @whyte;
-    &:after {
-      border-color: @gray-light transparent transparent transparent;
+  .outgoing-bg {
+    .arrow {
+      background-color: @negative;
+      border-color: @negative;
+      color: @whyte;
+      &:after {
+        border-color: @negative transparent transparent transparent;
+      }
     }
   }
-}
+
+  .internal-bg {
+    .arrow {
+      background-color: @gray-light;
+      border-color: @gray-light;
+      color: @whyte;
+      &:after {
+        border-color: @gray-light transparent transparent transparent;
+      }
+    }
+  }
 
 }
 
 table.table-tx tbody {
-    tr {
-      td {
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-right: 0;
-                text-align: right;
-            } 
-
+  tr {
+    td {
+      &:first-child {
+        padding-left: 0;
       }
+      &:last-child {
+        padding-right: 0;
+        text-align: right;
+      }
+      &.note-cell {
+        text-align: left;
+        width: 30px;
+      }
+    }
   }
 }
 
@@ -177,7 +188,7 @@ table.table-tx tbody {
 @media only screen and (max-width: 768px) {
   /* Force table to not be like tables anymore */
   #responsive-table {
-    table, thead, tbody,th,td,tr {
+    table, thead, tbody, th, td, tr {
       display: block;
     }
   }
@@ -189,7 +200,9 @@ table.table-tx tbody {
     left: -9999px;
   }
 
-  #responsive-table tr { border: 1px solid #ccc; }
+  #responsive-table tr {
+    border: 1px solid #ccc;
+  }
 
   #responsive-table td {
     /* Behave  like a "row" */
@@ -199,7 +212,7 @@ table.table-tx tbody {
     padding-left: 5%;
     padding-right: 5%;
     white-space: normal;
-    text-align:center;
+    text-align: center;
 
     &.date-cell {
       background-color: @gray-lightest;
@@ -217,36 +230,38 @@ table.table-tx tbody {
     width: 45%;
     padding-right: 10px;
     white-space: nowrap;
-    text-align:center;
+    text-align: center;
     font-weight: bold;
   }
 
- /*  Label the data   */
- #responsive-table td:before { content: attr(data-title); }
+  /*  Label the data   */
+  #responsive-table td:before {
+    content: attr(data-title);
+  }
 
-   .hidden-on-small  {
+  .hidden-on-small {
     display: none;
-   }
+  }
 
-   .show-on-small {
+  .show-on-small {
     display: inline;
-   }
+  }
 
   .hidden-on-medium {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px)  {
+@media screen and (min-width: 768px) {
 
   #responsive-table {
     overflow-x: auto; // Show scrollbar
     max-width: 100%; // Make sure table spans entire container
-    }
+  }
 
   .show-on-small {
     display: none; // Certain elements are for small screens
-   }
+  }
 
   .fixed-max-width {
     max-width: 400px;
@@ -256,30 +271,30 @@ table.table-tx tbody {
   }
 }
 
-
 // Hide to reveal on larger screens
 .hidden-on-medium,
 tr.hidden-on-medium,
 td.hidden-on-medium,
-th.hidden-on-medium
-{
+th.hidden-on-medium {
   display: none;
 }
 
-
-@media screen and (min-width: 1470px)  {
+@media screen and (min-width: 1470px) {
 
   .hidden-on-medium {
     display: inline-block;
   }
+
   tr.hidden-on-medium {
     display: table-row;
   }
+
   td.hidden-on-medium {
     display: table-cell;
   }
+
   th.hidden-on-medium {
-   display: table-cell;
+    display: table-cell;
   }
 
 }

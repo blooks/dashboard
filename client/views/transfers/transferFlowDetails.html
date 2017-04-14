@@ -4,7 +4,7 @@
         {{#unless isIncoming}}
             <td colspan="{{colSpanBefore}}" class="hidden-on-small hidden-on-medium"></td>
         {{/unless}}
-        <td class="{{representation.type}}-tx-cell from-wallet-cell">
+            <td class="{{representation.type}}-tx-cell from-wallet-cell">
             <span class="show-on-small fat">From:</span>
             <span class="party-title fixed-max-width">{{senderLabel}}</span>
         </td>
@@ -20,10 +20,40 @@
         {{/unless}}
         <td class="fiat-value-cell">
             <span class="show-on-small">Fiat value:</span>
-            {{saneNumber baseVolumeRep 'EUR' }} {{currency}}
+            {{#if editing}}
+                <input class="value-input" data-old-valuation="{{saneNumber baseVolumeRep 'EUR' }}" type="text" value="{{saneNumber baseVolumeRep 'EUR' }}">
+            {{else}}
+            {{#if customValue}}
+                {{saneNumber customValue 'EUR' }}
+
+                {{else}}
+                {{saneNumber baseVolumeRep 'EUR' }}
+                {{/if}}
+                {{currency}}
+            {{/if}}
         </td>
         <td>
             <a href="http://blockchain.info/tx/{{hash}}" target="_blank" class="icon icon-magnifying-glass"></a>
+            {{#unless editing}}
+                <a id="editButton" href="#" class="icon icon-pencil"></a>
+            {{else}}
+                <a id="saveButton" href="#" class="icon icon-check"></a>
+            {{/unless}}
         </td>
     </tr>
+    {{#if editing}}
+        <tr class="tx-note-row">
+            <td colspan="1"></td>
+            <td colspan="1">Note</td>
+            <td colspan="8" class="note-cell"><input class="note-input" type="text" value="{{note}}"></td>
+        </tr>
+    {{else}}
+    {{#if note}}
+    <tr>
+        <td colspan="1"></td>
+        <td colspan="1">Note</td>
+        <td colspan="8" class="note-cell">{{note}}</td>
+    </tr>
+        {{/if}}
+    {{/if}}
 </template>

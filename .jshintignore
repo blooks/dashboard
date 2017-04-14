@@ -1,4 +1,0 @@
-.meteor
-packages
-
-server/crawlers/bitstamp.js

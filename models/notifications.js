@@ -1,7 +1,7 @@
-Notification = new Mongo.Collection('servernotifications');
+Notification = new Mongo.Collection('servernotifications')
 
 if (Schemas == null) {
-  Schemas = {};
+  Schemas = {}
 }
 
 Schemas.Notifications = new SimpleSchema({
@@ -20,51 +20,51 @@ Schemas.Notifications = new SimpleSchema({
     type: String,
     optional: true
   }
-});
+})
 
-Notification.attachSchema(Schemas.Notifications);
+Notification.attachSchema(Schemas.Notifications)
 
-Notification.timed();
+Notification.timed()
 
-Notification.owned();
+Notification.owned()
 
 Notification.allow({
-  insert: function(userId, item) {
+  insert: function (userId, item) {
     if (userId == null) {
-      throw new Meteor.Error(400, "You need to log in to insert.");
+      throw new Meteor.Error(400, 'You need to log in to insert.')
     }
     return _.extend(item, {
       userId: userId
-    });
+    })
   },
-  update: function(userId, doc, filedNames, modifier) {
+  update: function (userId, doc, filedNames, modifier) {
     if (userId !== doc.userId) {
-      throw new Meteor.Error(400, "You can only edit your own entries.");
+      throw new Meteor.Error(400, 'You can only edit your own entries.')
     }
-    return true;
+    return true
   },
-  remove: function(userId, doc) {
+  remove: function (userId, doc) {
     if (doc.userId !== userId) {
-      throw new Meteor.Error(400, "You can only delete your own entries.");
+      throw new Meteor.Error(400, 'You can only delete your own entries.')
     }
-    return true;
+    return true
   }
-});
+})
 
 if (Meteor.isServer) {
-  Notification.info =  function (title, message) {
+  Notification.info = function (title, message) {
     if (Meteor.userId()) {
-      Notification.insert({userId: Meteor.userId(), title: title, message: message});
+      Notification.insert({ userId: Meteor.userId(), title: title, message: message })
     }
-    };
-    Notification.error = function (title, message) {
-      if (Meteor.userId()) {
-        Notification.insert({userId: Meteor.userId(), type: 'error', title: title, message: message});
-      }
-    };
-    Notification.success = function (title, message) {
-      if (Meteor.userId()) {
-        Notification.insert({userId: Meteor.userId(), type: 'success', title: title, message: message});
-      }
-    };
+  }
+  Notification.error = function (title, message) {
+    if (Meteor.userId()) {
+      Notification.insert({ userId: Meteor.userId(), type: 'error', title: title, message: message })
+    }
+  }
+  Notification.success = function (title, message) {
+    if (Meteor.userId()) {
+      Notification.insert({ userId: Meteor.userId(), type: 'success', title: title, message: message })
+    }
+  }
 }

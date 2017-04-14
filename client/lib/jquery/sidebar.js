@@ -6,14 +6,14 @@
  * ======================================================================== */
 
 +function ($) {
-  'use strict';
+  'use strict'
 
   // SIDEBAR PUBLIC CLASS DEFINITION
   // ================================
 
   var Sidebar = function (element, options) {
-    this.$element      = $(element)
-    this.options       = $.extend({}, Sidebar.DEFAULTS, options)
+    this.$element = $(element)
+    this.options = $.extend({}, Sidebar.DEFAULTS, options)
     this.transitioning = null
 
     if (this.options.parent) this.$parent = $(this.options.parent)
@@ -27,9 +27,8 @@
   Sidebar.prototype.show = function () {
     if (this.transitioning || this.$element.hasClass('sidebar-open')) return
 
-
     var startEvent = $.Event('show.bs.sidebar')
-    this.$element.trigger(startEvent);
+    this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
     this.$element
@@ -43,7 +42,7 @@
       this.$element.trigger('shown.bs.sidebar')
     }
 
-    if(!$.support.transition) return complete.call(this)
+    if (!$.support.transition) return complete.call(this)
 
     this.$element
       .one($.support.transition.end, $.proxy(complete, this))
@@ -55,7 +54,7 @@
 
     var startEvent = $.Event('hide.bs.sidebar')
     this.$element.trigger(startEvent)
-    if(startEvent.isDefaultPrevented()) return
+    if (startEvent.isDefaultPrevented()) return
 
     this.$element
       .removeClass('sidebar-open')
@@ -82,7 +81,7 @@
   var old = $.fn.sidebar
 
   $.fn.sidebar = function (option) {
-    return this.each(function (){
+    return this.each(function () {
       var $this = $(this)
       var data = $this.data('bs.sidebar')
       var options = $.extend({}, Sidebar.DEFAULTS, $this.data(), typeof options == 'object' && option)
@@ -103,8 +102,8 @@
   $(document).on('click.bs.sidebar.data-api', '[data-toggle="sidebar"]', function (e) {
     var $this = $(this), href
     var target = $this.attr('data-target')
-        || e.preventDefault()
-        || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
+      || e.preventDefault()
+      || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')
     var $target = $(target)
     var data = $target.data('bs.sidebar')
     var option = data ? 'toggle' : $this.data()
@@ -112,19 +111,19 @@
     $target.sidebar(option)
   })
 
-  $('html').on('click.bs.sidebar.autohide', function(event){
-    var $this = $(event.target);
-    var isButtonOrSidebar = $this.is('.sidebar, [data-toggle="sidebar"]') || $this.parents('.sidebar, [data-toggle="sidebar"]').length;
+  $('html').on('click.bs.sidebar.autohide', function (event) {
+    var $this = $(event.target)
+    var isButtonOrSidebar = $this.is('.sidebar, [data-toggle="sidebar"]') || $this.parents('.sidebar, [data-toggle="sidebar"]').length
     if (isButtonOrSidebar) {
-      return;
+
     } else {
-      var $target = $('.sidebar');
-      $target.each(function(i, trgt) {
-        var $trgt = $(trgt);
-        if($trgt.data('bs.sidebar') && $trgt.hasClass('sidebar-open')) {
-            $trgt.sidebar('hide');
+      var $target = $('.sidebar')
+      $target.each(function (i, trgt) {
+        var $trgt = $(trgt)
+        if ($trgt.data('bs.sidebar') && $trgt.hasClass('sidebar-open')) {
+          $trgt.sidebar('hide')
         }
       })
     }
-  });
-}(jQuery);
+  })
+}(jQuery)

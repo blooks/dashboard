@@ -3,22 +3,20 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-coffeescript
-less
+coffeescript@1.11.1_4
+less@2.7.8
 aldeed:collection2
 lepozepo:accounting
 iron:router
 mquandalle:jade
 aldeed:autoform
-nemo64:bootstrap
 mrt:just-i18n
 dburles:collection-helpers
 chrismbeckett:fontawesome4
 mrt:moment
-meteorhacks:npm
 jhuenges:highstock
-email
-http
+email@1.1.18
+http@1.2.10
 
 coyno:coynverter
 
@@ -29,9 +27,9 @@ percolate:synced-cron
 useraccounts:bootstrap
 meteorhacks:ssr
 sewdn:collection-behaviours
-accounts-password
-reactive-var
-accounts-ui-unstyled
+accounts-password@1.3.3
+reactive-var@1.0.11
+accounts-ui-unstyled@1.1.13
 coyno:coinbase
 coyno:electrum
 coyno:electrum2
@@ -42,27 +40,31 @@ meteorhacks:kadira
 okgrow:analytics
 wylio:winston-papertrail
 gfk:notifications
-standard-minifiers
-meteor-base
-mobile-experience
-mongo
+meteor-base@1.0.4
+mobile-experience@1.0.4
+mongo@1.1.14
 blaze-html-templates
-session
-jquery
-tracker
-logging
-reload
-random
-ejson
+session@1.1.7
+jquery@1.11.10
+tracker@1.1.1
+logging@1.1.16
+reload@1.1.11
+random@1.0.10
+ejson@1.0.13
 spacebars
-check
+check@1.2.4
 
 
 
 
 
 
-
-
-npm-container
 useraccounts:iron-routing
+reactive-dict@1.1.8
+standard-minifier-css
+standard-minifier-js
+shell-server
+
+
+ecmascript
+huttonr:bootstrap3

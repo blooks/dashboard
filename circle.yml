@@ -1,32 +1,20 @@
-dependencies:
-  override:
-    - echo "registry="$NPM_REGISTRY >> .npmrc
-    - echo "_auth="$NPM_AUTH >> .npmrc
-    - echo "email="NPM_EMAIL >> .npmrc
-    - echo "always-auth=true" >> .npmrc
-    - echo "strict-ssl=false" >> .npmrc
-test:
-  override:
-    - docker build .
-
 machine:
   services:
     - docker
   node:
-    version: 4.2
+    version: 6
+dependencies:
+  pre:
+    - curl https://install.meteor.com/ | sh
 
+test:
+  override:
+    - exit 0
 deployment:
-  staging:
+  develop:
     branch: develop
     commands:
       - docker info
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS tutum.co
-      - docker build -t tutum.co/levino/coyno-meteor:staging .
-      - docker push tutum.co/levino/coyno-meteor:staging
-  production:
-    branch: master
-    commands:
-      - docker info
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS tutum.co
-      - docker build -t tutum.co/levino/coyno-meteor .
-      - docker push tutum.co/levino/coyno-meteor
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - ./build.sh && cd .deployment && docker build -t blooks/dashboard:develop .
+      - docker push blooks/dashboard:develop

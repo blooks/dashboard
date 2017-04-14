@@ -1,8 +1,8 @@
 var fundsDistribution = function () {
-  var dataPairs = [];
+  var dataPairs = []
   BitcoinWallets.find({}).forEach(function (wallet) {
-    dataPairs.push([wallet.label, wallet.balance()]);
-  });
+    dataPairs.push([ wallet.label, wallet.balance() ])
+  })
   $('#currentholdingsperwallet').highcharts({
     chart: {
       plotBackgroundColor: null,
@@ -10,7 +10,7 @@ var fundsDistribution = function () {
       plotShadow: false
     },
     title: {
-      text: ""
+      text: ''
     },
     tooltip: {
       pointFormat: '<b>{point.percentage:.1f}%</b>'
@@ -34,16 +34,16 @@ var fundsDistribution = function () {
       type: 'pie',
       data: dataPairs
     }]
-  });
-};
+  })
+}
 
 Template.walletHoldings.rendered = function () {
-  fundsDistribution();
-};
+  fundsDistribution()
+}
 
 Template.walletHoldings.helpers({
   wallets: function () {
-    return BitcoinWallets.find({}).fetch();
+    return BitcoinWallets.find({}).fetch()
   },
   /**
    * [totalBalance description]
@@ -51,16 +51,16 @@ Template.walletHoldings.helpers({
    * @return {[type]}          [description]
    */
   totalBalance: function (currency) {
-    //TODO: Remove this. It is redundant to the global helper
+    // TODO: Remove this. It is redundant to the global helper
     var saneNumber = function (internalNumber, currency) {
       if (currency === 'BTC') {
-        return (internalNumber / 10e7).toFixed(8);
+        return (internalNumber / 10e7).toFixed(8)
       } else {
-        return (internalNumber / 10e7).toFixed(2);
+        return (internalNumber / 10e7).toFixed(2)
       }
-    };
-    if(Meteor.user()){
-      return saneNumber(Meteor.user().totalBalance(currency), currency);
+    }
+    if (Meteor.user()) {
+      return saneNumber(Meteor.user().totalBalance(currency), currency)
     }
   }
-});
+})

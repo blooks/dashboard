@@ -1,49 +1,49 @@
 if (Meteor.isServer) {
-  var coynoconverter = Npm.require("coyno-converter");
+  var coynoconverter = Npm.require('@blooks/exchange-rates')
 
   Coynverter = {
     mongourl: process.env.MONGO_URL
-  };
+  }
 
-  var NodeConverter = new coynoconverter(Coynverter.mongourl);
+  var NodeConverter = new coynoconverter(Coynverter.mongourl)
 
   Coynverter.update = function () {
-    var syncConverter = Async.wrap(NodeConverter, ["update"]);
-    var result;
+    var syncConverter = Meteor.wrapAsync(NodeConverter, [ 'update' ])
+    var result
     try {
-      result = syncConverter.update();
+      result = syncConverter.update()
     } catch(err) {
-      result = err;
+      result = err
     }
-    console.log("Coynverter Update done. Result was:" + result);
-  };
+    console.log('Coynverter Update done. Result was:' + result)
+  }
 
   Coynverter.convert = function (fromCurrency, toCurrency, amountToConvert, date) {
-    var syncConverter = Async.wrap(NodeConverter, ['convert']);
-    var result;
-    amountToConvert = Math.abs(amountToConvert);
-    if (amountToConvert == 0) return 0;
+    var syncConverter = Meteor.wrapAsync(NodeConverter, [ 'convert' ])
+    var result
+    amountToConvert = Math.abs(amountToConvert)
+    if (amountToConvert == 0) return 0
     try {
-      result = syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date);
+      result = syncConverter.convert(fromCurrency, toCurrency, amountToConvert, date)
     } catch (error) {
-      console.log("Coynverter wanted to convert something. But there was an error:");
-      console.log(error);
-      result = 0;
+      console.log('Coynverter wanted to convert something. But there was an error:')
+      console.log(error)
+      result = 0
     }
-    return result;
-  };
+    return result
+  }
 
   Meteor.startup(function () {
-    Coynverter.update();
+    Coynverter.update()
     SyncedCron.add({
       name: 'Update Exchange Rates',
-      schedule: function(parser) {
+      schedule: function (parser) {
         // parser is a later.parse object
-        return parser.cron('5 * * * * *');
+        return parser.cron('5 * * * * *')
       },
-      job: function() {
-        Coynverter.update();
+      job: function () {
+        Coynverter.update()
       }
-    });
-  });
+    })
+  })
 }

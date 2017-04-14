@@ -13,8 +13,8 @@ Router.configure({
       to: 'footer'
     }
   },
-  onBeforeAction: function() {
-    $('meta[name^="description"]').remove();
-    this.next();
+  onBeforeAction: function () {
+    $('meta[name^="description"]').remove()
+    this.next()
   }
-});
+})

@@ -1,12 +1,12 @@
 Template.noData.rendered = function () {
- $('#noDataModal').modal({
+  $('#noDataModal').modal({
     show: 'false',
-  	backdrop: 'static',
-  	keyboard: false
-});
-};
+    backdrop: 'static',
+    keyboard: false
+  })
+}
 
-Template.noData.destroyed = function() {
-  $('body').removeClass("modal-open");
-  $('.modal-backdrop').fadeOut();
-};
+Template.noData.destroyed = function () {
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').fadeOut()
+}

@@ -1,15 +1,14 @@
-
-var CoynoJobs = Meteor.npmRequire('coyno-jobs');
+import CoynoJobs from '@blooks/jobs'
 if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
-  process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST;
+  process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST
 }
 
 if (!process.env.REDIS_URL) {
-  log.warn('No redis URL set. Defaulting to localhost');
-  process.env.REDIS_URL = 'redis://localhost';
+  log.warn('No redis URL set. Defaulting to localhost')
+  process.env.REDIS_URL = 'redis://localhost'
 }
 
-var jobs = new CoynoJobs(process.env.REDIS_URL);
+var jobs = new CoynoJobs(process.env.REDIS_URL)
 
 Meteor.methods({
   /**
@@ -22,6 +21,6 @@ Meteor.methods({
    * @param wallet
    */
   updateExchange: function (exchange) {
-    jobs.addJob('exchange.update', {exchangeId: exchange._id, userId: exchange.userId});
+    jobs.addJob('exchange.update', { exchangeId: exchange._id, userId: exchange.userId })
   }
-});
+})

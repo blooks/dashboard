@@ -1,5 +1,5 @@
 if (this.Schemas == null) {
-  this.Schemas = {};
+  this.Schemas = {}
 }
 
 Schemas.userProfile = new SimpleSchema({
@@ -37,4 +37,4 @@ Schemas.userProfile = new SimpleSchema({
     type: Boolean,
     defaultValue: false
   }
-});
+})
