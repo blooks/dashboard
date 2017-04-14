@@ -11,10 +11,15 @@ test:
   override:
     - exit 0
 deployment:
-  develop:
-    branch: develop
+  master:
+    branch: master
     commands:
-      - docker info
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - ./build.sh && cd .deployment && docker build -t blooks/dashboard:develop .
-      - docker push blooks/dashboard:develop
+      - ./build.sh && cd .deployment && docker build -t blooks/dashboard:master .
+      - docker push blooks/dashboard:master
+  versionbuild:
+    tag: /v[0-9]+(\.[0-9]+)*/
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - ./build.sh && cd .deployment && docker build -t blooks/dashboard:$CIRCLE_TAG .
+      - docker push blooks/dashboard:$CIRCLE_TAG
