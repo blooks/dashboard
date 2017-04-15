@@ -12,5 +12,5 @@ Meteor.startup(function () {
     }
   })
   SyncedCron.start()
-  log.info('Hello from the Coyno Meteor service ' + new Date(Date.now()))
+  log.info('Hello from the Blooks Meteor service ' + new Date(Date.now()))
 })

@@ -36,7 +36,7 @@ if (typeof MochaWeb !== 'undefined') {
       it('should have the correct title on home page', function (done) {
         Router.go('home')
         setTimeout(function () {
-          chai.expect($('h1').html()).to.be.equal('This is Coyno.')
+          chai.expect($('h1').html()).to.be.equal('This is Blooks.')
           done()
         }, 200)
       })

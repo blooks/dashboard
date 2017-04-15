@@ -1,5 +1,5 @@
 /**
- * Highcharts JS styling for Coyno
+ * Highcharts JS styling for Blooks
  */
 
 // Load the fonts

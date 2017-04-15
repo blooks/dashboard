@@ -9,8 +9,8 @@ SSR.compileTemplate('changePassword', Assets.getText('emailtemplates/changepassw
 // DGB 2015-01-13 05:57 Deprecated as LVO wants to use MAIL_URL env variable.
 // EXAMPLE: process.env.MAIL_URL = 'smtp://USER:PASSWORD@SMTPSERVER:587'
 
-Accounts.emailTemplates.siteName = 'Coyno'
-Accounts.emailTemplates.from = 'Coyno <noreply@coyno.com>'
+Accounts.emailTemplates.siteName = 'Blooks'
+Accounts.emailTemplates.from = 'Blooks <noreply@blooks.io>'
 
 // DGB 2015-01-12 03:40
 // This email is sent when a new user registers. If we want to validate EMAILS
@@ -18,12 +18,12 @@ Accounts.emailTemplates.from = 'Coyno <noreply@coyno.com>'
 // validate the email.
 Accounts.emailTemplates.verifyEmail = {
   subject: function (user) {
-    return 'Welcome to the Coyno Beta!'
+    return 'Welcome to the Blooks Beta!'
   },
   text: function (user, url) {
     var t = null
-    t = 'Hello! \n\n Thank you for opening your account at Coyno. \n\n Please confirm here: ' + url + '\n\n'
-    t += 'Sincerely,\n\nthe Coyno team'
+    t = 'Hello! \n\n Thank you for opening your account at Blooks. \n\n Please confirm here: ' + url + '\n\n'
+    t += 'Sincerely,\n\nthe Blooks team'
     return t
   },
   html: function (user, url) {
@@ -35,13 +35,13 @@ Accounts.emailTemplates.verifyEmail = {
 // This email is send when the user request to change his email
 Accounts.emailTemplates.changePassword = {
   subject: function () {
-    return 'Password change on Coyno.com'
+    return 'Password change on Blooks.com'
   },
   text: function () {
     var t = null
     t = 'Hello!\n\n'
     t += 'You changed your password. If you did not execute this change yourself please contact us asap on support@coyno.com.'
-    t += 'Sincerely,\n\nthe Coyno team'
+    t += 'Sincerely,\n\nthe Blooks team'
     return t
   },
   html: function () {
@@ -52,13 +52,13 @@ Accounts.emailTemplates.changePassword = {
 // This email is send when the user request to change his email
 Accounts.emailTemplates.changeEmail = {
   subject: function () {
-    return 'E-Mail change on Coyno.com'
+    return 'E-Mail change on Blooks.com'
   },
   text: function () {
     var t = null
     t = 'Hello!\n\n'
     t += 'You changed your e-mail. If you did not execute this change yourself please contact us asap on support@coyno.com.'
-    t += 'Sincerely,\n\nthe Coyno team'
+    t += 'Sincerely,\n\nthe Blooks team'
     return t
   },
   html: function () {
@@ -68,13 +68,13 @@ Accounts.emailTemplates.changeEmail = {
 
 Accounts.emailTemplates.resetPassword = {
   subject: function (user) {
-    return 'Coyno password reset e-mail'
+    return 'Blooks password reset e-mail'
   },
   text: function (user, url) {
     var t = null
     t = 'Hello!\n\n'
     t += 'You requested a password reset. Go to this URL: ' + url + ' to reset your password.'
-    t += 'Sincerely,\n\nthe Coyno team'
+    t += 'Sincerely,\n\nthe Blooks team'
     return t
   },
   html: function (user, url) {
@@ -85,13 +85,13 @@ Accounts.emailTemplates.resetPassword = {
 // This is NOT a standard Meteor.Accounts email template
 Accounts.emailTemplates.deleteAccount = {
   subject: function (user) {
-    return 'Coyno user deleted.'
+    return 'Blooks user deleted.'
   },
   text: function (user) {
     var t = null
-    t = 'Goodbye!\n\nWe deleted your Coyno Account following your request. We deleted all data connected to your account.\n\n'
+    t = 'Goodbye!\n\nWe deleted your Blooks Account following your request. We deleted all data connected to your account.\n\n'
     t += 'We are sorry to see you go, but hope you come back in the future!\n\n'
-    t += 'Sincerely,\n\nthe Coyno team'
+    t += 'Sincerely,\n\nthe Blooks team'
     return t
   },
   html: function () {

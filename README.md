@@ -1,4 +1,4 @@
-Coyno - The Bitcoin Bookkeeper
+Blooks - The Bitcoin Bookkeeper
 
 
 ### Status

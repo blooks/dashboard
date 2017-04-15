@@ -1,4 +1,4 @@
-import CoynoJobs from '@blooks/jobs'
+import Jobs from '@blooks/jobs'
 if (!process.env.REDIS_URL && process.env.REDIS_HOST && process.env.REDIS_PORT) {
   process.env.REDIS_URL = 'redis://' + process.env.REDIS_HOST + ':' + process.env.REDIS_HOST
 }
@@ -8,7 +8,7 @@ if (!process.env.REDIS_URL) {
   process.env.REDIS_URL = 'redis://localhost'
 }
 
-var jobs = new CoynoJobs(process.env.REDIS_URL)
+var jobs = new Jobs(process.env.REDIS_URL)
 
 Meteor.methods({
   /**
