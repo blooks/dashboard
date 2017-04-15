@@ -1,13 +1,9 @@
 "use strict"
 
+import convert from './converter'
+
 var convertToSaneAmount = function (amount) {
   return parseFloat(amount / 10e7)
-}
-
-const extractFiatValue = function (transfer, currency) {
-  return transfer.baseVolume.find(function(volume) {
-    return volume[currency] !== undefined
-  })[currency]
 }
 
 Meteor.methods({
@@ -54,7 +50,7 @@ Meteor.methods({
     // DGB 2015-01-21 06:46 Validate email with Collection2
     if (Meteor.users.simpleSchema().namedContext().validate({ $set: { 'emails.$.address': email } }, { modifier: true })) {
       try {
-        oldEmail = Meteor.users.findOne({ _id: self.userId }).emails[ 0 ].address
+        var oldEmail = Meteor.users.findOne({ _id: self.userId }).emails[ 0 ].address
         Meteor.users.update({ _id: self.userId }, { $set: { 'emails.0.address': email } })
       } catch (e) {
         // DGB 2015-01-21 07:04 The reason Mongo complain after passing validation
@@ -90,7 +86,6 @@ Meteor.methods({
     var self = this
     var balances = []
     var balance = 0
-    var fiatBalance = 0
     var timeWindowEnd = 0
     var timeNow = new Date().getTime()
     // 21.01.2015 LFG one day for time delta 60*60*24*1000 = 86400000 ms
@@ -115,18 +110,10 @@ Meteor.methods({
         // process queued transfers, repeat until current transfer is in time window. Queue it.
         transfersInTimeWindow.forEach(function (queuedTransfer) {
           if (queuedTransfer.isIncoming()) {
-            if (currency === 'BTC') {
               balance += queuedTransfer.representation.amount
-            } else {
-              balance += extractFiatValue(queuedTransfer, currency)
-            }
           }
           if (queuedTransfer.isOutgoing()) {
-            if (currency === 'BTC') {
               balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee)
-            } else {
-              balance -= extractFiatValue(queuedTransfer, currency)
-            }
           }
           if (queuedTransfer.isInternal() && (currency === 'BTC')) {
             balance -= (queuedTransfer.representation.fee)
@@ -135,8 +122,12 @@ Meteor.methods({
         transfersInTimeWindow = []
         // Pushing Time Window End until the current transfer is in the current time window.
         while (transferTime > timeWindowEnd) {
+          let balanceToSave = balance
+          if (currency !== 'BTC') {
+            balanceToSave = convert({date: timeWindowEnd, toCurrency: currency, btcAmount: balance})
+          }
           balances.push([timeWindowEnd,
-            convertToSaneAmount(balance)])
+            convertToSaneAmount(balanceToSave)])
           timeWindowEnd += timeDelta
         }
         transfersInTimeWindow.push(transfer)
@@ -147,18 +138,10 @@ Meteor.methods({
       // This loop should always be called if there is at least one transfer.
       transfersInTimeWindow.forEach(function (queuedTransfer) {
         if (queuedTransfer.isIncoming()) {
-          if (currency === 'BTC') {
             balance += queuedTransfer.representation.amount
-          } else {
-            balance += extractFiatValue(queuedTransfer, currency)
-          }
         }
         if (queuedTransfer.isOutgoing()) {
-          if (currency === 'BTC') {
             balance -= (queuedTransfer.representation.amount + queuedTransfer.representation.fee)
-          } else {
-            balance += extractFiatValue(queuedTransfer, currency)
-          }
         }
         if (queuedTransfer.isInternal() && (currency === 'BTC')) {
           balance -= (queuedTransfer.representation.fee)
@@ -166,8 +149,12 @@ Meteor.methods({
       })
       // Go until today.
       while (timeWindowEnd < timeNow + timeDelta) {
+        let balanceToSave = balance
+        if (currency !== 'BTC') {
+          balanceToSave = convert({date: timeWindowEnd, toCurrency: currency, btcAmount: balance})
+        }
         balances.push([timeWindowEnd,
-          convertToSaneAmount(balance) ])
+          convertToSaneAmount(balanceToSave) ])
         timeWindowEnd += timeDelta
       }
     }

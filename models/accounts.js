@@ -1,5 +1,4 @@
 var Users = Meteor.users
-
 Users.helpers({
   totalBalance: function (currency) {
     if (currency !== 'BTC') {
@@ -14,11 +13,14 @@ Users.helpers({
 })
 
 if (Meteor.isServer) {
+  const convert = require('../server/converter').default
   Users.helpers({
     totalBalanceInFiat: function () {
       var bitcoinBalance = this.totalBalance('BTC')
       var currency = Meteor.user().profile.currency
-      var returnValue = Coynverter.convert('BTC', currency, bitcoinBalance, new Date())
+      const now = new Date()
+      var returnValue = convert({toCurrency: currency, btcAmount: bitcoinBalance, date: now})
+      console.log(returnValue)
       return parseInt(returnValue, 10)
     }
   })

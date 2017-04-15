@@ -23,7 +23,8 @@
     "@blooks/jobs": "^0.0.4",
     "babel-runtime": "^6.20.0",
     "bitcore-lib": "https://github.com/satoshipay/bitcore-lib/archive/82696cf1ad495ce097876ab9d376e30976bb7abe.tar.gz",
-    "coinbase": "^1.0.2"
+    "coinbase": "^1.0.2",
+    "moment": "^2.18.1"
   },
   "standard": {
     "env": {
