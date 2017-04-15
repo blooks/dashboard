@@ -160,9 +160,6 @@ Meteor.methods({
     }
     return balances
   },
-  convert: function (fromCurrency, toCurrency, amount, time) {
-    return Coynverter.convert(fromCurrency, toCurrency, amount, time)
-  },
   allTransfers: function () {
     var result = []
     Transfers.find({ userId: this.userId }).forEach(function (transfer) {

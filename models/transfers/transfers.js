@@ -154,6 +154,7 @@ var nodeLabel = function nodeLabel (nodeId) {
 }
 
 if (Meteor.isServer) {
+  const convert = require('../../server/converter').default
   Transfers._ensureIndex({ 'details.inputs.nodeId': 1 })
   Transfers._ensureIndex({ 'details.outputs.nodeId': 1 })
   /**
@@ -298,7 +299,7 @@ if (Meteor.isServer) {
       var valuesToSave = []
       currencies.forEach(function (currency) {
         var exchangeRate = {}
-        exchangeRate[ currency ] = Math.round(Coynverter.convert('BTC', currency, representation.amount, new Date(transfer.date)))
+        exchangeRate[ currency ] = Math.round(convert({toCurrency: currency, btcAmount: representation.amount, date: transfer.date}))
         valuesToSave.push(exchangeRate)
       })
       representation.fee = transfer.fee()
