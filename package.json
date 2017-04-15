@@ -1,6 +1,6 @@
 {
   "name": "@blooks/dashboard",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The dashboard to use blooks",
   "main": "index.js",
   "directories": {
