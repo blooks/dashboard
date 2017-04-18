@@ -6,3 +6,5 @@ node_modules
 packages/coynverter/.npm
 
 .npmrc
+
+.DS_Store
